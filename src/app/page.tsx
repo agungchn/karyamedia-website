@@ -987,7 +987,7 @@ export default function HomePage() {
                       )}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                       {product.bestSeller && (
-                        <span className="absolute top-3 left-3 bg-accent text-white text-xs font-medium px-2.5 py-1 rounded-full z-10">
+                        <span className="absolute top-3 left-3 bg-accent-accessible text-white text-xs font-medium px-2.5 py-1 rounded-full z-10">
                           Best Seller
                         </span>
                       )}

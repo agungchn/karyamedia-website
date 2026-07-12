@@ -253,7 +253,7 @@ export function HeroSection() {
                   alt="Kalung Rektor"
                   width={250}
                   height={250}
-                  priority
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
               </div>
@@ -265,7 +265,7 @@ export function HeroSection() {
                   alt="Plakat Wayang"
                   width={180}
                   height={180}
-                  priority
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
               </div>
@@ -278,7 +278,7 @@ export function HeroSection() {
                     alt="Map Wisuda"
                     width={200}
                     height={200}
-                    priority
+                    loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                 </div>
@@ -288,7 +288,7 @@ export function HeroSection() {
                     alt="Patung Wisuda"
                     width={280}
                     height={280}
-                    priority
+                    loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                 </div>

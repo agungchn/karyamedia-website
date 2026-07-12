@@ -72,7 +72,7 @@ export function Header() {
       {/* Top bar */}
       <div className="bg-gradient-to-r from-accent via-accent-light to-accent-accessible border-b border-accent/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1.5">
-          <p className="text-sm text-[#1E293B] text-right font-medium heading-display-light italic tracking-[0.2em]" style={{ wordSpacing: "0.3em" }}>
+          <p className="text-sm text-[#FFF8E7] text-right font-medium heading-display-light italic tracking-[0.2em]" style={{ wordSpacing: "0.3em" }}>
             Sentuhan Estetik, Berjuta Makna
           </p>
         </div>
@@ -89,7 +89,7 @@ export function Header() {
             <Image src="/images/logo-karyamedia.png" alt="Karyamedia Souvenir" width={40} height={40} className="w-10 h-10 object-contain" />
             <div className="hidden sm:block">
               <div className="font-bold text-primary text-lg leading-tight">Karyamedia</div>
-              <div className="text-[10px] text-accent font-medium tracking-widest uppercase">Souvenir</div>
+              <div className="text-[10px] text-accent-accessible font-medium tracking-widest uppercase">Souvenir</div>
             </div>
           </Link>
 
@@ -139,7 +139,7 @@ export function Header() {
                 <div className="mt-4 pt-4 border-t border-accent/10">
                   <Link
                     href="/katalog-produk"
-                    className="text-sm font-medium text-accent hover:text-accent-accessible"
+                    className="text-sm font-medium text-accent-accessible hover:text-accent"
                   >
                     Lihat Semua Produk &rarr;
                   </Link>

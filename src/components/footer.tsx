@@ -61,7 +61,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-base text-accent mb-1">Menu</h4>
+            <h3 className="font-semibold text-base text-accent mb-1">Menu</h3>
             <div className="w-full border-b border-accent/50 mb-4"></div>
             <ul className="space-y-2.5 text-sm text-gray-300">
               {[
@@ -82,7 +82,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-base text-accent mb-1">Kategori Produk</h4>
+            <h3 className="font-semibold text-base text-accent mb-1">Kategori Produk</h3>
             <div className="w-full border-b border-accent/50 mb-4"></div>
             <ul className="space-y-2.5 text-sm text-gray-300">
               {categories.map((cat) => (
@@ -96,7 +96,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold text-base text-accent mb-1">Newsletter</h4>
+            <h3 className="font-semibold text-base text-accent mb-1">Newsletter</h3>
             <div className="w-full border-b border-accent/50 mb-4"></div>
             <p className="text-sm text-gray-300 mb-4">
               Dapatkan info terbaru, promo, dan inspirasi souvenir via WhatsApp.
@@ -111,7 +111,7 @@ export function Footer() {
               Berlangganan via WA
             </a>
             <div className="mt-6">
-              <h4 className="font-semibold text-sm mb-3">Ekspedisi</h4>
+              <h3 className="font-semibold text-sm mb-3">Ekspedisi</h3>
               <div className="flex flex-wrap gap-2">
                 {companyInfo.shipping.map((s) => (
                   <span key={s.name} className="text-xs px-2 py-1 rounded bg-white/10 text-gray-300 hover:bg-accent hover:text-primary transition-colors cursor-default">

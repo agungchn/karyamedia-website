@@ -51,3 +51,7 @@ GSC_CREDENTIALS
 # PageSpeed Insights API key (never commit — local only)
 scripts/ps/apikey.txt
 PSI_API_KEY
+
+# Bing Webmaster Tools API key (never commit — local only)
+scripts/bing/apikey.txt
+BING_API_KEY

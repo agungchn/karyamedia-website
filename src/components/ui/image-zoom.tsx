@@ -38,6 +38,7 @@ export function ImageZoom({ src, alt }: ImageZoomProps) {
         src={src}
         alt={alt}
         fill
+        sizes="(max-width: 1024px) 100vw, 50vw"
         className="object-cover transition-transform duration-200"
         style={{
           transform: zoomed ? "scale(2.5)" : "scale(1)",

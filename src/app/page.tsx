@@ -889,7 +889,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-12">
           <h2 className="heading-display text-3xl md:text-4xl mb-3 text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Kategori Produk</h2>
           <p className="text-gray-500 max-w-2xl mx-auto">
@@ -981,6 +981,7 @@ export default function HomePage() {
                           src={featuredImageMap[product.slug]}
                           alt={product.name}
                           fill
+                          sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                           className="object-cover group-hover:scale-110 transition-transform duration-700"
                         />
                       )}

@@ -235,6 +235,7 @@ export default async function ArticlePage({ params }: Props) {
               src={article.image}
               alt={article.title}
               fill
+              sizes="(max-width: 640px) 176px, 288px"
               className="object-cover"
               priority
             />
@@ -370,7 +371,7 @@ export default async function ArticlePage({ params }: Props) {
                 >
                   <div className="aspect-[3/4] bg-gradient-to-br from-gray-100 to-gray-200 relative overflow-hidden">
                     {a.image ? (
-                      <Image src={a.image} alt={a.title} fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                      <Image src={a.image} alt={a.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover group-hover:scale-110 transition-transform duration-700" />
                     ) : (
                       <div className="absolute inset-0 flex items-center justify-center text-gray-300 text-sm">Karyamedia</div>
                     )}

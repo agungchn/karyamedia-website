@@ -130,7 +130,7 @@ export default async function ProductDetailPage({ params }: Props) {
           <div>
             <div className="aspect-[3/4] bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl overflow-hidden relative">
               {product.images.length > 0 ? (
-                <Image src={product.images[0]} alt={product.name} fill className="object-cover" />
+                <Image src={product.images[0]} alt={product.name} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
               ) : (
                 <div className="absolute inset-0 flex items-center justify-center">
                   <Award className="w-32 h-32 text-gray-300" />
@@ -151,7 +151,7 @@ export default async function ProductDetailPage({ params }: Props) {
               <div className="grid grid-cols-4 gap-2 mt-3">
                 {product.images.map((img, i) => (
                   <div key={i} className="aspect-square bg-gray-100 rounded-lg overflow-hidden relative">
-                    <Image src={img} alt={`${product.name} ${i + 1}`} fill className="object-cover" />
+                    <Image src={img} alt={`${product.name} ${i + 1}`} fill sizes="25vw" className="object-cover" />
                   </div>
                 ))}
               </div>
@@ -260,6 +260,7 @@ export default async function ProductDetailPage({ params }: Props) {
                         src={rp.images[0]}
                         alt={rp.name}
                         fill
+                        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                         className="object-cover group-hover:scale-110 transition-transform duration-700"
                       />
                     ) : (

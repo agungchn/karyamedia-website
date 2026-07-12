@@ -5,7 +5,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { WhatsAppFloat } from "@/components/whatsapp-float"
 import { BackToTop } from "@/components/ui/back-to-top"
-import { OrganizationSchema, WebSiteSchema } from "@/components/json-ld"
+import { OrganizationSchema, WebSiteSchema, LocalBusinessSchema } from "@/components/json-ld"
 import { FaviconThemeSwitcher } from "@/components/favicon-theme-switcher"
 
 const geistSans = localFont({
@@ -101,6 +101,7 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col antialiased">
         <FaviconThemeSwitcher />
         <OrganizationSchema />
+        <LocalBusinessSchema />
         <WebSiteSchema />
         <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-accent focus:text-primary focus:rounded-lg focus:text-sm focus:font-medium focus:outline-none">
           Lewati ke konten utama

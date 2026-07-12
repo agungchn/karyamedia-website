@@ -8,6 +8,7 @@ import { Metadata } from "next"
 import { categories } from "@/data/categories"
 import { products } from "@/data/products"
 import { getWhatsAppLink, generateWhatsAppMessage } from "@/lib/utils"
+import { BreadcrumbSchema } from "@/components/json-ld"
 
 interface Props {
   params: Promise<{ category: string }>
@@ -56,6 +57,13 @@ export default async function CategoryPage({ params }: Props) {
 
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Beranda", url: "/" },
+          { name: "Katalog Produk", url: "/katalog-produk" },
+          { name: cat.name, url: `/katalog-produk/${category}` },
+        ]}
+      />
       <section className="relative overflow-hidden bg-gradient-to-br from-[#C2DAEE] via-[#A9CDE8] to-[#8BB8D6] py-8">
         <div className="absolute inset-0 opacity-30">
           <SparklesCore

@@ -33,6 +33,55 @@ export function OrganizationSchema() {
   )
 }
 
+export function LocalBusinessSchema() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: companyInfo.name,
+    url: "https://karyamediasouvenir.com",
+    image: "https://karyamediasouvenir.com/images/logo-karyamedia.png",
+    telephone: "+62-822-4358-0777",
+    email: companyInfo.email,
+    priceRange: "$$",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Jl. Menteri Supeno No. 90, Pandeyan, Umbulharjo",
+      addressLocality: "Yogyakarta",
+      addressRegion: "DI Yogyakarta",
+      postalCode: "55161",
+      addressCountry: "ID",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: -7.8262,
+      longitude: 110.3917,
+    },
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        opens: "08:00",
+        closes: "18:00",
+      },
+    ],
+    areaServed: {
+      "@type": "Country",
+      name: "Indonesia",
+    },
+    sameAs: [
+      "https://www.facebook.com/Karyamedia-Souvenir-208234135969794/",
+      "https://www.tokopedia.com/karyamediasouvenir",
+    ],
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  )
+}
+
 export function WebSiteSchema() {
   const schema = {
     "@context": "https://schema.org",

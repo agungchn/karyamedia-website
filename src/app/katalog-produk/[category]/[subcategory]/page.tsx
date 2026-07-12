@@ -6,6 +6,7 @@ import { Metadata } from "next"
 import { categories } from "@/data/categories"
 import { products } from "@/data/products"
 import { getWhatsAppLink, generateWhatsAppMessage } from "@/lib/utils"
+import { BreadcrumbSchema } from "@/components/json-ld"
 import { readdirSync } from "fs"
 import { join } from "path"
 
@@ -129,6 +130,14 @@ export default async function SubCategoryPage({ params }: Props) {
 
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Beranda", url: "/" },
+          { name: "Katalog Produk", url: "/katalog-produk" },
+          { name: cat.name, url: `/katalog-produk/${category}` },
+          { name: sub.name, url: `/katalog-produk/${category}/${subcategory}` },
+        ]}
+      />
       <section className="bg-gradient-to-br from-primary to-foreground py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="flex items-center gap-2 text-sm text-blue-200 mb-6 flex-wrap">

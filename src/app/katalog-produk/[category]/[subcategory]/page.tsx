@@ -141,13 +141,6 @@ export default async function SubCategoryPage({ params }: Props) {
             <span className="text-white">{sub.name}</span>
           </nav>
           <h1 className="heading-display text-3xl md:text-4xl text-white mb-3">{sub.name}</h1>
-          <p className="text-blue-200">Kategori: {cat.name}</p>
-          {sub.slug === "souvenir-pernikahan" && (
-            <p className="text-yellow-300 font-semibold mt-2">Harga Mulai Rp. 125.000 - Rp. 350.000</p>
-          )}
-          {sub.slug === "plakat-wisuda-akrilik" && (
-            <p className="text-yellow-300 font-semibold mt-2">Harga Mulai Rp. 25.000 - Rp. 90.000</p>
-          )}
         </div>
       </section>
 

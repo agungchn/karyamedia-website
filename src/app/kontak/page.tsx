@@ -19,7 +19,7 @@ import { SparklesCore } from "@/components/ui/sparkles-core"
 
 export const metadata: Metadata = {
   title: "Kontak Kami",
-  description: "Hubungi Karyamedia Souvenir untuk konsultasi dan pemesanan souvenir custom. WhatsApp 0822-4358-0777, email karyamedia_jogja@yahoo.com, atau kunjungi workshop di Jogja.",
+  description: "Hubungi Karyamedia Souvenir untuk konsultasi & pemesanan souvenir custom. WhatsApp 0822-4358-0777 atau kunjungi workshop kami di Jogja.",
   alternates: {
     canonical: "/kontak",
   },

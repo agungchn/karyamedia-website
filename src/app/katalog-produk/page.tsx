@@ -10,7 +10,7 @@ import { KategoriCards } from "@/components/kategori-cards"
 
 export const metadata: Metadata = {
   title: "Katalog Produk Souvenir Custom",
-  description: "Jelajahi katalog lengkap produk souvenir custom Karyamedia. Tersedia plakat, medali, piala, souvenir wisuda, gift box, aksesoris, prasasti, dan batas wilayah. Custom desain, kualitas terbaik.",
+  description: "Jelajahi katalog souvenir custom Karyamedia: plakat, medali, piala, souvenir wisuda, gift box, aksesoris, & prasasti. Custom desain, kualitas terbaik.",
   alternates: {
     canonical: "/katalog-produk",
   },

@@ -43,7 +43,7 @@ import { getWhatsAppLink, generateWhatsAppMessage } from "@/lib/utils"
 
 export const metadata: Metadata = {
   description:
-    "Produsen souvenir custom sejak 2001, melayani pembuatan plakat akrilik, plakat wayang, medali, piala, prasasti, map ijazah, samir wisuda, dan merchandise custom. Berbadan hukum, berbasis Yogyakarta, siap kirim seluruh Indonesia.",
+    "Produsen souvenir custom sejak 2001. Plakat akrilik, medali, piala, prasasti, souvenir wisuda & merchandise custom. Berbasis Yogyakarta, siap kirim seluruh Indonesia.",
   alternates: {
     canonical: "https://karyamediasouvenir.com",
   },

@@ -99,7 +99,7 @@ const productImages = [
 
 export const metadata: Metadata = {
   title: "Galeri Produk & Workshop",
-  description: "Lihat galeri proses produksi dan mesin-mesin modern Karyamedia Souvenir. Laser cutting, UV printer, 3D printer, dan mesin engraving untuk produk souvenir custom berkualitas.",
+  description: "Lihat galeri workshop & mesin modern kami: laser cutting, UV printer, 3D printer, dan engraving untuk souvenir custom berkualitas.",
   alternates: {
     canonical: "/gallery",
   },

@@ -20,13 +20,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!cat) return {}
 
   return {
-    title: `${cat.name} Custom Murah Jogja - Karyamedia Souvenir`,
+    title: `${cat.name} Custom Murah Jogja`,
     description: `Produsen ${cat.name.toLowerCase()} custom murah di Jogja. ${cat.description}. Pesan sekarang, kirim seluruh Indonesia.`,
     alternates: {
       canonical: `/katalog-produk/${category}`,
     },
     openGraph: {
-      title: `${cat.name} Custom - Karyamedia Souvenir`,
+      title: `${cat.name} Custom`,
       description: cat.description,
       url: `/katalog-produk/${category}`,
     },

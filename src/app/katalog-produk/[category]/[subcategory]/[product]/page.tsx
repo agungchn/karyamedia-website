@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const subSlug = getSubSlug(product)
   return {
-    title: `${product.name} - ${sub?.name || ""} Karyamedia Souvenir`,
+    title: `${product.name}${sub?.name ? " - " + sub.name : ""}`,
     description: `${product.shortDescription} | Bahan: ${product.material} | Ukuran: ${product.size} | ${product.price}`,
     alternates: {
       canonical: `/katalog-produk/${category}/${subSlug}/${product.slug}`,

@@ -146,7 +146,18 @@ async function main() {
 
   console.log(`Keyword: "${keyword}"  ->  slug: ${slug}  kategori: ${category}`)
   console.log("Menulis prose via LLM...")
-  const data = await generateArticle({ keyword, category })
+  let data = await generateArticle({ keyword, category })
+  for (let attempt = 1; attempt <= 2; attempt++) {
+    const plain = (data.content || "").replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim()
+    const words = plain ? plain.split(/\s+/).length : 0
+    if (words >= 600) break
+    console.log(`Konten ${words} kata (<600), perpanjang (percobaan ${attempt})...`)
+    data = await generateArticle({
+      keyword,
+      category,
+      extra: `\n\nPENTING: draf sebelumnya hanya ${words} kata. Buat ULANG artikel yang LEBIH PANJANG, minimal 800 kata, dengan lebih banyak sub-bagian <h2> dan paragraf.`,
+    })
+  }
 
   const dup = dupCheck(slug, data.title || keyword, working)
   if (dup) {

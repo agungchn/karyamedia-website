@@ -21,7 +21,7 @@ function getKey() {
   }
 }
 
-const MODEL = process.env.GEMINI_MODEL || "gemini-1.5-flash"
+const MODEL = process.env.GEMINI_MODEL || "gemini-3.5-flash"
 
 const SCHEMA = {
   type: "OBJECT",
@@ -68,7 +68,7 @@ const MOCK = {
     '<p><strong>Berapa lama pengerjaan?</strong> Waktu pengerjaan bervariasi tergantung jumlah dan kerumitan desain, namun tim selalu menginformasikan estimasi sejak awal pemesanan.</p>',
 }
 
-export async function generateArticle({ keyword, category }) {
+export async function generateArticle({ keyword, category, extra = "" }) {
   if (process.env.LLM_MOCK) return MOCK
   const key = getKey()
   if (!key || key === "PASTE_GEMINI_API_KEY_HERE") {
@@ -85,28 +85,49 @@ Buat objek JSON dengan field berikut:
 - "description": meta description, 120-160 karakter, mengandung keyword utama.
 - "tags": array 4-6 kata kunci Indonesia relevan (semua lowercase).
 - "content": artikel lengkap dalam bentuk HTML (string tunggal). Syarat content:
-  * minimal 600 kata
+  * minimal 700 kata (wajib di atas 600 agar lolos standar)
   * minimal 4 heading <h2> (pakai tag <h2>...</h2>)
   * WAJIB ada bagian <h2>FAQ</h2> di akhir dengan 3-5 pasang pertanyaan & jawaban, format <p><strong>Pertanyaan?</strong> Jawaban.</p>
   * bahasa Indonesia natural & mudah dipahami, SEO-friendly, sebutkan "Karyamedia" secara wajar 1-2 kali
   * JANGAN gunakan markdown; hanya HTML inline (<p>, <h2>, <strong>, <ul><li> bila perlu)
   * JANGAN sertakan satupun link/hyperlink (akan ditambahkan otomatis nanti)
-Return HANYA objek JSON, tanpa teks lain.`
+ Return HANYA objek JSON, tanpa teks lain.${extra}`
 
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${key}`
-  const res = await fetch(url, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      contents: [{ parts: [{ text: prompt }] }],
-      generationConfig: {
-        responseMimeType: "application/json",
-        responseSchema: SCHEMA,
-        temperature: 0.7,
-      },
-    }),
-  })
-  const j = await res.json()
+  const payload = {
+    contents: [{ parts: [{ text: prompt }] }],
+    generationConfig: {
+      responseMimeType: "application/json",
+      responseSchema: SCHEMA,
+      temperature: 0.7,
+    },
+  }
+  let j = null
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      const res = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      })
+      j = await res.json()
+      if (j.error && (j.error.code === 503 || j.error.code === 429)) {
+        const wait = 2000 * (attempt + 1)
+        console.error(`Gemini ${j.error.code} (high demand/quota), retry ${attempt + 1}/3 dalam ${wait}ms...`)
+        await new Promise((r) => setTimeout(r, wait))
+        continue
+      }
+      break
+    } catch (e) {
+      if (attempt < 2) {
+        const wait = 2000 * (attempt + 1)
+        console.error(`Gemini network error, retry ${attempt + 1}/3 dalam ${wait}ms...`)
+        await new Promise((r) => setTimeout(r, wait))
+        continue
+      }
+      throw e
+    }
+  }
   if (j.error) throw new Error("Gemini API: " + JSON.stringify(j.error))
   const text = j.candidates?.[0]?.content?.parts?.[0]?.text
   if (!text) throw new Error("Gemini tidak mengembalikan teks. " + JSON.stringify(j).slice(0, 300))

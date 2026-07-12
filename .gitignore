@@ -47,3 +47,7 @@ next-env.d.ts
 scripts/gsc/credentials.json
 gsc-credentials.json
 GSC_CREDENTIALS
+
+# PageSpeed Insights API key (never commit — local only)
+scripts/ps/apikey.txt
+PSI_API_KEY

@@ -67,9 +67,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Karyamedia Souvenir" }],
   icons: {
     icon: [
-      { url: "/favicon/favicon.svg", type: "image/svg+xml", colorScheme: "light" },
-      { url: "/favicon/favicon-dark.svg", type: "image/svg+xml", colorScheme: "dark" },
-      { url: "/favicon.ico", sizes: "48x48" },
+      { url: "/favicon/favicon.svg", type: "image/svg+xml" },
     ],
     apple: { url: "/images/logo-karyamedia.png", sizes: "180x180" },
   },

@@ -11,7 +11,7 @@ $popup = Join-Path $root "scripts\seo\popup.ps1"
 # Show a visible popup window (launched detached so it never blocks the task).
 function Show-Popup {
   param([string]$Title, [string]$Message)
-  Start-Process powershell -ArgumentList "-NoProfile","-ExecutionPolicy Bypass","-File",$popup,"-Title",$Title,"-Message",$Message -WindowStyle Normal
+  Start-Process powershell -ArgumentList "-NoProfile","-ExecutionPolicy Bypass","-File",$popup,"-Title",$Title,"-Message",$Message -WindowStyle Hidden
 }
 
 $ts = Get-Date -Format "yyyy-MM-dd HH:mm:ss"

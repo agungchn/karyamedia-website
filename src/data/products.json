@@ -16971,6 +16971,28 @@
     "custom": true
   },
   {
+    "id": "plakat-pf-undip",
+    "code": "KMS-PF-UNDIP",
+    "name": "Plakat UNDIP",
+    "slug": "plakat-undip",
+    "categoryId": "plakat",
+    "subcategoryId": "pf",
+    "description": "Plakat fiberglass custom UNDIP, ringan dan tahan lama. Cocok untuk penghargaan, kenang-kenangan, dan apresiasi institusi.",
+    "shortDescription": "Plakat fiberglass custom UNDIP",
+    "material": "Fiberglass Premium",
+    "size": "Small: 13x19cm / Medium: 16x23cm / Large: 20x30cm / Custom",
+    "color": "Full Color / Custom",
+    "usage": "Penghargaan / Kenang-kenangan / Apresiasi",
+    "minOrder": "1 pcs",
+    "productionTime": "2-10 hari kerja",
+    "price": "Harga Mulai Rp. 150.000",
+    "images": [
+      "/images/produk-unggulan/plakat-fiberglass/plakat-undip.png"
+    ],
+    "featured": true,
+    "custom": true
+  },
+  {
     "id": "piala-pg-741",
     "code": "KMS-PG-002",
     "name": "Piala Golf 2",

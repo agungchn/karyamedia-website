@@ -851,6 +851,7 @@ const featuredImageMap: Record<string, string> = {
   "plakat-fiberglass-99": "/images/produk-unggulan/plakat-fiberglass/plakat-fiberglass-99.png",
   "plakat-fiberglass-100": "/images/produk-unggulan/plakat-fiberglass/plakat-fiberglass-100.png",
   "plakat-fiberglass-101": "/images/produk-unggulan/plakat-fiberglass/plakat-fiberglass-101.png",
+  "plakat-undip": "/images/produk-unggulan/plakat-fiberglass/plakat-undip.png",
   "plakat-brastable-1": "/images/produk-unggulan/plakat-batas-wilayah/plakat-brastable/plakat-brastable (1).png",
   "plakat-brastable-2": "/images/produk-unggulan/plakat-batas-wilayah/plakat-brastable/plakat-brastable (2).png",
   "plakat-brastable-3": "/images/produk-unggulan/plakat-batas-wilayah/plakat-brastable/plakat-brastable (3).png",

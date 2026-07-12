@@ -1,7 +1,12 @@
 // Article standard linter for karyamedia-web
 // Validates src/data/articles.ts against the editorial + SEO standards.
-// Errors (exit 1) block commits via the git pre-commit hook.
-// Warnings are reported but do not block.
+// ALL rules are MANDATORY: any violation exits 1 and blocks the commit
+// via the git pre-commit hook.
+//
+// Usage:
+//   node scripts/seo/article-lint.mjs                 # lint ALL articles
+//   ARTICLE_LINT_SLUGS=a,b,c node .../article-lint.mjs # lint only given slugs
+// (the git pre-commit hook calls it with changed/new slugs)
 
 import { readFileSync, existsSync } from "node:fs"
 import { fileURLToPath } from "node:url"
@@ -13,141 +18,147 @@ const categoriesPath = join(root, "src/data/categories.ts")
 const pagePath = join(root, "src/app/blog/[slug]/page.tsx")
 const publicDir = join(root, "public")
 
-const text = readFileSync(articlesPath, "utf8")
-const catText = readFileSync(categoriesPath, "utf8")
-const pageText = readFileSync(pagePath, "utf8")
-
-// --- taxonomy from categories.ts ---
-const topSlugs = new Set(
-  [...catText.matchAll(/slug:\s*"([^"]+)"\s*,\s*icon:\s*"[^"]*",\s*description:\s*"[^"]*",\s*subcategories:/g)].map((m) => m[1]),
-)
-const allCatSlugs = [...catText.matchAll(/slug:\s*"([^"]+)"/g)].map((m) => m[1])
-const subSlugs = new Set(allCatSlugs.filter((s) => !topSlugs.has(s)))
-
-// allowed article category vocabulary (categorySlugMap keys + legacy "Blog"/"Souvenir")
-const mapKeys = [...pageText.matchAll(/"([^"]+)":\s*"(?:plakat|medali|piala-trophy|gift-box|accessories|prasasti|souvenir-wisuda|batas-wilayah)"/g)].map((m) => m[1])
-const allowedCategories = new Set([...mapKeys, "Blog", "Souvenir"])
-
-// --- split articles by slug position ---
-const slugRe = /slug:\s*"([^"]+)"/g
-const positions = []
-let m
-while ((m = slugRe.exec(text))) positions.push({ slug: m[1], idx: m.index })
-if (positions.length === 0) {
-  console.error("No articles found in", articlesPath)
-  process.exit(1)
-}
-const allSlugsSet = new Set(positions.map((p) => p.slug))
-// optional filter: only lint specific slugs (used by the git pre-commit hook)
-const onlySlugs = process.env.ARTICLE_LINT_SLUGS ? new Set(process.env.ARTICLE_LINT_SLUGS.split(",")) : null
-
-const field = (chunk, name) => {
-  const mm = chunk.match(new RegExp(name + ':\\s*"([^"]*)"'))
-  return mm ? mm[1] : null
+// ---------------------------------------------------------------- parser
+// Split the articles source into per-article blocks keyed by slug.
+export function extractArticles(text) {
+  const slugRe = /slug:\s*"([^"]+)"/g
+  const positions = []
+  let m
+  while ((m = slugRe.exec(text))) positions.push({ slug: m[1], idx: m.index })
+  const arts = []
+  for (let i = 0; i < positions.length; i++) {
+    const start = positions[i].idx
+    const end = positions[i + 1] ? positions[i + 1].idx : text.length
+    arts.push({ slug: positions[i].slug, block: text.slice(start, end) })
+  }
+  return arts
 }
 
-const errors = []
-const warnings = []
-const slugCounts = {}
+// ---------------------------------------------------------------- linter
+export function lintText(text, { onlySlugs = null } = {}) {
+  const catText = readFileSync(categoriesPath, "utf8")
+  const pageText = readFileSync(pagePath, "utf8")
 
-for (let i = 0; i < positions.length; i++) {
-  const slug = positions[i].slug
-  slugCounts[slug] = (slugCounts[slug] || 0) + 1
-  if (onlySlugs && !onlySlugs.has(slug)) continue
-  const chunk = text.slice(positions[i].idx, positions[i + 1] ? positions[i + 1].idx : text.length)
-  const at = `blog/${slug}`
+  const topSlugs = new Set(
+    [...catText.matchAll(/slug:\s*"([^"]+)"\s*,\s*icon:\s*"[^"]*",\s*description:\s*"[^"]*",\s*subcategories:/g)].map((mm) => mm[1]),
+  )
+  const allCatSlugs = [...catText.matchAll(/slug:\s*"([^"]+)"/g)].map((mm) => mm[1])
+  const subSlugs = new Set(allCatSlugs.filter((s) => !topSlugs.has(s)))
 
-  const title = field(chunk, "title")
-  const description = field(chunk, "description")
-  const category = field(chunk, "category")
-  const date = field(chunk, "date")
-  const image = field(chunk, "image")
-  const tagsM = chunk.match(/tags:\s*\[([\s\S]*?)\]/)
-  const tags = tagsM ? [...tagsM[1].matchAll(/"([^"]+)"/g)].map((x) => x[1]) : []
-  const cM = chunk.match(/content:\s*`([\s\S]*?)`/)
-  const content = cM ? cM[1] : ""
+  const mapKeys = [...pageText.matchAll(/"([^"]+)":\s*"(?:plakat|medali|piala-trophy|gift-box|accessories|prasasti|souvenir-wisuda|batas-wilayah)"/g)].map((mm) => mm[1])
+  const allowedCategories = new Set([...mapKeys, "Blog", "Souvenir"])
 
-  // required fields
-  for (const [k, v] of [["title", title], ["description", description], ["category", category], ["date", date], ["image", image], ["content", content], ["tags", tags.length ? "x" : null]]) {
-    if (v === null || v === "") errors.push(`${at}: field "${k}" wajib diisi`)
+  const arts = extractArticles(text)
+  const allSlugsSet = new Set(arts.map((a) => a.slug))
+  const only = onlySlugs ? new Set(onlySlugs) : null
+
+  const errors = []
+  const warnings = []
+  const slugCounts = {}
+  const field = (chunk, name) => {
+    const mm = chunk.match(new RegExp(name + ':\\s*"([^"]*)"'))
+    return mm ? mm[1] : null
   }
 
-  // category vocabulary
-  if (category && !allowedCategories.has(category))
-    errors.push(`${at}: category "${category}" tidak dikenali (harus salah satu: ${[...allowedCategories].join(", ")})`)
+  for (const { slug, block } of arts) {
+    slugCounts[slug] = (slugCounts[slug] || 0) + 1
+    if (only && !only.has(slug)) continue
+    const at = `blog/${slug}`
 
-  // date format
-  if (date && !/^\d{4}-\d{2}-\d{2}$/.test(date))
-    warnings.push(`${at}: date harus format YYYY-MM-DD`)
+    const title = field(block, "title")
+    const description = field(block, "description")
+    const category = field(block, "category")
+    const date = field(block, "date")
+    const image = field(block, "image")
+    const tagsM = block.match(/tags:\s*\[([\s\S]*?)\]/)
+    const tags = tagsM ? [...tagsM[1].matchAll(/"([^"]+)"/g)].map((x) => x[1]) : []
+    const cM = block.match(/content:\s*`([\s\S]*?)`/)
+    const content = cM ? cM[1] : ""
 
-  // meta description length (template: 155-160)
-  if (description) {
-    if (description.length > 170) errors.push(`${at}: description ${description.length} karakter (>170, batas aman 160)`)
-    else if (description.length < 120) warnings.push(`${at}: description ${description.length} karakter (<120, ideal 155-160)`)
-  }
-
-  // title length (template: max 60)
-  if (title && title.length > 60) errors.push(`${at}: title ${title.length} karakter (>60, maksimal 60)`)
-
-  // image exists
-  if (image) {
-    const fp = join(publicDir, image)
-    if (!existsSync(fp)) errors.push(`${at}: gambar tidak ditemukan: ${image}`)
-  }
-
-  // tags count (template: 4-6)
-  if (tags.length && (tags.length < 4 || tags.length > 6))
-    warnings.push(`${at}: tags ${tags.length} (ideal 4-6)`)
-
-  // content checks
-  if (content) {
-    const plain = content.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim()
-    const words = plain ? plain.split(" ").length : 0
-    if (words < 400) warnings.push(`${at}: konten ${words} kata (<400, ideal 400-1000)`)
-    else if (words > 1000) warnings.push(`${at}: konten ${words} kata (>1000)`)
-
-    const h2 = (content.match(/<h2/g) || []).length
-    if (h2 < 2) warnings.push(`${at}: hanya ${h2} <h2> (butuh >=2 untuk struktur + daftar isi)`)
-    if (!/<h2[^>]*>\s*FAQ\s*<\/h2>/i.test(content)) warnings.push(`${at}: tidak ada bagian FAQ (<h2>FAQ</h2>)`)
-
-    // internal links
-    const hrefs = [...content.matchAll(/href="([^"]+)"/g)].map((x) => x[1])
-    let internal = 0
-    for (const href of hrefs) {
-      if (href.startsWith("/blog/")) {
-        const s = href.replace(/^\/blog\//, "")
-        if (!allSlugsSet.has(s) && s !== slug) errors.push(`${at}: link blog rusak ke "${href}" (slug tidak ada)`)
-        else internal++
-      } else if (href.startsWith("/katalog-produk/")) {
-        const parts = href.split("/").filter(Boolean) // ["katalog-produk", a, b?]
-        if (parts.length === 2) {
-          if (!topSlugs.has(parts[1])) errors.push(`${at}: link katalog rusak ke "${href}" (bukan kategori)`)
-        } else if (parts.length === 3) {
-          if (!topSlugs.has(parts[1])) errors.push(`${at}: link katalog rusak ke "${href}" (bukan kategori)`)
-          else if (!subSlugs.has(parts[2])) errors.push(`${at}: link katalog rusak ke "${href}" (subkategori tidak ada)`)
-        } else {
-          errors.push(`${at}: link katalog rusak ke "${href}" (format salah, harus /katalog-produk/{kategori}/{sub})`)
-        }
-        internal++
-      } else if (href.startsWith("http") || href.startsWith("#")) {
-        // external / anchor: ignore
-      } else {
-        warnings.push(`${at}: link internal aneh: "${href}"`)
-      }
+    for (const [k, v] of [
+      ["title", title], ["description", description], ["category", category],
+      ["date", date], ["image", image], ["content", content],
+      ["tags", tags.length ? "x" : null],
+    ]) {
+      if (v === null || v === "") errors.push(`${at}: field "${k}" wajib diisi`)
     }
-    if (internal === 0) warnings.push(`${at}: tidak ada link internal (butuh >=1 untuk cluster/pilar)`)
+
+    if (category && !allowedCategories.has(category))
+      errors.push(`${at}: category "${category}" tidak dikenali (harus salah satu: ${[...allowedCategories].join(", ")})`)
+
+    if (date && !/^\d{4}-\d{2}-\d{2}$/.test(date))
+      errors.push(`${at}: date harus format YYYY-MM-DD`)
+
+    if (description) {
+      if (description.length > 160) errors.push(`${at}: description ${description.length} karakter (>160, maksimal 160)`)
+      else if (description.length < 120) errors.push(`${at}: description ${description.length} karakter (<120, ideal 155-160)`)
+    }
+
+    if (title && title.length > 60) errors.push(`${at}: title ${title.length} karakter (>60, maksimal 60)`)
+
+    if (image) {
+      const fp = join(publicDir, image)
+      if (!existsSync(fp)) errors.push(`${at}: gambar tidak ditemukan: ${image}`)
+    }
+
+    if (tags.length && (tags.length < 4 || tags.length > 6))
+      errors.push(`${at}: tags ${tags.length} (wajib 4-6)`)
+
+    if (content) {
+      const plain = content.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim()
+      const words = plain ? plain.split(" ").length : 0
+      if (words < 600) errors.push(`${at}: konten ${words} kata (<600, minimal wajib 600)`)
+      else if (words > 1500) warnings.push(`${at}: konten ${words} kata (>1500, hindari filler)`)
+
+      const h2 = (content.match(/<h2/g) || []).length
+      if (h2 < 2) errors.push(`${at}: hanya ${h2} <h2> (wajib >=2)`)
+      if (!/<h2[^>]*>\s*FAQ\s*<\/h2>/i.test(content)) errors.push(`${at}: wajib ada bagian FAQ (<h2>FAQ</h2>)`)
+
+      const hrefs = [...content.matchAll(/href="([^"]+)"/g)].map((x) => x[1])
+      let internal = 0
+      for (const href of hrefs) {
+        if (href.startsWith("/blog/")) {
+          const s = href.replace(/^\/blog\//, "")
+          if (!allSlugsSet.has(s) && s !== slug) errors.push(`${at}: link blog rusak ke "${href}" (slug tidak ada)`)
+          else internal++
+        } else if (href.startsWith("/katalog-produk/")) {
+          const parts = href.split("/").filter(Boolean)
+          if (parts.length === 2) {
+            if (!topSlugs.has(parts[1])) errors.push(`${at}: link katalog rusak ke "${href}" (bukan kategori)`)
+          } else if (parts.length === 3) {
+            if (!topSlugs.has(parts[1])) errors.push(`${at}: link katalog rusak ke "${href}" (bukan kategori)`)
+            else if (!subSlugs.has(parts[2])) errors.push(`${at}: link katalog rusak ke "${href}" (subkategori tidak ada)`)
+          } else {
+            errors.push(`${at}: link katalog rusak ke "${href}" (format salah, harus /katalog-produk/{kategori}/{sub})`)
+          }
+          internal++
+        } else if (href.startsWith("http") || href.startsWith("#")) {
+          // external / anchor: ignore
+        } else {
+          warnings.push(`${at}: link internal aneh: "${href}"`)
+        }
+      }
+      if (internal === 0) errors.push(`${at}: wajib ada >=1 link internal (cluster/pilar)`)
+    }
   }
+
+  for (const [s, c] of Object.entries(slugCounts)) {
+    if (c > 1) errors.push(`DUPLICATE slug "${s}" ditemukan ${c}x — slug harus unik`)
+  }
+
+  return { errors, warnings, count: arts.length }
 }
 
-// duplicate slugs
-for (const [s, c] of Object.entries(slugCounts)) {
-  if (c > 1) errors.push(`DUPLICATE slug "${s}" ditemukan ${c}x — slug harus unik`)
+// ---------------------------------------------------------------- main
+const isMain = process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]
+if (isMain) {
+  const text = readFileSync(articlesPath, "utf8")
+  const only = process.env.ARTICLE_LINT_SLUGS ? process.env.ARTICLE_LINT_SLUGS.split(",") : null
+  const { errors, warnings, count } = lintText(text, { onlySlugs: only })
+  console.log(`\nArtikel diperiksa: ${count}`)
+  console.log(`ERROR  : ${errors.length}`)
+  console.log(`WARNING: ${warnings.length}\n`)
+  for (const e of errors) console.log("  ✗ " + e)
+  for (const w of warnings) console.log("  ! " + w)
+  process.exit(errors.length ? 1 : 0)
 }
-
-console.log(`\nArtikel diperiksa: ${positions.length}`)
-console.log(`ERROR  : ${errors.length}`)
-console.log(`WARNING: ${warnings.length}\n`)
-for (const e of errors) console.log("  ✗ " + e)
-for (const w of warnings) console.log("  ! " + w)
-
-process.exit(errors.length ? 1 : 0)

@@ -1,11 +1,17 @@
 #!/bin/sh
 # Karyamedia article standard gate
-# Blocks commit if any NEW/changed article in src/data/articles.ts
+# Blocks commit if any NEW or MODIFIED article in src/data/articles.ts
 # violates the article standard (see scripts/seo/article-lint.mjs).
+# Set SKIP_ARTICLE_LINT=1 to bypass in emergencies (use with care).
 
-changed=$(git diff --cached -- src/data/articles.ts | grep -E '^\+.*slug:' | grep -oE '"[^"]+"' | tr -d '"' | sort -u)
+if [ -n "$SKIP_ARTICLE_LINT" ]; then
+  echo "SKIP_ARTICLE_LINT set — melewati validasi artikel."
+  exit 0
+fi
+
+changed=$(node scripts/seo/article-changed.mjs)
 if [ -n "$changed" ]; then
-  echo "Memvalidasi artikel baru/berubah terhadap standart..."
+  echo "Memvalidasi artikel baru/berubah terhadap standart: $changed"
   ARTICLE_LINT_SLUGS="$changed" node scripts/seo/article-lint.mjs
   rc=$?
   if [ $rc -ne 0 ]; then

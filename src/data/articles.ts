@@ -50,7 +50,7 @@ export const articles: Article[] = [
     description: "Panduan lengkap souvenir custom untuk acara sekolah, kampus, perusahaan, dan event. Simak jenis souvenir custom seperti medali, plakat, piala, souvenir wisuda, prasasti, dan gift box.",
     category: "Blog",
     date: "2026-07-12",
-    image: "/images/produk-unggulan/hasil-produksi/plakat/plakat-hasil-produksi (1).png",
+    image: "/images/hasil-produksi/plakat/plakat-hasil-produksi (1).png",
     tags: ["souvenir custom", "souvenir", "souvenir murah", "souvenir jogja", "souvenir untuk acara", "souvenir perusahaan", "souvenir sekolah"],
     content: `
 <p>Menyelenggarakan sebuah acara, baik itu lomba sekolah, wisuda kampus, turnamen olahraga, atau event perusahaan, pasti membutuhkan souvenir atau penghargaan sebagai kenang-kenangan bagi peserta maupun pemenang. Memilih souvenir custom yang tepat tidak hanya soal harga, tetapi juga kualitas, desain, dan kesesuaian dengan tema acara.</p>
@@ -73,7 +73,7 @@ export const articles: Article[] = [
 
 <h2>Plakat Akrilik — Penghargaan Elegan dan Modern</h2>
 
-<img src="/images/produk-unggulan/hasil-produksi/plakat/plakat-hasil-produksi (2).png" alt="Plakat akrilik custom untuk penghargaan" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/hasil-produksi/plakat/plakat-hasil-produksi (2).png" alt="Plakat akrilik custom untuk penghargaan" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <p>Plakat akrilik adalah pilihan penghargaan yang elegan dengan tampilan modern dan profesional. Dibuat dari bahan akrilik bening atau berwarna dengan teknik cetak UV atau ukir laser. Plakat akrilik cocok untuk penghargaan karyawan, seminar, wisuda, dan acara formal lainnya.</p>
 
@@ -91,7 +91,7 @@ export const articles: Article[] = [
 
 <h2>Souvenir Wisuda — Kenang-Kenangan Kelulusan</h2>
 
-<img src="/images/produk-unggulan/hasil-produksi/souvenir-wisuda/patung-wisuda (1).png" alt="Souvenir wisuda custom untuk kelulusan" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/hasil-produksi/souvenir-wisuda/patung-wisuda (1).png" alt="Souvenir wisuda custom untuk kelulusan" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <p>Wisuda adalah momen penting dalam hidup setiap mahasiswa. Souvenir wisuda custom menjadi kenang-kenangan yang akan selalu diingat. Tersedia berbagai jenis souvenir wisuda: samir wisuda, map ijazah, patung wisuda, kalung rektor, tongkat rektor, baju toga, dan tabung wisuda.</p>
 
@@ -315,7 +315,7 @@ export const articles: Article[] = [
     description: "Panduan lengkap plakat custom untuk penghargaan, seminar, wisuda, peresmian, dan event. Simak jenis plakat akrilik, fiberglass, kayu, marmer, wayang, kuningan, dan estimasi harganya.",
     category: "Plakat",
     date: "2026-07-12",
-    image: "/images/produk-unggulan/hasil-produksi/plakat/plakat-hasil-produksi (10).png",
+    image: "/images/hasil-produksi/plakat/plakat-hasil-produksi (10).png",
     tags: ["plakat custom", "plakat", "plakat akrilik", "plakat penghargaan", "plakat fiberglass", "plakat kayu", "plakat marmer"],
     content: `
 <p>Plakat adalah salah satu bentuk penghargaan paling populer di Indonesia. Dari acara penghargaan karyawan, seminar, wisuda, peresmian gedung, hingga cinderamata kunjungan, plakat selalu menjadi pilihan utama karena tampilannya yang elegan dan fleksibilitas desainnya. Tidak seperti medali yang terbatas pada bentuk lingkaran, plakat bisa dibuat dalam berbagai bentuk, ukuran, dan bahan sesuai kebutuhan.</p>
@@ -326,7 +326,7 @@ export const articles: Article[] = [
 
 <h2>Jenis Plakat Custom Berdasarkan Bahan</h2>
 
-<img src="/images/produk-unggulan/hasil-produksi/plakat/plakat-hasil-produksi (2).png" alt="Plakat akrilik custom berbagai bentuk" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/hasil-produksi/plakat/plakat-hasil-produksi (2).png" alt="Plakat akrilik custom berbagai bentuk" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <p>Pemilihan bahan adalah faktor utama yang menentukan tampilan, daya tahan, dan <strong>harga plakat custom</strong>. Berikut adalah jenis-jenis plakat yang tersedia di Karyamedia Souvenir:</p>
 
@@ -343,7 +343,7 @@ export const articles: Article[] = [
 <p>Plakat marmer adalah pilihan paling premium dan megah. Menggunakan bahan marmer asli dengan tekstur alami yang unik. Cocok untuk peresmian gedung, penghargaan institusi bergengsi, atau prasasti. Teknik pembuatan menggunakan ukir atau sandblast untuk menghasilkan tulisan dan logo yang presisi. Harga mulai Rp150.000 hingga Rp500.000 per pcs. Baca juga artikel <a href="/blog/plakat-marmer-custom-untuk-penghargaan-dan-peresmian">Plakat Marmer Custom untuk Penghargaan dan Peresmian</a>.</p>
 
 <h3>Plakat Wayang</h3>
-<img src="/images/produk-unggulan/hasil-produksi/plakat-wayang/plakat-wayang-1.png" alt="Plakat wayang custom khas Indonesia" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/hasil-produksi/plakat-wayang/plakat-wayang-1.png" alt="Plakat wayang custom khas Indonesia" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <p>Plakat wayang adalah plakat khas Indonesia yang menggabungkan seni wayang dengan fungsi penghargaan. Wayang dari bahan fiberglass atau resin ditempelkan pada alas kayu atau akrilik. Sangat cocok untuk cinderamata kunjungan instansi pemerintah, penghargaan budaya, atau souvenir khas Yogyakarta. Setiap wayang memiliki makna filosofis yang mendalam. Harga mulai Rp50.000 hingga Rp200.000 per pcs. Baca juga artikel <a href="/blog/plakat-wayang-custom-untuk-penghargaan-instansi">Plakat Wayang Custom untuk Penghargaan Instansi</a>.</p>
 
@@ -572,7 +572,7 @@ export const articles: Article[] = [
     description: "Panduan lengkap souvenir wisuda custom: samir, map ijazah, patung wisuda, kalung rektor, tongkat rektor, toga, dan tabung wisuda. Simak jenis, harga, tips memilih, dan pemesanan.",
     category: "Souvenir Wisuda",
     date: "2026-07-12",
-    image: "/images/produk-unggulan/hasil-produksi/souvenir-wisuda/patung-wisuda (1).png",
+    image: "/images/hasil-produksi/souvenir-wisuda/patung-wisuda (1).png",
     tags: ["souvenir wisuda", "souvenir wisuda custom", "samir wisuda", "patung wisuda", "map ijazah", "perlengkapan wisuda", "wisuda"],
     content: `
 <p>Wisuda adalah puncak dari perjalanan akademik yang penuh perjuangan. Momen kelulusan menjadi salah satu hari paling berkesan dalam hidup, tidak hanya bagi wisudawan tetapi juga bagi keluarga, dosen, dan institusi pendidikan. Souvenir wisuda custom menjadi bagian tak terpisahkan dari kesuksesan acara wisuda, baik sebagai atribut resmi yang dikenakan saat prosesi, maupun sebagai kenang-kenangan yang akan dijaga selama bertahun-tahun.</p>
@@ -583,7 +583,7 @@ export const articles: Article[] = [
 
 <h2>Jenis Souvenir Wisuda Custom</h2>
 
-<img src="/images/produk-unggulan/hasil-produksi/souvenir-wisuda/patung-wisuda (2).png" alt="Patung wisuda custom fiberglass" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/hasil-produksi/souvenir-wisuda/patung-wisuda (2).png" alt="Patung wisuda custom fiberglass" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <p>Terdapat berbagai jenis souvenir wisuda yang bisa dipesan secara custom sesuai kebutuhan institusi. Berikut adalah jenis-jenis utama yang tersedia di Karyamedia Souvenir:</p>
 
@@ -11290,7 +11290,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
     description: "Panduan memilih toga wisuda custom untuk upacara kelulusan SD, SMP, SMA, dan universitas. Simak jenis bahan, ukuran, estimasi harga, dan tips pemesanan toga.",
     category: "Souvenir Wisuda",
     date: "2026-07-12",
-    image: "/images/produk-unggulan/hasil-produksi/souvenir-wisuda/patung-wisuda (10).png",
+    image: "/images/hasil-produksi/souvenir-wisuda/patung-wisuda (10).png",
     tags: ["toga wisuda", "toga wisuda custom", "toga kelulusan", "toga sd", "toga smp", "toga sma", "toga universitas", "sewa toga", "jual toga wisuda"],
     content: `
 <p>Toga wisuda adalah simbol kelulusan yang paling ikonik. Penggunaan toga dalam upacara wisuda telah menjadi tradisi di hampir semua institusi pendidikan di Indonesia, mulai dari TK/PAUD, SD, SMP, SMA, hingga perguruan tinggi. Momen ketika toga dipindahkan dari kiri ke kanan adalah puncak dari seluruh perjalanan akademik yang mengharukan.</p>
@@ -11333,7 +11333,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
     description: "Cari bingkai ijazah dan foto wisuda custom untuk kenang-kenangan kelulusan. Simak jenis bahan, desain, estimasi harga bingkai premium, dan cara pemesanan.",
     category: "Souvenir Wisuda",
     date: "2026-07-12",
-    image: "/images/produk-unggulan/hasil-produksi/souvenir-wisuda/patung-wisuda (2).png",
+    image: "/images/hasil-produksi/souvenir-wisuda/patung-wisuda (2).png",
     tags: ["bingkai ijazah", "bingkai foto wisuda", "bingkai ijazah custom", "bingkai wisuda", "pigura ijazah", "bingkai kelulusan", "souvenir wisuda bingkai"],
     content: `
 <p>Ijazah adalah dokumen berharga yang menandai selesainya suatu jenjang pendidikan. Setelah wisuda, ijazah biasanya akan disimpan atau dipajang di dinding sebagai kenang-kenangan. Agar ijazah tetap terawat dan terlihat rapi saat dipajang, bingkai ijazah berkualitas menjadi kebutuhan penting. Selain ijazah, foto wisuda juga layak dibingkai untuk melengkapi koleksi kenang-kenangan kelulusan.</p>

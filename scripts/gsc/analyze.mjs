@@ -5,8 +5,6 @@
 import crypto from "crypto";
 import fs from "fs";
 
-const SITE = process.env.SITE_URL || "https://karyamediasouvenir.com";
-
 function getCredentials() {
   if (process.env.GSC_CREDENTIALS) return JSON.parse(process.env.GSC_CREDENTIALS);
   return JSON.parse(
@@ -44,10 +42,10 @@ async function getAccessToken(creds) {
   return data.access_token;
 }
 
-async function gsc(token, path, body) {
-  const url = `https://searchconsole.googleapis.com/webmasters/v3/sites/${encodeURIComponent(
-    SITE
-  )}${path}`;
+const API = "https://searchconsole.googleapis.com/webmasters/v3";
+
+async function api(token, path, body) {
+  const url = `${API}${path}`;
   const res = await fetch(url, {
     method: body ? "POST" : "GET",
     headers: {
@@ -68,23 +66,38 @@ async function main() {
   console.log(`Authenticating as ${creds.client_email} ...`);
   const token = await getAccessToken(creds);
 
-  // 1. Confirm site access
-  const sites = await gsc(token, "");
+  // 1. Discover which site(s) this account can access
+  const sitesRes = await api(token, "/sites");
+  const sites = sitesRes.siteEntry || [];
   console.log("\n=== SITES YOU HAVE ACCESS TO ===");
-  console.log(JSON.stringify(sites.siteEntry?.map((s) => s.siteUrl) || sites, null, 2));
+  sites.forEach((s) => console.log("  " + s.siteUrl));
+
+  // pick target: env SITE_URL, else first matching karyamediasouvenir, else first
+  const target =
+    process.env.SITE_URL ||
+    sites.find((s) => s.siteUrl.includes("karyamediasouvenir"))?.siteUrl ||
+    sites[0]?.siteUrl;
+
+  if (!target) {
+    console.log("\nNo Search Console property found for this account.");
+    return;
+  }
+  console.log(`\n>>> Using site: ${target}\n`);
+  const enc = encodeURIComponent(target);
 
   // 2. Sitemap status
-  const sm = await gsc(token, "/sitemaps");
-  console.log("\n=== SITEMAP STATUS ===");
+  const sm = await api(token, `/sites/${enc}/sitemaps`);
+  console.log("=== SITEMAP STATUS ===");
   console.log(JSON.stringify(sm.sitemap || sm, null, 2));
 
-  // 3. Search performance (last 28 days)
+  // 3. Search performance (last 28 days) — queries
   const end = new Date();
   const start = new Date();
   start.setDate(start.getDate() - 28);
-  const report = await gsc(token, "/searchAnalytics/query", {
-    startDate: fmtDate(start),
-    endDate: fmtDate(end),
+  const range = { startDate: fmtDate(start), endDate: fmtDate(end) };
+
+  const report = await api(token, `/sites/${enc}/searchAnalytics/query`, {
+    ...range,
     dimensions: ["query"],
     rowLimit: 15,
   });
@@ -101,9 +114,8 @@ async function main() {
   }
 
   // 4. Top pages
-  const pages = await gsc(token, "/searchAnalytics/query", {
-    startDate: fmtDate(start),
-    endDate: fmtDate(end),
+  const pages = await api(token, `/sites/${enc}/searchAnalytics/query`, {
+    ...range,
     dimensions: ["page"],
     rowLimit: 15,
   });

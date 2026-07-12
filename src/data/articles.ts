@@ -12523,4 +12523,171 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
 <p>Kami menerima file desain dalam format AI, CDR, PDF, PNG, JPG, dan EPS. Untuk hasil terbaik, sarankan file vektor (AI/CDR) karena tidak pecah saat diperbesar. Jika hanya punya file JPG/PNG, pastikan resolusi minimal 300 DPI pada ukuran cetak. Tim desain kami siap membantu mengonversi dan menyempurnakan file desain Anda.</p>
     `.trim(),
   },
+  {
+    slug: "panduan-memilih-piala-trophy",
+    title: "Panduan Memilih Piala & Trophy Custom untuk Event dan Penghargaan",
+    description: "Cara memilih piala trophy custom untuk lomba, event perusahaan, dan penghargaan. Bahasa, bahan, dan tips pesan di Karyamedia Jogja.",
+    category: "Blog",
+    date: "2026-07-12",
+    image: "/images/hasil-produksi/plakat/plakat-hasil-produksi (1).png",
+    tags: ["piala trophy", "piala custom", "trophy custom", "piala golf", "piala futsal", "piala basket"],
+    content: `<p>Piala trophy bukan sekadar benda hias, melainkan simbol apresiasi yang diingat seumur hidup. Baik untuk kompetisi olahraga, ajang internal kantor, maupun penghargaan tahunan, memilih piala yang tepat membuat momen semakin berkesan.</p>
+<h2>1. Tentukan Jenis Piala</h2>
+<p>Piala umumnya dibagi menjadi piala klasik (logam dengan dasar kayu atau marmer), piala akrilik (transparan, modern), dan piala resin/fiberglass (bisa dibentuk bebas). Pilihlah yang sesuai dengan citra acara Anda.</p>
+<h2>2. Perhatikan Bahan & Finishing</h2>
+<p>Logam (nickel/kuningan emas) untuk kesan prestisius, akrilik untuk tampilan minimalis, dan marmer atau kayu sebagai pijakan solid. Finishing mengkilap memberikan kesan premium, sementara matte lebih modern.</p>
+<h2>3. Ukiran & Personalisasi</h2>
+<p>Tambahkan nama penerima, nama event, tahun, dan logo instansi melalui engraving laser. Personalisasi inilah yang membuat piala terasa eksklusif dan tak tergantikan.</p>
+<h2>4. Sesuaikan Budget & Jumlah</h2>
+<p>Untuk event besar, pesan piala dalam jumlah banyak agar biaya per unit lebih efisien. Karyamedia melayani pembuatan piala custom mulai satuan hingga ratusan pcs.</p>
+<h2>5. Pesan Lebih Awal</h2>
+<p>Produksi piala custom butuh waktu pengerjaan. Pesan minimal 1–2 minggu sebelum hari H agar tak terburu-buru.</p>
+<p>Ingin piala trophy custom berkualitas? Lihat koleksi <a href="/katalog-produk/piala-trophy">katalog piala &amp; trophy</a> atau baca juga <a href="/blog/jenis-plakat-custom">panduan memilih plakat custom</a> dan <a href="/blog/medali-custom">panduan medali custom</a>.</p>`,
+  },
+  {
+    slug: "jenis-plakat-custom",
+    title: "Plakat Custom: Jenis Bahan & Tips Memilih Plakat Terbaik",
+    description: "Kenali jenis plakat custom — akrilik, kayu, wayang, kristal — dan tips memilih plakat penghargaan terbaik untuk kantor, sekolah, dan instansi.",
+    category: "Blog",
+    date: "2026-07-12",
+    image: "/images/hasil-produksi/plakat/plakat-hasil-produksi (2).png",
+    tags: ["plakat custom", "plakat akrilik", "plakat kayu", "plakat wayang", "plakat kristal", "plakat penghargaan"],
+    content: `<p>Plakat adalah bentuk apresiasi paling umum di Indonesia, dari penghargaan karyawan hingga peresmian gedung. Memahami jenis bahannya membantu memilih plakat yang tepat dan sesuai budget.</p>
+<h2>1. Plakat Akrilik</h2>
+<p>Transparan, ringan, dan modern. Cocok untuk penghargaan era kini dengan desain minimalis. Baca <a href="/blog/plakat-akrilik-custom">panduan plakat akrilik custom</a>.</p>
+<h2>2. Plakat Kayu</h2>
+<p>Kesan hangat dan natural, sering dipakai untuk penghargaan bergaya klasik atau komunitas.</p>
+<h2>3. Plakat Wayang & Ukir</h2>
+<p>Khas Indonesia dan sangat artistik, memberikan nilai seni tinggi. Cocok untuk instansi pemerintah atau budaya.</p>
+<h2>4. Plakat Kristal / Kaca</h2>
+<p>Elegan dan mewah, sering untuk penghargaan level eksekutif.</p>
+<h2>Tips Memilih</h2>
+<p>Tujuan penghargaan menentukan bahan; pastikan teks nama dan tanggal mudah dibaca melalui engraving laser, serta logo instansi terlihat jelas.</p>
+<p>Karyamedia melayani <a href="/katalog-produk/plakat">plakat custom</a> dalam berbagai bahan dengan desain bebas. Lihat juga <a href="/blog/panduan-memilih-piala-trophy">panduan piala trophy</a>.</p>`,
+  },
+  {
+    slug: "name-tag-custom",
+    title: "Name Tag Custom untuk Event, Kantor, & Wedding — Panduan Lengkap",
+    description: "Ide name tag custom untuk seminar, kantor, dan pernikahan. Pilih bahan, desain, dan cara pesan name tag berkualitas di Karyamedia.",
+    category: "Blog",
+    date: "2026-07-12",
+    image: "/images/hasil-produksi/plakat/plakat-hasil-produksi (3).png",
+    tags: ["name tag custom", "name tag akrilik", "name tag kantor", "name tag wedding", "tanda pengenal"],
+    content: `<p>Name tag sering dianggap sepele, padahal berperan penting untuk profesionalisme dan kenyamanan tamu. Berikut panduan memilih name tag custom.</p>
+<h2>1. Fungsi Name Tag</h2>
+<p>Identitas peserta seminar atau workshop, akses masuk kantor, serta souvenir pernikahan yang fungsional.</p>
+<h2>2. Pilihan Bahan</h2>
+<p>Akrilik elegan dan awet, kayu natural untuk wedding, logam premium untuk eksekutif, dan PVC/cetak ekonomis untuk event besar.</p>
+<h2>3. Desain yang Efektif</h2>
+<p>Gunakan font mudah dibaca, sertakan logo, dan warna brand. Untuk wedding, tambahkan nama mempelai dan tanggal.</p>
+<h2>4. Aksesoris</h2>
+<p>Klips, pin, atau tali lanyard memudahkan pemakaian. Pilih sesuai suasana acara.</p>
+<p>Butuh name tag custom banyak atau satuan? Lihat <a href="/katalog-produk/name-tag">katalog name tag</a> atau baca <a href="/blog/gantungan-kunci-custom">ide gantungan kunci custom</a> sebagai souvenir pelengkap.</p>`,
+  },
+  {
+    slug: "gantungan-kunci-custom",
+    title: "Gantungan Kunci Custom: Ide Souvenir Murah & Berkualitas",
+    description: "Ide gantungan kunci custom sebagai souvenir murah namun berkualitas untuk event, wedding, dan promosi usaha. Pesan di Karyamedia Jogja.",
+    category: "Blog",
+    date: "2026-07-12",
+    image: "/images/hasil-produksi/souvenir-wisuda/patung-wisuda (1).png",
+    tags: ["gantungan kunci custom", "keychain custom", "souvenir murah", "souvenir wedding", "merchandise"],
+    content: `<p>Gantungan kunci adalah souvenir favorit karena praktis, murah, dan selalu dipakai sehari-hari. Ini membuat brand atau momen Anda terus diingat.</p>
+<h2>1. Bahan Gantungan Kunci</h2>
+<p>Akrilik warna cerah dengan desain bebas, logam awet dan premium, kulit elegan untuk corporate gift, serta resin/fiber untuk bentuk 3D unik.</p>
+<h2>2. Ide Penggunaan</h2>
+<p>Souvenir pernikahan murah, merchandise promosi usaha, hingga hadiah peserta outbound dan seminar.</p>
+<h2>3. Tips Desain</h2>
+<p>Sederhana tetapi berkesan. Masukkan logo, nama, atau quotes singkat dengan ukuran yang muat di tas atau dompet.</p>
+<p>Pesan <a href="/katalog-produk/gantungan-kunci">gantungan kunci custom</a> dengan desain bebas di Karyamedia, cocok untuk satuan maupun ribuan pcs event. Lihat juga <a href="/blog/name-tag-custom">name tag custom</a>.</p>`,
+  },
+  {
+    slug: "plakat-akrilik-custom",
+    title: "Plakat Akrilik: Elegan, Transparan, & Cocok untuk Segala Penghargaan",
+    description: "Kelebihan plakat akrilik custom: tampilan modern, awet, dan mudah diukir. Panduan memilih plakat akrilik untuk kantor dan instansi.",
+    category: "Blog",
+    date: "2026-07-12",
+    image: "/images/hasil-produksi/plakat/plakat-hasil-produksi (4).png",
+    tags: ["plakat akrilik", "plakat akrilik custom", "plakat penghargaan", "plakat modern"],
+    content: `<p>Plakat akrilik menjadi pilihan populer untuk penghargaan modern. Tampilannya transparan, bersih, dan mudah dipadukan dengan berbagai desain.</p>
+<h2>Kelebihan Plakat Akrilik</h2>
+<p>Tampilan premium dengan kesan kaca mewah, ringan namun kokoh, serta mudah diukir laser sehingga teks tajam dan awet. Warna bisa disesuaikan: clear, hitam, atau gradasi.</p>
+<h2>Kapan Menggunakannya?</h2>
+<p>Cocok untuk penghargaan karyawan, kompetisi internal, hingga peresmian. Desain minimalis membuatnya tak lekang waktu.</p>
+<h2>Perawatan</h2>
+<p>Cukup dilap kain halus. Tidak mudah pudar sehingga kenangan tetap terjaga lama.</p>
+<p>Lihat pilihan <a href="/katalog-produk/plakat/plakat-akrilik">plakat akrilik custom</a> di Karyamedia dan baca <a href="/blog/jenis-plakat-custom">jenis-jenis plakat custom</a>.</p>`,
+  },
+  {
+    slug: "medali-custom",
+    title: "Medali Custom: Panduan Memilih Medali untuk Lomba & Penghargaan",
+    description: "Cara memilih medali custom — bahan, pita, dan ukiran — untuk lomba olahraga, akademik, dan penghargaan. Pesan medali di Karyamedia Jogja.",
+    category: "Blog",
+    date: "2026-07-12",
+    image: "/images/produk-unggulan/medali-custom/medali-custom-5.png",
+    tags: ["medali custom", "medali logam", "medali akrilik", "medali lomba", "medali turnamen"],
+    content: `<p>Medali adalah simbol prestasi tertinggi dalam lomba. Memilih medali yang tepat menambah kebanggaan penerima.</p>
+<h2>1. Bahan Medali</h2>
+<p>Logam (emas/perak/perunggu) untuk standar kompetisi, resin/emas lebih ekonomis untuk partisipan banyak, dan akrilik modern serta ringan.</p>
+<h2>2. Pita & Tali</h2>
+<p>Pilih warna pita sesuai tema event. Panjang tali nyaman di leher pemenang.</p>
+<h2>3. Ukiran</h2>
+<p>Tambahkan logo event, tahun, dan nama lomba. Ukiran laser menghasilkan detail tajam.</p>
+<h2>4. Finishing</h2>
+<p>Plating mengkilap memberi kesan prestisius; matte lebih kontemporer.</p>
+<p>Butuh medali custom untuk lomba? Cek <a href="/katalog-produk/medali">katalog medali</a> atau baca <a href="/blog/panduan-memilih-piala-trophy">panduan piala trophy</a>.</p>`,
+  },
+  {
+    slug: "souvenir-pernikahan",
+    title: "Ide Souvenir Pernikahan Unik & Berkesan dari Karyamedia",
+    description: "Kumpulan ide souvenir pernikahan unik dan murah: gantungan kunci, name tag, gift box custom. Pesan souvenir pernikahan di Karyamedia Jogja.",
+    category: "Blog",
+    date: "2026-07-12",
+    image: "/images/hasil-produksi/souvenir-wisuda/patung-wisuda (1).png",
+    tags: ["souvenir pernikahan", "souvenir wedding", "souvenir murah", "gift box wedding"],
+    content: `<p>Souvenir pernikahan jadi kenangan bagi tamu undangan. Pilih yang fungsional sekaligus personal agar diingat lama.</p>
+<h2>1. Gantungan Kunci</h2>
+<p>Murah, lucu, dan selalu dipakai. Bisa diukir nama mempelai dan tanggal nikah.</p>
+<h2>2. Name Tag / Place Card</h2>
+<p>Untuk seating arrangement sekaligus souvenir elegan.</p>
+<h2>3. Gift Box Kecil</h2>
+<p>Berisi cokelat atau sabun, dibalut desain eksklusif.</p>
+<h2>4. Tips Hemat</h2>
+<p>Pesan dalam jumlah banyak dan desain seragam untuk efisiensi. Karyamedia melayani souvenir pernikahan custom mulai kemasan hingga isi.</p>
+<p>Lihat <a href="/katalog-produk/souvenir-pernikahan">ide souvenir pernikahan</a>, serta <a href="/blog/gift-box-souvenir">gift box custom</a> dan <a href="/blog/name-tag-custom">name tag custom</a>.</p>`,
+  },
+  {
+    slug: "gift-box-souvenir",
+    title: "Gift Box Souvenir Custom: Kemasan Eksklusif untuk Hadiah & Event",
+    description: "Ide gift box souvenir custom untuk corporate gift, wedding, dan event. Desain eksklusif dengan isi personal di Karyamedia.",
+    category: "Blog",
+    date: "2026-07-12",
+    image: "/images/hasil-produksi/plakat/plakat-hasil-produksi (5).png",
+    tags: ["gift box custom", "kemasan hadiah", "corporate gift", "souvenir wedding"],
+    content: `<p>Gift box memberi kesan pertama yang kuat. Kemasan rapi dan personal menaikkan nilai hadiah Anda.</p>
+<h2>1. Jenis Gift Box</h2>
+<p>Karton kraft natural dan eco-friendly, akrilik transparan mewah, serta kayu artistik dan awet.</p>
+<h2>2. Isi yang Disukai</h2>
+<p>Cokelat, sabun, lilin aromaterapi, atau souvenir mini. Sesuaikan dengan audiens.</p>
+<h2>3. Branding</h2>
+<p>Cetak logo atau nama di tutup box agar penerima ingat pengirim.</p>
+<p>Karyamedia membuat <a href="/katalog-produk/gift-box">gift box custom</a> lengkap dengan isi sesuai permintaan. Baca juga <a href="/blog/souvenir-pernikahan">ide souvenir pernikahan</a>.</p>`,
+  },
+  {
+    slug: "prasasti-peresmian",
+    title: "Prasasti Peresmian: Panduan Membuat Prasasti Gedung & Monumen",
+    description: "Cara membuat prasasti peresmian gedung, monumen, dan tugu: bahan, teks, dan ukiran. Pesan prasasti custom di Karyamedia Jogja.",
+    category: "Blog",
+    date: "2026-07-12",
+    image: "/images/hasil-produksi/plakat/plakat-hasil-produksi (6).png",
+    tags: ["prasasti", "prasasti marmer", "prasasti peresmian", "prasasti gedung"],
+    content: `<p>Prasasti menyimpan sejarah sebuah tempat — siapa meresmikan, kapan, dan untuk apa. Ini menjadi dokumen visual yang awet.</p>
+<h2>1. Bahan Prasasti</h2>
+<p>Marmer klasik dan awet puluhan tahun, kuningan elegan dengan ukiran timbul, granit kokoh untuk luar ruangan, serta akrilik modern untuk peresmian indoor.</p>
+<h2>2. Isi Teks</h2>
+<p>Cantumkan nama instansi, tanggal peresmian, dan kalimat apresiasi singkat. Pastikan ejaan benar.</p>
+<h2>3. Peletakan</h2>
+<p>Pastikan permukaan rata dan terlindung cuaca jika di luar ruangan.</p>
+<p>Butuh prasasti peresmian? Lihat <a href="/katalog-produk/prasasti">katalog prasasti</a> atau baca <a href="/blog/jenis-plakat-custom">jenis plakat custom</a> sebagai alternatif penanda.</p>`,
+  },
 ]

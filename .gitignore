@@ -42,3 +42,8 @@ article.txt
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Search Console API credentials (never commit — local only, read-only)
+scripts/gsc/credentials.json
+gsc-credentials.json
+GSC_CREDENTIALS

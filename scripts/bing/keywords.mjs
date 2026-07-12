@@ -80,7 +80,24 @@ async function main() {
   console.log("Semakin tinggi, semakin banyak orang mencari kata itu -> prioritas buat konten.");
 }
 
-main().catch((e) => {
-  console.error("ERROR:", e.message);
-  process.exit(1);
-});
+// Exported helper for the SEO pipeline: returns Bing-ranked keyword
+// suggestions (by total impressions) for the default seed list.
+export async function bingOpportunities() {
+  const key = getKey();
+  if (!key) return [];
+  const results = [];
+  for (const s of DEFAULT_SEEDS) {
+    const r = await keywordStats(s, key);
+    if (r) results.push(r);
+  }
+  results.sort((a, b) => b.total - a.total);
+  return results;
+}
+
+const isMain = process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]
+if (isMain) {
+  main().catch((e) => {
+    console.error("ERROR:", e.message);
+    process.exit(1);
+  });
+}

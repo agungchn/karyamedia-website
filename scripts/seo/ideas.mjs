@@ -23,6 +23,31 @@ const here = dirname(fileURLToPath(import.meta.url))
 const root = resolve(here, "..", "..")
 const articlesPath = join(root, "src/data/articles.ts")
 
+// Curated long-tail topics used as fallback keyword source when GSC has no
+// data yet (e.g. site not indexed). These are specific enough to not collide
+// with the broad articles already on the site. Once an article is generated
+// for a topic, its tokens make that topic "covered" so the list rotates.
+const FALLBACK_KEYWORDS = [
+  "plakat akrilik custom untuk perusahaan",
+  "plakat penghargaan karya terbaik",
+  "plakat resin custom untuk lomba",
+  "medali finishing emas untuk kompetisi",
+  "medali couples untuk pernikahan",
+  "medali custom untuk lomba sekolah",
+  "piala resin custom untuk turnamen",
+  "piala golf custom untuk event",
+  "prasasti marmer untuk gedung",
+  "prasasti kuningan untuk instansi",
+  "souvenir wisuda untuk pria",
+  "samir wisuda bordir logo",
+  "gift box souvenir batik isi 5 pcs",
+  "box kertas custom untuk souvenir",
+  "name tag akrilik premium",
+  "gantungan kunci akrilik custom",
+  "pin bross custom untuk event",
+  "patung wisuda fiber custom",
+]
+
 const args = process.argv.slice(2)
 const opt = (name) => {
   const i = args.indexOf(name)
@@ -57,6 +82,28 @@ function isCovered(query, workingText) {
     const tags = tagsM ? [...tagsM[1].matchAll(/"([^"]+)"/g)].map((x) => x[1]).join(" ") : ""
     const aTok = sigTokens(`${slug} ${title} ${tags}`)
     if (q.some((t) => aTok.includes(t))) return true
+  }
+  return false
+}
+
+// Stricter filter for the fallback list: only treat as duplicate if EVERY
+// distinctive token of the query already exists in an article (full subset).
+// This avoids the loose isCovered blocking all broad keywords.
+function nearDup(query, workingText) {
+  const q = sigTokens(query)
+  if (q.length === 0) return true
+  const Q = new Set(q)
+  const arts = extractArticles(workingText)
+  for (const a of arts) {
+    const slug = slugRe.exec(a.block)?.[1] || ""
+    const title = titleRe.exec(a.block)?.[1] || ""
+    const tagsM = tagsRe.exec(a.block)
+    const tags = tagsM ? [...tagsM[1].matchAll(/"([^"]+)"/g)].map((x) => x[1]).join(" ") : ""
+    const aTok = sigTokens(`${slug} ${title} ${tags}`)
+    const A = new Set(aTok)
+    let inBoth = 0
+    for (const x of Q) if (A.has(x)) inBoth++
+    if (inBoth / Q.size >= 1) return true
   }
   return false
 }
@@ -118,6 +165,19 @@ async function main() {
     })
   }
   opportunities.sort((a, b) => b.impressions - a.impressions)
+
+  // Fallback: if GSC has no data yet (e.g. site not indexed), source
+  // keyword opportunities from a curated long-tail list so the daily run
+  // still produces articles. Rotates automatically as articles get added.
+  if (opportunities.length === 0 && !process.env.GSC_MOCK) {
+    console.log("\nGSC kosong - pakai fallback daftar long-tail kurasi...")
+    for (const kw of FALLBACK_KEYWORDS) {
+      if (!nearDup(kw, working)) {
+        opportunities.push({ query: kw, impressions: 0, clicks: 0, ctr: 0, position: 0 })
+      }
+    }
+    console.log(`Fallback long-tail: ${opportunities.length} opportunity tersedia.`)
+  }
 
   console.log(`Sudah punya artikel: ${covered}`)
   console.log(`OPPORTUNITY (belum ada artikel): ${opportunities.length}\n`)

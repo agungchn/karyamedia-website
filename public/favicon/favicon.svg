@@ -19,8 +19,6 @@
     </filter>
   </defs>
   
-  <!-- Background -->
-  <rect width="512" height="512" fill="#FFFFFF"/>
   
   <!-- Star/Gear shape -->
   <g filter="url(#shadow)">

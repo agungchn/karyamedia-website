@@ -19,6 +19,7 @@ async function runPsi(url, strategy, key) {
   const api =
     `https://www.googleapis.com/pagespeedonline/v5/runPagespeed` +
     `?url=${encodeURIComponent(url)}&strategy=${strategy}` +
+    `&category=PERFORMANCE&category=ACCESSIBILITY&category=BEST_PRACTICES&category=SEO` +
     (key ? `&key=${encodeURIComponent(key)}` : "");
   const res = await fetch(api);
   return res.json();

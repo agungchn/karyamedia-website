@@ -13,6 +13,7 @@ export function FaviconThemeSwitcher() {
       );
       links.forEach((link) => {
         link.href = isDark ? dark : light;
+        link.type = "image/png";
       });
     };
 

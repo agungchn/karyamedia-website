@@ -17,6 +17,7 @@ import { dirname, join, resolve } from "node:path"
 import { getToken, getSite, api } from "../gsc/analyze.mjs"
 import { extractArticles } from "./article-lint.mjs"
 import { inferCategory } from "./article-generate.mjs"
+import { commitAndPush } from "./git.mjs"
 
 const here = dirname(fileURLToPath(import.meta.url))
 const root = resolve(here, "..", "..")
@@ -29,6 +30,7 @@ const opt = (name) => {
 }
 const GEN_TOP = parseInt(opt("--generate-top") || "0", 10)
 const DAYS = parseInt(opt("--days") || "28", 10)
+const COMMIT_PUSH = args.includes("--commit-push")
 
 // --- query coverage check (reuse token logic) ---
 const STOP = new Set(
@@ -133,16 +135,42 @@ async function main() {
   if (GEN_TOP > 0 && opportunities.length) {
     console.log(`\n>>> Generate draft untuk top ${GEN_TOP} (LLM)...`)
     const top = opportunities.slice(0, GEN_TOP)
+    const generatedSlugs = []
     for (const o of top) {
       const cat = inferCategory(o.query)
       console.log(`\n### "${o.query}" (kategori: ${cat})`)
-      execSync(`node scripts/seo/article-generate.mjs "${o.query}" --category "${cat}"`, {
+      const out = execSync(`node scripts/seo/article-generate.mjs "${o.query}" --category "${cat}"`, {
         env: process.env,
         cwd: root,
-        stdio: "inherit",
-      })
+        stdio: "pipe",
+      }).toString()
+      process.stdout.write(out)
+      const m = out.match(/GENERATED_SLUG:(\S+)/)
+      if (m) generatedSlugs.push(m[1])
     }
-    console.log("\nDraft selesai disisipkan. Review di src/data/articles.ts, lalu git commit.")
+
+    if (COMMIT_PUSH && generatedSlugs.length) {
+      console.log("\n>>> Validasi gate sebelum commit...")
+      let gateOk = true
+      try {
+        execSync(`node scripts/seo/article-lint.mjs`, {
+          env: { ...process.env, ARTICLE_LINT_SLUGS: generatedSlugs.join(",") },
+          cwd: root,
+          stdio: "inherit",
+        })
+      } catch {
+        gateOk = false
+      }
+      if (gateOk) {
+        commitAndPush(`feat(seo): auto-generate ${generatedSlugs.length} article(s) from GSC opportunities`)
+      } else {
+        console.error(
+          "\nGagal: ada artikel yang tidak lolos standar. Tidak di-commit/push. Perbaiki lalu commit manual.",
+        )
+      }
+    } else {
+      console.log("\nDraft selesai disisipkan. Review di src/data/articles.ts" + (COMMIT_PUSH ? "" : ", lalu jalankan dengan --commit-push atau git commit manual."))
+    }
   }
 }
 

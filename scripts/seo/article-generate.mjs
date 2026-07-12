@@ -15,6 +15,7 @@ import { fileURLToPath } from "node:url"
 import { dirname, join, resolve } from "node:path"
 import { extractArticles } from "./article-lint.mjs"
 import { generateArticle } from "../llm/write.mjs"
+import { commitAndPush } from "./git.mjs"
 
 const here = dirname(fileURLToPath(import.meta.url))
 const root = resolve(here, "..", "..")
@@ -122,18 +123,20 @@ const escTpl = (s) => String(s).replace(/\\/g, "\\\\").replace(/`/g, "\\`").repl
 async function main() {
   const args = process.argv.slice(2)
   let keyword = "", category = null
+  let commitPush = false
   for (let i = 0; i < args.length; i++) {
     if (args[i] === "--category") category = args[++i]
+    else if (args[i] === "--commit-push") commitPush = true
     else if (!keyword) keyword = args[i]
   }
   if (!keyword) {
-    console.error('Pakai: node scripts/seo/article-generate.mjs "<keyword>" [--category X]')
+    console.error('Pakai: node scripts/seo/article-generate.mjs "<keyword>" [--category X] [--commit-push]')
     process.exit(1)
   }
   if (!category) category = inferCategory(keyword)
 
   let slug = slugify(keyword)
-  if (!slug.endsWith("-custom")) slug += "-custom"
+  if (!/custom/.test(keyword.toLowerCase())) slug += "-custom"
 
   const working = readFileSync(articlesPath, "utf8")
   if (slugRe.exec(working) && extractArticles(working).some((a) => slugRe.exec(a.block)?.[1] === slug)) {
@@ -182,12 +185,25 @@ async function main() {
   }
   writeFileSync(articlesPath, newText)
   console.log(`✓ Artikel disisipkan: blog/${slug} (image: ${image})`)
+  console.log(`GENERATED_SLUG:${slug}`)
 
   console.log("\n--- gate: cek duplikat ---")
   execSync(`node scripts/seo/article-check.mjs`, { env: { ...process.env, ARTICLE_LINT_SLUGS: slug }, cwd: root, stdio: "inherit" })
   console.log("\n--- gate: cek standart ---")
   execSync(`node scripts/seo/article-lint.mjs`, { env: { ...process.env, ARTICLE_LINT_SLUGS: slug }, cwd: root, stdio: "inherit" })
-  console.log(`\nReview artikel di src/data/articles.ts (blog/${slug}), lalu git commit.`)
+
+  if (commitPush) {
+    let gateOk = true
+    try {
+      execSync(`node scripts/seo/article-lint.mjs`, { env: { ...process.env, ARTICLE_LINT_SLUGS: slug }, cwd: root, stdio: "pipe" })
+    } catch {
+      gateOk = false
+    }
+    if (gateOk) commitAndPush(`feat(seo): auto-generate article blog/${slug}`)
+    else console.error("\nGagal: artikel tidak lolos standar. Tidak di-commit/push.")
+  } else {
+    console.log(`\nReview artikel di src/data/articles.ts (blog/${slug}), lalu git commit (atau pakai --commit-push).`)
+  }
 }
 
 const isMain = process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]

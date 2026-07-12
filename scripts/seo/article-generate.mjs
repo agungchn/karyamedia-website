@@ -26,7 +26,7 @@ const CAT_MAP = {
   "souvenir wisuda": "Souvenir Wisuda", souvenir: "Souvenir", "batas wilayah": "Batas Wilayah",
   tumbler: "Souvenir", samir: "Souvenir Wisuda", toga: "Souvenir Wisuda",
 }
-function inferCategory(kw) {
+export function inferCategory(kw) {
   const k = kw.toLowerCase()
   for (const [k2, v] of Object.entries(CAT_MAP)) if (k.includes(k2)) return v
   return "Blog"
@@ -190,7 +190,10 @@ async function main() {
   console.log(`\nReview artikel di src/data/articles.ts (blog/${slug}), lalu git commit.`)
 }
 
-main().catch((e) => {
-  console.error("ERROR:", e.message)
-  process.exit(1)
-})
+const isMain = process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]
+if (isMain) {
+  main().catch((e) => {
+    console.error("ERROR:", e.message)
+    process.exit(1)
+  })
+}

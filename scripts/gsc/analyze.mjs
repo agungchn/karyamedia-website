@@ -4,6 +4,7 @@
 
 import crypto from "crypto";
 import fs from "fs";
+import { fileURLToPath } from "node:url";
 
 function getCredentials() {
   if (process.env.GSC_CREDENTIALS) return JSON.parse(process.env.GSC_CREDENTIALS);
@@ -42,9 +43,25 @@ async function getAccessToken(creds) {
   return data.access_token;
 }
 
-const API = "https://searchconsole.googleapis.com/webmasters/v3";
+// Exported helpers for other scripts (e.g. seo/ideas.mjs)
+export async function getToken() {
+  const creds = getCredentials();
+  return getAccessToken(creds);
+}
 
-async function api(token, path, body) {
+export async function getSite(token) {
+  const sitesRes = await api(token, "/sites");
+  const sites = sitesRes.siteEntry || [];
+  return (
+    process.env.SITE_URL ||
+    sites.find((s) => s.siteUrl.includes("karyamediasouvenir"))?.siteUrl ||
+    sites[0]?.siteUrl
+  );
+}
+
+export const API = "https://searchconsole.googleapis.com/webmasters/v3";
+
+export async function api(token, path, body) {
   const url = `${API}${path}`;
   const res = await fetch(url, {
     method: body ? "POST" : "GET",
@@ -132,7 +149,10 @@ async function main() {
   }
 }
 
-main().catch((e) => {
-  console.error("ERROR:", e.message);
-  process.exit(1);
-});
+const isMain = process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]
+if (isMain) {
+  main().catch((e) => {
+    console.error("ERROR:", e.message);
+    process.exit(1);
+  });
+}

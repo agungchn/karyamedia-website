@@ -65,4 +65,5 @@ seo-log.txt
 
 # SEO trend history & Bing auto-submit state (local only)
 scripts/seo/seo-history.json
+scripts/seo/ideas.json
 scripts/bing/submitted.json

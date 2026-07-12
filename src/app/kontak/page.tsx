@@ -200,15 +200,57 @@ export default function KontakPage() {
               <div>
                 <label htmlFor="produk" className="block text-sm font-medium text-gray-700 mb-1">Produk Diminati</label>
                 <select id="produk" className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#1D4ED8]/20 focus:border-[#1D4ED8] text-gray-700">
-                  <option>Pilih kategori produk</option>
-                  <option>Plakat</option>
-                  <option>Medali</option>
-                  <option>Piala & Trophy</option>
-                  <option>Souvenir Wisuda</option>
-                  <option>Gift Box</option>
-                  <option>Accessories</option>
-                  <option>Prasasti</option>
-                  <option>Batas Wilayah</option>
+                  <option value="">Pilih subkategori produk</option>
+                  <optgroup label="Plakat">
+                    <option>Plakat Akrilik</option>
+                    <option>Plakat Kayu Premium</option>
+                    <option>Plakat Marmer</option>
+                    <option>Plakat Kayu</option>
+                    <option>Plakat Fiberglass</option>
+                    <option>Plakat Wayang</option>
+                    <option>Souvenir Pernikahan</option>
+                  </optgroup>
+                  <optgroup label="Medali">
+                    <option>Medali Custom</option>
+                    <option>Medali 3D Zink Alloy</option>
+                  </optgroup>
+                  <optgroup label="Piala & Trophy">
+                    <option>Piala Trophy</option>
+                    <option>Piala Golf</option>
+                  </optgroup>
+                  <optgroup label="Souvenir Wisuda">
+                    <option>Samir/Gordon Wisuda</option>
+                    <option>Patung Wisuda</option>
+                    <option>Plakat Wisuda Akrilik</option>
+                    <option>Kalung Rektor</option>
+                    <option>Pedel Tongkat Rektor</option>
+                    <option>Baju Toga</option>
+                    <option>Map Ijazah</option>
+                    <option>Tabung Wisuda</option>
+                  </optgroup>
+                  <optgroup label="Gift Box">
+                    <option>Box Bludru</option>
+                    <option>Box Kertas Import</option>
+                    <option>Box Batik</option>
+                    <option>Box Kertas Marga</option>
+                    <option>Box Custom</option>
+                  </optgroup>
+                  <optgroup label="Accessories">
+                    <option>Name Tag</option>
+                    <option>Pin/Bross</option>
+                    <option>Gantungan Kunci</option>
+                    <option>Tumbler</option>
+                    <option>Papan Nama</option>
+                  </optgroup>
+                  <optgroup label="Prasasti">
+                    <option>Prasasti Marmer</option>
+                    <option>Prasasti Kuningan</option>
+                    <option>Prasasti Stainless Steel</option>
+                  </optgroup>
+                  <optgroup label="Batas Wilayah">
+                    <option>Brass Table</option>
+                    <option>Center Point (CP)</option>
+                  </optgroup>
                 </select>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

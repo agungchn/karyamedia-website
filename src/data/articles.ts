@@ -12527,7 +12527,7 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
     slug: "panduan-memilih-piala-trophy",
     title: "Panduan Memilih Piala & Trophy Custom untuk Event dan Penghargaan",
     description: "Cara memilih piala trophy custom untuk lomba, event perusahaan, dan penghargaan. Bahasa, bahan, dan tips pesan di Karyamedia Jogja.",
-    category: "Blog",
+    category: "Piala & Trophy",
     date: "2026-07-12",
     image: "/images/hasil-produksi/plakat/plakat-hasil-produksi (1).png",
     tags: ["piala trophy", "piala custom", "trophy custom", "piala golf", "piala futsal", "piala basket"],
@@ -12548,7 +12548,7 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
     slug: "jenis-plakat-custom",
     title: "Plakat Custom: Jenis Bahan & Tips Memilih Plakat Terbaik",
     description: "Kenali jenis plakat custom — akrilik, kayu, wayang, kristal — dan tips memilih plakat penghargaan terbaik untuk kantor, sekolah, dan instansi.",
-    category: "Blog",
+    category: "Plakat",
     date: "2026-07-12",
     image: "/images/hasil-produksi/plakat/plakat-hasil-produksi (2).png",
     tags: ["plakat custom", "plakat akrilik", "plakat kayu", "plakat wayang", "plakat kristal", "plakat penghargaan"],
@@ -12569,7 +12569,7 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
     slug: "name-tag-custom",
     title: "Name Tag Custom untuk Event, Kantor, & Wedding — Panduan Lengkap",
     description: "Ide name tag custom untuk seminar, kantor, dan pernikahan. Pilih bahan, desain, dan cara pesan name tag berkualitas di Karyamedia.",
-    category: "Blog",
+    category: "Accessories",
     date: "2026-07-12",
     image: "/images/hasil-produksi/plakat/plakat-hasil-produksi (3).png",
     tags: ["name tag custom", "name tag akrilik", "name tag kantor", "name tag wedding", "tanda pengenal"],
@@ -12582,13 +12582,13 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
 <p>Gunakan font mudah dibaca, sertakan logo, dan warna brand. Untuk wedding, tambahkan nama mempelai dan tanggal.</p>
 <h2>4. Aksesoris</h2>
 <p>Klips, pin, atau tali lanyard memudahkan pemakaian. Pilih sesuai suasana acara.</p>
-<p>Butuh name tag custom banyak atau satuan? Lihat <a href="/katalog-produk/name-tag">katalog name tag</a> atau baca <a href="/blog/gantungan-kunci-custom">ide gantungan kunci custom</a> sebagai souvenir pelengkap.</p>`,
+<p>Butuh name tag custom banyak atau satuan? Lihat <a href="/katalog-produk/accessories/name-tag">katalog name tag</a> atau baca <a href="/blog/panduan-gantungan-kunci-custom">ide gantungan kunci custom</a> sebagai souvenir pelengkap.</p>`,
   },
   {
-    slug: "gantungan-kunci-custom",
+    slug: "panduan-gantungan-kunci-custom",
     title: "Gantungan Kunci Custom: Ide Souvenir Murah & Berkualitas",
     description: "Ide gantungan kunci custom sebagai souvenir murah namun berkualitas untuk event, wedding, dan promosi usaha. Pesan di Karyamedia Jogja.",
-    category: "Blog",
+    category: "Accessories",
     date: "2026-07-12",
     image: "/images/hasil-produksi/souvenir-wisuda/patung-wisuda (1).png",
     tags: ["gantungan kunci custom", "keychain custom", "souvenir murah", "souvenir wedding", "merchandise"],
@@ -12599,13 +12599,13 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
 <p>Souvenir pernikahan murah, merchandise promosi usaha, hingga hadiah peserta outbound dan seminar.</p>
 <h2>3. Tips Desain</h2>
 <p>Sederhana tetapi berkesan. Masukkan logo, nama, atau quotes singkat dengan ukuran yang muat di tas atau dompet.</p>
-<p>Pesan <a href="/katalog-produk/gantungan-kunci">gantungan kunci custom</a> dengan desain bebas di Karyamedia, cocok untuk satuan maupun ribuan pcs event. Lihat juga <a href="/blog/name-tag-custom">name tag custom</a>.</p>`,
+<p>Pesan <a href="/katalog-produk/accessories/gantungan-kunci">gantungan kunci custom</a> dengan desain bebas di Karyamedia, cocok untuk satuan maupun ribuan pcs event. Lihat juga <a href="/blog/name-tag-custom">name tag custom</a>.</p>`,
   },
   {
     slug: "plakat-akrilik-custom",
     title: "Plakat Akrilik: Elegan, Transparan, & Cocok untuk Segala Penghargaan",
     description: "Kelebihan plakat akrilik custom: tampilan modern, awet, dan mudah diukir. Panduan memilih plakat akrilik untuk kantor dan instansi.",
-    category: "Blog",
+    category: "Plakat",
     date: "2026-07-12",
     image: "/images/hasil-produksi/plakat/plakat-hasil-produksi (4).png",
     tags: ["plakat akrilik", "plakat akrilik custom", "plakat penghargaan", "plakat modern"],
@@ -12622,7 +12622,7 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
     slug: "medali-custom",
     title: "Medali Custom: Panduan Memilih Medali untuk Lomba & Penghargaan",
     description: "Cara memilih medali custom — bahan, pita, dan ukiran — untuk lomba olahraga, akademik, dan penghargaan. Pesan medali di Karyamedia Jogja.",
-    category: "Blog",
+    category: "Medali",
     date: "2026-07-12",
     image: "/images/produk-unggulan/medali-custom/medali-custom-5.png",
     tags: ["medali custom", "medali logam", "medali akrilik", "medali lomba", "medali turnamen"],
@@ -12641,7 +12641,7 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
     slug: "souvenir-pernikahan",
     title: "Ide Souvenir Pernikahan Unik & Berkesan dari Karyamedia",
     description: "Kumpulan ide souvenir pernikahan unik dan murah: gantungan kunci, name tag, gift box custom. Pesan souvenir pernikahan di Karyamedia Jogja.",
-    category: "Blog",
+    category: "Souvenir",
     date: "2026-07-12",
     image: "/images/hasil-produksi/souvenir-wisuda/patung-wisuda (1).png",
     tags: ["souvenir pernikahan", "souvenir wedding", "souvenir murah", "gift box wedding"],
@@ -12654,13 +12654,13 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
 <p>Berisi cokelat atau sabun, dibalut desain eksklusif.</p>
 <h2>4. Tips Hemat</h2>
 <p>Pesan dalam jumlah banyak dan desain seragam untuk efisiensi. Karyamedia melayani souvenir pernikahan custom mulai kemasan hingga isi.</p>
-<p>Lihat <a href="/katalog-produk/souvenir-pernikahan">ide souvenir pernikahan</a>, serta <a href="/blog/gift-box-souvenir">gift box custom</a> dan <a href="/blog/name-tag-custom">name tag custom</a>.</p>`,
+<p>Lihat <a href="/katalog-produk/plakat/souvenir-pernikahan">ide souvenir pernikahan</a>, serta <a href="/blog/gift-box-souvenir">gift box custom</a> dan <a href="/blog/name-tag-custom">name tag custom</a>.</p>`,
   },
   {
     slug: "gift-box-souvenir",
     title: "Gift Box Souvenir Custom: Kemasan Eksklusif untuk Hadiah & Event",
     description: "Ide gift box souvenir custom untuk corporate gift, wedding, dan event. Desain eksklusif dengan isi personal di Karyamedia.",
-    category: "Blog",
+    category: "Gift Box",
     date: "2026-07-12",
     image: "/images/hasil-produksi/plakat/plakat-hasil-produksi (5).png",
     tags: ["gift box custom", "kemasan hadiah", "corporate gift", "souvenir wedding"],
@@ -12677,7 +12677,7 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
     slug: "prasasti-peresmian",
     title: "Prasasti Peresmian: Panduan Membuat Prasasti Gedung & Monumen",
     description: "Cara membuat prasasti peresmian gedung, monumen, dan tugu: bahan, teks, dan ukiran. Pesan prasasti custom di Karyamedia Jogja.",
-    category: "Blog",
+    category: "Prasasti",
     date: "2026-07-12",
     image: "/images/hasil-produksi/plakat/plakat-hasil-produksi (6).png",
     tags: ["prasasti", "prasasti marmer", "prasasti peresmian", "prasasti gedung"],

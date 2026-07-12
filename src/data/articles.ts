@@ -12525,7 +12525,7 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
   },
   {
     slug: "panduan-memilih-piala-trophy",
-    title: "Panduan Memilih Piala & Trophy Custom untuk Event dan Penghargaan",
+    title: "Panduan Memilih Piala & Trophy untuk Event dan Penghargaan",
     description: "Cara memilih piala trophy custom untuk lomba, event perusahaan, dan penghargaan. Bahasa, bahan, dan tips pesan di Karyamedia Jogja.",
     category: "Piala & Trophy",
     date: "2026-07-12",
@@ -12567,7 +12567,7 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
   },
   {
     slug: "name-tag-custom",
-    title: "Name Tag Custom untuk Event, Kantor, & Wedding — Panduan Lengkap",
+    title: "Name Tag Custom untuk Event, Kantor, & Wedding",
     description: "Ide name tag custom untuk seminar, kantor, dan pernikahan. Pilih bahan, desain, dan cara pesan name tag berkualitas di Karyamedia.",
     category: "Accessories",
     date: "2026-07-12",
@@ -12603,11 +12603,11 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
   },
   {
     slug: "plakat-akrilik-custom",
-    title: "Plakat Akrilik: Elegan, Transparan, & Cocok untuk Segala Penghargaan",
+    title: "Plakat Akrilik: Elegan & Transparan untuk Penghargaan",
     description: "Kelebihan plakat akrilik custom: tampilan modern, awet, dan mudah diukir. Panduan memilih plakat akrilik untuk kantor dan instansi.",
     category: "Plakat",
     date: "2026-07-12",
-    image: "/images/hasil-produksi/plakat/plakat-hasil-produksi (4).png",
+    image: "/images/hasil-produksi/plakat/plakat-hasil-produksi (10).png",
     tags: ["plakat akrilik", "plakat akrilik custom", "plakat penghargaan", "plakat modern"],
     content: `<p>Plakat akrilik menjadi pilihan populer untuk penghargaan modern. Tampilannya transparan, bersih, dan mudah dipadukan dengan berbagai desain.</p>
 <h2>Kelebihan Plakat Akrilik</h2>
@@ -12620,7 +12620,7 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
   },
   {
     slug: "medali-custom",
-    title: "Medali Custom: Panduan Memilih Medali untuk Lomba & Penghargaan",
+    title: "Medali Custom: Panduan Memilih untuk Lomba & Penghargaan",
     description: "Cara memilih medali custom — bahan, pita, dan ukiran — untuk lomba olahraga, akademik, dan penghargaan. Pesan medali di Karyamedia Jogja.",
     category: "Medali",
     date: "2026-07-12",
@@ -12658,11 +12658,11 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
   },
   {
     slug: "gift-box-souvenir",
-    title: "Gift Box Souvenir Custom: Kemasan Eksklusif untuk Hadiah & Event",
+    title: "Gift Box Souvenir Custom: Kemasan Eksklusif Hadiah & Event",
     description: "Ide gift box souvenir custom untuk corporate gift, wedding, dan event. Desain eksklusif dengan isi personal di Karyamedia.",
     category: "Gift Box",
     date: "2026-07-12",
-    image: "/images/hasil-produksi/plakat/plakat-hasil-produksi (5).png",
+    image: "/images/hasil-produksi/plakat/plakat-hasil-produksi (11).png",
     tags: ["gift box custom", "kemasan hadiah", "corporate gift", "souvenir wedding"],
     content: `<p>Gift box memberi kesan pertama yang kuat. Kemasan rapi dan personal menaikkan nilai hadiah Anda.</p>
 <h2>1. Jenis Gift Box</h2>
@@ -12675,7 +12675,7 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
   },
   {
     slug: "prasasti-peresmian",
-    title: "Prasasti Peresmian: Panduan Membuat Prasasti Gedung & Monumen",
+    title: "Prasasti Peresmian: Panduan Membuat Prasasti & Monumen",
     description: "Cara membuat prasasti peresmian gedung, monumen, dan tugu: bahan, teks, dan ukiran. Pesan prasasti custom di Karyamedia Jogja.",
     category: "Prasasti",
     date: "2026-07-12",

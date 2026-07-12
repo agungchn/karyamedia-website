@@ -1,0 +1,17 @@
+#!/bin/sh
+# Karyamedia article standard gate
+# Blocks commit if any NEW/changed article in src/data/articles.ts
+# violates the article standard (see scripts/seo/article-lint.mjs).
+
+changed=$(git diff --cached -- src/data/articles.ts | grep -E '^\+.*slug:' | grep -oE '"[^"]+"' | tr -d '"' | sort -u)
+if [ -n "$changed" ]; then
+  echo "Memvalidasi artikel baru/berubah terhadap standart..."
+  ARTICLE_LINT_SLUGS="$changed" node scripts/seo/article-lint.mjs
+  rc=$?
+  if [ $rc -ne 0 ]; then
+    echo ""
+    echo "Commit dibatalkan: ada artikel yang melanggar standart (lihat error di atas)."
+    echo "Jalankan 'npm run article:lint' untuk cek semua, atau set ARTICLE_LINT_SLUGS=<slug> untuk satu artikel."
+    exit 1
+  fi
+fi

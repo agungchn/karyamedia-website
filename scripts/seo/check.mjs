@@ -19,3 +19,7 @@ for (const j of jobs) {
   const r = spawnSync(process.execPath, j.args, { cwd: root, stdio: "inherit" });
   if (r.error) console.error(`Gagal menjalankan ${j.name}: ${r.error.message}`);
 }
+
+// Save a trend snapshot (GSC indexed/impressions, Bing issues, PSI scores).
+console.log(`\n${line}\n  SEO TREND SNAPSHOT\n${line}`);
+spawnSync(process.execPath, ["seo/snapshot.mjs"], { cwd: root, stdio: "inherit" });

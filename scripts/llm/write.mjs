@@ -58,6 +58,9 @@ const MOCK = {
     '<h2>Perawatan dan Penyimpanan</h2>' +
     '<p>Bersihkan plakat akrilik dengan kain mikrofiber dan cairan lembut agar permukaannya tetap jernih dan tidak buram. Hindari alkohol berbasis kuat yang bisa merusak kilap akrilik dalam jangka panjang serta mengubah warna backing secara perlahan.</p>' +
     '<p>Simpan plakat di tempat yang tidak lembap supaya bahan tetap bening dan tidak berjamur pada sisi belakangnya. Dengan perawatan yang sangat mudah, plakat akrilik menjadi kenang-kenangan yang selalu siap dipamerkan di ruang kerja maupun lemari prestasi sekolah.</p>' +
+    '<h2>Rekomendasi Acara dan Event</h2>' +
+    '<p>Plakat akrilik custom sangat fleksibel untuk berbagai jenis acara, mulai dari perayaan hari jadi perusahaan, pelepasan karyawan pensiun, apresiasi guru berprestasi, hingga kompetisi olahraga antar instansi. Fleksibilitas desain membuatnya mudah disesuaikan dengan tema dan warna identitas masing-masing organisasi secara konsisten.</p>' +
+    '<p>Untuk event tahunan yang rutin digelar, menyimpan template desain di Karyamedia akan mempercepat pemesanan di tahun berikutnya. Hal ini menjaga keseragaman visual antar angkatan atau periode sehingga penghargaan terlihat sebagai satu kesatuan yang profesional dan berkelanjutan dari waktu ke waktu.</p>' +
     '<h2>FAQ</h2>' +
     '<p><strong>Apakah bisa custom?</strong> Ya, sepenuhnya custom sesuai permintaan Anda, termasuk bentuk, warna backing, dan teks yang diinginkan.</p>' +
     '<p><strong>Berapa minimal order?</strong> Tergantung jenis plakat, namun Karyamedia melayani mulai dari jumlah kecil hingga ratusan unit untuk acara besar.</p>' +

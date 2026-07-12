@@ -9,7 +9,8 @@
     "lint": "eslint",
     "seo": "node scripts/seo/check.mjs",
     "seo:submit": "node scripts/bing/autosubmit.mjs",
-    "article:lint": "node scripts/seo/article-lint.mjs"
+    "article:lint": "node scripts/seo/article-lint.mjs",
+    "article:check": "node scripts/seo/article-check.mjs"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.3.0",

@@ -1,7 +1,8 @@
 #!/bin/sh
 # Karyamedia article standard gate
 # Blocks commit if any NEW or MODIFIED article in src/data/articles.ts
-# violates the article standard (see scripts/seo/article-lint.mjs).
+# violates the article standard (see scripts/seo/article-lint.mjs) or
+# duplicates an existing topic (see scripts/seo/article-check.mjs).
 # Set SKIP_ARTICLE_LINT=1 to bypass in emergencies (use with care).
 
 if [ -n "$SKIP_ARTICLE_LINT" ]; then
@@ -12,6 +13,18 @@ fi
 changed=$(node scripts/seo/article-changed.mjs)
 if [ -n "$changed" ]; then
   echo "Memvalidasi artikel baru/berubah terhadap standart: $changed"
+
+  echo "-> cek duplikat topik..."
+  ARTICLE_LINT_SLUGS="$changed" node scripts/seo/article-check.mjs
+  rc=$?
+  if [ $rc -ne 0 ]; then
+    echo ""
+    echo "Commit dibatalkan: ada artikel baru yang duplikat dengan konten existing."
+    echo "Ganti sudut pandang/topik artikel tersebut sebelum commit."
+    exit 1
+  fi
+
+  echo "-> cek standart artikel..."
   ARTICLE_LINT_SLUGS="$changed" node scripts/seo/article-lint.mjs
   rc=$?
   if [ $rc -ne 0 ]; then

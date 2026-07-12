@@ -35,4 +35,4 @@ if (staged !== null) {
   }
 }
 
-console.log([...changed].join(" "))
+console.log([...changed].join(","))

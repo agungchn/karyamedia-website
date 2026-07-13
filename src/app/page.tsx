@@ -29,7 +29,12 @@ import nextDynamic from "next/dynamic"
 import { HeroSection } from "@/components/ui/hero-section"
 import { GeometricBackground } from "@/components/ui/geometric-bg"
 import { HolographicCard } from "@/components/ui/holographic-card"
-import { LatestArticlesSlider } from "@/components/ui/latest-articles-slider"
+import dynamic from "next/dynamic"
+
+const LatestArticlesSlider = dynamic(
+  () => import("@/components/ui/latest-articles-slider").then((m) => m.LatestArticlesSlider),
+  { ssr: true }
+)
 
 
 const TestimonialCarousel = nextDynamic(() =>

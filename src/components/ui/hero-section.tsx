@@ -275,7 +275,7 @@ export function HeroSection() {
                 <div className="flex-1 rounded-2xl overflow-hidden shadow-xl shadow-black/30 group hover:scale-[1.02] transition-transform duration-500">
                   <Image
                     src="/images/hero/map-wisuda (8).webp"
-                    alt="Map Wisuda"
+                    alt="Medali"
                     width={200}
                     height={200}
                     loading="lazy"

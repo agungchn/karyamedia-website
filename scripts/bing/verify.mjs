@@ -37,8 +37,12 @@ async function main() {
   console.log(`Site: ${SITE}`)
 
   if (process.argv.includes("--verify")) {
-    const r = await bing("VerifySite", key)
-    console.log("VerifySite ->", r.status, JSON.stringify(r.json).slice(0, 400))
+    let r = await bing("VerifySite", key, { params: { method: "MetaTag" } })
+    console.log("VerifySite(MetaTag) ->", r.status, JSON.stringify(r.json).slice(0, 400))
+    if (r.status !== 200) {
+      r = await bing("VerifySite", key, { body: { siteUrl: SITE } })
+      console.log("VerifySite(POST {siteUrl}) ->", r.status, JSON.stringify(r.json).slice(0, 400))
+    }
     return
   }
 

@@ -32,6 +32,18 @@ export function inferCategory(kw) {
   for (const [k2, v] of Object.entries(CAT_MAP)) if (k.includes(k2)) return v
   return "Blog"
 }
+
+// ---- authority gate: ensure the draft contains concrete proof signals ----
+function isAuthoritative(content) {
+  const c = content || ""
+  let score = 0
+  if (/\b(19|20)\d{2}\b/.test(c)) score++ // contains a year
+  if (/Yogyakarta|Jogja/i.test(c)) score++ // mentions base location
+  if (/\b\d+\s?(tahun|instansi|klien|event|mm|cm|pcs|ribu|ratusan|%|x)\b/i.test(c)) score++ // number + unit
+  if (/sejak|berdiri|pengalaman|ratusan|ribuan|1\.000|1000\+/i.test(c)) score++ // experience / scale proof
+  if (/instansi|klien|pelanggan|event nasional|universitas|kementerian/i.test(c)) score++ // credible clients
+  return score >= 2
+}
 function slugify(s) {
   return s
     .toLowerCase()
@@ -203,6 +215,18 @@ async function main() {
       keyword,
       category,
       extra: `\n\nPENTING: draf sebelumnya hanya ${words} kata. Buat ULANG artikel yang LEBIH PANJANG, minimal 800 kata, dengan lebih banyak sub-bagian <h2> dan paragraf.`,
+    })
+  }
+
+  // authority gate: guarantee concrete proof signals are present
+  for (let a = 1; a <= 2; a++) {
+    if (isAuthoritative(data.content || "")) break
+    console.log(`Konten kurang otoritatif (tidak ada bukti konkret), regenerate (percobaan ${a})...`)
+    data = await generateArticle({
+      keyword,
+      category,
+      extra:
+        "\n\nPENTING: draf sebelumnya KURANG OTORITATIF dan tidak punya bukti konkret. Wajib sertakan fakta: Karyamedia BERDIRI SEJAK 2001, berbasis YOGYAKARTA/JOGJA, melayani RATUSAN INSTANSI & EVENT nasional, serta cantumkan ANGKA/TAHUN/STANDAR produksi. Hindari kalimat promosi generik tanpa bukti.",
     })
   }
 

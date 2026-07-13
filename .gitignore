@@ -71,3 +71,7 @@ scripts/bing/submitted.json
 # dev server logs & temp scripts
 dev-server.*
 convert-tmp.mjs
+
+.vercel
+article-gen-log.txt
+article-gen-test-run.txt

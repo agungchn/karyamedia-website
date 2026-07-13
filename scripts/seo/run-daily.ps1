@@ -42,7 +42,7 @@ $slug = ""
 if ($out -match "GENERATED_SLUG:(\S+)") { $slug = $Matches[1] }
 
 $title = ""
-if ($out -match "Artikel baru: blog/\S+ — (.+)") { $title = $Matches[1].Trim() }
+  if ($out -match "Artikel disisipkan: blog/(\S+)") { $title = $Matches[1].Trim() }
 if (-not $title) { $title = $slug }
 
 if ($slug) {

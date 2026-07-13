@@ -55,8 +55,8 @@ export function LatestArticlesSlider({ articles }: { articles: Item[] }) {
           scale,
           zIndex,
           opacity: 1,
-          duration: 0.6,
-          ease: "power2.out",
+          duration: 0.7,
+          ease: "power3.out",
         })
       }
     })
@@ -64,7 +64,7 @@ export function LatestArticlesSlider({ articles }: { articles: Item[] }) {
 
   useEffect(() => {
     if (paused || total <= 1) return
-    const id = setInterval(() => shift("next"), 4500)
+    const id = setInterval(() => shift("next"), 2800)
     return () => clearInterval(id)
   }, [paused, total])
 

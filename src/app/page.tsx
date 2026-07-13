@@ -25,11 +25,10 @@ import {
   ArrowRight,
 } from "lucide-react"
 import { productIconMap, advantageIconMap } from "@/components/icons/product-icons"
-import nextDynamic from "next/dynamic"
-import { HeroSection } from "@/components/ui/hero-section"
-import { GeometricBackground } from "@/components/ui/geometric-bg"
-import { HolographicCard } from "@/components/ui/holographic-card"
 import dynamic from "next/dynamic"
+import { HeroSection } from "@/components/ui/hero-section"
+import GeometricBackgroundLazy from "@/components/ui/geometric-bg-lazy"
+import { HolographicCard } from "@/components/ui/holographic-card"
 
 const LatestArticlesSlider = dynamic(
   () => import("@/components/ui/latest-articles-slider").then((m) => m.LatestArticlesSlider),
@@ -37,7 +36,7 @@ const LatestArticlesSlider = dynamic(
 )
 
 
-const TestimonialCarousel = nextDynamic(() =>
+const TestimonialCarousel = dynamic(() =>
   import("@/components/ui/testimonial-carousel").then((m) => m.TestimonialCarousel)
 )
 
@@ -1061,7 +1060,7 @@ Didukung lebih dari 25 pengrajin profesional yang ahli di bidangnya masing-masin
       </section>
 
       <section className="relative bg-[#030303] py-20 overflow-hidden">
-        <GeometricBackground />
+        <GeometricBackgroundLazy />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="heading-display text-3xl md:text-4xl mb-3 text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] to-[#ffffff]">Cara Pesan</h2>

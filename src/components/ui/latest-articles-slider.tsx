@@ -24,6 +24,8 @@ export function LatestArticlesSlider({ articles }: { articles: Item[] }) {
   const cardRefs = useRef<(HTMLDivElement | null)[]>([])
   const [currentIndex, setCurrentIndex] = useState(0)
   const [paused, setPaused] = useState(false)
+  const [inView, setInView] = useState(false)
+  const sectionRef = useRef<HTMLDivElement>(null)
 
   const total = articles.length
 
@@ -34,6 +36,23 @@ export function LatestArticlesSlider({ articles }: { articles: Item[] }) {
   }
 
   useEffect(() => {
+    const el = sectionRef.current
+    if (!el) return
+    const obs = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setInView(true)
+          obs.disconnect()
+        }
+      },
+      { rootMargin: "200px" }
+    )
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [])
+
+  useEffect(() => {
+    if (!inView) return
     cardRefs.current.forEach((card, i) => {
       if (!card) return
 
@@ -60,18 +79,19 @@ export function LatestArticlesSlider({ articles }: { articles: Item[] }) {
         })
       }
     })
-  }, [currentIndex, total])
+  }, [currentIndex, total, inView])
 
   useEffect(() => {
-    if (paused || total <= 1) return
+    if (!inView || paused || total <= 1) return
     const id = setInterval(() => shift("next"), 2800)
     return () => clearInterval(id)
-  }, [paused, total])
+  }, [inView, paused, total])
 
   if (!total) return null
 
   return (
     <section
+      ref={sectionRef}
       className="bg-gray-50 py-10 overflow-hidden"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}

@@ -115,14 +115,14 @@ export function LatestArticlesSlider({ articles }: { articles: Item[] }) {
           >
             <Link
               href={`/blog/${card.slug}`}
-              className="group relative block overflow-hidden rounded-2xl shadow-xl border border-gray-200 bg-white"
+              className="group relative block overflow-hidden rounded-2xl shadow-xl border border-gray-200 bg-white transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl"
             >
               <div className="relative h-[300px] w-[260px]">
                 <Image
                   src={card.image}
                   alt={card.title}
                   fill
-                  className="object-cover"
+                  className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
                   sizes="260px"
                 />
 

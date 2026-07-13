@@ -237,7 +237,7 @@ export function HeroSection() {
               {/* Featured: Plakat Akrilik (full height) */}
               <div className="row-span-3 rounded-2xl overflow-hidden shadow-xl shadow-[#1D4ED8]/20 group hover:scale-[1.02] transition-transform duration-500">
                 <Image
-                  src="/images/hero/plakat-akrilik (2).png"
+                  src="/images/hero/plakat-akrilik (2).webp"
                   alt="Plakat Akrilik Custom"
                   width={300}
                   height={300}
@@ -249,7 +249,7 @@ export function HeroSection() {
               {/* Right top: Kalung Rektor */}
               <div className="rounded-2xl overflow-hidden shadow-xl shadow-accent/20 group hover:scale-[1.02] transition-transform duration-500">
                 <Image
-                  src="/images/hero/kalung-rektor (12).png"
+                  src="/images/hero/kalung-rektor (12).webp"
                   alt="Kalung Rektor"
                   width={250}
                   height={250}
@@ -261,7 +261,7 @@ export function HeroSection() {
               {/* Right middle: Plakat Wayang */}
               <div className="rounded-2xl overflow-hidden shadow-xl shadow-accent/20 group hover:scale-[1.02] transition-transform duration-500">
                 <Image
-                  src="/images/hero/plakat-wayang (33).png"
+                  src="/images/hero/plakat-wayang (33).webp"
                   alt="Plakat Wayang"
                   width={180}
                   height={180}
@@ -274,7 +274,7 @@ export function HeroSection() {
               <div className="flex gap-3">
                 <div className="flex-1 rounded-2xl overflow-hidden shadow-xl shadow-black/30 group hover:scale-[1.02] transition-transform duration-500">
                   <Image
-                    src="/images/hero/map-wisuda (8).png"
+                    src="/images/hero/map-wisuda (8).webp"
                     alt="Map Wisuda"
                     width={200}
                     height={200}
@@ -284,7 +284,7 @@ export function HeroSection() {
                 </div>
                 <div className="flex-1 rounded-2xl overflow-hidden shadow-xl shadow-[#1D4ED8]/20 group hover:scale-[1.02] transition-transform duration-500">
                   <Image
-                    src="/images/hero/patung-wisuda (20).png"
+                    src="/images/hero/patung-wisuda (20).webp"
                     alt="Patung Wisuda"
                     width={280}
                     height={280}

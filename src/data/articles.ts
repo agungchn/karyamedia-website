@@ -2060,7 +2060,7 @@ export const articles: Article[] = [
     description: "Panduan memilih souvenir wisuda custom seperti samir, map ijazah, patung wisuda, kalung rektor, dan toga. Cocok untuk universitas dan akademi di seluruh…",
     category: "Souvenir Wisuda",
     date: "2026-07-08",
-    image: "/images/hero/patung-wisuda (20).png",
+    image: "/images/produk-unggulan/patung-wisuda/patung-wisuda-24.png",
     tags: ["souvenir wisuda", "samir wisuda", "map ijazah", "patung wisuda", "toga wisuda", "kalung rektor"],
     content: `
 Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souvenir wisuda yang tepat menjadi bagian dari kesuksesan acara. Karyamedia Souvenir telah memproduksi berbagai perlengkapan wisuda sejak 2001 dan dipercaya oleh puluhan universitas di Indonesia.

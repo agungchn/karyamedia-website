@@ -1,0 +1,78 @@
+
+> karyamedia-web@0.1.0 dev
+> next dev
+
+▲ Next.js 16.2.10 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://172.31.176.1:3000
+✓ Ready in 346ms
+
+ GET / 200 in 1965ms (next.js: 129ms, application-code: 1836ms)
+ GET /blog/plakat-penghargaan-karya-terbaik-custom/opengraph-image 200 in 825ms (next.js: 592ms, application-code: 233ms)
+ GET /blog/medali-finishing-emas-untuk-kompetisi-custom/opengraph-image 200 in 119ms (next.js: 10ms, application-code: 109ms)
+ GET /blog/panduan-lengkap-medali-custom/opengraph-image 200 in 114ms (next.js: 3ms, application-code: 111ms)
+ GET / 200 in 171ms (next.js: 47ms, application-code: 124ms)
+ GET / 200 in 134ms (next.js: 36ms, application-code: 98ms)
+ GET / 200 in 142ms (next.js: 37ms, application-code: 104ms)
+ GET /blog/plakat-penghargaan-karya-terbaik-custom/opengraph-image 200 in 107ms (next.js: 18ms, application-code: 89ms)
+ GET / 200 in 156ms (next.js: 41ms, application-code: 115ms)
+ GET / 200 in 126ms (next.js: 37ms, application-code: 88ms)
+ GET / 200 in 166ms (next.js: 47ms, application-code: 120ms)
+ GET / 200 in 141ms (next.js: 37ms, application-code: 104ms)
+ GET / 200 in 148ms (next.js: 41ms, application-code: 108ms)
+✓ Compiled in 146ms
+ GET / 200 in 128ms (next.js: 38ms, application-code: 90ms)
+ GET / 200 in 352ms (next.js: 35ms, application-code: 317ms)
+ GET / 200 in 241ms (next.js: 3ms, application-code: 238ms)
+ GET / 200 in 157ms (next.js: 3ms, application-code: 153ms)
+ GET / 200 in 157ms (next.js: 66ms, application-code: 91ms)
+ GET / 200 in 10ms (next.js: 4ms, application-code: 6ms)
+ GET / 200 in 90ms (next.js: 4ms, application-code: 86ms)
+ GET / 200 in 444ms (next.js: 4ms, application-code: 440ms)
+ GET /blog 200 in 118ms (next.js: 41ms, application-code: 77ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /blog/panduan-lengkap-souvenir-custom 200 in 497ms (next.js: 452ms, generate-params: 424ms, application-code: 45ms)
+✓ Compiled in 80ms
+ GET /blog/medali-resin-custom/opengraph-image 200 in 159ms (next.js: 43ms, application-code: 116ms)
+ GET /blog/medali-resin-custom/opengraph-image 200 in 103ms (next.js: 6ms, application-code: 97ms)
+ GET /blog/medali-resin-custom/opengraph-image 200 in 108ms (next.js: 6ms, application-code: 102ms)
+ GET /blog/medali-resin-custom/opengraph-image 200 in 109ms (next.js: 6ms, application-code: 103ms)
+ GET /blog/medali-resin-custom/opengraph-image 200 in 108ms (next.js: 7ms, application-code: 102ms)
+ GET /blog/medali-resin-custom/opengraph-image 200 in 95ms (next.js: 6ms, application-code: 90ms)
+ GET /blog/medali-resin-custom/opengraph-image 200 in 96ms (next.js: 6ms, application-code: 90ms)
+ GET /blog/medali-resin-custom/opengraph-image 200 in 98ms (next.js: 6ms, application-code: 92ms)
+ GET /blog/medali-resin-custom/opengraph-image 200 in 96ms (next.js: 6ms, application-code: 90ms)
+ GET /blog/medali-resin-custom/opengraph-image 200 in 116ms (next.js: 7ms, application-code: 109ms)
+ GET /blog/medali-resin-custom/opengraph-image 200 in 98ms (next.js: 7ms, application-code: 91ms)
+ GET /blog/medali-resin-custom/opengraph-image 200 in 98ms (next.js: 6ms, application-code: 91ms)
+ GET / 200 in 456ms (next.js: 42ms, application-code: 415ms)
+ GET /blog/medali-resin-custom/opengraph-image 200 in 132ms (next.js: 10ms, application-code: 123ms)
+ GET /blog/medali-resin-custom/opengraph-image 200 in 101ms (next.js: 7ms, application-code: 94ms)
+ GET /katalog-produk/plakat 200 in 558ms (next.js: 452ms, application-code: 106ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /blog/medali-resin-custom/opengraph-image 200 in 105ms (next.js: 7ms, application-code: 98ms)
+ GET /katalog-produk/plakat/plakat-fiberglass 200 in 625ms (next.js: 463ms, application-code: 162ms)
+ GET /katalog-produk/plakat/plakat-fiberglass/plakat-undip 200 in 488ms (next.js: 434ms, application-code: 54ms)
+ GET /blog/medali-resin-custom/opengraph-image 200 in 113ms (next.js: 6ms, application-code: 107ms)
+ GET /blog/medali-resin-custom/opengraph-image 200 in 117ms (next.js: 9ms, application-code: 108ms)
+ GET /blog 200 in 112ms (next.js: 29ms, application-code: 84ms)
+ GET /blog/medali-resin-custom/opengraph-image 200 in 111ms (next.js: 9ms, application-code: 101ms)
+ GET /blog/medali-finishing-emas-untuk-kompetisi-custom 200 in 106ms (next.js: 66ms, generate-params: 4ms, application-code: 40ms)
+ GET /blog/medali-resin-custom/opengraph-image 200 in 112ms (next.js: 9ms, application-code: 103ms)
+ GET /blog/medali-resin-custom/opengraph-image 200 in 98ms (next.js: 7ms, application-code: 92ms)
+ GET /blog/medali-resin-custom/opengraph-image 200 in 112ms (next.js: 8ms, application-code: 105ms)
+✓ Compiled in 115ms
+ GET /blog/medali-finishing-emas-untuk-kompetisi-custom 200 in 295ms (next.js: 149ms, generate-params: 6ms, application-code: 146ms)
+ GET /blog/medali-finishing-emas-untuk-kompetisi-custom 200 in 96ms (next.js: 5ms, generate-params: 20µs, application-code: 92ms)
+ GET /blog/medali-finishing-emas-untuk-kompetisi-custom 200 in 51ms (next.js: 4ms, generate-params: 29µs, application-code: 47ms)
+ GET /blog/medali-resin-custom/opengraph-image 200 in 149ms (next.js: 35ms, application-code: 114ms)
+ GET /blog/medali-finishing-emas-untuk-kompetisi-custom 200 in 238ms (next.js: 9ms, generate-params: 5ms, application-code: 229ms)
+ GET /blog 200 in 88ms (next.js: 9ms, application-code: 79ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /blog/plakat-fiberglass-custom-untuk-penghargaan 200 in 45ms (next.js: 8ms, generate-params: 4ms, application-code: 37ms)
+✓ Compiled in 98ms
+✓ Compiled in 78ms
+ GET /blog/medali-resin-custom/opengraph-image 200 in 147ms (next.js: 29ms, application-code: 118ms)
+✓ Compiled in 82ms
+ GET /blog/medali-resin-custom 200 in 212ms (next.js: 59ms, generate-params: 4ms, application-code: 153ms)
+✓ Compiled in 86ms

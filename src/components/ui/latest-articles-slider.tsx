@@ -115,9 +115,9 @@ export function LatestArticlesSlider({ articles }: { articles: Item[] }) {
           >
             <Link
               href={`/blog/${card.slug}`}
-              className="group relative block overflow-hidden rounded-2xl shadow-xl border border-gray-200 bg-white"
+              className="group relative block rounded-2xl shadow-xl border border-gray-200 bg-white"
             >
-              <div className="relative h-[300px] w-[260px]">
+              <div className="relative h-[300px] w-[260px] overflow-hidden rounded-2xl">
                 <Image
                   src={card.image}
                   alt={card.title}
@@ -127,14 +127,14 @@ export function LatestArticlesSlider({ articles }: { articles: Item[] }) {
                 />
 
                 {card.category && (
-                  <div className="absolute top-4 -left-10 transform -rotate-45">
-                    <div
-                      className={`px-3 py-0.5 text-xs font-bold shadow-md ${
+                  <div className="absolute top-0 left-0 w-20 h-20 overflow-hidden">
+                    <span
+                      className={`absolute top-3 left-[-30px] w-[130px] -rotate-45 text-center text-[10px] font-bold py-0.5 shadow-md ${
                         badgePalette[index % badgePalette.length]
                       }`}
                     >
                       {card.category}
-                    </div>
+                    </span>
                   </div>
                 )}
 

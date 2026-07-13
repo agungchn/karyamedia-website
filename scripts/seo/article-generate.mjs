@@ -169,8 +169,8 @@ function injectBacklink(block, newSlug, newTitle) {
   if (c1 <= c0) return block
   const body = block.slice(c0 + 1, c1)
   if (body.includes(`/blog/${newSlug}`)) return block // already linked
-  const words = body.replace(/<[^>]*>/g, " ").split(/\s+/).filter(Boolean).length
-  if (words > 1400) return block // keep older articles under the soft cap
+  const existing = (body.match(/Artikel terkait: <a href="\/blog\//g) || []).length
+  if (existing >= 4) return block // cap related links per article (avoid link stuffing)
   const link = `<p>Artikel terkait: <a href="/blog/${newSlug}">${escTpl(newTitle)}</a></p>`
   return block.slice(0, c1) + link + block.slice(c1)
 }

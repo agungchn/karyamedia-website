@@ -16,7 +16,7 @@ export function Footer() {
                 <Image src="/images/logo-karyamedia.png" alt="Karyamedia Souvenir" width={40} height={40} className="w-10 h-10 object-contain" />
                 <div>
                   <div className="font-bold text-lg leading-tight">Karyamedia</div>
-                  <div className="text-[10px] text-accent-accessible font-medium tracking-widest uppercase">Souvenir</div>
+                  <div className="text-[10px] text-accent font-medium tracking-widest uppercase">Souvenir</div>
                 </div>
               </Link>
             </div>
@@ -91,7 +91,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold text-base text-accent-accessible mb-1">Menu</h3>
+            <h3 className="font-semibold text-base text-accent mb-1">Menu</h3>
             <div className="w-full border-b border-accent/50 mb-4"></div>
             <ul className="space-y-2.5 text-sm text-gray-300">
               {[
@@ -112,7 +112,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold text-base text-accent-accessible mb-1">Kategori Produk</h3>
+            <h3 className="font-semibold text-base text-accent mb-1">Kategori Produk</h3>
             <div className="w-full border-b border-accent/50 mb-4"></div>
             <ul className="space-y-2.5 text-sm text-gray-300">
               {categories.map((cat) => (
@@ -126,7 +126,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold text-base text-accent-accessible mb-1">Newsletter</h3>
+            <h3 className="font-semibold text-base text-accent mb-1">Newsletter</h3>
             <div className="w-full border-b border-accent/50 mb-4"></div>
             <p className="text-sm text-gray-300 mb-4">
               Dapatkan info terbaru, promo, dan inspirasi souvenir via WhatsApp.

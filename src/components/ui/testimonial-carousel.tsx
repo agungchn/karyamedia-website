@@ -105,7 +105,7 @@ export function TestimonialCarousel({ testimonials }: Props) {
                       <path d="M7 12.5l3 3 7-7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </div>
-                  <p className="text-[11px] text-gray-400 mt-0.5">
+                  <p className="text-[11px] text-gray-600 mt-0.5">
                     {t.position}{t.organization ? ` — ${t.organization}` : ""}
                   </p>
                 </div>
@@ -121,16 +121,16 @@ export function TestimonialCarousel({ testimonials }: Props) {
                 <button
                   onClick={() => toggleLike(t.id)}
                   className={`flex items-center gap-1 text-[11px] transition-colors ${
-                    liked.has(t.id) ? "text-primary-light" : "text-gray-500 hover:text-primary-light"
+                    liked.has(t.id) ? "text-primary-light" : "text-gray-600 hover:text-primary-light"
                   }`}
                 >
                   <ThumbsUp className={`w-3 h-3 ${liked.has(t.id) ? "fill-primary-light" : ""}`} />
                   Berguna
                 </button>
-                <span className="text-[11px] text-gray-300">|</span>
+                <span className="text-[11px] text-gray-500">|</span>
                 <button
                   onClick={() => share(t)}
-                  className="text-[11px] text-gray-500 hover:text-primary-light transition-colors"
+                  className="text-[11px] text-gray-600 hover:text-primary-light transition-colors"
                 >
                   Bagikan
                 </button>

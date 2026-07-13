@@ -1004,7 +1004,7 @@ export default function HomePage() {
                       </div>
                     </div>
                     <div className="p-4">
-                      <p className="text-xs text-gray-400 mb-1">{product.code}</p>
+                      <p className="text-xs text-gray-500 mb-1">{product.code}</p>
                       <h3 className="font-semibold text-gray-900 text-sm mb-1 line-clamp-2">{product.name}</h3>
                       <p className="text-xs text-gray-500 mb-3 line-clamp-2">{product.shortDescription}</p>
                       <div className="flex items-center gap-2">
@@ -1018,7 +1018,7 @@ export default function HomePage() {
                           href={getWhatsAppLink(generateWhatsAppMessage(product.code, product.name))}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex-1 text-center py-2 rounded-lg bg-[#25D366] text-white text-xs font-medium hover:bg-[#20bd5a] transition-colors"
+                          className="flex-1 text-center py-2 rounded-lg bg-[#075E54] text-white text-xs font-medium hover:bg-[#054E43] transition-colors"
                         >
                           WhatsApp
                         </a>
@@ -1126,7 +1126,7 @@ Didukung lebih dari 25 pengrajin profesional yang ahli di bidangnya masing-masin
               href={getWhatsAppLink()}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white px-8 py-3 rounded-full font-medium transition-all hover:shadow-lg hover:shadow-[#25D366]/30"
+              className="inline-flex items-center gap-2 bg-[#075E54] hover:bg-[#054E43] text-white px-8 py-3 rounded-full font-medium transition-all hover:shadow-lg hover:shadow-[#25D366]/30"
             >
               <MessageCircle className="w-5 h-5" />
               Konsultasi via WhatsApp

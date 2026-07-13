@@ -50,7 +50,7 @@ export function WhatsAppFloat() {
         target="_blank"
         rel="noopener noreferrer"
         onClick={handleClick}
-        className="flex items-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white pl-4 pr-5 py-3.5 rounded-full shadow-xl shadow-[#25D366]/30 transition-all hover:scale-105 animate-pulse-glow group"
+        className="flex items-center gap-2 bg-[#075E54] hover:bg-[#054E43] text-white pl-4 pr-5 py-3.5 rounded-full shadow-xl shadow-[#25D366]/30 transition-all hover:scale-105 animate-pulse-glow group"
         aria-label="Chat WhatsApp"
       >
         <MessageCircle className="w-5 h-5" />

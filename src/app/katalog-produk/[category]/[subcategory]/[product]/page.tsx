@@ -218,7 +218,7 @@ export default async function ProductDetailPage({ params }: Props) {
                 href={getWhatsAppLink(waMessage)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white py-3.5 rounded-xl font-medium transition-all hover:shadow-lg hover:shadow-[#25D366]/25"
+                className="flex-1 flex items-center justify-center gap-2 bg-[#075E54] hover:bg-[#054E43] text-white py-3.5 rounded-xl font-medium transition-all hover:shadow-lg hover:shadow-[#25D366]/25"
               >
                 <MessageCircle className="w-5 h-5" />
                 Tanya Harga via WhatsApp

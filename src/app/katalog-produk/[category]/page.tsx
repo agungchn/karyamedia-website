@@ -159,7 +159,7 @@ export default async function CategoryPage({ params }: Props) {
                         href={getWhatsAppLink(generateWhatsAppMessage(product.code, product.name))}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 text-center py-2 rounded-lg bg-[#25D366] text-white text-xs font-medium hover:bg-[#20bd5a] transition-colors"
+                        className="flex-1 text-center py-2 rounded-lg bg-[#075E54] text-white text-xs font-medium hover:bg-[#054E43] transition-colors"
                       >
                         WhatsApp
                       </a>

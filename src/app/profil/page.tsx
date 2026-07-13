@@ -359,7 +359,7 @@ export default function ProfilPage() {
               href={getWhatsAppLink()}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white px-8 py-3 rounded-full font-medium transition-all"
+              className="inline-flex items-center gap-2 bg-[#075E54] hover:bg-[#054E43] text-white px-8 py-3 rounded-full font-medium transition-all"
             >
               <MessageCircle className="w-5 h-5" />
               Konsultasi via WhatsApp

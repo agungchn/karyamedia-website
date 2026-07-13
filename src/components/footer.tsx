@@ -43,18 +43,48 @@ export function Footer() {
             </div>
             <div className="flex items-center gap-3 mt-6">
               {[
-                { label: "IG", name: "Instagram" },
-                { label: "FB", name: "Facebook" },
-                { label: "YT", name: "Youtube" },
-                { label: "TT", name: "TikTok" },
+                {
+                  name: "Instagram",
+                  icon: (
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5" aria-hidden="true">
+                      <rect x="2" y="2" width="20" height="20" rx="5" />
+                      <circle cx="12" cy="12" r="4" />
+                      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                    </svg>
+                  ),
+                },
+                {
+                  name: "Facebook",
+                  icon: (
+                    <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" aria-hidden="true">
+                      <path d="M14 9h3l.5-3H14V4.5c0-.9.3-1.5 1.6-1.5H17V.2C16.7.1 15.8 0 14.8 0 12.5 0 11 1.4 11 4v2H8v3h3v9h3V9z" />
+                    </svg>
+                  ),
+                },
+                {
+                  name: "Youtube",
+                  icon: (
+                    <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" aria-hidden="true">
+                      <path d="M23 7.5a3 3 0 0 0-2.1-2.1C19 5 12 5 12 5s-7 0-8.9.4A3 3 0 0 0 1 7.5 31 31 0 0 0 .6 12 31 31 0 0 0 1 16.5a3 3 0 0 0 2.1 2.1C5 19 12 19 12 19s7 0 8.9-.4a3 3 0 0 0 2.1-2.1A31 31 0 0 0 23.4 12 31 31 0 0 0 23 7.5zM9.8 15.3V8.7l5.7 3.3z" />
+                    </svg>
+                  ),
+                },
+                {
+                  name: "TikTok",
+                  icon: (
+                    <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" aria-hidden="true">
+                      <path d="M16.5 3c.3 2.1 1.5 3.6 3.5 3.9v3c-1.3 0-2.5-.4-3.5-1v5.9a5.5 5.5 0 1 1-5.5-5.5c.3 0 .6 0 .9.1v3.1a2.5 2.5 0 1 0 1.8 2.4V3z" />
+                    </svg>
+                  ),
+                },
               ].map((s) => (
                 <a
-                  key={s.label}
+                  key={s.name}
                   href="#"
                   aria-label={s.name}
-                  className="w-11 h-11 rounded-full bg-white/10 flex items-center justify-center hover:bg-accent hover:text-primary hover:rotate-[360deg] transition-all duration-500 text-xs font-medium"
+                  className="w-11 h-11 rounded-full bg-white/10 flex items-center justify-center hover:bg-accent hover:text-primary hover:rotate-[360deg] transition-all duration-500"
                 >
-                  {s.label}
+                  {s.icon}
                 </a>
               ))}
             </div>

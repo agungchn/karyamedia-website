@@ -8,6 +8,8 @@ import { BackToTop } from "@/components/ui/back-to-top"
 import { OrganizationSchema, WebSiteSchema, LocalBusinessSchema } from "@/components/json-ld"
 import { FaviconThemeSwitcher } from "@/components/favicon-theme-switcher"
 
+export const dynamic = "force-dynamic"
+
 const geistSans = localFont({
   src: [
     { path: "../../fonts/Geist-latin.woff2", weight: "100 900", style: "normal" },

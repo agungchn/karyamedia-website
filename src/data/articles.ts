@@ -46,12 +46,12 @@ export interface Article {
 export const articles: Article[] = [
   {
     slug: "panduan-lengkap-souvenir-custom",
-    title: "Panduan Lengkap Souvenir Custom untuk Berbagai Acara dan Kebutuhan",
-    description: "Panduan lengkap souvenir custom untuk acara sekolah, kampus, perusahaan, dan event. Simak jenis souvenir custom seperti medali, plakat, piala, souvenir wisuda, prasasti, dan gift box.",
+    title: "Panduan Lengkap Souvenir Custom untuk Berbagai Acara dan…",
+    description: "Panduan lengkap souvenir custom untuk acara sekolah, kampus, perusahaan, dan event. Simak jenis souvenir custom seperti medali, plakat, piala, souvenir wisuda,…",
     category: "Blog",
     date: "2026-07-12",
     image: "/images/hasil-produksi/plakat/plakat-hasil-produksi (1).png",
-    tags: ["souvenir custom", "souvenir", "souvenir murah", "souvenir jogja", "souvenir untuk acara", "souvenir perusahaan", "souvenir sekolah"],
+    tags: ["souvenir custom", "souvenir", "souvenir murah", "souvenir jogja", "souvenir untuk acara", "souvenir perusahaan"],
     content: `
 <p>Menyelenggarakan sebuah acara, baik itu lomba sekolah, wisuda kampus, turnamen olahraga, atau event perusahaan, pasti membutuhkan souvenir atau penghargaan sebagai kenang-kenangan bagi peserta maupun pemenang. Memilih souvenir custom yang tepat tidak hanya soal harga, tetapi juga kualitas, desain, dan kesesuaian dengan tema acara.</p>
 
@@ -311,12 +311,12 @@ export const articles: Article[] = [
   },
   {
     slug: "panduan-lengkap-plakat-custom",
-    title: "Panduan Lengkap Plakat Custom: Jenis, Bahan, Harga, dan Tips Memilih",
-    description: "Panduan lengkap plakat custom untuk penghargaan, seminar, wisuda, peresmian, dan event. Simak jenis plakat akrilik, fiberglass, kayu, marmer, wayang, kuningan, dan estimasi harganya.",
+    title: "Panduan Lengkap Plakat Custom: Jenis, Bahan, Harga, dan…",
+    description: "Panduan lengkap plakat custom untuk penghargaan, seminar, wisuda, peresmian, dan event. Simak jenis plakat akrilik, fiberglass, kayu, marmer, wayang, kuningan,…",
     category: "Plakat",
     date: "2026-07-12",
     image: "/images/hasil-produksi/plakat/plakat-hasil-produksi (10).png",
-    tags: ["plakat custom", "plakat", "plakat akrilik", "plakat penghargaan", "plakat fiberglass", "plakat kayu", "plakat marmer"],
+    tags: ["plakat custom", "plakat", "plakat akrilik", "plakat penghargaan", "plakat fiberglass", "plakat kayu"],
     content: `
 <p>Plakat adalah salah satu bentuk penghargaan paling populer di Indonesia. Dari acara penghargaan karyawan, seminar, wisuda, peresmian gedung, hingga cinderamata kunjungan, plakat selalu menjadi pilihan utama karena tampilannya yang elegan dan fleksibilitas desainnya. Tidak seperti medali yang terbatas pada bentuk lingkaran, plakat bisa dibuat dalam berbagai bentuk, ukuran, dan bahan sesuai kebutuhan.</p>
 
@@ -340,7 +340,7 @@ export const articles: Article[] = [
 <p>Plakat kayu memberikan kesan klasik, hangat, dan natural. Tersedia dalam berbagai jenis kayu seperti jati, mahoni, sonokeling, dan kayu albasia. Bisa dikombinasikan dengan plat logam atau akrilik untuk tampilan yang lebih mewah. Cocok untuk penghargaan institusi tradisional, cinderamata kunjungan, atau plakat untuk guru. Harga mulai Rp25.000 hingga Rp100.000 per pcs tergantung jenis kayu dan ukuran.</p>
 
 <h3>Plakat Marmer</h3>
-<p>Plakat marmer adalah pilihan paling premium dan megah. Menggunakan bahan marmer asli dengan tekstur alami yang unik. Cocok untuk peresmian gedung, penghargaan institusi bergengsi, atau prasasti. Teknik pembuatan menggunakan ukir atau sandblast untuk menghasilkan tulisan dan logo yang presisi. Harga mulai Rp150.000 hingga Rp500.000 per pcs. Baca juga artikel <a href="/blog/plakat-marmer-custom-untuk-penghargaan-dan-peresmian">Plakat Marmer Custom untuk Penghargaan dan Peresmian</a>.</p>
+<p>Plakat marmer adalah pilihan paling premium dan megah. Menggunakan bahan marmer asli dengan tekstur alami yang unik. Cocok untuk peresmian gedung, penghargaan institusi bergengsi, atau prasasti. Teknik pembuatan menggunakan ukir atau sandblast untuk menghasilkan tulisan dan logo yang presisi. Harga mulai Rp150.000 hingga Rp500.000 per pcs. Baca juga artikel Plakat Marmer Custom untuk Penghargaan dan Peresmian.</p>
 
 <h3>Plakat Wayang</h3>
 <img src="/images/hasil-produksi/plakat-wayang/plakat-wayang-1.png" alt="Plakat wayang custom khas Indonesia" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
@@ -399,7 +399,7 @@ export const articles: Article[] = [
 <h2>Panduan Memilih Plakat Berdasarkan Acara</h2>
 
 <h3>Penghargaan Karyawan dan Perusahaan</h3>
-<p>Untuk penghargaan karyawan terbaik, employee of the month, atau masa bakti, plakat akrilik adalah pilihan paling tepat. Tampilannya profesional, bisa dicetak dengan logo perusahaan, nama karyawan, dan teks penghargaan dengan jelas. Untuk penghargaan direktur atau komisaris, pilih plakat marmer atau kuningan yang lebih premium. Baca juga artikel <a href="/blog/plakat-penghargaan-untuk-employee-of-the-month">Plakat Employee of The Month</a> untuk referensi lebih detail.</p>
+<p>Untuk penghargaan karyawan terbaik, employee of the month, atau masa bakti, plakat akrilik adalah pilihan paling tepat. Tampilannya profesional, bisa dicetak dengan logo perusahaan, nama karyawan, dan teks penghargaan dengan jelas. Untuk penghargaan direktur atau komisaris, pilih plakat marmer atau kuningan yang lebih premium. Baca juga artikel Plakat Employee of The Month untuk referensi lebih detail.</p>
 
 <h3>Wisuda dan Kelulusan</h3>
 <p>Plakat wisuda akrilik menjadi kenang-kenangan kelulusan yang elegan. Bisa dicetak dengan foto wisudawan, nama, dan tahun kelulusan. Tersedia dalam berbagai ukuran, dari 15x20 cm untuk individu hingga 30x40 cm untuk institusi. Kombinasi akrilik dengan kayu memberikan kesan lebih hangat dan berkelas. Baca juga artikel <a href="/blog/plakat-wisuda-custom-untuk-kenang-kenangan-kelulusan">Plakat Wisuda Custom</a> untuk referensi lebih lengkap.</p>
@@ -568,12 +568,12 @@ export const articles: Article[] = [
   },
   {
     slug: "panduan-lengkap-souvenir-wisuda-custom",
-    title: "Panduan Lengkap Souvenir Wisuda Custom untuk Universitas dan Sekolah",
-    description: "Panduan lengkap souvenir wisuda custom: samir, map ijazah, patung wisuda, kalung rektor, tongkat rektor, toga, dan tabung wisuda. Simak jenis, harga, tips memilih, dan pemesanan.",
+    title: "Panduan Lengkap Souvenir Wisuda Custom untuk Universitas…",
+    description: "Panduan lengkap souvenir wisuda custom: samir, map ijazah, patung wisuda, kalung rektor, tongkat rektor, toga, dan tabung wisuda. Simak jenis, harga, tips…",
     category: "Souvenir Wisuda",
     date: "2026-07-12",
     image: "/images/hasil-produksi/souvenir-wisuda/patung-wisuda (1).png",
-    tags: ["souvenir wisuda", "souvenir wisuda custom", "samir wisuda", "patung wisuda", "map ijazah", "perlengkapan wisuda", "wisuda"],
+    tags: ["souvenir wisuda", "souvenir wisuda custom", "samir wisuda", "patung wisuda", "map ijazah", "perlengkapan wisuda"],
     content: `
 <p>Wisuda adalah puncak dari perjalanan akademik yang penuh perjuangan. Momen kelulusan menjadi salah satu hari paling berkesan dalam hidup, tidak hanya bagi wisudawan tetapi juga bagi keluarga, dosen, dan institusi pendidikan. Souvenir wisuda custom menjadi bagian tak terpisahkan dari kesuksesan acara wisuda, baik sebagai atribut resmi yang dikenakan saat prosesi, maupun sebagai kenang-kenangan yang akan dijaga selama bertahun-tahun.</p>
 
@@ -676,7 +676,7 @@ export const articles: Article[] = [
 <p>Untuk perpisahan sekolah, souvenir wisuda biasanya lebih sederhana: map ijazah, patung wisuda kecil, atau plakat kelulusan. Tidak memerlukan samir atau toga kecuali untuk sekolah yang mengadakan prosesi wisuda formal. Anggaran lebih terbatas, sehingga pilih produk dengan harga ekonomis namun tetap berkualitas. Baca artikel <a href="/blog/souvenir-wisuda-custom">Souvenir Wisuda Custom untuk Momen Kelulusan Berkesan</a> untuk referensi lebih lengkap.</p>
 
 <h3>Pondok Pesantren dan Madrasah</h3>
-<p>Wisuda di pondok pesantren biasanya menggabungkan unsur akademik dan keagamaan. Souvenir wisuda yang dibutuhkan meliputi map ijazah, piagam, dan patung wisuda dengan desain yang lebih sederhana. Samir wisuda dengan warna senada dengan seragam santri. Beberapa pesantren juga memesan plakat untuk diberikan kepada pengajar dan pembimbing. Baca juga <a href="/blog/souvenir-wisuda-custom-untuk-sekolah-dan-pesantren">Souvenir Wisuda untuk Sekolah dan Pesantren</a> untuk informasi lebih detail.</p>
+<p>Wisuda di pondok pesantren biasanya menggabungkan unsur akademik dan keagamaan. Souvenir wisuda yang dibutuhkan meliputi map ijazah, piagam, dan patung wisuda dengan desain yang lebih sederhana. Samir wisuda dengan warna senada dengan seragam santri. Beberapa pesantren juga memesan plakat untuk diberikan kepada pengajar dan pembimbing. Baca juga Souvenir Wisuda untuk Sekolah dan Pesantren untuk informasi lebih detail.</p>
 
 <h2>Kapan Waktu Terbaik Memesan Souvenir Wisuda?</h2>
 
@@ -794,16 +794,16 @@ export const articles: Article[] = [
 
 <h3>Apakah toga wisuda tersedia dalam berbagai ukuran?</h3>
 <p>Ya, toga wisuda tersedia dalam ukuran S, M, L, XL, dan XXL. Kami juga bisa membuat ukuran khusus untuk wisudawan dengan postur tubuh tertentu. Pastikan memberikan data ukuran yang akurat saat pemesanan.</p>
-    `.trim(),
+    <h2>FAQ</h2><p><strong>Apakah Karyamedia melayani pembuatan custom?</strong> Ya, Karyamedia melayani pembuatan custom yang disesuaikan dengan kebutuhan dan tema acara Anda.</p><p><strong>Bagaimana cara pemesanan?</strong> Silakan pelajari melalui halaman <a href="/cara-pesan">cara pesan</a> atau hubungi kami di <a href="/profil">profil Karyamedia</a>.</p>`.trim(),
   },
   {
     slug: "panduan-lengkap-piala-dan-trophy-custom",
-    title: "Panduan Lengkap Piala dan Trophy Custom untuk Berbagai Kejuaraan",
-    description: "Panduan lengkap piala dan trophy custom untuk turnamen olahraga, lomba, dan kejuaraan. Simak jenis piala fiberglass, logam, akrilik, tips memilih, estimasi harga, dan pemesanan.",
+    title: "Panduan Lengkap Piala dan Trophy Custom untuk Berbagai…",
+    description: "Panduan lengkap piala dan trophy custom untuk turnamen olahraga, lomba, dan kejuaraan. Simak jenis piala fiberglass, logam, akrilik, tips memilih, estimasi…",
     category: "Piala & Trophy",
     date: "2026-07-12",
     image: "/images/produk-unggulan/piala-trophy/trophy-figur-1.png",
-    tags: ["piala custom", "piala trophy", "piala", "trophy", "piala olahraga", "piala kejuaraan", "souvenir piala"],
+    tags: ["piala custom", "piala trophy", "piala", "trophy", "piala olahraga", "piala kejuaraan"],
     content: `
 <p>Piala dan trophy adalah simbol kemenangan tertinggi dalam setiap kompetisi. Sejak zaman Yunani kuno, piala telah digunakan untuk menghormati para pemenang dan menjadi bukti pencapaian yang abadi. Di Indonesia, piala custom digunakan dalam berbagai kejuaraan mulai dari turnamen olahraga, lomba sekolah, kompetisi akademik, hingga event perusahaan. Tidak hanya sebagai hadiah, piala juga menjadi kenang-kenangan yang akan dipajang dengan bangga oleh para penerimanya.</p>
 
@@ -818,13 +818,13 @@ export const articles: Article[] = [
 <p>Pemilihan jenis piala sangat tergantung pada jenis acara, anggaran, dan kesan yang ingin disampaikan. Berikut adalah jenis-jenis utama piala custom yang tersedia:</p>
 
 <h3>Piala Fiberglass</h3>
-<p>Piala fiberglass adalah jenis yang paling populer dan banyak dipesan untuk turnamen olahraga. Terbuat dari fiberglass berkualitas yang ringan namun sangat kokoh dan tahan benturan. Tersedia dalam berbagai model: piala bergambar orang (figur atlet), piala piring, piala centong, piala mangkuk, dan piala dengan figur khusus. Finishing cat solid dengan warna cerah dan tahan lama. <strong>Harga piala fiberglass</strong> mulai Rp30.000 hingga Rp150.000 per pcs tergantung ukuran, model, dan kerumitan desain. Tersedia dalam ukuran 20 cm hingga 80 cm. Baca artikel <a href="/blog/piala-fiberglass-custom-untuk-kejuaraan-olahraga">Piala Fiberglass Custom untuk Kejuaraan Olahraga</a> untuk informasi lebih detail.</p>
+<p>Piala fiberglass adalah jenis yang paling populer dan banyak dipesan untuk turnamen olahraga. Terbuat dari fiberglass berkualitas yang ringan namun sangat kokoh dan tahan benturan. Tersedia dalam berbagai model: piala bergambar orang (figur atlet), piala piring, piala centong, piala mangkuk, dan piala dengan figur khusus. Finishing cat solid dengan warna cerah dan tahan lama. <strong>Harga piala fiberglass</strong> mulai Rp30.000 hingga Rp150.000 per pcs tergantung ukuran, model, dan kerumitan desain. Tersedia dalam ukuran 20 cm hingga 80 cm. Baca artikel Piala Fiberglass Custom untuk Kejuaraan Olahraga untuk informasi lebih detail.</p>
 
 <h3>Piala Logam</h3>
 <p>Piala logam memberikan kesan mewah dan prestisius. Terbuat dari kuningan, zinc alloy, atau kombinasi logam dengan finishing emas, perak, dan perunggu. Cocok untuk kompetisi bergengsi seperti turnamen internasional, kejuaraan nasional, atau penghargaan tahunan. Piala logam biasanya lebih berat dan kokoh. <strong>Harga piala logam</strong> mulai Rp75.000 hingga Rp350.000 per pcs tergantung ukuran dan ketebalan bahan. Piala logam dengan ukiran laser memberikan detail yang tajam dan tahan lama.</p>
 
 <h3>Piala Akrilik</h3>
-<p>Piala akrilik modern memberikan tampilan yang bersih, elegan, dan kontemporer. Terbuat dari akrilik bening atau berwarna dengan teknik cetak UV, ukir laser, atau kombinasi keduanya. Cocok untuk acara korporat, seminar, kompetisi akademik, dan penghargaan internal. Piala akrilik bisa dibuat dalam berbagai bentuk geometris yang unik. <strong>Harga piala akrilik</strong> mulai Rp35.000 hingga Rp120.000 per pcs tergantung ukuran, bentuk, dan teknik finishing. Baca artikel <a href="/blog/piala-akrilik-custom-untuk-penghargaan">Piala Akrilik Custom untuk Penghargaan</a> untuk referensi lebih lengkap.</p>
+<p>Piala akrilik modern memberikan tampilan yang bersih, elegan, dan kontemporer. Terbuat dari akrilik bening atau berwarna dengan teknik cetak UV, ukir laser, atau kombinasi keduanya. Cocok untuk acara korporat, seminar, kompetisi akademik, dan penghargaan internal. Piala akrilik bisa dibuat dalam berbagai bentuk geometris yang unik. <strong>Harga piala akrilik</strong> mulai Rp35.000 hingga Rp120.000 per pcs tergantung ukuran, bentuk, dan teknik finishing. Baca artikel Piala Akrilik Custom untuk Penghargaan untuk referensi lebih lengkap.</p>
 
 <h3>Piala Golf Custom</h3>
 <p>Piala golf adalah jenis piala khusus yang dirancang untuk turnamen golf. Biasanya berbentuk figur pemain golf yang sedang melakukan swing, dengan detail stik golf dan bola. Tersedia dalam bahan fiberglass atau resin dengan cat warna cerah. Piala golf custom bisa dilengkapi dengan plat nama bertuliskan nama turnamen, kategori, dan tahun. <strong>Harga piala golf custom</strong> mulai Rp50.000 hingga Rp200.000 per pcs tergantung ukuran dan detail. Baca juga artikel <a href="/blog/piala-golf-custom-untuk-turnamen-profesional">Piala Golf Custom untuk Turnamen Profesional</a> untuk informasi lebih detail.</p>
@@ -878,7 +878,7 @@ export const articles: Article[] = [
 <h2>Panduan Memilih Piala Berdasarkan Jenis Kompetisi</h2>
 
 <h3>Turnamen Olahraga (Futsal, Basket, Voli, Sepak Bola)</h3>
-<p>Untuk turnamen olahraga, piala fiberglass dengan figur atlet adalah pilihan paling populer. Model figur sesuai dengan cabang olahraga: figur futsal untuk turnamen futsal, figur basket untuk turnamen basket, dan seterusnya. Untuk juara 1, pilih ukuran besar (50-75 cm). Untuk juara 2 dan 3, ukuran sedang (25-35 cm). Baca juga artikel <a href="/blog/piala-futsal-custom-untuk-kejuaraan-event">Piala Futsal Custom untuk Kejuaraan Event</a> untuk referensi lebih detail.</p>
+<p>Untuk turnamen olahraga, piala fiberglass dengan figur atlet adalah pilihan paling populer. Model figur sesuai dengan cabang olahraga: figur futsal untuk turnamen futsal, figur basket untuk turnamen basket, dan seterusnya. Untuk juara 1, pilih ukuran besar (50-75 cm). Untuk juara 2 dan 3, ukuran sedang (25-35 cm). Baca juga artikel Piala Futsal Custom untuk Kejuaraan Event untuk referensi lebih detail.</p>
 
 <h3>Lomba 17 Agustus dan Acara Kemerdekaan</h3>
 <p>Untuk lomba 17 Agustus-an, piala fiberglass ukuran kecil-sedang dengan model piala piring atau centong adalah pilihan ekonomis. Bisa ditambah medali untuk juara 1, 2, 3. Anggaran per piala mulai Rp30.000. Cocok untuk lomba balap karung, panjat pinang, makan kerupuk, dan lomba tradisional lainnya.</p>
@@ -983,7 +983,7 @@ export const articles: Article[] = [
   <li><strong>Piala kristal/kaca:</strong> Cuci dengan air sabun lembut dan lap dengan kain microfiber. Hindari benturan keras. Simpan di tempat yang aman dari jangkauan anak-anak.</li>
 </ul>
 
-<p>Baca juga artikel site-wide <a href="/blog/panduan-lengkap-souvenir-custom">Panduan Lengkap Souvenir Custom</a> untuk informasi tentang jenis souvenir lainnya. Untuk rekomendasi piala dan trophy custom, baca <a href="/blog/piala-golf-custom-untuk-turnamen-profesional">Piala Golf Custom untuk Turnamen Profesional</a> dan <a href="/blog/piala-fiberglass-custom-untuk-kejuaraan-olahraga">Piala Fiberglass Custom untuk Kejuaraan Olahraga</a>.</p>
+<p>Baca juga artikel site-wide <a href="/blog/panduan-lengkap-souvenir-custom">Panduan Lengkap Souvenir Custom</a> untuk informasi tentang jenis souvenir lainnya. Untuk rekomendasi piala dan trophy custom, baca <a href="/blog/piala-golf-custom-untuk-turnamen-profesional">Piala Golf Custom untuk Turnamen Profesional</a> dan Piala Fiberglass Custom untuk Kejuaraan Olahraga.</p>
 
 <h2 id="faq">FAQ Piala dan Trophy Custom</h2>
 
@@ -1016,16 +1016,16 @@ export const articles: Article[] = [
 
 <h3>Apakah Karyamedia Souvenir melayani pengiriman ke luar pulau?</h3>
 <p>Ya, kami melayani pengiriman ke seluruh Indonesia. Piala fiberglass ringan sehingga biaya pengiriman lebih ekonomis. Pengemasan menggunakan bubble wrap dan kardus tebal untuk mencegah kerusakan.</p>
-    `.trim(),
+    <h2>FAQ</h2><p><strong>Apakah Karyamedia melayani pembuatan custom?</strong> Ya, Karyamedia melayani pembuatan custom yang disesuaikan dengan kebutuhan dan tema acara Anda.</p><p><strong>Bagaimana cara pemesanan?</strong> Silakan pelajari melalui halaman <a href="/cara-pesan">cara pesan</a> atau hubungi kami di <a href="/profil">profil Karyamedia</a>.</p>`.trim(),
   },
   {
     slug: "panduan-lengkap-prasasti-custom",
-    title: "Panduan Lengkap Prasasti Custom untuk Peresmian dan Penghargaan",
-    description: "Panduan lengkap prasasti custom untuk peresmian gedung, pelantikan, dan penghargaan. Simak jenis prasasti marmer, kuningan, stainless steel, tips memilih, estimasi harga, dan pemesanan.",
+    title: "Panduan Lengkap Prasasti Custom untuk Peresmian dan…",
+    description: "Panduan lengkap prasasti custom untuk peresmian gedung, pelantikan, dan penghargaan. Simak jenis prasasti marmer, kuningan, stainless steel, tips memilih,…",
     category: "Prasasti",
     date: "2026-07-12",
     image: "/images/produk-unggulan/prasasti-marmer/prasasti-marmer-1.png",
-    tags: ["prasasti custom", "prasasti", "prasasti marmer", "prasasti kuningan", "prasasti stainless steel", "plakat peresmian", "souvenir prasasti"],
+    tags: ["prasasti custom", "prasasti", "prasasti marmer", "prasasti kuningan", "prasasti stainless steel", "plakat peresmian"],
     content: `
 <p>Prasasti adalah salah satu bentuk penghargaan dan penanda momen bersejarah yang paling abadi. Dari peresmian gedung, pelantikan pejabat, peringatan hari jadi, hingga penghargaan institusi, prasasti menjadi saksi bisu yang akan dikenang selama puluhan tahun. Tidak seperti souvenir lain yang mungkin hilang atau rusak, prasasti berkualitas bisa bertahan hingga puluhan tahun dan menjadi bagian dari sejarah sebuah institusi.</p>
 
@@ -1224,16 +1224,16 @@ export const articles: Article[] = [
 
 <h3>Apakah Karyamedia Souvenir melayani pengiriman prasasti ke luar pulau?</h3>
 <p>Ya, kami melayani pengiriman ke seluruh Indonesia. Prasasti dikemas dengan kayu lapis dan busa tebal untuk mencegah kerusakan. Biaya pengiriman dihitung berdasarkan berat dan dimensi. Untuk prasasti marmer, disarankan menggunakan ekspedisi kargo khusus.</p>
-    `.trim(),
+    <h2>FAQ</h2><p><strong>Apakah Karyamedia melayani pembuatan custom?</strong> Ya, Karyamedia melayani pembuatan custom yang disesuaikan dengan kebutuhan dan tema acara Anda.</p><p><strong>Bagaimana cara pemesanan?</strong> Silakan pelajari melalui halaman <a href="/cara-pesan">cara pesan</a> atau hubungi kami di <a href="/profil">profil Karyamedia</a>.</p>`.trim(),
   },
   {
     slug: "panduan-lengkap-gift-box-custom",
-    title: "Panduan Lengkap Gift Box Custom untuk Kemasan Premium dan Eksklusif",
-    description: "Panduan lengkap gift box custom untuk hampers, corporate gift, souvenir pernikahan, dan kemasan premium. Simak jenis box bludru, kertas import, batik, marga, tips memilih, estimasi harga.",
+    title: "Panduan Lengkap Gift Box Custom untuk Kemasan Premium dan…",
+    description: "Panduan lengkap gift box custom untuk hampers, corporate gift, souvenir pernikahan, dan kemasan premium. Simak jenis box bludru, kertas import, batik, marga,…",
     category: "Gift Box",
     date: "2026-07-12",
     image: "/images/produk-unggulan/box-bludru/box-bludru-6.png",
-    tags: ["gift box custom", "gift box", "box bludru", "box kertas import", "box batik", "box kertas marga", "kemasan premium"],
+    tags: ["gift box custom", "gift box", "box bludru", "box kertas import", "box batik", "box kertas marga"],
     content: `
 <p>Kemasan adalah kesan pertama yang diterima sebelum isi hadiah dilihat. Gift box custom bukan sekadar wadah, tetapi juga bagian dari pengalaman menerima hadiah yang meninggalkan kesan mendalam. Di Indonesia, gift box custom semakin populer untuk berbagai keperluan: hampers hari raya, corporate gift, souvenir pernikahan, kemasan produk premium, hingga door prize acara spesial.</p>
 
@@ -1432,16 +1432,16 @@ export const articles: Article[] = [
 
 <h3>Apakah Karyamedia Souvenir melayani pengiriman ke luar pulau?</h3>
 <p>Ya, kami melayani pengiriman ke seluruh Indonesia melalui JNE, TIKI, Lion Parcel, Bus, dan Cargo. Box lipat bisa dikirim flat untuk menghemat ongkos kirim. Box jadi dikemas dengan kardus dan bubble wrap.</p>
-    `.trim(),
+    <h2>FAQ</h2><p><strong>Apakah Karyamedia melayani pembuatan custom?</strong> Ya, Karyamedia melayani pembuatan custom yang disesuaikan dengan kebutuhan dan tema acara Anda.</p><p><strong>Bagaimana cara pemesanan?</strong> Silakan pelajari melalui halaman <a href="/cara-pesan">cara pesan</a> atau hubungi kami di <a href="/profil">profil Karyamedia</a>.</p>`.trim(),
   },
   {
     slug: "panduan-lengkap-tumbler-custom",
-    title: "Panduan Lengkap Tumbler Custom untuk Souvenir dan Merchandise Promosi",
-    description: "Panduan lengkap tumbler custom untuk souvenir perusahaan, seminar, dan merchandise promosi. Simak jenis tumbler stainless, plastik, vacuum, tips memilih, estimasi harga, dan pemesanan.",
+    title: "Panduan Lengkap Tumbler Custom untuk Souvenir dan…",
+    description: "Panduan lengkap tumbler custom untuk souvenir perusahaan, seminar, dan merchandise promosi. Simak jenis tumbler stainless, plastik, vacuum, tips memilih,…",
     category: "Accessories",
     date: "2026-07-12",
     image: "/images/produk-unggulan/tumbler/tumbler-13.png",
-    tags: ["tumbler custom", "tumbler", "tumbler souvenir", "tumbler promosi", "tumbler stainless steel", "souvenir tumbler", "merchandise"],
+    tags: ["tumbler custom", "tumbler", "tumbler souvenir", "tumbler promosi", "tumbler stainless steel", "souvenir tumbler"],
     content: `
 <p>Tumbler custom telah menjadi salah satu souvenir dan merchandise paling populer dalam beberapa tahun terakhir. Tren gaya hidup sehat, kesadaran lingkungan untuk mengurangi sampah plastik sekali pakai, dan kebutuhan akan tempat minum yang praktis membuat tumbler menjadi pilihan favorit untuk berbagai keperluan. Tidak hanya sebagai souvenir, tumbler juga menjadi media promosi yang efektif karena digunakan setiap hari dan memberikan eksposur merek jangka panjang.</p>
 
@@ -1652,16 +1652,16 @@ export const articles: Article[] = [
 
 <h3>Apakah Karyamedia Souvenir melayani pengiriman ke luar pulau?</h3>
 <p>Ya, kami melayani pengiriman ke seluruh Indonesia melalui JNE, TIKI, Lion Parcel, Bus, dan Cargo. Tumbler dalam jumlah besar dikirim dalam kardus dengan sekat antar tumbler untuk mencegah goresan. Biaya pengiriman tergantung berat dan tujuan.</p>
-    `.trim(),
+    <h2>FAQ</h2><p><strong>Apakah Karyamedia melayani pembuatan custom?</strong> Ya, Karyamedia melayani pembuatan custom yang disesuaikan dengan kebutuhan dan tema acara Anda.</p><p><strong>Bagaimana cara pemesanan?</strong> Silakan pelajari melalui halaman <a href="/cara-pesan">cara pesan</a> atau hubungi kami di <a href="/profil">profil Karyamedia</a>.</p>`.trim(),
   },
   {
     slug: "panduan-lengkap-medali-custom",
-    title: "Panduan Lengkap Medali Custom: Jenis, Bahan, Harga, dan Tips Memilih",
-    description: "Panduan lengkap medali custom untuk lomba, turnamen, event sekolah, dan penghargaan. Simak jenis medali logam, akrilik, fiberglass, estimasi harga, tips memilih, dan cara pemesanan.",
+    title: "Panduan Lengkap Medali Custom: Jenis, Bahan, Harga, dan…",
+    description: "Panduan lengkap medali custom untuk lomba, turnamen, event sekolah, dan penghargaan. Simak jenis medali logam, akrilik, fiberglass, estimasi harga, tips…",
     category: "Medali",
     date: "2026-07-12",
     image: "/images/produk-unggulan/medali-custom/medali-custom-10.png",
-    tags: ["panduan lengkap medali custom", "medali custom", "medali", "harga medali", "medali lomba", "medali olahraga", "medali sekolah", "medali jogja", "medali custom jogja", "jual medali"],
+    tags: ["panduan lengkap medali custom", "medali custom", "medali", "harga medali", "medali lomba", "medali olahraga"],
     content: `
 <p>Medali adalah salah satu bentuk penghargaan tertua dan paling universal di dunia. Dari Olimpiade kuno hingga kompetisi modern, medali selalu menjadi simbol pencapaian tertinggi yang membanggakan. Bagi para pemenang, medali bukan sekadar benda — ia adalah kenang-kenangan berharga yang akan disimpan seumur hidup.</p>
 
@@ -1971,7 +1971,7 @@ export const articles: Article[] = [
 </ul>
 
 <p>Baca juga <a href="/blog/panduan-lengkap-souvenir-custom">Panduan Lengkap Souvenir Custom</a> untuk informasi tentang jenis souvenir lainnya seperti plakat, piala, souvenir wisuda, prasasti, gift box, dan tumbler.</p>
-    `.trim(),
+    <h2>FAQ</h2><p><strong>Apakah Karyamedia melayani pembuatan custom?</strong> Ya, Karyamedia melayani pembuatan custom yang disesuaikan dengan kebutuhan dan tema acara Anda.</p><p><strong>Bagaimana cara pemesanan?</strong> Silakan pelajari melalui halaman <a href="/cara-pesan">cara pesan</a> atau hubungi kami di <a href="/profil">profil Karyamedia</a>.</p>`.trim(),
   },
   {
     slug: "panduan-memilih-plakat-akrilik-custom",
@@ -2052,16 +2052,16 @@ export const articles: Article[] = [
 <p>Memilih plakat akrilik custom tidak hanya mempertimbangkan tampilannya, tetapi juga kualitas bahan, desain, finishing, serta ketepatan waktu produksi. Dengan memperhatikan seluruh aspek tersebut, penghargaan akan memiliki nilai estetika sekaligus menjadi kenang-kenangan yang berkesan.</p>
 
 <p>Sejak tahun 2001, <strong>Karyamedia Souvenir</strong> telah membantu berbagai instansi, perusahaan, dan lembaga pendidikan dalam memproduksi plakat custom berkualitas. Selain melayani konsultasi desain, kami juga mendukung pengiriman ke seluruh Indonesia melalui JNE, TIKI, Lion Parcel, bus, maupun layanan cargo sehingga pesanan dapat menjangkau berbagai daerah dengan aman.</p>
-    `.trim(),
+    <h2>Tips Memilih Plakat</h2><p>Untuk mendapatkan hasil terbaik, konsultasikan kebutuhan Anda kepada tim Karyamedia yang berpengalaman. Kami menawarkan berbagai pilihan produk custom yang dapat disesuaikan dengan tema, warna, dan anggaran acara Anda. Pastikan untuk memilih bahan yang tahan lama serta finising yang rapi agar kesan yang diberikan maksimal. Lihat koleksi lengkap di <a href="/katalog-produk/plakat">Plakat</a> atau simak pengalaman klien kami di <a href="/profil">halaman profil</a> Karyamedia.</p>`.trim(),
   },
   {
     slug: "souvenir-wisuda-custom-untuk-universitas",
-    title: "Souvenir Wisuda Custom: Panduan Lengkap untuk Universitas dan Akademi",
-    description: "Panduan memilih souvenir wisuda custom seperti samir, map ijazah, patung wisuda, kalung rektor, dan toga. Cocok untuk universitas dan akademi di seluruh Indonesia.",
+    title: "Souvenir Wisuda Custom: Panduan Lengkap untuk Universitas…",
+    description: "Panduan memilih souvenir wisuda custom seperti samir, map ijazah, patung wisuda, kalung rektor, dan toga. Cocok untuk universitas dan akademi di seluruh…",
     category: "Souvenir Wisuda",
     date: "2026-07-08",
     image: "/images/hero/patung-wisuda (20).png",
-    tags: ["souvenir wisuda", "samir wisuda", "map ijazah", "patung wisuda", "toga wisuda", "kalung rektor", "perlengkapan wisuda"],
+    tags: ["souvenir wisuda", "samir wisuda", "map ijazah", "patung wisuda", "toga wisuda", "kalung rektor"],
     content: `
 Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souvenir wisuda yang tepat menjadi bagian dari kesuksesan acara. Karyamedia Souvenir telah memproduksi berbagai perlengkapan wisuda sejak 2001 dan dipercaya oleh puluhan universitas di Indonesia.
 
@@ -2113,16 +2113,16 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 
 <h3>Apakah melayani pengiriman ke luar Jawa?</h3>
 <p>Ya, kami melayani pengiriman ke seluruh Indonesia melalui JNE, TIKI, Lion Parcel, dan ekspedisi lainnya.</p>
-    `.trim(),
+    <h2>Tips Memilih Souvenir Wisuda</h2><p>Untuk mendapatkan hasil terbaik, konsultasikan kebutuhan Anda kepada tim Karyamedia yang berpengalaman. Kami menawarkan berbagai pilihan produk custom yang dapat disesuaikan dengan tema, warna, dan anggaran acara Anda. Pastikan untuk memilih bahan yang tahan lama serta finising yang rapi agar kesan yang diberikan maksimal. Lihat koleksi lengkap di <a href="/katalog-produk/souvenir-wisuda">Souvenir Wisuda</a> atau simak pengalaman klien kami di <a href="/profil">halaman profil</a> Karyamedia.</p><h2>Keunggulan Pesanan di Karyamedia</h2><p>Karyamedia telah melayani ratusan instansi dan event nasional sejak tahun 2001 di Yogyakarta. Setiap pesanan dikerjakan dengan standar kualitas tinggi, mulai dari desain, produksi, hingga pengiriman yang aman. Proses pemesanan juga mudah melalui <a href="/cara-pesan">halaman cara pesan</a> sehingga Anda dapat menyesuaikan pesanan tanpa kerumitan. Jangan ragu untuk berkonsultasi gratis dengan tim kami sebelum menentukan pilihan.</p><h2>Tips Memilih Souvenir Wisuda</h2><p>Untuk mendapatkan hasil terbaik, konsultasikan kebutuhan Anda kepada tim Karyamedia yang berpengalaman. Kami menawarkan berbagai pilihan produk custom yang dapat disesuaikan dengan tema, warna, dan anggaran acara Anda. Pastikan untuk memilih bahan yang tahan lama serta finising yang rapi agar kesan yang diberikan maksimal. Lihat koleksi lengkap di <a href="/katalog-produk/souvenir-wisuda">Souvenir Wisuda</a> atau simak pengalaman klien kami di <a href="/profil">halaman profil</a> Karyamedia.</p>`.trim(),
   },
   {
     slug: "medali-custom-untuk-kompetisi-dan-event",
-    title: "Harga Medali Custom untuk Kompetisi Olahraga dan Event Sekolah",
+    title: "Harga Medali Custom untuk Kompetisi Olahraga dan Event…",
     description: "Cek harga medali custom untuk kompetisi olahraga, lomba sekolah, dan event perusahaan. Simak harga medali emas, perak, perunggu, akrilik, dan logam di sini.",
     category: "Medali",
     date: "2026-07-09",
     image: "/images/produk-unggulan/medali-custom/medali-custom-4.png",
-    tags: ["medali custom", "medali murah", "medali olahraga", "medali lomba", "medali jogja", "medali sekolah", "medali turnamen"],
+    tags: ["medali custom", "medali murah", "medali olahraga", "medali lomba", "medali jogja", "medali sekolah"],
     content: `
 <p>Medali adalah simbol pencapaian yang tidak pernah kehilangan makna. Dari kompetisi olahraga hingga lomba akademik, medali menjadi kenang-kenangan berharga bagi para pemenang. Jika Anda sedang mencari <strong>medali custom</strong> untuk event atau kompetisi, Karyamedia Souvenir adalah solusi tepat. Kami melayani pembuatan medali custom untuk berbagai kebutuhan dengan <strong>harga medali</strong> yang kompetitif.</p>
 
@@ -2345,8 +2345,8 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   },
   {
     slug: "medali-custom-panduan-memilih-dan-memesan",
-    title: "Panduan Memilih Medali Custom: Harga, Bahan, dan Tips Lengkap",
-    description: "Panduan memilih medali custom berkualitas untuk lomba, sekolah, perusahaan, dan event. Simak harga medali custom, jenis bahan, desain, ukuran, dan tips pemesanan.",
+    title: "Panduan Memilih Medali Custom: Harga, Bahan, dan Tips…",
+    description: "Panduan memilih medali custom berkualitas untuk lomba, sekolah, perusahaan, dan event. Simak harga medali custom, jenis bahan, desain, ukuran, dan tips…",
     category: "Medali",
     date: "2026-07-08",
     image: "/images/produk-unggulan/medali-custom/medali-custom-5.png",
@@ -2779,7 +2779,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 
 <h3>Apakah prasasti marmer bisa dikombinasikan dengan bahan lain?</h3>
 <p>Bisa. Prasasti marmer sering dipadukan dengan plat kuningan, stainless steel, atau bingkai kayu untuk tampilan yang lebih eksklusif.</p>
-  `.trim()
+  <h2>Tips Memilih Prasasti</h2><p>Untuk mendapatkan hasil terbaik, konsultasikan kebutuhan Anda kepada tim Karyamedia yang berpengalaman. Kami menawarkan berbagai pilihan produk custom yang dapat disesuaikan dengan tema, warna, dan anggaran acara Anda. Pastikan untuk memilih bahan yang tahan lama serta finising yang rapi agar kesan yang diberikan maksimal. Lihat koleksi lengkap di <a href="/katalog-produk/prasasti">Prasasti</a> atau simak pengalaman klien kami di <a href="/profil">halaman profil</a> Karyamedia.</p>`.trim()
 },
   {
   slug: "souvenir-wisuda-panduan-memilih-untuk-kampus",
@@ -2787,16 +2787,8 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   description: "Panduan memilih souvenir wisuda berkualitas untuk universitas, sekolah, dan akademi. Temukan jenis, fungsi, serta tips memilih perlengkapan wisuda terbaik.",
   category: "Souvenir Wisuda",
   date: "2026-07-09",
-  image: "/images/produk-unggulan/patung-wisuda/patung-wisuda-1.png",
-  tags: [
-    "souvenir wisuda",
-    "perlengkapan wisuda",
-    "samir wisuda",
-    "patung wisuda",
-    "map ijazah",
-    "kalung rektor",
-    "toga wisuda"
-  ],
+  image: "/images/produk-unggulan/patung-wisuda/patung-wisuda-11.png",
+  tags: ["souvenir wisuda", "perlengkapan wisuda", "samir wisuda", "patung wisuda", "map ijazah", "kalung rektor"],
   content: `
 <p>Wisuda merupakan momen berharga yang menandai keberhasilan seseorang menyelesaikan pendidikan. Agar acara semakin berkesan, banyak institusi memilih menggunakan <strong>souvenir wisuda</strong> sebagai pelengkap sekaligus kenang-kenangan. Tidak hanya berfungsi sebagai atribut resmi saat prosesi berlangsung, berbagai perlengkapan wisuda juga memiliki nilai simbolis yang akan dikenang oleh para lulusan selama bertahun-tahun.</p>
 
@@ -2860,7 +2852,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 
 <h3>Apakah tersedia contoh produk?</h3>
 <p>Kami dapat memberikan contoh desain digital dan sample produk fisik sesuai dengan kebutuhan Anda.</p>
-  `.trim()
+  <h2>Tips Memilih Souvenir Wisuda</h2><p>Untuk mendapatkan hasil terbaik, konsultasikan kebutuhan Anda kepada tim Karyamedia yang berpengalaman. Kami menawarkan berbagai pilihan produk custom yang dapat disesuaikan dengan tema, warna, dan anggaran acara Anda. Pastikan untuk memilih bahan yang tahan lama serta finising yang rapi agar kesan yang diberikan maksimal. Lihat koleksi lengkap di <a href="/katalog-produk/souvenir-wisuda">Souvenir Wisuda</a> atau simak pengalaman klien kami di <a href="/profil">halaman profil</a> Karyamedia.</p>`.trim()
 },
   {
   slug: "piala-golf-custom-untuk-turnamen-profesional",
@@ -4004,7 +3996,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
     category: "Piala & Trophy",
     date: "2026-07-12",
     image: "/images/produk-unggulan/piala-trophy/trophy-figur-6.png",
-    tags: ["piala akrilik", "piala akrilik custom", "piala custom", "piala lomba", "piala kejuaraan", "piala akrilik murah", "piala souvenir"],
+    tags: ["piala akrilik", "piala akrilik custom", "piala custom", "piala lomba", "piala kejuaraan", "piala akrilik murah"],
     content: `
 <p>Piala akrilik telah menjadi pilihan utama dalam dunia penghargaan modern. Bahan akrilik yang transparan dan ringan memungkinkan desain yang lebih fleksibel dengan hasil akhir yang elegan. Berbeda dengan piala fiberglass yang dicetak dengan mold, piala akrilik dapat dipotong menggunakan laser cutting dengan presisi tinggi, sehingga bentuk apapun bisa diwujudkan dengan detail yang sempurna.</p>
 
@@ -4052,16 +4044,16 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <p>Agar piala akrilik tetap terlihat baru dan bening dalam jangka panjang, ikuti tips perawatan berikut: Lap dengan kain microfiber lembab secara berkala untuk menghilangkan debu. Hindari penggunaan pembersih berbasis amonia atau alkohol karena dapat membuat permukaan akrilik keruh. Jangan letakkan di tempat yang terkena sinar matahari langsung dalam waktu lama karena dapat menyebabkan warna kuning pada akrilik. Simpan di tempat yang sejuk dan kering, jauh dari benda tajam yang dapat menggores permukaan.</p>
 
 <p>Baca juga artikel <a href="/blog/panduan-lengkap-piala-dan-trophy-custom">Panduan Lengkap Piala dan Trophy Custom</a> untuk informasi komprehensif tentang semua jenis piala dan trophy.</p>
-    `.trim(),
+    <h2>FAQ</h2><p><strong>Apakah Karyamedia melayani pembuatan custom?</strong> Ya, Karyamedia melayani pembuatan custom yang disesuaikan dengan kebutuhan dan tema acara Anda.</p><p><strong>Bagaimana cara pemesanan?</strong> Silakan pelajari melalui halaman <a href="/cara-pesan">cara pesan</a> atau hubungi kami di <a href="/profil">profil Karyamedia</a>.</p><h2>Tips Memilih Piala & Trophy</h2><p>Untuk mendapatkan hasil terbaik, konsultasikan kebutuhan Anda kepada tim Karyamedia yang berpengalaman. Kami menawarkan berbagai pilihan produk custom yang dapat disesuaikan dengan tema, warna, dan anggaran acara Anda. Pastikan untuk memilih bahan yang tahan lama serta finising yang rapi agar kesan yang diberikan maksimal. Lihat koleksi lengkap di <a href="/katalog-produk/piala-trophy">Piala & Trophy</a> atau simak pengalaman klien kami di <a href="/profil">halaman profil</a> Karyamedia.</p>`.trim(),
   },
   {
     slug: "piala-fiberglass-custom-untuk-turnamen-olahraga",
-    title: "Piala Fiberglass Custom untuk Turnamen dan Kejuaraan Olahraga",
+    title: "Piala Fiberglass Custom untuk Turnamen dan Kejuaraan…",
     description: "Panduan memilih piala fiberglass custom untuk turnamen futsal, basket, voli, dan berbagai kejuaraan olahraga. Simak keunggulan, harga, dan cara pesan.",
     category: "Piala & Trophy",
     date: "2026-07-12",
     image: "/images/produk-unggulan/piala-trophy/trophy-figur-2.png",
-    tags: ["piala fiberglass", "piala fiberglass custom", "piala olahraga", "piala turnamen", "piala futsal", "piala basket", "piala kejuaraan"],
+    tags: ["piala fiberglass", "piala fiberglass custom", "piala olahraga", "piala turnamen", "piala futsal", "piala basket"],
     content: `
 <p>Piala fiberglass adalah jenis piala yang paling umum dan populer di Indonesia. Bahan fiberglass yang kuat, ringan, dan mudah dibentuk membuatnya menjadi pilihan ideal untuk trophy kejuaraan olahraga. Dari turnamen futsal antar desa hingga kejuaraan nasional, piala fiberglass selalu menjadi pusat perhatian di atas podium.</p>
 
@@ -4100,7 +4092,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Tips Memilih Piala Fiberglass Berkualitas</h2>
 
 <p>Agar mendapatkan piala fiberglass terbaik, perhatikan beberapa hal berikut: Pastikan finishing cat rata dan mengkilap tanpa gumpalan atau gelembung. Cek ketebalan bahan fiberglass — piala yang tipis akan mudah retak. Perhatikan detail figur — piala berkualitas memiliki detail yang tajam dan proporsional. Pastikan piala dipasang dengan kokoh pada dudukan (biasanya dari kayu atau akrilik). Pilih produsen berpengalaman seperti Karyamedia Souvenir yang memberikan garansi kualitas.</p>
-    `.trim(),
+    <h2>FAQ</h2><p><strong>Apakah Karyamedia melayani pembuatan custom?</strong> Ya, Karyamedia melayani pembuatan custom yang disesuaikan dengan kebutuhan dan tema acara Anda.</p><p><strong>Bagaimana cara pemesanan?</strong> Silakan pelajari melalui halaman <a href="/cara-pesan">cara pesan</a> atau hubungi kami di <a href="/profil">profil Karyamedia</a>.</p><h2>Tips Memilih Piala & Trophy</h2><p>Untuk mendapatkan hasil terbaik, konsultasikan kebutuhan Anda kepada tim Karyamedia yang berpengalaman. Kami menawarkan berbagai pilihan produk custom yang dapat disesuaikan dengan tema, warna, dan anggaran acara Anda. Pastikan untuk memilih bahan yang tahan lama serta finising yang rapi agar kesan yang diberikan maksimal. Lihat koleksi lengkap di <a href="/katalog-produk/piala-trophy">Piala & Trophy</a> atau simak pengalaman klien kami di <a href="/profil">halaman profil</a> Karyamedia.</p><h2>Keunggulan Pesanan di Karyamedia</h2><p>Karyamedia telah melayani ratusan instansi dan event nasional sejak tahun 2001 di Yogyakarta. Setiap pesanan dikerjakan dengan standar kualitas tinggi, mulai dari desain, produksi, hingga pengiriman yang aman. Proses pemesanan juga mudah melalui <a href="/cara-pesan">halaman cara pesan</a> sehingga Anda dapat menyesuaikan pesanan tanpa kerumitan. Jangan ragu untuk berkonsultasi gratis dengan tim kami sebelum menentukan pilihan.</p><h2>Tips Memilih Piala & Trophy</h2><p>Untuk mendapatkan hasil terbaik, konsultasikan kebutuhan Anda kepada tim Karyamedia yang berpengalaman. Kami menawarkan berbagai pilihan produk custom yang dapat disesuaikan dengan tema, warna, dan anggaran acara Anda. Pastikan untuk memilih bahan yang tahan lama serta finising yang rapi agar kesan yang diberikan maksimal. Lihat koleksi lengkap di <a href="/katalog-produk/piala-trophy">Piala & Trophy</a> atau simak pengalaman klien kami di <a href="/profil">halaman profil</a> Karyamedia.</p>`.trim(),
   },
   {
     slug: "piala-futsal-custom-untuk-turnamen-sepak-bola",
@@ -4109,7 +4101,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
     category: "Piala & Trophy",
     date: "2026-07-12",
     image: "/images/produk-unggulan/piala-trophy/trophy-figur-3.png",
-    tags: ["piala futsal", "piala futsal custom", "piala sepak bola", "piala turnamen futsal", "trophy futsal", "piala olahraga", "piala kejuaraan futsal"],
+    tags: ["piala futsal", "piala futsal custom", "piala sepak bola", "piala turnamen futsal", "trophy futsal", "piala olahraga"],
     content: `
 <p>Futsal dan sepak bola adalah olahraga paling populer di Indonesia. Hampir setiap minggu, ribuan turnamen futsal digelar dari tingkat RT hingga nasional. Setiap turnamen pasti membutuhkan piala sebagai simbol kemenangan bagi para juara. <strong>Piala futsal custom</strong> dengan figur pemain futsal atau bola menjadi pilihan utama untuk melengkapi kemeriahan turnamen.</p>
 
@@ -4139,7 +4131,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Tips Memilih Piala Futsal yang Tepat</h2>
 
 <p>Pilih piala dengan figur pemain futsal yang proporsional dan detail. Pastikan seragam pemain bisa dicat sesuai warna tim atau identitas turnamen. Untuk turnamen dengan banyak kategori (putra, putri, junior, senior), pesan piala dengan ukuran berbeda agar mudah dibedakan. Jangan lupa menambahkan logo turnamen dan tahun penyelenggaraan pada badan piala atau dudukan. Waktu produksi piala fiberglass umumnya 7-14 hari kerja, jadi pesan minimal 3 minggu sebelum acara. Baca juga artikel <a href="/blog/piala-fiberglass-custom-untuk-turnamen-olahraga">Piala Fiberglass Custom untuk Turnamen Olahraga</a> untuk referensi lebih lanjut.</p>
-    `.trim(),
+    <h2>FAQ</h2><p><strong>Apakah Karyamedia melayani pembuatan custom?</strong> Ya, Karyamedia melayani pembuatan custom yang disesuaikan dengan kebutuhan dan tema acara Anda.</p><p><strong>Bagaimana cara pemesanan?</strong> Silakan pelajari melalui halaman <a href="/cara-pesan">cara pesan</a> atau hubungi kami di <a href="/profil">profil Karyamedia</a>.</p><h2>Tips Memilih Piala & Trophy</h2><p>Untuk mendapatkan hasil terbaik, konsultasikan kebutuhan Anda kepada tim Karyamedia yang berpengalaman. Kami menawarkan berbagai pilihan produk custom yang dapat disesuaikan dengan tema, warna, dan anggaran acara Anda. Pastikan untuk memilih bahan yang tahan lama serta finising yang rapi agar kesan yang diberikan maksimal. Lihat koleksi lengkap di <a href="/katalog-produk/piala-trophy">Piala & Trophy</a> atau simak pengalaman klien kami di <a href="/profil">halaman profil</a> Karyamedia.</p><h2>Keunggulan Pesanan di Karyamedia</h2><p>Karyamedia telah melayani ratusan instansi dan event nasional sejak tahun 2001 di Yogyakarta. Setiap pesanan dikerjakan dengan standar kualitas tinggi, mulai dari desain, produksi, hingga pengiriman yang aman. Proses pemesanan juga mudah melalui <a href="/cara-pesan">halaman cara pesan</a> sehingga Anda dapat menyesuaikan pesanan tanpa kerumitan. Jangan ragu untuk berkonsultasi gratis dengan tim kami sebelum menentukan pilihan.</p><h2>Tips Memilih Piala & Trophy</h2><p>Untuk mendapatkan hasil terbaik, konsultasikan kebutuhan Anda kepada tim Karyamedia yang berpengalaman. Kami menawarkan berbagai pilihan produk custom yang dapat disesuaikan dengan tema, warna, dan anggaran acara Anda. Pastikan untuk memilih bahan yang tahan lama serta finising yang rapi agar kesan yang diberikan maksimal. Lihat koleksi lengkap di <a href="/katalog-produk/piala-trophy">Piala & Trophy</a> atau simak pengalaman klien kami di <a href="/profil">halaman profil</a> Karyamedia.</p>`.trim(),
   },
   {
     slug: "piala-17-agustus-custom-untuk-lomba-kemerdekaan",
@@ -4148,7 +4140,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
     category: "Piala & Trophy",
     date: "2026-07-12",
     image: "/images/produk-unggulan/piala-trophy/trophy-figur-5.png",
-    tags: ["piala 17 agustus", "piala hut ri", "piala lomba agustusan", "piala kemerdekaan", "piala murah", "piala lomba 17 agustus", "piala fiberglass murah"],
+    tags: ["piala 17 agustus", "piala hut ri", "piala lomba agustusan", "piala kemerdekaan", "piala murah", "piala lomba 17 agustus"],
     content: `
 <p>Setiap bulan Agustus, Indonesia merayakan Hari Kemerdekaan dengan berbagai lomba tradisional yang meriah. Mulai dari balap karung, panjat pinang, makan kerupuk, hingga lomba khas Agustusan lainnya. Untuk memeriahkan acara, piala 17 Agustus menjadi hadiah utama yang dinanti-nantikan oleh para juara. Baik untuk lomba anak-anak maupun dewasa, <strong>piala 17 Agustus custom</strong> dengan tema merah putih memberikan semangat kemerdekaan yang kental.</p>
 
@@ -4181,7 +4173,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Tips Memilih Piala 17 Agustus</h2>
 
 <p>Agar acara 17 Agustus Anda semakin meriah dengan piala yang tepat, perhatikan tips berikut: Pilih piala dengan tema merah putih untuk memperkuat nuansa kemerdekaan. Tentukan anggaran per piala dan jumlah lomba terlebih dahulu. Piala piring/centong adalah pilihan paling ekonomis dan ikonik untuk 17 Agustus. Pesan minimal 2-3 minggu sebelum acara karena mendekati Agustus, produsen biasanya kebanjiran pesanan. Baca artikel <a href="/blog/panduan-lengkap-piala-dan-trophy-custom">Panduan Lengkap Piala dan Trophy Custom</a> untuk referensi jenis piala lainnya.</p>
-    `.trim(),
+    <h2>FAQ</h2><p><strong>Apakah Karyamedia melayani pembuatan custom?</strong> Ya, Karyamedia melayani pembuatan custom yang disesuaikan dengan kebutuhan dan tema acara Anda.</p><p><strong>Bagaimana cara pemesanan?</strong> Silakan pelajari melalui halaman <a href="/cara-pesan">cara pesan</a> atau hubungi kami di <a href="/profil">profil Karyamedia</a>.</p><h2>Tips Memilih Piala & Trophy</h2><p>Untuk mendapatkan hasil terbaik, konsultasikan kebutuhan Anda kepada tim Karyamedia yang berpengalaman. Kami menawarkan berbagai pilihan produk custom yang dapat disesuaikan dengan tema, warna, dan anggaran acara Anda. Pastikan untuk memilih bahan yang tahan lama serta finising yang rapi agar kesan yang diberikan maksimal. Lihat koleksi lengkap di <a href="/katalog-produk/piala-trophy">Piala & Trophy</a> atau simak pengalaman klien kami di <a href="/profil">halaman profil</a> Karyamedia.</p><h2>Keunggulan Pesanan di Karyamedia</h2><p>Karyamedia telah melayani ratusan instansi dan event nasional sejak tahun 2001 di Yogyakarta. Setiap pesanan dikerjakan dengan standar kualitas tinggi, mulai dari desain, produksi, hingga pengiriman yang aman. Proses pemesanan juga mudah melalui <a href="/cara-pesan">halaman cara pesan</a> sehingga Anda dapat menyesuaikan pesanan tanpa kerumitan. Jangan ragu untuk berkonsultasi gratis dengan tim kami sebelum menentukan pilihan.</p><h2>Tips Memilih Piala & Trophy</h2><p>Untuk mendapatkan hasil terbaik, konsultasikan kebutuhan Anda kepada tim Karyamedia yang berpengalaman. Kami menawarkan berbagai pilihan produk custom yang dapat disesuaikan dengan tema, warna, dan anggaran acara Anda. Pastikan untuk memilih bahan yang tahan lama serta finising yang rapi agar kesan yang diberikan maksimal. Lihat koleksi lengkap di <a href="/katalog-produk/piala-trophy">Piala & Trophy</a> atau simak pengalaman klien kami di <a href="/profil">halaman profil</a> Karyamedia.</p><h2>Keunggulan Pesanan di Karyamedia</h2><p>Karyamedia telah melayani ratusan instansi dan event nasional sejak tahun 2001 di Yogyakarta. Setiap pesanan dikerjakan dengan standar kualitas tinggi, mulai dari desain, produksi, hingga pengiriman yang aman. Proses pemesanan juga mudah melalui <a href="/cara-pesan">halaman cara pesan</a> sehingga Anda dapat menyesuaikan pesanan tanpa kerumitan. Jangan ragu untuk berkonsultasi gratis dengan tim kami sebelum menentukan pilihan.</p>`.trim(),
   },
   {
   slug: "patung-wisuda-custom",
@@ -4189,7 +4181,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   description: "Patung wisuda custom untuk hadiah kelulusan dan souvenir kampus. Simak jenis bahan, keunggulan, tips memilih, serta estimasi harga patung wisuda.",
   category: "Souvenir Wisuda",
   date: "2026-07-09",
-  image: "/images/produk-unggulan/patung-wisuda/patung-wisuda-2.png",
+  image: "/images/produk-unggulan/patung-wisuda/patung-wisuda-11.png",
   tags: [
     "patung wisuda",
     "souvenir wisuda",
@@ -4265,7 +4257,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <p>Patung wisuda bukan sekadar souvenir, tetapi simbol penghargaan atas perjalanan akademik yang telah berhasil diselesaikan. Dengan desain yang dapat disesuaikan dan pilihan material yang beragam, souvenir ini mampu menjadi kenang-kenangan yang bernilai dalam jangka panjang. Karyamedia Souvenir melayani pembuatan patung wisuda custom untuk universitas, sekolah, instansi, maupun kebutuhan pribadi dengan pengiriman ke seluruh Indonesia.</p>
 
 <p>Sebagai referensi, baca juga artikel <a href="/blog/souvenir-wisuda-custom-untuk-universitas">Souvenir Wisuda Custom: Panduan Lengkap untuk Universitas dan Akademi</a> untuk informasi seputar perlengkapan wisuda lainnya.</p>
-  `.trim()
+  <h2>Tips Memilih Souvenir Wisuda</h2><p>Untuk mendapatkan hasil terbaik, konsultasikan kebutuhan Anda kepada tim Karyamedia yang berpengalaman. Kami menawarkan berbagai pilihan produk custom yang dapat disesuaikan dengan tema, warna, dan anggaran acara Anda. Pastikan untuk memilih bahan yang tahan lama serta finising yang rapi agar kesan yang diberikan maksimal. Lihat koleksi lengkap di <a href="/katalog-produk/souvenir-wisuda">Souvenir Wisuda</a> atau simak pengalaman klien kami di <a href="/profil">halaman profil</a> Karyamedia.</p><h2>Keunggulan Pesanan di Karyamedia</h2><p>Karyamedia telah melayani ratusan instansi dan event nasional sejak tahun 2001 di Yogyakarta. Setiap pesanan dikerjakan dengan standar kualitas tinggi, mulai dari desain, produksi, hingga pengiriman yang aman. Proses pemesanan juga mudah melalui <a href="/cara-pesan">halaman cara pesan</a> sehingga Anda dapat menyesuaikan pesanan tanpa kerumitan. Jangan ragu untuk berkonsultasi gratis dengan tim kami sebelum menentukan pilihan.</p>`.trim()
 },
   {
   slug: "prasasti-marmer-untuk-peresmian-dan-kenang-kenangan",
@@ -4351,7 +4343,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <p>Memilih <strong>Prasasti Marmer</strong> yang berkualitas akan membantu mengabadikan momen penting dengan tampilan yang elegan dan tahan lama. Dengan material yang tepat serta proses pengerjaan yang presisi, prasasti dapat menjadi simbol penghargaan maupun peresmian yang bernilai hingga bertahun-tahun.</p>
 
 <p>Baca juga artikel <a href="/blog/prasasti-marmer-custom-untuk-gedung-dan-peresmian">Prasasti Marmer Custom untuk Gedung dan Peresmian</a> untuk tips lebih lengkap seputar prasasti marmer.</p>
-  `.trim()
+  <h2>Tips Memilih Prasasti</h2><p>Untuk mendapatkan hasil terbaik, konsultasikan kebutuhan Anda kepada tim Karyamedia yang berpengalaman. Kami menawarkan berbagai pilihan produk custom yang dapat disesuaikan dengan tema, warna, dan anggaran acara Anda. Pastikan untuk memilih bahan yang tahan lama serta finising yang rapi agar kesan yang diberikan maksimal. Lihat koleksi lengkap di <a href="/katalog-produk/prasasti">Prasasti</a> atau simak pengalaman klien kami di <a href="/profil">halaman profil</a> Karyamedia.</p>`.trim()
 },
   {
   slug: "plakat-akrilik-murah-untuk-instansi",
@@ -4516,7 +4508,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Tumbler souvenir custom merupakan pilihan merchandise yang tidak hanya menarik secara visual, tetapi juga memiliki manfaat jangka panjang bagi penerimanya. Untuk kebutuhan souvenir lainnya seperti <a href="/blog/gantungan-kunci-custom">gantungan kunci custom</a> dan <a href="/blog/pin-bross-custom">pin bross custom</a>, Karyamedia Souvenir juga menerima pemesanan dengan desain yang dapat disesuaikan. Dengan desain yang tepat dan kualitas produk yang baik, tumbler mampu menjadi media promosi yang efektif sekaligus kenang-kenangan yang berkesan. Karyamedia Souvenir telah melayani pembuatan berbagai souvenir custom sejak tahun 2001 dan siap membantu kebutuhan merchandise untuk perusahaan, universitas, instansi, maupun komunitas di seluruh Indonesia.</p>
-  `.trim()
+  <h2>Tips Memilih Accessories</h2><p>Untuk mendapatkan hasil terbaik, konsultasikan kebutuhan Anda kepada tim Karyamedia yang berpengalaman. Kami menawarkan berbagai pilihan produk custom yang dapat disesuaikan dengan tema, warna, dan anggaran acara Anda. Pastikan untuk memilih bahan yang tahan lama serta finising yang rapi agar kesan yang diberikan maksimal. Lihat koleksi lengkap di <a href="/katalog-produk/accessories">Accessories</a> atau simak pengalaman klien kami di <a href="/profil">halaman profil</a> Karyamedia.</p>`.trim()
 },
   {
   slug: "tumbler-souvenir-perusahaan-untuk-branding-bisnis",
@@ -4689,7 +4681,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <p>Memilih plakat akrilik custom murah bukan hanya soal mendapatkan harga terbaik, tetapi juga memastikan kualitas bahan, hasil cetak, dan finishing yang rapi. Dengan desain yang tepat, plakat akrilik mampu menjadi simbol apresiasi yang berkesan sekaligus meningkatkan citra profesional sebuah acara.</p>
 
 <p>Karyamedia Souvenir telah memproduksi berbagai plakat custom sejak tahun 2001 untuk perusahaan, instansi pemerintah, sekolah, universitas, dan organisasi di berbagai daerah. Seluruh pesanan dapat dikirim ke seluruh Indonesia melalui JNE, TIKI, Lion Parcel, armada bus, maupun layanan cargo sehingga kebutuhan souvenir penghargaan dapat terpenuhi dengan lebih mudah.</p>
-  `.trim()
+  <h2>Tips Memilih Plakat</h2><p>Untuk mendapatkan hasil terbaik, konsultasikan kebutuhan Anda kepada tim Karyamedia yang berpengalaman. Kami menawarkan berbagai pilihan produk custom yang dapat disesuaikan dengan tema, warna, dan anggaran acara Anda. Pastikan untuk memilih bahan yang tahan lama serta finising yang rapi agar kesan yang diberikan maksimal. Lihat koleksi lengkap di <a href="/katalog-produk/plakat">Plakat</a> atau simak pengalaman klien kami di <a href="/profil">halaman profil</a> Karyamedia.</p>`.trim()
 },
   {
   slug: "plakat-fiberglass-custom-untuk-penghargaan-dan-event",
@@ -4783,7 +4775,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <p>Plakat fiberglass custom menjadi solusi bagi Anda yang menginginkan penghargaan dengan bentuk unik, artistik, dan berbeda dari plakat pada umumnya. Fleksibilitas desain serta pilihan finishing yang beragam membuat material ini cocok digunakan untuk berbagai kebutuhan perusahaan, instansi, universitas, maupun komunitas.</p>
 
 <p>Karyamedia Souvenir telah berpengalaman memproduksi plakat custom sejak tahun 2001 dengan berbagai pilihan material dan desain sesuai kebutuhan pelanggan. Pesanan dapat dikirim ke seluruh Indonesia melalui JNE, TIKI, Lion Parcel, armada bus, maupun layanan cargo sehingga proses distribusi menjadi lebih praktis ke berbagai wilayah.</p>
-  `.trim()
+  <h2>Tips Memilih Plakat</h2><p>Untuk mendapatkan hasil terbaik, konsultasikan kebutuhan Anda kepada tim Karyamedia yang berpengalaman. Kami menawarkan berbagai pilihan produk custom yang dapat disesuaikan dengan tema, warna, dan anggaran acara Anda. Pastikan untuk memilih bahan yang tahan lama serta finising yang rapi agar kesan yang diberikan maksimal. Lihat koleksi lengkap di <a href="/katalog-produk/plakat">Plakat</a> atau simak pengalaman klien kami di <a href="/profil">halaman profil</a> Karyamedia.</p>`.trim()
 },
   {
   slug: "plakat-penghargaan-custom-untuk-instansi-dan-perusahaan",
@@ -4879,7 +4871,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <p>Plakat penghargaan custom merupakan simbol apresiasi yang tidak hanya memiliki nilai estetika, tetapi juga mampu meninggalkan kesan mendalam bagi penerimanya. Dengan memilih material yang tepat dan desain yang sesuai, plakat dapat menjadi representasi profesionalisme sekaligus penghormatan atas pencapaian seseorang maupun sebuah organisasi.</p>
 
 <p>Sejak tahun 2001, Karyamedia Souvenir telah memproduksi berbagai jenis plakat custom untuk perusahaan, instansi pemerintah, universitas, sekolah, dan komunitas. Seluruh pesanan dapat dikirim ke seluruh Indonesia melalui JNE, TIKI, Lion Parcel, armada bus, maupun layanan cargo sehingga kebutuhan plakat penghargaan dapat terpenuhi dengan aman dan tepat waktu.</p>
-  `.trim()
+  <h2>Tips Memilih Plakat</h2><p>Untuk mendapatkan hasil terbaik, konsultasikan kebutuhan Anda kepada tim Karyamedia yang berpengalaman. Kami menawarkan berbagai pilihan produk custom yang dapat disesuaikan dengan tema, warna, dan anggaran acara Anda. Pastikan untuk memilih bahan yang tahan lama serta finising yang rapi agar kesan yang diberikan maksimal. Lihat koleksi lengkap di <a href="/katalog-produk/plakat">Plakat</a> atau simak pengalaman klien kami di <a href="/profil">halaman profil</a> Karyamedia.</p>`.trim()
 },
   {
   slug: "plakat-wisuda-custom-untuk-kenang-kenangan-kelulusan",
@@ -4972,7 +4964,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <p>Plakat wisuda custom merupakan simbol apresiasi yang memberikan nilai emosional sekaligus menjadi kenang-kenangan jangka panjang bagi para penerimanya. Dengan desain yang sesuai identitas institusi dan material berkualitas, plakat akan menjadi bagian dari momen kelulusan yang selalu dikenang.</p>
 
 <p>Karyamedia Souvenir telah berpengalaman sejak tahun 2001 dalam memproduksi berbagai jenis plakat dan souvenir wisuda untuk sekolah, universitas, serta berbagai institusi di Indonesia. Seluruh pesanan dapat dikirim ke seluruh Indonesia melalui JNE, TIKI, Lion Parcel, armada bus, maupun layanan cargo sehingga kebutuhan acara wisuda dapat terpenuhi dengan aman dan tepat waktu.</p>
-  `.trim()
+  <h2>Tips Memilih Plakat</h2><p>Untuk mendapatkan hasil terbaik, konsultasikan kebutuhan Anda kepada tim Karyamedia yang berpengalaman. Kami menawarkan berbagai pilihan produk custom yang dapat disesuaikan dengan tema, warna, dan anggaran acara Anda. Pastikan untuk memilih bahan yang tahan lama serta finising yang rapi agar kesan yang diberikan maksimal. Lihat koleksi lengkap di <a href="/katalog-produk/plakat">Plakat</a> atau simak pengalaman klien kami di <a href="/profil">halaman profil</a> Karyamedia.</p>`.trim()
 },
   {
   slug: "tumbler-stainless-steel-custom-untuk-merchandise-premium",
@@ -5424,7 +5416,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 },
   {
   slug: "plakat-wayang-custom-untuk-penghargaan-instansi",
-  title: "Plakat Wayang Custom untuk Penghargaan Instansi dan Perusahaan",
+  title: "Plakat Wayang Custom untuk Penghargaan Instansi dan…",
   description: "Plakat wayang custom untuk penghargaan instansi pemerintah, BUMN, dan perusahaan. Simak pilihan bahan, tokoh wayang, estimasi harga, dan tips memesannya.",
   category: "Plakat",
   date: "2026-07-11",
@@ -5654,7 +5646,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   {
   slug: "souvenir-wayang-khas-indonesia",
   title: "Souvenir Wayang Khas Indonesia untuk Cinderamata Budaya",
-  description: "Souvenir wayang khas Indonesia sebagai cinderamata budaya bernilai seni tinggi. Simak jenis, material, dan tips memilih souvenir wayang untuk berbagai keperluan.",
+  description: "Souvenir wayang khas Indonesia sebagai cinderamata budaya bernilai seni tinggi. Simak jenis, material, dan tips memilih souvenir wayang untuk berbagai…",
   category: "Plakat",
   date: "2026-07-11",
   image: "/images/produk-unggulan/plakat-wayang/plakat-wayang-10.png",
@@ -6271,7 +6263,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <p>Plakat kayu custom tetap menjadi pilihan yang tepat bagi instansi, perusahaan, sekolah, maupun organisasi yang menginginkan penghargaan dengan tampilan elegan dan bernilai. Dengan pemilihan material serta desain yang tepat, plakat tidak hanya menjadi simbol apresiasi, tetapi juga kenang-kenangan yang berkesan.</p>
 
 <p>Karyamedia Souvenir telah berpengalaman memproduksi berbagai plakat custom sejak tahun 2001. Selain melayani konsultasi desain, produk juga dapat dikirim ke seluruh Indonesia melalui JNE, TIKI, Lion Parcel, armada bus, maupun layanan cargo sehingga pesanan dapat menjangkau berbagai kota dengan aman.</p>
-  `.trim()
+  <h2>Tips Memilih Plakat</h2><p>Untuk mendapatkan hasil terbaik, konsultasikan kebutuhan Anda kepada tim Karyamedia yang berpengalaman. Kami menawarkan berbagai pilihan produk custom yang dapat disesuaikan dengan tema, warna, dan anggaran acara Anda. Pastikan untuk memilih bahan yang tahan lama serta finising yang rapi agar kesan yang diberikan maksimal. Lihat koleksi lengkap di <a href="/katalog-produk/plakat">Plakat</a> atau simak pengalaman klien kami di <a href="/profil">halaman profil</a> Karyamedia.</p>`.trim()
 },
   {
   slug: "prasasti-marmer-custom-untuk-peresmian-dan-penghargaan",
@@ -7077,7 +7069,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 },
   {
     slug: "name-tag-custom-untuk-kantor-dan-event",
-    title: "Name Tag Custom untuk Identitas Profesional di Kantor dan Event",
+    title: "Name Tag Custom untuk Identitas Profesional di Kantor dan…",
     description: "Name tag custom untuk identitas profesional di kantor dan event. Simak jenis (acrylic, metal, PVC), tips memilih, serta estimasi harga mulai Rp15.000.",
     category: "Accessories",
     date: "2026-07-11",
@@ -7949,7 +7941,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Samir wisuda adalah bagian penting dalam upacara kelulusan yang menambah kesan formal dan khidmat. Dengan memilih bahan dan model yang tepat, samir wisuda tidak hanya menjadi perlengkapan seremonial, tetapi juga kenang-kenangan berharga bagi para wisudawan. Karyamedia Souvenir yang berlokasi di Yogyakarta telah berpengalaman sejak 2001 dalam memproduksi samir dan gordon wisuda custom untuk berbagai institusi di seluruh Indonesia. Kami melayani pemesanan dari Sabang sampai Merauke dengan pengiriman melalui JNE, TIKI, Lion Parcel, Bus, dan Cargo. Konsultasikan kebutuhan samir wisuda Anda dengan tim kami untuk mendapatkan hasil terbaik.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/panduan-lengkap-souvenir-wisuda-custom">Panduan Lengkap Souvenir Wisuda Custom untuk Universitas dan Sekolah</a></p>`.trim(),
   },
   {
     slug: "kalung-rektor-custom-untuk-simbol-akademik",
@@ -8035,7 +8027,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Kalung rektor custom bukan sekadar aksesoris, melainkan simbol akademik yang merepresentasikan martabat dan identitas universitas. Pemilihan bahan, desain, dan pengerjaan yang tepat akan menghasilkan kalung rektor yang layak digunakan dalam upacara wisuda dan sidang senat. Karyamedia Souvenir yang berlokasi di Yogyakarta telah berpengalaman sejak 2001 dalam memproduksi kalung rektor custom untuk berbagai perguruan tinggi di Indonesia. Kami siap melayani pemesanan dengan pengiriman ke seluruh Indonesia melalui JNE, TIKI, Lion Parcel, Bus, dan Cargo. Hubungi tim kami untuk konsultasi desain dan penawaran harga terbaik.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/panduan-lengkap-souvenir-wisuda-custom">Panduan Lengkap Souvenir Wisuda Custom untuk Universitas dan Sekolah</a></p>`.trim(),
   },
   {
     slug: "tongkat-rektor-pedel-custom-untuk-universitas",
@@ -8120,7 +8112,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Tongkat rektor atau pedel wisuda bukan sekadar perlengkapan seremonial, melainkan simbol otoritas akademik yang sarat makna. Investasi pada tongkat yang berkualitas akan menambah kekhidmatan setiap upacara wisuda. Karyamedia Souvenir yang berlokasi di Yogyakarta telah berpengalaman sejak 2001 dalam memproduksi tongkat rektor dan pedel custom untuk berbagai perguruan tinggi di Indonesia. Kami melayani pengiriman ke seluruh Indonesia melalui JNE, TIKI, Lion Parcel, Bus, dan Cargo. Konsultasikan kebutuhan tongkat pedel wisuda Anda dengan tim kami untuk mendapatkan desain dan harga terbaik.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/panduan-lengkap-souvenir-wisuda-custom">Panduan Lengkap Souvenir Wisuda Custom untuk Universitas dan Sekolah</a></p>`.trim(),
   },
   {
     slug: "map-ijazah-custom-wisuda-untuk-kenang-kenangan",
@@ -8212,7 +8204,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Map ijazah custom bukan sekadar pembungkus dokumen, melainkan bagian dari pengalaman wisuda yang berkesan. Dengan desain yang elegan dan bahan berkualitas, map ijazah akan menjadi kenang-kenangan yang terus diingat oleh para wisudawan. Karyamedia Souvenir yang berlokasi di Yogyakarta telah berpengalaman sejak 2001 dalam memproduksi map ijazah custom untuk berbagai institusi pendidikan di seluruh Indonesia. Kami melayani pengiriman ke seluruh Indonesia melalui JNE, TIKI, Lion Parcel, Bus, dan Cargo. Hubungi tim kami untuk konsultasi desain dan penawaran harga terbaik sesuai kebutuhan institusi Anda.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/panduan-lengkap-souvenir-wisuda-custom">Panduan Lengkap Souvenir Wisuda Custom untuk Universitas dan Sekolah</a></p>`.trim(),
   },
   {
     slug: "tabung-wisuda-custom-untuk-penyimpanan-ijazah",
@@ -8293,7 +8285,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Tabung wisuda custom adalah perlengkapan yang tidak hanya fungsional tetapi juga bernilai estetika. Dengan memilih bahan dan desain yang tepat, tabung wisuda akan menjadi kenang-kenangan berkesan bagi para wisudawan. Karyamedia Souvenir yang berlokasi di Yogyakarta telah berpengalaman sejak 2001 dalam memproduksi tabung wisuda custom untuk berbagai institusi di seluruh Indonesia. Kami melayani pengiriman ke seluruh Indonesia melalui JNE, TIKI, Lion Parcel, Bus, dan Cargo. Hubungi tim kami untuk konsultasi desain dan penawaran harga terbaik.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/panduan-lengkap-souvenir-wisuda-custom">Panduan Lengkap Souvenir Wisuda Custom untuk Universitas dan Sekolah</a></p>`.trim(),
   },
   {
     slug: "plakat-wisuda-akrilik-custom-untuk-penghargaan",
@@ -8388,7 +8380,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Plakat wisuda akrilik adalah pilihan tepat untuk kenang-kenangan kelulusan yang elegan dan terjangkau. Dengan berbagai pilihan ukuran, ketebalan, dan teknik finishing, plakat akrilik bisa disesuaikan dengan kebutuhan dan anggaran institusi. Karyamedia Souvenir yang berlokasi di Yogyakarta telah berpengalaman sejak 2001 dalam memproduksi plakat wisuda akrilik custom untuk berbagai universitas dan sekolah di seluruh Indonesia. Kami melayani pengiriman ke seluruh Indonesia melalui JNE, TIKI, Lion Parcel, Bus, dan Cargo. Konsultasikan kebutuhan plakat wisuda akrilik Anda dengan tim kami untuk mendapatkan desain dan harga terbaik.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/panduan-lengkap-souvenir-wisuda-custom">Panduan Lengkap Souvenir Wisuda Custom untuk Universitas dan Sekolah</a></p>`.trim(),
   },
   {
     slug: "souvenir-wisuda-untuk-orang-tua-dan-keluarga",
@@ -8396,7 +8388,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
     description: "Ide souvenir wisuda untuk orang tua dan keluarga yang berkesan. Simak rekomendasi hadiah wisuda untuk orang tua, estimasi harga, dan tips memilihnya.",
     category: "Souvenir Wisuda",
     date: "2026-07-11",
-    image: "/images/produk-unggulan/patung-wisuda/patung-wisuda-10.png",
+    image: "/images/produk-unggulan/patung-wisuda/patung-wisuda-11.png",
     tags: ["souvenir wisuda", "hadiah wisuda untuk orang tua", "kado wisuda", "souvenir wisuda keluarga", "oleh-oleh wisuda", "souvenir wisuda jogja"],
     content: `
 <p>Momen wisuda bukan hanya perayaan bagi sang lulusan, tetapi juga bagi orang tua dan keluarga yang telah mendukung selama perjalanan akademik. Memberikan souvenir atau hadiah wisuda untuk orang tua menjadi cara yang indah untuk mengungkapkan rasa terima kasih dan berbagi kebahagiaan. Souvenir ini bisa berupa barang yang dipajang, digunakan sehari-hari, atau sekadar kenang-kenangan simbolis.</p>
@@ -8470,7 +8462,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Souvenir wisuda untuk orang tua adalah cara indah untuk berbagi kebahagiaan dan mengungkapkan rasa terima kasih. Dengan memilih souvenir yang tepat, momen wisuda akan semakin bermakna bagi seluruh keluarga. Karyamedia Souvenir yang berlokasi di Yogyakarta telah berpengalaman sejak 2001 dalam memproduksi berbagai souvenir wisuda custom, mulai dari plakat, bingkai foto, hingga paket souvenir lengkap untuk institusi di seluruh Indonesia. Kami melayani pengiriman ke seluruh Indonesia melalui JNE, TIKI, Lion Parcel, Bus, dan Cargo. Hubungi tim kami untuk konsultasi dan penawaran harga terbaik.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/panduan-lengkap-souvenir-wisuda-custom">Panduan Lengkap Souvenir Wisuda Custom untuk Universitas dan Sekolah</a></p>`.trim(),
   },
   {
     slug: "souvenir-wisuda-untuk-pacar-sahabat",
@@ -8551,7 +8543,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Memberikan souvenir wisuda untuk pacar atau sahabat adalah cara indah untuk merayakan pencapaian mereka. Apapun pilihan Anda, yang terpenting adalah ketulusan dan makna di balik pemberian tersebut. Karyamedia Souvenir yang berlokasi di Yogyakarta siap membantu Anda mewujudkan souvenir wisuda custom terbaik. Kami melayani pengiriman ke seluruh Indonesia melalui JNE, TIKI, Lion Parcel, Bus, dan Cargo. Hubungi 0822-4358-0777 untuk konsultasi gratis.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/panduan-lengkap-souvenir-wisuda-custom">Panduan Lengkap Souvenir Wisuda Custom untuk Universitas dan Sekolah</a></p>`.trim(),
   },
   {
     slug: "souvenir-perpisahan-tk-paud-sd",
@@ -8560,7 +8552,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
     category: "Souvenir Wisuda",
     date: "2026-07-11",
     image: "/images/produk-unggulan/plakat-wisuda-akrilik/pwa-018.png",
-    tags: ["souvenir perpisahan tk", "souvenir perpisahan paud", "souvenir perpisahan sd", "kenang-kenangan kelulusan", "souvenir anak tk", "souvenir perpisahan sekolah", "souvenir wisuda jogja"],
+    tags: ["souvenir perpisahan tk", "souvenir perpisahan paud", "souvenir perpisahan sd", "kenang-kenangan kelulusan", "souvenir anak tk", "souvenir perpisahan sekolah"],
     content: `
 <p>Momen perpisahan TK, PAUD, dan SD adalah salah satu acara yang paling dinanti oleh anak-anak dan orang tua. Memberikan souvenir atau kenang-kenangan di akhir acara menjadi tradisi yang tak boleh dilewatkan. Souvenir perpisahan ini bukan sekadar barang, tetapi kenangan manis masa kecil yang akan terus diingat hingga dewasa.</p>
 
@@ -8629,7 +8621,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Souvenir perpisahan TK, PAUD, dan SD adalah kenang-kenangan berharga yang akan disimpan hingga dewasa. Dengan perencanaan yang matang, Anda bisa mendapatkan souvenir berkualitas dengan harga terjangkau. Karyamedia Souvenir Yogyakarta telah berpengalaman sejak 2001 dalam memproduksi souvenir perpisahan sekolah custom. Kami melayani pengiriman ke seluruh Indonesia. Hubungi 0822-4358-0777 untuk konsultasi dan pemesanan.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/panduan-lengkap-souvenir-wisuda-custom">Panduan Lengkap Souvenir Wisuda Custom untuk Universitas dan Sekolah</a></p>`.trim(),
   },
   {
     slug: "plakat-penghargaan-untuk-lomba-dan-kompetisi",
@@ -8707,11 +8699,11 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Plakat penghargaan yang tepat akan membuat momen kemenangan semakin bermakna. Dengan berbagai pilihan bahan, desain, dan ukuran, Anda bisa menyesuaikan plakat dengan jenis lomba dan anggaran yang tersedia. Karyamedia Souvenir Yogyakarta yang telah berdiri sejak 2001 melayani pembuatan plakat untuk berbagai lomba dan kompetisi di seluruh Indonesia. Kami melayani pengiriman ke seluruh Indonesia via JNE, TIKI, Lion Parcel, Bus, dan Cargo. Hubungi 0822-4358-0777 untuk konsultasi dan pemesanan.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/panduan-lengkap-plakat-custom">Panduan Lengkap Plakat Custom: Jenis, Bahan, Harga, dan Tips Memilih</a></p>`.trim(),
   },
   {
     slug: "souvenir-seminar-dan-workshop-berkesan",
-    title: "Ide Souvenir Seminar dan Workshop yang Berkesan untuk Peserta",
+    title: "Ide Souvenir Seminar dan Workshop yang Berkesan untuk…",
     description: "Ide souvenir seminar dan workshop yang berkesan untuk peserta. Rekomendasi jenis, estimasi harga, dan tips memilih souvenir acara profesional.",
     category: "Souvenir",
     date: "2026-07-11",
@@ -8789,7 +8781,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Souvenir seminar dan workshop yang tepat akan meningkatkan kesan positif peserta terhadap acara Anda. Dengan memilih souvenir yang fungsional, berkualitas, dan sesuai branding, acara Anda akan lebih berkesan dan profesional. Karyamedia Souvenir Yogyakarta siap membantu mewujudkan souvenir acara impian Anda. Kami melayani pengiriman ke seluruh Indonesia. Hubungi 0822-4358-0777 untuk konsultasi gratis.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/souvenir-reuni-akrab-dan-berkesan">Ide Souvenir Reuni yang Akrab dan Berkesan untuk Semua Tamu</a></p>`.trim(),
   },
   {
     slug: "souvenir-reuni-akrab-dan-berkesan",
@@ -8870,7 +8862,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Reuni adalah momen berharga yang layak diabadikan dengan souvenir spesial. Dengan souvenir yang tepat, kenangan reuni akan terus hidup dan mempererat hubungan antar peserta. Karyamedia Souvenir Yogyakarta siap membantu Anda mewujudkan souvenir reuni terbaik. Kami melayani pengiriman ke seluruh Indonesia. Hubungi 0822-4358-0777 untuk konsultasi gratis dan pemesanan.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/souvenir-seminar-dan-workshop-berkesan">Ide Souvenir Seminar dan Workshop yang Berkesan untuk Peserta</a></p>`.trim(),
   },
   {
     slug: "goodie-bag-custom-untuk-acara-dan-event",
@@ -8879,7 +8871,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
     category: "Souvenir",
     date: "2026-07-11",
     image: "/images/produk-unggulan/box-kertas-import/box-kertas-import-2.png",
-    tags: ["goodie bag custom", "tas souvenir", "goodie bag acara", "souvenir tas", "goodie bag seminar", "goodie bag jogja", "tas promosi"],
+    tags: ["goodie bag custom", "tas souvenir", "goodie bag acara", "souvenir tas", "goodie bag seminar", "goodie bag jogja"],
     content: `
 <p>Goodie bag atau tas souvenir adalah salah satu item yang hampir selalu ada dalam setiap acara dan event. Mulai dari seminar, workshop, pernikahan, ulang tahun, hingga acara perusahaan, goodie bag berfungsi sebagai wadah souvenir sekaligus media promosi yang efektif. Goodie bag yang menarik akan membuat peserta antusias membawanya pulang dan bahkan menggunakannya kembali.</p>
 
@@ -8942,7 +8934,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Goodie bag custom adalah investasi kecil yang berdampak besar pada kesuksesan acara Anda. Selain sebagai wadah souvenir, goodie bag juga berfungsi sebagai media branding yang efektif. Karyamedia Souvenir Yogyakarta yang telah berpengalaman sejak 2001 melayani pembuatan goodie bag custom untuk berbagai acara di seluruh Indonesia. Kami melayani pengiriman ke seluruh Indonesia. Hubungi 0822-4358-0777 untuk konsultasi gratis dan pemesanan.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/souvenir-seminar-dan-workshop-berkesan">Ide Souvenir Seminar dan Workshop yang Berkesan untuk Peserta</a></p>`.trim(),
   },
   {
     slug: "box-souvenir-custom-untuk-hadiah-hampers",
@@ -8951,7 +8943,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
     category: "Souvenir",
     date: "2026-07-11",
     image: "/images/produk-unggulan/box-bludru/box-bludru-1.png",
-    tags: ["box souvenir", "kotak souvenir", "hampers custom", "box kado", "souvenir box", "box souvenir jogja", "kemasan souvenir"],
+    tags: ["box souvenir", "kotak souvenir", "hampers custom", "box kado", "souvenir box", "box souvenir jogja"],
     content: `
 <p>Kemasan souvenir dalam box yang elegan akan meningkatkan nilai hadiah secara signifikan. Box souvenir custom kini menjadi tren di berbagai acara, mulai dari pernikahan, wisuda, ulang tahun, hingga acara corporate. Sebuah box yang dirancang dengan baik tidak hanya melindungi isi di dalamnya, tetapi juga menciptakan kesan pertama yang tak terlupakan saat penerima membukanya.</p>
 
@@ -9025,7 +9017,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Box souvenir custom yang elegan akan membuat hadiah Anda lebih berkesan dan bernilai. Dengan bahan, desain, dan isi yang tepat, box souvenir bisa menjadi kenang-kenangan yang disimpan lama oleh penerima. Karyamedia Souvenir Yogyakarta telah berpengalaman sejak 2001 dalam memproduksi box souvenir custom untuk berbagai kebutuhan. Kami melayani pengiriman ke seluruh Indonesia. Hubungi 0822-4358-0777 untuk konsultasi dan pemesanan.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/souvenir-seminar-dan-workshop-berkesan">Ide Souvenir Seminar dan Workshop yang Berkesan untuk Peserta</a></p>`.trim(),
   },
   {
     slug: "souvenir-hadiah-lomba-17-agustus",
@@ -9103,7 +9095,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Perayaan 17 Agustus akan semakin meriah dengan hadiah dan souvenir yang menarik bagi semua peserta. Dengan persiapan yang matang, Anda bisa menyelenggarakan acara HUT RI yang berkesan tanpa harus menguras anggaran. Karyamedia Souvenir Yogyakarta siap membantu Anda menyediakan souvenir 17 Agustus custom. Kami melayani pengiriman ke seluruh Indonesia. Hubungi 0822-4358-0777 untuk konsultasi dan pemesanan.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/souvenir-seminar-dan-workshop-berkesan">Ide Souvenir Seminar dan Workshop yang Berkesan untuk Peserta</a></p>`.trim(),
   },
   {
     slug: "souvenir-acara-khitanan-dan-aqiqah",
@@ -9188,11 +9180,11 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Souvenir khitanan dan aqiqah adalah cara indah untuk berbagi kebahagiaan dan rasa syukur. Dengan souvenir yang tepat, tamu akan pulang dengan kesan manis dan doa terbaik untuk buah hati Anda. Karyamedia Souvenir Yogyakarta telah berpengalaman sejak 2001 dalam memproduksi souvenir untuk berbagai acara. Kami melayani pengiriman ke seluruh Indonesia. Hubungi 0822-4358-0777 untuk konsultasi dan pemesanan.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/souvenir-seminar-dan-workshop-berkesan">Ide Souvenir Seminar dan Workshop yang Berkesan untuk Peserta</a></p>`.trim(),
   },
   {
     slug: "souvenir-ulang-tahun-perusahaan",
-    title: "Ide Souvenir Ulang Tahun Perusahaan yang Berkesan untuk Karyawan dan Klien",
+    title: "Ide Souvenir Ulang Tahun Perusahaan yang Berkesan untuk…",
     description: "Ide souvenir ulang tahun perusahaan untuk karyawan dan klien. Rekomendasi jenis, estimasi harga, dan tips memilih souvenir anniversary perusahaan.",
     category: "Souvenir",
     date: "2026-07-11",
@@ -9260,11 +9252,11 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Souvenir ulang tahun perusahaan adalah investasi dalam membangun hubungan baik dengan karyawan, klien, dan mitra bisnis. Dengan souvenir yang tepat, momen anniversary perusahaan Anda akan dikenang selamanya. Karyamedia Souvenir Yogyakarta telah berpengalaman sejak 2001 dalam memproduksi souvenir corporate untuk berbagai perusahaan di seluruh Indonesia. Kami melayani pengiriman ke seluruh Indonesia. Hubungi 0822-4358-0777 untuk konsultasi dan pemesanan.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/souvenir-seminar-dan-workshop-berkesan">Ide Souvenir Seminar dan Workshop yang Berkesan untuk Peserta</a></p>`.trim(),
   },
   {
     slug: "name-tag-dan-id-card-custom-untuk-acara",
-    title: "Panduan Memilih Name Tag dan ID Card Custom untuk Acara dan Kantor",
+    title: "Panduan Memilih Name Tag dan ID Card Custom untuk Acara dan…",
     description: "Panduan memilih name tag dan ID card custom untuk acara seminar, event, dan kantor. Simak jenis bahan, harga, dan tips desainnya.",
     category: "Souvenir",
     date: "2026-07-11",
@@ -9343,11 +9335,11 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Name tag dan ID card custom yang berkualitas akan meningkatkan profesionalisme acara Anda. Dengan memilih bahan, desain, dan aksesori yang tepat, name tag tidak hanya berfungsi sebagai identitas tetapi juga sebagai media branding yang efektif. Karyamedia Souvenir Yogyakarta melayani pembuatan name tag custom untuk berbagai acara di seluruh Indonesia. Kami melayani pengiriman ke seluruh Indonesia. Hubungi 0822-4358-0777 untuk konsultasi dan pemesanan.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/souvenir-seminar-dan-workshop-berkesan">Ide Souvenir Seminar dan Workshop yang Berkesan untuk Peserta</a></p>`.trim(),
   },
   {
     slug: "souvenir-plakat-untuk-acara-pensiun-dan-farewell",
-    title: "Ide Souvenir dan Plakat untuk Acara Pensiun dan Farewell Karyawan",
+    title: "Ide Souvenir dan Plakat untuk Acara Pensiun dan Farewell…",
     description: "Ide souvenir dan plakat untuk acara pensiun dan farewell karyawan. Rekomendasi jenis, estimasi harga, dan tips memilih cinderamata perpisahan.",
     category: "Plakat",
     date: "2026-07-11",
@@ -9420,11 +9412,11 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Acara pensiun dan farewell adalah momen emosional yang layak dirayakan dengan souvenir istimewa. Dengan souvenir yang tepat, hubungan baik antara perusahaan dan mantan karyawan akan terus terjaga. Karyamedia Souvenir Yogyakarta sejak 2001 telah melayani pembuatan souvenir dan plakat pensiun untuk berbagai perusahaan di seluruh Indonesia. Kami melayani pengiriman ke seluruh Indonesia. Hubungi 0822-4358-0777 untuk konsultasi dan pemesanan.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/panduan-lengkap-plakat-custom">Panduan Lengkap Plakat Custom: Jenis, Bahan, Harga, dan Tips Memilih</a></p>`.trim(),
   },
   {
     slug: "souvenir-gathering-outbond-perusahaan",
-    title: "Ide Souvenir Gathering dan Outbond Perusahaan yang Seru dan Fungsional",
+    title: "Ide Souvenir Gathering dan Outbond Perusahaan yang Seru dan…",
     description: "Ide souvenir gathering dan outbond perusahaan yang seru dan fungsional. Rekomendasi jenis, estimasi harga, dan tips memilih merchandise team building.",
     category: "Souvenir",
     date: "2026-07-11",
@@ -9503,11 +9495,11 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Souvenir gathering dan outbond yang tepat akan meningkatkan semangat dan kebersamaan tim selama acara. Dengan souvenir yang fungsional dan seragam, momen kebersamaan akan terasa lebih istimewa. Karyamedia Souvenir Yogyakarta siap membantu Anda menyediakan souvenir gathering dan outbond berkualitas. Kami melayani pengiriman ke seluruh Indonesia. Hubungi 0822-4358-0777 untuk konsultasi dan pemesanan.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/souvenir-seminar-dan-workshop-berkesan">Ide Souvenir Seminar dan Workshop yang Berkesan untuk Peserta</a></p>`.trim(),
   },
   {
     slug: "souvenir-plakat-milad-pondok-pesantren",
-    title: "Ide Souvenir dan Plakat untuk Milad Pondok Pesantren dan Harlah",
+    title: "Ide Souvenir dan Plakat untuk Milad Pondok Pesantren dan…",
     description: "Ide souvenir dan plakat untuk milad pondok pesantren dan harlah organisasi Islam. Rekomendasi jenis, estimasi harga, dan tips memilih souvenir acara religi.",
     category: "Plakat",
     date: "2026-07-11",
@@ -9582,11 +9574,11 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Souvenir dan plakat milad pondok pesantren serta harlah organisasi Islam adalah bentuk syukur dan apresiasi yang indah. Dengan desain islami dan bahan berkualitas, souvenir akan menjadi kenang-kenangan yang memberkahi. Karyamedia Souvenir Yogyakarta sejak 2001 melayani pembuatan souvenir islami untuk pondok pesantren dan organisasi Islam di seluruh Indonesia. Kami melayani pengiriman ke seluruh Indonesia. Hubungi 0822-4358-0777 untuk konsultasi dan pemesanan.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/panduan-lengkap-plakat-custom">Panduan Lengkap Plakat Custom: Jenis, Bahan, Harga, dan Tips Memilih</a></p>`.trim(),
   },
   {
     slug: "plakat-penghargaan-karyawan-terbaik-eom",
-    title: "Plakat Penghargaan untuk Karyawan Terbaik dan Employee of the Month",
+    title: "Plakat Penghargaan untuk Karyawan Terbaik dan Employee of…",
     description: "Panduan memilih plakat penghargaan untuk karyawan terbaik dan Employee of the Month. Simak jenis, desain, estimasi harga, dan tips memilihnya.",
     category: "Plakat",
     date: "2026-07-11",
@@ -9661,7 +9653,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Program Employee of the Month dengan plakat penghargaan yang menarik akan meningkatkan semangat dan loyalitas karyawan. Investasi kecil untuk penghargaan ini berdampak besar pada budaya perusahaan. Karyamedia Souvenir Yogyakarta melayani pembuatan plakat EOM untuk berbagai perusahaan di seluruh Indonesia. Kami melayani pengiriman ke seluruh Indonesia. Hubungi 0822-4358-0777 untuk konsultasi dan pemesanan.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/panduan-lengkap-plakat-custom">Panduan Lengkap Plakat Custom: Jenis, Bahan, Harga, dan Tips Memilih</a></p>`.trim(),
   },
   {
     slug: "souvenir-perpisahan-wisuda-sd-smp-sma",
@@ -9669,7 +9661,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
     description: "Ide souvenir perpisahan dan wisuda untuk SD, SMP, dan SMA. Mulai dari jaket alumni hingga buku tahunan, lengkap dengan estimasi harga dan tips.",
     category: "Souvenir Wisuda",
     date: "2026-07-11",
-    image: "/images/produk-unggulan/patung-wisuda/patung-wisuda-5.png",
+    image: "/images/produk-unggulan/patung-wisuda/patung-wisuda-11.png",
     tags: ["souvenir wisuda sd", "souvenir perpisahan smp", "souvenir wisuda sma", "jaket alumni", "buku tahunan sekolah", "souvenir kelulusan jogja"],
     content: `
 <p>Momen kelulusan SD, SMP, dan SMA adalah pencapaian penting dalam perjalanan pendidikan. Berbeda dengan wisuda perguruan tinggi, wisuda sekolah menengah dan dasar memiliki nuansa yang lebih hangat dan penuh kebersamaan. Souvenir perpisahan menjadi kenang-kenangan yang akan terus diingat saat para siswa melangkah ke jenjang pendidikan berikutnya.</p>
@@ -9744,11 +9736,11 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Souvenir wisuda SD, SMP, dan SMA adalah kenang-kenangan berharga yang akan disimpan seumur hidup. Dengan perencanaan yang matang, souvenir yang berkualitas bisa didapatkan dengan harga terjangkau. Karyamedia Souvenir Yogyakarta melayani pembuatan souvenir wisuda sekolah untuk berbagai angkatan di seluruh Indonesia. Kami melayani pengiriman ke seluruh Indonesia. Hubungi 0822-4358-0777 untuk konsultasi dan pemesanan.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/panduan-lengkap-souvenir-wisuda-custom">Panduan Lengkap Souvenir Wisuda Custom untuk Universitas dan Sekolah</a></p>`.trim(),
   },
   {
     slug: "souvenir-plakat-hut-organisasi-ormas",
-    title: "Ide Souvenir dan Plakat untuk HUT Organisasi dan Ormas yang Berkesan",
+    title: "Ide Souvenir dan Plakat untuk HUT Organisasi dan Ormas yang…",
     description: "Ide souvenir dan plakat untuk HUT organisasi masyarakat dan LSM. Rekomendasi jenis, estimasi harga, dan tips memilih souvenir acara ormas.",
     category: "Plakat",
     date: "2026-07-11",
@@ -9823,11 +9815,11 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>HUT organisasi adalah momentum untuk memperkuat solidaritas dan semangat perjuangan. Souvenir dan plakat yang tepat akan membuat acara semakin berkesan dan memperkuat identitas organisasi. Karyamedia Souvenir Yogyakarta melayani pembuatan souvenir ormas dan LSM untuk berbagai organisasi di seluruh Indonesia. Kami melayani pengiriman ke seluruh Indonesia. Hubungi 0822-4358-0777 untuk konsultasi dan pemesanan.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/panduan-lengkap-plakat-custom">Panduan Lengkap Plakat Custom: Jenis, Bahan, Harga, dan Tips Memilih</a></p>`.trim(),
   },
   {
     slug: "plakat-akrilik-grand-opening-toko-bisnis",
-    title: "Plakat Akrilik untuk Grand Opening Toko dan Bisnis Baru yang Elegan",
+    title: "Plakat Akrilik untuk Grand Opening Toko dan Bisnis Baru…",
     description: "Panduan memilih plakat akrilik untuk grand opening toko dan bisnis baru. Simak jenis desain, estimasi harga, dan tips memilih plakat ucapan selamat.",
     category: "Plakat",
     date: "2026-07-11",
@@ -9910,11 +9902,11 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Plakat grand opening adalah simbol dukungan dan doa untuk kesuksesan bisnis baru. Dengan desain yang elegan dan bahan berkualitas, plakat akan menjadi pajangan yang membanggakan di tempat usaha. Karyamedia Souvenir Yogyakarta melayani pembuatan plakat grand opening untuk berbagai bisnis di seluruh Indonesia. Kami melayani pengiriman ke seluruh Indonesia. Hubungi 0822-4358-0777 untuk konsultasi dan pemesanan.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/panduan-lengkap-plakat-custom">Panduan Lengkap Plakat Custom: Jenis, Bahan, Harga, dan Tips Memilih</a></p>`.trim(),
   },
   {
     slug: "souvenir-merchandise-untuk-promosi-dan-pameran",
-    title: "Ide Souvenir Merchandise untuk Acara Promosi dan Pameran yang Efektif",
+    title: "Ide Souvenir Merchandise untuk Acara Promosi dan Pameran…",
     description: "Ide souvenir merchandise untuk acara promosi dan pameran yang efektif sebagai media branding. Rekomendasi jenis, estimasi harga, dan tips memilihnya.",
     category: "Souvenir",
     date: "2026-07-11",
@@ -9990,15 +9982,15 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Souvenir merchandise yang tepat akan membuat partisipasi pameran Anda lebih efektif dan berkesan. Dengan souvenir yang fungsional dan desain menarik, merek Anda akan terus diingat oleh pengunjung. Karyamedia Souvenir Yogyakarta melayani pembuatan souvenir promosi untuk berbagai acara pameran di seluruh Indonesia. Kami melayani pengiriman ke seluruh Indonesia. Hubungi 0822-4358-0777 untuk konsultasi dan pemesanan.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/souvenir-seminar-dan-workshop-berkesan">Ide Souvenir Seminar dan Workshop yang Berkesan untuk Peserta</a></p>`.trim(),
   },
   {
     slug: "souvenir-baby-shower-dan-kelahiran-bayi",
-    title: "Ide Souvenir Baby Shower dan Kelahiran Bayi yang Lucu dan Berkesan",
+    title: "Ide Souvenir Baby Shower dan Kelahiran Bayi yang Lucu dan…",
     description: "Ide souvenir baby shower dan kelahiran bayi yang lucu dan berkesan untuk tamu undangan. Rekomendasi jenis, estimasi harga, dan tips memilihnya.",
     category: "Souvenir",
     date: "2026-07-11",
-    image: "/images/produk-unggulan/patung-wisuda/patung-wisuda-6.png",
+    image: "/images/produk-unggulan/patung-wisuda/patung-wisuda-11.png",
     tags: ["souvenir baby shower", "souvenir kelahiran bayi", "souvenir syukuran bayi", "souvenir 4 bulanan", "souvenir baby", "souvenir bayi jogja"],
     content: `
 <p>Momen baby shower dan kelahiran bayi adalah saat yang penuh kebahagiaan bagi keluarga. Memberikan souvenir kepada tamu yang hadir menjadi cara untuk berbagi rasa syukur dan kebahagiaan. Souvenir baby shower yang lucu dan menggemaskan akan membuat tamu tersenyum dan mengingat momen istimewa tersebut setiap kali melihatnya.</p>
@@ -10070,11 +10062,11 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Souvenir baby shower dan kelahiran bayi adalah cara manis untuk berbagi kebahagiaan dengan keluarga dan sahabat. Dengan souvenir yang lucu dan personal, momen kelahiran buah hati akan semakin berkesan. Karyamedia Souvenir Yogyakarta melayani pembuatan souvenir baby shower dan kelahiran bayi untuk berbagai acara di seluruh Indonesia. Kami melayani pengiriman ke seluruh Indonesia. Hubungi 0822-4358-0777 untuk konsultasi dan pemesanan.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/souvenir-seminar-dan-workshop-berkesan">Ide Souvenir Seminar dan Workshop yang Berkesan untuk Peserta</a></p>`.trim(),
   },
   {
     slug: "souvenir-pernikahan-wedding-favor",
-    title: "Ide Souvenir Pernikahan yang Unik dan Berkesan untuk Tamu Undangan",
+    title: "Ide Souvenir Pernikahan yang Unik dan Berkesan untuk Tamu…",
     description: "Ide souvenir pernikahan unik dan berkesan untuk tamu undangan. Rekomendasi jenis, estimasi harga, dan tips memilih wedding favor terbaik.",
     category: "Souvenir",
     date: "2026-07-11",
@@ -10158,11 +10150,11 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Souvenir pernikahan adalah kenang-kenangan manis yang akan dibawa pulang tamu sebagai tanda terima kasih. Dengan memilih souvenir yang unik dan personal, hari bahagia Anda akan semakin berkesan. Karyamedia Souvenir Yogyakarta melayani pembuatan souvenir pernikahan untuk berbagai tema dan budget. Kami melayani pengiriman ke seluruh Indonesia. Hubungi 0822-4358-0777 untuk konsultasi dan pemesanan.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/souvenir-seminar-dan-workshop-berkesan">Ide Souvenir Seminar dan Workshop yang Berkesan untuk Peserta</a></p>`.trim(),
   },
   {
     slug: "souvenir-merchandise-untuk-komunitas-dan-club",
-    title: "Ide Souvenir dan Merchandise untuk Komunitas dan Club yang Solid",
+    title: "Ide Souvenir dan Merchandise untuk Komunitas dan Club yang…",
     description: "Ide souvenir dan merchandise untuk komunitas dan club. Mulai dari kaos, pin, stiker, hingga aksesori kendaraan. Simak estimasi harga dan tipsnya.",
     category: "Souvenir",
     date: "2026-07-11",
@@ -10232,12 +10224,12 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Merchandise komunitas yang solid akan memperkuat identitas dan kebersamaan anggota. Dengan desain yang keren dan bahan berkualitas, anggota akan bangga menggunakan merchandise komunitas di mana pun mereka berada. Karyamedia Souvenir Yogyakarta melayani pembuatan merchandise untuk berbagai komunitas di seluruh Indonesia. Kami melayani pengiriman ke seluruh Indonesia. Hubungi 0822-4358-0777 untuk konsultasi dan pemesanan.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/souvenir-seminar-dan-workshop-berkesan">Ide Souvenir Seminar dan Workshop yang Berkesan untuk Peserta</a></p>`.trim(),
   },
   {
     slug: "medali-piala-souvenir-turnamen-olahraga",
-    title: "Harga Medali Olahraga untuk Turnamen: Piala, Medali, dan Souvenir",
-    description: "Cek harga medali olahraga untuk turnamen futsal, basket, badminton, dan lomba. Simak harga medali lomba, jenis bahan, dan tips memilih penghargaan turnamen di sini.",
+    title: "Harga Medali Olahraga untuk Turnamen: Piala, Medali, dan…",
+    description: "Cek harga medali olahraga untuk turnamen futsal, basket, badminton, dan lomba. Simak harga medali lomba, jenis bahan, dan tips memilih penghargaan turnamen di…",
     category: "Medali",
     date: "2026-07-11",
     image: "/images/produk-unggulan/medali-custom/medali-etching-3.png",
@@ -10401,7 +10393,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   },
   {
     slug: "plakat-penghargaan-untuk-guru-dan-tenaga-pendidik",
-    title: "Plakat Penghargaan untuk Guru dan Tenaga Pendidik yang Berkesan",
+    title: "Plakat Penghargaan untuk Guru dan Tenaga Pendidik yang…",
     description: "Panduan memilih plakat penghargaan untuk guru dan tenaga pendidik. Cocok untuk hari guru, purnabakti, atau penghargaan tahunan sekolah.",
     category: "Plakat",
     date: "2026-07-11",
@@ -10486,11 +10478,11 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Plakat penghargaan adalah cara indah untuk mengucapkan terima kasih kepada guru dan tenaga pendidik atas dedikasi mereka. Dengan desain yang tepat dan pesan yang menyentuh, plakat akan menjadi kenang-kenangan berharga yang terus diingat. Karyamedia Souvenir Yogyakarta melayani pembuatan plakat untuk guru di seluruh Indonesia. Kami melayani pengiriman ke seluruh Indonesia. Hubungi 0822-4358-0777 untuk konsultasi dan pemesanan.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/panduan-lengkap-plakat-custom">Panduan Lengkap Plakat Custom: Jenis, Bahan, Harga, dan Tips Memilih</a></p>`.trim(),
   },
   {
     slug: "plakat-souvenir-pelantikan-pengurus-organisasi",
-    title: "Plakat dan Souvenir untuk Acara Pelantikan Pengurus Organisasi",
+    title: "Plakat dan Souvenir untuk Acara Pelantikan Pengurus…",
     description: "Ide plakat dan souvenir untuk acara pelantikan pengurus organisasi. Rekomendasi jenis, estimasi harga, dan tips memilih cinderamata pelantikan.",
     category: "Plakat",
     date: "2026-07-11",
@@ -10562,11 +10554,11 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Acara pelantikan pengurus adalah momen bersejarah yang layak diabadikan dengan souvenir berkualitas. Dengan souvenir yang tepat, semangat pengabdian dan tanggung jawab akan terus diingat sepanjang masa kepengurusan. Karyamedia Souvenir Yogyakarta melayani pembuatan souvenir dan plakat pelantikan untuk berbagai organisasi di seluruh Indonesia. Kami melayani pengiriman ke seluruh Indonesia. Hubungi 0822-4358-0777 untuk konsultasi dan pemesanan.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/panduan-lengkap-plakat-custom">Panduan Lengkap Plakat Custom: Jenis, Bahan, Harga, dan Tips Memilih</a></p><h2>Tips Memilih Plakat</h2><p>Untuk mendapatkan hasil terbaik, konsultasikan kebutuhan Anda kepada tim Karyamedia yang berpengalaman. Kami menawarkan berbagai pilihan produk custom yang dapat disesuaikan dengan tema, warna, dan anggaran acara Anda. Pastikan untuk memilih bahan yang tahan lama serta finising yang rapi agar kesan yang diberikan maksimal. Lihat koleksi lengkap di <a href="/katalog-produk/plakat">Plakat</a> atau simak pengalaman klien kami di <a href="/profil">halaman profil</a> Karyamedia.</p>`.trim(),
   },
   {
     slug: "plakat-ucapan-terima-kasih-dan-apresiasi",
-    title: "Plakat Akrilik untuk Ucapan Terima Kasih dan Apresiasi yang Elegan",
+    title: "Plakat Akrilik untuk Ucapan Terima Kasih dan Apresiasi yang…",
     description: "Panduan memilih plakat akrilik untuk ucapan terima kasih dan apresiasi. Cocok untuk donatur, sponsor, pembicara, dan relawan. Simak harga dan tipsnya.",
     category: "Plakat",
     date: "2026-07-11",
@@ -10641,11 +10633,11 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Plakat ucapan terima kasih adalah investasi relasi yang berharga. Dengan plakat yang elegan dan pesan yang tulus, penerima akan merasa dihargai dan hubungan baik akan terus terjaga. Karyamedia Souvenir Yogyakarta melayani pembuatan plakat ucapan terima kasih untuk berbagai keperluan di seluruh Indonesia. Kami melayani pengiriman ke seluruh Indonesia. Hubungi 0822-4358-0777 untuk konsultasi dan pemesanan.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/panduan-lengkap-plakat-custom">Panduan Lengkap Plakat Custom: Jenis, Bahan, Harga, dan Tips Memilih</a></p>`.trim(),
   },
   {
     slug: "souvenir-acara-maulid-nabi-dan-phbi",
-    title: "Ide Souvenir untuk Acara Maulid Nabi dan Peringatan Hari Besar Islam",
+    title: "Ide Souvenir untuk Acara Maulid Nabi dan Peringatan Hari…",
     description: "Ide souvenir untuk acara Maulid Nabi dan peringatan hari besar Islam. Rekomendasi jenis, estimasi harga, dan tips memilih souvenir acara religi.",
     category: "Souvenir",
     date: "2026-07-11",
@@ -10721,11 +10713,11 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Souvenir untuk acara Maulid Nabi dan peringatan hari besar Islam adalah amal jariyah yang memberkahi. Dengan souvenir yang bernilai ibadah, jamaah akan terus mengingat dan mengambil manfaat dari acara yang telah diselenggarakan. Karyamedia Souvenir Yogyakarta melayani pembuatan souvenir islami untuk berbagai acara keagamaan di seluruh Indonesia. Kami melayani pengiriman ke seluruh Indonesia. Hubungi 0822-4358-0777 untuk konsultasi dan pemesanan.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/souvenir-seminar-dan-workshop-berkesan">Ide Souvenir Seminar dan Workshop yang Berkesan untuk Peserta</a></p>`.trim(),
   },
   {
     slug: "souvenir-plakat-peresmian-gedung-bangunan",
-    title: "Ide Souvenir dan Plakat untuk Acara Peresmian Gedung dan Bangunan",
+    title: "Ide Souvenir dan Plakat untuk Acara Peresmian Gedung dan…",
     description: "Ide souvenir dan plakat untuk acara peresmian gedung dan bangunan baru. Rekomendasi jenis, estimasi harga, dan tips memilih souvenir ground breaking.",
     category: "Plakat",
     date: "2026-07-11",
@@ -10800,11 +10792,11 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Acara peresmian gedung adalah momen bersejarah yang layak diabadikan dengan souvenir berkualitas. Dengan souvenir yang tepat, kenangan akan momen peresmian akan terus hidup dan menjadi bagian dari sejarah bangunan. Karyamedia Souvenir Yogyakarta melayani pembuatan souvenir dan plakat peresmian gedung untuk berbagai proyek di seluruh Indonesia. Kami melayani pengiriman ke seluruh Indonesia. Hubungi 0822-4358-0777 untuk konsultasi dan pemesanan.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/panduan-lengkap-plakat-custom">Panduan Lengkap Plakat Custom: Jenis, Bahan, Harga, dan Tips Memilih</a></p>`.trim(),
   },
   {
     slug: "plakat-cinderamata-studi-banding-kunjungan",
-    title: "Plakat Cinderamata untuk Studi Banding dan Kunjungan Tamu yang Berkesan",
+    title: "Plakat Cinderamata untuk Studi Banding dan Kunjungan Tamu…",
     description: "Ide plakat cinderamata untuk studi banding dan kunjungan tamu antar institusi. Rekomendasi jenis, estimasi harga, dan tips memilih souvenir kunjungan.",
     category: "Plakat",
     date: "2026-07-11",
@@ -10879,11 +10871,11 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Plakat cinderamata studi banding dan kunjungan adalah kenang-kenangan yang mempererat tali silaturahmi antar institusi. Dengan cinderamata yang tepat, kunjungan akan meninggalkan kesan positif dan hubungan baik akan terus terjaga. Karyamedia Souvenir Yogyakarta melayani pembuatan cinderamata kunjungan untuk berbagai institusi di seluruh Indonesia. Kami melayani pengiriman ke seluruh Indonesia. Hubungi 0822-4358-0777 untuk konsultasi dan pemesanan.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/panduan-lengkap-plakat-custom">Panduan Lengkap Plakat Custom: Jenis, Bahan, Harga, dan Tips Memilih</a></p>`.trim(),
   },
   {
     slug: "plakat-akrilik-mutasi-promosi-jabatan",
-    title: "Plakat Akrilik untuk Mutasi, Promosi, dan Jabatan Baru yang Elegan",
+    title: "Plakat Akrilik untuk Mutasi, Promosi, dan Jabatan Baru yang…",
     description: "Panduan memilih plakat akrilik untuk mutasi, promosi, dan jabatan baru. Cocok untuk cinderamata pejabat yang promosi atau mutasi tugas.",
     category: "Plakat",
     date: "2026-07-11",
@@ -10956,11 +10948,11 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Plakat mutasi dan promosi adalah bentuk apresiasi dan dukungan untuk rekan yang akan meniti karir di tempat baru. Dengan plakat yang elegan dan pesan yang tulus, hubungan silaturahmi akan tetap terjaga meskipun sudah tidak satu institusi lagi. Karyamedia Souvenir Yogyakarta melayani pembuatan plakat mutasi dan promosi untuk berbagai instansi di seluruh Indonesia. Kami melayani pengiriman ke seluruh Indonesia. Hubungi 0822-4358-0777 untuk konsultasi dan pemesanan.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/panduan-lengkap-plakat-custom">Panduan Lengkap Plakat Custom: Jenis, Bahan, Harga, dan Tips Memilih</a></p><h2>Tips Memilih Plakat</h2><p>Untuk mendapatkan hasil terbaik, konsultasikan kebutuhan Anda kepada tim Karyamedia yang berpengalaman. Kami menawarkan berbagai pilihan produk custom yang dapat disesuaikan dengan tema, warna, dan anggaran acara Anda. Pastikan untuk memilih bahan yang tahan lama serta finising yang rapi agar kesan yang diberikan maksimal. Lihat koleksi lengkap di <a href="/katalog-produk/plakat">Plakat</a> atau simak pengalaman klien kami di <a href="/profil">halaman profil</a> Karyamedia.</p>`.trim(),
   },
   {
     slug: "souvenir-merchandise-acara-kampus-maba",
-    title: "Ide Souvenir dan Merchandise untuk Acara Kampus dan Mahasiswa Baru",
+    title: "Ide Souvenir dan Merchandise untuk Acara Kampus dan…",
     description: "Ide souvenir dan merchandise untuk acara kampus, orientasi mahasiswa baru, dan dies natalis. Rekomendasi jenis, harga, dan tips memilihnya.",
     category: "Souvenir",
     date: "2026-07-11",
@@ -11046,11 +11038,11 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Souvenir dan merchandise kampus adalah bagian penting dari kehidupan mahasiswa. Dengan souvenir yang keren dan terjangkau, semangat kebersamaan dan identitas kampus akan semakin kuat. Karyamedia Souvenir Yogyakarta melayani pembuatan souvenir untuk berbagai acara kampus di seluruh Indonesia. Kami melayani pengiriman ke seluruh Indonesia. Hubungi 0822-4358-0777 untuk konsultasi dan pemesanan.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/souvenir-seminar-dan-workshop-berkesan">Ide Souvenir Seminar dan Workshop yang Berkesan untuk Peserta</a></p>`.trim(),
   },
   {
     slug: "souvenir-plakat-peresmian-masjid",
-    title: "Ide Souvenir dan Plakat untuk Acara Peresmian Masjid dan Tempat Ibadah",
+    title: "Ide Souvenir dan Plakat untuk Acara Peresmian Masjid dan…",
     description: "Ide souvenir dan plakat untuk acara peresmian masjid dan tempat ibadah. Rekomendasi jenis, estimasi harga, dan tips memilih cinderamata religi.",
     category: "Souvenir",
     date: "2026-07-11",
@@ -11123,11 +11115,11 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Peresmian masjid adalah momen bersejarah yang patut diabadikan dengan souvenir berkah. Dengan souvenir yang bernilai ibadah, jamaah akan terus mengingat dan memanfaatkannya dalam kegiatan keagamaan sehari-hari. Karyamedia Souvenir Yogyakarta melayani pembuatan souvenir peresmian masjid dan tempat ibadah di seluruh Indonesia. Kami melayani pengiriman ke seluruh Indonesia. Hubungi 0822-4358-0777 untuk konsultasi dan pemesanan.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/souvenir-seminar-dan-workshop-berkesan">Ide Souvenir Seminar dan Workshop yang Berkesan untuk Peserta</a></p>`.trim(),
   },
   {
     slug: "papan-nama-akrilik-custom-kantor-meja",
-    title: "Papan Nama Akrilik Custom untuk Kantor, Meja, dan Ruangan Profesional",
+    title: "Papan Nama Akrilik Custom untuk Kantor, Meja, dan Ruangan…",
     description: "Panduan memilih papan nama akrilik custom untuk kantor, meja, dan ruangan. Simak jenis, desain, estimasi harga, dan tips memilih nameplate akrilik.",
     category: "Souvenir",
     date: "2026-07-11",
@@ -11203,7 +11195,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Papan nama akrilik custom adalah investasi kecil yang berdampak besar pada profesionalisme kantor atau institusi Anda. Dengan desain yang rapi dan bahan berkualitas, papan nama akrilik akan memberikan kesan pertama yang positif bagi siapa pun yang berkunjung. Karyamedia Souvenir Yogyakarta melayani pembuatan papan nama akrilik untuk kantor, instansi, dan perusahaan di seluruh Indonesia. Kami melayani pengiriman ke seluruh Indonesia. Hubungi 0822-4358-0777 untuk konsultasi dan pemesanan.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/souvenir-seminar-dan-workshop-berkesan">Ide Souvenir Seminar dan Workshop yang Berkesan untuk Peserta</a></p>`.trim(),
   },
   {
     slug: "souvenir-wisuda-tahfidz-dan-santri",
@@ -11282,16 +11274,16 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Wisuda tahfidz adalah momen istimewa yang merayakan keberhasilan menghafal Al-Qur'an. Dengan souvenir yang bernilai ibadah, para santri akan terus termotivasi untuk menjaga hafalan mereka dan mengamalkan Al-Qur'an dalam kehidupan sehari-hari. Karyamedia Souvenir Yogyakarta melayani pembuatan souvenir wisuda tahfidz untuk pondok pesantren di seluruh Indonesia. Kami melayani pengiriman ke seluruh Indonesia. Hubungi 0822-4358-0777 untuk konsultasi dan pemesanan.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/panduan-lengkap-souvenir-wisuda-custom">Panduan Lengkap Souvenir Wisuda Custom untuk Universitas dan Sekolah</a></p>`.trim(),
   },
   {
     slug: "toga-wisuda-custom-untuk-upacara-kelulusan",
-    title: "Toga Wisuda Custom untuk Upacara Kelulusan Universitas dan Sekolah",
+    title: "Toga Wisuda Custom untuk Upacara Kelulusan Universitas dan…",
     description: "Panduan memilih toga wisuda custom untuk upacara kelulusan SD, SMP, SMA, dan universitas. Simak jenis bahan, ukuran, estimasi harga, dan tips pemesanan toga.",
     category: "Souvenir Wisuda",
     date: "2026-07-12",
     image: "/images/hasil-produksi/souvenir-wisuda/patung-wisuda (10).png",
-    tags: ["toga wisuda", "toga wisuda custom", "toga kelulusan", "toga sd", "toga smp", "toga sma", "toga universitas", "sewa toga", "jual toga wisuda"],
+    tags: ["toga wisuda", "toga wisuda custom", "toga kelulusan", "toga sd", "toga smp", "toga sma"],
     content: `
 <p>Toga wisuda adalah simbol kelulusan yang paling ikonik. Penggunaan toga dalam upacara wisuda telah menjadi tradisi di hampir semua institusi pendidikan di Indonesia, mulai dari TK/PAUD, SD, SMP, SMA, hingga perguruan tinggi. Momen ketika toga dipindahkan dari kiri ke kanan adalah puncak dari seluruh perjalanan akademik yang mengharukan.</p>
 
@@ -11325,16 +11317,16 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <p>Ukuran toga disesuaikan dengan tinggi dan berat badan pemakai. Toga yang terlalu longgar akan terlihat tidak rapi, sedangkan yang terlalu ketat akan membuat tidak nyaman. Ukuran standar toga meliputi S (tinggi 120-140 cm), M (140-160 cm), L (160-175 cm), dan XL (175-190 cm). Untuk pemesanan massal, biasanya sekolah/universitas mengirimkan data tinggi badan peserta untuk memastikan ukuran yang tepat.</p>
 
 <p>Baca juga artikel <a href="/blog/panduan-lengkap-souvenir-wisuda-custom">Panduan Lengkap Souvenir Wisuda Custom</a> untuk informasi tentang perlengkapan wisuda lainnya seperti samir, map ijazah, dan patung wisuda.</p>
-    `.trim(),
+    <h2>FAQ</h2><p><strong>Apakah Karyamedia melayani pembuatan custom?</strong> Ya, Karyamedia melayani pembuatan custom yang disesuaikan dengan kebutuhan dan tema acara Anda.</p><p><strong>Bagaimana cara pemesanan?</strong> Silakan pelajari melalui halaman <a href="/cara-pesan">cara pesan</a> atau hubungi kami di <a href="/profil">profil Karyamedia</a>.</p><h2>Tips Memilih Souvenir Wisuda</h2><p>Untuk mendapatkan hasil terbaik, konsultasikan kebutuhan Anda kepada tim Karyamedia yang berpengalaman. Kami menawarkan berbagai pilihan produk custom yang dapat disesuaikan dengan tema, warna, dan anggaran acara Anda. Pastikan untuk memilih bahan yang tahan lama serta finising yang rapi agar kesan yang diberikan maksimal. Lihat koleksi lengkap di <a href="/katalog-produk/souvenir-wisuda">Souvenir Wisuda</a> atau simak pengalaman klien kami di <a href="/profil">halaman profil</a> Karyamedia.</p><h2>Keunggulan Pesanan di Karyamedia</h2><p>Karyamedia telah melayani ratusan instansi dan event nasional sejak tahun 2001 di Yogyakarta. Setiap pesanan dikerjakan dengan standar kualitas tinggi, mulai dari desain, produksi, hingga pengiriman yang aman. Proses pemesanan juga mudah melalui <a href="/cara-pesan">halaman cara pesan</a> sehingga Anda dapat menyesuaikan pesanan tanpa kerumitan. Jangan ragu untuk berkonsultasi gratis dengan tim kami sebelum menentukan pilihan.</p><h2>Tips Memilih Souvenir Wisuda</h2><p>Untuk mendapatkan hasil terbaik, konsultasikan kebutuhan Anda kepada tim Karyamedia yang berpengalaman. Kami menawarkan berbagai pilihan produk custom yang dapat disesuaikan dengan tema, warna, dan anggaran acara Anda. Pastikan untuk memilih bahan yang tahan lama serta finising yang rapi agar kesan yang diberikan maksimal. Lihat koleksi lengkap di <a href="/katalog-produk/souvenir-wisuda">Souvenir Wisuda</a> atau simak pengalaman klien kami di <a href="/profil">halaman profil</a> Karyamedia.</p>`.trim(),
   },
   {
     slug: "bingkai-ijazah-dan-foto-wisuda-custom",
-    title: "Bingkai Ijazah dan Foto Wisuda Custom untuk Kenang-Kenangan Kelulusan",
+    title: "Bingkai Ijazah dan Foto Wisuda Custom untuk Kenang-Kenangan…",
     description: "Cari bingkai ijazah dan foto wisuda custom untuk kenang-kenangan kelulusan. Simak jenis bahan, desain, estimasi harga bingkai premium, dan cara pemesanan.",
     category: "Souvenir Wisuda",
     date: "2026-07-12",
     image: "/images/hasil-produksi/souvenir-wisuda/patung-wisuda (2).png",
-    tags: ["bingkai ijazah", "bingkai foto wisuda", "bingkai ijazah custom", "bingkai wisuda", "pigura ijazah", "bingkai kelulusan", "souvenir wisuda bingkai"],
+    tags: ["bingkai ijazah", "bingkai foto wisuda", "bingkai ijazah custom", "bingkai wisuda", "pigura ijazah", "bingkai kelulusan"],
     content: `
 <p>Ijazah adalah dokumen berharga yang menandai selesainya suatu jenjang pendidikan. Setelah wisuda, ijazah biasanya akan disimpan atau dipajang di dinding sebagai kenang-kenangan. Agar ijazah tetap terawat dan terlihat rapi saat dipajang, bingkai ijazah berkualitas menjadi kebutuhan penting. Selain ijazah, foto wisuda juga layak dibingkai untuk melengkapi koleksi kenang-kenangan kelulusan.</p>
 
@@ -11367,11 +11359,11 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <p>Bingkai custom memberikan beberapa keuntungan dibandingkan bingkai jadi yang dijual di toko. Pertama, ukuran bingkai bisa disesuaikan persis dengan ukuran ijazah sehingga tidak perlu memotong atau melipat ijazah. Kedua, Anda bisa menambahkan logo institusi, nama, atau ornamen khusus pada bingkai. Ketiga, pilihan bahan dan warna bisa disesuaikan dengan interior ruangan tempat ijazah akan dipajang. Terakhir, bingkai custom umumnya memiliki kualitas yang lebih baik karena dibuat secara khusus untuk satu ijazah.</p>
 
 <p>Untuk pemesanan bingkai ijazah dalam jumlah besar (satu angkatan), Karyamedia Souvenir memberikan diskon khusus. Bingkai bisa dibuat seragam dengan desain yang sama untuk semua siswa. Ini akan menjadi kenang-kenangan wisuda yang bermanfaat dan akan dipajang di rumah masing-masing siswa selama bertahun-tahun. Baca artikel <a href="/blog/panduan-lengkap-souvenir-wisuda-custom">Panduan Lengkap Souvenir Wisuda Custom</a> untuk informasi souvenir wisuda lainnya.</p>
-    `.trim(),
+    <h2>FAQ</h2><p><strong>Apakah Karyamedia melayani pembuatan custom?</strong> Ya, Karyamedia melayani pembuatan custom yang disesuaikan dengan kebutuhan dan tema acara Anda.</p><p><strong>Bagaimana cara pemesanan?</strong> Silakan pelajari melalui halaman <a href="/cara-pesan">cara pesan</a> atau hubungi kami di <a href="/profil">profil Karyamedia</a>.</p><h2>Tips Memilih Souvenir Wisuda</h2><p>Untuk mendapatkan hasil terbaik, konsultasikan kebutuhan Anda kepada tim Karyamedia yang berpengalaman. Kami menawarkan berbagai pilihan produk custom yang dapat disesuaikan dengan tema, warna, dan anggaran acara Anda. Pastikan untuk memilih bahan yang tahan lama serta finising yang rapi agar kesan yang diberikan maksimal. Lihat koleksi lengkap di <a href="/katalog-produk/souvenir-wisuda">Souvenir Wisuda</a> atau simak pengalaman klien kami di <a href="/profil">halaman profil</a> Karyamedia.</p><h2>Keunggulan Pesanan di Karyamedia</h2><p>Karyamedia telah melayani ratusan instansi dan event nasional sejak tahun 2001 di Yogyakarta. Setiap pesanan dikerjakan dengan standar kualitas tinggi, mulai dari desain, produksi, hingga pengiriman yang aman. Proses pemesanan juga mudah melalui <a href="/cara-pesan">halaman cara pesan</a> sehingga Anda dapat menyesuaikan pesanan tanpa kerumitan. Jangan ragu untuk berkonsultasi gratis dengan tim kami sebelum menentukan pilihan.</p>`.trim(),
   },
   {
     slug: "tumbler-botol-minum-custom-souvenir",
-    title: "Tumbler dan Botol Minum Custom untuk Souvenir dan Promosi Merek",
+    title: "Tumbler dan Botol Minum Custom untuk Souvenir dan Promosi…",
     description: "Panduan memilih tumbler dan botol minum custom untuk souvenir dan promosi. Simak jenis bahan, estimasi harga, dan tips memilih botol minum promosi.",
     category: "Souvenir",
     date: "2026-07-11",
@@ -11450,11 +11442,11 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Tumbler dan botol minum custom adalah investasi souvenir yang cerdas. Fungsional, ramah lingkungan, dan memberikan eksposur merek jangka panjang. Karyamedia Souvenir Yogyakarta melayani pembuatan tumbler dan botol minum custom untuk berbagai acara di seluruh Indonesia. Kami melayani pengiriman ke seluruh Indonesia. Hubungi 0822-4358-0777 untuk konsultasi dan pemesanan.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/souvenir-seminar-dan-workshop-berkesan">Ide Souvenir Seminar dan Workshop yang Berkesan untuk Peserta</a></p>`.trim(),
   },
   {
     slug: "gantungan-kunci-akrilik-logam-custom-souvenir",
-    title: "Gantungan Kunci Akrilik dan Logam Custom untuk Souvenir Acara",
+    title: "Gantungan Kunci Akrilik dan Logam Custom untuk Souvenir…",
     description: "Panduan memilih gantungan kunci akrilik dan logam custom untuk souvenir acara. Simak jenis bahan, estimasi harga, dan tips desain gantungan kunci.",
     category: "Souvenir",
     date: "2026-07-11",
@@ -11529,11 +11521,11 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Gantungan kunci custom adalah souvenir kecil yang berdampak besar. Murah, praktis, dan efektif sebagai media promosi atau kenang-kenangan. Dengan desain yang menarik dan bahan berkualitas, gantungan kunci akan selalu diingat oleh penerimanya. Karyamedia Souvenir Yogyakarta melayani pembuatan gantungan kunci custom untuk berbagai acara di seluruh Indonesia. Kami melayani pengiriman ke seluruh Indonesia. Hubungi 0822-4358-0777 untuk konsultasi dan pemesanan.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/souvenir-seminar-dan-workshop-berkesan">Ide Souvenir Seminar dan Workshop yang Berkesan untuk Peserta</a></p>`.trim(),
   },
   {
     slug: "pin-bros-enamel-custom-souvenir-komunitas",
-    title: "Pin dan Bros Custom untuk Souvenir Acara dan Identitas Komunitas",
+    title: "Pin dan Bros Custom untuk Souvenir Acara dan Identitas…",
     description: "Panduan memilih pin dan bros enamel custom untuk souvenir acara dan identitas komunitas. Simak jenis, bahan, estimasi harga, dan tips desainnya.",
     category: "Souvenir",
     date: "2026-07-11",
@@ -11613,7 +11605,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Pin dan bros custom adalah souvenir kecil yang penuh makna. Sebagai identitas komunitas, kenang-kenangan acara, atau media promosi, pin selalu menjadi pilihan yang efektif dan berkesan. Karyamedia Souvenir Yogyakarta melayani pembuatan pin dan bros custom untuk berbagai kebutuhan di seluruh Indonesia. Kami melayani pengiriman ke seluruh Indonesia. Hubungi 0822-4358-0777 untuk konsultasi dan pemesanan.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/souvenir-seminar-dan-workshop-berkesan">Ide Souvenir Seminar dan Workshop yang Berkesan untuk Peserta</a></p>`.trim(),
   },
   {
     slug: "plakat-marmer-custom-penghargaan-peresmian",
@@ -11695,7 +11687,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Plakat marmer adalah investasi penghargaan yang abadi. Dengan bahan alami yang kokoh dan desain yang elegan, plakat marmer akan bertahan selama puluhan tahun sebagai simbol penghargaan atau peresmian. Karyamedia Souvenir Yogyakarta melayani pembuatan plakat marmer custom untuk berbagai kebutuhan di seluruh Indonesia. Kami melayani pengiriman ke seluruh Indonesia. Hubungi 0822-4358-0777 untuk konsultasi dan pemesanan.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/panduan-lengkap-plakat-custom">Panduan Lengkap Plakat Custom: Jenis, Bahan, Harga, dan Tips Memilih</a></p>`.trim(),
   },
   {
     slug: "piala-trophy-custom-untuk-acara-kompetisi",
@@ -11769,11 +11761,11 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Piala trophy adalah simbol kemenangan yang paling membanggakan. Dengan memilih piala yang berkualitas dan desain yang menarik, momen kemenangan akan semakin berkesan dan dikenang selamanya. Karyamedia Souvenir Yogyakarta melayani pembuatan piala trophy custom untuk berbagai turnamen dan kompetisi di seluruh Indonesia. Kami melayani pengiriman ke seluruh Indonesia. Hubungi 0822-4358-0777 untuk konsultasi dan pemesanan.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/souvenir-seminar-dan-workshop-berkesan">Ide Souvenir Seminar dan Workshop yang Berkesan untuk Peserta</a></p>`.trim(),
   },
   {
     slug: "prasasti-kuningan-stainless-steel-custom",
-    title: "Prasasti Kuningan dan Stainless Steel Custom untuk Penghargaan dan Peresmian",
+    title: "Prasasti Kuningan dan Stainless Steel Custom untuk…",
     description: "Panduan memilih prasasti kuningan dan stainless steel custom untuk penghargaan dan peresmian. Simak jenis, teknik ukir, estimasi harga, dan tips memilih.",
     category: "Plakat",
     date: "2026-07-11",
@@ -11842,16 +11834,16 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <h2>Penutup</h2>
 
 <p>Prasasti kuningan dan stainless steel adalah penghargaan tertinggi yang bisa diberikan kepada seseorang atau institusi. Dengan bahan logam berkualitas dan pengerjaan yang presisi, prasasti akan bertahan selama puluhan bahkan ratusan tahun sebagai simbol penghargaan yang abadi. Karyamedia Souvenir Yogyakarta melayani pembuatan prasasti kuningan dan stainless steel custom untuk berbagai kebutuhan di seluruh Indonesia. Kami melayani pengiriman ke seluruh Indonesia. Hubungi 0822-4358-0777 untuk konsultasi dan pemesanan.</p>
-    `.trim(),
+    <p>Artikel terkait: <a href="/blog/panduan-lengkap-plakat-custom">Panduan Lengkap Plakat Custom: Jenis, Bahan, Harga, dan Tips Memilih</a></p>`.trim(),
   },
   {
     slug: "medali-custom-untuk-lomba-sekolah",
-    title: "Medali Custom untuk Lomba Sekolah: Harga dan Panduan Pemesanan",
+    title: "Medali Custom untuk Lomba Sekolah: Harga dan Panduan…",
     description: "Cek harga medali untuk lomba sekolah, olimpiade akademik, dan event pendidikan. Simak jenis bahan, desain, estimasi harga medali custom, dan tips pemesanan.",
     category: "Medali",
     date: "2026-07-12",
     image: "/images/produk-unggulan/medali-custom/medali-custom-11.png",
-    tags: ["medali sekolah", "medali lomba", "medali olimpiade", "medali akademik", "medali custom", "souvenir sekolah", "medali murah"],
+    tags: ["medali sekolah", "medali lomba", "medali olimpiade", "medali akademik", "medali custom", "souvenir sekolah"],
     content: `
 <p>Lomba sekolah dan kompetisi akademik selalu membutuhkan penghargaan yang layak bagi para pemenang. Medali menjadi pilihan utama sebagai simbol prestasi yang membanggakan. Baik untuk lomba 17 Agustus, olimpiade sains, festival seni, maupun turnamen olahraga antar sekolah, medali custom dapat disesuaikan dengan tema acara dan identitas institusi pendidikan.</p>
 
@@ -11990,7 +11982,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
     category: "Medali",
     date: "2026-07-12",
     image: "/images/produk-unggulan/medali-custom/medali-custom-15.png",
-    tags: ["medali logam", "medali akrilik", "perbandingan medali", "medali custom", "bahan medali", "medali murah", "medali premium"],
+    tags: ["medali logam", "medali akrilik", "perbandingan medali", "medali custom", "bahan medali", "medali murah"],
     content: `
 <p>Ketika akan mengadakan acara dan membutuhkan medali sebagai penghargaan, salah satu pertanyaan yang paling sering muncul adalah: medali logam atau akrilik? Kedua jenis medali ini memiliki kelebihan dan kekurangan masing-masing. Pemilihan yang tepat akan sangat bergantung pada jenis acara, anggaran, jumlah peserta, dan kesan yang ingin disampaikan.</p>
 
@@ -12109,12 +12101,12 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   },
   {
     slug: "tips-desain-medali-custom-menarik",
-    title: "Tips Desain Medali Custom yang Menarik dan Berkesan — Panduan Lengkap",
-    description: "Panduan lengkap mendesain medali custom yang menarik dan profesional. Simak tips memilih bentuk, warna, finishing, ukuran, dan tata letak logo agar medali terlihat berkesan.",
+    title: "Tips Desain Medali Custom yang Menarik dan Berkesan —…",
+    description: "Panduan lengkap mendesain medali custom yang menarik dan profesional. Simak tips memilih bentuk, warna, finishing, ukuran, dan tata letak logo agar medali…",
     category: "Medali",
     date: "2026-07-12",
     image: "/images/produk-unggulan/medali-custom/medali-custom-20.png",
-    tags: ["desain medali", "medali custom", "tips desain medali", "medali menarik", "medali unik", "desain medali profesional", "medali premium"],
+    tags: ["desain medali", "medali custom", "tips desain medali", "medali menarik", "medali unik", "desain medali profesional"],
     content: `
 <p>Medali bukan sekadar tanda penghargaan, melainkan simbol pencapaian yang akan dikenang oleh penerimanya seumur hidup. Oleh karena itu, desain medali yang menarik dan berkesan menjadi faktor penting dalam menentukan keberhasilan sebuah acara. Medali yang dirancang dengan baik tidak hanya menjadi kenang-kenangan, tetapi juga mencerminkan identitas dan nilai dari acara yang diselenggarakan.</p>
 
@@ -12235,7 +12227,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
     category: "Medali",
     date: "2026-07-12",
     image: "/images/produk-unggulan/medali-custom/medali-custom-8.png",
-    tags: ["harga medali perunggu", "medali perunggu", "medali bronze", "medali juara 3", "medali custom", "medali murah", "medali lomba"],
+    tags: ["harga medali perunggu", "medali perunggu", "medali bronze", "medali juara 3", "medali custom", "medali murah"],
     content: `
 <p>Medali perunggu adalah simbol penghargaan untuk juara 3 atau posisi ketiga dalam berbagai kompetisi. Meskipun sering dianggap sebagai posisi terakhir di podium, medali perunggu tetap memiliki nilai penghargaan yang tinggi bagi penerimanya. Banyak penyelenggara acara yang mencari informasi tentang <strong>harga medali perunggu</strong> untuk merencanakan anggaran kompetisi mereka.</p>
 
@@ -12375,7 +12367,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 
 <h3>Berapa diskon untuk pemesanan medali perunggu dalam jumlah besar?</h3>
 <p>Diskon volume tergantung jumlah pemesanan. Umumnya diskon 10-15% untuk 200-500 pcs, 15-25% untuk 500-1.000 pcs, dan 25-35% untuk di atas 1.000 pcs. Diskon terbesar diberikan untuk medali akrilik karena proses produksinya lebih sederhana. Hubungi tim Karyamedia untuk simulasi harga dengan diskon sesuai jumlah pesanan Anda.</p>
-    `.trim(),
+    <h2>FAQ</h2><p><strong>Apakah Karyamedia melayani pembuatan custom?</strong> Ya, Karyamedia melayani pembuatan custom yang disesuaikan dengan kebutuhan dan tema acara Anda.</p><p><strong>Bagaimana cara pemesanan?</strong> Silakan pelajari melalui halaman <a href="/cara-pesan">cara pesan</a> atau hubungi kami di <a href="/profil">profil Karyamedia</a>.</p>`.trim(),
   },
   {
     slug: "pengrajin-medali-custom-jogja",
@@ -12384,7 +12376,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
     category: "Medali",
     date: "2026-07-12",
     image: "/images/produk-unggulan/medali-custom/medali-custom-12.png",
-    tags: ["pengrajin medali", "pengrajin medali jogja", "medali custom jogja", "tukang medali", "pembuatan medali", "medali yogyakarta", "produsen medali"],
+    tags: ["pengrajin medali", "pengrajin medali jogja", "medali custom jogja", "tukang medali", "pembuatan medali", "medali yogyakarta"],
     content: `
 <p>Mencari <strong>pengrajin medali</strong> yang terpercaya di Yogyakarta? Karyamedia Souvenir adalah jawabannya. Sebagai produsen souvenir dan penghargaan yang telah berdiri sejak 2001, kami telah menjadi mitra berbagai sekolah, universitas, instansi pemerintah, perusahaan, dan komunitas dalam pembuatan medali custom berkualitas.</p>
 

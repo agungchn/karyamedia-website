@@ -73,10 +73,16 @@ export function ShareButtons({ slug, title }: Props) {
         return open(`https://twitter.com/intent/tweet?url=${u}&text=${text}`)
       case "pinterest":
         return open(`https://pinterest.com/pin/create/button/?url=${u}&description=${text}`)
-      case "instagram":
-        // Instagram has no web share intent: copy link, then open IG.
+      case "instagram": {
+        const nav = navigator as Navigator & {
+          share?: (data: { title?: string; text?: string; url?: string }) => Promise<void>
+        }
+        if (nav.share) {
+          return nav.share({ title, text: title, url: shareUrl() }).catch(() => {})
+        }
         copy(url)
         return open("https://www.instagram.com/")
+      }
       default:
         return copy(url)
     }

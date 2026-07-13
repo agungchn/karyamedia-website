@@ -72,40 +72,38 @@ export function LatestArticlesSlider({ articles }: { articles: Item[] }) {
 
   return (
     <section
-      className="relative bg-gradient-to-b from-[#0B1F3A] to-[#0a1730] py-16 overflow-hidden"
+      className="bg-gray-50 py-16 overflow-hidden"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_38%,rgba(200,149,46,0.22),transparent_55%)]" />
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 flex items-end justify-between gap-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 flex items-end justify-between gap-4">
         <div>
-          <h2 className="heading-display text-2xl md:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-white to-accent">
+          <h2 className="heading-display text-2xl md:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
             Artikel Terbaru
           </h2>
-          <p className="text-gray-300 text-sm mt-1">Tips &amp; panduan souvenir custom dari Karyamedia</p>
+          <p className="text-gray-500 text-sm mt-1">Tips &amp; panduan souvenir custom dari Karyamedia</p>
         </div>
         <div className="flex items-center gap-2">
           <button
             type="button"
             onClick={() => shift("prev")}
             aria-label="Sebelumnya"
-            className="p-2 rounded-full border border-white/20 bg-white/10 hover:bg-accent hover:text-white hover:border-accent transition"
+            className="p-2 rounded-full border border-primary/30 bg-white hover:bg-accent hover:text-white hover:border-accent transition"
           >
-            <ChevronLeft className="w-5 h-5 text-white" />
+            <ChevronLeft className="w-5 h-5 text-primary" />
           </button>
           <button
             type="button"
             onClick={() => shift("next")}
             aria-label="Berikutnya"
-            className="p-2 rounded-full border border-white/20 bg-white/10 hover:bg-accent hover:text-white hover:border-accent transition"
+            className="p-2 rounded-full border border-primary/30 bg-white hover:bg-accent hover:text-white hover:border-accent transition"
           >
-            <ChevronRight className="w-5 h-5 text-white" />
+            <ChevronRight className="w-5 h-5 text-primary" />
           </button>
         </div>
       </div>
 
-      <div className="relative flex items-center justify-center h-[560px]">
+      <div className="relative flex items-center justify-center h-[420px]">
         {articles.map((card, index) => (
           <div
             key={card.slug}
@@ -117,7 +115,7 @@ export function LatestArticlesSlider({ articles }: { articles: Item[] }) {
           >
             <Link
               href={`/blog/${card.slug}`}
-              className="group relative block rounded-2xl border border-white/10 bg-white shadow-[0_25px_60px_-15px_rgba(0,0,0,0.75)]"
+              className="group relative block rounded-2xl shadow-xl border border-gray-200 bg-white"
             >
               <div className="relative h-[300px] w-[260px] overflow-hidden rounded-2xl">
                 <Image
@@ -157,18 +155,6 @@ export function LatestArticlesSlider({ articles }: { articles: Item[] }) {
                 </div>
               </div>
             </Link>
-
-            <div className="relative mt-2 w-[260px] h-[120px] overflow-hidden [mask-image:linear-gradient(to_bottom,black_30%,transparent)] [-webkit-mask-image:linear-gradient(to_bottom,black_30%,transparent)]">
-              <div className="absolute inset-0 -scale-y-100">
-                <Image
-                  src={card.image}
-                  alt=""
-                  fill
-                  className="object-cover"
-                  sizes="260px"
-                />
-              </div>
-            </div>
           </div>
         ))}
       </div>

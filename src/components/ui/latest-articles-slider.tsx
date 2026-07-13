@@ -1,8 +1,10 @@
 "use client"
 
-import Link from "next/link"
+import { useEffect, useRef, useState } from "react"
+import { ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react"
+import gsap from "gsap"
 import Image from "next/image"
-import { useState } from "react"
+import Link from "next/link"
 
 interface Item {
   slug: string
@@ -12,65 +14,149 @@ interface Item {
   category: string
 }
 
+const badgePalette = [
+  "bg-accent text-white",
+  "bg-primary text-white",
+  "bg-primary-light text-white",
+]
+
 export function LatestArticlesSlider({ articles }: { articles: Item[] }) {
-  const [isPaused, setIsPaused] = useState(false)
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([])
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [paused, setPaused] = useState(false)
 
-  if (!articles.length) return null
+  const total = articles.length
 
-  const duplicated = [...articles, ...articles]
+  const shift = (direction: "next" | "prev") => {
+    setCurrentIndex((i) =>
+      direction === "next" ? (i + 1) % total : (i - 1 + total) % total
+    )
+  }
+
+  useEffect(() => {
+    cardRefs.current.forEach((card, i) => {
+      if (!card) return
+
+      let position = i - currentIndex
+      if (position < -Math.floor(total / 2)) position += total
+      else if (position > Math.floor(total / 2)) position -= total
+
+      const x = position * 320
+      const y = position === 0 ? 24 : 0
+      const scale = position === 0 ? 1.04 : 0.92
+      const zIndex = total - Math.abs(position)
+
+      if (Math.abs(position) > 2) {
+        gsap.set(card, { x, y, scale, zIndex, opacity: 0 })
+      } else {
+        gsap.to(card, {
+          x,
+          y,
+          scale,
+          zIndex,
+          opacity: 1,
+          duration: 0.6,
+          ease: "power2.out",
+        })
+      }
+    })
+  }, [currentIndex, total])
+
+  useEffect(() => {
+    if (paused || total <= 1) return
+    const id = setInterval(() => shift("next"), 4500)
+    return () => clearInterval(id)
+  }, [paused, total])
+
+  if (!total) return null
 
   return (
-    <section className="bg-gray-50 py-16 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
-        <h2 className="heading-display text-2xl md:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
-          Artikel Terbaru
-        </h2>
-        <p className="text-gray-500 text-sm mt-1">Tips &amp; panduan souvenir custom dari Karyamedia</p>
+    <section
+      className="bg-gray-50 py-16 overflow-hidden"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 flex items-end justify-between gap-4">
+        <div>
+          <h2 className="heading-display text-2xl md:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
+            Artikel Terbaru
+          </h2>
+          <p className="text-gray-500 text-sm mt-1">Tips &amp; panduan souvenir custom dari Karyamedia</p>
+        </div>
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={() => shift("prev")}
+            aria-label="Sebelumnya"
+            className="p-2 rounded-full border border-primary/30 bg-white hover:bg-accent hover:text-white hover:border-accent transition"
+          >
+            <ChevronLeft className="w-5 h-5 text-primary" />
+          </button>
+          <button
+            type="button"
+            onClick={() => shift("next")}
+            aria-label="Berikutnya"
+            className="p-2 rounded-full border border-primary/30 bg-white hover:bg-accent hover:text-white hover:border-accent transition"
+          >
+            <ChevronRight className="w-5 h-5 text-primary" />
+          </button>
+        </div>
       </div>
 
-      <div
-        className="relative w-full overflow-hidden"
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
-      >
-        <style>{`
-          @keyframes marquee-reverse {
-            0% { transform: translateX(-50%); }
-            100% { transform: translateX(0); }
-          }
-        `}</style>
-        <div
-          className="flex gap-4"
-          style={{
-            animation: `marquee-reverse ${articles.length * 5}s linear infinite`,
-            animationPlayState: isPaused ? "paused" : "running",
-            width: "max-content",
-          }}
-        >
-          {duplicated.map((a, i) => (
+      <div className="relative flex items-center justify-center h-[420px]">
+        {articles.map((card, index) => (
+          <div
+            key={card.slug}
+            ref={(el) => {
+              cardRefs.current[index] = el
+            }}
+            className="absolute transition-transform"
+            style={{ zIndex: total - Math.abs(index - currentIndex) }}
+          >
             <Link
-              key={`${a.slug}-${i}`}
-              href={`/blog/${a.slug}`}
-              className="group w-72 shrink-0 bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow"
+              href={`/blog/${card.slug}`}
+              className="group relative block overflow-hidden rounded-2xl shadow-xl border border-gray-200 bg-white"
             >
-              <div className="relative w-full aspect-[4/3] bg-gray-100">
+              <div className="relative h-[300px] w-[260px]">
                 <Image
-                  src={a.image}
-                  alt={a.title}
+                  src={card.image}
+                  alt={card.title}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="object-cover"
+                  sizes="260px"
                 />
-              </div>
-              <div className="p-4">
-                <span className="text-[11px] uppercase tracking-wide text-accent font-semibold">{a.category}</span>
-                <h3 className="text-sm font-semibold text-gray-900 line-clamp-2 mt-1 group-hover:text-accent transition-colors leading-snug">
-                  {a.title}
-                </h3>
-                <p className="text-xs text-gray-500 line-clamp-2 mt-1.5 leading-relaxed">{a.description}</p>
+
+                {card.category && (
+                  <div className="absolute top-4 -left-10 transform -rotate-45">
+                    <div
+                      className={`px-3 py-0.5 text-xs font-bold shadow-md ${
+                        badgePalette[index % badgePalette.length]
+                      }`}
+                    >
+                      {card.category}
+                    </div>
+                  </div>
+                )}
+
+                <div className="absolute bottom-4 left-4 right-4 bg-white/85 backdrop-blur-md rounded-xl p-4 shadow-md border border-white/40">
+                  <div className="flex flex-col gap-1">
+                    <h3 className="text-base font-semibold text-gray-900 leading-snug">
+                      {card.title}
+                    </h3>
+                    <p className="text-sm text-gray-600 leading-snug line-clamp-2">
+                      {card.description}
+                    </p>
+                    <div className="flex justify-end mt-2">
+                      <div className="w-7 h-7 flex items-center justify-center rounded-full bg-primary/10 transition-all duration-300 group-hover:scale-110 group-hover:bg-accent">
+                        <ArrowUpRight className="w-3.5 h-3.5 text-primary transition-transform duration-300 group-hover:rotate-45 group-hover:text-white" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </Link>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </section>
   )

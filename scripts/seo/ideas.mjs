@@ -10,10 +10,14 @@
 //   node scripts/seo/ideas.mjs --generate-top 3  # also draft top 3 via LLM
 //   node scripts/seo/ideas.mjs --days 90         # wider window (default 28)
 //
-// Sources: GSC search-analytics + Bing GetQueryStats (real queries), plus a
-// curated long-tail fallback (scripts/seo/ideas.mjs FALLBACK_KEYWORDS) when
-// both engines have no data. Bing seed demand (GetKeywordStats) is used only
-// as a ranking boost. Needs GSC credentials (scripts/gsc/credentials.json).
+// Sources (merged, deduped, ranked by demand):
+//   1. GSC search-analytics (real Google queries)
+//   2. Bing GetQueryStats (real Bing queries)
+//   3. Bing GetKeywordStats -> seed-derived long-tail topics (data-driven,
+//      expanded from the top-demand seeds so content follows real market demand)
+//   4. Curated long-tail fallback (FALLBACK_KEYWORDS) when the above are empty.
+// Bing seed demand is also used as a soft ranking boost. Needs GSC credentials
+// (scripts/gsc/credentials.json). Set GSC_MOCK / BING_MOCK for offline fixtures.
 // Set GSC_MOCK / BING_MOCK to run offline with fixtures (no network).
 
 import { execSync } from "node:child_process"
@@ -21,7 +25,7 @@ import { readFileSync, writeFileSync } from "node:fs"
 import { fileURLToPath } from "node:url"
 import { dirname, join, resolve } from "node:path"
 import { getToken, getSite, api } from "../gsc/analyze.mjs"
-import { bingQueryOpportunities, bingSeedVolumes } from "../bing/source.mjs"
+import { bingQueryOpportunities, bingSeedVolumes, bingTopicIdeas } from "../bing/source.mjs"
 import { extractArticles } from "./article-lint.mjs"
 import { inferCategory } from "./article-generate.mjs"
 import { commitAndPush } from "./git.mjs"
@@ -209,6 +213,35 @@ async function main() {
       ctr: r.ctr,
       position: r.position,
     })
+  }
+
+  // --- Bing seed-derived topic ideas (data-driven from GetKeywordStats) ---
+  // Expand top-demand seeds into specific long-tail topics so the pipeline is
+  // driven by real market demand, not just a static list. Filtered with
+  // nearDup (full-subset) so broad product words already covered don't block
+  // these more specific angles.
+  try {
+    const seedIdeas = await bingTopicIdeas()
+    const have = new Set(opportunities.map((o) => o.query.trim().toLowerCase()))
+    let added = 0
+    for (const idea of seedIdeas) {
+      const q = idea.query.trim().toLowerCase()
+      if (have.has(q)) continue
+      if (nearDup(idea.query, working)) continue
+      opportunities.push({
+        query: idea.query,
+        impressions: Math.round((idea.impressions || 0) / 5),
+        clicks: 0,
+        ctr: 0,
+        position: 0,
+        _seed: true,
+      })
+      have.add(q)
+      added++
+    }
+    if (added) console.log(`Bing seed-derived topics: ${added} (by demand volume)`)
+  } catch (e) {
+    console.error(`Bing seed ideas gagal (${e.message}); lanjut tanpa itu.`)
   }
   // Soft ranking boost from Bing broad seed demand (GetKeywordStats): a topic
   // that sits under a high-volume seed gets nudged up without overriding the

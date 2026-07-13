@@ -72,7 +72,7 @@ export function LatestArticlesSlider({ articles }: { articles: Item[] }) {
 
   return (
     <section
-      className="bg-gray-50 py-16 overflow-hidden"
+      className="bg-gray-50 py-10 overflow-hidden"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
@@ -103,7 +103,7 @@ export function LatestArticlesSlider({ articles }: { articles: Item[] }) {
         </div>
       </div>
 
-      <div className="relative flex items-center justify-center h-[420px]">
+      <div className="relative flex items-center justify-center h-[360px]">
         {articles.map((card, index) => (
           <div
             key={card.slug}

@@ -29,6 +29,7 @@ import nextDynamic from "next/dynamic"
 import { HeroSection } from "@/components/ui/hero-section"
 import { GeometricBackground } from "@/components/ui/geometric-bg"
 import { HolographicCard } from "@/components/ui/holographic-card"
+import { LatestArticlesSlider } from "@/components/ui/latest-articles-slider"
 
 
 const TestimonialCarousel = nextDynamic(() =>
@@ -38,9 +39,15 @@ const TestimonialCarousel = nextDynamic(() =>
 import { categories } from "@/data/categories"
 import { products } from "@/data/products"
 import { testimonials } from "@/data/testimonials"
+import { articles } from "@/data/articles"
 import { LocalBusinessReviewsSchema } from "@/components/json-ld"
 import { companyInfo } from "@/data/company"
 import { getWhatsAppLink, generateWhatsAppMessage } from "@/lib/utils"
+
+const latestArticles = [...articles]
+  .sort((a, b) => b.date.localeCompare(a.date))
+  .slice(0, 12)
+  .map((a) => ({ slug: a.slug, title: a.title, image: a.image, category: a.category }))
 
 export const metadata: Metadata = {
   description:
@@ -1098,6 +1105,9 @@ Didukung lebih dari 25 pengrajin profesional yang ahli di bidangnya masing-masin
             <LocalBusinessReviewsSchema />
           </div>
       </section>
+
+      <LatestArticlesSlider articles={latestArticles} />
+
 
       <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

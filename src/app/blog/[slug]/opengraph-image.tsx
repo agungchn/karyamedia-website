@@ -45,7 +45,13 @@ export default async function Image({ params }: { params: Promise<{ slug: string
         }}
       >
         {img ? (
-          <img width={360} height={360} src={img} alt="" style={{ borderRadius: "24px" }} />
+          <img
+            width={360}
+            height={360}
+            src={img}
+            alt=""
+            style={{ borderRadius: "24px", objectFit: "contain" }}
+          />
         ) : (
           <div
             style={{

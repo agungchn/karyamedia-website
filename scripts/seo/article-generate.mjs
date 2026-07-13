@@ -88,18 +88,63 @@ function walk(dir) {
   }
   return null
 }
-function pickImage(category) {
+// ---- used images (avoid reusing images already used by other articles) ----
+function usedImages(workingText) {
+  const set = new Set()
+  const re = /\/images\/produk-unggulan\/[^\s"')>]+/g
+  let m
+  while ((m = re.exec(workingText))) set.add(m[0])
+  return set
+}
+
+// ---- category name -> slug (read from categories.ts, no TS import needed) ----
+function loadCategorySlugs() {
+  const text = readFileSync(join(root, "src/data/categories.ts"), "utf8")
+  const map = {}
+  const re = /name:\s*"([^"]+)",\s*slug:\s*"([^"]+)"/g
+  let m
+  while ((m = re.exec(text))) map[m[1]] = m[2]
+  return map
+}
+
+function pickImage(category, used) {
   const base = join(root, "public/images/produk-unggulan")
+  const candidates = []
   for (const f of FOLDER[category] || []) {
     const dir = join(base, f)
     if (existsSync(dir)) {
-      const imgs = readdirSync(dir).filter((x) => /\.(png|jpe?g|webp)$/i.test(x))
-      if (imgs.length) return `/images/produk-unggulan/${f}/${imgs[0]}`
+      for (const x of readdirSync(dir).filter((n) => /\.(png|jpe?g|webp)$/i.test(n))) {
+        candidates.push(`/images/produk-unggulan/${f}/${x}`)
+      }
     }
   }
-  const found = walk(base)
-  if (found) return found.replace(join(root, "public"), "").split("\\").join("/")
-  return "/images/produk-unggulan/plakat/plakat-akrilik-1.png"
+  if (!candidates.length) {
+    const found = walk(base)
+    if (found) candidates.push(found.replace(join(root, "public"), "").split("\\").join("/"))
+  }
+  const fresh = candidates.filter((p) => !used.has(p))
+  return fresh[0] || candidates[0] || "/images/produk-unggulan/plakat/plakat-akrilik-1.png"
+}
+
+// ---- automatic internal links (programmatic, URL-safe) ----
+function escapeRe(s) {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+}
+function injectCategoryLink(content, category, catSlugs) {
+  const slug = catSlugs[category]
+  if (!slug) return content
+  const re = new RegExp(`(${escapeRe(category)})`, "i")
+  return content.replace(re, `<a href="/katalog-produk/${slug}">$1</a>`)
+}
+function injectTestimoniLink(content) {
+  const re = /(instansi|klien|pelanggan|testimoni|customer)/i
+  if (re.test(content)) {
+    return content.replace(re, `<a href="/profil">$1</a>`)
+  }
+  return (
+    content +
+    '<p>Simak <a href="/profil">testimoni klien Karyamedia</a> dari ratusan instansi &amp; event di seluruh Indonesia.</p>'
+  )
 }
 
 function findRelatedLink(slug, category, workingText) {
@@ -139,6 +184,8 @@ async function main() {
   if (!/custom/.test(keyword.toLowerCase())) slug += "-custom"
 
   const working = readFileSync(articlesPath, "utf8")
+  const used = usedImages(working)
+  const catSlugs = loadCategorySlugs()
   if (slugRe.exec(working) && extractArticles(working).some((a) => slugRe.exec(a.block)?.[1] === slug)) {
     console.error(`DUPLIKAT: slug "${slug}" sudah ada. Gunakan keyword lain.`)
     process.exit(1)
@@ -170,13 +217,15 @@ async function main() {
   if (!/<h2[^>]*>\s*FAQ\s*<\/h2>/i.test(content)) {
     content += '<h2>FAQ</h2><p><strong>Apakah Karyamedia melayani pembuatan custom?</strong> Ya, Karyamedia melayani pembuatan custom sesuai kebutuhan Anda.</p>'
   }
+  content = injectCategoryLink(content, category, catSlugs)
+  content = injectTestimoniLink(content)
   const rel = findRelatedLink(slug, category, working)
   if (rel) content += rel
 
   let tags = Array.isArray(data.tags) ? data.tags.map(String).slice(0, 6) : []
   while (tags.length < 4) tags.push(slugify(keyword).split("-").filter((w) => w && w !== "custom")[tags.length] || `karyamedia${tags.length}`)
 
-  const image = pickImage(category)
+  const image = pickImage(category, used)
   const obj =
     `  {\n` +
     `    slug: "${escStr(slug)}",\n` +

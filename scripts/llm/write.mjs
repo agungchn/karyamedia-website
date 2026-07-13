@@ -87,6 +87,7 @@ Buat objek JSON dengan field berikut:
 - "content": artikel lengkap dalam bentuk HTML (string tunggal). Syarat content:
   * minimal 700 kata (wajib di atas 600 agar lolos standar)
   * minimal 4 heading <h2> (pakai tag <h2>...</h2>)
+  * gunakan nada otoritatif seperti ahli produsen: sertakan bukti konkret (Karyamedia berdiri sejak 2001, berbasis Yogyakarta, melayani instansi & event nasional, standar ukiran/produksi presisi) bila relevan; hindari kalimat promosi generik tanpa bukti
   * WAJIB ada bagian <h2>FAQ</h2> di akhir dengan 3-5 pasang pertanyaan & jawaban, format <p><strong>Pertanyaan?</strong> Jawaban.</p>
   * bahasa Indonesia natural & mudah dipahami, SEO-friendly, sebutkan "Karyamedia" secara wajar 1-2 kali
   * JANGAN gunakan markdown; hanya HTML inline (<p>, <h2>, <strong>, <ul><li> bila perlu)

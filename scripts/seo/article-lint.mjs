@@ -134,6 +134,8 @@ export function lintText(text, { onlySlugs = null } = {}) {
           internal++
         } else if (href.startsWith("http") || href.startsWith("#")) {
           // external / anchor: ignore
+        } else if (["/profil", "/kontak", "/cara-pesan", "/gallery"].some((p) => href === p || href.startsWith(p + "#") || href.startsWith(p + "/"))) {
+          internal++
         } else {
           warnings.push(`${at}: link internal aneh: "${href}"`)
         }

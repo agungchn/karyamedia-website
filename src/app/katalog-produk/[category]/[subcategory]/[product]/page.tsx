@@ -246,7 +246,7 @@ export default async function ProductDetailPage({ params }: Props) {
       {relatedProducts.length > 0 && (
         <section className="bg-gray-50 py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="heading-display text-2xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent mb-8">Produk Terkait</h2>
+            <h2 className="heading-display text-2xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-accessible mb-8">Produk Terkait</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
               {relatedProducts.map((rp) => (
                 <Link
@@ -288,7 +288,7 @@ export default async function ProductDetailPage({ params }: Props) {
       <section className="bg-background py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <h2 className="heading-display text-2xl md:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent mb-2">Cara Pesan</h2>
+            <h2 className="heading-display text-2xl md:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-accessible mb-2">Cara Pesan</h2>
             <p className="text-gray-500">Proses pemesanan yang mudah dan transparan</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
@@ -300,7 +300,7 @@ export default async function ProductDetailPage({ params }: Props) {
                     <span className="text-white font-bold text-lg relative z-10">{step.step}</span>
                     <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: `radial-gradient(circle at 50% 50%, rgba(212,175,55,0.4), rgba(212,175,55,0) 60%)` }} />
                   </div>
-                  <Icon className="w-6 h-6 text-primary mx-auto mb-3 group-hover:text-accent transition-all duration-300" />
+                  <Icon className="w-6 h-6 text-primary mx-auto mb-3 group-hover:text-accent-accessible transition-all duration-300" />
                   <h3 className="font-semibold text-gray-900 text-sm mb-1">{step.title}</h3>
                   <p className="text-xs text-gray-600">{step.description}</p>
                   {i < companyInfo.orderSteps.length - 1 && (

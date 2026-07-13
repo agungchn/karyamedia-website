@@ -46,7 +46,7 @@ export function TestimonialCarousel({ testimonials }: Props) {
             <h3 className="text-lg font-bold text-gray-900 mb-1">Karyamedia</h3>
             <div className="flex items-center gap-0.5 mb-0.5">
               {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} className="w-3.5 h-3.5 fill-accent text-accent" />
+                <Star key={i} className="w-3.5 h-3.5 fill-accent text-accent-accessible" />
               ))}
             </div>
             <p className="text-sm text-gray-500 mb-1.5">377 ulasan</p>
@@ -97,7 +97,7 @@ export function TestimonialCarousel({ testimonials }: Props) {
                   <div className="flex items-center gap-1.5 mt-0.5">
                     <div className="flex items-center gap-0.5">
                       {Array.from({ length: t.rating }).map((_, j) => (
-                        <Star key={j} className="w-3 h-3 fill-accent text-accent" />
+                        <Star key={j} className="w-3 h-3 fill-accent text-accent-accessible" />
                       ))}
                     </div>
                     <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 shrink-0" fill="none">

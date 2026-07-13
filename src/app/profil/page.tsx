@@ -54,7 +54,7 @@ export default function ProfilPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="heading-display text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent mb-6">Profil & Identitas Perusahaan</h2>
+              <h2 className="heading-display text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-accessible mb-6">Profil & Identitas Perusahaan</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
                 <strong>Karyamedia Souvenir</strong> adalah produsen souvenir custom yang telah berdiri sejak tahun 2001.
                 Berbasis di Yogyakarta, kami telah melayani ribuan klien dari berbagai instansi, perusahaan, universitas,
@@ -99,14 +99,14 @@ export default function ProfilPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             <div className="lg:col-span-8">
-              <p className="text-sm uppercase tracking-[0.3em] text-accent font-medium mb-3">Filosofi</p>
-              <h2 className="heading-display text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent mb-4">Karyamedia Souvenir</h2>
+              <p className="text-sm uppercase tracking-[0.3em] text-accent-accessible font-medium mb-3">Filosofi</p>
+              <h2 className="heading-display text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-accessible mb-4">Karyamedia Souvenir</h2>
               <div className="w-20 h-0.5 bg-gradient-to-r from-accent to-accent-accessible rounded-full shimmer-line mb-6" />
-              <p className="heading-display text-xl md:text-2xl text-accent italic leading-relaxed mb-6">
+              <p className="heading-display text-xl md:text-2xl text-accent-accessible italic leading-relaxed mb-6">
                 &ldquo;Sentuhan Estetik, Berjuta Makna.&rdquo;
               </p>
               <div className="text-gray-700 leading-relaxed text-base md:text-lg">
-                <span className="float-left text-6xl md:text-7xl leading-none font-bold text-accent mr-3 mt-1 heading-display">K</span>
+                <span className="float-left text-6xl md:text-7xl leading-none font-bold text-accent-accessible mr-3 mt-1 heading-display">K</span>
                 <p className="leading-relaxed">
                   aryamedia Souvenir lahir dari keyakinan bahwa setiap karya bukan sekadar benda, melainkan media untuk menyampaikan penghargaan, kenangan, identitas, dan kebanggaan. Dalam setiap plakat, medali, piala, map wisuda, prasasti, pin, maupun souvenir custom, terdapat cerita yang ingin diabadikan dengan cara yang indah, rapi, dan bermakna.
                 </p>
@@ -137,15 +137,15 @@ export default function ProfilPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8">
-              <p className="text-sm uppercase tracking-[0.3em] text-accent font-medium mb-3">Etimologi</p>
-              <h2 className="heading-display text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent mb-6">Makna Nama Karyamedia</h2>
+              <p className="text-sm uppercase tracking-[0.3em] text-accent-accessible font-medium mb-3">Etimologi</p>
+              <h2 className="heading-display text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-accessible mb-6">Makna Nama Karyamedia</h2>
               <p className="text-gray-700 leading-relaxed text-base md:text-lg">
-                Nama Karyamedia mengandung dua makna utama. <strong className="text-accent">&ldquo;Karya&rdquo;</strong> melambangkan hasil cipta, kreativitas, keterampilan, dan ketelitian tangan para pengrajin. Sedangkan <strong className="text-accent">&ldquo;Media&rdquo;</strong> berarti sarana penyampai pesan. Maka, Karyamedia Souvenir memposisikan setiap produk sebagai media penghargaan yang tidak hanya terlihat menarik, tetapi juga mampu menyampaikan nilai, prestasi, kehormatan, dan momen penting bagi setiap pelanggan.
+                Nama Karyamedia mengandung dua makna utama. <strong className="text-accent-accessible">&ldquo;Karya&rdquo;</strong> melambangkan hasil cipta, kreativitas, keterampilan, dan ketelitian tangan para pengrajin. Sedangkan <strong className="text-accent-accessible">&ldquo;Media&rdquo;</strong> berarti sarana penyampai pesan. Maka, Karyamedia Souvenir memposisikan setiap produk sebagai media penghargaan yang tidak hanya terlihat menarik, tetapi juga mampu menyampaikan nilai, prestasi, kehormatan, dan momen penting bagi setiap pelanggan.
               </p>
             </div>
             <div className="lg:col-span-4 flex items-center justify-center lg:justify-end">
               <div className="text-center">
-                <p className="heading-display text-5xl md:text-6xl text-accent font-bold leading-none">KARYA</p>
+                <p className="heading-display text-5xl md:text-6xl text-accent-accessible font-bold leading-none">KARYA</p>
                 <div className="w-8 h-0.5 bg-accent mx-auto my-3" />
                 <p className="heading-display text-5xl md:text-6xl text-primary font-bold leading-none">MEDIA</p>
               </div>
@@ -156,8 +156,8 @@ export default function ProfilPage() {
 
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-sm uppercase tracking-[0.3em] text-accent font-medium mb-3">Makna</p>
-          <h2 className="heading-display text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent mb-6">Slogan &amp; Filosofi</h2>
+          <p className="text-sm uppercase tracking-[0.3em] text-accent-accessible font-medium mb-3">Makna</p>
+          <h2 className="heading-display text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-accessible mb-6">Slogan &amp; Filosofi</h2>
           <div className="w-20 h-0.5 bg-gradient-to-r from-accent to-accent-accessible rounded-full shimmer-line mb-8" />
           <p className="text-gray-700 leading-relaxed text-base md:text-lg mb-10 max-w-3xl">
             Slogan <strong>&ldquo;Sentuhan Estetik, Berjuta Makna&rdquo;</strong> menggambarkan komitmen Karyamedia Souvenir dalam menghadirkan produk yang tidak hanya fungsional, tetapi juga memiliki nilai visual dan rasa seni.
@@ -165,7 +165,7 @@ export default function ProfilPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="relative pl-8 border-l-2 border-accent">
               <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-accent border-2 border-white" />
-              <h3 className="heading-display text-xl text-accent italic mb-3">Sentuhan Estetik</h3>
+              <h3 className="heading-display text-xl text-accent-accessible italic mb-3">Sentuhan Estetik</h3>
               <p className="text-gray-600 leading-relaxed">
                 Berarti setiap produk dikerjakan dengan perhatian pada desain, proporsi, material, warna, finishing, dan detail akhir.
               </p>
@@ -183,8 +183,8 @@ export default function ProfilPage() {
 
       <section className="bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-sm uppercase tracking-[0.3em] text-accent font-medium mb-3">Identitas Visual</p>
-          <h2 className="heading-display text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent mb-6">Filosofi Logo Karyamedia</h2>
+          <p className="text-sm uppercase tracking-[0.3em] text-accent-accessible font-medium mb-3">Identitas Visual</p>
+          <h2 className="heading-display text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-accessible mb-6">Filosofi Logo Karyamedia</h2>
           <div className="w-20 h-0.5 bg-gradient-to-r from-accent to-accent-accessible rounded-full shimmer-line mb-10" />
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-12">
             <div className="lg:col-span-5 flex justify-center">
@@ -192,7 +192,7 @@ export default function ProfilPage() {
             </div>
             <div className="lg:col-span-7">
               <p className="text-gray-700 leading-relaxed text-base md:text-lg mb-6">
-                Logo Karyamedia Souvenir dengan simbol huruf <strong className="text-accent">K</strong> di dalam bentuk geometris berwarna emas memiliki makna yang kuat dan mendalam.
+                Logo Karyamedia Souvenir dengan simbol huruf <strong className="text-accent-accessible">K</strong> di dalam bentuk geometris berwarna emas memiliki makna yang kuat dan mendalam.
               </p>
               <div className="bg-white rounded-2xl p-6 border border-gray-100">
                 <p className="text-sm text-gray-600 leading-relaxed italic">
@@ -210,7 +210,7 @@ export default function ProfilPage() {
             ].map((item) => (
               <div key={item.title} className="bg-white rounded-2xl p-7 border border-gray-100 relative overflow-hidden group hover:shadow-md transition-all hover:-translate-y-0.5">
                 <div className="absolute top-0 left-0 w-full h-0.5 rounded-full shimmer-line" />
-                <h3 className="heading-display text-lg text-accent italic mb-3">{item.title}</h3>
+                <h3 className="heading-display text-lg text-accent-accessible italic mb-3">{item.title}</h3>
                 <p className="text-gray-600 leading-relaxed text-sm">{item.desc}</p>
               </div>
             ))}
@@ -220,7 +220,7 @@ export default function ProfilPage() {
 
       <section className="bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="heading-display text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent text-center mb-2">Perjalanan Kami Sejak 2001</h2>
+          <h2 className="heading-display text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-accessible text-center mb-2">Perjalanan Kami Sejak 2001</h2>
           <p className="text-gray-500 text-sm text-center mb-12">Dari awal berdiri hingga kini</p>
           <div className="relative">
             <div className="absolute top-8 left-6 right-6 h-0.5 bg-gradient-to-r from-accent/30 via-accent to-accent/30 hidden md:block rounded-full" />
@@ -241,13 +241,13 @@ export default function ProfilPage() {
                     {i < 3 && <div className="w-0.5 h-12 bg-gradient-to-b from-accent to-accent/30 mt-1" />}
                   </div>
                   <div className="bg-white rounded-2xl p-5 border border-gray-100 flex-1 group-hover:shadow-md transition-shadow">
-                    <div className="text-3xl font-bold text-accent mb-2">{item.year}</div>
+                    <div className="text-3xl font-bold text-accent-accessible mb-2">{item.year}</div>
                     <h3 className="font-semibold text-gray-900 mb-1">{item.title}</h3>
                     <p className="text-sm text-gray-500">{item.desc}</p>
                   </div>
                 </div>
                 <div className="hidden md:block bg-white rounded-2xl p-5 border border-gray-100 group-hover:shadow-md transition-shadow">
-                  <div className="text-3xl font-bold text-accent mb-2">{item.year}</div>
+                  <div className="text-3xl font-bold text-accent-accessible mb-2">{item.year}</div>
                   <h3 className="font-semibold text-gray-900 mb-1">{item.title}</h3>
                   <p className="text-sm text-gray-500">{item.desc}</p>
                 </div>
@@ -281,7 +281,7 @@ export default function ProfilPage() {
               const glowColors = ['red', 'orange', 'red', 'orange', 'red', 'orange'] as const
               return (
                 <GlowCard key={i} glowColor={glowColors[i % glowColors.length]} customSize className="!p-6">
-                  <Icon className="w-8 h-8 text-accent mb-4" />
+                  <Icon className="w-8 h-8 text-accent-accessible mb-4" />
                   <h3 className="font-semibold text-white mb-1">{adv.title}</h3>
                   <p className="text-sm text-white/70">{adv.description}</p>
                 </GlowCard>
@@ -294,7 +294,7 @@ export default function ProfilPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
-            <h2 className="heading-display text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent mb-6">Wilayah Pelayanan</h2>
+            <h2 className="heading-display text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-accessible mb-6">Wilayah Pelayanan</h2>
             <p className="text-gray-600 leading-relaxed mb-6">
               Kami melayani pengiriman ke seluruh Indonesia melalui berbagai ekspedisi terpercaya.
               Dari Sabang sampai Merauke, produk kami dapat dijangkau oleh klien di mana pun berada.
@@ -319,7 +319,7 @@ export default function ProfilPage() {
             </div>
           </div>
           <div>
-            <h2 className="heading-display text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent mb-6">Lokasi Kami</h2>
+            <h2 className="heading-display text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-accessible mb-6">Lokasi Kami</h2>
             <div className="rounded-2xl overflow-hidden shadow-sm border border-gray-100">
               <iframe
                 src="https://maps.google.com/maps?q=Karyamedia+Souvenir&output=embed"
@@ -350,7 +350,7 @@ export default function ProfilPage() {
 
       <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="heading-display text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent mb-4">Tertarik Bekerja Sama?</h2>
+          <h2 className="heading-display text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-accessible mb-4">Tertarik Bekerja Sama?</h2>
           <p className="text-gray-500 mb-8">
             Hubungi kami untuk konsultasi gratis dan penawaran harga terbaik.
           </p>

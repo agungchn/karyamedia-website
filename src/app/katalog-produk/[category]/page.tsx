@@ -109,10 +109,10 @@ export default async function CategoryPage({ params }: Props) {
             >
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="font-semibold text-gray-900 group-hover:text-accent transition-colors">{sub.name}</h3>
+                  <h3 className="font-semibold text-gray-900 group-hover:text-accent-accessible transition-colors">{sub.name}</h3>
                   <p className="text-sm text-gray-500 mt-1">Lihat produk</p>
                 </div>
-                <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-accent group-hover:translate-x-1 transition-all" />
+                <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-accent-accessible group-hover:translate-x-1 transition-all" />
               </div>
             </Link>
           ))}

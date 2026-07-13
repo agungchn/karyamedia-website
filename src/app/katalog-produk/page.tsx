@@ -64,14 +64,14 @@ export default function KatalogPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="flex items-center gap-2 mb-8">
           <Filter className="w-5 h-5 text-gray-400" />
-          <h2 className="heading-display italic text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Semua Kategori</h2>
+          <h2 className="heading-display italic text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-accessible">Semua Kategori</h2>
         </div>
         <KategoriCards />
       </section>
 
       <section className="bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="heading-display text-2xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent mb-8">Produk Populer</h2>
+          <h2 className="heading-display text-2xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-accessible mb-8">Produk Populer</h2>
           {popularBySub.map((group) => (
             <div key={group.sub.id} className="mb-10 last:mb-0">
               <div className="flex items-center gap-3 mb-5">

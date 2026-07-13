@@ -102,7 +102,7 @@ function SearchDropdown({ query, onQueryChange, onClose }: { query: string; onQu
                 <Image src={p.images[0] || "/placeholder.png"} alt={p.name} width={40} height={40} className="object-cover w-full h-full" />
               </div>
               <div className="min-w-0 flex-1">
-                <div className="font-medium text-sm text-gray-900 group-hover:text-accent transition-colors truncate">{p.name}</div>
+                <div className="font-medium text-sm text-gray-900 group-hover:text-accent-accessible transition-colors truncate">{p.name}</div>
                 <div className="text-xs text-gray-400">{p.code} &middot; {getCategoryName(p.categoryId)}</div>
               </div>
             </Link>
@@ -154,11 +154,11 @@ export function HeroSection() {
           <div className="space-y-6">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-gradient-to-tr from-accent/20 via-primary-light/20 to-transparent border-[2px] border-accent/30 rounded-3xl px-5 py-2.5 backdrop-blur-sm">
-              <Sparkles className="w-4 h-4 text-accent" />
+              <Sparkles className="w-4 h-4 text-accent-accessible" />
               <span className="text-white text-sm font-medium">
                 Souvenir Custom Premium
               </span>
-              <Star className="w-3 h-3 text-accent fill-accent" />
+              <Star className="w-3 h-3 text-accent-accessible fill-accent" />
             </div>
 
             {/* Headline */}
@@ -167,7 +167,7 @@ export function HeroSection() {
                 Souvenir Custom
               </span>
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-accessible to-accent">
                 Premium
               </span>
             </h1>
@@ -216,7 +216,7 @@ export function HeroSection() {
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3 group">
                   <div className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-accent/20 transition-colors">
-                    <item.icon className="w-4 h-4 text-accent" />
+                    <item.icon className="w-4 h-4 text-accent-accessible" />
                   </div>
                   <div>
                     <p className="text-sm font-medium text-gray-200">{item.label}</p>

@@ -63,7 +63,7 @@ export default function KontakPage() {
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-primary" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 bg-accent/15 text-accent px-4 py-1.5 rounded-full text-sm mb-6 border border-accent/20">
+          <div className="inline-flex items-center gap-2 bg-accent/15 text-accent-accessible px-4 py-1.5 rounded-full text-sm mb-6 border border-accent/20">
             <MessageCircle className="w-4 h-4" />
             Hubungi Kami
           </div>
@@ -152,7 +152,7 @@ export default function KontakPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
-            <h2 className="heading-display text-2xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent mb-6">Form Konsultasi</h2>
+            <h2 className="heading-display text-2xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-accessible mb-6">Form Konsultasi</h2>
             <p className="text-gray-600 text-sm mb-6">
               Isi form berikut untuk konsultasi. Tim kami akan merespons dalam 5–30 menit di jam operasional.
             </p>
@@ -296,7 +296,7 @@ export default function KontakPage() {
 
           <div className="space-y-8">
             <div>
-              <h2 className="heading-display text-2xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent mb-6">Lokasi Kami</h2>
+              <h2 className="heading-display text-2xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-accessible mb-6">Lokasi Kami</h2>
               <div className="rounded-2xl overflow-hidden shadow-sm border border-gray-100">
                 <iframe
                   src="https://maps.google.com/maps?q=Karyamedia+Souvenir&output=embed"
@@ -350,7 +350,7 @@ export default function KontakPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
           <div>
-            <h2 className="heading-display text-2xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent mb-6 flex items-center gap-2">
+            <h2 className="heading-display text-2xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-accessible mb-6 flex items-center gap-2">
               <Truck className="w-6 h-6 text-primary-light" />
               Ekspedisi Pengiriman
             </h2>
@@ -365,7 +365,7 @@ export default function KontakPage() {
           </div>
 
           <div>
-            <h2 className="heading-display text-2xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent mb-6 flex items-center gap-2">
+            <h2 className="heading-display text-2xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-accessible mb-6 flex items-center gap-2">
               <HelpCircle className="w-6 h-6 text-primary-light" />
               FAQ Singkat
             </h2>
@@ -383,7 +383,7 @@ export default function KontakPage() {
 
       <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="heading-display text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent mb-4">Butuh Bantuan Segera?</h2>
+          <h2 className="heading-display text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-accessible mb-4">Butuh Bantuan Segera?</h2>
           <p className="text-gray-500 mb-8">
             Tim kami siap membantu Anda. Respons cepat di jam operasional.
           </p>

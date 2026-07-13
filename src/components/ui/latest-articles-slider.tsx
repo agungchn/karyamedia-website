@@ -78,7 +78,7 @@ export function LatestArticlesSlider({ articles }: { articles: Item[] }) {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-2 flex items-end justify-between gap-4">
         <div>
-          <h2 className="heading-display text-2xl md:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
+          <h2 className="heading-display text-2xl md:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-accessible">
             Artikel Terbaru
           </h2>
           <p className="text-gray-500 text-sm mt-1">Tips &amp; panduan souvenir custom dari Karyamedia</p>

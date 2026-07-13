@@ -72,7 +72,7 @@ export function VisiMisiCards({ items }: VisiMisiCardsProps) {
         return (
           <TiltCard key={i} className="text-center">
             <div className="w-16 h-16 mx-auto rounded-2xl bg-accent/15 flex items-center justify-center mb-4">
-              <Icon className="w-8 h-8 text-accent" />
+              <Icon className="w-8 h-8 text-accent-accessible" />
             </div>
             <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
             <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>

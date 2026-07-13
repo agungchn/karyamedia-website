@@ -16,7 +16,7 @@ export function Footer() {
                 <Image src="/images/logo-karyamedia.png" alt="Karyamedia Souvenir" width={40} height={40} className="w-10 h-10 object-contain" />
                 <div>
                   <div className="font-bold text-lg leading-tight">Karyamedia</div>
-                  <div className="text-[10px] text-accent font-medium tracking-widest uppercase">Souvenir</div>
+                  <div className="text-[10px] text-accent-accessible font-medium tracking-widest uppercase">Souvenir</div>
                 </div>
               </Link>
             </div>
@@ -25,19 +25,19 @@ export function Footer() {
             </p>
             <div className="mt-6 space-y-3 text-sm text-gray-300">
               <div className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 mt-0.5 shrink-0 text-accent" />
+                <MapPin className="w-4 h-4 mt-0.5 shrink-0 text-accent-accessible" />
                 <span>{companyInfo.address}</span>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="w-4 h-4 shrink-0 text-accent" />
+                <Phone className="w-4 h-4 shrink-0 text-accent-accessible" />
                 <span>{companyInfo.whatsapp}</span>
               </div>
               <div className="flex items-center gap-3">
-                <Mail className="w-4 h-4 shrink-0 text-accent" />
+                <Mail className="w-4 h-4 shrink-0 text-accent-accessible" />
                 <span>{companyInfo.email}</span>
               </div>
               <div className="flex items-start gap-3">
-                <Clock className="w-4 h-4 mt-0.5 shrink-0 text-accent" />
+                <Clock className="w-4 h-4 mt-0.5 shrink-0 text-accent-accessible" />
                 <span>{companyInfo.operationalHours}</span>
               </div>
             </div>
@@ -61,7 +61,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold text-base text-accent mb-1">Menu</h3>
+            <h3 className="font-semibold text-base text-accent-accessible mb-1">Menu</h3>
             <div className="w-full border-b border-accent/50 mb-4"></div>
             <ul className="space-y-2.5 text-sm text-gray-300">
               {[
@@ -73,7 +73,7 @@ export function Footer() {
                 { label: "Kontak", href: "/kontak" },
               ].map((item) => (
                 <li key={item.label}>
-                  <Link href={item.href} className="hover:text-accent hover:underline underline-offset-2 transition-colors">
+                  <Link href={item.href} className="hover:text-accent-accessible hover:underline underline-offset-2 transition-colors">
                     {item.label}
                   </Link>
                 </li>
@@ -82,12 +82,12 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold text-base text-accent mb-1">Kategori Produk</h3>
+            <h3 className="font-semibold text-base text-accent-accessible mb-1">Kategori Produk</h3>
             <div className="w-full border-b border-accent/50 mb-4"></div>
             <ul className="space-y-2.5 text-sm text-gray-300">
               {categories.map((cat) => (
                 <li key={cat.id}>
-                  <Link href={`/katalog-produk/${cat.slug}`} className="hover:text-accent hover:underline underline-offset-2 transition-colors">
+                  <Link href={`/katalog-produk/${cat.slug}`} className="hover:text-accent-accessible hover:underline underline-offset-2 transition-colors">
                     {cat.name}
                   </Link>
                 </li>
@@ -96,7 +96,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold text-base text-accent mb-1">Newsletter</h3>
+            <h3 className="font-semibold text-base text-accent-accessible mb-1">Newsletter</h3>
             <div className="w-full border-b border-accent/50 mb-4"></div>
             <p className="text-sm text-gray-300 mb-4">
               Dapatkan info terbaru, promo, dan inspirasi souvenir via WhatsApp.

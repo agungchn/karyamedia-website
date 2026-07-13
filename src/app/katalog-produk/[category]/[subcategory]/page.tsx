@@ -215,7 +215,7 @@ export default async function SubCategoryPage({ params }: Props) {
             <p className="text-gray-500 mb-6">Produk untuk subkategori ini sedang dalam proses penambahan.</p>
             <Link
               href={`/katalog-produk/${cat.slug}`}
-              className="inline-flex items-center gap-2 text-accent font-medium hover:text-accent-accessible"
+              className="inline-flex items-center gap-2 text-accent-accessible font-medium hover:text-accent-accessible"
             >
               <ChevronRight className="w-4 h-4 rotate-180" /> Kembali ke {cat.name}
             </Link>

@@ -65,7 +65,7 @@ export function BlogSearch({ articles }: { articles: ArticleSummary[] }) {
             className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all ${
               activeCategory === cat
                 ? "bg-accent text-white shadow-sm"
-                : "bg-gray-100 text-gray-600 hover:bg-accent/10 hover:text-accent"
+                : "bg-gray-100 text-gray-600 hover:bg-accent/10 hover:text-accent-accessible"
             }`}
           >
             {cat}
@@ -110,15 +110,15 @@ export function BlogSearch({ articles }: { articles: ArticleSummary[] }) {
                   <Calendar className="w-3.5 h-3.5" />
                   <span>{article.date}</span>
                   <span className="w-1 h-1 rounded-full bg-gray-300" />
-                  <span className="text-accent font-medium">{article.category}</span>
+                  <span className="text-accent-accessible font-medium">{article.category}</span>
                 </div>
-                <h2 className="font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-accent transition-colors">
+                <h2 className="font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-accent-accessible transition-colors">
                   {article.title}
                 </h2>
                 <p className="text-sm text-gray-500 line-clamp-3">
                   {article.description}
                 </p>
-                <div className="flex items-center gap-1 text-sm text-accent font-medium mt-4 group-hover:gap-2 transition-all">
+                <div className="flex items-center gap-1 text-sm text-accent-accessible font-medium mt-4 group-hover:gap-2 transition-all">
                   Baca Selengkapnya <ChevronRight className="w-4 h-4" />
                 </div>
               </div>

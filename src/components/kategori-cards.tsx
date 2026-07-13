@@ -67,9 +67,9 @@ export function KategoriCards() {
                 return CatIcon ? <CatIcon size={28} /> : <Award className="w-7 h-7 text-primary" />
               })()}
             </div>
-            <h3 className="font-bold text-gray-900 group-hover:text-accent transition-colors mb-1">{cat.name}</h3>
+            <h3 className="font-bold text-gray-900 group-hover:text-accent-accessible transition-colors mb-1">{cat.name}</h3>
             <p className="text-sm text-gray-500 mb-3">{cat.description}</p>
-            <div className="flex items-center gap-1 text-sm font-medium text-accent">
+            <div className="flex items-center gap-1 text-sm font-medium text-accent-accessible">
               {cat.subcategories.length} subkategori
               <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </div>

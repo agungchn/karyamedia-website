@@ -50,9 +50,9 @@ export default function BlogPage() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
         <nav className="flex items-center gap-2 text-sm text-gray-500">
-          <Link href="/" className="hover:text-accent transition-colors">Beranda</Link>
+          <Link href="/" className="hover:text-accent-accessible transition-colors">Beranda</Link>
           <ChevronRight className="w-3.5 h-3.5" />
-          <span className="text-accent font-medium">Blog & Artikel</span>
+          <span className="text-accent-accessible font-medium">Blog & Artikel</span>
         </nav>
       </div>
 

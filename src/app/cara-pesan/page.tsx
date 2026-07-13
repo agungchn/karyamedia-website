@@ -144,7 +144,7 @@ export default function CaraPesanPage() {
 
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="bg-primary/5 rounded-2xl p-8 mb-16">
-          <h2 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent mb-3">Alur Pemesanan</h2>
+          <h2 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-accessible mb-3">Alur Pemesanan</h2>
           <p className="text-gray-600 text-sm leading-relaxed">
             Berikut alur lengkap pemesanan di Karyamedia Souvenir. Kami tidak menggunakan sistem checkout e-commerce kaku,
             melainkan konsultasi langsung untuk memastikan setiap produk sesuai kebutuhan Anda.
@@ -166,8 +166,8 @@ export default function CaraPesanPage() {
                   {/* Content */}
                   <div className={`flex-1 pb-8 md:max-w-[calc(50%-2rem)] ${isLeft ? 'md:mr-auto md:pr-10 md:text-right' : 'md:ml-auto md:pl-10 md:text-left'}`}>
                     <div className={`flex items-center gap-2 mb-2 ${isLeft ? 'md:flex-row-reverse' : ''}`}>
-                      <item.icon className="w-5 h-5 shrink-0 group-hover:text-accent transition-colors" style={{ color: item.iconColor }} />
-                      <h3 className="text-lg font-bold text-gray-900 group-hover:text-accent transition-colors">{item.title}</h3>
+                      <item.icon className="w-5 h-5 shrink-0 group-hover:text-accent-accessible transition-colors" style={{ color: item.iconColor }} />
+                      <h3 className="text-lg font-bold text-gray-900 group-hover:text-accent-accessible transition-colors">{item.title}</h3>
                     </div>
                     <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
                   </div>
@@ -180,8 +180,8 @@ export default function CaraPesanPage() {
 
       <section className="bg-gray-50 py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="heading-display text-2xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent mb-8 flex items-center gap-2">
-            <Shield className="w-6 h-6 text-accent" />
+          <h2 className="heading-display text-2xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-accessible mb-8 flex items-center gap-2">
+            <Shield className="w-6 h-6 text-accent-accessible" />
             Ketentuan Penting
           </h2>
           <KetentuanCards />
@@ -189,8 +189,8 @@ export default function CaraPesanPage() {
       </section>
 
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h2 className="heading-display text-2xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent mb-8 flex items-center gap-2">
-          <HelpCircle className="w-6 h-6 text-accent" />
+        <h2 className="heading-display text-2xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-accessible mb-8 flex items-center gap-2">
+          <HelpCircle className="w-6 h-6 text-accent-accessible" />
           FAQ - Pertanyaan Umum
         </h2>
         <FaqAccordion items={faqs} />
@@ -198,7 +198,7 @@ export default function CaraPesanPage() {
 
       <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="heading-display text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent mb-4">Siap Memesan?</h2>
+          <h2 className="heading-display text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-accessible mb-4">Siap Memesan?</h2>
           <p className="text-gray-500 mb-8">
             Hubungi kami sekarang untuk konsultasi gratis dan penawaran harga terbaik.
           </p>

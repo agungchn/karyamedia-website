@@ -105,8 +105,8 @@ export function Header() {
               aria-haspopup="true"
               className={`flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                 pathname.startsWith("/katalog-produk")
-                  ? "text-accent bg-accent/5"
-                  : "text-gray-700 hover:text-accent hover:bg-accent/5"
+                  ? "text-accent-accessible bg-accent/5"
+                  : "text-gray-700 hover:text-accent-accessible hover:bg-accent/5"
               }`}
             >
               Katalog Produk
@@ -129,7 +129,7 @@ export function Header() {
                           {ColoredIcon ? <ColoredIcon size={20} /> : <Icon className="w-4 h-4 text-primary" />}
                         </div>
                         <div>
-                          <span className="font-semibold text-sm text-gray-900 group-hover:text-accent transition-colors block">{cat.name}</span>
+                          <span className="font-semibold text-sm text-gray-900 group-hover:text-accent-accessible transition-colors block">{cat.name}</span>
                           <p className="text-xs text-gray-500 line-clamp-1">{cat.description}</p>
                         </div>
                       </Link>
@@ -139,7 +139,7 @@ export function Header() {
                 <div className="mt-4 pt-4 border-t border-accent/10">
                   <Link
                     href="/katalog-produk"
-                    className="text-sm font-medium text-accent-accessible hover:text-accent"
+                    className="text-sm font-medium text-accent-accessible hover:text-accent-accessible"
                   >
                     Lihat Semua Produk &rarr;
                   </Link>
@@ -162,7 +162,7 @@ export function Header() {
                 className={`text-sm font-medium transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:bg-accent after:transition-all after:duration-300 ${
                   pathname === item.href
                     ? "text-primary after:w-full"
-                    : "text-gray-700 hover:text-accent after:w-0 hover:after:w-full"
+                    : "text-gray-700 hover:text-accent-accessible after:w-0 hover:after:w-full"
                 }`}
               >
                   {item.label}
@@ -198,7 +198,7 @@ export function Header() {
           <div className="px-4 py-4 space-y-1">
             <Link
               href="/katalog-produk"
-              className="block px-4 py-3 rounded-lg text-sm font-medium text-gray-700 hover:text-accent hover:bg-accent/5 transition-colors"
+              className="block px-4 py-3 rounded-lg text-sm font-medium text-gray-700 hover:text-accent-accessible hover:bg-accent/5 transition-colors"
             >
               Katalog Produk
             </Link>
@@ -209,7 +209,7 @@ export function Header() {
                   <Link
                     key={cat.id}
                     href={`/katalog-produk/${cat.slug}`}
-                    className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm text-gray-600 hover:text-accent hover:bg-accent/5 transition-colors"
+                    className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm text-gray-600 hover:text-accent-accessible hover:bg-accent/5 transition-colors"
                   >
                     <Icon className="w-4 h-4" />
                     {cat.name}
@@ -229,8 +229,8 @@ export function Header() {
                 href={item.href}
                 className={`block px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
                   pathname === item.href
-                    ? "text-accent bg-accent/5"
-                    : "text-gray-700 hover:text-accent hover:bg-accent/5"
+                    ? "text-accent-accessible bg-accent/5"
+                    : "text-gray-700 hover:text-accent-accessible hover:bg-accent/5"
                 }`}
               >
                 {item.label}

@@ -139,7 +139,7 @@ export default function GalleryPage() {
             </div>
             
             <h1 className="heading-display text-5xl md:text-7xl mb-4 tracking-[0.2em]">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-accessible to-accent">
                 GALERI
               </span>
               <br />
@@ -152,15 +152,15 @@ export default function GalleryPage() {
             
             <div className="flex items-center justify-center gap-4 flex-wrap">
               <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
-                <Sparkles className="w-4 h-4 text-accent" />
+                <Sparkles className="w-4 h-4 text-accent-accessible" />
                 <span className={"text-white text-sm"}>Mesin Modern</span>
               </div>
               <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
-                <Zap className="w-4 h-4 text-accent" />
+                <Zap className="w-4 h-4 text-accent-accessible" />
                 <span className={"text-white text-sm"}>Teknologi Terbaru</span>
               </div>
               <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
-                <Award className="w-4 h-4 text-accent" />
+                <Award className="w-4 h-4 text-accent-accessible" />
                 <span className={"text-white text-sm"}>Kualitas Terjamin</span>
               </div>
             </div>
@@ -173,7 +173,7 @@ export default function GalleryPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="heading-display text-4xl md:text-6xl mb-4">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-accessible">
                 ENGINE
               </span>
             </h2>
@@ -225,7 +225,7 @@ export default function GalleryPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="heading-display text-4xl md:text-6xl mb-4">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-accessible">
                 PRODUCT
               </span>
             </h2>
@@ -264,8 +264,8 @@ export default function GalleryPage() {
 
           <div className="mt-16 text-center">
             <div className="bg-gradient-to-r from-accent/10 via-primary/5 to-accent/10 rounded-3xl p-12 max-w-3xl mx-auto">
-              <Camera className="w-16 h-16 text-accent mx-auto mb-4" />
-              <h3 className="heading-display text-2xl text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light mb-3">
+              <Camera className="w-16 h-16 text-accent-accessible mx-auto mb-4" />
+              <h3 className="heading-display text-2xl text-transparent bg-clip-text bg-gradient-to-r from-accent-accessible to-accent mb-3">
                 Galeri Lebih Lengkap
               </h3>
               <p className={"text-gray-600 mb-6"}>
@@ -276,7 +276,7 @@ export default function GalleryPage() {
                 href={getWhatsAppLink()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-accent text-white px-8 py-3 rounded-full font-medium hover:shadow-lg hover:shadow-accent/25 transition-all"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-accent-accessible text-white px-8 py-3 rounded-full font-medium hover:shadow-lg hover:shadow-accent/25 transition-all"
               >
                 <Camera className="w-4 h-4" />
                 Lihat Lebih Banyak

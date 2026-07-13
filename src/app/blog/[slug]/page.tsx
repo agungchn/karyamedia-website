@@ -213,12 +213,12 @@ export default async function ArticlePage({ params }: Props) {
           </Link>
           <div className="flex items-center gap-3 text-sm text-blue-200 mb-4">
             {productUrl ? (
-              <Link href={productUrl} className="inline-flex items-center gap-1.5 bg-accent/10 text-accent px-3 py-1 rounded-full text-xs font-medium hover:bg-accent/20 transition-colors">
+              <Link href={productUrl} className="inline-flex items-center gap-1.5 bg-accent/10 text-accent-accessible px-3 py-1 rounded-full text-xs font-medium hover:bg-accent/20 transition-colors">
                 <Sparkles className="w-3 h-3" />
                 {article.category}
               </Link>
             ) : (
-              <div className="inline-flex items-center gap-1.5 bg-accent/10 text-accent px-3 py-1 rounded-full text-xs font-medium">
+              <div className="inline-flex items-center gap-1.5 bg-accent/10 text-accent-accessible px-3 py-1 rounded-full text-xs font-medium">
                 <Sparkles className="w-3 h-3" />
                 {article.category}
               </div>
@@ -229,7 +229,7 @@ export default async function ArticlePage({ params }: Props) {
             <span className="text-blue-200/40">|</span>
             <span className="text-blue-200/80 text-xs">{readTime} menit baca</span>
           </div>
-          <h1 className="heading-display text-3xl md:text-4xl lg:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-accent-accessible via-accent to-accent-light">
+          <h1 className="heading-display text-3xl md:text-4xl lg:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-accent-accessible via-accent to-accent-accessible">
             {article.title}
           </h1>
         </div>
@@ -259,7 +259,7 @@ export default async function ArticlePage({ params }: Props) {
                   <a
                     key={id}
                     href={`#${id}`}
-                    className="block text-sm text-gray-600 hover:text-accent transition-colors"
+                    className="block text-sm text-gray-600 hover:text-accent-accessible transition-colors"
                   >
                     {h2}
                   </a>
@@ -309,7 +309,7 @@ export default async function ArticlePage({ params }: Props) {
 
         {productUrl && (
           <div className="mt-10 p-6 bg-gradient-to-br from-accent/5 to-background rounded-2xl border border-accent/10 text-center">
-            <Award className="w-10 h-10 text-accent mx-auto mb-3" />
+            <Award className="w-10 h-10 text-accent-accessible mx-auto mb-3" />
             <h3 className="heading-display text-lg text-primary mb-1">
               Lihat Koleksi {productLabel}
             </h3>
@@ -331,7 +331,7 @@ export default async function ArticlePage({ params }: Props) {
             {article.tags.map((tag) => (
               <span
                 key={tag}
-                className="px-3 py-1.5 bg-gray-100 text-gray-700 text-sm rounded-full hover:bg-accent/10 hover:text-accent transition-colors"
+                className="px-3 py-1.5 bg-gray-100 text-gray-700 text-sm rounded-full hover:bg-accent/10 hover:text-accent-accessible transition-colors"
               >
                 {tag}
               </span>
@@ -346,7 +346,7 @@ export default async function ArticlePage({ params }: Props) {
             <div className="absolute top-0 left-0 w-full h-0.5 shimmer-line" />
             <div className="absolute -top-6 -right-6 w-24 h-24 bg-accent/5 rounded-full blur-2xl" />
             <div className="relative z-10">
-              <Award className="w-12 h-12 text-accent mx-auto mb-4" />
+              <Award className="w-12 h-12 text-accent-accessible mx-auto mb-4" />
               <h3 className="heading-display text-xl text-primary mb-2">
                 Butuh Bantuan?
               </h3>
@@ -370,7 +370,7 @@ export default async function ArticlePage({ params }: Props) {
       {otherArticles.length > 0 && (
         <section className="bg-gray-50 py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="heading-display text-2xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent mb-8">
+            <h2 className="heading-display text-2xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-accessible mb-8">
               Artikel Lainnya
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -396,7 +396,7 @@ export default async function ArticlePage({ params }: Props) {
                       <Calendar className="w-3 h-3" />
                       <span>{a.date}</span>
                     </div>
-                    <h3 className="font-semibold text-gray-900 text-sm mb-1 line-clamp-2 group-hover:text-accent transition-colors">
+                    <h3 className="font-semibold text-gray-900 text-sm mb-1 line-clamp-2 group-hover:text-accent-accessible transition-colors">
                       {a.title}
                     </h3>
                     <p className="text-xs text-gray-500 line-clamp-2">{a.description}</p>

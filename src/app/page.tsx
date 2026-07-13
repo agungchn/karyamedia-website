@@ -881,7 +881,7 @@ export default function HomePage() {
               key={i}
               className="group bg-white rounded-xl border border-gray-200 px-4 py-3 flex items-center gap-3 shadow-sm hover:bg-primary hover:border-primary transition-all duration-300 cursor-default"
             >
-              <item.icon className="w-5 h-5 text-primary group-hover:text-accent" />
+              <item.icon className="w-5 h-5 text-primary group-hover:text-accent-accessible" />
               <span className="text-sm font-medium text-gray-700 group-hover:text-white">{item.label}</span>
             </div>
           ))}
@@ -890,7 +890,7 @@ export default function HomePage() {
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-12">
-          <h2 className="heading-display text-3xl md:text-4xl mb-3 text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Kategori Produk</h2>
+          <h2 className="heading-display text-3xl md:text-4xl mb-3 text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-accessible">Kategori Produk</h2>
           <p className="text-gray-500 max-w-2xl mx-auto">
             Temukan berbagai kategori souvenir custom yang kami produksi dengan kualitas terbaik
           </p>
@@ -951,7 +951,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-end justify-between mb-12">
             <div>
-              <h2 className="heading-display text-3xl md:text-4xl mb-2 text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Produk Unggulan Karyamedia</h2>
+              <h2 className="heading-display text-3xl md:text-4xl mb-2 text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-accessible">Produk Unggulan Karyamedia</h2>
               <p className="text-gray-500">Produk terbaik yang paling banyak dipesan klien kami</p>
             </div>
           </div>
@@ -1030,7 +1030,7 @@ export default function HomePage() {
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center mb-12">
-          <h2 className="heading-display text-3xl md:text-4xl mb-3 text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Mengapa Memilih Karyamedia Souvenir?</h2>
+          <h2 className="heading-display text-3xl md:text-4xl mb-3 text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-accessible">Mengapa Memilih Karyamedia Souvenir?</h2>
           <p className="text-gray-500 max-w-2xl mx-auto">
 Didukung lebih dari 25 pengrajin profesional yang ahli di bidangnya masing-masing. Berpengalaman sejak 2001.
           </p>
@@ -1070,9 +1070,9 @@ Didukung lebih dari 25 pengrajin profesional yang ahli di bidangnya masing-masin
               return (
                 <div key={i} className="relative text-center group">
                   <div className="w-14 h-14 mx-auto rounded-full bg-white/10 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-white/20 transition-all duration-300">
-                    <span className="text-accent font-bold text-lg group-hover:scale-110 transition-transform duration-300">{step.step}</span>
+                    <span className="text-accent-accessible font-bold text-lg group-hover:scale-110 transition-transform duration-300">{step.step}</span>
                   </div>
-                  <Icon className="w-6 h-6 text-accent mx-auto mb-3 group-hover:-translate-y-1 group-hover:text-yellow-300 transition-all duration-300" />
+                  <Icon className="w-6 h-6 text-accent-accessible mx-auto mb-3 group-hover:-translate-y-1 group-hover:text-yellow-300 transition-all duration-300" />
                   <h3 className="font-semibold text-white text-sm mb-1">{step.title}</h3>
                   <p className="text-xs text-white/60">{step.description}</p>
                   {i < companyInfo.orderSteps.length - 1 && (
@@ -1095,7 +1095,7 @@ Didukung lebih dari 25 pengrajin profesional yang ahli di bidangnya masing-masin
 
       <section id="testimoni" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center mb-12">
-          <h2 className="heading-display text-3xl md:text-4xl mb-3 text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Apa Kata Klien Kami</h2>
+          <h2 className="heading-display text-3xl md:text-4xl mb-3 text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-accessible">Apa Kata Klien Kami</h2>
           <p className="text-gray-500 max-w-2xl mx-auto">
             Testimoni dari instansi dan klien yang telah mempercayakan kebutuhan souvenir mereka kepada kami
           </p>
@@ -1111,7 +1111,7 @@ Didukung lebih dari 25 pengrajin profesional yang ahli di bidangnya masing-masin
 
       <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="heading-display text-3xl md:text-4xl mb-4 text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
+          <h2 className="heading-display text-3xl md:text-4xl mb-4 text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-accessible">
             Siap Memproduksi Souvenir Custom Anda?
           </h2>
           <p className="text-gray-500 mb-8 max-w-2xl mx-auto">

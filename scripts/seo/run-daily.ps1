@@ -46,6 +46,17 @@ if ($slug) {
   } catch {
     Show-Popup -Title "Cek Online" -Message "Tidak bisa cek $url (mungkin masih deploy)."
   }
+
+  # verify Google indexing status of the new article (read-only GSC API)
+  try {
+    $inspect = & npm run seo:inspect -- 1 2>&1 | Out-String
+    $status = "NEUTRAL"
+    if ($inspect -match "PASS") { $status = "PASS (terindeks)" }
+    elseif ($inspect -match "FAIL") { $status = "FAIL (belum terindeks)" }
+    Show-Popup -Title "Status Indexing Google" -Message "$status`n$url"
+  } catch {
+    Show-Popup -Title "Status Indexing Google" -Message "Tidak bisa cek status indexing."
+  }
 } else {
   Show-Popup -Title "Karyamedia SEO" -Message "Tidak ada artikel baru hari ini (semua topik sudah ada)."
 }

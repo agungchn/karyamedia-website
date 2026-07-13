@@ -100,7 +100,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const article = articles.find((a) => a.slug === slug)
   if (!article) return {}
 
-  const imageUrl = article.image ? `https://karyamediasouvenir.com${article.image}` : undefined
   const readTime = Math.max(1, Math.round(article.content.replace(/<[^>]*>/g, "").split(/\s+/).length / 200))
 
   return {
@@ -116,7 +115,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "article",
       siteName: "Karyamedia Souvenir",
       locale: "id_ID",
-      images: imageUrl ? [{ url: imageUrl, width: 1200, height: 1600 }] : undefined,
       publishedTime: article.date,
       tags: article.tags,
     },
@@ -124,7 +122,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: "summary_large_image",
       title: article.title,
       description: article.description,
-      images: imageUrl ? [imageUrl] : undefined,
     },
   }
 }

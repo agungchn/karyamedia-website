@@ -159,6 +159,22 @@ function injectTestimoniLink(content) {
   )
 }
 
+// ---- backward internal links: older same-category articles link to the new one ----
+function injectBacklink(block, newSlug, newTitle) {
+  const open = block.indexOf("content:")
+  if (open === -1) return block
+  const c0 = block.indexOf("`", open)
+  if (c0 === -1) return block
+  const c1 = block.lastIndexOf("`")
+  if (c1 <= c0) return block
+  const body = block.slice(c0 + 1, c1)
+  if (body.includes(`/blog/${newSlug}`)) return block // already linked
+  const words = body.replace(/<[^>]*>/g, " ").split(/\s+/).filter(Boolean).length
+  if (words > 1400) return block // keep older articles under the soft cap
+  const link = `<p>Artikel terkait: <a href="/blog/${newSlug}">${escTpl(newTitle)}</a></p>`
+  return block.slice(0, c1) + link + block.slice(c1)
+}
+
 function findRelatedLink(slug, category, workingText) {
   const arts = extractArticles(workingText)
   const pick = (pred) => {
@@ -246,6 +262,15 @@ async function main() {
   const rel = findRelatedLink(slug, category, working)
   if (rel) content += rel
 
+  // backward links: older same-category articles reference the new article
+  let modified = working
+  for (const a of extractArticles(working)) {
+    const s = slugRe.exec(a.block)?.[1]
+    if (s === slug) continue
+    if ((catRe.exec(a.block)?.[1] || "") !== category) continue
+    modified = modified.replace(a.block, injectBacklink(a.block, slug, data.title || keyword))
+  }
+
   let tags = Array.isArray(data.tags) ? data.tags.map(String).slice(0, 6) : []
   while (tags.length < 4) tags.push(slugify(keyword).split("-").filter((w) => w && w !== "custom")[tags.length] || `karyamedia${tags.length}`)
 
@@ -262,7 +287,7 @@ async function main() {
     `    content: \`${escTpl(content)}\`,\n` +
     `  },\n`
 
-  const newText = working.replace(/(},\s*)\](\s*)$/, `$1${obj}]`)
+  const newText = modified.replace(/(},\s*)\](\s*)$/, `$1${obj}]`)
   if (newText === working) {
     console.error("Gagal menyisipkan artikel (pola array tidak ditemukan).")
     process.exit(1)
@@ -270,6 +295,9 @@ async function main() {
   writeFileSync(articlesPath, newText)
   console.log(`✓ Artikel disisipkan: blog/${slug} (image: ${image})`)
   console.log(`GENERATED_SLUG:${slug}`)
+
+  console.log("\n--- regenerate og-meta.json ---")
+  execSync(`node scripts/seo/gen-og-meta.mjs`, { cwd: root, stdio: "inherit" })
 
   console.log("\n--- gate: cek duplikat ---")
   execSync(`node scripts/seo/article-check.mjs`, { env: { ...process.env, ARTICLE_LINT_SLUGS: slug }, cwd: root, stdio: "inherit" })

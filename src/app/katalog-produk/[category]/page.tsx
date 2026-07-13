@@ -125,7 +125,7 @@ export default async function CategoryPage({ params }: Props) {
               {productsBySub.flatMap((group) => group.products).map((product, i) => (
                 <div
                   key={product.id}
-                  className="group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all animate-fade-in-up opacity-0"
+                  className="group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-fade-in-up opacity-0"
                   style={{ animationDelay: `${i * 0.05}s`, animationFillMode: "forwards" }}
                 >
                   <div className="aspect-[3/4] bg-gradient-to-br from-gray-100 to-gray-200 relative overflow-hidden">
@@ -135,14 +135,21 @@ export default async function CategoryPage({ params }: Props) {
                         alt={product.name}
                         fill
                         sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="object-cover group-hover:scale-110 transition-transform duration-700"
                       />
                     )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     {product.bestSeller && (
                       <span className="absolute top-3 left-3 bg-accent text-white text-xs font-medium px-2.5 py-1 rounded-full">
                         Best Seller
                       </span>
                     )}
+                    <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                      <span className="inline-block bg-white/20 backdrop-blur-sm text-white text-xs px-2.5 py-1 rounded-full mb-1">
+                        {product.subcategoryId}
+                      </span>
+                      <p className="text-white font-bold text-sm line-clamp-2">{product.name}</p>
+                    </div>
                   </div>
                   <div className="p-4">
                     <p className="text-xs text-gray-400 mb-1">{product.code}</p>

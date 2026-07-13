@@ -14,7 +14,6 @@ const geistSans = localFont({
     { path: "../../fonts/Geist-latin-ext.woff2", weight: "100 900", style: "normal" },
   ],
   variable: "--font-geist-sans",
-  display: "optional",
 })
 
 const geistMono = localFont({
@@ -23,7 +22,6 @@ const geistMono = localFont({
     { path: "../../fonts/GeistMono-latin-ext.woff2", weight: "100 900", style: "normal" },
   ],
   variable: "--font-geist-mono",
-  display: "optional",
 })
 
 const playfairDisplay = localFont({
@@ -32,7 +30,6 @@ const playfairDisplay = localFont({
     { path: "../../fonts/PlayfairDisplay-latin-ext.woff2", weight: "400 900", style: "normal" },
   ],
   variable: "--font-display",
-  display: "optional",
 })
 
 export const metadata: Metadata = {

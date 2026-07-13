@@ -90,6 +90,9 @@ export const metadata: Metadata = {
       "Produsen souvenir custom berpengalaman sejak 2001. Plakat, medali, piala, souvenir wisuda, prasasti, dan merchandise custom.",
     images: ["/images/logo-karyamedia.png"],
   },
+  other: {
+    "msvalidate.01": "5C837844F56D53354CE0CD0CD98B4FE2",
+  },
 }
 
 export default function RootLayout({

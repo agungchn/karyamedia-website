@@ -15,9 +15,9 @@ interface Item {
 }
 
 const badgePalette = [
-  "bg-accent text-white",
   "bg-primary text-white",
-  "bg-primary-light text-white",
+  "bg-accent-accessible text-white",
+  "bg-gray-800 text-white",
 ]
 
 export function LatestArticlesSlider({ articles }: { articles: Item[] }) {

@@ -61,6 +61,13 @@ if ($slug) {
     Show-Popup -Title "Cek Online" -Message "Tidak bisa cek $url (mungkin masih deploy)."
   }
 
+  # notify search engines of the new article via IndexNow (instant crawl, Bing + partners)
+  try {
+    & npm run seo:indexnow -- $slug 2>&1 | Tee-Object -FilePath $log -Append | Out-String
+  } catch {
+    # indexnow gagal bukan masalah kritis
+  }
+
   # verify Google indexing status of the new article (read-only GSC API)
   try {
     $inspect = & npm run seo:inspect -- 1 2>&1 | Out-String

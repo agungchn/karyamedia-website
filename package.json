@@ -15,7 +15,8 @@
     "seo:ideas": "node scripts/seo/ideas.mjs",
     "seo:inspect": "node scripts/gsc/inspect.mjs",
     "seo:fix-lint": "node scripts/seo/fix-lint.mjs",
-    "seo:link-pillar": "node scripts/seo/link-pillar.mjs"
+    "seo:link-pillar": "node scripts/seo/link-pillar.mjs",
+    "seo:indexnow": "node scripts/seo/indexnow.mjs"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.3.0",

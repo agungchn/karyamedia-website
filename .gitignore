@@ -67,3 +67,7 @@ seo-log.txt
 scripts/seo/seo-history.json
 scripts/seo/ideas.json
 scripts/bing/submitted.json
+
+# dev server logs & temp scripts
+dev-server.*
+convert-tmp.mjs

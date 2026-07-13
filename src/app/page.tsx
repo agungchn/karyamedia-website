@@ -38,6 +38,7 @@ const TestimonialCarousel = nextDynamic(() =>
 import { categories } from "@/data/categories"
 import { products } from "@/data/products"
 import { testimonials } from "@/data/testimonials"
+import { LocalBusinessReviewsSchema } from "@/components/json-ld"
 import { companyInfo } from "@/data/company"
 import { getWhatsAppLink, generateWhatsAppMessage } from "@/lib/utils"
 
@@ -1094,6 +1095,7 @@ Didukung lebih dari 25 pengrajin profesional yang ahli di bidangnya masing-masin
         </div>
           <div className="max-w-6xl mx-auto">
             <TestimonialCarousel testimonials={testimonials} />
+            <LocalBusinessReviewsSchema />
           </div>
       </section>
 

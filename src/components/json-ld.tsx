@@ -1,5 +1,6 @@
 import { companyInfo } from "@/data/company"
 import { categories } from "@/data/categories"
+import { testimonials } from "@/data/testimonials"
 
 export function OrganizationSchema() {
   const schema = {
@@ -72,6 +73,70 @@ export function LocalBusinessSchema() {
       "https://www.facebook.com/Karyamedia-Souvenir-208234135969794/",
       "https://www.tokopedia.com/karyamediasouvenir",
     ],
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  )
+}
+
+export function LocalBusinessReviewsSchema() {
+  const total = testimonials.length
+  const avg = Number((testimonials.reduce((s, t) => s + t.rating, 0) / total).toFixed(1))
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: companyInfo.name,
+    url: "https://karyamediasouvenir.com",
+    image: "https://karyamediasouvenir.com/images/logo-karyamedia.png",
+    telephone: "+62-822-4358-0777",
+    email: companyInfo.email,
+    priceRange: "$$",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Jl. Menteri Supeno No. 90, Pandeyan, Umbulharjo",
+      addressLocality: "Yogyakarta",
+      addressRegion: "DI Yogyakarta",
+      postalCode: "55161",
+      addressCountry: "ID",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: -7.8262,
+      longitude: 110.3917,
+    },
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        opens: "08:00",
+        closes: "18:00",
+      },
+    ],
+    areaServed: {
+      "@type": "Country",
+      name: "Indonesia",
+    },
+    sameAs: [
+      "https://www.facebook.com/Karyamedia-Souvenir-208234135969794/",
+      "https://www.tokopedia.com/karyamediasouvenir",
+    ],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: avg,
+      reviewCount: total,
+      bestRating: 5,
+      worstRating: 4,
+    },
+    review: testimonials.slice(0, 10).map((t) => ({
+      "@type": "Review",
+      author: { "@type": "Person", name: t.name },
+      reviewRating: { "@type": "Rating", ratingValue: t.rating, bestRating: 5 },
+      reviewBody: t.content,
+    })),
   }
 
   return (

@@ -82,7 +82,7 @@ export default function KatalogPage() {
                 {group.products.map((product) => (
                   <div
                     key={product.id}
-                    className="group bg-white rounded-xl border border-gray-100 overflow-hidden hover:shadow-lg transition-all"
+                    className="group bg-white rounded-xl border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
                   >
                     <div className="aspect-[3/4] bg-gradient-to-br from-gray-100 to-gray-200 relative overflow-hidden">
                       {product.images[0] ? (
@@ -91,18 +91,25 @@ export default function KatalogPage() {
                           alt={product.name}
                           fill
                           sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                          className="object-cover group-hover:scale-110 transition-transform duration-700"
                         />
                       ) : (
                         <div className="absolute inset-0 flex items-center justify-center">
                           <Award className="w-12 h-12 text-gray-300" />
                         </div>
                       )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                       {product.bestSeller && (
                         <span className="absolute top-2 left-2 bg-accent text-white text-[10px] font-medium px-2 py-0.5 rounded-full">
                           Best Seller
                         </span>
                       )}
+                      <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                        <span className="inline-block bg-white/20 backdrop-blur-sm text-white text-[10px] px-2 py-0.5 rounded-full mb-1">
+                          {product.subcategoryId}
+                        </span>
+                        <p className="text-white font-bold text-xs line-clamp-2">{product.name}</p>
+                      </div>
                     </div>
                     <div className="p-2.5">
                       <p className="text-[10px] text-gray-400 mb-0.5 truncate">{product.code}</p>

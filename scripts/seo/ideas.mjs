@@ -1,20 +1,27 @@
 // SEO content-idea finder (steps 1-2 of the automation):
-// pulls real search queries from Google Search Console, filters out queries
-// that ALREADY have a matching article (gap analysis), ranks the rest by
-// search demand (impressions), and prints a prioritized list of topics to
-// write. Optionally chains straight into article:generate for the top N.
+// pulls real search queries from Google Search Console AND Bing Webmaster
+// Tools (merged & deduped by query), filters out queries that ALREADY have a
+// matching article (gap analysis), ranks the rest by search demand
+// (impressions, with a soft Bing seed-demand boost), and prints a prioritized
+// list of topics to write. Optionally chains straight into article:generate
+// for the top N.
 //
 //   node scripts/seo/ideas.mjs                 # print prioritized opportunities
 //   node scripts/seo/ideas.mjs --generate-top 3  # also draft top 3 via LLM
 //   node scripts/seo/ideas.mjs --days 90         # wider window (default 28)
 //
-// Needs GSC credentials (scripts/gsc/credentials.json, already present).
+// Sources: GSC search-analytics + Bing GetQueryStats (real queries), plus a
+// curated long-tail fallback (scripts/seo/ideas.mjs FALLBACK_KEYWORDS) when
+// both engines have no data. Bing seed demand (GetKeywordStats) is used only
+// as a ranking boost. Needs GSC credentials (scripts/gsc/credentials.json).
+// Set GSC_MOCK / BING_MOCK to run offline with fixtures (no network).
 
 import { execSync } from "node:child_process"
 import { readFileSync, writeFileSync } from "node:fs"
 import { fileURLToPath } from "node:url"
 import { dirname, join, resolve } from "node:path"
 import { getToken, getSite, api } from "../gsc/analyze.mjs"
+import { bingQueryOpportunities, bingSeedVolumes } from "../bing/source.mjs"
 import { extractArticles } from "./article-lint.mjs"
 import { inferCategory } from "./article-generate.mjs"
 import { commitAndPush } from "./git.mjs"
@@ -145,7 +152,46 @@ async function main() {
     })
     rows = report.rows || []
   }
-  console.log(`Total query dari GSC (${DAYS}hari): ${rows.length}\n`)
+
+  // --- Bing Webmaster Tools: real queries (Bing's GSC equivalent) ---
+  let bingRows = []
+  if (process.env.BING_MOCK) {
+    bingRows = ["piala golf custom untuk event", "name tag akrilik premium", "plakat resin custom"].map(
+      (q) => ({ keys: [q], impressions: 300, clicks: 3, ctr: 0.01, position: 6 }),
+    )
+    console.log("BING_MOCK aktif — pakai query fixture (tanpa network)")
+  } else if (!process.env.GSC_MOCK) {
+    try {
+      bingRows = await bingQueryOpportunities()
+      console.log(`Total query dari Bing WMT: ${bingRows.length}`)
+    } catch (e) {
+      console.error(`Bing WMT tidak tersedia (${e.message}); lanjut dengan GSC saja.`)
+    }
+  }
+
+  // Merge GSC + Bing by query (case-insensitive), summing demand signals so a
+  // query that ranks on BOTH engines gets the combined demand. Priority order
+  // GSC -> Bing is naturally preserved: real Google demand dominates ranking.
+  const byQuery = new Map()
+  const ingest = (r) => {
+    const raw = r.keys?.[0] || ""
+    const q = raw.trim().toLowerCase()
+    if (!q) return
+    const imp = r.impressions || 0
+    const clk = r.clicks || 0
+    if (byQuery.has(q)) {
+      const e = byQuery.get(q)
+      e.impressions += imp
+      e.clicks += clk
+    } else {
+      byQuery.set(q, { keys: [raw], impressions: imp, clicks: clk, ctr: r.ctr || 0, position: r.position || 0 })
+    }
+  }
+  rows.forEach(ingest)
+  bingRows.forEach(ingest)
+  rows = [...byQuery.values()]
+
+  console.log(`Total query (GSC + Bing): ${rows.length}\n`)
 
   const working = readFileSync(articlesPath, "utf8")
   const opportunities = []
@@ -164,7 +210,27 @@ async function main() {
       position: r.position,
     })
   }
-  opportunities.sort((a, b) => b.impressions - a.impressions)
+  // Soft ranking boost from Bing broad seed demand (GetKeywordStats): a topic
+  // that sits under a high-volume seed gets nudged up without overriding the
+  // real per-query demand from GSC/Bing.
+  let seedVol = new Map()
+  try {
+    seedVol = await bingSeedVolumes()
+  } catch {
+    seedVol = new Map()
+  }
+  if (seedVol.size) {
+    const boost = (q) => {
+      const lq = (q || "").toLowerCase()
+      let b = 0
+      for (const [seed, vol] of seedVol) if (lq.includes(seed)) b += vol
+      return Math.round(b / 10)
+    }
+    for (const o of opportunities) o._boost = boost(o.query)
+    opportunities.sort((a, b) => b.impressions + (b._boost || 0) - (a.impressions + (a._boost || 0)))
+  } else {
+    opportunities.sort((a, b) => b.impressions - a.impressions)
+  }
 
   // Fallback: if GSC has no data yet (e.g. site not indexed), source
   // keyword opportunities from a curated long-tail list so the daily run
@@ -222,7 +288,7 @@ async function main() {
         gateOk = false
       }
       if (gateOk) {
-        commitAndPush(`feat(seo): auto-generate ${generatedSlugs.length} article(s) from GSC opportunities`)
+        commitAndPush(`feat(seo): auto-generate ${generatedSlugs.length} article(s) from GSC + Bing opportunities`)
       } else {
         console.error(
           "\nGagal: ada artikel yang tidak lolos standar. Tidak di-commit/push. Perbaiki lalu commit manual.",

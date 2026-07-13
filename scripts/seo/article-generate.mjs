@@ -52,6 +52,35 @@ function slugify(s) {
     .replace(/^-+|-+$/g, "")
 }
 
+// ---- deterministic length enforcement (LLM sometimes violates limits) ----
+function trimToWords(s, max) {
+  s = (s || "").trim()
+  if (s.length <= max) return s
+  let cut = s.slice(0, max).lastIndexOf(" ")
+  if (cut < Math.floor(max * 0.5)) cut = max
+  return s.slice(0, cut).trim()
+}
+function enforceTitle(title, headKw) {
+  let t = trimToWords(title, 60)
+  if (headKw && t && !t.toLowerCase().includes(headKw)) {
+    const pre = headKw.length <= 54 ? headKw : headKw.slice(0, 54)
+    t = (t ? `${pre} - ${t}` : pre).slice(0, 60)
+  }
+  return t || (headKw ? headKw.slice(0, 60) : title || "")
+}
+function enforceDescription(desc) {
+  if (!desc) return desc
+  if (desc.length > 160) return trimToWords(desc, 157)
+  if (desc.length < 120) {
+    const pad =
+      " Karya berkualitas dari Karyamedia, produsen souvenir & custom manufacturing sejak 2001 di Yogyakarta."
+    let d = desc
+    while (d.length < 120 && d.length + pad.length <= 160) d += pad
+    return d.slice(0, 160)
+  }
+  return desc
+}
+
 // ---- duplicate detection (lightweight; full check runs at commit) ----
 const STOP = new Set(
   "custom,kustom,souvenir,plakat,medali,piala,trophy,gift,box,accessories,prasasti,batas,wilayah,wisuda,dan,untuk,ke,di,dari,pada,atau,dengan,yang,the,a,an,of,to,in,for,cara,membuat,panduan,lengkap,guide,model,jenis,terbaik,bagi,acara,adalah,this,that,vs".split(","),
@@ -222,7 +251,7 @@ async function main() {
   console.log(`Keyword: "${keyword}"  ->  slug: ${slug}  kategori: ${category}`)
   console.log("Menulis prose via LLM...")
   let data = await generateArticle({ keyword, category })
-  for (let attempt = 1; attempt <= 2; attempt++) {
+  for (let attempt = 1; attempt <= 3; attempt++) {
     const plain = (data.content || "").replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim()
     const words = plain ? plain.split(/\s+/).length : 0
     if (words >= 800) break
@@ -230,8 +259,25 @@ async function main() {
     data = await generateArticle({
       keyword,
       category,
-      extra: `\n\nPENTING: draf sebelumnya hanya ${words} kata. Buat ULANG artikel yang LEBIH PANJANG, minimal 800 kata, dengan lebih banyak sub-bagian <h2> dan paragraf.`,
+      extra: `\n\nPENTING: draf sebelumnya hanya ${words} kata. Buat ULANG artikel yang LEBIH PANJANG, MINIMAL 1100 kata, dengan lebih banyak sub-bagian <h2> dan paragraf.`,
     })
+  }
+  // Safety net: if still short, append extra LLM-written sections.
+  {
+    let plain = (data.content || "").replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim()
+    let words = plain ? plain.split(/\s+/).length : 0
+    for (let e = 1; e <= 2 && words < 800; e++) {
+      console.log(`Konten ${words} kata, tambah section via LLM (percobaan ${e})...`)
+      const ext = await generateArticle({
+        keyword,
+        category,
+        extra: `\n\nTulis 3 bagian <h2> TAMBAHAN (masing-masing minimal 150 kata, topik terkait "${keyword}") untuk melengkapi artikel. JANGAN sertakan bagian FAQ. Hanya keluarkan HTML <h2>Judul</h2><p>Isi</p> saja, tanpa JSON dan tanpa markdown.`,
+      })
+      const extraHtml = (ext && ext.content) || ""
+      if (extraHtml) data.content = (data.content || "") + "\n" + extraHtml
+      plain = (data.content || "").replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim()
+      words = plain ? plain.split(/\s+/).length : 0
+    }
   }
 
   // authority gate: guarantee concrete proof signals are present
@@ -245,6 +291,11 @@ async function main() {
         "\n\nPENTING: draf sebelumnya KURANG OTORITATIF dan tidak punya bukti konkret. Wajib sertakan fakta: Karyamedia BERDIRI SEJAK 2001, berbasis YOGYAKARTA/JOGJA, melayani RATUSAN INSTANSI & EVENT nasional, serta cantumkan ANGKA/TAHUN/STANDAR produksi. Hindari kalimat promosi generik tanpa bukti.",
     })
   }
+
+  // Guarantee title/description length rules (LLM sometimes overshoots).
+  const headKw = (keyword || "").toLowerCase().split(" ")[0]
+  data.title = enforceTitle(data.title || keyword, headKw)
+  data.description = enforceDescription(data.description || "")
 
   const dup = dupCheck(slug, data.title || keyword, working)
   if (dup) {

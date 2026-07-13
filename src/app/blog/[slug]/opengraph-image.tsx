@@ -37,35 +37,36 @@ export default async function Image({ params }: { params: Promise<{ slug: string
           display: "flex",
           width: "100%",
           height: "100%",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
           background: "linear-gradient(135deg,#1C1410,#3a2a1a,#5a3d1f)",
           color: "white",
           fontFamily: "sans-serif",
-          padding: "64px",
-          alignItems: "center",
-          gap: "40px",
+          padding: "80px",
         }}
       >
         {img ? (
           <img
-            width={340}
-            height={340}
+            width={440}
+            height={440}
             src={img}
             alt=""
-            style={{ borderRadius: "24px", objectFit: "contain", flexShrink: 0 }}
+            style={{ borderRadius: "28px", objectFit: "contain", marginBottom: "40px" }}
           />
         ) : (
           <div
             style={{
-              width: "340px",
-              height: "340px",
-              borderRadius: "24px",
+              width: "440px",
+              height: "440px",
+              borderRadius: "28px",
               background: "linear-gradient(135deg,#d4af37,#f4d77a)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              fontSize: "120px",
+              fontSize: "160px",
               color: "#1C1410",
-              flexShrink: 0,
+              marginBottom: "40px",
             }}
           >
             K
@@ -74,37 +75,43 @@ export default async function Image({ params }: { params: Promise<{ slug: string
 
         <div
           style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            flex: 1,
-            maxWidth: "660px",
-            minWidth: 0,
+            background: "rgba(212,175,55,0.15)",
+            color: "#f4d77a",
+            borderRadius: "999px",
+            padding: "10px 22px",
+            fontSize: "24px",
+            fontWeight: 700,
           }}
         >
-          <div
-            style={{
-              background: "rgba(212,175,55,0.15)",
-              color: "#f4d77a",
-              borderRadius: "999px",
-              padding: "10px 20px",
-              fontSize: "24px",
-              fontWeight: 700,
-              alignSelf: "flex-start",
-            }}
-          >
-            {esc(category)}
-          </div>
-          <div style={{ fontSize: "46px", fontWeight: 800, lineHeight: "56px", marginTop: "22px" }}>
-            {esc(title)}
-          </div>
-          <div style={{ display: "flex", alignItems: "center", fontSize: "26px", color: "#d4af37", fontWeight: 700, marginTop: "22px" }}>
-            <div style={{ width: "14px", height: "14px", borderRadius: "50%", background: "#d4af37", marginRight: "14px" }} />
-            Karyamedia Souvenir
-          </div>
+          {esc(category)}
+        </div>
+        <div
+          style={{
+            fontSize: "48px",
+            fontWeight: 800,
+            lineHeight: "58px",
+            marginTop: "22px",
+            textAlign: "center",
+            maxWidth: "980px",
+          }}
+        >
+          {esc(title)}
+        </div>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            fontSize: "28px",
+            color: "#d4af37",
+            fontWeight: 700,
+            marginTop: "26px",
+          }}
+        >
+          <div style={{ width: "14px", height: "14px", borderRadius: "50%", background: "#d4af37", marginRight: "14px" }} />
+          Karyamedia Souvenir
         </div>
       </div>
     ),
-    { width: 1200, height: 630 },
+    { width: 1200, height: 1200 },
   )
 }

@@ -47,7 +47,7 @@ import { getWhatsAppLink, generateWhatsAppMessage } from "@/lib/utils"
 const latestArticles = [...articles]
   .sort((a, b) => b.date.localeCompare(a.date))
   .slice(0, 12)
-  .map((a) => ({ slug: a.slug, title: a.title, image: a.image, category: a.category }))
+  .map((a) => ({ slug: a.slug, title: a.title, description: a.description, image: a.image, category: a.category }))
 
 export const metadata: Metadata = {
   description:

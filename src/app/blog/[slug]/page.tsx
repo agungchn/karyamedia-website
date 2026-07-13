@@ -8,6 +8,7 @@ import { getWhatsAppLink } from "@/lib/utils"
 import { ArticleSchema, BreadcrumbSchema, FAQPageSchema } from "@/components/json-ld"
 import { categories } from "@/data/categories"
 import { FaqAccordion } from "@/components/faq-accordion"
+import { ShareButtons } from "@/components/share-buttons"
 
 interface Props {
   params: Promise<{ slug: string }>
@@ -334,6 +335,10 @@ export default async function ArticlePage({ params }: Props) {
                 {tag}
               </span>
             ))}
+          </div>
+
+          <div className="mt-6">
+            <ShareButtons slug={article.slug} title={article.title} />
           </div>
 
           <div className="relative bg-gradient-to-br from-background to-white rounded-2xl p-8 text-center border border-accent/10 overflow-hidden">

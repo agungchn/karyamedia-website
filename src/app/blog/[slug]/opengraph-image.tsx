@@ -42,21 +42,22 @@ export default async function Image({ params }: { params: Promise<{ slug: string
           fontFamily: "sans-serif",
           padding: "64px",
           alignItems: "center",
+          gap: "40px",
         }}
       >
         {img ? (
           <img
-            width={360}
-            height={360}
+            width={340}
+            height={340}
             src={img}
             alt=""
-            style={{ borderRadius: "24px", objectFit: "contain" }}
+            style={{ borderRadius: "24px", objectFit: "contain", flexShrink: 0 }}
           />
         ) : (
           <div
             style={{
-              width: "360px",
-              height: "360px",
+              width: "340px",
+              height: "340px",
               borderRadius: "24px",
               background: "linear-gradient(135deg,#d4af37,#f4d77a)",
               display: "flex",
@@ -64,6 +65,7 @@ export default async function Image({ params }: { params: Promise<{ slug: string
               justifyContent: "center",
               fontSize: "120px",
               color: "#1C1410",
+              flexShrink: 0,
             }}
           >
             K
@@ -75,7 +77,9 @@ export default async function Image({ params }: { params: Promise<{ slug: string
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
-            marginLeft: "56px",
+            flex: 1,
+            maxWidth: "660px",
+            minWidth: 0,
           }}
         >
           <div
@@ -84,16 +88,17 @@ export default async function Image({ params }: { params: Promise<{ slug: string
               color: "#f4d77a",
               borderRadius: "999px",
               padding: "10px 20px",
-              fontSize: "26px",
+              fontSize: "24px",
               fontWeight: 700,
+              alignSelf: "flex-start",
             }}
           >
             {esc(category)}
           </div>
-          <div style={{ fontSize: "52px", fontWeight: 800, lineHeight: "62px", marginTop: "24px" }}>
+          <div style={{ fontSize: "46px", fontWeight: 800, lineHeight: "56px", marginTop: "22px" }}>
             {esc(title)}
           </div>
-          <div style={{ display: "flex", alignItems: "center", fontSize: "28px", color: "#d4af37", fontWeight: 700, marginTop: "24px" }}>
+          <div style={{ display: "flex", alignItems: "center", fontSize: "26px", color: "#d4af37", fontWeight: 700, marginTop: "22px" }}>
             <div style={{ width: "14px", height: "14px", borderRadius: "50%", background: "#d4af37", marginRight: "14px" }} />
             Karyamedia Souvenir
           </div>

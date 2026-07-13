@@ -24,6 +24,13 @@ try {
   # biarkan lanjut meskipun fix-lint tidak mengubah apa pun
 }
 
+# safety net: pastikan struktur pilar (cluster <-> panduan-lengkap) tetap terhubung
+try {
+  & npm run seo:link-pillar 2>&1 | Tee-Object -FilePath $log -Append | Out-String
+} catch {
+  # biarkan lanjut meskipun link-pillar tidak mengubah apa pun
+}
+
 try {
   $out = & npm run seo:ideas -- --generate-top 1 --commit-push 2>&1 | Tee-Object -FilePath $log -Append | Out-String
 } catch {

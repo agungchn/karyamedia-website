@@ -12,7 +12,7 @@ import { dirname, join, resolve } from "node:path"
 const here = dirname(fileURLToPath(import.meta.url))
 const root = resolve(here, "..", "..")
 
-function getKey() {
+function getGeminiKey() {
   if (process.env.GEMINI_API_KEY) return process.env.GEMINI_API_KEY
   try {
     return readFileSync(join(here, "apikey.txt"), "utf8").trim()
@@ -21,7 +21,18 @@ function getKey() {
   }
 }
 
-const MODEL = process.env.GEMINI_MODEL || "gemini-3.5-flash"
+function getZenKey() {
+  if (process.env.ZEN_API_KEY) return process.env.ZEN_API_KEY
+  try {
+    return readFileSync(join(here, "zen-key.txt"), "utf8").trim()
+  } catch {
+    return ""
+  }
+}
+
+const GEMINI_MODEL = process.env.GEMINI_MODEL || "gemini-3.5-flash"
+const ZEN_MODEL = process.env.ZEN_MODEL || "deepseek-v4-flash-free"
+const ZEN_URL = process.env.ZEN_URL || "https://opencode.ai/zen/v1/chat/completions"
 
 const SCHEMA = {
   type: "OBJECT",
@@ -68,14 +79,8 @@ const MOCK = {
     '<p><strong>Berapa lama pengerjaan?</strong> Waktu pengerjaan bervariasi tergantung jumlah dan kerumitan desain, namun tim selalu menginformasikan estimasi sejak awal pemesanan.</p>',
 }
 
-export async function generateArticle({ keyword, category, extra = "" }) {
-  if (process.env.LLM_MOCK) return MOCK
-  const key = getKey()
-  if (!key || key === "PASTE_GEMINI_API_KEY_HERE") {
-    throw new Error("API key Gemini belum diisi. Taruh di scripts/llm/apikey.txt atau set env GEMINI_API_KEY.")
-  }
-
-  let prompt = `Tulis artikel SEO berbahasa Indonesia, 100% orisinal (jangan kutip/meniru teks pihak ketiga mana pun), untuk bisnis "Karyamedia" (produsen souvenir & custom manufacturing di Jogja: plakat, medali, piala, prasasti, gift box, souvenir wisuda, name tag, dll).
+function buildPrompt({ keyword, category, extra = "" }) {
+  return `Tulis artikel SEO berbahasa Indonesia, 100% orisinal (jangan kutip/meniru teks pihak ketiga mana pun), untuk bisnis "Karyamedia" (produsen souvenir & custom manufacturing di Jogja: plakat, medali, piala, prasasti, gift box, souvenir wisuda, name tag, dll).
 
 Keyword utama: "${keyword}"
 Kategori: ${category}
@@ -93,11 +98,95 @@ Buat objek JSON dengan field berikut:
   * bahasa Indonesia natural & mudah dipahami, SEO-friendly, sebutkan "Karyamedia" secara wajar 1-2 kali
   * JANGAN gunakan markdown; hanya HTML inline (<p>, <h2>, <h3>, <strong>, <ul><li> bila perlu)
   * JANGAN sertakan satupun link/hyperlink (akan ditambahkan otomatis nanti)
- Return HANYA objek JSON, tanpa teks lain.${extra}`
+  Return HANYA objek JSON, tanpa teks lain.${extra}`
+}
 
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${key}`
-  const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
-  let j = null
+export async function generateArticle(input) {
+  if (process.env.LLM_MOCK) return MOCK
+
+  const prompt = buildPrompt(input)
+  const zenKey = getZenKey()
+  const geminiKey = getGeminiKey()
+
+  if (zenKey && zenKey !== "PASTE_ZEN_API_KEY_HERE") {
+    try {
+      console.error("Menggunakan OpenCode Zen (deepseek-v4-flash-free)...")
+      return await callZen(prompt, zenKey)
+    } catch (e) {
+      console.error(`Zen gagal: ${e.message}. Fallback ke Gemini...`)
+    }
+  } else {
+    console.error("API key Zen belum diisi, fallback ke Gemini.")
+  }
+
+  if (geminiKey && geminiKey !== "PASTE_GEMINI_API_KEY_HERE") {
+    return await callGemini(prompt, geminiKey)
+  }
+
+  throw new Error("Tidak ada API key LLM valid. Taruh di scripts/llm/zen-key.txt atau scripts/llm/apikey.txt.")
+}
+
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
+
+async function callZen(prompt, key) {
+  for (let attempt = 0; attempt < 4; attempt++) {
+    try {
+      const res = await fetch(ZEN_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${key}`,
+        },
+        body: JSON.stringify({
+          model: ZEN_MODEL,
+          messages: [
+            {
+              role: "system",
+              content:
+                "Anda adalah penulis konten SEO ahli yang SELALU mengembalikan HANYA objek JSON valid, tanpa teks atau markdown lain di luar JSON.",
+            },
+            { role: "user", content: prompt },
+          ],
+          temperature: 0.7,
+          response_format: { type: "json_object" },
+        }),
+      })
+      const j = await res.json()
+      if (j.error) {
+        if (res.status === 429 || res.status >= 500) {
+          const wait = 2000 * (attempt + 1)
+          console.error(`Zen ${res.status} (${j.error.message || "server error"}), retry ${attempt + 1}/4 dalam ${wait}ms...`)
+          await sleep(wait)
+          continue
+        }
+        throw new Error(`Zen error ${res.status}: ${j.error.message || JSON.stringify(j.error)}`)
+      }
+      const text = j.choices?.[0]?.message?.content
+      if (!text) {
+        console.error(`Zen mengembalikan teks kosong, retry ${attempt + 1}/4...`)
+        await sleep(1500 * (attempt + 1))
+        continue
+      }
+      const parsed = JSON.parse(text)
+      if (!parsed.title || !parsed.description || !parsed.content || !Array.isArray(parsed.tags)) {
+        throw new Error("Zen JSON tidak lengkap (field wajib title/description/content/tags hilang)")
+      }
+      return parsed
+    } catch (e) {
+      if (attempt < 3 && /fetch|network|timeout|5\d\d|429|failed|JSON/i.test(e.message)) {
+        const wait = 2000 * (attempt + 1)
+        console.error(`Zen error (${e.message}), retry ${attempt + 1}/4 dalam ${wait}ms...`)
+        await sleep(wait)
+        continue
+      }
+      throw e
+    }
+  }
+  throw new Error("Zen gagal menghasilkan konten setelah 4 percobaan.")
+}
+
+async function callGemini(prompt, key) {
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${key}`
   let lastFinish = ""
   for (let attempt = 0; attempt < 4; attempt++) {
     try {
@@ -113,7 +202,7 @@ Buat objek JSON dengan field berikut:
           },
         }),
       })
-      j = await res.json()
+      const j = await res.json()
       if (j.error && (j.error.code === 503 || j.error.code === 429)) {
         const wait = 2000 * (attempt + 1)
         console.error(`Gemini ${j.error.code} (high demand/quota), retry ${attempt + 1}/4 dalam ${wait}ms...`)

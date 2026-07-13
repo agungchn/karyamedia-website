@@ -31,19 +31,20 @@ try {
   # biarkan lanjut meskipun link-pillar tidak mengubah apa pun
 }
 
-try {
-  $out = & npm run seo:ideas -- --generate-top 1 --commit-push 2>&1 | Tee-Object -FilePath $log -Append | Out-String
-} catch {
-  Show-Popup -Title "Karyamedia SEO" -Message "Gagal menjalankan generator: $_"
-  exit 1
-}
+$out = & npm run seo:ideas -- --generate-top 1 --commit-push 2>&1 | Tee-Object -FilePath $log -Append | Out-String
+$ideasExit = $LASTEXITCODE
 
 $slug = ""
 if ($out -match "GENERATED_SLUG:(\S+)") { $slug = $Matches[1] }
 
 $title = ""
-  if ($out -match "Artikel disisipkan: blog/(\S+)") { $title = $Matches[1].Trim() }
+if ($out -match "Artikel disisipkan: blog/(\S+)") { $title = $Matches[1].Trim() }
 if (-not $title) { $title = $slug }
+
+if ($ideasExit -ne 0) {
+  Show-Popup -Title "Gagal Generate Artikel" -Message "Generator error (exit $ideasExit). Cek log article-gen-log.txt. Mungkin kuota Gemini habis."
+  exit 1
+}
 
 if ($slug) {
   Show-Popup -Title "Artikel Baru Terbit" -Message "'$title' berhasil dibuat & di-push. Menunggu deploy..."

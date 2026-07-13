@@ -75,7 +75,7 @@ export async function generateArticle({ keyword, category, extra = "" }) {
     throw new Error("API key Gemini belum diisi. Taruh di scripts/llm/apikey.txt atau set env GEMINI_API_KEY.")
   }
 
-  const prompt = `Tulis artikel SEO berbahasa Indonesia untuk bisnis "Karyamedia" (produsen souvenir & custom manufacturing di Jogja: plakat, medali, piala, prasasti, gift box, souvenir wisuda, name tag, dll).
+  let prompt = `Tulis artikel SEO berbahasa Indonesia, 100% orisinal (jangan kutip/meniru teks pihak ketiga mana pun), untuk bisnis "Karyamedia" (produsen souvenir & custom manufacturing di Jogja: plakat, medali, piala, prasasti, gift box, souvenir wisuda, name tag, dll).
 
 Keyword utama: "${keyword}"
 Kategori: ${category}
@@ -94,43 +94,54 @@ Buat objek JSON dengan field berikut:
  Return HANYA objek JSON, tanpa teks lain.${extra}`
 
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${key}`
-  const payload = {
-    contents: [{ parts: [{ text: prompt }] }],
-    generationConfig: {
-      responseMimeType: "application/json",
-      responseSchema: SCHEMA,
-      temperature: 0.7,
-    },
-  }
+  const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
   let j = null
-  for (let attempt = 0; attempt < 3; attempt++) {
+  let lastFinish = ""
+  for (let attempt = 0; attempt < 4; attempt++) {
     try {
       const res = await fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: prompt }] }],
+          generationConfig: {
+            responseMimeType: "application/json",
+            responseSchema: SCHEMA,
+            temperature: 0.7,
+          },
+        }),
       })
       j = await res.json()
       if (j.error && (j.error.code === 503 || j.error.code === 429)) {
         const wait = 2000 * (attempt + 1)
-        console.error(`Gemini ${j.error.code} (high demand/quota), retry ${attempt + 1}/3 dalam ${wait}ms...`)
-        await new Promise((r) => setTimeout(r, wait))
+        console.error(`Gemini ${j.error.code} (high demand/quota), retry ${attempt + 1}/4 dalam ${wait}ms...`)
+        await sleep(wait)
         continue
       }
-      break
+      const cand = j.candidates?.[0]
+      const text = cand?.content?.parts?.[0]?.text
+      if (cand && cand.finishReason && cand.finishReason !== "STOP") {
+        lastFinish = cand.finishReason
+        console.error(`Gemini finishReason=${cand.finishReason}, retry ${attempt + 1}/4 (rephrase orisinal)...`)
+        prompt += `\n\nPENTING: hasil sebelumnya difilter (${cand.finishReason}). Tulis ULANG sepenuhnya dengan bahasa Anda sendiri, 100% orisinal, tanpa meniru/mengutip teks pihak ketiga mana pun.`
+        await sleep(1500 * (attempt + 1))
+        continue
+      }
+      if (!text) {
+        console.error(`Gemini mengembalikan teks kosong, retry ${attempt + 1}/4...`)
+        await sleep(1500 * (attempt + 1))
+        continue
+      }
+      return JSON.parse(text)
     } catch (e) {
-      if (attempt < 2) {
+      if (attempt < 3) {
         const wait = 2000 * (attempt + 1)
-        console.error(`Gemini network error, retry ${attempt + 1}/3 dalam ${wait}ms...`)
-        await new Promise((r) => setTimeout(r, wait))
+        console.error(`Gemini network error, retry ${attempt + 1}/4 dalam ${wait}ms...`)
+        await sleep(wait)
         continue
       }
       throw e
     }
   }
-  if (j.error) throw new Error("Gemini API: " + JSON.stringify(j.error))
-  const text = j.candidates?.[0]?.content?.parts?.[0]?.text
-  if (!text) throw new Error("Gemini tidak mengembalikan teks. " + JSON.stringify(j).slice(0, 300))
-  const data = JSON.parse(text)
-  return data
+  throw new Error(`Gemini gagal menghasilkan konten setelah 4 percobaan (finishReason=${lastFinish}).`)
 }

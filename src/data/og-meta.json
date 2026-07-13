@@ -500,7 +500,7 @@
     "image": "/images/produk-unggulan/prasasti-marmer/prasasti-marmer-7.png"
   },
   "plakat-cinderamata-studi-banding-kunjungan": {
-    "title": "Plakat Cinderamata untuk Studi Banding dan Kunjungan Tamu…",
+    "title": "souvenir — Plakat Cinderamata untuk Studi Banding dan…",
     "category": "Plakat",
     "image": "/images/produk-unggulan/plakat-wayang/plakat-wayang-11.png"
   },
@@ -658,5 +658,10 @@
     "title": "Medali Finishing Emas untuk Kompetisi Premium",
     "category": "Medali",
     "image": "/images/produk-unggulan/medali-custom/medali-custom-13.png"
+  },
+  "medali-resin-custom": {
+    "title": "Pusat Pembuatan Medali Resin Custom Berkualitas",
+    "category": "Medali",
+    "image": "/images/produk-unggulan/medali-custom/medali-custom-14.png"
   }
 }

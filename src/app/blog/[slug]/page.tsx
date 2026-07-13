@@ -338,7 +338,7 @@ export default async function ArticlePage({ params }: Props) {
             ))}
           </div>
 
-          <div className="mt-6">
+          <div className="mt-8 mb-10">
             <ShareButtons slug={article.slug} title={article.title} />
           </div>
 

@@ -17,6 +17,13 @@ function Show-Popup {
 $ts = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
 Add-Content -Path $log -Value "`n===== $ts ====="
 
+# safety net: pastikan seluruh artikel mematuhi standar lint terbaru sebelum generate
+try {
+  & npm run seo:fix-lint 2>&1 | Tee-Object -FilePath $log -Append | Out-String
+} catch {
+  # biarkan lanjut meskipun fix-lint tidak mengubah apa pun
+}
+
 try {
   $out = & npm run seo:ideas -- --generate-top 1 --commit-push 2>&1 | Tee-Object -FilePath $log -Append | Out-String
 } catch {

@@ -225,8 +225,8 @@ async function main() {
   for (let attempt = 1; attempt <= 2; attempt++) {
     const plain = (data.content || "").replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim()
     const words = plain ? plain.split(/\s+/).length : 0
-    if (words >= 600) break
-    console.log(`Konten ${words} kata (<600), perpanjang (percobaan ${attempt})...`)
+    if (words >= 800) break
+    console.log(`Konten ${words} kata (<800), perpanjang (percobaan ${attempt})...`)
     data = await generateArticle({
       keyword,
       category,
@@ -255,7 +255,8 @@ async function main() {
   let content = (data.content || "").trim()
     .replace(/^```(?:html)?/i, "").replace(/```$/i, "").trim()
   if (!/<h2[^>]*>\s*FAQ\s*<\/h2>/i.test(content)) {
-    content += '<h2>FAQ</h2><p><strong>Apakah Karyamedia melayani pembuatan custom?</strong> Ya, Karyamedia melayani pembuatan custom sesuai kebutuhan Anda.</p>'
+    const faqKw = tags[0] || keyword
+    content += `<h2>FAQ</h2><h3>Apakah Karyamedia melayani pembuatan ${faqKw} custom?</h3><p>Ya, Karyamedia melayani pembuatan ${faqKw} custom yang disesuaikan dengan kebutuhan, tema, dan anggaran acara Anda di Yogyakarta.</p><h3>Bagaimana cara memesan ${faqKw}?</h3><p>Silakan pelajari melalui <a href="/cara-pesan">halaman cara pesan</a> atau hubungi tim kami di <a href="/profil">profil Karyamedia</a>.</p>`
   }
   content = injectCategoryLink(content, category, catSlugs)
   content = injectTestimoniLink(content)

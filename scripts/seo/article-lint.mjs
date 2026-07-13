@@ -8,7 +8,7 @@
 //   ARTICLE_LINT_SLUGS=a,b,c node .../article-lint.mjs # lint only given slugs
 // (the git pre-commit hook calls it with changed/new slugs)
 
-import { readFileSync, existsSync } from "node:fs"
+import { readFileSync, existsSync, statSync } from "node:fs"
 import { fileURLToPath } from "node:url"
 import { dirname, join, resolve } from "node:path"
 
@@ -99,6 +99,10 @@ export function lintText(text, { onlySlugs = null } = {}) {
     if (image) {
       const fp = join(publicDir, image)
       if (!existsSync(fp)) errors.push(`${at}: gambar tidak ditemukan: ${image}`)
+      else {
+        const sz = statSync(fp).size
+        if (sz > 1024 * 1024) warnings.push(`${at}: gambar ${Math.round(sz / 1024)} KB (>1MB, kompres)`)
+      }
     }
 
     if (tags.length && (tags.length < 4 || tags.length > 6))
@@ -107,12 +111,35 @@ export function lintText(text, { onlySlugs = null } = {}) {
     if (content) {
       const plain = content.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim()
       const words = plain ? plain.split(" ").length : 0
-      if (words < 600) errors.push(`${at}: konten ${words} kata (<600, minimal wajib 600)`)
-      else if (words > 1500) warnings.push(`${at}: konten ${words} kata (>1500, hindari filler)`)
+      if (words < 800) errors.push(`${at}: konten ${words} kata (<800, minimal wajib 800)`)
+      else if (words > 1800) warnings.push(`${at}: konten ${words} kata (>1800, hindari filler)`)
 
       const h2 = (content.match(/<h2/g) || []).length
       if (h2 < 2) errors.push(`${at}: hanya ${h2} <h2> (wajib >=2)`)
       if (!/<h2[^>]*>\s*FAQ\s*<\/h2>/i.test(content)) errors.push(`${at}: wajib ada bagian FAQ (<h2>FAQ</h2>)`)
+      else {
+        const faqIdx = content.search(/<h2[^>]*>\s*FAQ\s*<\/h2>/i)
+        const faqBlock = content.slice(faqIdx)
+        const faqPairs = (faqBlock.match(/<h3>[\s\S]*?<\/h3>\s*<p>[\s\S]*?<\/p>/g) || []).length
+        if (faqPairs < 1) errors.push(`${at}: FAQ ada tapi tidak ada pasangan <h3>pertanyaan</h3><p>jawaban</p>`)
+      }
+
+      // keyword relevance: head noun keyword utama wajib di title (==H1),
+      // dan keyword utama lengkap wajib di 240 karakter pertama (intro)
+      if (tags.length) {
+        const kw = tags[0].toLowerCase()
+        const head = kw.split(" ")[0]
+        if (title && !title.toLowerCase().includes(head))
+          errors.push(`${at}: keyword utama "${tags[0]}" (kata kunci "${head}") tidak ada di title/H1`)
+        const intro = plain.slice(0, 240).toLowerCase()
+        if (!intro.includes(kw))
+          errors.push(`${at}: keyword utama "${tags[0]}" tidak ada di 240 karakter pertama`)
+      }
+
+      // readability: rata-rata kata per kalimat
+      const sentences = plain.split(/[.!?]+/).filter((s) => s.trim().length > 0)
+      const avg = sentences.length ? words / sentences.length : 0
+      if (avg > 30) warnings.push(`${at}: rata-rata ${Math.round(avg)} kata/kalimat (terlalu panjang, kurang readable)`)
 
       const hrefs = [...content.matchAll(/href="([^"]+)"/g)].map((x) => x[1])
       let internal = 0
@@ -146,6 +173,34 @@ export function lintText(text, { onlySlugs = null } = {}) {
 
   for (const [s, c] of Object.entries(slugCounts)) {
     if (c > 1) errors.push(`DUPLICATE slug "${s}" ditemukan ${c}x — slug harus unik`)
+  }
+
+  // duplicate content detection (Jaccard similarity pada token konten)
+  const stop = new Set("dan,untuk,dengan,yang,di,dari,ke,pada,atau,the,a,an,of,to,in,ini,itu,ada,bisa,juga,akan,atau,sebagai".split(","))
+  const toks = (s) => (s.toLowerCase().match(/[a-z0-9]+/g) || []).filter((w) => !stop.has(w))
+  const tokSets = arts.map((a) => {
+    const c = a.block.match(/content:\s*`([\s\S]*?)`/)
+    return c ? new Set(toks(c[1].replace(/<[^>]*>/g, " "))) : new Set()
+  })
+  for (let i = 0; i < arts.length; i++) {
+    if (only && !only.has(arts[i].slug)) continue
+    let best = 0
+    let bestSlug = null
+    for (let j = 0; j < arts.length; j++) {
+      if (i === j) continue
+      const A = tokSets[i]
+      const B = tokSets[j]
+      if (!A.size || !B.size) continue
+      let inter = 0
+      for (const w of A) if (B.has(w)) inter++
+      const jac = inter / Math.min(A.size, B.size)
+      if (jac > best) {
+        best = jac
+        bestSlug = arts[j].slug
+      }
+    }
+    if (best >= 0.85) errors.push(`blog/${arts[i].slug}: konten hampir duplikat dengan blog/${bestSlug} (similarity ${Math.round(best * 100)}%)`)
+    else if (best >= 0.6) warnings.push(`blog/${arts[i].slug}: konten mirip blog/${bestSlug} (similarity ${Math.round(best * 100)}%)`)
   }
 
   return { errors, warnings, count: arts.length }

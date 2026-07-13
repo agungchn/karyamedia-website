@@ -81,16 +81,17 @@ Keyword utama: "${keyword}"
 Kategori: ${category}
 
 Buat objek JSON dengan field berikut:
-- "title": judul artikel, MAKSIMAL 60 karakter, mengandung keyword utama.
+- "title": judul artikel, MAKSIMAL 60 karakter, HARUS mengandung keyword utama secara utuh (contoh: jika keyword "plakat akrilik custom" maka title mengandung frasa tersebut).
 - "description": meta description, 120-160 karakter, mengandung keyword utama.
-- "tags": array 4-6 kata kunci Indonesia relevan (semua lowercase).
+- "tags": array 4-6 kata kunci Indonesia relevan (semua lowercase); tags[0] HARUS sama dengan keyword utama.
 - "content": artikel lengkap dalam bentuk HTML (string tunggal). Syarat content:
-  * minimal 700 kata (wajib di atas 600 agar lolos standar)
+  * minimal 800 kata (wajib >=800 agar lolos standar)
   * minimal 4 heading <h2> (pakai tag <h2>...</h2>)
+  * 240 karakter PERTAMA konten (paragraf pembuka) HARUS mengandung keyword utama secara utuh
   * gunakan nada otoritatif seperti ahli produsen: sertakan bukti konkret (Karyamedia berdiri sejak 2001, berbasis Yogyakarta, melayani instansi & event nasional, standar ukiran/produksi presisi) bila relevan; hindari kalimat promosi generik tanpa bukti
-  * WAJIB ada bagian <h2>FAQ</h2> di akhir dengan 3-5 pasang pertanyaan & jawaban, format <p><strong>Pertanyaan?</strong> Jawaban.</p>
+  * WAJIB ada bagian <h2>FAQ</h2> di akhir dengan 3-5 pasang pertanyaan & jawaban, tiap pasang PASTI format <h3>Pertanyaan?</h3><p>Jawaban.</p> (pakai <h3> untuk pertanyaan dan <p> untuk jawaban)
   * bahasa Indonesia natural & mudah dipahami, SEO-friendly, sebutkan "Karyamedia" secara wajar 1-2 kali
-  * JANGAN gunakan markdown; hanya HTML inline (<p>, <h2>, <strong>, <ul><li> bila perlu)
+  * JANGAN gunakan markdown; hanya HTML inline (<p>, <h2>, <h3>, <strong>, <ul><li> bila perlu)
   * JANGAN sertakan satupun link/hyperlink (akan ditambahkan otomatis nanti)
  Return HANYA objek JSON, tanpa teks lain.${extra}`
 

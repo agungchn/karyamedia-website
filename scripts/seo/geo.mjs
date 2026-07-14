@@ -29,10 +29,29 @@ export const PROVINCES = [
 })
 
 export const SEGMENTS = [
-  { key: "pemerintahan", label: "pemerintahan", ctx: "pemerintah daerah, OPD, dinas, dan lembaga pemerintahan" },
-  { key: "kampus", label: "kampus", ctx: "universitas, perguruan tinggi, rektorat, dan organisasi kemahasiswaan" },
-  { key: "eo", label: "event organizer", ctx: "event organizer, panitia acara, dan komite kompetisi" },
-  { key: "komunitas", label: "komunitas", ctx: "komunitas, karang taruna, almamater, dan klub" },
+  {
+    key: "pemerintahan",
+    label: "pemerintahan",
+    ctx:
+      "pemerintah daerah, OPD, dinas, lembaga negara (legislatif DPR/DPRD, yudikatif/pengadilan/MA/MK), BUMN/BUMD, koperasi, dan Kementerian Agama (haji/umrah)",
+  },
+  {
+    key: "kampus",
+    label: "kampus",
+    ctx:
+      "universitas, perguruan tinggi, rektorat, fakultas, ormawa, serta sekolah negeri & swasta (SD/SMP/SMA) dan pondok pesantren",
+  },
+  {
+    key: "eo",
+    label: "event organizer",
+    ctx: "event organizer, panitia acara, komite kompetisi, dan wedding organizer",
+  },
+  {
+    key: "komunitas",
+    label: "komunitas",
+    ctx:
+      "komunitas, karang taruna, almamater, klub, serta individu (KKN, PPL, seminar, dies natalis, wedding award)",
+  },
 ]
 
 // Produk dipilih agar cocok dengan inferCategory() di article-generate.mjs

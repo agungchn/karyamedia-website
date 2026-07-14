@@ -233,10 +233,31 @@ function pickImage(category, used, keyword = "") {
 function escapeRe(s) {
   return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
 }
+const CAT_LINK_WORD = {
+  "Plakat": "plakat",
+  "Medali": "medali",
+  "Piala & Trophy": "piala",
+  "Souvenir Wisuda": "souvenir wisuda",
+  "Gift Box": "gift box",
+  "Accessories": "name tag",
+  "Souvenir": "souvenir",
+  "Prasasti": "prasasti",
+  "Batas Wilayah": "batas wilayah",
+}
+// Resolve the product category whose katalog page should be the MAIN link.
+// For "Blog"/unknown categories we infer from the keyword so the main link
+// still points to the correct product category (e.g. piala -> /katalog-produk/piala-trophy).
+function resolveProductCategory(category, keyword, catSlugs) {
+  if (catSlugs[category]) return category
+  const inf = inferCategory(keyword || "")
+  if (catSlugs[inf]) return inf
+  return null
+}
 function injectCategoryLink(content, category, catSlugs) {
   const slug = catSlugs[category]
   if (!slug) return content
-  const re = new RegExp(`(${escapeRe(category)})`, "i")
+  const word = CAT_LINK_WORD[category] || category
+  const re = new RegExp(`\\b(${escapeRe(word)})\\b`, "i")
   return content.replace(re, `<a href="/katalog-produk/${slug}">$1</a>`)
 }
 function injectTestimoniLink(content) {
@@ -266,18 +287,20 @@ function injectBacklink(block, newSlug, newTitle) {
   return block.slice(0, c1) + link + block.slice(c1)
 }
 
-function findRelatedLink(slug, category, workingText) {
+function findRelatedLinks(slug, category, workingText, max = 3) {
   const arts = extractArticles(workingText)
-  const pick = (pred) => {
-    for (const a of arts) {
-      const s = slugRe.exec(a.block)?.[1]
-      if (s === slug || !pred(a)) continue
-      const t = titleRe.exec(a.block)?.[1] || "artikel terkait"
-      return `<p>Artikel terkait: <a href="/blog/${s}">${t}</a></p>`
-    }
-    return ""
+  const make = (a) => {
+    const s = slugRe.exec(a.block)?.[1]
+    const t = titleRe.exec(a.block)?.[1] || "artikel terkait"
+    return `<p>Artikel terkait: <a href="/blog/${s}">${t}</a></p>`
   }
-  return pick((a) => catRe.exec(a.block)?.[1] === category) || pick(() => true)
+  const same = arts.filter(
+    (a) => (catRe.exec(a.block)?.[1] || "") === category && slugRe.exec(a.block)?.[1] !== slug
+  )
+  const other = arts.filter(
+    (a) => (catRe.exec(a.block)?.[1] || "") !== category && slugRe.exec(a.block)?.[1] !== slug
+  )
+  return [...same, ...other].slice(0, max).map(make).join("")
 }
 
 const escStr = (s) => String(s).replace(/\\/g, "\\\\").replace(/"/g, '\\"').replace(/\n/g, " ")
@@ -381,10 +404,11 @@ async function main() {
     const faqKw = keyword
     content += `<h2>FAQ</h2><h3>Apakah Karyamedia melayani pembuatan ${faqKw} custom?</h3><p>Ya, Karyamedia melayani pembuatan ${faqKw} custom yang disesuaikan dengan kebutuhan, tema, dan anggaran acara Anda di Yogyakarta.</p><h3>Bagaimana cara memesan ${faqKw}?</h3><p>Silakan pelajari melalui <a href="/cara-pesan">halaman cara pesan</a> atau hubungi tim kami di <a href="/profil">profil Karyamedia</a>.</p>`
   }
-  content = injectCategoryLink(content, category, catSlugs)
+  const prodCat = resolveProductCategory(category, keyword, catSlugs)
+  content = injectCategoryLink(content, prodCat || category, catSlugs)
   content = injectTestimoniLink(content)
-  const rel = findRelatedLink(slug, category, working)
-  if (rel) content += rel
+  const rel = findRelatedLinks(slug, category, working, 3)
+  content += rel
 
   // backward links: older same-category articles reference the new article
   let modified = working

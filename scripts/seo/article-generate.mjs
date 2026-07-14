@@ -174,10 +174,41 @@ function loadCategorySlugs() {
   return map
 }
 
-function pickImage(category, used) {
+function listSubfolders(base) {
+  try {
+    return readdirSync(base, { withFileTypes: true })
+      .filter((e) => e.isDirectory())
+      .map((e) => e.name)
+  } catch {
+    return []
+  }
+}
+
+// Pick an image whose FOLDER matches the article topic (not just the first on
+// disk). For unknown categories (e.g. "Blog") we infer the product category
+// from the keyword, then prefer any subfolder whose name shares a keyword token
+// (e.g. "akrilik" -> plakat-akrilik). Falls back to any image only as last resort.
+function pickImage(category, used, keyword = "") {
   const base = join(root, "public/images/produk-unggulan")
+  const kw = (keyword || "").toLowerCase()
+  const kwTokens = new Set(kw.split(/[^a-z0-9]+/).filter((w) => w.length > 2))
+
+  let folders = FOLDER[category] || []
+  if (!folders.length) {
+    const inf = inferCategory(keyword)
+    if (inf !== "Blog") folders = FOLDER[inf] || []
+  }
+
+  const allSubs = listSubfolders(base)
+  const STOP_IMG = new Set("custom,souvenir,murah,berkualitas,untuk,ke,di,dan,atau,dengan,yang,pada".split(","))
+  const boosted = allSubs.filter((f) => {
+    const ft = new Set(f.toLowerCase().split(/[-_]+/))
+    return [...kwTokens].some((t) => ft.has(t) && !STOP_IMG.has(t))
+  })
+  const chosen = [...new Set([...boosted, ...folders])]
+
   const candidates = []
-  for (const f of FOLDER[category] || []) {
+  const pushFrom = (f) => {
     const dir = join(base, f)
     if (existsSync(dir)) {
       for (const x of readdirSync(dir).filter((n) => /\.(png|jpe?g|webp)$/i.test(n))) {
@@ -185,12 +216,17 @@ function pickImage(category, used) {
       }
     }
   }
+  if (chosen.length) chosen.forEach(pushFrom)
+  if (!candidates.length) allSubs.forEach(pushFrom)
   if (!candidates.length) {
     const found = walk(base)
     if (found) candidates.push(found.replace(join(root, "public"), "").split("\\").join("/"))
   }
+
   const fresh = candidates.filter((p) => !used.has(p))
-  return fresh[0] || candidates[0] || "/images/produk-unggulan/plakat/plakat-akrilik-1.png"
+  const pool = fresh.length ? fresh : candidates
+  // deterministic: first unused image from the most-relevant folder
+  return pool[0] || "/images/produk-unggulan/plakat/plakat-akrilik-1.png"
 }
 
 // ---- automatic internal links (programmatic, URL-safe) ----
@@ -362,7 +398,7 @@ async function main() {
   let tags = Array.isArray(data.tags) ? data.tags.map(String).slice(0, 6) : []
   while (tags.length < 4) tags.push(slugify(keyword).split("-").filter((w) => w && w !== "custom")[tags.length] || `karyamedia${tags.length}`)
 
-  const image = pickImage(category, used)
+  const image = pickImage(category, used, keyword)
   const obj =
     `  {\n` +
     `    slug: "${escStr(slug)}",\n` +

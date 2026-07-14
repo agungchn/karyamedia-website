@@ -1,0 +1,28 @@
+
+===== 2026-07-14 21:40:00 =====
+
+> karyamedia-web@0.1.0 seo:traffic
+> node scripts/gsc/traffic.mjs
+
+=== TRAFIK GOOGLE (28 hari terakhir) ===
+Total: 5 klik | 11 impressions | CTR 45.5%
+
+Top query pencarian (lewat mana pengunjung mengklik):
+  plakat jogja -> 1 klik, 1 impr, CTR 100.0%, pos 14.0
+
+
+===== 2026-07-14 21:41:00 =====
+=== TRAFIK GOOGLE (28 hari terakhir) ===
+Total: 5 klik | 11 impressions | CTR 45.5%
+
+Top query pencarian (lewat mana pengunjung mengklik):
+  plakat jogja -> 1 klik, 1 impr, CTR 100.0%, pos 14.0
+
+
+===== 2026-07-14 21:48:32 =====
+=== TRAFIK GOOGLE (28 hari terakhir) ===
+Total: 5 klik | 11 impressions | CTR 45.5%
+
+Top query pencarian (lewat mana pengunjung mengklik):
+  plakat jogja -> 1 klik, 1 impr, CTR 100.0%, pos 14.0
+

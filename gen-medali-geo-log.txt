@@ -1,0 +1,1731 @@
+﻿
+===== 2026-07-15 00:11:58 =====
+Keyword: "medali custom Aceh"  ->  slug: medali-custom-aceh  kategori: Medali
+Menulis prose via LLM...
+node.exe : Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Menggunakan Ope...-flash-free)...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Γ£ô Artikel disisipkan: blog/medali-custom-aceh (image: /images/produk-unggulan/medali-3d/medali-3d-11.png)
+GENERATED_SLUG:medali-custom-aceh
+
+--- regenerate og-meta.json ---
+Wrote 143 entries -> H:\karyamedia-web\src\data\og-meta.json
+
+--- gate: cek duplikat ---
+
+Artikel baru: blog/medali-custom-aceh ΓÇö Medali Custom Aceh: Perbandingan Material & Tips Pemilihan
+  Γ£ô tidak ada topik yang mirip ΓÇö aman dibuat.
+
+Γ£ô tidak ada duplikat konten yang jelas.
+
+--- gate: cek standart ---
+
+Artikel diperiksa: 143
+ERROR  : 0
+WARNING: 1
+
+  ! blog/medali-custom-aceh: konten mirip blog/medali-custom-dki-jakarta (similarity 63%)
+
+Review artikel di src/data/articles.ts (blog/medali-custom-aceh), lalu git commit (atau pakai --commit-push).
+
+Keyword: "medali custom Sumatra Utara"  ->  slug: medali-custom-sumatra-utara  kategori: Medali
+Menulis prose via LLM...
+node.exe : Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Menggunakan Ope...-flash-free)...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Γ£ô Artikel disisipkan: blog/medali-custom-sumatra-utara (image: /images/produk-unggulan/medali-3d/medali-3d-2.png)
+GENERATED_SLUG:medali-custom-sumatra-utara
+
+--- regenerate og-meta.json ---
+Wrote 144 entries -> H:\karyamedia-web\src\data\og-meta.json
+
+--- gate: cek duplikat ---
+
+Artikel baru: blog/medali-custom-sumatra-utara ΓÇö Medali Custom Sumatra Utara: Panduan Anggaran & Value
+  Γ£ô tidak ada topik yang mirip ΓÇö aman dibuat.
+
+Γ£ô tidak ada duplikat konten yang jelas.
+
+--- gate: cek standart ---
+
+Artikel diperiksa: 144
+ERROR  : 0
+WARNING: 1
+
+  ! blog/medali-custom-sumatra-utara: konten mirip blog/panduan-lengkap-souvenir-custom (similarity 62%)
+
+Review artikel di src/data/articles.ts (blog/medali-custom-sumatra-utara), lalu git commit (atau pakai --commit-push).
+
+Keyword: "medali custom Sumatra Barat"  ->  slug: medali-custom-sumatra-barat  kategori: Medali
+Menulis prose via LLM...
+node.exe : Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Menggunakan Ope...-flash-free)...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Γ£ô Artikel disisipkan: blog/medali-custom-sumatra-barat (image: /images/produk-unggulan/medali-3d/medali-3d-3.png)
+GENERATED_SLUG:medali-custom-sumatra-barat
+
+--- regenerate og-meta.json ---
+Wrote 145 entries -> H:\karyamedia-web\src\data\og-meta.json
+
+--- gate: cek duplikat ---
+
+Artikel baru: blog/medali-custom-sumatra-barat ΓÇö Medali Custom Sumatra Barat: Panduan Lengkap Pemesanan
+  Γ£ô tidak ada topik yang mirip ΓÇö aman dibuat.
+
+Γ£ô tidak ada duplikat konten yang jelas.
+
+--- gate: cek standart ---
+
+Artikel diperiksa: 145
+ERROR  : 0
+WARNING: 1
+
+  ! blog/medali-custom-sumatra-barat: konten mirip blog/panduan-lengkap-souvenir-custom (similarity 63%)
+
+Review artikel di src/data/articles.ts (blog/medali-custom-sumatra-barat), lalu git commit (atau pakai --commit-push).
+
+Keyword: "medali custom Riau"  ->  slug: medali-custom-riau  kategori: Medali
+Menulis prose via LLM...
+node.exe : Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Menggunakan Ope...-flash-free)...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Konten 793 kata (<800), perpanjang (percobaan 1)...
+Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+Zen error (Unexpected end of JSON input), retry 1/4 dalam 2000ms...
+DUPLIKAT setelah generate: topik mirip dengan "Souvenir Wisuda: Panduan Memilih yang Berkualitas". Batal menyisipkan.
+
+Keyword: "medali custom Kepulauan Riau"  ->  slug: medali-custom-kepulauan-riau  kategori: Medali
+Menulis prose via LLM...
+node.exe : Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Menggunakan Ope...-flash-free)...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Γ£ô Artikel disisipkan: blog/medali-custom-kepulauan-riau (image: /images/produk-unggulan/medali-3d/medali-3d-4.png)
+GENERATED_SLUG:medali-custom-kepulauan-riau
+
+--- regenerate og-meta.json ---
+Wrote 146 entries -> H:\karyamedia-web\src\data\og-meta.json
+
+--- gate: cek duplikat ---
+
+Artikel baru: blog/medali-custom-kepulauan-riau ΓÇö Medali Custom Kepulauan Riau untuk Instansi dan Event
+  Γ£ô tidak ada topik yang mirip ΓÇö aman dibuat.
+
+Γ£ô tidak ada duplikat konten yang jelas.
+
+--- gate: cek standart ---
+
+Artikel diperiksa: 146
+ERROR  : 0
+WARNING: 0
+
+
+Review artikel di src/data/articles.ts (blog/medali-custom-kepulauan-riau), lalu git commit (atau pakai --commit-push).
+
+Keyword: "medali custom Jambi"  ->  slug: medali-custom-jambi  kategori: Medali
+Menulis prose via LLM...
+node.exe : Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Menggunakan Ope...-flash-free)...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Γ£ô Artikel disisipkan: blog/medali-custom-jambi (image: /images/produk-unggulan/medali-3d/medali-3d-5.png)
+GENERATED_SLUG:medali-custom-jambi
+
+--- regenerate og-meta.json ---
+Wrote 147 entries -> H:\karyamedia-web\src\data\og-meta.json
+
+--- gate: cek duplikat ---
+
+Artikel baru: blog/medali-custom-jambi ΓÇö Medali Custom Jambi: Pilihan Material & Produsen Terbaik
+  Γ£ô tidak ada topik yang mirip ΓÇö aman dibuat.
+
+Γ£ô tidak ada duplikat konten yang jelas.
+
+--- gate: cek standart ---
+
+Artikel diperiksa: 147
+ERROR  : 0
+WARNING: 1
+
+  ! blog/medali-custom-jambi: konten mirip blog/medali-custom-dki-jakarta (similarity 61%)
+
+Review artikel di src/data/articles.ts (blog/medali-custom-jambi), lalu git commit (atau pakai --commit-push).
+
+Keyword: "medali custom Sumatra Selatan"  ->  slug: medali-custom-sumatra-selatan  kategori: Medali
+Menulis prose via LLM...
+node.exe : Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Menggunakan Ope...-flash-free)...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Konten 706 kata (<800), perpanjang (percobaan 1)...
+Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+Γ£ô Artikel disisipkan: blog/medali-custom-sumatra-selatan (image: /images/produk-unggulan/medali-3d/medali-3d-6.png)
+GENERATED_SLUG:medali-custom-sumatra-selatan
+
+--- regenerate og-meta.json ---
+Wrote 148 entries -> H:\karyamedia-web\src\data\og-meta.json
+
+--- gate: cek duplikat ---
+
+Artikel baru: blog/medali-custom-sumatra-selatan ΓÇö Medali Custom Sumatra Selatan dari Karyamedia
+  Γ£ô tidak ada topik yang mirip ΓÇö aman dibuat.
+
+Γ£ô tidak ada duplikat konten yang jelas.
+
+--- gate: cek standart ---
+
+Artikel diperiksa: 148
+ERROR  : 0
+WARNING: 0
+
+
+Review artikel di src/data/articles.ts (blog/medali-custom-sumatra-selatan), lalu git commit (atau pakai --commit-push).
+
+Keyword: "medali custom Bengkulu"  ->  slug: medali-custom-bengkulu  kategori: Medali
+Menulis prose via LLM...
+node.exe : Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Menggunakan Ope...-flash-free)...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Γ£ô Artikel disisipkan: blog/medali-custom-bengkulu (image: /images/produk-unggulan/medali-3d/medali-3d-7.png)
+GENERATED_SLUG:medali-custom-bengkulu
+
+--- regenerate og-meta.json ---
+Wrote 149 entries -> H:\karyamedia-web\src\data\og-meta.json
+
+--- gate: cek duplikat ---
+
+Artikel baru: blog/medali-custom-bengkulu ΓÇö Medali Custom Bengkulu Berkualitas untuk Instansi & Event
+  Γ£ô tidak ada topik yang mirip ΓÇö aman dibuat.
+
+Γ£ô tidak ada duplikat konten yang jelas.
+
+--- gate: cek standart ---
+
+Artikel diperiksa: 149
+ERROR  : 0
+WARNING: 1
+
+  ! blog/medali-custom-bengkulu: konten mirip blog/medali-custom-panduan-memilih-dan-memesan (similarity 64%)
+
+Review artikel di src/data/articles.ts (blog/medali-custom-bengkulu), lalu git commit (atau pakai --commit-push).
+
+Keyword: "medali custom Lampung"  ->  slug: medali-custom-lampung  kategori: Medali
+Menulis prose via LLM...
+node.exe : Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Menggunakan Ope...-flash-free)...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Γ£ô Artikel disisipkan: blog/medali-custom-lampung (image: /images/produk-unggulan/medali-3d/medali-3d-8.png)
+GENERATED_SLUG:medali-custom-lampung
+
+--- regenerate og-meta.json ---
+Wrote 150 entries -> H:\karyamedia-web\src\data\og-meta.json
+
+--- gate: cek duplikat ---
+
+Artikel baru: blog/medali-custom-lampung ΓÇö Medali Custom Lampung untuk Acara Resmi
+  Γ£ô tidak ada topik yang mirip ΓÇö aman dibuat.
+
+Γ£ô tidak ada duplikat konten yang jelas.
+
+--- gate: cek standart ---
+
+Artikel diperiksa: 150
+ERROR  : 0
+WARNING: 1
+
+  ! blog/medali-custom-lampung: konten mirip blog/panduan-lengkap-medali-custom (similarity 64%)
+
+Review artikel di src/data/articles.ts (blog/medali-custom-lampung), lalu git commit (atau pakai --commit-push).
+
+Keyword: "medali custom Kepulauan Bangka Belitung"  ->  slug: medali-custom-kepulauan-bangka-belitung  kategori: Medali
+Menulis prose via LLM...
+node.exe : Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Menggunakan Ope...-flash-free)...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Γ£ô Artikel disisipkan: blog/medali-custom-kepulauan-bangka-belitung (image: /images/produk-unggulan/medali-3d/medali-3d-9.png)
+GENERATED_SLUG:medali-custom-kepulauan-bangka-belitung
+
+--- regenerate og-meta.json ---
+Wrote 151 entries -> H:\karyamedia-web\src\data\og-meta.json
+
+--- gate: cek duplikat ---
+
+Artikel baru: blog/medali-custom-kepulauan-bangka-belitung ΓÇö Medali Custom Kepulauan Bangka Belitung untuk Instansi &
+  Γ£ô tidak ada topik yang mirip ΓÇö aman dibuat.
+
+Γ£ô tidak ada duplikat konten yang jelas.
+
+--- gate: cek standart ---
+
+Artikel diperiksa: 151
+ERROR  : 0
+WARNING: 0
+
+
+Review artikel di src/data/articles.ts (blog/medali-custom-kepulauan-bangka-belitung), lalu git commit (atau pakai --commit-push).
+
+Keyword: "medali custom Banten"  ->  slug: medali-custom-banten  kategori: Medali
+Menulis prose via LLM...
+node.exe : Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Menggunakan Ope...-flash-free)...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Γ£ô Artikel disisipkan: blog/medali-custom-banten (image: /images/produk-unggulan/medali-custom/medali-custom-16.png)
+GENERATED_SLUG:medali-custom-banten
+
+--- regenerate og-meta.json ---
+Wrote 152 entries -> H:\karyamedia-web\src\data\og-meta.json
+
+--- gate: cek duplikat ---
+
+Artikel baru: blog/medali-custom-banten ΓÇö Panduan Medali Custom Banten untuk Kampus & Instansi
+  Γ£ô tidak ada topik yang mirip ΓÇö aman dibuat.
+
+Γ£ô tidak ada duplikat konten yang jelas.
+
+--- gate: cek standart ---
+
+Artikel diperiksa: 152
+ERROR  : 0
+WARNING: 1
+
+  ! blog/medali-custom-banten: konten mirip blog/panduan-lengkap-medali-custom (similarity 64%)
+
+Review artikel di src/data/articles.ts (blog/medali-custom-banten), lalu git commit (atau pakai --commit-push).
+
+node.exe : DUPLIKAT: slug "medali-custom-dki-jakarta" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Keyword: "medali custom Jawa Barat"  ->  slug: medali-custom-jawa-barat  kategori: Medali
+Menulis prose via LLM...
+node.exe : Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Menggunakan Ope...-flash-free)...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Γ£ô Artikel disisipkan: blog/medali-custom-jawa-barat (image: /images/produk-unggulan/medali-custom/medali-custom-17.png)
+GENERATED_SLUG:medali-custom-jawa-barat
+
+--- regenerate og-meta.json ---
+Wrote 153 entries -> H:\karyamedia-web\src\data\og-meta.json
+
+--- gate: cek duplikat ---
+
+Artikel baru: blog/medali-custom-jawa-barat ΓÇö Medali Custom Jawa Barat untuk Instansi dan Kampus
+  Γ£ô tidak ada topik yang mirip ΓÇö aman dibuat.
+
+Γ£ô tidak ada duplikat konten yang jelas.
+
+--- gate: cek standart ---
+
+Artikel diperiksa: 153
+ERROR  : 0
+WARNING: 0
+
+
+Review artikel di src/data/articles.ts (blog/medali-custom-jawa-barat), lalu git commit (atau pakai --commit-push).
+
+
+===== 2026-07-15 00:47:11 =====
+node.exe : DUPLIKAT: slug "medali-custom-aceh" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-sumatra-utara" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-sumatra-barat" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Keyword: "medali custom Riau"  ->  slug: medali-custom-riau  kategori: Medali
+Menulis prose via LLM...
+node.exe : Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Menggunakan Ope...-flash-free)...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Γ£ô Artikel disisipkan: blog/medali-custom-riau (image: /images/produk-unggulan/medali-custom/medali-custom-18.png)
+GENERATED_SLUG:medali-custom-riau
+
+--- regenerate og-meta.json ---
+Wrote 154 entries -> H:\karyamedia-web\src\data\og-meta.json
+
+--- gate: cek duplikat ---
+
+Artikel baru: blog/medali-custom-riau ΓÇö Medali Custom Riau untuk Instansi dan Event Terpercaya
+  Γ£ô tidak ada topik yang mirip ΓÇö aman dibuat.
+
+Γ£ô tidak ada duplikat konten yang jelas.
+
+--- gate: cek standart ---
+
+Artikel diperiksa: 154
+ERROR  : 0
+WARNING: 1
+
+  ! blog/medali-custom-riau: konten mirip blog/medali-custom-jambi (similarity 62%)
+
+Review artikel di src/data/articles.ts (blog/medali-custom-riau), lalu git commit (atau pakai --commit-push).
+
+node.exe : DUPLIKAT: slug "medali-custom-kepulauan-riau" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-jambi" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-sumatra-selatan" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-bengkulu" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-lampung" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-kepulauan-bangka-belitung" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-banten" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-dki-jakarta" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-jawa-barat" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Keyword: "medali custom Jawa Tengah"  ->  slug: medali-custom-jawa-tengah  kategori: Medali
+Menulis prose via LLM...
+node.exe : Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Menggunakan Ope...-flash-free)...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Γ£ô Artikel disisipkan: blog/medali-custom-jawa-tengah (image: /images/produk-unggulan/medali-custom/medali-custom-19.png)
+GENERATED_SLUG:medali-custom-jawa-tengah
+
+--- regenerate og-meta.json ---
+Wrote 155 entries -> H:\karyamedia-web\src\data\og-meta.json
+
+--- gate: cek duplikat ---
+
+Artikel baru: blog/medali-custom-jawa-tengah ΓÇö Medali Custom Jawa Tengah: Solusi Pengadaan Berkualitas
+  Γ£ô tidak ada topik yang mirip ΓÇö aman dibuat.
+
+Γ£ô tidak ada duplikat konten yang jelas.
+
+--- gate: cek standart ---
+
+Artikel diperiksa: 155
+ERROR  : 0
+WARNING: 1
+
+  ! blog/medali-custom-jawa-tengah: konten mirip blog/panduan-lengkap-souvenir-custom (similarity 67%)
+
+Review artikel di src/data/articles.ts (blog/medali-custom-jawa-tengah), lalu git commit (atau pakai --commit-push).
+
+Keyword: "medali custom DI Yogyakarta"  ->  slug: medali-custom-di-yogyakarta  kategori: Medali
+Menulis prose via LLM...
+node.exe : Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Menggunakan Ope...-flash-free)...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Γ£ô Artikel disisipkan: blog/medali-custom-di-yogyakarta (image: /images/produk-unggulan/medali-custom/medali-custom-21.png)
+GENERATED_SLUG:medali-custom-di-yogyakarta
+
+--- regenerate og-meta.json ---
+Wrote 156 entries -> H:\karyamedia-web\src\data\og-meta.json
+
+--- gate: cek duplikat ---
+
+Artikel baru: blog/medali-custom-di-yogyakarta ΓÇö Medali Custom DI Yogyakarta: Solusi Penghargaan Berkualitas
+  Γ£ô tidak ada topik yang mirip ΓÇö aman dibuat.
+
+Γ£ô tidak ada duplikat konten yang jelas.
+
+--- gate: cek standart ---
+
+Artikel diperiksa: 156
+ERROR  : 1
+WARNING: 1
+
+  Γ£ù blog/medali-custom-di-yogyakarta: keyword utama "medali custom di yogyakarta" tidak ada di 240 karakter pertama
+  ! blog/medali-custom-di-yogyakarta: konten mirip blog/panduan-lengkap-medali-custom (similarity 60%)
+ERROR: Command failed: node scripts/seo/article-lint.mjs
+
+Keyword: "medali custom Jawa Timur"  ->  slug: medali-custom-jawa-timur  kategori: Medali
+Menulis prose via LLM...
+node.exe : Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Menggunakan Ope...-flash-free)...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Γ£ô Artikel disisipkan: blog/medali-custom-jawa-timur (image: /images/produk-unggulan/medali-custom/medali-custom-22.png)
+GENERATED_SLUG:medali-custom-jawa-timur
+
+--- regenerate og-meta.json ---
+Wrote 157 entries -> H:\karyamedia-web\src\data\og-meta.json
+
+--- gate: cek duplikat ---
+
+Artikel baru: blog/medali-custom-jawa-timur ΓÇö Medali Custom Jawa Timur untuk Instansi, Kampus, dan Event
+  Γ£ô tidak ada topik yang mirip ΓÇö aman dibuat.
+
+Γ£ô tidak ada duplikat konten yang jelas.
+
+--- gate: cek standart ---
+
+Artikel diperiksa: 157
+ERROR  : 0
+WARNING: 1
+
+  ! blog/medali-custom-jawa-timur: konten mirip blog/panduan-lengkap-medali-custom (similarity 64%)
+
+Review artikel di src/data/articles.ts (blog/medali-custom-jawa-timur), lalu git commit (atau pakai --commit-push).
+
+Keyword: "medali custom Bali"  ->  slug: medali-custom-bali  kategori: Medali
+Menulis prose via LLM...
+node.exe : Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Menggunakan Ope...-flash-free)...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Konten 777 kata (<800), perpanjang (percobaan 1)...
+Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+Γ£ô Artikel disisipkan: blog/medali-custom-bali (image: /images/produk-unggulan/medali-custom/medali-custom-23.png)
+GENERATED_SLUG:medali-custom-bali
+
+--- regenerate og-meta.json ---
+Wrote 158 entries -> H:\karyamedia-web\src\data\og-meta.json
+
+--- gate: cek duplikat ---
+
+Artikel baru: blog/medali-custom-bali ΓÇö Medali Custom Bali: Solusi Hadiah Eksklusif untuk Acara Anda
+  Γ£ô tidak ada topik yang mirip ΓÇö aman dibuat.
+
+Γ£ô tidak ada duplikat konten yang jelas.
+
+--- gate: cek standart ---
+
+Artikel diperiksa: 158
+ERROR  : 0
+WARNING: 1
+
+  ! blog/medali-custom-bali: konten mirip blog/panduan-lengkap-medali-custom (similarity 62%)
+
+Review artikel di src/data/articles.ts (blog/medali-custom-bali), lalu git commit (atau pakai --commit-push).
+
+Keyword: "medali custom Nusa Tenggara Barat"  ->  slug: medali-custom-nusa-tenggara-barat  kategori: Medali
+Menulis prose via LLM...
+node.exe : Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Menggunakan Ope...-flash-free)...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Γ£ô Artikel disisipkan: blog/medali-custom-nusa-tenggara-barat (image: /images/produk-unggulan/medali-custom/medali-custom-24.png)
+GENERATED_SLUG:medali-custom-nusa-tenggara-barat
+
+--- regenerate og-meta.json ---
+Wrote 159 entries -> H:\karyamedia-web\src\data\og-meta.json
+
+--- gate: cek duplikat ---
+
+Artikel baru: blog/medali-custom-nusa-tenggara-barat ΓÇö Medali Custom Nusa Tenggara Barat untuk Acara dan Instansi
+  Γ£ô tidak ada topik yang mirip ΓÇö aman dibuat.
+
+Γ£ô tidak ada duplikat konten yang jelas.
+
+--- gate: cek standart ---
+
+Artikel diperiksa: 159
+ERROR  : 0
+WARNING: 1
+
+  ! blog/medali-custom-nusa-tenggara-barat: konten mirip blog/panduan-lengkap-medali-custom (similarity 61%)
+
+Review artikel di src/data/articles.ts (blog/medali-custom-nusa-tenggara-barat), lalu git commit (atau pakai --commit-push).
+
+Keyword: "medali custom Nusa Tenggara Timur"  ->  slug: medali-custom-nusa-tenggara-timur  kategori: Medali
+Menulis prose via LLM...
+node.exe : Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Menggunakan Ope...-flash-free)...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Konten 702 kata (<800), perpanjang (percobaan 1)...
+Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+Zen 503 (Error from provider (Console): Inference is temporarily unavailable), retry 1/4 dalam 2000ms...
+Γ£ô Artikel disisipkan: blog/medali-custom-nusa-tenggara-timur (image: /images/produk-unggulan/medali-custom/medali-custom-25.png)
+GENERATED_SLUG:medali-custom-nusa-tenggara-timur
+
+--- regenerate og-meta.json ---
+Wrote 160 entries -> H:\karyamedia-web\src\data\og-meta.json
+
+--- gate: cek duplikat ---
+
+Artikel baru: blog/medali-custom-nusa-tenggara-timur ΓÇö Medali Custom Nusa Tenggara Timur: Pilihan Material & Tips
+  Γ£ô tidak ada topik yang mirip ΓÇö aman dibuat.
+
+Γ£ô tidak ada duplikat konten yang jelas.
+
+--- gate: cek standart ---
+
+Artikel diperiksa: 160
+ERROR  : 0
+WARNING: 1
+
+  ! blog/medali-custom-nusa-tenggara-timur: konten mirip blog/medali-custom-jambi (similarity 66%)
+
+Review artikel di src/data/articles.ts (blog/medali-custom-nusa-tenggara-timur), lalu git commit (atau pakai --commit-push).
+
+Keyword: "medali custom Kalimantan Barat"  ->  slug: medali-custom-kalimantan-barat  kategori: Medali
+Menulis prose via LLM...
+node.exe : Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Menggunakan Ope...-flash-free)...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Γ£ô Artikel disisipkan: blog/medali-custom-kalimantan-barat (image: /images/produk-unggulan/medali-custom/medali-custom-26.png)
+GENERATED_SLUG:medali-custom-kalimantan-barat
+
+--- regenerate og-meta.json ---
+Wrote 161 entries -> H:\karyamedia-web\src\data\og-meta.json
+
+--- gate: cek duplikat ---
+
+Artikel baru: blog/medali-custom-kalimantan-barat ΓÇö Medali Custom Kalimantan Barat untuk Kebutuhan Instansi
+  Γ£ô tidak ada topik yang mirip ΓÇö aman dibuat.
+
+Γ£ô tidak ada duplikat konten yang jelas.
+
+--- gate: cek standart ---
+
+Artikel diperiksa: 161
+ERROR  : 0
+WARNING: 1
+
+  ! blog/medali-custom-kalimantan-barat: konten mirip blog/panduan-lengkap-souvenir-custom (similarity 64%)
+
+Review artikel di src/data/articles.ts (blog/medali-custom-kalimantan-barat), lalu git commit (atau pakai --commit-push).
+
+
+===== 2026-07-15 01:17:40 =====
+node.exe : DUPLIKAT: slug "medali-custom-aceh" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-sumatra-utara" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-sumatra-barat" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-riau" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-kepulauan-riau" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-jambi" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-sumatra-selatan" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-bengkulu" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-lampung" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-kepulauan-bangka-belitung" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-banten" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-dki-jakarta" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-jawa-barat" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-jawa-tengah" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-di-yogyakarta" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-jawa-timur" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-bali" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-nusa-tenggara-barat" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-nusa-tenggara-timur" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-kalimantan-barat" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Keyword: "medali custom Kalimantan Tengah"  ->  slug: medali-custom-kalimantan-tengah  kategori: Medali
+Menulis prose via LLM...
+node.exe : Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Menggunakan Ope...-flash-free)...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Konten 686 kata (<800), perpanjang (percobaan 1)...
+Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+Γ£ô Artikel disisipkan: blog/medali-custom-kalimantan-tengah (image: /images/produk-unggulan/medali-custom/medali-custom-27.png)
+GENERATED_SLUG:medali-custom-kalimantan-tengah
+
+--- regenerate og-meta.json ---
+Wrote 162 entries -> H:\karyamedia-web\src\data\og-meta.json
+
+--- gate: cek duplikat ---
+
+Artikel baru: blog/medali-custom-kalimantan-tengah ΓÇö Medali Custom Kalimantan Tengah untuk Instansi, Kampus, dan
+  Γ£ô tidak ada topik yang mirip ΓÇö aman dibuat.
+
+Γ£ô tidak ada duplikat konten yang jelas.
+
+--- gate: cek standart ---
+
+Artikel diperiksa: 162
+ERROR  : 0
+WARNING: 1
+
+  ! blog/medali-custom-kalimantan-tengah: konten mirip blog/panduan-lengkap-medali-custom (similarity 62%)
+
+Review artikel di src/data/articles.ts (blog/medali-custom-kalimantan-tengah), lalu git commit (atau pakai --commit-push).
+
+Keyword: "medali custom Kalimantan Selatan"  ->  slug: medali-custom-kalimantan-selatan  kategori: Medali
+Menulis prose via LLM...
+node.exe : Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Menggunakan Ope...-flash-free)...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Zen error (Unexpected token '<', "<!DOCTYPE "... is not valid JSON), retry 1/4 dalam 2000ms...
+Γ£ô Artikel disisipkan: blog/medali-custom-kalimantan-selatan (image: /images/produk-unggulan/medali-custom/medali-custom-28.png)
+GENERATED_SLUG:medali-custom-kalimantan-selatan
+
+--- regenerate og-meta.json ---
+Wrote 163 entries -> H:\karyamedia-web\src\data\og-meta.json
+
+--- gate: cek duplikat ---
+
+Artikel baru: blog/medali-custom-kalimantan-selatan ΓÇö Medali Custom Kalimantan Selatan: Pilih Material Tepat
+  Γ£ô tidak ada topik yang mirip ΓÇö aman dibuat.
+
+Γ£ô tidak ada duplikat konten yang jelas.
+
+--- gate: cek standart ---
+
+Artikel diperiksa: 163
+ERROR  : 0
+WARNING: 1
+
+  ! blog/medali-custom-kalimantan-selatan: konten mirip blog/medali-custom-nusa-tenggara-timur (similarity 62%)
+
+Review artikel di src/data/articles.ts (blog/medali-custom-kalimantan-selatan), lalu git commit (atau pakai --commit-push).
+
+Keyword: "medali custom Kalimantan Timur"  ->  slug: medali-custom-kalimantan-timur  kategori: Medali
+Menulis prose via LLM...
+node.exe : Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Menggunakan Ope...-flash-free)...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Γ£ô Artikel disisipkan: blog/medali-custom-kalimantan-timur (image: /images/produk-unggulan/medali-custom/medali-custom-4.png)
+GENERATED_SLUG:medali-custom-kalimantan-timur
+
+--- regenerate og-meta.json ---
+Wrote 164 entries -> H:\karyamedia-web\src\data\og-meta.json
+
+--- gate: cek duplikat ---
+
+Artikel baru: blog/medali-custom-kalimantan-timur ΓÇö Medali Custom Kalimantan Timur untuk Instansi, Kampus, Event
+  Γ£ô tidak ada topik yang mirip ΓÇö aman dibuat.
+
+Γ£ô tidak ada duplikat konten yang jelas.
+
+--- gate: cek standart ---
+
+Artikel diperiksa: 164
+ERROR  : 0
+WARNING: 0
+
+
+Review artikel di src/data/articles.ts (blog/medali-custom-kalimantan-timur), lalu git commit (atau pakai --commit-push).
+
+Keyword: "medali custom Kalimantan Utara"  ->  slug: medali-custom-kalimantan-utara  kategori: Medali
+Menulis prose via LLM...
+node.exe : Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Menggunakan Ope...-flash-free)...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Konten 779 kata (<800), perpanjang (percobaan 1)...
+Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+Γ£ô Artikel disisipkan: blog/medali-custom-kalimantan-utara (image: /images/produk-unggulan/medali-custom/medali-custom-58.png)
+GENERATED_SLUG:medali-custom-kalimantan-utara
+
+--- regenerate og-meta.json ---
+Wrote 165 entries -> H:\karyamedia-web\src\data\og-meta.json
+
+--- gate: cek duplikat ---
+
+Artikel baru: blog/medali-custom-kalimantan-utara ΓÇö Medali Custom Kalimantan Utara untuk Acara & Institusi
+  Γ£ô tidak ada topik yang mirip ΓÇö aman dibuat.
+
+Γ£ô tidak ada duplikat konten yang jelas.
+
+--- gate: cek standart ---
+
+Artikel diperiksa: 165
+ERROR  : 0
+WARNING: 0
+
+
+Review artikel di src/data/articles.ts (blog/medali-custom-kalimantan-utara), lalu git commit (atau pakai --commit-push).
+
+Keyword: "medali custom Sulawesi Utara"  ->  slug: medali-custom-sulawesi-utara  kategori: Medali
+Menulis prose via LLM...
+node.exe : Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Menggunakan Ope...-flash-free)...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Γ£ô Artikel disisipkan: blog/medali-custom-sulawesi-utara (image: /images/produk-unggulan/medali-custom/medali-custom-59.png)
+GENERATED_SLUG:medali-custom-sulawesi-utara
+
+--- regenerate og-meta.json ---
+Wrote 166 entries -> H:\karyamedia-web\src\data\og-meta.json
+
+--- gate: cek duplikat ---
+
+Artikel baru: blog/medali-custom-sulawesi-utara ΓÇö Medali Custom Sulawesi Utara untuk Event & Instansi
+  Γ£ô tidak ada topik yang mirip ΓÇö aman dibuat.
+
+Γ£ô tidak ada duplikat konten yang jelas.
+
+--- gate: cek standart ---
+
+Artikel diperiksa: 166
+ERROR  : 0
+WARNING: 1
+
+  ! blog/medali-custom-sulawesi-utara: konten mirip blog/panduan-lengkap-souvenir-custom (similarity 66%)
+
+Review artikel di src/data/articles.ts (blog/medali-custom-sulawesi-utara), lalu git commit (atau pakai --commit-push).
+
+Keyword: "medali custom Sulawesi Tengah"  ->  slug: medali-custom-sulawesi-tengah  kategori: Medali
+Menulis prose via LLM...
+node.exe : Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Menggunakan Ope...-flash-free)...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Konten 753 kata (<800), perpanjang (percobaan 1)...
+Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+Γ£ô Artikel disisipkan: blog/medali-custom-sulawesi-tengah (image: /images/produk-unggulan/medali-custom/medali-custom-6.png)
+GENERATED_SLUG:medali-custom-sulawesi-tengah
+
+--- regenerate og-meta.json ---
+Wrote 167 entries -> H:\karyamedia-web\src\data\og-meta.json
+
+--- gate: cek duplikat ---
+
+Artikel baru: blog/medali-custom-sulawesi-tengah ΓÇö medali custom Sulawesi Tengah untuk instansi dan event
+  Γ£ô tidak ada topik yang mirip ΓÇö aman dibuat.
+
+Γ£ô tidak ada duplikat konten yang jelas.
+
+--- gate: cek standart ---
+
+Artikel diperiksa: 167
+ERROR  : 0
+WARNING: 1
+
+  ! blog/medali-custom-sulawesi-tengah: konten mirip blog/medali-custom-jawa-timur (similarity 62%)
+
+Review artikel di src/data/articles.ts (blog/medali-custom-sulawesi-tengah), lalu git commit (atau pakai --commit-push).
+
+Keyword: "medali custom Sulawesi Selatan"  ->  slug: medali-custom-sulawesi-selatan  kategori: Medali
+Menulis prose via LLM...
+node.exe : Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Menggunakan Ope...-flash-free)...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Γ£ô Artikel disisipkan: blog/medali-custom-sulawesi-selatan (image: /images/produk-unggulan/medali-custom/medali-custom-7.png)
+GENERATED_SLUG:medali-custom-sulawesi-selatan
+
+--- regenerate og-meta.json ---
+Wrote 168 entries -> H:\karyamedia-web\src\data\og-meta.json
+
+--- gate: cek duplikat ---
+
+Artikel baru: blog/medali-custom-sulawesi-selatan ΓÇö Medali Custom Sulawesi Selatan: Pilihan Tepat Penghargaan
+  Γ£ô tidak ada topik yang mirip ΓÇö aman dibuat.
+
+Γ£ô tidak ada duplikat konten yang jelas.
+
+--- gate: cek standart ---
+
+Artikel diperiksa: 168
+ERROR  : 0
+WARNING: 1
+
+  ! blog/medali-custom-sulawesi-selatan: konten mirip blog/panduan-lengkap-medali-custom (similarity 66%)
+
+Review artikel di src/data/articles.ts (blog/medali-custom-sulawesi-selatan), lalu git commit (atau pakai --commit-push).
+
+Keyword: "medali custom Sulawesi Tenggara"  ->  slug: medali-custom-sulawesi-tenggara  kategori: Medali
+Menulis prose via LLM...
+node.exe : Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Menggunakan Ope...-flash-free)...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Γ£ô Artikel disisipkan: blog/medali-custom-sulawesi-tenggara (image: /images/produk-unggulan/medali-custom/medali-custom-9.png)
+GENERATED_SLUG:medali-custom-sulawesi-tenggara
+
+--- regenerate og-meta.json ---
+Wrote 169 entries -> H:\karyamedia-web\src\data\og-meta.json
+
+--- gate: cek duplikat ---
+
+Artikel baru: blog/medali-custom-sulawesi-tenggara ΓÇö Medali Custom Sulawesi Tenggara: Pilihan Material dan
+  Γ£ô tidak ada topik yang mirip ΓÇö aman dibuat.
+
+Γ£ô tidak ada duplikat konten yang jelas.
+
+--- gate: cek standart ---
+
+Artikel diperiksa: 169
+ERROR  : 0
+WARNING: 1
+
+  ! blog/medali-custom-sulawesi-tenggara: konten mirip blog/medali-custom-nusa-tenggara-timur (similarity 63%)
+
+Review artikel di src/data/articles.ts (blog/medali-custom-sulawesi-tenggara), lalu git commit (atau pakai --commit-push).
+
+Keyword: "medali custom Gorontalo"  ->  slug: medali-custom-gorontalo  kategori: Medali
+Menulis prose via LLM...
+node.exe : Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Menggunakan Ope...-flash-free)...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Γ£ô Artikel disisipkan: blog/medali-custom-gorontalo (image: /images/produk-unggulan/medali-custom/medali-emas-perak-perunggu-10.png)
+GENERATED_SLUG:medali-custom-gorontalo
+
+--- regenerate og-meta.json ---
+Wrote 170 entries -> H:\karyamedia-web\src\data\og-meta.json
+
+--- gate: cek duplikat ---
+
+Artikel baru: blog/medali-custom-gorontalo ΓÇö Medali Custom Gorontalo: Solusi untuk Instansi dan Event
+  Γ£ô tidak ada topik yang mirip ΓÇö aman dibuat.
+
+Γ£ô tidak ada duplikat konten yang jelas.
+
+--- gate: cek standart ---
+
+Artikel diperiksa: 170
+ERROR  : 0
+WARNING: 1
+
+  ! blog/medali-custom-gorontalo: konten mirip blog/medali-custom-sulawesi-tengah (similarity 63%)
+
+Review artikel di src/data/articles.ts (blog/medali-custom-gorontalo), lalu git commit (atau pakai --commit-push).
+
+Keyword: "medali custom Sulawesi Barat"  ->  slug: medali-custom-sulawesi-barat  kategori: Medali
+Menulis prose via LLM...
+node.exe : Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Menggunakan Ope...-flash-free)...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Konten 787 kata (<800), perpanjang (percobaan 1)...
+Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+Γ£ô Artikel disisipkan: blog/medali-custom-sulawesi-barat (image: /images/produk-unggulan/medali-custom/medali-emas-perak-perunggu-11.png)
+GENERATED_SLUG:medali-custom-sulawesi-barat
+
+--- regenerate og-meta.json ---
+Wrote 171 entries -> H:\karyamedia-web\src\data\og-meta.json
+
+--- gate: cek duplikat ---
+
+Artikel baru: blog/medali-custom-sulawesi-barat ΓÇö Medali Custom Sulawesi Barat untuk Kebutuhan Instansi dan
+  Γ£ô tidak ada topik yang mirip ΓÇö aman dibuat.
+
+Γ£ô tidak ada duplikat konten yang jelas.
+
+--- gate: cek standart ---
+
+Artikel diperiksa: 171
+ERROR  : 0
+WARNING: 1
+
+  ! blog/medali-custom-sulawesi-barat: konten mirip blog/medali-custom-bali (similarity 67%)
+
+Review artikel di src/data/articles.ts (blog/medali-custom-sulawesi-barat), lalu git commit (atau pakai --commit-push).
+
+Keyword: "medali custom Maluku"  ->  slug: medali-custom-maluku  kategori: Medali
+Menulis prose via LLM...
+node.exe : Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Menggunakan Ope...-flash-free)...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Γ£ô Artikel disisipkan: blog/medali-custom-maluku (image: /images/produk-unggulan/medali-custom/medali-emas-perak-perunggu-12.png)
+GENERATED_SLUG:medali-custom-maluku
+
+--- regenerate og-meta.json ---
+Wrote 172 entries -> H:\karyamedia-web\src\data\og-meta.json
+
+--- gate: cek duplikat ---
+
+Artikel baru: blog/medali-custom-maluku ΓÇö Medali Custom Maluku untuk Instansi dan Kampus
+  Γ£ô tidak ada topik yang mirip ΓÇö aman dibuat.
+
+Γ£ô tidak ada duplikat konten yang jelas.
+
+--- gate: cek standart ---
+
+Artikel diperiksa: 172
+ERROR  : 0
+WARNING: 1
+
+  ! blog/medali-custom-maluku: konten mirip blog/medali-custom-jawa-tengah (similarity 62%)
+
+Review artikel di src/data/articles.ts (blog/medali-custom-maluku), lalu git commit (atau pakai --commit-push).
+
+
+===== 2026-07-15 01:47:57 =====
+node.exe : DUPLIKAT: slug "medali-custom-aceh" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-sumatra-utara" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-sumatra-barat" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-riau" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-kepulauan-riau" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-jambi" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-sumatra-selatan" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-bengkulu" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-lampung" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-kepulauan-bangka-belitung" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-banten" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-dki-jakarta" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-jawa-barat" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-jawa-tengah" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-di-yogyakarta" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-jawa-timur" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-bali" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-nusa-tenggara-barat" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-nusa-tenggara-timur" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-kalimantan-barat" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-kalimantan-tengah" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-kalimantan-selatan" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-kalimantan-timur" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-kalimantan-utara" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-sulawesi-utara" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-sulawesi-tengah" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-sulawesi-selatan" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-sulawesi-tenggara" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-gorontalo" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-sulawesi-barat" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+node.exe : DUPLIKAT: slug "medali-custom-maluku" sudah ada. Gunakan keyword lain.
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (DUPLIKAT: slug ...n keyword lain.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Keyword: "medali custom Maluku Utara"  ->  slug: medali-custom-maluku-utara  kategori: Medali
+Menulis prose via LLM...
+node.exe : Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Menggunakan Ope...-flash-free)...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Γ£ô Artikel disisipkan: blog/medali-custom-maluku-utara (image: /images/produk-unggulan/medali-custom/medali-emas-perak-perunggu-2.png)
+GENERATED_SLUG:medali-custom-maluku-utara
+
+--- regenerate og-meta.json ---
+Wrote 173 entries -> H:\karyamedia-web\src\data\og-meta.json
+
+--- gate: cek duplikat ---
+
+Artikel baru: blog/medali-custom-maluku-utara ΓÇö Medali Custom Maluku Utara: Panduan Material Terbaik
+  Γ£ô tidak ada topik yang mirip ΓÇö aman dibuat.
+
+Γ£ô tidak ada duplikat konten yang jelas.
+
+--- gate: cek standart ---
+
+Artikel diperiksa: 173
+ERROR  : 0
+WARNING: 1
+
+  ! blog/medali-custom-maluku-utara: konten mirip blog/medali-custom-nusa-tenggara-timur (similarity 64%)
+
+Review artikel di src/data/articles.ts (blog/medali-custom-maluku-utara), lalu git commit (atau pakai --commit-push).
+
+Keyword: "medali custom Papua"  ->  slug: medali-custom-papua  kategori: Medali
+Menulis prose via LLM...
+node.exe : Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Menggunakan Ope...-flash-free)...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Γ£ô Artikel disisipkan: blog/medali-custom-papua (image: /images/produk-unggulan/medali-custom/medali-emas-perak-perunggu-3.png)
+GENERATED_SLUG:medali-custom-papua
+
+--- regenerate og-meta.json ---
+Wrote 174 entries -> H:\karyamedia-web\src\data\og-meta.json
+
+--- gate: cek duplikat ---
+
+Artikel baru: blog/medali-custom-papua ΓÇö Panduan Anggaran medali custom Papua untuk Acara
+  Γ£ô tidak ada topik yang mirip ΓÇö aman dibuat.
+
+Γ£ô tidak ada duplikat konten yang jelas.
+
+--- gate: cek standart ---
+
+Artikel diperiksa: 174
+ERROR  : 0
+WARNING: 1
+
+  ! blog/medali-custom-papua: konten mirip blog/medali-custom-jawa-tengah (similarity 62%)
+
+Review artikel di src/data/articles.ts (blog/medali-custom-papua), lalu git commit (atau pakai --commit-push).
+
+Keyword: "medali custom Papua Barat"  ->  slug: medali-custom-papua-barat  kategori: Medali
+Menulis prose via LLM...
+node.exe : Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Menggunakan Ope...-flash-free)...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Konten 730 kata (<800), perpanjang (percobaan 1)...
+Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+Γ£ô Artikel disisipkan: blog/medali-custom-papua-barat (image: /images/produk-unggulan/medali-custom/medali-emas-perak-perunggu-4.png)
+GENERATED_SLUG:medali-custom-papua-barat
+
+--- regenerate og-meta.json ---
+Wrote 175 entries -> H:\karyamedia-web\src\data\og-meta.json
+
+--- gate: cek duplikat ---
+
+Artikel baru: blog/medali-custom-papua-barat ΓÇö Medali Custom Papua Barat dari Karyamedia
+  Γ£ô tidak ada topik yang mirip ΓÇö aman dibuat.
+
+Γ£ô tidak ada duplikat konten yang jelas.
+
+--- gate: cek standart ---
+
+Artikel diperiksa: 175
+ERROR  : 0
+WARNING: 1
+
+  ! blog/medali-custom-papua-barat: konten mirip blog/medali-custom-jawa-tengah (similarity 62%)
+
+Review artikel di src/data/articles.ts (blog/medali-custom-papua-barat), lalu git commit (atau pakai --commit-push).
+
+Keyword: "medali custom Papua Tengah"  ->  slug: medali-custom-papua-tengah  kategori: Medali
+Menulis prose via LLM...
+node.exe : Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Menggunakan Ope...-flash-free)...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Γ£ô Artikel disisipkan: blog/medali-custom-papua-tengah (image: /images/produk-unggulan/medali-custom/medali-emas-perak-perunggu-5.png)
+GENERATED_SLUG:medali-custom-papua-tengah
+
+--- regenerate og-meta.json ---
+Wrote 176 entries -> H:\karyamedia-web\src\data\og-meta.json
+
+--- gate: cek duplikat ---
+
+Artikel baru: blog/medali-custom-papua-tengah ΓÇö Pilih medali custom Papua Tengah untuk Instansi & Event
+  Γ£ô tidak ada topik yang mirip ΓÇö aman dibuat.
+
+Γ£ô tidak ada duplikat konten yang jelas.
+
+--- gate: cek standart ---
+
+Artikel diperiksa: 176
+ERROR  : 0
+WARNING: 1
+
+  ! blog/medali-custom-papua-tengah: konten mirip blog/panduan-lengkap-medali-custom (similarity 62%)
+
+Review artikel di src/data/articles.ts (blog/medali-custom-papua-tengah), lalu git commit (atau pakai --commit-push).
+
+Keyword: "medali custom Papua Pegunungan"  ->  slug: medali-custom-papua-pegunungan  kategori: Medali
+Menulis prose via LLM...
+node.exe : Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Menggunakan Ope...-flash-free)...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Γ£ô Artikel disisipkan: blog/medali-custom-papua-pegunungan (image: /images/produk-unggulan/medali-custom/medali-emas-perak-perunggu-6.png)
+GENERATED_SLUG:medali-custom-papua-pegunungan
+
+--- regenerate og-meta.json ---
+Wrote 177 entries -> H:\karyamedia-web\src\data\og-meta.json
+
+--- gate: cek duplikat ---
+
+Artikel baru: blog/medali-custom-papua-pegunungan ΓÇö Medali Custom Papua Pegunungan: Solusi Penghargaan
+  Γ£ô tidak ada topik yang mirip ΓÇö aman dibuat.
+
+Γ£ô tidak ada duplikat konten yang jelas.
+
+--- gate: cek standart ---
+
+Artikel diperiksa: 177
+ERROR  : 0
+WARNING: 1
+
+  ! blog/medali-custom-papua-pegunungan: konten mirip blog/medali-custom-papua-barat (similarity 63%)
+
+Review artikel di src/data/articles.ts (blog/medali-custom-papua-pegunungan), lalu git commit (atau pakai --commit-push).
+
+Keyword: "medali custom Papua Selatan"  ->  slug: medali-custom-papua-selatan  kategori: Medali
+Menulis prose via LLM...
+node.exe : Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Menggunakan Ope...-flash-free)...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Γ£ô Artikel disisipkan: blog/medali-custom-papua-selatan (image: /images/produk-unggulan/medali-custom/medali-emas-perak-perunggu-7.png)
+GENERATED_SLUG:medali-custom-papua-selatan
+
+--- regenerate og-meta.json ---
+Wrote 178 entries -> H:\karyamedia-web\src\data\og-meta.json
+
+--- gate: cek duplikat ---
+
+Artikel baru: blog/medali-custom-papua-selatan ΓÇö Medali Custom Papua Selatan dari Karyamedia
+  Γ£ô tidak ada topik yang mirip ΓÇö aman dibuat.
+
+Γ£ô tidak ada duplikat konten yang jelas.
+
+--- gate: cek standart ---
+
+Artikel diperiksa: 178
+ERROR  : 0
+WARNING: 1
+
+  ! blog/medali-custom-papua-selatan: konten mirip blog/panduan-lengkap-souvenir-custom (similarity 62%)
+
+Review artikel di src/data/articles.ts (blog/medali-custom-papua-selatan), lalu git commit (atau pakai --commit-push).
+
+Keyword: "medali custom Papua Barat Daya"  ->  slug: medali-custom-papua-barat-daya  kategori: Medali
+Menulis prose via LLM...
+node.exe : Menggunakan OpenCode Zen (deepseek-v4-flash-free)...
+At H:\karyamedia-web\scripts\seo\gen-medali-geo.ps1:29 char:12
++     $out = & node scripts/seo/article-generate.mjs "$kw" --category " ...
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Menggunakan Ope...-flash-free)...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Γ£ô Artikel disisipkan: blog/medali-custom-papua-barat-daya (image: /images/produk-unggulan/medali-custom/medali-emas-perak-perunggu-8.png)
+GENERATED_SLUG:medali-custom-papua-barat-daya
+
+--- regenerate og-meta.json ---
+Wrote 179 entries -> H:\karyamedia-web\src\data\og-meta.json
+
+--- gate: cek duplikat ---
+
+Artikel baru: blog/medali-custom-papua-barat-daya ΓÇö Medali Custom Papua Barat Daya ΓÇô Produsen Langsung
+  Γ£ô tidak ada topik yang mirip ΓÇö aman dibuat.
+
+Γ£ô tidak ada duplikat konten yang jelas.
+
+--- gate: cek standart ---
+
+Artikel diperiksa: 179
+ERROR  : 0
+WARNING: 1
+
+  ! blog/medali-custom-papua-barat-daya: konten mirip blog/panduan-lengkap-medali-custom (similarity 66%)
+
+Review artikel di src/data/articles.ts (blog/medali-custom-papua-barat-daya), lalu git commit (atau pakai --commit-push).
+
+SELESAI: generated=0 skipped=38 failed=0

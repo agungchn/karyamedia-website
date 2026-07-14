@@ -1,4 +1,4 @@
-# Weekly Google indexing recap:
+# Weekly Google recap: indexing (inspect) + trafik (GSC), satu popup.
 # jalankan seo:inspect untuk ~1 minggu artikel terakhir (default 42 = 6/hari x 7)
 # lalu tampilkan ringkasan yang jelas via popup (bukan cuma angka).
 # Arg opsional: jumlah artikel, mis. "inspect-weekly.ps1 10" untuk tes cepat.
@@ -42,6 +42,15 @@ if ($total -gt 0) {
   $msg += "`n`nDetail per-URL ada di seo-inspect-log.txt."
 } else {
   $msg = "Tidak ada data inspect. Cek seo-inspect-log.txt."
+}
+
+# tambahan: trafik Google dari GSC (read-only) — lewat query apa pengunjung mengklik
+try {
+  $traf = & node scripts/gsc/traffic.mjs 2>&1 | Out-String
+  $msg += "`n`n" + $traf.Trim()
+  Add-Content -Encoding utf8 -Path (Join-Path $root "seo-traffic-log.txt") -Value "`n===== $ts =====`n$traf"
+} catch {
+  $msg += "`n`n(Gagal mengambil trafik GSC)"
 }
 
 Set-Content -Path (Join-Path $root "seo-inspect-last-msg.txt") -Encoding utf8 -Value "TITLE: $title`n`nMSG:`n$msg"

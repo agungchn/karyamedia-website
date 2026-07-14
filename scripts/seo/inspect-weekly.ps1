@@ -2,7 +2,7 @@
 # jalankan seo:inspect untuk ~1 minggu artikel terakhir (default 42 = 6/hari x 7)
 # lalu tampilkan ringkasan yang jelas via popup (bukan cuma angka).
 # Arg opsional: jumlah artikel, mis. "inspect-weekly.ps1 10" untuk tes cepat.
-# Dijadwalkan mingguan (Minggu 09:00) via Task Scheduler.
+# Dijadwalkan mingguan (Senin 10:00 WIB) via Task Scheduler.
 $ErrorActionPreference = "Continue"
 $root = "H:\karyamedia-web"
 Set-Location $root
@@ -14,7 +14,7 @@ $n = if ($args.Count -gt 0) { [int]$args[0] } else { 42 }
 $ts = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
 Add-Content -Path $log -Value "`n===== $ts ====="
 
-$out = & npm run seo:inspect -- $n 2>&1 | Tee-Object -Encoding utf8 -FilePath $log -Append | Out-String
+$out = & npm run seo:inspect -- $n 2>&1 | Tee-Object -FilePath $log -Append | Out-String
 
 # hitung status tiap artikel dari output inspect
 $counts = @{}
@@ -43,5 +43,7 @@ if ($total -gt 0) {
 } else {
   $msg = "Tidak ada data inspect. Cek seo-inspect-log.txt."
 }
+
+Set-Content -Path (Join-Path $root "seo-inspect-last-msg.txt") -Encoding utf8 -Value "TITLE: $title`n`nMSG:`n$msg"
 
 Start-Process powershell -ArgumentList "-NoProfile","-ExecutionPolicy Bypass","-File",$popup,"-Title",$title,"-Message",$msg -WindowStyle Hidden

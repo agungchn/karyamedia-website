@@ -93,6 +93,7 @@ Buat objek JSON dengan field berikut:
   * minimal 800 kata (wajib >=800 agar lolos standar)
   * minimal 4 heading <h2> (pakai tag <h2>...</h2>)
   * 240 karakter PERTAMA konten (paragraf pembuka) HARUS mengandung keyword utama secara utuh
+  * sebutkan nama produk/kategori terkait (plakat, piala, medali, prasasti, gift box, souvenir wisuda, name tag, dll) SECARA NATURAL di paragraf pembuka/awal artikel, agar tautan ke katalog produk otomatis bisa disematkan di bagian atas
   * gunakan nada otoritatif seperti ahli produsen: sertakan bukti konkret (Karyamedia berdiri sejak 2001, berbasis Yogyakarta, melayani instansi & event nasional, standar ukiran/produksi presisi) bila relevan; hindari kalimat promosi generik tanpa bukti
   * WAJIB ada bagian <h2>FAQ</h2> di akhir dengan 3-5 pasang pertanyaan & jawaban, tiap pasang PASTI format <h3>Pertanyaan?</h3><p>Jawaban.</p> (pakai <h3> untuk pertanyaan dan <p> untuk jawaban)
   * bahasa Indonesia natural & mudah dipahami, SEO-friendly, sebutkan "Karyamedia" secara wajar 1-2 kali
@@ -127,6 +128,7 @@ Buat objek JSON dengan field berikut:
   * PANJANG 1500-2200 kata (wajib >=1500).
   * MINIMAL 6 heading <h2> (lebih dalam & komprehensif dari pesaing).
   * 240 karakter PERTAMA (paragraf pembuka) HARUS mengandung keyword utama secara utuh.
+  * sebutkan nama produk/kategori terkait (plakat, piala, medali, prasasti, gift box, souvenir wisuda, name tag, dll) SECARA NATURAL di awal artikel, agar tautan ke katalog produk otomatis bisa disematkan di bagian atas.
   * JIKA topik membandingkan (vs / atau / mending / perbandingan), sertakan <table> perbandingan jelas (kolom: aspek, opsi A, opsi B) dengan narasi Karyamedia.
   * Gunakan nada ahli produsen & sertakan BUKTI KONKRET: Karyamedia berdiri SEJAK 2001, berbasis YOGYAKARTA, melayani RATUSAN instansi & event nasional, sebutkan angka/spesifikasi riil (ukuran mm, lead time, range harga "mulai dari", standar quality control).
   * ${c ? "Tutupi SEMUA poin pesaing DI ATAS, lalu TAMBAHKAN minimal 3 sudut pandang/section BARU yang TIDAK dibahas pesaing (lebih mendalam, contoh kasus, tips praktis, mitos, checklist, atau data Karyamedia)." : "Buat artikel paling komprehensif & otoritatif di topik ini."}

@@ -1,23 +1,47 @@
 # Weekly Google indexing recap:
-# jalankan seo:inspect untuk ~1 minggu artikel terakhir (6/hari x 7 = 42)
-# lalu tampilkan ringkasan via popup.
-# Dijadwalkan mingguan (mis. Minggu 09:00) via Task Scheduler.
+# jalankan seo:inspect untuk ~1 minggu artikel terakhir (default 42 = 6/hari x 7)
+# lalu tampilkan ringkasan yang jelas via popup (bukan cuma angka).
+# Arg opsional: jumlah artikel, mis. "inspect-weekly.ps1 10" untuk tes cepat.
+# Dijadwalkan mingguan (Minggu 09:00) via Task Scheduler.
 $ErrorActionPreference = "Continue"
 $root = "H:\karyamedia-web"
 Set-Location $root
 $log = Join-Path $root "seo-inspect-log.txt"
 $popup = Join-Path $root "scripts\seo\popup.ps1"
 
+$n = if ($args.Count -gt 0) { [int]$args[0] } else { 42 }
+
 $ts = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
 Add-Content -Path $log -Value "`n===== $ts ====="
 
-$n = 42
-$out = & npm run seo:inspect -- $n 2>&1 | Tee-Object -FilePath $log -Append | Out-String
+$out = & npm run seo:inspect -- $n 2>&1 | Tee-Object -Encoding utf8 -FilePath $log -Append | Out-String
 
-$summary = [regex]::Match($out, "Ringkasan:\s*(.+)").Groups[1].Value.Trim()
-$site = [regex]::Match($out, "Site:\s*(\S+)").Groups[1].Value.Trim()
+# hitung status tiap artikel dari output inspect
+$counts = @{}
+$err = 0
+foreach ($line in ($out -split "`n")) {
+  if ($line -match '\[(OK|  )\]\s+(.+?)\s{2,}https?://') {
+    $v = $matches[2].Trim()
+    if ($counts.ContainsKey($v)) { $counts[$v]++ } else { $counts[$v] = 1 }
+  } elseif ($line -match '\[!!\]') {
+    $err++
+  }
+}
+
+$detail = ($counts.GetEnumerator() | Sort-Object Name | ForEach-Object { "  - $($_.Value) $($_.Key)" }) -join "`n"
+$total = 0
+$counts.Values | ForEach-Object { $total += $_ }
 
 $title = "Rekap Indexing Google (mingguan)"
-$msg = if ($summary) { "$summary`nSite: $site" } else { "Cek log seo-inspect-log.txt" }
+if ($total -gt 0) {
+  $msg = "Rekap indexing Google minggu ini:`nDari $n artikel terbaru, status di Google:`n$detail"
+  if ($err -gt 0) { $msg += "`n`n($err artikel gagal dicek / error)" }
+  $msg += "`n`nKeterangan:`nPASS = sudah diindeks Google."
+  $msg += "`nNEUTRAL = sudah di-crawl tapi belum masuk indeks (biasanya naik ke PASS dalam beberapa hari)."
+  $msg += "`n'unknown to Google' = belum ditemukan Google sama sekali."
+  $msg += "`n`nDetail per-URL ada di seo-inspect-log.txt."
+} else {
+  $msg = "Tidak ada data inspect. Cek seo-inspect-log.txt."
+}
 
 Start-Process powershell -ArgumentList "-NoProfile","-ExecutionPolicy Bypass","-File",$popup,"-Title",$title,"-Message",$msg -WindowStyle Hidden

@@ -79,10 +79,139 @@ const MOCK = {
     '<p><strong>Berapa lama pengerjaan?</strong> Waktu pengerjaan bervariasi tergantung jumlah dan kerumitan desain, namun tim selalu menginformasikan estimasi sejak awal pemesanan.</p>',
 }
 
-function buildPrompt({ keyword, category, location = null, segment = null, segmentCtx = null, extra = "" }) {
+// ---- Template variant (anti-duplikat struktural antar-artikel) ----
+function hashStr(s) {
+  let h = 2166136261
+  for (let i = 0; i < s.length; i++) {
+    h ^= s.charCodeAt(i)
+    h = Math.imul(h, 16777619)
+  }
+  return h >>> 0
+}
+
+const TEMPLATE_VARIANTS = [
+  {
+    name: "checklist",
+    angle: "Buka dengan angle praktis: berikan checklist agar pembaca tak salah pesan.",
+    headings: [
+      "Mengapa {kw} Jadi Pilihan Utama",
+      "Checklist Sebelum Memesan",
+      "Tips Memilih Desain & Bahan",
+      "Estimasi Waktu, Biaya, & Kuantitas",
+      "Praktik Terbaik di {loc}",
+      "Cara Merawat & Menyimpan",
+      "FAQ",
+    ],
+    emphasis:
+      "Sertakan <ul><li> checklist poin-poin praktis. Sebutkan 2-3 produk terkait: piala, medali, prasasti.",
+  },
+  {
+    name: "compare",
+    angle: "Buka dengan angle perbandingan material/bahan secara objektif.",
+    headings: [
+      "Bedah Material {kw}",
+      "Akrilik vs Resin vs Kayu: Mana yang Tepat",
+      "Kapan Memilih Satu atau Lainnya",
+      "Standar Kualitas & Finishing Karyamedia",
+      "Contoh Pemakaian di {loc}",
+      "Tips Membandingkan Penawaran Vendor",
+      "FAQ",
+    ],
+    emphasis:
+      "Sertakan <table> perbandingan (kolom: aspek, opsi A, opsi B) bila relevan. Sebutkan 2-3 produk: prasasti, gift box, souvenir wisuda.",
+  },
+  {
+    name: "casestudy",
+    angle: "Buka dengan narasi studi kasus / kebutuhan instansi nyata di {loc}.",
+    headings: [
+      "Cerita Kebutuhan di {loc}",
+      "Tantangan Segmen Ini",
+      "Solusi Custom dari Karyamedia",
+      "Detail Produksi & Finishing",
+      "Nilai bagi Penerima Penghargaan",
+      "Pelajaran untuk Event Berikutnya",
+      "FAQ",
+    ],
+    emphasis:
+      "Gunakan narasi contoh kasus spesifik & konkret. Sebutkan 2-3 produk: name tag, plakat, medali.",
+  },
+  {
+    name: "mythbuster",
+    angle: "Buka dengan membongkar mitos umum seputar {kw} lalu beri faktanya.",
+    headings: [
+      "Mitos & Fakta Seputar {kw}",
+      "Fakta di Balik Harga & Kualitas",
+      "Cara Kerja Produsen Langsung",
+      "Tips agar Hasil Maksimal",
+      "Praktik Umum di {loc}",
+      "Kesalahan yang Sering Terjadi",
+      "FAQ",
+    ],
+    emphasis:
+      "Sertakan <ul><li> mitos vs fakta. Sebutkan 2-3 produk: piala, prasasti, gift box.",
+  },
+  {
+    name: "timeline",
+    angle: "Buka dengan alur/timeline produksi dari order hingga kirim.",
+    headings: [
+      "Alur Pembuatan {kw}",
+      "Tahap Desain & Persetujuan",
+      "Tahap Produksi & Quality Control",
+      "Pengemasan & Pengiriman ke {loc}",
+      "Tips Menjaga Konsistensi Massal",
+      "Evaluasi Setelah Acara",
+      "FAQ",
+    ],
+    emphasis:
+      "Sertakan urutan tahapan (bisa <ol><li>). Sebutkan 2-3 produk: medali, name tag, souvenir wisuda.",
+  },
+  {
+    name: "budget",
+    angle: "Buka dengan angle pertimbangan anggaran & value bagi pengadaan.",
+    headings: [
+      "Menghitung Value {kw}",
+      "Faktor yang Mempengaruhi Harga",
+      "Hemat dengan Produsen Langsung",
+      "Opsi untuk Event Skala Besar",
+      "Pengalaman Pengadaan di {loc}",
+      "Strategi Anggaran & Timeline",
+      "FAQ",
+    ],
+    emphasis:
+      "Sertakan angka 'mulai dari' & range harga bila relevan. Sebutkan 2-3 produk: piala, medali, prasasti.",
+  },
+]
+
+export const ARTICLE_TEMPLATE_VARIANT_COUNT = TEMPLATE_VARIANTS.length
+
+function resolveVariant(variant, keyword) {
+  const n = TEMPLATE_VARIANTS.length
+  if (typeof variant === "number" && Number.isFinite(variant)) {
+    return TEMPLATE_VARIANTS[((variant % n) + n) % n]
+  }
+  if (variant && Array.isArray(variant.headings)) return variant
+  return TEMPLATE_VARIANTS[hashStr(keyword || "") % n]
+}
+
+function variantBlock(variant, keyword, loc) {
+  const place = (s) => String(s).replace(/\{kw\}/g, keyword || "").replace(/\{loc\}/g, loc || "seluruh Indonesia")
+  const headings = variant.headings.map(place)
+  return (
+    `\n\nSTRUKTUR & SUDUT PANDANG ARTIKEL (wajib diikuti, dari atas ke bawah):\n` +
+    headings.map((h, i) => `${i + 1}. <h2>${h}</h2>`).join("\n") +
+    `\nSudut pandang pembuka: ${place(variant.angle)}` +
+    `\nPenekanan isi: ${place(variant.emphasis)}` +
+    `\nKEKHUSUSAN (wajib agar tidak mirip artikel umum): sebutkan MINIMAL 3 konteks spesifik untuk ${place("{loc}")} ` +
+    `(mis. kategori instansi, kampus, komunitas, atau event lokal di wilayah tersebut) dan MINIMAL 2 spesifikasi teknis produk ` +
+    `(ukuran dalam mm, jenis bahan, atau jenis finishing). Gunakan istilah & contoh yang se-spesifik mungkin pada topik ini.`
+  )
+}
+
+function buildPrompt({ keyword, category, location = null, segment = null, segmentCtx = null, variant = null, extra = "" }) {
   const loc = location || "seluruh Indonesia"
   const seg = segment || "instansi, kampus, dan event"
   const segCtxTxt = segmentCtx ? ` (mis. ${segmentCtx})` : ""
+  const vBlock = variantBlock(resolveVariant(variant, keyword), keyword, loc)
   return `Tulis artikel SEO berbahasa Indonesia, 100% orisinal (jangan kutip/meniru teks pihak ketiga mana pun), untuk bisnis "Karyamedia" (produsen souvenir & custom manufacturing berbasis Yogyakarta sejak 2001 yang melayani seluruh Indonesia, termasuk ${loc}).
 
 Keyword utama: "${keyword}"
@@ -103,10 +232,10 @@ Buat objek JSON dengan field berikut:
   * bahasa Indonesia natural & mudah dipahami, SEO-friendly, sebutkan "Karyamedia" secara wajar 1-2 kali
   * JANGAN gunakan markdown; hanya HTML inline (<p>, <h2>, <h3>, <strong>, <ul><li> bila perlu)
   * JANGAN sertakan satupun link/hyperlink (akan ditambahkan otomatis nanti)
-  Return HANYA objek JSON, tanpa teks lain.${extra}`
+  Return HANYA objek JSON, tanpa teks lain.${vBlock}${extra}`
 }
 
-export function buildBeatPrompt({ keyword, category, competitor = null, location = null, segment = null, segmentCtx = null, extra = "" }) {
+export function buildBeatPrompt({ keyword, category, competitor = null, location = null, segment = null, segmentCtx = null, variant = null, extra = "" }) {
   const c = competitor && competitor.outline && competitor.outline.length ? competitor : null
   const compBlock = c
     ? `
@@ -122,6 +251,7 @@ Panjang artikel pesaing: ~${c.words || "?"} kata.
   const loc = location || "seluruh Indonesia"
   const seg = segment || "instansi, kampus, dan event"
   const segCtxTxt = segmentCtx ? ` (mis. ${segmentCtx})` : ""
+  const vBlock = variantBlock(resolveVariant(variant, keyword), keyword, loc)
   return `Tulis artikel SEO berbahasa Indonesia, 100% ORISINAL (JANGAN meniru/mengutip teks pesaing; pakai sudut pandang & contoh sendiri), untuk bisnis "Karyamedia" (produsen souvenir & custom manufacturing berbasis Yogyakarta sejak 2001 yang melayani seluruh Indonesia, termasuk ${loc}: plakat, medali, piala, prasasti, gift box, souvenir wisuda, name tag, dll).
 
 Keyword utama: "${keyword}"
@@ -144,7 +274,7 @@ Buat objek JSON dengan field berikut:
   * Bahasa natural, SEO-friendly, sebut "Karyamedia" wajar 1-2x.
   * JANGAN markdown; hanya HTML inline (<p>, <h2>, <h3>, <table>, <ul><li>, <strong>).
   * JANGAN satupun hyperlink (link disuntik otomatis nanti).
-Return HANYA objek JSON, tanpa teks lain.${extra}`
+  Return HANYA objek JSON, tanpa teks lain.${vBlock}${extra}`
 }
 
 export async function generateArticle(input) {

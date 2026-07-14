@@ -14,7 +14,7 @@ import { execSync } from "node:child_process"
 import { fileURLToPath } from "node:url"
 import { dirname, join, resolve } from "node:path"
 import { extractArticles } from "./article-lint.mjs"
-import { generateArticle, buildBeatPrompt } from "../llm/write.mjs"
+import { generateArticle, buildBeatPrompt, ARTICLE_TEMPLATE_VARIANT_COUNT } from "../llm/write.mjs"
 import { commitAndPush } from "./git.mjs"
 import { SEGMENTS } from "./geo.mjs"
 
@@ -22,6 +22,15 @@ import { SEGMENTS } from "./geo.mjs"
 function segmentLabel(key) {
   if (!key) return null
   return SEGMENTS.find((s) => s.key === key)?.label || key
+}
+
+function hashStr(s) {
+  let h = 2166136261
+  for (let i = 0; i < s.length; i++) {
+    h ^= s.charCodeAt(i)
+    h = Math.imul(h, 16777619)
+  }
+  return h >>> 0
 }
 
 const here = dirname(fileURLToPath(import.meta.url))
@@ -354,6 +363,10 @@ async function main() {
 
   console.log(`Keyword: "${keyword}"  ->  slug: ${slug}  kategori: ${category}${beat ? "  [BEAT MODE]" : ""}`)
 
+  // Pilih varian kerangka artikel secara deterministik dari slug agar tiap
+  // artikel punya struktur & sudut pandang berbeda (menekan kemiripan konten).
+  const variantIdx = hashStr(slug) % ARTICLE_TEMPLATE_VARIANT_COUNT
+
   // ---- competitor outline (skyscraper) ----
   let competitor = null
   if (beat && competitorUrl) {
@@ -371,8 +384,8 @@ async function main() {
   const targetWords = beat ? 1800 : 1100
   const genOpts = (extra) =>
     beat
-      ? { keyword, category, prompt: buildBeatPrompt({ keyword, category, competitor, location, segment: segLabel, segmentCtx: segCtx, extra }) }
-      : { keyword, category, location, segment: segLabel, segmentCtx: segCtx, extra }
+      ? { keyword, category, prompt: buildBeatPrompt({ keyword, category, competitor, location, segment: segLabel, segmentCtx: segCtx, variant: variantIdx, extra }) }
+      : { keyword, category, location, segment: segLabel, segmentCtx: segCtx, variant: variantIdx, extra }
 
   console.log("Menulis prose via LLM...")
   let data = await generateArticle(genOpts())

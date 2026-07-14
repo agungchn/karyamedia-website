@@ -29,6 +29,7 @@ import { dirname, join, resolve } from "node:path"
 import { getToken, getSite, api } from "../gsc/analyze.mjs"
 import { bingQueryOpportunities, bingSeedVolumes, bingTopicIdeas } from "../bing/source.mjs"
 import { competitorTopics } from "./competitor-topics.mjs"
+import { buildTopics } from "./geo.mjs"
 import { extractArticles } from "./article-lint.mjs"
 import { inferCategory } from "./article-generate.mjs"
 import { commitAndPush } from "./git.mjs"
@@ -296,17 +297,55 @@ async function main() {
     opportunities.sort((a, b) => b.impressions - a.impressions)
   }
 
-  // Fallback: if GSC has no data yet (e.g. site not indexed), source
-  // keyword opportunities from a curated long-tail list so the daily run
-  // still produces articles. Rotates automatically as articles get added.
-  if (opportunities.length === 0 && !process.env.GSC_MOCK) {
-    console.log("\nGSC kosong - pakai fallback daftar long-tail kurasi...")
-    for (const kw of FALLBACK_KEYWORDS) {
-      if (!nearDup(kw, working)) {
-        opportunities.push({ query: kw, impressions: 0, clicks: 0, ctr: 0, position: 0 })
-      }
+  // Geo pool: provinsi × segmen × produk dijadikan MESIN KONTEN UTAMA agar
+  // artikel baru menyebar ke seluruh Indonesia (bukan cuma Jogja). Selalu
+  // disertakan (bukan sekadar fallback) dengan impression sintetik yang lebih
+  // tinggi dari topik competitor-derived, sehingga generator memprioritaskan
+  // sebaran geografis — namun tetap di bawah demand riil GSC/Bing bila ada.
+  // Rotasi per-hari di buildTopics() menjamin provinsi/segmen terdistribusi
+  // merata, dan topik yang sudah jadi artikel gugur otomatis via nearDup.
+  const GEO_IMP = 500
+  const geo = buildTopics()
+  const haveQ = new Set(opportunities.map((o) => o.query.trim().toLowerCase()))
+  let geoAdded = 0
+  for (const t of geo) {
+    const q = t.query.trim().toLowerCase()
+    if (haveQ.has(q)) continue
+    if (nearDup(t.query, working)) continue
+    opportunities.push({
+      query: t.query,
+      impressions: GEO_IMP,
+      clicks: 0,
+      ctr: 0,
+      position: 0,
+      _province: t.province,
+      _segment: t.segment,
+      _category: t.category,
+    })
+    haveQ.add(q)
+    geoAdded++
+  }
+  // pelengkap: long-tail non-geo (resolusi rendah) sebagai cadangan
+  for (const kw of FALLBACK_KEYWORDS) {
+    if (!nearDup(kw, working)) {
+      opportunities.push({ query: kw, impressions: 10, clicks: 0, ctr: 0, position: 0 })
     }
-    console.log(`Fallback long-tail: ${opportunities.length} opportunity tersedia.`)
+  }
+  console.log(`Geo pool: ${geoAdded} opportunity provinsi×segmen (imp ${GEO_IMP}) disertakan.`)
+
+  // Re-rank SETELAH geo pool disertakan agar topik provinsi×segmen (imp ${GEO_IMP})
+  // benar-benar memimpin daftar, di atas competitor-derived & bing-seed.
+  const reBoost = (q) => {
+    const lq = (q || "").toLowerCase()
+    let b = 0
+    for (const [seed, vol] of seedVol) if (lq.includes(seed)) b += vol
+    return Math.round(b / 10)
+  }
+  if (seedVol.size) {
+    for (const o of opportunities) o._boost = reBoost(o.query)
+    opportunities.sort((a, b) => b.impressions + (b._boost || 0) - (a.impressions + (a._boost || 0)))
+  } else {
+    opportunities.sort((a, b) => b.impressions - a.impressions)
   }
 
   console.log(`Sudah punya artikel: ${covered}`)
@@ -327,10 +366,15 @@ async function main() {
     const top = opportunities.slice(0, GEN_TOP)
     const generatedSlugs = []
     for (const o of top) {
-      const cat = inferCategory(o.query)
-      console.log(`\n### "${o.query}" (kategori: ${cat})`)
+      const cat = o._category || inferCategory(o.query)
+      const genEnv = {
+        ...process.env,
+        ARTICLE_PROVINCE: o._province || "",
+        ARTICLE_SEGMENT: o._segment || "",
+      }
+      console.log(`\n### "${o.query}" (kategori: ${cat}${o._province ? ", lokasi: " + o._province : ""}${o._segment ? ", segmen: " + o._segment : ""})`)
       const out = execSync(`node scripts/seo/article-generate.mjs "${o.query}" --category "${cat}"`, {
-        env: process.env,
+        env: genEnv,
         cwd: root,
         stdio: "pipe",
       }).toString()

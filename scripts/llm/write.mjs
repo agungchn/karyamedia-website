@@ -79,11 +79,14 @@ const MOCK = {
     '<p><strong>Berapa lama pengerjaan?</strong> Waktu pengerjaan bervariasi tergantung jumlah dan kerumitan desain, namun tim selalu menginformasikan estimasi sejak awal pemesanan.</p>',
 }
 
-function buildPrompt({ keyword, category, extra = "" }) {
-  return `Tulis artikel SEO berbahasa Indonesia, 100% orisinal (jangan kutip/meniru teks pihak ketiga mana pun), untuk bisnis "Karyamedia" (produsen souvenir & custom manufacturing di Jogja: plakat, medali, piala, prasasti, gift box, souvenir wisuda, name tag, dll).
+function buildPrompt({ keyword, category, location = null, segment = null, extra = "" }) {
+  const loc = location || "seluruh Indonesia"
+  const seg = segment || "instansi, kampus, dan event"
+  return `Tulis artikel SEO berbahasa Indonesia, 100% orisinal (jangan kutip/meniru teks pihak ketiga mana pun), untuk bisnis "Karyamedia" (produsen souvenir & custom manufacturing berbasis Yogyakarta sejak 2001 yang melayani seluruh Indonesia, termasuk ${loc}).
 
 Keyword utama: "${keyword}"
 Kategori: ${category}
+Segmen target: ${seg} (gunakan contoh kasus, narasi, dan kebutuhan yang relevan dengan ${loc} dan segmen tersebut secara natural; jangan ubah fakta bahwa Karyamedia berbasis Yogyakarta).
 
 Buat objek JSON dengan field berikut:
 - "title": judul artikel, MAKSIMAL 60 karakter, HARUS mengandung keyword utama secara utuh (contoh: jika keyword "plakat akrilik custom" maka title mengandung frasa tersebut).
@@ -94,7 +97,7 @@ Buat objek JSON dengan field berikut:
   * minimal 4 heading <h2> (pakai tag <h2>...</h2>)
   * 240 karakter PERTAMA konten (paragraf pembuka) HARUS mengandung keyword utama secara utuh
   * sebutkan nama produk/kategori terkait (plakat, piala, medali, prasasti, gift box, souvenir wisuda, name tag, dll) SECARA NATURAL di paragraf pembuka/awal artikel, agar tautan ke katalog produk otomatis bisa disematkan di bagian atas
-  * gunakan nada otoritatif seperti ahli produsen: sertakan bukti konkret (Karyamedia berdiri sejak 2001, berbasis Yogyakarta, melayani instansi & event nasional, standar ukiran/produksi presisi) bila relevan; hindari kalimat promosi generik tanpa bukti
+  * gunakan nada ahli produsen yang rendah hati & berbukti: sertakan bukti konkret (Karyamedia berdiri sejak 2001, berbasis Yogyakarta, melayani ratusan instansi & event nasional, standar ukiran/produksi presisi) bila relevan; tekankan kualitas, presisi, dan bahwa Karyamedia adalah produsen langsung (pabrik) sehingga harga lebih sehat & transparan; hindari bahasa promosi murahan dan JANGAN menyebut pihak lain (calo/agen) secara negatif
   * WAJIB ada bagian <h2>FAQ</h2> di akhir dengan 3-5 pasang pertanyaan & jawaban, tiap pasang PASTI format <h3>Pertanyaan?</h3><p>Jawaban.</p> (pakai <h3> untuk pertanyaan dan <p> untuk jawaban)
   * bahasa Indonesia natural & mudah dipahami, SEO-friendly, sebutkan "Karyamedia" secara wajar 1-2 kali
   * JANGAN gunakan markdown; hanya HTML inline (<p>, <h2>, <h3>, <strong>, <ul><li> bila perlu)
@@ -102,7 +105,7 @@ Buat objek JSON dengan field berikut:
   Return HANYA objek JSON, tanpa teks lain.${extra}`
 }
 
-export function buildBeatPrompt({ keyword, category, competitor = null, extra = "" }) {
+export function buildBeatPrompt({ keyword, category, competitor = null, location = null, segment = null, extra = "" }) {
   const c = competitor && competitor.outline && competitor.outline.length ? competitor : null
   const compBlock = c
     ? `
@@ -115,10 +118,13 @@ ${(c.bullets || []).map((b) => "* " + b).join("\n")}
 Panjang artikel pesaing: ~${c.words || "?"} kata.
 `
     : ""
-  return `Tulis artikel SEO berbahasa Indonesia, 100% ORISINAL (JANGAN meniru/mengutip teks pesaing; pakai sudut pandang & contoh sendiri), untuk bisnis "Karyamedia" (produsen souvenir & custom manufacturing di Yogyakarta sejak 2001: plakat, medali, piala, prasasti, gift box, souvenir wisuda, name tag, dll).
+  const loc = location || "seluruh Indonesia"
+  const seg = segment || "instansi, kampus, dan event"
+  return `Tulis artikel SEO berbahasa Indonesia, 100% ORISINAL (JANGAN meniru/mengutip teks pesaing; pakai sudut pandang & contoh sendiri), untuk bisnis "Karyamedia" (produsen souvenir & custom manufacturing berbasis Yogyakarta sejak 2001 yang melayani seluruh Indonesia, termasuk ${loc}: plakat, medali, piala, prasasti, gift box, souvenir wisuda, name tag, dll).
 
 Keyword utama: "${keyword}"
 Kategori: ${category}
+Segmen target: ${seg} (gunakan contoh kasus, narasi, dan kebutuhan yang relevan dengan ${loc} dan segmen tersebut secara natural; jangan ubah fakta bahwa Karyamedia berbasis Yogyakarta).
 ${compBlock}
 Buat objek JSON dengan field berikut:
 - "title": MAKSIMAL 60 karakter, HARUS mengandung keyword utama secara utuh.
@@ -130,7 +136,7 @@ Buat objek JSON dengan field berikut:
   * 240 karakter PERTAMA (paragraf pembuka) HARUS mengandung keyword utama secara utuh.
   * sebutkan nama produk/kategori terkait (plakat, piala, medali, prasasti, gift box, souvenir wisuda, name tag, dll) SECARA NATURAL di awal artikel, agar tautan ke katalog produk otomatis bisa disematkan di bagian atas.
   * JIKA topik membandingkan (vs / atau / mending / perbandingan), sertakan <table> perbandingan jelas (kolom: aspek, opsi A, opsi B) dengan narasi Karyamedia.
-  * Gunakan nada ahli produsen & sertakan BUKTI KONKRET: Karyamedia berdiri SEJAK 2001, berbasis YOGYAKARTA, melayani RATUSAN instansi & event nasional, sebutkan angka/spesifikasi riil (ukuran mm, lead time, range harga "mulai dari", standar quality control).
+  * Gunakan nada ahli produsen & sertakan BUKTI KONKRET: Karyamedia berdiri SEJAK 2001, berbasis YOGYAKARTA, melayani RATUSAN instansi & event nasional, sebutkan angka/spesifikasi riil (ukuran mm, lead time, range harga "mulai dari", standar quality control). Tekankan bahwa Karyamedia adalah PRODUSEN LANGSUNG (pabrik) sehingga harga lebih sehat & transparan; hindari bahasa promosi murahan dan JANGAN menyebut pihak lain (calo/agen) secara negatif.
   * ${c ? "Tutupi SEMUA poin pesaing DI ATAS, lalu TAMBAHKAN minimal 3 sudut pandang/section BARU yang TIDAK dibahas pesaing (lebih mendalam, contoh kasus, tips praktis, mitos, checklist, atau data Karyamedia)." : "Buat artikel paling komprehensif & otoritatif di topik ini."}
   * WAJIB <h2>FAQ</h2> di akhir dengan 5-7 pasang <h3>Pertanyaan?</h3><p>Jawaban.</p>
   * Bahasa natural, SEO-friendly, sebut "Karyamedia" wajar 1-2x.

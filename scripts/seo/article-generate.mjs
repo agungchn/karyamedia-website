@@ -16,6 +16,13 @@ import { dirname, join, resolve } from "node:path"
 import { extractArticles } from "./article-lint.mjs"
 import { generateArticle, buildBeatPrompt } from "../llm/write.mjs"
 import { commitAndPush } from "./git.mjs"
+import { SEGMENTS } from "./geo.mjs"
+
+// map segment key (pemerintahan/kampus/eo/komunitas) -> label manusiawi
+function segmentLabel(key) {
+  if (!key) return null
+  return SEGMENTS.find((s) => s.key === key)?.label || key
+}
 
 const here = dirname(fileURLToPath(import.meta.url))
 const root = resolve(here, "..", "..")
@@ -94,12 +101,13 @@ function enforceTitle(title, headKw) {
   }
   return t || (headKw ? headKw.slice(0, 60) : title || "")
 }
-function enforceDescription(desc) {
+function enforceDescription(desc, location = null) {
   if (!desc) return desc
   if (desc.length > 160) return trimToWords(desc, 157)
   if (desc.length < 120) {
+    const loc = location || "seluruh Indonesia"
     const pad =
-      " Karya berkualitas dari Karyamedia, produsen souvenir & custom manufacturing sejak 2001 di Yogyakarta."
+      ` Karya berkualitas dari Karyamedia, produsen souvenir & custom manufacturing berbasis Yogyakarta sejak 2001 yang melayani ${loc}.`
     let d = desc
     while (d.length < 120 && d.length + pad.length <= 160) d += pad
     return d.slice(0, 160)
@@ -311,17 +319,25 @@ async function main() {
   const args = process.argv.slice(2)
   let keyword = "", category = null
   let commitPush = false, beat = false, competitorUrl = null
+  let province = null, segment = null
   for (let i = 0; i < args.length; i++) {
     if (args[i] === "--category") category = args[++i]
     else if (args[i] === "--commit-push") commitPush = true
     else if (args[i] === "--beat") beat = true
     else if (args[i] === "--competitor-url") competitorUrl = args[++i]
+    else if (args[i] === "--province") province = args[++i]
+    else if (args[i] === "--segment") segment = args[++i]
     else if (!keyword) keyword = args[i]
   }
   if (!keyword) {
-    console.error('Pakai: node scripts/seo/article-generate.mjs "<keyword>" [--category X] [--beat] [--competitor-url URL] [--commit-push]')
+    console.error('Pakai: node scripts/seo/article-generate.mjs "<keyword>" [--category X] [--province "Nama Provinsi"] [--segment pemerintahan|kampus|eo|komunitas] [--beat] [--competitor-url URL] [--commit-push]')
     process.exit(1)
   }
+  // lokasi target (provinsi) & segmen — diinject dari ideas.mjs via env saat
+  // dijalankan oleh scheduler; untuk manual run bisa pakai flag di atas.
+  const location = province || process.env.ARTICLE_PROVINCE || null
+  const seg = segment || process.env.ARTICLE_SEGMENT || null
+  const segLabel = segmentLabel(seg)
   if (!category) category = beat ? "Blog" : inferCategory(keyword)
 
   let slug = slugify(keyword)
@@ -354,8 +370,8 @@ async function main() {
   const targetWords = beat ? 1800 : 1100
   const genOpts = (extra) =>
     beat
-      ? { keyword, category, prompt: buildBeatPrompt({ keyword, category, competitor, extra }) }
-      : { keyword, category, extra }
+      ? { keyword, category, prompt: buildBeatPrompt({ keyword, category, competitor, location, segment: segLabel, extra }) }
+      : { keyword, category, location, segment: segLabel, extra }
 
   console.log("Menulis prose via LLM...")
   let data = await generateArticle(genOpts())
@@ -390,7 +406,7 @@ async function main() {
   // Guarantee title/description length rules (LLM sometimes overshoots).
   const headKw = (keyword || "").toLowerCase().split(" ")[0]
   data.title = enforceTitle(data.title || keyword, headKw)
-  data.description = enforceDescription(data.description || "")
+  data.description = enforceDescription(data.description || "", location)
 
   const dup = dupCheck(slug, data.title || keyword, working)
   if (dup) {
@@ -402,7 +418,8 @@ async function main() {
     .replace(/^```(?:html)?/i, "").replace(/```$/i, "").trim()
   if (!/<h2[^>]*>\s*FAQ\s*<\/h2>/i.test(content)) {
     const faqKw = keyword
-    content += `<h2>FAQ</h2><h3>Apakah Karyamedia melayani pembuatan ${faqKw} custom?</h3><p>Ya, Karyamedia melayani pembuatan ${faqKw} custom yang disesuaikan dengan kebutuhan, tema, dan anggaran acara Anda di Yogyakarta.</p><h3>Bagaimana cara memesan ${faqKw}?</h3><p>Silakan pelajari melalui <a href="/cara-pesan">halaman cara pesan</a> atau hubungi tim kami di <a href="/profil">profil Karyamedia</a>.</p>`
+    const faqLoc = location || "seluruh Indonesia"
+    content += `<h2>FAQ</h2><h3>Apakah Karyamedia melayani pembuatan ${faqKw} custom?</h3><p>Ya, Karyamedia melayani pembuatan ${faqKw} custom yang disesuaikan dengan kebutuhan, tema, dan anggaran acara Anda di ${faqLoc}.</p><h3>Bagaimana cara memesan ${faqKw}?</h3><p>Silakan pelajari melalui <a href="/cara-pesan">halaman cara pesan</a> atau hubungi tim kami di <a href="/profil">profil Karyamedia</a>.</p>`
   }
   const prodCat = resolveProductCategory(category, keyword, catSlugs)
   content = injectCategoryLink(content, prodCat || category, catSlugs)

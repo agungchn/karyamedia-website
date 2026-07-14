@@ -135,7 +135,7 @@ function faqBlock(tags, title, category) {
   const kw = tags.length ? tags[0] : category || "produk"
   return (
     `<h2>FAQ</h2>` +
-    `<h3>Apakah Karyamedia melayani pembuatan ${escTpl(kw)} custom?</h3><p>Ya, Karyamedia melayani pembuatan ${escTpl(kw)} custom yang disesuaikan dengan kebutuhan, tema, dan anggaran acara Anda di Yogyakarta.</p>` +
+    `<h3>Apakah Karyamedia melayani pembuatan ${escTpl(kw)} custom?</h3><p>Ya, Karyamedia melayani pembuatan ${escTpl(kw)} custom yang disesuaikan dengan kebutuhan, tema, dan anggaran acara Anda di seluruh Indonesia.</p>` +
     `<h3>Bagaimana cara memesan ${escTpl(kw)}?</h3><p>Silakan pelajari melalui <a href="/cara-pesan">halaman cara pesan</a> atau hubungi tim kami di <a href="/profil">profil Karyamedia</a> untuk konsultasi gratis.</p>` +
     `<h3>Apakah ada garansi untuk pesanan ${escTpl(kw)}?</h3><p>Setiap pesanan dikerjakan dengan standar kualitas tinggi dan quality control sebelum pengiriman sehingga hasil rapi dan tahan lama.</p>`
   )

@@ -15,6 +15,17 @@ function Show-Popup {
   Start-Process powershell -ArgumentList "-NoProfile","-ExecutionPolicy Bypass","-File",$popup,"-Title",$Title,"-Message",$Message -WindowStyle Hidden
 }
 
+# Kabari Google bahwa sitemap berubah agar artikel baru ter-crawl lebih cepat.
+# (Google tidak pakai IndexNow; "public sitemap ping" juga sudah tidak didukung -> 404/410.
+#  Cara resmi yang tersisa: submit sitemap via Search Console API, lihat submit-sitemap.mjs.)
+function Submit-SitemapGSC {
+  try {
+    & node scripts/seo/submit-sitemap.mjs 2>&1 | Tee-Object -FilePath $log -Append | Out-String
+  } catch {
+    Add-Content -Path $log -Value "submit-sitemap gagal: $($_.Exception.Message)"
+  }
+}
+
 $ts = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
 Add-Content -Path $log -Value "`n===== $ts ====="
 
@@ -69,6 +80,9 @@ Show-Popup -Title "$n Artikel Baru Terbit" -Message "$(($titles -join ', ')) ber
 
 # tunggu Vercel deploy sekali saja
 Start-Sleep -Seconds 120
+
+# kabari Google (Search Console API) bahwa sitemap (berisi artikel baru) sudah berubah
+Submit-SitemapGSC
 
 foreach ($slug in $slugs) {
   $url = "https://karyamediasouvenir.com/blog/$slug"

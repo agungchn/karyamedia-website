@@ -18,7 +18,9 @@ const root = path.resolve(here, "..", "..")
 function loadCompetitors() {
   try {
     const p = path.join(here, "competitors.json")
-    const arr = JSON.parse(fs.readFileSync(p, "utf8"))
+    let raw = fs.readFileSync(p, "utf8")
+    if (raw.charCodeAt(0) === 0xfeff) raw = raw.slice(1) // strip UTF-8 BOM
+    const arr = JSON.parse(raw)
     return Array.isArray(arr) ? arr.filter(Boolean) : []
   } catch {
     return []
@@ -60,14 +62,15 @@ async function sitemapUrls(domain) {
     if (!xml) continue
     const locs = extractLocs(xml)
     if (!locs.length) continue
-    const subs = locs.filter((l) => l.endsWith(".xml"))
-    if (subs.length && subs.length !== locs.length) {
+    const subs = locs.filter((l) => l.toLowerCase().endsWith(".xml"))
+    if (subs.length) {
+      // sitemap index: follow the sub-sitemaps (bounded)
       const urls = []
-      for (const s of subs.slice(0, 10)) {
+      for (const s of subs.slice(0, 15)) {
         const sx = await fetchText(s)
         if (sx) urls.push(...extractLocs(sx))
       }
-      return urls
+      return urls.length ? urls : locs
     }
     return locs
   }

@@ -15,7 +15,9 @@
 //   2. Bing GetQueryStats (real Bing queries)
 //   3. Bing GetKeywordStats -> seed-derived long-tail topics (data-driven,
 //      expanded from the top-demand seeds so content follows real market demand)
-//   4. Curated long-tail fallback (FALLBACK_KEYWORDS) when the above are empty.
+//   4. Competitor sitemaps (scripts/seo/competitors.json) -> proven-ranking
+//      topics scraped from public sitemaps of rival sites
+//   5. Curated long-tail fallback (FALLBACK_KEYWORDS) when the above are empty.
 // Bing seed demand is also used as a soft ranking boost. Needs GSC credentials
 // (scripts/gsc/credentials.json). Set GSC_MOCK / BING_MOCK for offline fixtures.
 // Set GSC_MOCK / BING_MOCK to run offline with fixtures (no network).
@@ -26,6 +28,7 @@ import { fileURLToPath } from "node:url"
 import { dirname, join, resolve } from "node:path"
 import { getToken, getSite, api } from "../gsc/analyze.mjs"
 import { bingQueryOpportunities, bingSeedVolumes, bingTopicIdeas } from "../bing/source.mjs"
+import { competitorTopics } from "./competitor-topics.mjs"
 import { extractArticles } from "./article-lint.mjs"
 import { inferCategory } from "./article-generate.mjs"
 import { commitAndPush } from "./git.mjs"
@@ -242,6 +245,34 @@ async function main() {
     if (added) console.log(`Bing seed-derived topics: ${added} (by demand volume)`)
   } catch (e) {
     console.error(`Bing seed ideas gagal (${e.message}); lanjut tanpa itu.`)
+  }
+
+  // --- Competitor sitemap topics (Sumber 5) ---
+  // Scrape PUBLIC sitemaps of competitor sites (scripts/seo/competitors.json)
+  // and turn their article slugs into candidate topics. Strong market signal
+  // (these are proven-ranking topics). Ranked with a demand proxy + seed boost.
+  try {
+    const comp = await competitorTopics()
+    const have = new Set(opportunities.map((o) => o.query.trim().toLowerCase()))
+    let added = 0
+    for (const c of comp) {
+      const q = c.query.trim().toLowerCase()
+      if (have.has(q)) continue
+      if (nearDup(c.query, working)) continue
+      opportunities.push({
+        query: c.query,
+        impressions: 100,
+        clicks: 0,
+        ctr: 0,
+        position: 0,
+        _comp: true,
+      })
+      have.add(q)
+      added++
+    }
+    if (added) console.log(`Competitor-derived topics: ${added} (dari sitemap pesaing)`)
+  } catch (e) {
+    console.error(`Competitor topics gagal (${e.message}); lanjut tanpa itu.`)
   }
   // Soft ranking boost from Bing broad seed demand (GetKeywordStats): a topic
   // that sits under a high-volume seed gets nudged up without overriding the

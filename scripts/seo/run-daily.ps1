@@ -31,6 +31,22 @@ try {
   # biarkan lanjut meskipun link-pillar tidak mengubah apa pun
 }
 
+# auto-konsolidasi: deteksi artikel duplikat (>=80% Jaccard) secara otomatis,
+# rewire link internal, dan merge + 301 untuk yang nyaris identik (>=85%).
+# Hasil disimpan ke consolidate.merges.json (idempoten).
+try {
+  & npm run seo:consolidate 2>&1 | Tee-Object -FilePath $log -Append | Out-String
+  # jika konsolidasi mengubah file, commit + push agar tidak tertimpa push berikutnya
+  $consStat = & git status --porcelain 2>$null
+  if ($consStat) {
+    & git add -A 2>&1 | Out-Null
+    & git commit -m "chore(seo): auto-consolidate duplicate articles" 2>&1 | Tee-Object -FilePath $log -Append | Out-String
+    & git push 2>&1 | Tee-Object -FilePath $log -Append | Out-String
+  }
+} catch {
+  # konsolidasi gagal bukan masalah kritis
+}
+
 $out = & npm run seo:ideas -- --generate-top 1 --commit-push 2>&1 | Tee-Object -FilePath $log -Append | Out-String
 $ideasExit = $LASTEXITCODE
 

@@ -69,7 +69,7 @@ export const articles: Article[] = [
 
 <p>Medali logam dengan finishing emas, perak, dan perunggu adalah pilihan klasik untuk turnamen bergengsi dan penghargaan resmi. Medali akrilik dengan full color UV printing cocok untuk lomba sekolah, festival, dan event kreatif. Medali fiberglass ringan dan tahan benturan, ideal untuk turnamen olahraga outdoor.</p>
 
-<p>Untuk panduan lebih detail, baca artikel <a href="/blog/medali-custom-panduan-memilih-dan-memesan">Panduan Memilih Medali Custom: Harga, Bahan, dan Tips Lengkap</a> dan <a href="/blog/medali-custom-untuk-kompetisi-dan-event">Harga Medali Custom untuk Kompetisi Olahraga dan Event Sekolah</a>.</p>
+<p>Untuk panduan lebih detail, baca artikel <a href="/blog/medali-custom-panduan-memilih-dan-memesan">Panduan Memilih Medali Custom: Harga, Bahan, dan Tips Lengkap</a> dan <a href="/blog/medali-custom-panduan-memilih-dan-memesan">Harga Medali Custom untuk Kompetisi Olahraga dan Event Sekolah</a>.</p>
 
 <h2>Plakat Akrilik — Penghargaan Elegan dan Modern</h2>
 
@@ -519,7 +519,7 @@ export const articles: Article[] = [
 
 <p>Plakat yang berkualitas tidak hanya menjadi simbol penghargaan, tetapi juga kenang-kenangan yang akan dijaga oleh penerimanya selama bertahun-tahun. Dengan memilih bahan, desain, dan finishing yang tepat, plakat custom Anda akan meninggalkan kesan mendalam dan menjadi investasi relasi yang berharga. Tim Karyamedia Souvenir siap membantu Anda mewujudkan plakat impian sesuai kebutuhan dan anggaran. Kami berkomitmen untuk memberikan produk terbaik dengan harga yang transparan dan tepat waktu.</p>
 
-<p>Baca juga artikel site-wide <a href="/blog/panduan-lengkap-souvenir-custom">Panduan Lengkap Souvenir Custom</a> untuk informasi tentang jenis souvenir lainnya. Untuk informasi tentang medali, baca <a href="/blog/medali-custom-panduan-memilih-dan-memesan">Panduan Memilih Medali Custom</a> dan <a href="/blog/medali-custom-untuk-kompetisi-dan-event">Harga Medali Custom untuk Kompetisi Olahraga</a>.</p>
+<p>Baca juga artikel site-wide <a href="/blog/panduan-lengkap-souvenir-custom">Panduan Lengkap Souvenir Custom</a> untuk informasi tentang jenis souvenir lainnya. Untuk informasi tentang medali, baca <a href="/blog/medali-custom-panduan-memilih-dan-memesan">Panduan Memilih Medali Custom</a> dan <a href="/blog/medali-custom-panduan-memilih-dan-memesan">Harga Medali Custom untuk Kompetisi Olahraga</a>.</p>
 
 <h2 id="faq">FAQ</h2>
 
@@ -1456,13 +1456,13 @@ export const articles: Article[] = [
 <p>Pemilihan jenis tumbler sangat tergantung pada target penerima, anggaran, dan tujuan pemberian. Berikut adalah jenis-jenis utama tumbler custom yang tersedia di Karyamedia Souvenir:</p>
 
 <h3>Tumbler Stainless Steel</h3>
-<p>Tumbler stainless steel adalah pilihan premium untuk merchandise eksklusif. Terbuat dari stainless steel grade 304 atau 201 yang aman untuk makanan dan minuman. Tersedia dalam varian single wall (dinding tunggal) dan double wall (dinding ganda). Finishing doff (brushed) atau glossy dengan warna solid. <strong>Harga tumbler stainless steel custom</strong> mulai Rp30.000 hingga Rp80.000 per pcs tergantung kapasitas dan ketebalan bahan. Kapasitas tersedia: 350 ml, 500 ml, dan 750 ml. Baca artikel <a href="/blog/tumbler-stainless-steel-custom-untuk-merchandise-premium">Tumbler Stainless Steel Custom untuk Merchandise Premium</a> untuk informasi lebih detail.</p>
+<p>Tumbler stainless steel adalah pilihan premium untuk merchandise eksklusif. Terbuat dari stainless steel grade 304 atau 201 yang aman untuk makanan dan minuman. Tersedia dalam varian single wall (dinding tunggal) dan double wall (dinding ganda). Finishing doff (brushed) atau glossy dengan warna solid. <strong>Harga tumbler stainless steel custom</strong> mulai Rp30.000 hingga Rp80.000 per pcs tergantung kapasitas dan ketebalan bahan. Kapasitas tersedia: 350 ml, 500 ml, dan 750 ml. Baca artikel <a href="/blog/tumbler-promosi-untuk-branding-dan-merchandise-event">Tumbler Stainless Steel Custom untuk Merchandise Premium</a> untuk informasi lebih detail.</p>
 
 <h3>Tumbler Vacuum Insulated</h3>
 <p>Tumbler vacuum insulated adalah jenis paling canggih dengan teknologi dinding ganda vakum yang mampu menjaga suhu minuman tetap panas hingga 12 jam atau dingin hingga 24 jam. Cocok untuk corporate gift premium, hadiah eksekutif, atau merchandise kelas atas. Tutup anti bocor dengan sistem twist atau flip-top. <strong>Harga tumbler vacuum insulated</strong> mulai Rp50.000 hingga Rp120.000 per pcs tergantung kapasitas dan merek. Kapasitas populer: 350 ml, 500 ml, dan 600 ml.</p>
 
 <h3>Tumbler Plastik BPA Free</h3>
-<p>Tumbler plastik BPA free adalah pilihan ekonomis dan aman untuk penggunaan sehari-hari. Terbuat dari plastik Tritan atau Polypropylene yang bebas BPA, ringan, dan tahan banting. Cocok untuk seminar, workshop, dan acara dengan peserta dalam jumlah besar. Tersedia dalam berbagai warna transparan atau solid. <strong>Harga tumbler plastik BPA free</strong> mulai Rp15.000 hingga Rp30.000 per pcs tergantung kapasitas dan desain. Baca juga artikel <a href="/blog/tumbler-custom-murah-berkualitas-untuk-semua-kebutuhan">Tumbler Custom Murah Berkualitas untuk Semua Kebutuhan</a> untuk referensi lebih lengkap.</p>
+<p>Tumbler plastik BPA free adalah pilihan ekonomis dan aman untuk penggunaan sehari-hari. Terbuat dari plastik Tritan atau Polypropylene yang bebas BPA, ringan, dan tahan banting. Cocok untuk seminar, workshop, dan acara dengan peserta dalam jumlah besar. Tersedia dalam berbagai warna transparan atau solid. <strong>Harga tumbler plastik BPA free</strong> mulai Rp15.000 hingga Rp30.000 per pcs tergantung kapasitas dan desain. Baca juga artikel <a href="/blog/tumbler-souvenir-untuk-event-dan-merchandise-custom">Tumbler Custom Murah Berkualitas untuk Semua Kebutuhan</a> untuk referensi lebih lengkap.</p>
 
 <h3>Tumbler Kombinasi Bambu</h3>
 <p>Tumbler kombinasi bambu adalah pilihan ramah lingkungan yang semakin populer. Bagian badan terbuat dari stainless steel atau plastik, dengan lapisan luar dari anyaman bambu alami atau potongan bambu. Memberikan tampilan natural, hangat, dan estetis. Cocok untuk perusahaan yang mengusung tema sustainability, eco-friendly, atau alam. <strong>Harga tumbler kombinasi bambu</strong> mulai Rp45.000 hingga Rp80.000 per pcs tergantung bahan badan dan kerapihan anyaman bambu.</p>
@@ -1529,7 +1529,7 @@ export const articles: Article[] = [
 <p>Untuk seminar dengan peserta 100-1000 orang, tumbler plastik BPA free 350 ml atau 500 ml adalah pilihan paling ekonomis. Biaya terjangkau, ringan, dan mudah dibawa. Cetak logo dengan sablon 1-2 warna. Anggaran Rp15.000–Rp25.000 per pcs sudah termasuk logo. Baca juga artikel <a href="/blog/tumbler-souvenir-untuk-event-dan-merchandise-custom">Tumbler Souvenir untuk Event dan Merchandise Custom</a> untuk referensi lebih detail.</p>
 
 <h3>Corporate Gift dan Hadiah Klien</h3>
-<p>Untuk corporate gift, tumbler stainless steel vacuum insulated 350-500 ml dengan laser engraving adalah pilihan premium. Kesan eksklusif dan fungsional. Berikan dalam box premium untuk meningkatkan nilai hadiah. Anggaran Rp60.000–Rp120.000 per pcs termasuk box. Baca juga artikel <a href="/blog/tumbler-souvenir-perusahaan-untuk-branding-bisnis">Tumbler Souvenir Perusahaan untuk Branding Bisnis</a> untuk informasi lebih lengkap.</p>
+<p>Untuk corporate gift, tumbler stainless steel vacuum insulated 350-500 ml dengan laser engraving adalah pilihan premium. Kesan eksklusif dan fungsional. Berikan dalam box premium untuk meningkatkan nilai hadiah. Anggaran Rp60.000–Rp120.000 per pcs termasuk box. Baca juga artikel <a href="/blog/tumbler-promosi-untuk-branding-dan-merchandise-event">Tumbler Souvenir Perusahaan untuk Branding Bisnis</a> untuk informasi lebih lengkap.</p>
 
 <h3>Merchandise Launching Produk</h3>
 <p>Tumbler kombinasi bambu atau tumbler stainless steel dengan desain edisi terbatas cocok untuk merchandise launching. Desain eksklusif dengan warna dan logo yang mencerminkan brand. Bisa dijual sebagai merchandise terbatas atau diberikan kepada influencer. Anggaran Rp45.000–Rp80.000 per pcs.</p>
@@ -1616,7 +1616,7 @@ export const articles: Article[] = [
   <li><strong>Tumbler kaca:</strong> Cuci dengan tangan menggunakan spons lembut. Hindari guncangan suhu ekstrem (panas langsung ke dingin). Simpan di tempat aman.</li>
 </ul>
 
-<p>Baca juga artikel site-wide <a href="/blog/panduan-lengkap-souvenir-custom">Panduan Lengkap Souvenir Custom</a> untuk informasi tentang jenis souvenir lainnya. Untuk rekomendasi tumbler custom, baca <a href="/blog/tumbler-stainless-steel-custom-untuk-merchandise-premium">Tumbler Stainless Steel Custom</a>, <a href="/blog/tumbler-promosi-untuk-branding-dan-merchandise-event">Tumbler Promosi untuk Branding</a>, <a href="/blog/tumbler-custom-murah-berkualitas-untuk-semua-kebutuhan">Tumbler Custom Murah Berkualitas</a>, dan <a href="/blog/tumbler-souvenir-untuk-event-dan-merchandise-custom">Tumbler Souvenir untuk Event</a>.</p>
+<p>Baca juga artikel site-wide <a href="/blog/panduan-lengkap-souvenir-custom">Panduan Lengkap Souvenir Custom</a> untuk informasi tentang jenis souvenir lainnya. Untuk rekomendasi tumbler custom, baca <a href="/blog/tumbler-promosi-untuk-branding-dan-merchandise-event">Tumbler Stainless Steel Custom</a>, <a href="/blog/tumbler-promosi-untuk-branding-dan-merchandise-event">Tumbler Promosi untuk Branding</a>, <a href="/blog/tumbler-souvenir-untuk-event-dan-merchandise-custom">Tumbler Custom Murah Berkualitas</a>, dan <a href="/blog/tumbler-souvenir-untuk-event-dan-merchandise-custom">Tumbler Souvenir untuk Event</a>.</p>
 
 <h2 id="faq">FAQ Tumbler Custom</h2>
 
@@ -1757,7 +1757,7 @@ export const articles: Article[] = [
 <p>Medali akrilik dengan desain modern dan elegan cocok untuk seminar atau workshop perusahaan. Anda bisa menambahkan logo perusahaan dan tema acara dengan cetakan full color. Untuk penghargaan karyawan atau penghargaan khusus, pilih medali stainless steel atau kuningan yang lebih eksklusif.</p>
 
 <h3>Untuk Lomba 17 Agustus dan Acara Komunitas</h3>
-<p>Medali fiberglass adalah pilihan paling ekonomis untuk event dengan jumlah peserta besar. Ringan, tahan benturan, dan tersedia dalam berbagai warna cerah. Bisa dipesan dalam jumlah puluhan hingga ribuan dengan harga yang sangat terjangkau. Baca artikel <a href="/blog/medali-custom-untuk-kompetisi-dan-event">Harga Medali Custom untuk Kompetisi Olahraga dan Event Sekolah</a> untuk estimasi biaya.</p>
+<p>Medali fiberglass adalah pilihan paling ekonomis untuk event dengan jumlah peserta besar. Ringan, tahan benturan, dan tersedia dalam berbagai warna cerah. Bisa dipesan dalam jumlah puluhan hingga ribuan dengan harga yang sangat terjangkau. Baca artikel <a href="/blog/medali-custom-panduan-memilih-dan-memesan">Harga Medali Custom untuk Kompetisi Olahraga dan Event Sekolah</a> untuk estimasi biaya.</p>
 
 <h2>Finishing Medali: Emas, Perak, dan Perunggu</h2>
 
@@ -1961,7 +1961,7 @@ export const articles: Article[] = [
 <p><strong>Baca juga artikel medali lainnya:</strong></p>
 <ul>
 <li><a href="/blog/medali-custom-panduan-memilih-dan-memesan">Panduan Memilih Medali Custom: Harga, Bahan, dan Tips Lengkap</a> — panduan komprehensif memilih medali custom</li>
-<li><a href="/blog/medali-custom-untuk-kompetisi-dan-event">Harga Medali Custom untuk Kompetisi Olahraga dan Event Sekolah</a> — estimasi harga medali untuk berbagai event</li>
+<li><a href="/blog/medali-custom-panduan-memilih-dan-memesan">Harga Medali Custom untuk Kompetisi Olahraga dan Event Sekolah</a> — estimasi harga medali untuk berbagai event</li>
 <li><a href="/blog/medali-piala-souvenir-turnamen-olahraga">Harga Medali Olahraga untuk Turnamen: Piala, Medali, dan Souvenir</a> — panduan penghargaan turnamen olahraga</li>
 <li><a href="/blog/medali-custom-untuk-lomba-sekolah">Medali Custom untuk Lomba Sekolah: Harga dan Panduan Pemesanan</a> — medali untuk acara pendidikan</li>
 <li><a href="/blog/perbandingan-medali-logam-akrilik">Perbandingan Harga Medali Logam vs Akrilik untuk Acara Anda</a> — analisis perbandingan bahan medali</li>
@@ -2115,234 +2115,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <p>Ya, kami melayani pengiriman ke seluruh Indonesia melalui JNE, TIKI, Lion Parcel, dan ekspedisi lainnya.</p>
     <h2>Tips Memilih Souvenir Wisuda</h2><p>Untuk mendapatkan hasil terbaik, konsultasikan kebutuhan Anda kepada tim Karyamedia yang berpengalaman. Kami menawarkan berbagai pilihan produk custom yang dapat disesuaikan dengan tema, warna, dan anggaran acara Anda. Pastikan untuk memilih bahan yang tahan lama serta finising yang rapi agar kesan yang diberikan maksimal. Lihat koleksi lengkap di <a href="/katalog-produk/souvenir-wisuda">Souvenir Wisuda</a> atau simak pengalaman klien kami di <a href="/profil">halaman profil</a> Karyamedia.</p><h2>Keunggulan Pesanan di Karyamedia</h2><p>Karyamedia telah melayani ratusan instansi dan event nasional sejak tahun 2001 di Yogyakarta. Setiap pesanan dikerjakan dengan standar kualitas tinggi, mulai dari desain, produksi, hingga pengiriman yang aman. Proses pemesanan juga mudah melalui <a href="/cara-pesan">halaman cara pesan</a> sehingga Anda dapat menyesuaikan pesanan tanpa kerumitan. Jangan ragu untuk berkonsultasi gratis dengan tim kami sebelum menentukan pilihan.</p><h2>Tips Memilih Souvenir Wisuda</h2><p>Untuk mendapatkan hasil terbaik, konsultasikan kebutuhan Anda kepada tim Karyamedia yang berpengalaman. Kami menawarkan berbagai pilihan produk custom yang dapat disesuaikan dengan tema, warna, dan anggaran acara Anda. Pastikan untuk memilih bahan yang tahan lama serta finising yang rapi agar kesan yang diberikan maksimal. Lihat koleksi lengkap di <a href="/katalog-produk/souvenir-wisuda">Souvenir Wisuda</a> atau simak pengalaman klien kami di <a href="/profil">halaman profil</a> Karyamedia.</p><h2>Mengapa Memilih souvenir wisuda dari Karyamedia</h2><p>Selain kualitas bahan, kami memprioritaskan komunikasi yang cepat dan transparan selama proses pengerjaan. Desain revisi tersedia agar hasil sesuai ekspektasi, dan pengiriman dapat dilakukan ke seluruh Indonesia. Diskusikan kebutuhan souvenir wisuda Anda lewat <a href="/kontak">halaman kontak</a> kami.</p><h2>Tips Memilih Souvenir Wisuda</h2><p>Untuk Souvenir Wisuda Custom: Panduan Lengkap untuk Universitas…, konsultasikan kebutuhan Anda kepada tim Karyamedia yang berpengalaman. Kami menawarkan berbagai pilihan produk custom yang dapat disesuaikan dengan tema, warna, dan anggaran acara Anda. Pastikan untuk memilih bahan yang tahan lama serta finising yang rapi agar kesan yang diberikan maksimal. Lihat koleksi lengkap di <a href="/katalog-produk/souvenir-wisuda">Souvenir Wisuda</a> atau simak pengalaman klien kami.</p><h2>Keunggulan Pesanan souvenir wisuda</h2><p>Karyamedia telah melayani ratusan instansi dan event nasional sejak 2001 di Yogyakarta. Setiap pesanan dikerjakan dengan standar kualitas tinggi, mulai dari desain, produksi, hingga pengiriman yang aman. Proses pemesanan juga mudah melalui <a href="/cara-pesan">halaman cara pesan</a> sehingga Anda dapat menyesuaikan pesanan tanpa kerumitan. Jangan ragu untuk berkonsultasi gratis dengan tim kami sebelum menentukan pilihan.</p><h2>Mengapa Memilih souvenir wisuda dari Karyamedia</h2><p>Selain kualitas bahan, kami memprioritaskan komunikasi yang cepat dan transparan selama proses pengerjaan. Desain revisi tersedia agar hasil sesuai ekspektasi, dan pengiriman dapat dilakukan ke seluruh Indonesia. Diskusikan kebutuhan souvenir wisuda Anda lewat <a href="/kontak">halaman kontak</a> kami.</p>`.trim(),
   },
-  {
-    slug: "medali-custom-untuk-kompetisi-dan-event",
-    title: "Harga Medali Custom untuk Kompetisi Olahraga dan Event…",
-    description: "Cek harga medali custom untuk kompetisi olahraga, lomba sekolah, dan event perusahaan. Simak harga medali emas, perak, perunggu, akrilik, dan logam di sini.",
-    category: "Medali",
-    date: "2026-07-09",
-    image: "/images/produk-unggulan/medali-custom/medali-custom-4.png",
-    tags: ["medali custom", "medali murah", "medali olahraga", "medali lomba", "medali jogja", "medali sekolah"],
-    content: `
-<p>Medali adalah simbol pencapaian yang tidak pernah kehilangan makna. Dari kompetisi olahraga hingga lomba akademik, medali menjadi kenang-kenangan berharga bagi para pemenang. Jika Anda sedang mencari <strong>medali custom</strong> untuk event atau kompetisi, Karyamedia Souvenir adalah solusi tepat. Kami melayani pembuatan medali custom untuk berbagai kebutuhan dengan <strong>harga medali</strong> yang kompetitif.</p>
-
-<p>Sebagai produsen yang telah berdiri sejak 2001, kami memahami betul pentingnya kualitas dalam setiap penghargaan. Tidak hanya sebagai simbol kemenangan, medali juga menjadi kenang-kenangan yang akan disimpan oleh penerimanya selama bertahun-tahun. Oleh karena itu, pemilihan bahan, desain, dan proses produksi harus dilakukan dengan standar tertinggi.</p>
-
-<h2>Jenis Medali Custom yang Tersedia</h2>
-
-<p>Kami menyediakan berbagai jenis medali custom yang dapat disesuaikan dengan kebutuhan acara Anda. Setiap bahan memiliki karakteristik unik yang mempengaruhi tampilan akhir dan <strong>harga medali</strong> secara keseluruhan.</p>
-
-<h3>Medali Logam</h3>
-<p>Medali logam adalah jenis yang paling klasik dan prestisius. Dibuat dari bahan kuningan, besi, atau stainless steel dengan finishing emas, perak, atau perunggu. Proses produksinya menggunakan teknik cetak press atau etching untuk menghasilkan detail yang tajam dan tahan lama. Banyak pelanggan yang mencari <strong>jual medali</strong> emas, perak, dan perunggu untuk turnamen bergengsi karena tampilannya yang eksklusif. Untuk estimasi, <strong>harga medali emas</strong> untuk juara 1 berkisar Rp15.000–Rp35.000 per pcs, <strong>harga medali perak</strong> untuk juara 2 sekitar Rp12.000–Rp28.000 per pcs, dan <strong>harga medali perunggu</strong> untuk juara 3 mulai Rp10.000–Rp25.000 per pcs tergantung ukuran dan kerumitan desain.</p>
-
-<h3>Medali Akrilik</h3>
-<p>Medali akrilik menawarkan tampilan yang lebih modern dan warna yang lebih cerah. Bahan akrilik bening atau solid dapat dicetak full color dengan teknik UV printing sehingga logo dan desain terlihat sangat tajam. Cocok untuk event-event kontemporer seperti lomba desain, hackathon, atau festival seni. <strong>Harga medali akrilik</strong> jauh lebih terjangkau, mulai Rp5.000 hingga Rp15.000 per pcs. Banyak sekolah dan instansi memilih medali akrilik karena kombinasi antara kualitas tampilan dan efisiensi biaya.</p>
-
-<h3>Medali Fiberglass</h3>
-<p>Medali fiberglass memiliki bobot yang ringan namun kokoh. Sering digunakan untuk event dengan jumlah peserta besar karena harganya yang ekonomis. Bahan fiberglass juga tahan terhadap benturan sehingga cocok untuk medali olahraga. Harga medali fiberglass berkisar antara Rp8.000 hingga Rp18.000 per pcs. Tersedia dalam berbagai pilihan warna finishing yang cerah dan menarik.</p>
-
-<h2>Tabel Harga Medali Custom Lengkap</h2>
-
-<p>Berikut adalah daftar <strong>harga medali custom</strong> terlengkap berdasarkan jenis bahan, ukuran, dan finishing. Harga bersifat estimasi dan dapat berubah sesuai jumlah pemesanan serta kerumitan desain.</p>
-
-<table>
-  <tr><th>Jenis Bahan</th><th>Diameter</th><th>Finishing</th><th>Harga/pcs</th><th>Min. Order</th></tr>
-  <tr><td>Akrilik Standar</td><td>5 cm</td><td>Full color UV</td><td>Rp5.000–Rp8.000</td><td>10 pcs</td></tr>
-  <tr><td>Akrilik Standar</td><td>6 cm</td><td>Full color UV</td><td>Rp8.000–Rp12.000</td><td>10 pcs</td></tr>
-  <tr><td>Akrilik Premium</td><td>7 cm</td><td>Full color UV</td><td>Rp12.000–Rp15.000</td><td>10 pcs</td></tr>
-  <tr><td>Fiberglass</td><td>6 cm</td><td>Cat solid</td><td>Rp10.000–Rp18.000</td><td>25 pcs</td></tr>
-  <tr><td>Fiberglass Premium</td><td>7 cm</td><td>Cat solid/gradasi</td><td>Rp15.000–Rp22.000</td><td>25 pcs</td></tr>
-  <tr><td>Logam (kuningan)</td><td>5 cm</td><td>Emas/Perak/Perunggu</td><td>Rp12.000–Rp18.000</td><td>25 pcs</td></tr>
-  <tr><td>Logam (kuningan)</td><td>6 cm</td><td>Emas/Perak/Perunggu</td><td>Rp15.000–Rp25.000</td><td>25 pcs</td></tr>
-  <tr><td>Logam Premium</td><td>7 cm</td><td>Emas/Perak/Perunggu</td><td>Rp25.000–Rp35.000</td><td>25 pcs</td></tr>
-  <tr><td>Logam Casting</td><td>6–7 cm</td><td>Enamel + emas/perak</td><td>Rp30.000–Rp50.000</td><td>50 pcs</td></tr>
-</table>
-
-<p>Setiap varian memiliki keunggulan masing-masing. <strong>Harga medali akrilik</strong> adalah yang paling terjangkau, sementara <strong>harga medali logam</strong> mencerminkan kualitas premium yang tahan lama. Pilih sesuai dengan kebutuhan dan anggaran acara Anda.</p>
-
-<h2>Perbandingan Harga Medali per Finishing</h2>
-
-<p>Salah satu pertanyaan paling umum adalah perbedaan <strong>harga medali emas, perak, dan perunggu</strong>. Untuk medali logam diameter 6 cm dengan pemesanan minimal 50 pcs, berikut perbandingannya:</p>
-
-<table>
-  <tr><th>Finishing</th><th>Target Juara</th><th>Harga/pcs</th><th>Karakteristik</th></tr>
-  <tr><td><strong>Harga medali perunggu</strong> (Bronze)</td><td>Juara 3 / Harapan</td><td>Rp12.000–Rp20.000</td><td>Warna coklat kemerahan, finishing matte. Paling ekonomis.</td></tr>
-  <tr><td><strong>Harga medali perak</strong> (Silver)</td><td>Juara 2</td><td>Rp14.000–Rp23.000</td><td>Warna silver mengkilap, finishing semi-gloss. Nilai klasik.</td></tr>
-  <tr><td><strong>Harga medali emas</strong> (Gold)</td><td>Juara 1 / Utama</td><td>Rp16.000–Rp28.000</td><td>Warna emas glossy. Paling eksklusif dan prestisius.</td></tr>
-</table>
-
-<p>Selisih <strong>harga medali</strong> antara finishing perunggu dan emas bisa mencapai Rp8.000 per pcs. Namun secara visual, perbedaan ini sangat signifikan dan mempengaruhi kesan penghargaan yang diterima.</p>
-
-<h2>Simulasi Diskon Berdasarkan Jumlah Pemesanan</h2>
-
-<p>Jumlah pemesanan adalah faktor terbesar yang mempengaruhi <strong>harga medali custom</strong>. Berikut simulasi untuk medali logam diameter 6 cm:</p>
-
-<table>
-  <tr><th>Jumlah</th><th>Harga/pcs</th><th>Total Biaya</th><th>Hemat</th></tr>
-  <tr><td>25 pcs</td><td>Rp22.000</td><td>Rp550.000</td><td>-</td></tr>
-  <tr><td>50 pcs</td><td>Rp19.000</td><td>Rp950.000</td><td>~14%</td></tr>
-  <tr><td>100 pcs</td><td>Rp17.000</td><td>Rp1.700.000</td><td>~23%</td></tr>
-  <tr><td>250 pcs</td><td>Rp15.500</td><td>Rp3.875.000</td><td>~30%</td></tr>
-  <tr><td>500 pcs</td><td>Rp14.000</td><td>Rp7.000.000</td><td>~36%</td></tr>
-  <tr><td>1.000 pcs</td><td>Rp12.500</td><td>Rp12.500.000</td><td>~43%</td></tr>
-</table>
-
-<p>Semakin besar jumlah pemesanan, semakin murah <strong>harga medali custom</strong> per unit. Diskon volume bisa mencapai 43% untuk pemesanan 1.000 pcs.</p>
-
-<h2>Faktor yang Mempengaruhi Harga Medali Custom</h2>
-
-<p><strong>Harga medali custom</strong> tidak ditentukan oleh satu faktor saja. Ada beberapa komponen yang saling mempengaruhi. Memahami hal ini akan membantu Anda menyesuaikan anggaran tanpa mengorbankan kualitas:</p>
-
-<ul>
-  <li><strong>Jenis bahan baku:</strong> Medali logam (kuningan/zinc alloy) lebih mahal dari akrilik atau fiberglass karena proses produksi yang kompleks. Bahan kuningan memerlukan peleburan, pencetakan, dan penghalusan sebelum finishing.</li>
-  <li><strong>Ukuran diameter:</strong> Medali diameter 7 cm membutuhkan bahan baku 40% lebih banyak dibandingkan 5 cm. Ini langsung berdampak pada <strong>harga bikin medali</strong> per unit. Pilih ukuran yang sesuai: 5 cm untuk anak-anak, 6 cm standar, 7 cm untuk premium.</li>
-  <li><strong>Kerumitan desain:</strong> Desain dengan bentuk khusus (bintang, perisai, logo 3D) memerlukan pembuatan mold yang menambah biaya awal Rp500.000–Rp2.000.000. Namun mold ini bisa dipakai ulang untuk pemesanan berikutnya.</li>
-  <li><strong>Jenis finishing:</strong> Untuk medali logam, finishing emas (gold plating) lebih mahal dari perak dan perunggu. Untuk medali akrilik, UV printing full color memiliki biaya lebih tinggi dari cetak monokrom.</li>
-  <li><strong>Volume pemesanan:</strong> Ini yang paling signifikan. Biaya tetap (setup, desain, mold) bisa dibagi ke lebih banyak unit, sehingga <strong>harga buat medali</strong> per unit turun drastis pada pemesanan besar.</li>
-  <li><strong>Aksesoris tambahan:</strong> Pita standar gratis. Pita cetak logo/tambah Rp2.000–Rp5.000/pcs. Box velvet atau acrylic box mulai Rp5.000–Rp20.000/pcs.</li>
-</ul>
-
-<p>Di Karyamedia Souvenir, kami memberikan透明的 harga tanpa biaya tersembunyi. Konsultasi gratis untuk membantu Anda menentukan spesifikasi terbaik sesuai anggaran.</p>
-
-<h2>Perbandingan Bahan Medali Custom</h2>
-
-<p>Pemilihan bahan sangat mempengaruhi tampilan, daya tahan, dan <strong>harga medali custom</strong>. Berikut perbandingan lengkap:</p>
-
-<table>
-  <tr><th>Aspek</th><th>Medali Logam</th><th>Medali Akrilik</th><th>Medali Fiberglass</th></tr>
-  <tr><td>Kesan</td><td>Mewah, premium, klasik</td><td>Modern, colorful, ringan</td><td>Solid, kokoh, sporty</td></tr>
-  <tr><td>Daya tahan</td><td>Sangat tinggi (puluhan tahun)</td><td>Cukup (5-10 tahun)</td><td>Tinggi (tahan benturan)</td></tr>
-  <tr><td>Harga/pcs</td><td>Rp15.000–Rp35.000</td><td>Rp5.000–Rp15.000</td><td>Rp10.000–Rp22.000</td></tr>
-  <tr><td>Berat</td><td>30–50 gram</td><td>10–20 gram</td><td>15–25 gram</td></tr>
-  <tr><td>Warna</td><td>Emas/perak/perunggu/nikel</td><td>Full color UV printing</td><td>Cat solid, warna terbatas</td></tr>
-  <tr><td>Waktu produksi</td><td>10-14 hari</td><td>5-7 hari</td><td>7-10 hari</td></tr>
-  <tr><td>Cocok untuk</td><td>Turnamen bergengsi, olimpiade</td><td>Lomba sekolah, festival, seminar</td><td>Olahraga, event outdoor</td></tr>
-</table>
-
-<p>Setiap bahan punya keunggulan masing-masing. <strong>Harga medali akrilik</strong> paling ekonomis, <strong>harga medali logam</strong> untuk kesan premium, dan fiberglass untuk ketahanan fisik.</p>
-
-<h2>Ukuran Medali Standar</h2>
-
-<ul>
-  <li><strong>Diameter 5 cm</strong> — ukuran kecil, ringan, cocok untuk partisipasi dan anak-anak. Harga paling murah.</li>
-  <li><strong>Diameter 6 cm</strong> — ukuran standar juara, paling banyak dipesan untuk berbagai acara. Paling proporsional.</li>
-  <li><strong>Diameter 7 cm</strong> — ukuran besar untuk juara utama dan acara bergengsi. Tampilan lebih berkesan.</li>
-  <li><strong>Custom size</strong> — bisa disesuaikan dengan desain dan kebutuhan spesifik acara. Konsultasikan dengan tim kami.</li>
-</ul>
-
-<p>Pemilihan ukuran mempengaruhi <strong>harga medali</strong> secara langsung. Semakin besar diameter, semakin banyak bahan yang dibutuhkan sehingga harga per unit naik proporsional.</p>
-
-<h2>Biaya Tersembunyi yang Perlu Diperhatikan</h2>
-
-<p>Beberapa produsen tidak menyebutkan biaya tambahan di awal. Di Karyamedia Souvenir, semua biaya dijelaskan secara transparan:</p>
-
-<ul>
-  <li><strong>Biaya mold:</strong> Rp500.000–Rp2.000.000 untuk bentuk khusus (sekali bayar, bisa dipakai ulang)</li>
-  <li><strong>Biaya desain:</strong> GRATIS. Tim kami buatkan mockup sampai Anda puas</li>
-  <li><strong>Pita custom cetak:</strong> Rp2.000–Rp5.000/pcs tambahan dari pita standar gratis</li>
-  <li><strong>Box kemasan:</strong> Velvet box Rp5.000–Rp15.000/pcs, acrylic box Rp10.000–Rp20.000/pcs</li>
-  <li><strong>Ongkos kirim:</strong> Sesuai lokasi tujuan dan ekspedisi (JNE, TIKI, Lion Parcel)</li>
-</ul>
-
-<p>Dengan mengetahui semua biaya sejak awal, Anda bisa merencanakan anggaran secara akurat tanpa kejutan di kemudian hari.</p>
-
-<h2>Pilihan Warna dan Pita Medali</h2>
-
-<p>Pita medali tersedia dalam berbagai warna: merah, putih, biru, kuning, hijau, ungu, hitam, dan kombinasi dua warna. Bisa juga dicetak dengan teks, logo, atau nama event untuk tampilan yang lebih eksklusif. Panjang pita standar 80–90 cm dengan lebar 3 cm. Kombinasi warna merah-putih cocok untuk acara kemerdekaan, emas-hitam untuk acara formal, biru-putih untuk acara akademik.</p>
-
-<p>Selain warna pita, pemilihan warna finishing medali juga penting. Medali dengan finishing emas memberikan kesan prestisius untuk juara 1, finishing perak untuk juara 2, dan finishing perunggu untuk juara 3. Standar ini diakui secara universal dan langsung dikenali oleh penerima penghargaan.</p>
-
-<h2>Studi Kasus: Estimasi Biaya Medali untuk Berbagai Acara</h2>
-
-<h3>Event Lomba 17 Agustus-an (50 peserta)</h3>
-<p>Kebutuhan: 15 medali (juara 1, 2, 3 untuk 5 lomba). Rekomendasi: medali akrilik 5 cm. Estimasi: 15 x Rp6.000 = Rp90.000 + ongkir. Sangat terjangkau untuk anggaran RT/RW.</p>
-
-<h3>Turnamen Futsal Antar Sekolah (16 tim)</h3>
-<p>Kebutuhan: 48 medali (4 tim juara x 12 pemain). Rekomendasi: medali logam 6 cm finishing emas/perak/perunggu. Estimasi: 48 x Rp19.000 = Rp912.000. Kesan mewah untuk prestasi olahraga.</p>
-
-<h3>Wisuda TK/PAUD (100 anak)</h3>
-<p>Kebutuhan: 100 medali kelulusan. Rekomendasi: medali akrilik 5 cm full color dengan desain karakter anak. Estimasi: 100 x Rp5.500 = Rp550.000. Ringan di leher anak dan ramah anggaran.</p>
-
-<h3>Award Night Perusahaan (50 karyawan)</h3>
-<p>Kebutuhan: 50 medali penghargaan premium. Rekomendasi: medali logam casting 7 cm finishing emas + box velvet. Estimasi: 50 x Rp45.000 = Rp2.250.000. Memberikan kesan eksklusif dan profesional.</p>
-
-<h2>Tips Mendapatkan Harga Medali Custom Terbaik</h2>
-
-<p>Agar Anda mendapatkan <strong>harga medali custom</strong> yang paling kompetitif, terapkan tips berikut:</p>
-
-<ul>
-  <li><strong>Gabungkan pemesanan:</strong> Jika ada beberapa acara dalam waktu berdekatan, gabungkan pemesanan untuk mencapai quantity diskon. Hemat hingga 43% untuk pemesanan 1.000 pcs.</li>
-  <li><strong>Pilih desain sederhana:</strong> Bentuk lingkaran standar tanpa mold khusus jauh lebih murah. Hindari bentuk bintang, perisai, atau bentuk rumit lainnya jika anggaran terbatas.</li>
-  <li><strong>Pesan di luar musim sibuk:</strong> Musim sibuk Juni-Agustus (wisuda dan lomba 17 Agustus) biasanya harga lebih tinggi karena permintaan melonjak. Pesan di Maret-Mei atau September-November untuk harga lebih baik.</li>
-  <li><strong>Konsultasikan kebutuhan:</strong> Jangan sungkan menghubungi tim Karyamedia Souvenir untuk konsultasi. Kami akan membantu Anda menemukan kombinasi bahan, ukuran, dan desain yang paling sesuai dengan anggaran.</li>
-  <li><strong>Minta penawaran detail:</strong> Pastikan penawaran mencakup semua biaya: harga per pcs, biaya mold (jika ada), pita, kemasan, dan ongkir. Bandingkan dengan produsen lain untuk memastikan Anda mendapat <strong>harga medali</strong> terbaik.</li>
-</ul>
-
-<h2>Kualitas Medali Original vs Tiruan</h2>
-
-<table>
-  <tr><th>Aspek</th><th>Medali Original (Karyamedia)</th><th>Medali Tiruan / KW</th></tr>
-  <tr><td>Bahan baku</td><td>Kuningan/zinc alloy/asli akrilik</td><td>Logam campuran murah, plastik daur ulang</td></tr>
-  <tr><td>Finishing</td><td>Electroplating presisi, warna rata</td><td>Cat semprot, mudah terkelupas</td></tr>
-  <tr><td>Detail desain</td><td>Tajam, rapi, proporsional</td><td>Buram, pinggiran kasar</td></tr>
-  <tr><td>Ketahanan</td><td>Bertahun-tahun, tidak mudah kusam</td><td>Cepat pudar (3-6 bulan)</td></tr>
-  <tr><td>Garansi</td><td>Ada garansi kepuasan</td><td>Tidak ada garansi</td></tr>
-</table>
-
-<p>Meskipun <strong>harga medali custom</strong> original sedikit lebih mahal, kualitas dan kepuasan penerima penghargaan jauh lebih terjamin. Medali original juga lebih awet sehingga kenang-kenangan tetap terjaga dalam jangka panjang. Karyamedia Souvenir menjamin setiap produk yang dikirimkan telah melalui quality control ketat.</p>
-
-<h2>Cara Memesan Medali Custom di Karyamedia Souvenir</h2>
-
-<p>Proses pemesanan <strong>medali custom</strong> dirancang semudah mungkin:</p>
-
-<ol>
-  <li>Hubungi tim kami via WhatsApp untuk konsultasi gratis</li>
-  <li>Sampaikan detail kebutuhan: jumlah, bahan, ukuran, desain, dan tenggat waktu</li>
-  <li>Tim kami buatkan mockup desain dan penawaran <strong>harga medali custom</strong> detail</li>
-  <li>Setelah desain dan harga disetujui, proses produksi dimulai sesuai jadwal</li>
-  <li>Quality control menyeluruh sebelum pengiriman ke alamat tujuan</li>
-</ol>
-
-<p>Waktu produksi bervariasi: medali akrilik 5–7 hari kerja, fiberglass 7–10 hari kerja, medali logam 10–14 hari kerja. Karyamedia Souvenir melayani pengiriman ke seluruh Indonesia melalui JNE, TIKI, Lion Parcel, dan ekspedisi lainnya. Untuk Anda yang berada di Yogyakarta, bisa langsung ambil di workshop kami di Jl. Menteri Supeno No. 90.</p>
-
-<p>Baca juga artikel <a href="/blog/medali-custom-panduan-memilih-dan-memesan">Panduan Memilih Medali Custom: Harga, Bahan, dan Tips Lengkap</a>, <a href="/blog/medali-piala-souvenir-turnamen-olahraga">Harga Medali Olahraga untuk Turnamen</a>, dan <a href="/blog/perbandingan-medali-logam-akrilik">Perbandingan Harga Medali Logam vs Akrilik</a> untuk referensi lebih lengkap.</p>
-
-<p>Baca juga panduan lengkap kami: <a href="/blog/panduan-lengkap-medali-custom">Panduan Lengkap Medali Custom: Jenis, Bahan, Harga, dan…</a> sebagai referensi menyeluruh seputar Medali.</p><h2 id="faq">FAQ</h2>
-
-<h3>Berapa <strong>harga medali custom</strong> paling murah?</h3>
-<h3>Harga medali custom</h3><p>paling murah mulai Rp5.000 per pcs untuk medali akrilik diameter 5 cm. Harga ini sudah termasuk pita standar dan desain gratis. Untuk pemesanan 100 pcs ke atas, biasanya tersedia diskon khusus yang membuat harga lebih ekonomis.</p>
-
-<h3>Apa perbedaan <strong>harga medali emas, perak, dan perunggu</strong>?</h3>
-<h3>Harga medali emas</h3><p>Rp15.000–Rp35.000/pcs, <strong>harga medali perak</strong> Rp12.000–Rp28.000/pcs, <strong>harga medali perunggu</strong> Rp10.000–Rp25.000/pcs. Perbedaan harga mencerminkan biaya bahan finishing yang digunakan. Medali emas menggunakan gold plating yang paling mahal.</p>
-
-<h3>Berapa ukuran medali standar?</h3>
-<p>Ukuran standar medali tersedia dalam diameter 5 cm (anak-anak), 6 cm (standar), dan 7 cm (premium). Ukuran custom juga tersedia. Pilih ukuran sesuai skala acara dan kategori juara.</p>
-
-<h3>Apa bahan medali yang paling bagus?</h3>
-<p>Medali logam memberikan kesan paling premium dan tahan lama hingga puluhan tahun. Medali akrilik lebih modern dengan full color printing. Fiberglass ringan dan tahan benturan. Pilihan terbaik tergantung kebutuhan acara dan anggaran.</p>
-
-<h3>Apakah ada <strong>jual medali</strong> emas, perak, perunggu untuk juara 1, 2, 3?</h3>
-<p>Tentu. Kami melayani pembuatan medali dengan finishing emas (juara 1), perak (juara 2), dan perunggu (juara 3) yang sesuai standar universal penghargaan.</p>
-
-<h3>Apakah <strong>harga medali custom</strong> sudah termasuk pita?</h3>
-<p>Ya, harga sudah termasuk pita medali standar. Jika ingin pita dengan cetakan logo atau teks khusus, ada biaya tambahan Rp2.000–Rp5.000 per pcs.</p>
-
-<h3>Berapa minimal pemesanan medali custom?</h3>
-<p>Medali akrilik minimal 10 pcs. Medali fiberglass dan logam minimal 25 pcs. Kami juga menerima pemesanan satuan untuk kebutuhan tertentu.</p>
-
-<h3>Berapa lama proses pembuatan medali?</h3>
-<p>Medali akrilik 5–7 hari kerja. Medali fiberglass 7–10 hari kerja. Medali logam 10–14 hari kerja termasuk pembuatan cetakan. Untuk kebutuhan mendesak, tersedia layanan rush dengan biaya tambahan.</p>
-
-<h3>Dimana <strong>jual medali</strong> terdekat di Yogyakarta?</h3>
-<p>Karyamedia Souvenir di Jl. Menteri Supeno No. 90, Yogyakarta. Bisa datang langsung untuk konsultasi dan lihat sample. Melayani pengiriman ke seluruh Indonesia.</p>
-
-<h3>Apakah bisa pesan sample sebelum order besar?</h3>
-<p>Ya, kami menerima pemesanan sample dengan harga satuan + ongkir. Jika kemudian melanjutkan order besar, biaya sample bisa dikurangkan dari total pembayaran.</p>
-
-<h3>Bagaimana cara mendapatkan <strong>harga medali custom</strong> termurah?</h3>
-<p>Pesan dalam jumlah lebih besar, pilih desain sederhana tanpa mold khusus, dan pesan di luar musim sibuk (Maret-Mei, September-November) untuk mendapatkan <strong>harga bikin medali</strong> paling kompetitif.</p>
-    <p>Artikel terkait: <a href="/blog/medali-resin-custom">Pusat Pembuatan Medali Resin Custom Berkualitas</a></p>`.trim(),
-  },
+  
   {
     slug: "medali-custom-panduan-memilih-dan-memesan",
     title: "Panduan Memilih Medali Custom: Harga, Bahan, dan Tips…",
@@ -2500,7 +2273,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 
 <p>Jika Anda masih ragu menentukan desain atau material yang paling sesuai, jangan ragu menghubungi Karyamedia Souvenir melalui WhatsApp untuk konsultasi gratis. Tim kami siap membantu memilih spesifikasi medali custom yang tepat sesuai kebutuhan acara Anda.</p>
 
-<p>Sebagai referensi, baca juga artikel <a href="/blog/medali-custom-untuk-kompetisi-dan-event">Medali Custom untuk Kompetisi Olahraga dan Event Sekolah</a> untuk panduan lebih lengkap.</p>
+<p>Sebagai referensi, baca juga artikel <a href="/blog/medali-custom-panduan-memilih-dan-memesan">Medali Custom untuk Kompetisi Olahraga dan Event Sekolah</a> untuk panduan lebih lengkap.</p>
 
 <h2>Perbedaan Medali Original vs Tiruan: Kenali Sebelum Membeli</h2>
 
@@ -4469,7 +4242,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <li><strong>Tumbler Kopi</strong> banyak digunakan sebagai merchandise perusahaan maupun hadiah untuk karyawan.</li>
 </ul>
 
-<p>Jika Anda membutuhkan tumbler dengan material premium untuk hadiah eksklusif, baca juga artikel <a href="/blog/tumbler-stainless-steel-custom-untuk-merchandise-premium">Tumbler Stainless Steel Custom untuk Merchandise Premium</a> untuk referensi lebih lengkap.</p>
+<p>Jika Anda membutuhkan tumbler dengan material premium untuk hadiah eksklusif, baca juga artikel <a href="/blog/tumbler-promosi-untuk-branding-dan-merchandise-event">Tumbler Stainless Steel Custom untuk Merchandise Premium</a> untuk referensi lebih lengkap.</p>
 
 <h2>Tips Memilih Tumbler Custom</h2>
 
@@ -4510,93 +4283,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <p>Tumbler souvenir custom merupakan pilihan merchandise yang tidak hanya menarik secara visual, tetapi juga memiliki manfaat jangka panjang bagi penerimanya. Untuk kebutuhan souvenir lainnya seperti <a href="/blog/gantungan-kunci-custom">gantungan kunci custom</a> dan <a href="/blog/pin-bross-custom">pin bross custom</a>, Karyamedia Souvenir juga menerima pemesanan dengan desain yang dapat disesuaikan. Dengan desain yang tepat dan kualitas produk yang baik, tumbler mampu menjadi media promosi yang efektif sekaligus kenang-kenangan yang berkesan. Karyamedia Souvenir telah melayani pembuatan berbagai souvenir custom sejak tahun 2001 dan siap membantu kebutuhan merchandise untuk perusahaan, universitas, instansi, maupun komunitas di seluruh Indonesia.</p>
   <h2>Tips Memilih Accessories</h2><p>Untuk mendapatkan hasil terbaik, konsultasikan kebutuhan Anda kepada tim Karyamedia yang berpengalaman. Kami menawarkan berbagai pilihan produk custom yang dapat disesuaikan dengan tema, warna, dan anggaran acara Anda. Pastikan untuk memilih bahan yang tahan lama serta finising yang rapi agar kesan yang diberikan maksimal. Lihat koleksi lengkap di <a href="/katalog-produk/accessories">Accessories</a> atau simak pengalaman klien kami di <a href="/profil">halaman profil</a> Karyamedia.</p><h2>Tips Memilih Accessories</h2><p>Untuk Tumbler Souvenir Custom untuk Event dan Perusahaan, konsultasikan kebutuhan Anda kepada tim Karyamedia yang berpengalaman. Kami menawarkan berbagai pilihan produk custom yang dapat disesuaikan dengan tema, warna, dan anggaran acara Anda. Pastikan untuk memilih bahan yang tahan lama serta finising yang rapi agar kesan yang diberikan maksimal. Lihat koleksi lengkap di <a href="/katalog-produk/accessories">Accessories</a> atau simak pengalaman klien kami.</p><h2>Keunggulan Pesanan tumbler souvenir custom</h2><p>Karyamedia telah melayani ratusan instansi dan event nasional sejak 2001 di Yogyakarta. Setiap pesanan dikerjakan dengan standar kualitas tinggi, mulai dari desain, produksi, hingga pengiriman yang aman. Proses pemesanan juga mudah melalui <a href="/cara-pesan">halaman cara pesan</a> sehingga Anda dapat menyesuaikan pesanan tanpa kerumitan. Jangan ragu untuk berkonsultasi gratis dengan tim kami sebelum menentukan pilihan.</p><h2>Mengapa Memilih tumbler souvenir custom dari Karyamedia</h2><p>Selain kualitas bahan, kami memprioritaskan komunikasi yang cepat dan transparan selama proses pengerjaan. Desain revisi tersedia agar hasil sesuai ekspektasi, dan pengiriman dapat dilakukan ke seluruh Indonesia. Diskusikan kebutuhan tumbler souvenir custom Anda lewat <a href="/kontak">halaman kontak</a> kami.</p>`.trim()
 },
-  {
-  slug: "tumbler-souvenir-perusahaan-untuk-branding-bisnis",
-  title: "Tumbler Souvenir Perusahaan untuk Branding Bisnis",
-  description: "Tumbler souvenir perusahaan menjadi merchandise fungsional untuk branding. Simak tips memilih bahan, desain, dan estimasi harga custom.",
-  category: "Accessories",
-  date: "2026-07-10",
-  image: "/images/produk-unggulan/tumbler/tumbler-17.png",
-  tags: [
-    "tumbler souvenir perusahaan",
-    "tumbler custom perusahaan",
-    "souvenir perusahaan",
-    "merchandise perusahaan",
-    "tumbler promosi"
-  ],
-  content: `
-<p><strong>Tumbler souvenir perusahaan</strong> menjadi salah satu merchandise yang banyak dipilih untuk kebutuhan promosi, apresiasi karyawan, hingga hadiah bagi pelanggan. Dibandingkan souvenir yang hanya digunakan sesaat, tumbler memiliki nilai guna tinggi karena dapat dipakai setiap hari. Hal ini membuat logo atau identitas perusahaan lebih sering terlihat sehingga mendukung strategi branding dalam jangka panjang.</p>
-
-<p>Baik untuk seminar, gathering, peluncuran produk, anniversary perusahaan, maupun program loyalitas pelanggan, tumbler custom mampu memberikan kesan profesional sekaligus menunjukkan perhatian terhadap produk yang bermanfaat. Selain itu, penggunaan tumbler juga mendukung kampanye pengurangan sampah plastik yang kini semakin banyak diterapkan oleh berbagai perusahaan.</p>
-
-<h2>Mengapa Memilih Tumbler sebagai Souvenir Perusahaan?</h2>
-
-<p>Tumbler tidak hanya berfungsi sebagai wadah minuman, tetapi juga menjadi media promosi yang efektif. Beberapa alasan mengapa produk ini banyak dipilih antara lain:</p>
-
-<ul>
-<li><strong>Memiliki nilai pakai tinggi</strong> sehingga digunakan dalam aktivitas sehari-hari.</li>
-<li><strong>Media branding yang berjalan terus-menerus</strong> karena logo perusahaan selalu terlihat saat digunakan.</li>
-<li><strong>Cocok untuk berbagai kalangan</strong>, mulai dari karyawan, mitra bisnis, hingga pelanggan.</li>
-<li><strong>Mendukung program sustainability</strong> dengan mengurangi penggunaan botol plastik sekali pakai.</li>
-<li><strong>Tersedia dalam banyak model</strong> sehingga mudah disesuaikan dengan identitas perusahaan.</li>
-</ul>
-
-<h2>Jenis Tumbler yang Banyak Digunakan Perusahaan</h2>
-
-<p>Pemilihan model tumbler sebaiknya disesuaikan dengan tujuan pemberian souvenir dan anggaran yang tersedia.</p>
-
-<ul>
-<li><strong>Tumbler Stainless Steel</strong> memberikan kesan premium dan memiliki daya tahan tinggi.</li>
-<li><strong>Tumbler Vacuum Insulated</strong> mampu menjaga suhu minuman panas maupun dingin lebih lama sehingga cocok sebagai corporate gift.</li>
-<li><strong>Tumbler Plastik BPA Free</strong> menjadi pilihan ekonomis untuk seminar atau event dengan peserta dalam jumlah besar.</li>
-<li><strong>Tumbler Kombinasi Bambu</strong> memberikan tampilan elegan sekaligus mendukung konsep ramah lingkungan.</li>
-</ul>
-
-<p>Untuk strategi penggunaan tumbler sebagai media promosi yang lebih efektif, baca juga artikel <a href="/blog/tumbler-promosi-untuk-branding-dan-merchandise-event">Tumbler Promosi untuk Branding dan Merchandise Event</a> sebagai referensi tambahan. Jika Anda baru pertama kali memesan tumbler untuk acara perusahaan, artikel <a href="/blog/tumbler-souvenir-custom-untuk-event-dan-perusahaan">Tumbler Souvenir Custom untuk Event dan Perusahaan</a> dapat menjadi panduan awal yang baik.</p>
-
-<h2>Tips Mendesain Tumbler Custom Perusahaan</h2>
-
-<p>Desain yang tepat akan membuat tumbler terlihat profesional dan nyaman digunakan. Beberapa hal yang perlu diperhatikan antara lain:</p>
-
-<ol>
-<li>Gunakan logo perusahaan dengan resolusi tinggi.</li>
-<li>Pilih warna yang sesuai dengan identitas brand.</li>
-<li>Hindari desain yang terlalu ramai agar tetap elegan.</li>
-<li>Tambahkan slogan atau tagline bila diperlukan.</li>
-<li>Sesuaikan metode cetak seperti UV printing, sablon, atau laser engraving dengan jenis tumbler.</li>
-</ol>
-
-<p>Desain yang sederhana namun rapi biasanya memberikan hasil yang lebih eksklusif dibandingkan tampilan yang terlalu penuh dengan elemen grafis.</p>
-
-<h2>Estimasi Harga Tumbler Souvenir Perusahaan</h2>
-
-<p>Harga tumbler souvenir perusahaan dipengaruhi oleh jenis bahan, kapasitas, metode pencetakan logo, serta jumlah pemesanan. Produk berbahan plastik umumnya memiliki harga mulai dari puluhan ribu rupiah per unit, sedangkan tumbler stainless steel atau vacuum premium memiliki estimasi harga yang lebih tinggi.</p>
-
-<p>Semakin banyak jumlah pemesanan, biasanya biaya per unit menjadi lebih efisien. Oleh karena itu, perusahaan sering melakukan pemesanan dalam jumlah besar untuk kebutuhan event tahunan maupun program promosi.</p>
-
-<p>Jika Anda juga sedang mencari merchandise lain untuk kebutuhan perusahaan, baca juga artikel <a href="/blog/medali-custom-untuk-kompetisi-dan-event">Medali Custom untuk Kompetisi dan Event</a> sebagai referensi produk custom lainnya.</p>
-
-<p>Baca juga panduan lengkap kami: <a href="/blog/panduan-lengkap-tumbler-custom">Panduan Lengkap Tumbler Custom untuk Souvenir dan…</a> sebagai referensi menyeluruh seputar Accessories.</p><h2>FAQ</h2>
-
-<h3>Apakah logo perusahaan bisa dicetak full color?</h3>
-<p>Ya. Logo dapat dicetak full color menggunakan teknik UV printing atau metode lain yang disesuaikan dengan material tumbler.</p>
-
-<h3>Berapa minimal pemesanan tumbler custom?</h3>
-<p>Minimal pemesanan berbeda pada setiap model tumbler. Jumlah pesanan yang lebih banyak umumnya memberikan harga yang lebih kompetitif.</p>
-
-<h3>Apakah tersedia gift box untuk corporate gift?</h3>
-<p>Tersedia berbagai pilihan kemasan, mulai dari box standar hingga gift box premium sesuai kebutuhan perusahaan.</p>
-
-<h3>Berapa lama proses produksi?</h3>
-<p>Durasi produksi bergantung pada jumlah pesanan, jenis tumbler, dan tingkat kerumitan desain. Sebaiknya lakukan pemesanan jauh sebelum jadwal acara.</p>
-
-<h2>Penutup</h2>
-
-<p>Tumbler souvenir perusahaan merupakan pilihan merchandise yang memadukan fungsi, estetika, dan nilai promosi dalam satu produk. Dengan memilih bahan yang tepat dan desain yang sesuai identitas brand, perusahaan dapat memberikan hadiah yang lebih berkesan sekaligus memperkuat citra profesional.</p>
-
-<p>Karyamedia Souvenir telah melayani pembuatan berbagai souvenir custom sejak tahun 2001 untuk perusahaan, instansi, universitas, maupun komunitas. Seluruh pesanan dapat dikirim ke berbagai daerah di Indonesia melalui JNE, TIKI, Lion Parcel, armada bus, maupun layanan cargo sehingga proses distribusi menjadi lebih mudah dan fleksibel.</p>
-  <h2>Keunggulan Pesanan tumbler souvenir perusahaan</h2><p>Karyamedia telah melayani ratusan instansi dan event nasional sejak 2001 di Yogyakarta. Setiap pesanan dikerjakan dengan standar kualitas tinggi, mulai dari desain, produksi, hingga pengiriman yang aman. Proses pemesanan juga mudah melalui <a href="/cara-pesan">halaman cara pesan</a> sehingga Anda dapat menyesuaikan pesanan tanpa kerumitan. Jangan ragu untuk berkonsultasi gratis dengan tim kami sebelum menentukan pilihan.</p><h2>Mengapa Memilih tumbler souvenir perusahaan dari Karyamedia</h2><p>Selain kualitas bahan, kami memprioritaskan komunikasi yang cepat dan transparan selama proses pengerjaan. Desain revisi tersedia agar hasil sesuai ekspektasi, dan pengiriman dapat dilakukan ke seluruh Indonesia. Diskusikan kebutuhan tumbler souvenir perusahaan Anda lewat <a href="/kontak">halaman kontak</a> kami.</p><h2>Tips Memilih Accessories</h2><p>Untuk Tumbler Souvenir Perusahaan untuk Branding Bisnis, konsultasikan kebutuhan Anda kepada tim Karyamedia yang berpengalaman. Kami menawarkan berbagai pilihan produk custom yang dapat disesuaikan dengan tema, warna, dan anggaran acara Anda. Pastikan untuk memilih bahan yang tahan lama serta finising yang rapi agar kesan yang diberikan maksimal. Lihat koleksi lengkap di <a href="/katalog-produk/accessories">Accessories</a> atau simak pengalaman klien kami.</p>`.trim()
-},
+  
   {
   slug: "plakat-akrilik-custom-murah-berkualitas-untuk-penghargaan",
   title: "Plakat Akrilik Custom Murah Berkualitas untuk Penghargaan",
@@ -4660,7 +4347,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <li>Acara wisuda sekolah maupun perguruan tinggi.</li>
 </ul>
 
-<p>Jika Anda membutuhkan referensi produk lain, baca juga artikel <a href="/blog/medali-custom-untuk-kompetisi-dan-event">Medali Custom untuk Kompetisi dan Event</a> yang membahas souvenir penghargaan untuk berbagai kegiatan.</p>
+<p>Jika Anda membutuhkan referensi produk lain, baca juga artikel <a href="/blog/medali-custom-panduan-memilih-dan-memesan">Medali Custom untuk Kompetisi dan Event</a> yang membahas souvenir penghargaan untuk berbagai kegiatan.</p>
 
 <p>Baca juga panduan lengkap kami: <a href="/blog/panduan-lengkap-plakat-custom">Panduan Lengkap Plakat Custom: Jenis, Bahan, Harga, dan…</a> sebagai referensi menyeluruh seputar Plakat.</p><h2>FAQ</h2>
 
@@ -4966,104 +4653,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <p>Karyamedia Souvenir telah berpengalaman sejak tahun 2001 dalam memproduksi berbagai jenis plakat dan souvenir wisuda untuk sekolah, universitas, serta berbagai institusi di Indonesia. Seluruh pesanan dapat dikirim ke seluruh Indonesia melalui JNE, TIKI, Lion Parcel, armada bus, maupun layanan cargo sehingga kebutuhan acara wisuda dapat terpenuhi dengan aman dan tepat waktu.</p>
   <h2>Tips Memilih Plakat</h2><p>Untuk mendapatkan hasil terbaik, konsultasikan kebutuhan Anda kepada tim Karyamedia yang berpengalaman. Kami menawarkan berbagai pilihan produk custom yang dapat disesuaikan dengan tema, warna, dan anggaran acara Anda. Pastikan untuk memilih bahan yang tahan lama serta finising yang rapi agar kesan yang diberikan maksimal. Lihat koleksi lengkap di <a href="/katalog-produk/plakat">Plakat</a> atau simak pengalaman klien kami di <a href="/profil">halaman profil</a> Karyamedia.</p><h2>Tips Memilih Plakat</h2><p>Untuk Plakat Wisuda Custom untuk Kenang-Kenangan Kelulusan, konsultasikan kebutuhan Anda kepada tim Karyamedia yang berpengalaman. Kami menawarkan berbagai pilihan produk custom yang dapat disesuaikan dengan tema, warna, dan anggaran acara Anda. Pastikan untuk memilih bahan yang tahan lama serta finising yang rapi agar kesan yang diberikan maksimal. Lihat koleksi lengkap di <a href="/katalog-produk/plakat">Plakat</a> atau simak pengalaman klien kami.</p><h2>Keunggulan Pesanan plakat wisuda custom</h2><p>Karyamedia telah melayani ratusan instansi dan event nasional sejak 2001 di Yogyakarta. Setiap pesanan dikerjakan dengan standar kualitas tinggi, mulai dari desain, produksi, hingga pengiriman yang aman. Proses pemesanan juga mudah melalui <a href="/cara-pesan">halaman cara pesan</a> sehingga Anda dapat menyesuaikan pesanan tanpa kerumitan. Jangan ragu untuk berkonsultasi gratis dengan tim kami sebelum menentukan pilihan.</p><h2>Mengapa Memilih plakat wisuda custom dari Karyamedia</h2><p>Selain kualitas bahan, kami memprioritaskan komunikasi yang cepat dan transparan selama proses pengerjaan. Desain revisi tersedia agar hasil sesuai ekspektasi, dan pengiriman dapat dilakukan ke seluruh Indonesia. Diskusikan kebutuhan plakat wisuda custom Anda lewat <a href="/kontak">halaman kontak</a> kami.</p>`.trim()
 },
-  {
-  slug: "tumbler-stainless-steel-custom-untuk-merchandise-premium",
-  title: "Tumbler Stainless Steel Custom untuk Merchandise Premium",
-  description: "Tumbler stainless steel custom cocok untuk souvenir perusahaan, seminar, dan hadiah eksklusif. Simak keunggulan, tips memilih, serta estimasi harga.",
-  category: "Accessories",
-  date: "2026-07-10",
-  image: "/images/produk-unggulan/tumbler/tumbler-10.png",
-  tags: [
-    "tumbler stainless steel custom",
-    "tumbler stainless steel",
-    "tumbler custom",
-    "souvenir tumbler",
-    "merchandise premium"
-  ],
-  content: `
-<p><strong>Tumbler stainless steel custom</strong> menjadi pilihan favorit bagi perusahaan, instansi, universitas, hingga komunitas yang ingin memberikan merchandise premium dengan nilai guna tinggi. Dibandingkan souvenir biasa, tumbler berbahan stainless steel menawarkan daya tahan yang lebih baik, tampilan elegan, serta kemampuan menjaga suhu minuman lebih lama. Tidak heran jika produk ini banyak digunakan sebagai hadiah perusahaan, souvenir seminar, maupun merchandise eksklusif untuk berbagai acara.</p>
-
-<p>Selain memiliki fungsi yang bermanfaat dalam aktivitas sehari-hari, tumbler stainless steel juga menjadi media branding yang efektif. Logo perusahaan atau identitas acara yang dicetak pada permukaan tumbler akan terus terlihat selama produk digunakan, sehingga memberikan eksposur yang lebih panjang dibandingkan souvenir sekali pakai.</p>
-
-<h2>Keunggulan Tumbler Stainless Steel Custom</h2>
-
-<p>Ada beberapa alasan mengapa tumbler berbahan stainless steel menjadi pilihan utama untuk kebutuhan merchandise.</p>
-
-<ul>
-<li><strong>Tahan lama</strong> karena material stainless steel tidak mudah pecah maupun berkarat.</li>
-<li><strong>Menjaga suhu minuman</strong> lebih lama, terutama pada model double wall atau vacuum insulated.</li>
-<li><strong>Tampilan premium</strong> yang cocok untuk corporate gift maupun hadiah penghargaan.</li>
-<li><strong>Ramah lingkungan</strong> karena dapat digunakan berulang kali sehingga mengurangi penggunaan botol plastik sekali pakai.</li>
-<li><strong>Mudah dikustomisasi</strong> dengan logo, nama perusahaan, maupun desain khusus.</li>
-</ul>
-
-<h2>Pilihan Model Tumbler Stainless Steel</h2>
-
-<p>Setiap kebutuhan memiliki model tumbler yang berbeda. Beberapa jenis yang umum digunakan antara lain:</p>
-
-<ul>
-<li><strong>Single Wall Stainless Steel</strong> dengan desain ringan dan harga yang lebih ekonomis.</li>
-<li><strong>Double Wall Stainless Steel</strong> yang mampu mengurangi perpindahan suhu dari dalam ke luar.</li>
-<li><strong>Vacuum Insulated Tumbler</strong> untuk menjaga minuman tetap panas atau dingin selama beberapa jam.</li>
-<li><strong>Tumbler dengan Tutup Anti Bocor</strong> yang praktis dibawa saat bekerja maupun bepergian.</li>
-<li><strong>Tumbler Kombinasi Bambu</strong> dengan tampilan natural yang semakin populer sebagai merchandise premium.</li>
-</ul>
-
-<h2>Tips Memilih Tumbler Stainless Steel Custom</h2>
-
-<p>Agar hasil sesuai kebutuhan, pertimbangkan beberapa hal berikut sebelum melakukan pemesanan.</p>
-
-<ol>
-<li>Pilih kapasitas tumbler sesuai kebutuhan, seperti 350 ml, 500 ml, atau 600 ml.</li>
-<li>Pastikan menggunakan stainless steel berkualitas agar lebih awet.</li>
-<li>Gunakan desain logo yang sederhana sehingga hasil cetak terlihat jelas.</li>
-<li>Sesuaikan metode branding, seperti laser engraving, UV printing, atau sablon.</li>
-<li>Tambahkan gift box jika tumbler akan digunakan sebagai hadiah eksklusif.</li>
-</ol>
-
-<h2>Estimasi Harga Tumbler Stainless Steel Custom</h2>
-
-<p>Harga tumbler stainless steel custom dipengaruhi oleh jenis material, kapasitas, model, metode pencetakan logo, serta jumlah pemesanan. Tumbler single wall umumnya memiliki estimasi harga yang lebih ekonomis, sedangkan model vacuum insulated dengan finishing premium berada pada kisaran harga yang lebih tinggi.</p>
-
-<p>Untuk kebutuhan perusahaan atau event dengan jumlah besar, pemesanan dalam jumlah banyak biasanya memberikan harga per unit yang lebih efisien. Oleh karena itu, penting untuk menentukan spesifikasi dan jumlah kebutuhan sejak awal agar mendapatkan penawaran yang sesuai.</p>
-
-<h2>Penggunaan Tumbler Stainless Steel untuk Berbagai Acara</h2>
-
-<p>Tumbler stainless steel custom sangat fleksibel dan dapat digunakan pada berbagai kegiatan, seperti:</p>
-
-<ul>
-<li>Seminar dan workshop.</li>
-<li>Corporate gathering.</li>
-<li>Pelatihan dan orientasi karyawan.</li>
-<li>Souvenir pelanggan dan mitra bisnis.</li>
-<li>Hadiah ulang tahun perusahaan.</li>
-<li>Merchandise komunitas dan organisasi.</li>
-<li>Souvenir kampus dan sekolah.</li>
-</ul>
-
-<p>Jika Anda juga membutuhkan merchandise lain untuk acara perusahaan atau institusi, baca artikel <a href="/blog/tumbler-souvenir-perusahaan-untuk-branding-bisnis">Tumbler Souvenir Perusahaan untuk Branding Bisnis</a> sebagai referensi tambahan. Untuk pilihan tumbler dengan harga yang lebih ekonomis, simak artikel <a href="/blog/tumbler-custom-murah-berkualitas-untuk-semua-kebutuhan">Tumbler Custom Murah Berkualitas untuk Semua Kebutuhan</a> dan <a href="/blog/tumbler-souvenir-untuk-event-dan-merchandise-custom">Tumbler Souvenir untuk Event dan Merchandise Custom</a>.</p>
-
-<p>Baca juga panduan lengkap kami: <a href="/blog/panduan-lengkap-tumbler-custom">Panduan Lengkap Tumbler Custom untuk Souvenir dan…</a> sebagai referensi menyeluruh seputar Accessories.</p><h2>FAQ</h2>
-
-<h3>Apakah logo perusahaan bisa dicetak pada tumbler stainless steel?</h3>
-<p>Ya. Logo dapat diaplikasikan menggunakan teknik laser engraving, UV printing, maupun sablon sesuai jenis tumbler dan desain yang diinginkan.</p>
-
-<h3>Apakah tumbler stainless steel aman untuk minuman panas?</h3>
-<p>Ya. Material stainless steel dirancang untuk menyimpan minuman panas maupun dingin dengan aman, terutama pada model double wall dan vacuum insulated.</p>
-
-<h3>Berapa minimal pemesanan tumbler custom?</h3>
-<p>Minimal pemesanan bergantung pada model tumbler yang dipilih. Pemesanan dalam jumlah lebih banyak umumnya memberikan harga yang lebih kompetitif.</p>
-
-<h3>Apakah tersedia kemasan gift box?</h3>
-<p>Tersedia berbagai pilihan gift box yang dapat disesuaikan dengan kebutuhan corporate gift maupun souvenir premium.</p>
-
-<h2>Penutup</h2>
-
-<p>Tumbler stainless steel custom merupakan pilihan merchandise yang memadukan fungsi, daya tahan, dan nilai estetika dalam satu produk. Dengan desain yang sesuai identitas perusahaan atau acara, tumbler tidak hanya menjadi hadiah yang bermanfaat tetapi juga media branding yang efektif dalam jangka panjang.</p>
-
-<p>Karyamedia Souvenir telah berpengalaman sejak tahun 2001 memproduksi berbagai souvenir dan merchandise custom untuk perusahaan, instansi pemerintah, universitas, sekolah, serta komunitas. Seluruh pesanan dapat dikirim ke seluruh Indonesia melalui JNE, TIKI, Lion Parcel, armada bus, maupun layanan cargo sehingga proses distribusi menjadi lebih mudah, aman, dan tepat waktu.</p>
-  <h2>Keunggulan Pesanan tumbler stainless steel custom</h2><p>Karyamedia telah melayani ratusan instansi dan event nasional sejak 2001 di Yogyakarta. Setiap pesanan dikerjakan dengan standar kualitas tinggi, mulai dari desain, produksi, hingga pengiriman yang aman. Proses pemesanan juga mudah melalui <a href="/cara-pesan">halaman cara pesan</a> sehingga Anda dapat menyesuaikan pesanan tanpa kerumitan. Jangan ragu untuk berkonsultasi gratis dengan tim kami sebelum menentukan pilihan.</p><h2>Mengapa Memilih tumbler stainless steel custom dari Karyamedia</h2><p>Selain kualitas bahan, kami memprioritaskan komunikasi yang cepat dan transparan selama proses pengerjaan. Desain revisi tersedia agar hasil sesuai ekspektasi, dan pengiriman dapat dilakukan ke seluruh Indonesia. Diskusikan kebutuhan tumbler stainless steel custom Anda lewat <a href="/kontak">halaman kontak</a> kami.</p>`.trim()
-},
+  
   {
   slug: "tumbler-promosi-untuk-branding-dan-merchandise-event",
   title: "Tumbler Promosi untuk Branding dan Merchandise Event",
@@ -5141,7 +4731,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <li>Merchandise komunitas.</li>
 </ul>
 
-<p>Jika Anda membutuhkan referensi produk serupa, baca juga artikel <a href="/blog/tumbler-stainless-steel-custom-untuk-merchandise-premium">Tumbler Stainless Steel Custom untuk Merchandise Premium</a> untuk mengetahui pilihan tumbler dengan kualitas yang lebih eksklusif. Untuk pilihan tumbler dengan budget terjangkau, artikel <a href="/blog/tumbler-custom-murah-berkualitas-untuk-semua-kebutuhan">Tumbler Custom Murah Berkualitas untuk Semua Kebutuhan</a> dan <a href="/blog/tumbler-souvenir-untuk-event-dan-merchandise-custom">Tumbler Souvenir untuk Event dan Merchandise Custom</a> bisa menjadi referensi tambahan.</p>
+<p>Jika Anda membutuhkan referensi produk serupa, baca juga artikel <a href="/blog/tumbler-promosi-untuk-branding-dan-merchandise-event">Tumbler Stainless Steel Custom untuk Merchandise Premium</a> untuk mengetahui pilihan tumbler dengan kualitas yang lebih eksklusif. Untuk pilihan tumbler dengan budget terjangkau, artikel <a href="/blog/tumbler-souvenir-untuk-event-dan-merchandise-custom">Tumbler Custom Murah Berkualitas untuk Semua Kebutuhan</a> dan <a href="/blog/tumbler-souvenir-untuk-event-dan-merchandise-custom">Tumbler Souvenir untuk Event dan Merchandise Custom</a> bisa menjadi referensi tambahan.</p>
 
 <p>Baca juga panduan lengkap kami: <a href="/blog/panduan-lengkap-tumbler-custom">Panduan Lengkap Tumbler Custom untuk Souvenir dan…</a> sebagai referensi menyeluruh seputar Accessories.</p><h2>FAQ</h2>
 
@@ -5164,113 +4754,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <p>Karyamedia Souvenir telah berpengalaman sejak tahun 2001 memproduksi berbagai souvenir dan merchandise custom untuk perusahaan, instansi pemerintah, universitas, sekolah, hingga komunitas. Pesanan dapat dikirim ke seluruh Indonesia melalui JNE, TIKI, Lion Parcel, armada bus, maupun layanan cargo sehingga kebutuhan merchandise Anda dapat terpenuhi dengan aman dan tepat waktu.</p>
   <h2>Tips Memilih Accessories</h2><p>Untuk Tumbler Promosi untuk Branding dan Merchandise Event, konsultasikan kebutuhan Anda kepada tim Karyamedia yang berpengalaman. Kami menawarkan berbagai pilihan produk custom yang dapat disesuaikan dengan tema, warna, dan anggaran acara Anda. Pastikan untuk memilih bahan yang tahan lama serta finising yang rapi agar kesan yang diberikan maksimal. Lihat koleksi lengkap di <a href="/katalog-produk/accessories">Accessories</a> atau simak pengalaman klien kami.</p><h2>Keunggulan Pesanan tumbler promosi</h2><p>Karyamedia telah melayani ratusan instansi dan event nasional sejak 2001 di Yogyakarta. Setiap pesanan dikerjakan dengan standar kualitas tinggi, mulai dari desain, produksi, hingga pengiriman yang aman. Proses pemesanan juga mudah melalui <a href="/cara-pesan">halaman cara pesan</a> sehingga Anda dapat menyesuaikan pesanan tanpa kerumitan. Jangan ragu untuk berkonsultasi gratis dengan tim kami sebelum menentukan pilihan.</p><h2>Mengapa Memilih tumbler promosi dari Karyamedia</h2><p>Selain kualitas bahan, kami memprioritaskan komunikasi yang cepat dan transparan selama proses pengerjaan. Desain revisi tersedia agar hasil sesuai ekspektasi, dan pengiriman dapat dilakukan ke seluruh Indonesia. Diskusikan kebutuhan tumbler promosi Anda lewat <a href="/kontak">halaman kontak</a> kami.</p>`.trim()
 },
-  {
-  slug: "tumbler-custom-murah-berkualitas-untuk-semua-kebutuhan",
-  title: "Tumbler Custom Murah Berkualitas untuk Semua Kebutuhan",
-  description: "Tumbler custom murah untuk seminar, perusahaan, sekolah, dan komunitas. Simak tips memilih bahan, desain, serta estimasi harga sebelum memesan.",
-  category: "Accessories",
-  date: "2026-07-10",
-  image: "/images/produk-unggulan/tumbler/tumbler-8.png",
-  tags: [
-    "tumbler custom murah",
-    "tumbler custom",
-    "tumbler souvenir",
-    "tumbler promosi",
-    "merchandise custom"
-  ],
-  content: `
-<p><strong>Tumbler custom murah</strong> menjadi pilihan favorit bagi perusahaan, sekolah, universitas, instansi pemerintah, hingga komunitas yang membutuhkan souvenir bermanfaat dengan anggaran yang tetap efisien. Selain memiliki fungsi sebagai wadah minuman, tumbler juga menjadi media promosi yang efektif karena dapat digunakan setiap hari. Logo atau identitas yang dicetak pada permukaan tumbler akan terus terlihat sehingga membantu meningkatkan awareness terhadap sebuah brand maupun acara.</p>
-
-<p>Saat ini tersedia berbagai pilihan tumbler dengan harga yang terjangkau tanpa harus mengorbankan kualitas. Mulai dari tumbler plastik BPA Free hingga stainless steel, semuanya dapat dikustomisasi sesuai kebutuhan. Dengan desain yang menarik dan bahan yang tepat, tumbler mampu menjadi merchandise yang memberikan kesan profesional sekaligus bernilai jangka panjang.</p>
-
-<h2>Keunggulan Tumbler Custom Murah</h2>
-
-<p>Memilih tumbler custom tidak selalu berarti harus mengeluarkan biaya besar. Produk yang ekonomis tetap memiliki banyak kelebihan apabila dipilih dengan tepat.</p>
-
-<ul>
-<li><strong>Harga lebih terjangkau</strong> sehingga cocok untuk kebutuhan dalam jumlah besar.</li>
-<li><strong>Dapat dicetak logo dan identitas acara</strong> sebagai media branding.</li>
-<li><strong>Memiliki nilai guna tinggi</strong> karena digunakan dalam aktivitas sehari-hari.</li>
-<li><strong>Tersedia dalam berbagai model dan warna</strong> sesuai kebutuhan.</li>
-<li><strong>Mendukung gaya hidup ramah lingkungan</strong> dengan mengurangi penggunaan botol plastik sekali pakai.</li>
-</ul>
-
-<h2>Pilihan Material Tumbler</h2>
-
-<p>Setiap jenis material memiliki karakteristik dan keunggulan yang berbeda.</p>
-
-<ul>
-<li><strong>Plastik BPA Free</strong> cocok untuk seminar, pelatihan, dan event dengan peserta dalam jumlah besar karena lebih ekonomis.</li>
-<li><strong>Stainless Steel</strong> memberikan tampilan premium sekaligus memiliki daya tahan yang baik.</li>
-<li><strong>Double Wall Stainless Steel</strong> membantu menjaga suhu minuman panas maupun dingin lebih lama.</li>
-<li><strong>Kombinasi Stainless dan Bambu</strong> memberikan kesan eksklusif sekaligus mendukung konsep ramah lingkungan.</li>
-</ul>
-
-<p>Pemilihan material sebaiknya disesuaikan dengan target penerima, konsep acara, dan anggaran yang telah disiapkan.</p>
-
-<h2>Tips Memesan Tumbler Custom Murah</h2>
-
-<p>Agar mendapatkan produk dengan kualitas terbaik sesuai anggaran, berikut beberapa hal yang dapat diperhatikan.</p>
-
-<ol>
-<li>Tentukan jenis tumbler sesuai kebutuhan acara.</li>
-<li>Gunakan desain logo yang sederhana agar hasil cetak lebih jelas.</li>
-<li>Pilih kapasitas yang sesuai, seperti 350 ml, 500 ml, atau 600 ml.</li>
-<li>Pesan dalam jumlah yang sesuai karena harga per unit biasanya lebih hemat untuk pembelian dalam jumlah besar.</li>
-<li>Pastikan metode cetak sesuai dengan material tumbler agar hasil lebih awet.</li>
-</ol>
-
-<h2>Estimasi Harga Tumbler Custom Murah</h2>
-
-<p>Harga tumbler custom dipengaruhi oleh jenis bahan, ukuran, kapasitas, metode pencetakan logo, dan jumlah pemesanan. Berikut perkiraan harga untuk masing-masing pilihan:</p>
-
-<ul>
-<li><strong>Tumbler Plastik BPA Free</strong> — mulai Rp15.000–Rp25.000 per unit (min. 100 pcs).</li>
-<li><strong>Tumbler Stainless Steel Single Wall</strong> — mulai Rp30.000–Rp45.000 per unit (min. 100 pcs).</li>
-<li><strong>Tumbler Vacuum Insulated (Double Wall)</strong> — mulai Rp50.000–Rp75.000 per unit (min. 100 pcs).</li>
-<li><strong>Tumbler Kombinasi Bambu</strong> — mulai Rp45.000–Rp65.000 per unit (min. 100 pcs).</li>
-</ul>
-
-<p>Harga di atas bersifat estimasi dan dapat berbeda tergantung kompleksitas desain serta metode cetak yang dipilih. Melakukan pemesanan dalam jumlah lebih besar biasanya memberikan harga per unit yang lebih kompetitif, sehingga cocok untuk kebutuhan seminar, gathering, promosi perusahaan, maupun souvenir komunitas.</p>
-
-<h2>Kapan Tumbler Custom Banyak Digunakan?</h2>
-
-<p>Tumbler custom menjadi merchandise yang fleksibel dan dapat digunakan pada berbagai kegiatan, seperti:</p>
-
-<ul>
-<li>Seminar dan workshop.</li>
-<li>Corporate gathering.</li>
-<li>Pelatihan karyawan.</li>
-<li>Promosi produk.</li>
-<li>Souvenir sekolah dan universitas.</li>
-<li>Event komunitas.</li>
-<li>Hadiah pelanggan dan mitra bisnis.</li>
-<li>Program apresiasi karyawan.</li>
-</ul>
-
-<p>Jika Anda membutuhkan referensi merchandise lainnya, baca juga artikel <a href="/blog/tumbler-promosi-untuk-branding-dan-merchandise-event">Tumbler Promosi untuk Branding dan Merchandise Event</a> yang membahas strategi penggunaan tumbler sebagai media branding.</p>
-
-<p>Baca juga panduan lengkap kami: <a href="/blog/panduan-lengkap-tumbler-custom">Panduan Lengkap Tumbler Custom untuk Souvenir dan…</a> sebagai referensi menyeluruh seputar Accessories.</p><h2>FAQ</h2>
-
-<h3>Apakah tumbler custom bisa dicetak logo perusahaan?</h3>
-<p>Ya. Logo, nama instansi, maupun desain khusus dapat dicetak menggunakan teknik sablon, UV printing, atau laser engraving sesuai jenis tumbler.</p>
-
-<h3>Berapa minimal pemesanan?</h3>
-<p>Minimal pemesanan bergantung pada model tumbler yang dipilih. Untuk pembelian dalam jumlah besar biasanya tersedia harga yang lebih ekonomis.</p>
-
-<h3>Apakah tersedia kemasan gift box?</h3>
-<p>Ya. Tersedia pilihan box standar maupun gift box premium yang cocok untuk corporate gift atau hadiah eksklusif.</p>
-
-<h3>Berapa lama proses produksi?</h3>
-<p>Waktu produksi disesuaikan dengan jumlah pesanan dan tingkat kerumitan desain. Sebaiknya lakukan pemesanan lebih awal agar produk selesai tepat waktu.</p>
-
-<h2>Penutup</h2>
-
-<p>Tumbler custom murah merupakan solusi ideal bagi Anda yang ingin menghadirkan souvenir berkualitas tanpa harus melebihi anggaran. Dengan memilih material yang tepat serta desain yang menarik, tumbler dapat menjadi merchandise yang bermanfaat sekaligus memperkuat identitas perusahaan, instansi, maupun komunitas.</p>
-
-<p>Karyamedia Souvenir telah berpengalaman sejak tahun 2001 dalam memproduksi berbagai souvenir dan merchandise custom untuk perusahaan, instansi pemerintah, sekolah, universitas, hingga komunitas. Kami melayani pengiriman ke seluruh Indonesia melalui JNE, TIKI, Lion Parcel, armada bus, dan layanan cargo sehingga pesanan dapat dikirim dengan aman ke berbagai wilayah di Indonesia.</p>
-  <h2>Tips Memilih Accessories</h2><p>Untuk Tumbler Custom Murah Berkualitas untuk Semua Kebutuhan, konsultasikan kebutuhan Anda kepada tim Karyamedia yang berpengalaman. Kami menawarkan berbagai pilihan produk custom yang dapat disesuaikan dengan tema, warna, dan anggaran acara Anda. Pastikan untuk memilih bahan yang tahan lama serta finising yang rapi agar kesan yang diberikan maksimal. Lihat koleksi lengkap di <a href="/katalog-produk/accessories">Accessories</a> atau simak pengalaman klien kami.</p><h2>Keunggulan Pesanan tumbler custom murah</h2><p>Karyamedia telah melayani ratusan instansi dan event nasional sejak 2001 di Yogyakarta. Setiap pesanan dikerjakan dengan standar kualitas tinggi, mulai dari desain, produksi, hingga pengiriman yang aman. Proses pemesanan juga mudah melalui <a href="/cara-pesan">halaman cara pesan</a> sehingga Anda dapat menyesuaikan pesanan tanpa kerumitan. Jangan ragu untuk berkonsultasi gratis dengan tim kami sebelum menentukan pilihan.</p>`.trim()
-},
+  
   {
   slug: "tumbler-souvenir-untuk-event-dan-merchandise-custom",
   title: "Tumbler Souvenir untuk Event dan Merchandise Custom",
@@ -5385,7 +4869,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <li>Program apresiasi karyawan.</li>
 </ul>
 
-<p>Jika Anda sedang mencari pilihan tumbler dengan material premium, baca juga artikel <a href="/blog/tumbler-stainless-steel-custom-untuk-merchandise-premium">Tumbler Stainless Steel Custom untuk Merchandise Premium</a> sebagai referensi tambahan.</p>
+<p>Jika Anda sedang mencari pilihan tumbler dengan material premium, baca juga artikel <a href="/blog/tumbler-promosi-untuk-branding-dan-merchandise-event">Tumbler Stainless Steel Custom untuk Merchandise Premium</a> sebagai referensi tambahan.</p>
 
 <p>Baca juga panduan lengkap kami: <a href="/blog/panduan-lengkap-tumbler-custom">Panduan Lengkap Tumbler Custom untuk Souvenir dan…</a> sebagai referensi menyeluruh seputar Accessories.</p><h2>FAQ</h2>
 
@@ -6242,7 +5726,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 
 <p>Apabila plakat akan diberikan kepada tamu kehormatan atau pejabat, penggunaan box bludru premium dapat meningkatkan nilai presentasi produk.</p>
 
-<p>Untuk referensi lainnya, Anda juga dapat membaca artikel <a href="/blog/panduan-memilih-plakat-akrilik-custom">Panduan Memilih Plakat Akrilik Custom</a>, <a href="/blog/prasasti-marmer-custom-untuk-gedung-dan-peresmian">Prasasti Marmer Custom untuk Gedung dan Peresmian</a>, serta <a href="/blog/medali-custom-untuk-kompetisi-dan-event">Medali Custom untuk Kompetisi dan Event</a>.</p>
+<p>Untuk referensi lainnya, Anda juga dapat membaca artikel <a href="/blog/panduan-memilih-plakat-akrilik-custom">Panduan Memilih Plakat Akrilik Custom</a>, <a href="/blog/prasasti-marmer-custom-untuk-gedung-dan-peresmian">Prasasti Marmer Custom untuk Gedung dan Peresmian</a>, serta <a href="/blog/medali-custom-panduan-memilih-dan-memesan">Medali Custom untuk Kompetisi dan Event</a>.</p>
 
 <p>Baca juga panduan lengkap kami: <a href="/blog/panduan-lengkap-plakat-custom">Panduan Lengkap Plakat Custom: Jenis, Bahan, Harga, dan…</a> sebagai referensi menyeluruh seputar Plakat.</p><h2>FAQ</h2>
 
@@ -12067,7 +11551,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 
 <p>Karyamedia Souvenir melayani pembuatan medali logam dan akrilik custom untuk berbagai kebutuhan. Kami siap membantu konsultasi gratis untuk menentukan jenis medali yang paling sesuai dengan acara Anda. Hubungi kami melalui WhatsApp untuk diskusi lebih lanjut.</p>
 
-<p>Baca juga artikel <a href="/blog/medali-custom-untuk-kompetisi-dan-event">Medali Custom untuk Kompetisi Olahraga dan Event Sekolah</a> untuk referensi produk medali custom yang sesuai dengan kebutuhan acara Anda.</p>
+<p>Baca juga artikel <a href="/blog/medali-custom-panduan-memilih-dan-memesan">Medali Custom untuk Kompetisi Olahraga dan Event Sekolah</a> untuk referensi produk medali custom yang sesuai dengan kebutuhan acara Anda.</p>
 
 <p>Baca juga panduan lengkap kami: <a href="/blog/panduan-lengkap-medali-custom">Panduan Lengkap Medali Custom: Jenis, Bahan, Harga, dan…</a> sebagai referensi menyeluruh seputar Medali.</p><h2 id="faq">FAQ</h2>
 
@@ -12325,7 +11809,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 
 <p>Proses pemesanan <strong>medali perunggu</strong> custom di Karyamedia Souvenir mudah dan transparan. Hubungi tim kami via WhatsApp untuk konsultasi gratis. Sampaikan jumlah, bahan, ukuran, dan desain yang diinginkan. Tim kami akan membuatkan mockup dan memberikan penawaran <strong>harga medali perunggu</strong>. Setelah disetujui, proses produksi 10-14 hari kerja untuk medali logam, 5-7 hari untuk medali akrilik. Kami melayani pengiriman ke seluruh Indonesia.</p>
 
-<p>Baca juga artikel <a href="/blog/panduan-lengkap-medali-custom">Panduan Lengkap Medali Custom</a> untuk informasi komprehensif tentang semua jenis medali, <a href="/blog/medali-custom-untuk-kompetisi-dan-event">Harga Medali Custom untuk Kompetisi Olahraga</a>, dan <a href="/blog/medali-custom-panduan-memilih-dan-memesan">Panduan Memilih Medali Custom</a> untuk informasi lebih lengkap.</p>
+<p>Baca juga artikel <a href="/blog/panduan-lengkap-medali-custom">Panduan Lengkap Medali Custom</a> untuk informasi komprehensif tentang semua jenis medali, <a href="/blog/medali-custom-panduan-memilih-dan-memesan">Harga Medali Custom untuk Kompetisi Olahraga</a>, dan <a href="/blog/medali-custom-panduan-memilih-dan-memesan">Panduan Memilih Medali Custom</a> untuk informasi lebih lengkap.</p>
 
 <h2>Tips Mendapatkan Harga Medali Perunggu Terbaik</h2>
 
@@ -12480,7 +11964,7 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
 <li><strong>Garansi produk:</strong> Jika ada masalah kualitas, kami bertanggung jawab penuh. Garansi kepuasan 100%.</li>
 </ol>
 
-<p>Baca juga artikel <a href="/blog/panduan-lengkap-medali-custom">Panduan Lengkap Medali Custom</a>, <a href="/blog/medali-custom-panduan-memilih-dan-memesan">Panduan Memilih Medali Custom</a>, <a href="/blog/medali-custom-untuk-kompetisi-dan-event">Harga Medali Custom untuk Kompetisi Olahraga</a>, dan <a href="/blog/perbandingan-medali-logam-akrilik">Perbandingan Medali Logam vs Akrilik</a> untuk informasi lebih lengkap.</p>
+<p>Baca juga artikel <a href="/blog/panduan-lengkap-medali-custom">Panduan Lengkap Medali Custom</a>, <a href="/blog/medali-custom-panduan-memilih-dan-memesan">Panduan Memilih Medali Custom</a>, <a href="/blog/medali-custom-panduan-memilih-dan-memesan">Harga Medali Custom untuk Kompetisi Olahraga</a>, dan <a href="/blog/perbandingan-medali-logam-akrilik">Perbandingan Medali Logam vs Akrilik</a> untuk informasi lebih lengkap.</p>
 
 <h2 id="faq">FAQ</h2>
 

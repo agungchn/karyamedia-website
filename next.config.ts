@@ -9,6 +9,12 @@ const nextConfig: NextConfig = {
         destination: "https://karyamediasouvenir.com/:path*",
         permanent: true,
       },
+      // Consolidation: near-duplicate articles (>=80% Jaccard) 301'd to their
+      // canonical hub so ranking signals merge. See scripts/seo/consolidate.mjs.
+      { source: "/blog/tumbler-souvenir-perusahaan-untuk-branding-bisnis", destination: "/blog/tumbler-promosi-untuk-branding-dan-merchandise-event", permanent: true },
+      { source: "/blog/tumbler-stainless-steel-custom-untuk-merchandise-premium", destination: "/blog/tumbler-promosi-untuk-branding-dan-merchandise-event", permanent: true },
+      { source: "/blog/tumbler-custom-murah-berkualitas-untuk-semua-kebutuhan", destination: "/blog/tumbler-souvenir-untuk-event-dan-merchandise-custom", permanent: true },
+      { source: "/blog/medali-custom-untuk-kompetisi-dan-event", destination: "/blog/medali-custom-panduan-memilih-dan-memesan", permanent: true },
     ];
   },
   async headers() {

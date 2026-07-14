@@ -49,12 +49,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   })
 
-  const blogPages: MetadataRoute.Sitemap = articles.map((article) => ({
-    url: `${BASE_URL}/blog/${article.slug}`,
-    lastModified: new Date(article.date),
-    changeFrequency: "monthly" as const,
-    priority: 0.6,
-  }))
+  // Slugs that are 301-redirected to a canonical article (consolidation).
+  const REDIRECTED = new Set([
+    "tumbler-souvenir-perusahaan-untuk-branding-bisnis",
+    "tumbler-stainless-steel-custom-untuk-merchandise-premium",
+    "tumbler-custom-murah-berkualitas-untuk-semua-kebutuhan",
+    "medali-custom-untuk-kompetisi-dan-event",
+  ])
+
+  const blogPages: MetadataRoute.Sitemap = articles
+    .filter((article) => !REDIRECTED.has(article.slug))
+    .map((article) => ({
+      url: `${BASE_URL}/blog/${article.slug}`,
+      lastModified: new Date(article.date),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    }))
 
   return [...staticPages, ...categoryPages, ...subcategoryPages, ...productPages, ...blogPages]
 }

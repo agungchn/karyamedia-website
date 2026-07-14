@@ -30,7 +30,7 @@ const subcategoryMap: Record<string, string> = {
   "panduan-memilih-plakat-akrilik-custom": "plakat-akrilik",
   "plakat-akrilik-custom-untuk-berbagai-kebutuhan": "plakat-akrilik",
   "plakat-wisuda-custom-untuk-kenang-kenangan-kelulusan": "plakat-akrilik",
-  "medali-custom-untuk-kompetisi-dan-event": "medali-custom",
+
   "medali-custom-panduan-memilih-dan-memesan": "medali-custom",
   "medali-piala-souvenir-turnamen-olahraga": "medali-custom",
   "medali-custom-untuk-lomba-sekolah": "medali-custom",
@@ -45,10 +45,9 @@ const subcategoryMap: Record<string, string> = {
   "panduan-memilih-piala-golf-custom-berkualitas": "piala-golf",
   "trophy-golf-elegan-untuk-berbagai-jenis-kejuaraan": "piala-golf",
   "tumbler-souvenir-custom-untuk-event-dan-perusahaan": "tumbler",
-  "tumbler-souvenir-perusahaan-untuk-branding-bisnis": "tumbler",
-  "tumbler-stainless-steel-custom-untuk-merchandise-premium": "tumbler",
+
   "tumbler-promosi-untuk-branding-dan-merchandise-event": "tumbler",
-  "tumbler-custom-murah-berkualitas-untuk-semua-kebutuhan": "tumbler",
+
   "tumbler-souvenir-untuk-event-dan-merchandise-custom": "tumbler",
   "plakat-wayang-custom-untuk-penghargaan-instansi": "plakat-wayang",
   "harga-plakat-wayang-custom-dan-tips-memilih": "plakat-wayang",

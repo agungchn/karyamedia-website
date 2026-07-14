@@ -71,6 +71,30 @@ export const PRODUCTS = [
   { phrase: "souvenir wisuda", category: "Souvenir Wisuda" },
 ]
 
+// Medali dengan angle buyer-intent spesifik & konteks acara/lembaga NYATA di
+// Indonesia. Ini SEARCH INTENT berbeda dari "medali custom" sehingga artikelnya
+// distinct (lolos gate duplikat 90% karena token beda) DAN jauh lebih berbobot:
+// tiap frasa memberi LLM konteks konkret (event sekolah, keagamaan, kemerdekaan,
+// pramuka, wisuda) sehingga isi artikel kaya, bukan sekadar ganti nama provinsi.
+// Dipasangkan langsung dengan provinsi (tanpa segmen) agar frasa natural:
+// "medali O2SN Aceh", "medali HUT RI Yogyakarta", "medali pramuka Bali".
+export const MEDALI_INTENTS = [
+  { phrase: "medali kejuaraan", category: "Medali" },
+  { phrase: "medali penghargaan", category: "Medali" },
+  { phrase: "medali lomba", category: "Medali" },
+  { phrase: "medali kelulusan", category: "Medali" },
+  { phrase: "medali olahraga", category: "Medali" },
+  { phrase: "medali turnamen", category: "Medali" },
+  { phrase: "medali juara", category: "Medali" },
+  { phrase: "medali wisuda", category: "Medali" },
+  { phrase: "medali O2SN", category: "Medali" },
+  { phrase: "medali OSN", category: "Medali" },
+  { phrase: "medali PORSENI", category: "Medali" },
+  { phrase: "medali pramuka", category: "Medali" },
+  { phrase: "medali MTQ", category: "Medali" },
+  { phrase: "medali HUT RI", category: "Medali" },
+]
+
 function hashStr(s) {
   let h = 2166136261
   for (let i = 0; i < s.length; i++) {
@@ -104,6 +128,19 @@ export function buildTopics(date = new Date()) {
           location: p.name,
         })
       }
+    }
+  }
+  // medali intent × provinsi (tanpa segmen, agar frasa natural & beda intent)
+  for (const p of PROVINCES) {
+    for (const mi of MEDALI_INTENTS) {
+      all.push({
+        query: `${mi.phrase} ${p.name}`,
+        title: `${capitalize(mi.phrase)} ${p.name}`,
+        category: mi.category,
+        province: p.name,
+        segment: "medali-intent",
+        location: p.name,
+      })
     }
   }
   const seeded = all.map((t) => ({ ...t, _score: hashStr(dayKey + "::" + t.query) }))

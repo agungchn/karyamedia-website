@@ -45,6 +45,7 @@ import { products } from "@/data/products"
 import { testimonials } from "@/data/testimonials"
 import { articles } from "@/data/articles"
 import { LocalBusinessReviewsSchema } from "@/components/json-ld"
+import { GbpReviewCta } from "@/components/gbp-review-cta"
 import { companyInfo } from "@/data/company"
 import { getWhatsAppLink, generateWhatsAppMessage } from "@/lib/utils"
 
@@ -1112,6 +1113,7 @@ Didukung lebih dari 25 pengrajin profesional yang ahli di bidangnya masing-masin
 
       <LatestArticlesSlider articles={latestArticles} />
 
+      <GbpReviewCta />
 
       <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

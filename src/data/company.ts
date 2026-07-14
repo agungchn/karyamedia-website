@@ -6,6 +6,7 @@ export const companyInfo = {
   whatsapp: "0822 4358 0777",
   whatsappNumber: "6282243580777",
   email: "karyamedia_jogja@yahoo.com",
+  gbpReviewUrl: "https://share.google/ZlqytdSBZG9mpyXJM",
   operationalHours: "Senin–Sabtu 08.00–18.00 WIB; Minggu & libur nasional tutup",
   payment: {
     qris: true,

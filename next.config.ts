@@ -1,6 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  images: {
+    // Sajikan gambar dalam format modern (AVIF/WebP) lewat next/image
+    // untuk memperkecil bytes & memperbaiki Core Web Vitals (LCP).
+    formats: ["image/avif", "image/webp"],
+  },
   async redirects() {
     return [
       {

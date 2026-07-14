@@ -4,6 +4,7 @@ import { MessageCircle, Mail, MapPin, Phone, Clock } from "lucide-react"
 import { companyInfo } from "@/data/company"
 import { categories } from "@/data/categories"
 import { getWhatsAppLink } from "@/lib/utils"
+import { GbpReviewCta } from "@/components/gbp-review-cta"
 
 export function Footer() {
   return (
@@ -103,8 +104,9 @@ export function Footer() {
               {[
                 { label: "Profil Perusahaan", href: "/profil" },
                 { label: "Galeri Proyek", href: "/gallery" },
-                { label: "Testimoni", href: "/#testimoni" },
+                { label: "Testimoni", href: "/testimoni" },
                 { label: "Cara Pesan", href: "/cara-pesan" },
+                { label: "FAQ", href: "/faq" },
                 { label: "Artikel & Tips", href: "/blog" },
                 { label: "Kontak", href: "/kontak" },
               ].map((item) => (
@@ -157,6 +159,13 @@ export function Footer() {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="border-t border-white/10 bg-primary-light/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
+          <p className="text-sm text-blue-100/70">Sudah pernah pesan di Karyamedia? Bantu klien lain dengan ulasan Anda:</p>
+          <GbpReviewCta variant="compact" />
         </div>
       </div>
 

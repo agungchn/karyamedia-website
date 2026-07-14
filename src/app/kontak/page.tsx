@@ -16,6 +16,7 @@ import {
 import { companyInfo } from "@/data/company"
 import { getWhatsAppLink } from "@/lib/utils"
 import { SparklesCore } from "@/components/ui/sparkles-core"
+import { GbpReviewCta } from "@/components/gbp-review-cta"
 
 export const metadata: Metadata = {
   title: "Kontak Kami",
@@ -380,6 +381,8 @@ export default function KontakPage() {
           </div>
         </div>
       </section>
+
+      <GbpReviewCta />
 
       <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

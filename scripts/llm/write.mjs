@@ -79,14 +79,15 @@ const MOCK = {
     '<p><strong>Berapa lama pengerjaan?</strong> Waktu pengerjaan bervariasi tergantung jumlah dan kerumitan desain, namun tim selalu menginformasikan estimasi sejak awal pemesanan.</p>',
 }
 
-function buildPrompt({ keyword, category, location = null, segment = null, extra = "" }) {
+function buildPrompt({ keyword, category, location = null, segment = null, segmentCtx = null, extra = "" }) {
   const loc = location || "seluruh Indonesia"
   const seg = segment || "instansi, kampus, dan event"
+  const segCtxTxt = segmentCtx ? ` (mis. ${segmentCtx})` : ""
   return `Tulis artikel SEO berbahasa Indonesia, 100% orisinal (jangan kutip/meniru teks pihak ketiga mana pun), untuk bisnis "Karyamedia" (produsen souvenir & custom manufacturing berbasis Yogyakarta sejak 2001 yang melayani seluruh Indonesia, termasuk ${loc}).
 
 Keyword utama: "${keyword}"
 Kategori: ${category}
-Segmen target: ${seg} (gunakan contoh kasus, narasi, dan kebutuhan yang relevan dengan ${loc} dan segmen tersebut secara natural; jangan ubah fakta bahwa Karyamedia berbasis Yogyakarta).
+Segmen target: ${seg}${segCtxTxt}; gunakan contoh kasus, narasi, kebutuhan, dan kata kunci long-tail yang relevan dengan ${loc} serta segmen tersebut secara natural; jangan ubah fakta bahwa Karyamedia berbasis Yogyakarta.
 
 Buat objek JSON dengan field berikut:
 - "title": judul artikel, MAKSIMAL 60 karakter, HARUS mengandung keyword utama secara utuh (contoh: jika keyword "plakat akrilik custom" maka title mengandung frasa tersebut).
@@ -105,7 +106,7 @@ Buat objek JSON dengan field berikut:
   Return HANYA objek JSON, tanpa teks lain.${extra}`
 }
 
-export function buildBeatPrompt({ keyword, category, competitor = null, location = null, segment = null, extra = "" }) {
+export function buildBeatPrompt({ keyword, category, competitor = null, location = null, segment = null, segmentCtx = null, extra = "" }) {
   const c = competitor && competitor.outline && competitor.outline.length ? competitor : null
   const compBlock = c
     ? `
@@ -120,11 +121,12 @@ Panjang artikel pesaing: ~${c.words || "?"} kata.
     : ""
   const loc = location || "seluruh Indonesia"
   const seg = segment || "instansi, kampus, dan event"
+  const segCtxTxt = segmentCtx ? ` (mis. ${segmentCtx})` : ""
   return `Tulis artikel SEO berbahasa Indonesia, 100% ORISINAL (JANGAN meniru/mengutip teks pesaing; pakai sudut pandang & contoh sendiri), untuk bisnis "Karyamedia" (produsen souvenir & custom manufacturing berbasis Yogyakarta sejak 2001 yang melayani seluruh Indonesia, termasuk ${loc}: plakat, medali, piala, prasasti, gift box, souvenir wisuda, name tag, dll).
 
 Keyword utama: "${keyword}"
 Kategori: ${category}
-Segmen target: ${seg} (gunakan contoh kasus, narasi, dan kebutuhan yang relevan dengan ${loc} dan segmen tersebut secara natural; jangan ubah fakta bahwa Karyamedia berbasis Yogyakarta).
+Segmen target: ${seg}${segCtxTxt}; gunakan contoh kasus, narasi, kebutuhan, dan kata kunci long-tail yang relevan dengan ${loc} serta segmen tersebut secara natural; jangan ubah fakta bahwa Karyamedia berbasis Yogyakarta.
 ${compBlock}
 Buat objek JSON dengan field berikut:
 - "title": MAKSIMAL 60 karakter, HARUS mengandung keyword utama secara utuh.

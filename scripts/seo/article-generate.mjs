@@ -338,6 +338,7 @@ async function main() {
   const location = province || process.env.ARTICLE_PROVINCE || null
   const seg = segment || process.env.ARTICLE_SEGMENT || null
   const segLabel = segmentLabel(seg)
+  const segCtx = seg ? SEGMENTS.find((s) => s.key === seg)?.ctx || "" : ""
   if (!category) category = beat ? "Blog" : inferCategory(keyword)
 
   let slug = slugify(keyword)
@@ -370,8 +371,8 @@ async function main() {
   const targetWords = beat ? 1800 : 1100
   const genOpts = (extra) =>
     beat
-      ? { keyword, category, prompt: buildBeatPrompt({ keyword, category, competitor, location, segment: segLabel, extra }) }
-      : { keyword, category, location, segment: segLabel, extra }
+      ? { keyword, category, prompt: buildBeatPrompt({ keyword, category, competitor, location, segment: segLabel, segmentCtx: segCtx, extra }) }
+      : { keyword, category, location, segment: segLabel, segmentCtx: segCtx, extra }
 
   console.log("Menulis prose via LLM...")
   let data = await generateArticle(genOpts())

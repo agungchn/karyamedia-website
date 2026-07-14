@@ -53,6 +53,15 @@ try {
   $msg += "`n`n(Gagal mengambil trafik GSC)"
 }
 
+# tambahan: trafik Bing dari Bing Webmaster Tools (read-only, AI search = Copilot/DuckDuckGo)
+try {
+  $bing = & node scripts/bing/traffic.mjs 2>&1 | Out-String
+  $msg += "`n`n" + $bing.Trim()
+  Add-Content -Encoding utf8 -Path (Join-Path $root "seo-bing-traffic-log.txt") -Value "`n===== $ts =====`n$bing"
+} catch {
+  $msg += "`n`n(Gagal mengambil trafik Bing)"
+}
+
 Set-Content -Path (Join-Path $root "seo-inspect-last-msg.txt") -Encoding utf8 -Value "TITLE: $title`n`nMSG:`n$msg"
 
 Start-Process powershell -ArgumentList "-NoProfile","-ExecutionPolicy Bypass","-File",$popup,"-Title",$title,"-Message",$msg -WindowStyle Hidden

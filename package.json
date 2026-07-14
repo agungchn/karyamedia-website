@@ -15,6 +15,7 @@
     "seo:ideas": "node scripts/seo/ideas.mjs",
     "seo:inspect": "node scripts/gsc/inspect.mjs",
     "seo:traffic": "node scripts/gsc/traffic.mjs",
+    "seo:bing-traffic": "node scripts/bing/traffic.mjs",
     "seo:fix-lint": "node scripts/seo/fix-lint.mjs",
     "seo:link-pillar": "node scripts/seo/link-pillar.mjs",
     "seo:consolidate": "node scripts/seo/consolidate.mjs",

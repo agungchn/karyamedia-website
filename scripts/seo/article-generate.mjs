@@ -14,7 +14,7 @@ import { execSync } from "node:child_process"
 import { fileURLToPath } from "node:url"
 import { dirname, join, resolve } from "node:path"
 import { extractArticles } from "./article-lint.mjs"
-import { generateArticle } from "../llm/write.mjs"
+import { generateArticle, buildBeatPrompt } from "../llm/write.mjs"
 import { commitAndPush } from "./git.mjs"
 
 const here = dirname(fileURLToPath(import.meta.url))
@@ -44,6 +44,32 @@ function isAuthoritative(content) {
   if (/instansi|klien|pelanggan|event nasional|universitas|kementerian/i.test(c)) score++ // credible clients
   return score >= 2
 }
+async function fetchOutline(url) {
+  const ctrl = new AbortController()
+  const t = setTimeout(() => ctrl.abort(), 15000)
+  try {
+    const res = await fetch(url, { signal: ctrl.signal, headers: { "User-Agent": "Mozilla/5.0" } })
+    if (!res.ok) return null
+    const html = await res.text()
+    const clean = (s) => (s || "").replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim()
+    const title = (html.match(/<title>([^<]*)<\/title>/i) || [])[1] || ""
+    const outline = []
+    for (const m of html.matchAll(/<h[1-3][^>]*>([\s\S]*?)<\/h[1-3]>/gi)) {
+      const txt = clean(m[1])
+      if (txt) outline.push(txt)
+    }
+    const text = html.replace(/<(script|style)[^>]*>[\s\S]*?<\/(script|style)>/gi, " ")
+    const words = (text.replace(/<[^>]*>/g, " ").match(/\S+/g) || []).length
+    const bullets = [...html.matchAll(/<li[^>]*>([\s\S]*?)<\/li>/gi)]
+      .map((m) => clean(m[1])).filter(Boolean).slice(0, 15)
+    return { title, outline: outline.slice(0, 25), words, bullets }
+  } catch {
+    return null
+  } finally {
+    clearTimeout(t)
+  }
+}
+
 function slugify(s) {
   return s
     .toLowerCase()
@@ -225,20 +251,22 @@ const escTpl = (s) => String(s).replace(/\\/g, "\\\\").replace(/`/g, "\\`").repl
 async function main() {
   const args = process.argv.slice(2)
   let keyword = "", category = null
-  let commitPush = false
+  let commitPush = false, beat = false, competitorUrl = null
   for (let i = 0; i < args.length; i++) {
     if (args[i] === "--category") category = args[++i]
     else if (args[i] === "--commit-push") commitPush = true
+    else if (args[i] === "--beat") beat = true
+    else if (args[i] === "--competitor-url") competitorUrl = args[++i]
     else if (!keyword) keyword = args[i]
   }
   if (!keyword) {
-    console.error('Pakai: node scripts/seo/article-generate.mjs "<keyword>" [--category X] [--commit-push]')
+    console.error('Pakai: node scripts/seo/article-generate.mjs "<keyword>" [--category X] [--beat] [--competitor-url URL] [--commit-push]')
     process.exit(1)
   }
-  if (!category) category = inferCategory(keyword)
+  if (!category) category = beat ? "Blog" : inferCategory(keyword)
 
   let slug = slugify(keyword)
-  if (!/custom/.test(keyword.toLowerCase())) slug += "-custom"
+  if (!beat && !/custom/.test(keyword.toLowerCase())) slug += "-custom"
 
   const working = readFileSync(articlesPath, "utf8")
   const used = usedImages(working)
@@ -248,31 +276,44 @@ async function main() {
     process.exit(1)
   }
 
-  console.log(`Keyword: "${keyword}"  ->  slug: ${slug}  kategori: ${category}`)
+  console.log(`Keyword: "${keyword}"  ->  slug: ${slug}  kategori: ${category}${beat ? "  [BEAT MODE]" : ""}`)
+
+  // ---- competitor outline (skyscraper) ----
+  let competitor = null
+  if (beat && competitorUrl) {
+    console.log("Mengambil kerangka artikel pesaing: " + competitorUrl)
+    const o = await fetchOutline(competitorUrl)
+    if (o && o.outline.length) {
+      competitor = { ...o, url: competitorUrl }
+      console.log(`  pesaing: "${o.title}" (~${o.words} kata, ${o.outline.length} heading)`)
+    } else {
+      console.log("  gagal ambil kerangka pesaing, lanjut mode komprehensif.")
+    }
+  }
+
+  const minWords = beat ? 1500 : 800
+  const targetWords = beat ? 1800 : 1100
+  const genOpts = (extra) =>
+    beat
+      ? { keyword, category, prompt: buildBeatPrompt({ keyword, category, competitor, extra }) }
+      : { keyword, category, extra }
+
   console.log("Menulis prose via LLM...")
-  let data = await generateArticle({ keyword, category })
+  let data = await generateArticle(genOpts())
   for (let attempt = 1; attempt <= 3; attempt++) {
     const plain = (data.content || "").replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim()
     const words = plain ? plain.split(/\s+/).length : 0
-    if (words >= 800) break
-    console.log(`Konten ${words} kata (<800), perpanjang (percobaan ${attempt})...`)
-    data = await generateArticle({
-      keyword,
-      category,
-      extra: `\n\nPENTING: draf sebelumnya hanya ${words} kata. Buat ULANG artikel yang LEBIH PANJANG, MINIMAL 1100 kata, dengan lebih banyak sub-bagian <h2> dan paragraf.`,
-    })
+    if (words >= minWords) break
+    console.log(`Konten ${words} kata (<${minWords}), perpanjang (percobaan ${attempt})...`)
+    data = await generateArticle(genOpts(`\n\nPENTING: draf sebelumnya hanya ${words} kata. Buat ULANG artikel yang LEBIH PANJANG, MINIMAL ${targetWords} kata, dengan lebih banyak sub-bagian <h2> dan paragraf serta contoh konkret.`))
   }
   // Safety net: if still short, append extra LLM-written sections.
   {
     let plain = (data.content || "").replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim()
     let words = plain ? plain.split(/\s+/).length : 0
-    for (let e = 1; e <= 2 && words < 800; e++) {
+    for (let e = 1; e <= 2 && words < minWords; e++) {
       console.log(`Konten ${words} kata, tambah section via LLM (percobaan ${e})...`)
-      const ext = await generateArticle({
-        keyword,
-        category,
-        extra: `\n\nTulis 3 bagian <h2> TAMBAHAN (masing-masing minimal 150 kata, topik terkait "${keyword}") untuk melengkapi artikel. JANGAN sertakan bagian FAQ. Hanya keluarkan HTML <h2>Judul</h2><p>Isi</p> saja, tanpa JSON dan tanpa markdown.`,
-      })
+      const ext = await generateArticle(genOpts(`\n\nTulis 3 bagian <h2> TAMBAHAN (masing-masing minimal 150 kata, topik terkait "${keyword}") untuk melengkapi artikel. JANGAN sertakan bagian FAQ. Hanya keluarkan HTML <h2>Judul</h2><p>Isi</p> saja, tanpa JSON dan tanpa markdown.`))
       const extraHtml = (ext && ext.content) || ""
       if (extraHtml) data.content = (data.content || "") + "\n" + extraHtml
       plain = (data.content || "").replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim()
@@ -284,12 +325,7 @@ async function main() {
   for (let a = 1; a <= 2; a++) {
     if (isAuthoritative(data.content || "")) break
     console.log(`Konten kurang otoritatif (tidak ada bukti konkret), regenerate (percobaan ${a})...`)
-    data = await generateArticle({
-      keyword,
-      category,
-      extra:
-        "\n\nPENTING: draf sebelumnya KURANG OTORITATIF dan tidak punya bukti konkret. Wajib sertakan fakta: Karyamedia BERDIRI SEJAK 2001, berbasis YOGYAKARTA/JOGJA, melayani RATUSAN INSTANSI & EVENT nasional, serta cantumkan ANGKA/TAHUN/STANDAR produksi. Hindari kalimat promosi generik tanpa bukti.",
-    })
+    data = await generateArticle(genOpts("\n\nPENTING: draf sebelumnya KURANG OTORITATIF dan tidak punya bukti konkret. Wajib sertakan fakta: Karyamedia BERDIRI SEJAK 2001, berbasis YOGYAKARTA/JOGJA, melayani RATUSAN INSTANSI & EVENT nasional, serta cantumkan ANGKA/TAHUN/STANDAR produksi. Hindari kalimat promosi generik tanpa bukti."))
   }
 
   // Guarantee title/description length rules (LLM sometimes overshoots).
@@ -306,7 +342,7 @@ async function main() {
   let content = (data.content || "").trim()
     .replace(/^```(?:html)?/i, "").replace(/```$/i, "").trim()
   if (!/<h2[^>]*>\s*FAQ\s*<\/h2>/i.test(content)) {
-    const faqKw = tags[0] || keyword
+    const faqKw = keyword
     content += `<h2>FAQ</h2><h3>Apakah Karyamedia melayani pembuatan ${faqKw} custom?</h3><p>Ya, Karyamedia melayani pembuatan ${faqKw} custom yang disesuaikan dengan kebutuhan, tema, dan anggaran acara Anda di Yogyakarta.</p><h3>Bagaimana cara memesan ${faqKw}?</h3><p>Silakan pelajari melalui <a href="/cara-pesan">halaman cara pesan</a> atau hubungi tim kami di <a href="/profil">profil Karyamedia</a>.</p>`
   }
   content = injectCategoryLink(content, category, catSlugs)

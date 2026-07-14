@@ -52,6 +52,7 @@ async function sitemapUrls(domain) {
   const base = domain.startsWith("http") ? domain.replace(/\/+$/, "") : `https://${domain}`
   const candidates = [
     `${base}/sitemap.xml`,
+    `${base}/sitemap`,
     `${base}/sitemap_index.xml`,
     `${base}/blog/sitemap.xml`,
     `${base}/post-sitemap.xml`,
@@ -110,7 +111,7 @@ export async function competitorTopics() {
       const topic = slugToTopic(u)
       if (!topic || seen.has(topic)) continue
       seen.add(topic)
-      out.push({ query: topic, source: domain })
+      out.push({ query: topic, source: domain, url: u })
     }
   }
   return out

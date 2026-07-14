@@ -101,10 +101,46 @@ Buat objek JSON dengan field berikut:
   Return HANYA objek JSON, tanpa teks lain.${extra}`
 }
 
+export function buildBeatPrompt({ keyword, category, competitor = null, extra = "" }) {
+  const c = competitor && competitor.outline && competitor.outline.length ? competitor : null
+  const compBlock = c
+    ? `
+KONTEKS ARTIKEL PESAING (yang akan dikalahkan — URL: ${c.url || ""}):
+Judul pesaing: ${c.title || ""}
+Kerangka pesaing (heading):
+${c.outline.map((h) => "- " + h).join("\n")}
+Poin bullet pesaing:
+${(c.bullets || []).map((b) => "* " + b).join("\n")}
+Panjang artikel pesaing: ~${c.words || "?"} kata.
+`
+    : ""
+  return `Tulis artikel SEO berbahasa Indonesia, 100% ORISINAL (JANGAN meniru/mengutip teks pesaing; pakai sudut pandang & contoh sendiri), untuk bisnis "Karyamedia" (produsen souvenir & custom manufacturing di Yogyakarta sejak 2001: plakat, medali, piala, prasasti, gift box, souvenir wisuda, name tag, dll).
+
+Keyword utama: "${keyword}"
+Kategori: ${category}
+${compBlock}
+Buat objek JSON dengan field berikut:
+- "title": MAKSIMAL 60 karakter, HARUS mengandung keyword utama secara utuh.
+- "description": 120-160 karakter, mengandung keyword utama.
+- "tags": array 4-6 kata kunci Indonesia lowercase; tags[0] SAMA dengan keyword utama.
+- "content": artikel HTML (string tunggal) dengan syarat:
+  * PANJANG 1500-2200 kata (wajib >=1500).
+  * MINIMAL 6 heading <h2> (lebih dalam & komprehensif dari pesaing).
+  * 240 karakter PERTAMA (paragraf pembuka) HARUS mengandung keyword utama secara utuh.
+  * JIKA topik membandingkan (vs / atau / mending / perbandingan), sertakan <table> perbandingan jelas (kolom: aspek, opsi A, opsi B) dengan narasi Karyamedia.
+  * Gunakan nada ahli produsen & sertakan BUKTI KONKRET: Karyamedia berdiri SEJAK 2001, berbasis YOGYAKARTA, melayani RATUSAN instansi & event nasional, sebutkan angka/spesifikasi riil (ukuran mm, lead time, range harga "mulai dari", standar quality control).
+  * ${c ? "Tutupi SEMUA poin pesaing DI ATAS, lalu TAMBAHKAN minimal 3 sudut pandang/section BARU yang TIDAK dibahas pesaing (lebih mendalam, contoh kasus, tips praktis, mitos, checklist, atau data Karyamedia)." : "Buat artikel paling komprehensif & otoritatif di topik ini."}
+  * WAJIB <h2>FAQ</h2> di akhir dengan 5-7 pasang <h3>Pertanyaan?</h3><p>Jawaban.</p>
+  * Bahasa natural, SEO-friendly, sebut "Karyamedia" wajar 1-2x.
+  * JANGAN markdown; hanya HTML inline (<p>, <h2>, <h3>, <table>, <ul><li>, <strong>).
+  * JANGAN satupun hyperlink (link disuntik otomatis nanti).
+Return HANYA objek JSON, tanpa teks lain.${extra}`
+}
+
 export async function generateArticle(input) {
   if (process.env.LLM_MOCK) return MOCK
 
-  const prompt = buildPrompt(input)
+  const prompt = input.prompt || buildPrompt(input)
   const zenKey = getZenKey()
   const geminiKey = getGeminiKey()
 

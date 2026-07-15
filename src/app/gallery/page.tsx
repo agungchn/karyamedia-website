@@ -197,6 +197,7 @@ export default function GalleryPage() {
                         alt={item.title}
                         width={800}
                         height={600}
+                        unoptimized
                         className="w-full h-auto object-cover"
                       />
                     </div>

@@ -239,6 +239,7 @@ export function HeroSection() {
                 <Image
                   src="/images/hero/plakat-akrilik (2).webp"
                   alt="Plakat Akrilik Custom"
+                  unoptimized
                   width={300}
                   height={300}
                   priority
@@ -251,6 +252,7 @@ export function HeroSection() {
                 <Image
                   src="/images/hero/kalung-rektor (12).webp"
                   alt="Kalung Rektor"
+                  unoptimized
                   width={250}
                   height={250}
                   loading="lazy"
@@ -263,6 +265,7 @@ export function HeroSection() {
                 <Image
                   src="/images/hero/plakat-wayang (33).webp"
                   alt="Plakat Wayang"
+                  unoptimized
                   width={180}
                   height={180}
                   loading="lazy"
@@ -274,9 +277,10 @@ export function HeroSection() {
               <div className="flex gap-3">
                 <div className="flex-1 rounded-2xl overflow-hidden shadow-xl shadow-black/30 group hover:scale-[1.02] transition-transform duration-500">
                   <Image
-                    src="/images/hero/map-wisuda (8).webp"
-                    alt="Medali"
-                    width={200}
+                  src="/images/hero/map-wisuda (8).webp"
+                  alt="Medali"
+                  unoptimized
+                  width={200}
                     height={200}
                     loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
@@ -284,9 +288,10 @@ export function HeroSection() {
                 </div>
                 <div className="flex-1 rounded-2xl overflow-hidden shadow-xl shadow-[#1D4ED8]/20 group hover:scale-[1.02] transition-transform duration-500">
                   <Image
-                    src="/images/hero/patung-wisuda (20).webp"
-                    alt="Patung Wisuda"
-                    width={280}
+                  src="/images/hero/patung-wisuda (20).webp"
+                  alt="Patung Wisuda"
+                  unoptimized
+                  width={280}
                     height={280}
                     loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"

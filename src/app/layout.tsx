@@ -66,6 +66,11 @@ export const metadata: Metadata = {
     "karyamedia",
   ],
   authors: [{ name: "Karyamedia Souvenir" }],
+  alternates: {
+    types: {
+      "application/rss+xml": "/feed.xml",
+    },
+  },
   icons: {
     icon: [
       { url: "/favicon/favicon.ico", sizes: "any", type: "image/x-icon" },

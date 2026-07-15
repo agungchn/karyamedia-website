@@ -2,12 +2,15 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    // Optimasi next/image dibatalkan karena kuota Image Optimization Vercel
-    // (402 Payment Required) memblokir SELURUH gambar di situs live.
-    // Gambar kini disaji langsung dari file statis /public (CDN statis Vercel,
-    // tanpa kuota) sehingga selalu tampil. Untuk kompresi modern, pindahkan
-    // gambar ke penyimpanan eksternal (Cloudinary/S3+CloudFront) bila diperlukan.
-    unoptimized: true,
+    // Pakai custom loader -> file WebP pra-teroptimasi (scripts/optimize-images.mjs)
+    // di folder public/images/opt. Ini menghindari layanan Image Optimization
+    // Vercel (kuota habis -> 402 Payment Required yang memblokir semua gambar).
+    // WebP dihasilkan saat build (prebuild) & tiap gambar baru (add.js).
+    loader: "custom",
+    loaderFile: "./src/image-loader.ts",
+    // Hanya 2 lebar yg dihasilkan -> srcSet responsif (mobile 640, desktop 1280).
+    deviceSizes: [640, 1280],
+    imageSizes: [],
   },
   async redirects() {
     return [

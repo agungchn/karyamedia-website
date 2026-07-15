@@ -117,6 +117,21 @@ const result = src.slice(0, idx) + "\n  " + article + ",\n" + src.slice(idx + 1)
 fs.writeFileSync(file, result)
 
 console.log("Artikel berhasil ditambahkan!")
+
+// Optimasi gambar produk baru -> WebP (biar tampil optimal & bebas kuota Vercel)
+try {
+  const newImg = `public/images/produk-unggulan/${targetFolder}/${chosen}`
+  if (fs.existsSync(newImg)) {
+    require("child_process").execSync(
+      `node scripts/optimize-images.mjs --file ${newImg}`,
+      { cwd: __dirname, stdio: "inherit" }
+    )
+    console.log("Gambar dioptimasi (WebP).")
+  }
+} catch (e) {
+  console.log("Optimasi gambar gagal (abaikan): " + e.message)
+}
+
 console.log("Build...")
 try {
   require("child_process").execSync("npm run build", { cwd: __dirname, stdio: "inherit" })

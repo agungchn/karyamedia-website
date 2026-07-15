@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/optimize-images.mjs && next build",
     "start": "next start",
     "lint": "eslint",
+    "optimize:images": "node scripts/optimize-images.mjs",
     "seo": "node scripts/seo/check.mjs",
     "seo:submit": "node scripts/bing/autosubmit.mjs",
     "article:lint": "node scripts/seo/article-lint.mjs",

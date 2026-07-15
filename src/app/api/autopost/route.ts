@@ -12,8 +12,8 @@ const DRYRUN = process.env.AUTOPOST_DRYRUN === "1"
 const GRAPH = "https://graph.facebook.com/v21.0"
 
 const STORE_PATH = path.join(process.cwd(), "data", "autopost-posted.json")
-const KV_URL = process.env.AUTOPOST_STATE_URL
-const KV_TOKEN = process.env.AUTOPOST_STATE_TOKEN
+const KV_URL = process.env.AUTOPOST_STATE_URL || process.env.UPSTASH_REDIS_REST_URL
+const KV_TOKEN = process.env.AUTOPOST_STATE_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN
 
 export const dynamic = "force-dynamic"
 

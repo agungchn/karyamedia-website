@@ -166,7 +166,7 @@ export function ChatbotWidget() {
             />
             <button
               type="button"
-              onClick={send}
+              onClick={() => send()}
               disabled={loading || !input.trim()}
               aria-label="Kirim"
               className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-white transition hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-40"

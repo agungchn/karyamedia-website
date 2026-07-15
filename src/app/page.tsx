@@ -54,10 +54,6 @@ const latestArticles = [...articles]
   .slice(0, 12)
   .map((a) => ({ slug: a.slug, title: a.title, description: a.description, image: a.image, category: a.category }))
 
-const pillarArticles = articles
-  .filter((a) => a.slug.startsWith("panduan-lengkap-"))
-  .map((a) => ({ slug: a.slug, title: a.title }))
-
 export const metadata: Metadata = {
   description:
     "Produsen souvenir custom sejak 2001. Plakat akrilik, medali, piala, prasasti, souvenir wisuda & merchandise custom. Berbasis Yogyakarta, siap kirim seluruh Indonesia.",
@@ -1113,31 +1109,6 @@ Didukung lebih dari 25 pengrajin profesional yang ahli di bidangnya masing-masin
             <TestimonialCarousel testimonials={testimonials} />
             <LocalBusinessReviewsSchema />
           </div>
-      </section>
-
-      <section className="bg-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <h2 className="heading-display text-3xl md:text-4xl mb-3 text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-accessible">
-              Panduan Lengkap Souvenir Custom
-            </h2>
-            <p className="text-gray-500 max-w-2xl mx-auto">
-              Kumpulan panduan mendalam seputar plakat, medali, piala, souvenir wisuda, prasasti, dan batas wilayah untuk membantu Anda memilih & memesan.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-            {pillarArticles.map((p) => (
-              <Link
-                key={p.slug}
-                href={`/blog/${p.slug}`}
-                className="group flex items-center gap-2 rounded-xl border border-gray-200 px-4 py-3 text-sm font-medium text-gray-700 transition-all hover:border-primary hover:text-primary hover:shadow-sm"
-              >
-                <span className="truncate">{p.title}</span>
-                <ArrowRight className="w-4 h-4 shrink-0 opacity-0 transition-opacity group-hover:opacity-100" />
-              </Link>
-            ))}
-          </div>
-        </div>
       </section>
 
       <LatestArticlesSlider articles={latestArticles} />

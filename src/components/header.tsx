@@ -154,7 +154,6 @@ export function Header() {
               { label: "Profil", href: "/profil" },
               { label: "Galeri", href: "/gallery" },
               { label: "Cara Pesan", href: "/cara-pesan" },
-              { label: "FAQ", href: "/faq" },
               { label: "Kontak", href: "/kontak" },
             ].map((item) => (
               <Link
@@ -223,7 +222,6 @@ export function Header() {
               { label: "Profil", href: "/profil" },
               { label: "Galeri", href: "/gallery" },
               { label: "Cara Pesan", href: "/cara-pesan" },
-              { label: "FAQ", href: "/faq" },
               { label: "Kontak", href: "/kontak" },
             ].map((item) => (
               <Link

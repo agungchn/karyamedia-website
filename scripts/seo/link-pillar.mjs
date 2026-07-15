@@ -40,6 +40,17 @@ const PILLAR_TARGETS = {
   "panduan-lengkap-souvenir-custom": ["Souvenir", "Souvenir Wisuda"],
 }
 
+// pemetaan berbasis topik (slug) untuk pilar yang berbagi kategori.
+// dipakai untuk mengarahkan artikel cluster ke pilar yang TEPAT (bukan cuma per kategori).
+const PILLAR_TOPICS = [
+  { pillar: "panduan-lengkap-name-tag-custom", re: /name-tag|nametag|id-card|id card/ },
+  { pillar: "panduan-lengkap-papan-nama-custom", re: /papan-nama|papan nama/ },
+  { pillar: "panduan-lengkap-gantungan-kunci-custom", re: /gantungan-kunci|keychain/ },
+  { pillar: "panduan-lengkap-pin-bross-custom", re: /pin-bross|pin bross|bross/ },
+  { pillar: "panduan-lengkap-souvenir-pernikahan-custom", re: /souvenir-pernikahan|pernikahan|nikah/ },
+  { pillar: "panduan-lengkap-batas-wilayah-custom", re: /batas-wilayah|center-point|brass-table|tugu/ },
+]
+
 const text0 = readFileSync(articlesPath, "utf8")
 const arts = extractArticles(text0)
 const allSlugs = new Set(arts.map((a) => a.slug))
@@ -68,8 +79,9 @@ for (const a of arts) {
   const linkedTo = (target) => c.includes(`/blog/${target}"`) || c.includes(`/blog/${target}'`)
 
   if (!isPillar) {
-    // cluster -> pillar (naik ke pilar kategori)
-    const pillarSlug = PILLAR_FOR[cat]
+    // cluster -> pillar (naik ke pilar topik/kategori)
+    const topic = PILLAR_TOPICS.find((t) => t.re.test(slug))
+    const pillarSlug = topic && allSlugs.has(topic.pillar) ? topic.pillar : PILLAR_FOR[cat]
     if (pillarSlug && allSlugs.has(pillarSlug) && !linkedTo(pillarSlug)) {
       const pTitle = meta.find((x) => x.slug === pillarSlug)?.title || pillarSlug
       const anchor = `<p>Baca juga panduan lengkap kami: <a href="/blog/${pillarSlug}">${escTpl(pTitle)}</a> sebagai referensi menyeluruh seputar ${escTpl(cat)}.</p>`
@@ -79,10 +91,13 @@ for (const a of arts) {
       log.push(`cluster->pilar: ${slug} -> ${pillarSlug}`)
     }
   } else {
-    // pillar -> cluster (turun ke beberapa artikel terkait)
-    const targets = (PILLAR_TARGETS[slug] || []).flatMap((tc) =>
-      meta.filter((x) => x.category === tc && !x.slug.startsWith("panduan-lengkap-") && x.slug !== slug),
-    )
+    // pillar -> cluster (turun ke beberapa artikel terkait, berbasis topik bila ada)
+    const topic = PILLAR_TOPICS.find((t) => t.pillar === slug)
+    const targets = topic
+      ? meta.filter((x) => topic.re.test(x.slug) && !x.slug.startsWith("panduan-lengkap-") && x.slug !== slug)
+      : (PILLAR_TARGETS[slug] || []).flatMap((tc) =>
+          meta.filter((x) => x.category === tc && !x.slug.startsWith("panduan-lengkap-") && x.slug !== slug),
+        )
     const already = targets.filter((t) => linkedTo(t.slug))
     if (targets.length && already.length < 2) {
       const need = targets.slice(0, 3).filter((t) => !linkedTo(t.slug))

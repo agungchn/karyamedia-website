@@ -19,7 +19,8 @@
     "seo:fix-lint": "node scripts/seo/fix-lint.mjs",
     "seo:link-pillar": "node scripts/seo/link-pillar.mjs",
     "seo:consolidate": "node scripts/seo/consolidate.mjs",
-    "seo:indexnow": "node scripts/seo/indexnow.mjs"
+    "seo:indexnow": "node scripts/seo/indexnow.mjs",
+    "social:autopost": "node scripts/social/autopost.mjs"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.3.0",

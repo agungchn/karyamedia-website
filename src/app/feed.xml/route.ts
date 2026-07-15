@@ -20,6 +20,9 @@ export function GET() {
   const items = sorted
     .map((a) => {
       const url = `${SITE_URL}/blog/${a.slug}`
+      const image = a.image?.startsWith("http")
+        ? a.image
+        : `${SITE_URL}${a.image}`
       const pubDate = new Date(a.date).toUTCString()
       return `    <item>
       <title>${xmlEscape(a.title)}</title>
@@ -27,6 +30,7 @@ export function GET() {
       <guid isPermaLink="true">${url}</guid>
       <description>${xmlEscape(a.description)}</description>
       <category>${xmlEscape(a.category)}</category>
+      <image>${xmlEscape(image)}</image>
       <pubDate>${pubDate}</pubDate>
     </item>`
     })

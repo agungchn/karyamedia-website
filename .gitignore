@@ -32,6 +32,10 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
+
+# auto-post dedupe state (generated at runtime)
+data/autopost-posted.json
 
 # vercel
 .vercel

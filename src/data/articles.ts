@@ -64,7 +64,7 @@ export const articles: Article[] = [
 
 <h2>Medali Custom — Simbol Prestasi dan Penghargaan</h2>
 
-<img src="/images/produk-unggulan/medali-custom/medali-custom-5.png" alt="Medali custom untuk lomba dan turnamen" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/medali-custom/medali-custom-5-w640.webp" alt="Medali custom untuk lomba dan turnamen" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <p>Medali adalah simbol pencapaian yang paling universal. Dari kompetisi olahraga hingga lomba akademik, medali custom menjadi kenang-kenangan berharga bagi para pemenang. Tersedia dalam berbagai bahan seperti logam (kuningan/zinc alloy), akrilik, dan fiberglass. <strong>Harga medali custom</strong> mulai Rp5.000 hingga Rp35.000 per pcs tergantung bahan, ukuran, dan finishing.</p>
 
@@ -74,7 +74,7 @@ export const articles: Article[] = [
 
 <h2>Plakat Akrilik — Penghargaan Elegan dan Modern</h2>
 
-<img src="/images/hasil-produksi/plakat/plakat-hasil-produksi (2).png" alt="Plakat akrilik custom untuk penghargaan" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/hasil-produksi/plakat/plakat-hasil-produksi (2)-w640.webp" alt="Plakat akrilik custom untuk penghargaan" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <p>Plakat akrilik adalah pilihan penghargaan yang elegan dengan tampilan modern dan profesional. Dibuat dari bahan akrilik bening atau berwarna dengan teknik cetak UV atau ukir laser. Plakat akrilik cocok untuk penghargaan karyawan, seminar, wisuda, dan acara formal lainnya.</p>
 
@@ -92,7 +92,7 @@ export const articles: Article[] = [
 
 <h2>Souvenir Wisuda — Kenang-Kenangan Kelulusan</h2>
 
-<img src="/images/hasil-produksi/souvenir-wisuda/patung-wisuda (1).png" alt="Souvenir wisuda custom untuk kelulusan" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/hasil-produksi/souvenir-wisuda/patung-wisuda (1)-w640.webp" alt="Souvenir wisuda custom untuk kelulusan" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <p>Wisuda adalah momen penting dalam hidup setiap mahasiswa. Souvenir wisuda custom menjadi kenang-kenangan yang akan selalu diingat. Tersedia berbagai jenis souvenir wisuda: samir wisuda, map ijazah, patung wisuda, kalung rektor, tongkat rektor, baju toga, dan tabung wisuda.</p>
 
@@ -327,7 +327,7 @@ export const articles: Article[] = [
 
 <h2>Jenis Plakat Custom Berdasarkan Bahan</h2>
 
-<img src="/images/hasil-produksi/plakat/plakat-hasil-produksi (2).png" alt="Plakat akrilik custom berbagai bentuk" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/hasil-produksi/plakat/plakat-hasil-produksi (2)-w640.webp" alt="Plakat akrilik custom berbagai bentuk" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <p>Pemilihan bahan adalah faktor utama yang menentukan tampilan, daya tahan, dan <strong>harga plakat custom</strong>. Berikut adalah jenis-jenis plakat yang tersedia di Karyamedia Souvenir:</p>
 
@@ -344,7 +344,7 @@ export const articles: Article[] = [
 <p>Plakat marmer adalah pilihan paling premium dan megah. Menggunakan bahan marmer asli dengan tekstur alami yang unik. Cocok untuk peresmian gedung, penghargaan institusi bergengsi, atau prasasti. Teknik pembuatan menggunakan ukir atau sandblast untuk menghasilkan tulisan dan logo yang presisi. Harga mulai Rp150.000 hingga Rp500.000 per pcs. Baca juga artikel Plakat Marmer Custom untuk Penghargaan dan Peresmian.</p>
 
 <h3>Plakat Wayang</h3>
-<img src="/images/hasil-produksi/plakat-wayang/plakat-wayang-1.png" alt="Plakat wayang custom khas Indonesia" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/hasil-produksi/plakat-wayang/plakat-wayang-1-w640.webp" alt="Plakat wayang custom khas Indonesia" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <p>Plakat wayang adalah plakat khas Indonesia yang menggabungkan seni wayang dengan fungsi penghargaan. Wayang dari bahan fiberglass atau resin ditempelkan pada alas kayu atau akrilik. Sangat cocok untuk cinderamata kunjungan instansi pemerintah, penghargaan budaya, atau souvenir khas Yogyakarta. Setiap wayang memiliki makna filosofis yang mendalam. Harga mulai Rp50.000 hingga Rp200.000 per pcs. Baca juga artikel <a href="/blog/plakat-wayang-custom-untuk-penghargaan-instansi">Plakat Wayang Custom untuk Penghargaan Instansi</a>.</p>
 
@@ -584,7 +584,7 @@ export const articles: Article[] = [
 
 <h2>Jenis Souvenir Wisuda Custom</h2>
 
-<img src="/images/hasil-produksi/souvenir-wisuda/patung-wisuda (2).png" alt="Patung wisuda custom fiberglass" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/hasil-produksi/souvenir-wisuda/patung-wisuda (2)-w640.webp" alt="Patung wisuda custom fiberglass" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <p>Terdapat berbagai jenis souvenir wisuda yang bisa dipesan secara custom sesuai kebutuhan institusi. Berikut adalah jenis-jenis utama yang tersedia di Karyamedia Souvenir:</p>
 
@@ -814,7 +814,7 @@ export const articles: Article[] = [
 
 <h2>Jenis Piala dan Trophy Custom</h2>
 
-<img src="/images/produk-unggulan/piala-trophy/trophy-figur-2.png" alt="Piala trophy custom fiberglass berbagai model" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/piala-trophy/trophy-figur-2-w640.webp" alt="Piala trophy custom fiberglass berbagai model" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <p>Pemilihan jenis piala sangat tergantung pada jenis acara, anggaran, dan kesan yang ingin disampaikan. Berikut adalah jenis-jenis utama piala custom yang tersedia:</p>
 
@@ -1036,7 +1036,7 @@ export const articles: Article[] = [
 
 <h2>Jenis Prasasti Custom Berdasarkan Bahan</h2>
 
-<img src="/images/produk-unggulan/prasasti-marmer/prasasti-marmer-1.png" alt="Prasasti marmer custom untuk peresmian" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/prasasti-marmer/prasasti-marmer-1-w640.webp" alt="Prasasti marmer custom untuk peresmian" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <p>Pemilihan bahan adalah faktor paling penting dalam pembuatan prasasti. Setiap bahan memberikan karakter visual dan kesan yang berbeda. Berikut adalah jenis-jenis prasasti yang tersedia di Karyamedia Souvenir:</p>
 
@@ -1244,7 +1244,7 @@ export const articles: Article[] = [
 
 <h2>Jenis Gift Box Custom</h2>
 
-<img src="/images/produk-unggulan/box-bludru/box-bludru-1.png" alt="Box bludru custom untuk kemasan premium" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/box-bludru/box-bludru-1-w640.webp" alt="Box bludru custom untuk kemasan premium" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <p>Pemilihan jenis gift box sangat tergantung pada fungsi, tema acara, dan anggaran. Berikut adalah jenis-jenis utama gift box custom yang tersedia di Karyamedia Souvenir:</p>
 
@@ -1452,7 +1452,7 @@ export const articles: Article[] = [
 
 <h2>Jenis Tumbler Custom</h2>
 
-<img src="/images/produk-unggulan/tumbler/tumbler-13.png" alt="Tumbler stainless steel custom untuk souvenir" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/tumbler/tumbler-13-w640.webp" alt="Tumbler stainless steel custom untuk souvenir" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <p>Pemilihan jenis tumbler sangat tergantung pada target penerima, anggaran, dan tujuan pemberian. Berikut adalah jenis-jenis utama tumbler custom yang tersedia di Karyamedia Souvenir:</p>
 
@@ -1672,7 +1672,7 @@ export const articles: Article[] = [
 
 <h2>Mengapa Memilih Medali Custom?</h2>
 
-<p><img src="/images/produk-unggulan/medali-custom/medali-custom-57.png" alt="Medali custom berkualitas dari Karyamedia Souvenir" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" /></p>
+<p><img src="/images/opt/produk-unggulan/medali-custom/medali-custom-57-w640.webp" alt="Medali custom berkualitas dari Karyamedia Souvenir" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" /></p>
 
 <p>Medali custom menawarkan keunggulan yang tidak bisa diberikan oleh medali jadi: personalisasi. Dengan medali custom, Anda bisa menambahkan logo institusi, nama event, tahun penyelenggaraan, bahkan nama penerima. Hal ini membuat medali menjadi lebih bermakna dan eksklusif.</p>
 
@@ -1686,7 +1686,7 @@ export const articles: Article[] = [
 
 <h3>1. Medali Logam (Kuningan / Zinc Alloy)</h3>
 
-<p><img src="/images/produk-unggulan/medali-custom/medali-etching-3.png" alt="Medali logam custom dengan teknik etching" style="float:right;margin-left:16px;margin-bottom:12px;max-width:200px;border-radius:12px" /></p>
+<p><img src="/images/opt/produk-unggulan/medali-custom/medali-etching-3-w640.webp" alt="Medali logam custom dengan teknik etching" style="float:right;margin-left:16px;margin-bottom:12px;max-width:200px;border-radius:12px" /></p>
 
 <p>Medali logam adalah pilihan paling klasik dan prestisius. Dibuat dari bahan kuningan atau zinc alloy berkualitas tinggi, medali logam diproses menggunakan teknik cetak press atau etching untuk menghasilkan detail yang tajam dan tahan lama. Proses etching memungkinkan terciptanya desain dengan tingkat presisi tinggi, termasuk teks kecil dan logo kompleks.</p>
 
@@ -1744,7 +1744,7 @@ export const articles: Article[] = [
 
 <h2>Tips Memilih Bahan Medali Berdasarkan Jenis Acara</h2>
 
-<p><img src="/images/produk-unggulan/medali-custom/medali-custom-8.png" alt="Tips memilih medali custom untuk berbagai acara" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" /></p>
+<p><img src="/images/opt/produk-unggulan/medali-custom/medali-custom-8-w640.webp" alt="Tips memilih medali custom untuk berbagai acara" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" /></p>
 
 <p>Tidak semua bahan medali cocok untuk semua jenis acara. Berikut panduan praktis untuk membantu Anda memilih bahan medali yang tepat:</p>
 
@@ -1764,7 +1764,7 @@ export const articles: Article[] = [
 
 <p>Salah satu hal yang membedakan medali berkualitas adalah finishingnya. Tiga warna finishing yang paling populer adalah emas (gold), perak (silver), dan perunggu (bronze), masing-masing melambangkan juara 1, 2, dan 3. Karyamedia Souvenir menggunakan teknik electroplating untuk menghasilkan lapisan finishing yang rata, mengkilap, dan tahan lama.</p>
 
-<p><img src="/images/produk-unggulan/medali-custom/medali-emas-perak-perunggu-1.png" alt="Perbandingan finishing medali emas, perak, dan perunggu" style="float:right;margin-left:16px;margin-bottom:12px;max-width:200px;border-radius:12px" /></p>
+<p><img src="/images/opt/produk-unggulan/medali-custom/medali-emas-perak-perunggu-1-w640.webp" alt="Perbandingan finishing medali emas, perak, dan perunggu" style="float:right;margin-left:16px;margin-bottom:12px;max-width:200px;border-radius:12px" /></p>
 
 <p><strong>Finishing Emas (Gold):</strong> Menggunakan lapisan emas 24K atau gold chrome yang memberikan tampilan mewah berkilau. Warna emas melambangkan kemenangan tertinggi dan biasanya digunakan untuk juara 1. Harga medali finishing emas sedikit lebih tinggi karena bahan pelapis yang digunakan lebih mahal.</p>
 
@@ -1826,7 +1826,7 @@ export const articles: Article[] = [
 
 <h2>Panduan Merawat Medali Custom</h2>
 
-<p><img src="/images/produk-unggulan/medali-custom/medali-custom-15.png" alt="Cara merawat medali custom agar tahan lama" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" /></p>
+<p><img src="/images/opt/produk-unggulan/medali-custom/medali-custom-15-w640.webp" alt="Cara merawat medali custom agar tahan lama" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" /></p>
 
 <p>Agar medali tetap berkilau dan awet dalam jangka panjang, ikuti tips perawatan berikut:</p>
 
@@ -14153,7 +14153,7 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
 
 <p>Sebelum memesan, penting untuk mengenal bahan dasar yang umum digunakan. Setiap bahan memiliki karakter, tampilan, dan kekuatan yang berbeda sehingga cocok untuk situasi yang berbeda pula. Berikut adalah varian yang paling banyak dipesan untuk kebutuhan event maupun kantor.</p>
 
-<img src="/images/produk-unggulan/name-tag/name-tag-1.png" alt="name tag custom akrilik premium" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/name-tag/name-tag-1-w640.webp" alt="name tag custom akrilik premium" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <h3>Name Tag Akrilik</h3>
 <p>Name tag akrilik menjadi pilihan paling populer karena tampilannya yang elegan dan modern. Bahan ini transparan, bening, atau bisa dipilih dalam berbagai warna solid. Akrilik memberikan kesan eksklusif untuk seminar, peluncuran produk, maupun meja resepsionis kantor. Kelebihannya ringan, tidak mudah patah, dan mudah dibersihkan. Teknik cetak yang umum dipakai adalah UV printing langsung di permukaan atau dipadukan dengan laser engraving untuk efek timbul.</p>
@@ -14165,7 +14165,7 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
 
 <p>PVC juga kompatibel dengan teknologi cetak sublimasi yang membuat warna meresap ke dalam material, sehingga hasil tidak akan mengelupas meski kartu sering terlipat. Ukuran paling lazim adalah 54 x 85 mm mengikuti standar kartu nama internasional, namun bisa disesuaikan menjadi lebih besar untuk font yang lebih leluasa. Banyak kantor memadukan PVC dengan holder transparan agar kartu dapat diganti nama setiap hari tanpa mencetak ulang badge utama.</p>
 
-<img src="/images/produk-unggulan/name-tag/name-tag-10.png" alt="name tag custom kayu alami" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/name-tag/name-tag-10-w640.webp" alt="name tag custom kayu alami" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <h3>Name Tag Kayu</h3>
 <p>Untuk acara dengan nuansa natural, rustic, atau tema lingkungan, name tag kayu menjadi pilihan yang unik. Bahan kayu tipis diukir menggunakan mesin laser sehingga nama tampak timbul dan artistik. Name tag kayu sering dipakai sebagai souvenir pernikahan, gathering komunitas, atau workshop kreatif. Meski tampak berat, kayu yang digunakan biasanya sangat tipis sehingga tetap nyaman dibawa.</p>
@@ -14177,7 +14177,7 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
 
 <p>Proses pembuatan logam biasanya melalui tahap etching atau laser cut, lalu diisi cat pada area logo agar kontras. Untuk pengait, logam sering dipasang jarum pentul berkualitas tinggi atau magnet neodymium agar menempel kuat tanpa merusak pakaian. Karena bobotnya lebih berat, pastikan desain tidak terlalu besar agar nyaman dipakai seharian. Name tag logam adalah investasi jangka panjang yang bisa bertahan bertahun-tahun.</p>
 
-<img src="/images/produk-unggulan/name-tag/name-tag-11.png" alt="name tag custom magnet praktis" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/name-tag/name-tag-11-w640.webp" alt="name tag custom magnet praktis" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <h3>Name Tag Magnet</h3>
 <p>Name tag magnet adalah inovasi praktis yang menempel langsung ke pakaian tanpa perlu jarum pentul. Di balik pelat terdapat magnet kuat sehingga tidak merusak kain. Sangat disukai untuk seragam kantor, uniform hotel, dan rumah sakit di mana kerapian pakaian harus terjaga. Magnet juga memudahkan penggantian nama pada badge berulang setiap hari.</p>
@@ -14236,7 +14236,7 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
 
 <p>Pengaturan daya dan kecepatan laser menentukan warna hasil ukiran, mulai dari cokelat muda hingga hitam pekat tergantung bahan. Untuk akrilik, ukiran dari belakang memberikan efek tersembunyi yang mewah saat diterangi cahaya. Meski lebih lambat dibanding UV printing, laser engraving memberikan nilai eksklusif yang sering dicari untuk produk premium dan edisi terbatas.</p>
 
-<img src="/images/produk-unggulan/name-tag/name-tag-12.png" alt="name tag custom hasil sablon" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/name-tag/name-tag-12-w640.webp" alt="name tag custom hasil sablon" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <h3>Sablon</h3>
 <p>Sablon manual atau screen printing digunakan untuk cetak warna solid dalam jumlah banyak dengan biaya rendah. Teknik ini umum untuk name tag cloth atau label kain panitia. Sablon memberikan warna tebal dan tahan cuci, cocok untuk badge berulang yang dipakai dalam waktu lama.</p>
@@ -14268,7 +14268,7 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
 
 <p>Sangat disarankan mencantumkan foto kecil pada name tag RS agar pasien yakin identitas tenaga kesehatan, sekaligus mencegah penyalahgunaan badge oleh pihak luar. Hindari tali terlalu panjang yang berisiko tersangkut alat medis. Magnet juga dapat dipakai namun pastikan aman bagi staf dengan alat pacu jantung. Kebersihan badge harus rutin dijaga mengingat lingkungan rumah sakit sangat sensitif terhadap kontaminasi.</p>
 
-<img src="/images/produk-unggulan/name-tag/name-tag-13.png" alt="name tag custom panitia event" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/name-tag/name-tag-13-w640.webp" alt="name tag custom panitia event" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <h3>Untuk Panitia Acara</h3>
 <p>Panitia butuh name tag yang kuat karena dipakai berjam-jam dalam mobilitas tinggi. Akrilik tebal dengan clip pengait atau sablon kain adalah opsi tangguh. Tambahkan tulisan divisi seperti registrasi, konsumsi, atau keamanan untuk koordinasi lebih lancar.</p>
@@ -14372,14 +14372,14 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
 
 <p>Memilih jenis papan nama yang tepat sangat bergantung pada lokasi pemasangan, intensitas penggunaan, serta kesan yang ingin dibangun. Berikut adalah varian utama yang banyak diproduksi dan dipesan di workshop kami.</p>
 
-<img src="/images/produk-unggulan/papan-nama/papan-nama-gantung-1.png" alt="papan nama gantung akrilik custom" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/papan-nama/papan-nama-gantung-1-w640.webp" alt="papan nama gantung akrilik custom" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <h3>Papan Nama Akrilik Gantung</h3>
 <p>Papan nama akrilik gantung menjadi pilihan favorit untuk ruangan kantor, ruang rapat, dan area publik karena tampilannya yang modern dan transparan. Bahan akrilik bening atau berwarna memberikan kesan elegan tanpa membuat ruangan terasa sempit. Model gantung biasanya dipasang dengan tali, rantai stainless, atau klem dinding sehingga memudahkan pergantian nama saat ada pergeseran posisi atau penghuni ruangan. Keunggulan utamanya adalah bobot yang ringan namun tetap kaku dan tidak mudah melengkung, serta permukaannya yang halus sehingga hasil cetak terlihat sangat tajam. Untuk kantor yang sering merombak tata letak ruangan, varian gantung ini sangat praktis karena mudah dibongkar pasang.</p>
 
 <p>Selain praktis, akrilik gantung juga fleksibel dalam hal desain karena dapat dipadukan dengan backing berwarna, efek gradasi, hingga cutting sesuai bentuk logo. Beberapa klien memilih akrilik berwarna smoky atau frosted agar nama terbaca jelas tanpa silau. Pastikan ketebalan minimal 3mm agar papan tidak bergetar saat pintu dibuka tutup, dan pilih tali atau rantai yang kokoh agar tidak putus dalam penggunaan harian.</p>
 
-<img src="/images/produk-unggulan/papan-nama/papan-nama-meja-akrilik.png" alt="papan nama meja akrilik custom" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/papan-nama/papan-nama-meja-akrilik-w640.webp" alt="papan nama meja akrilik custom" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <h3>Papan Nama Akrilik Meja</h3>
 <p>Papan nama meja atau name plate akrilik dirancang untuk diletakkan di atas meja resepsionis, meja kerja, meja customer service, atau podium. Varian ini umumnya berbentuk segi empat dengan sudut miring yang memudahkan pembacaan dari arah depan. Kaki penyangga bisa berupa blok akrilik pejal, kawat logam, atau sandaran lipat yang praktis dibawa saat touring atau presentasi keluar kota. Papan nama meja sangat populer untuk identitas staf, nama narasumber, hingga penanda meja tamu VIP. Akrilik meja juga mudah dipadukan dengan insert kertas atau cetak langsung, sehingga fleksibilitas desainnya tinggi.</p>
@@ -14389,14 +14389,14 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
 <h3>Papan Nama Timah dan Brass</h3>
 <p>Bagi yang menginginkan kesan prestisius dan berumur panjang, papan nama dari timah atau kuningan (brass) adalah jawabannya. Logam ini memberikan nuansa klasik yang sering diasosiasikan dengan ruang direksi, bank, kantor notaris, dan instansi pemerintahan. Tekstur metalik yang dipadukan dengan ukiran nama menciptakan kesan otoritas dan stabilitas. Meskipun harganya lebih tinggi dibanding akrilik, papan nama logam sangat awet, tahan gores, dan tidak pudar warnanya meski terpapar cahaya terus menerus. Beberapa klien memadukan plat timah dengan dasar kayu atau akrilik untuk mendapatkan kombinasi tekstur yang menarik.</p>
 
-<img src="/images/produk-unggulan/papan-nama/papan-nama-akrilik-3.png" alt="papan nama kayu custom" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/papan-nama/papan-nama-akrilik-3-w640.webp" alt="papan nama kayu custom" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <h3>Papan Nama Kayu</h3>
 <p>Papan nama berbahan kayu membawa kesan hangat, natural, dan ramah. Cocok untuk kafe, studio kreatif, coworking space, hingga rumah sakit yang ingin tampil lebih humanis. Kayu yang umum digunakan antara lain jati, mahoni, pine, dan MDF dengan finishing HPL atau laminasi. Teknik ukir atau laser engraving pada kayu menghasilkan kontras yang indah antara serat kayu dan tulisan yang diukir. Untuk area luar ruangan, kayu perlu dilapisi coating anti air agar tidak mudah lapuk terkena cuaca. Papan nama kayu juga sering dijadikan souvenir kenang-kenangan untuk peresmian kantor baru.</p>
 
 <p>Kelemahan kayu adalah sensitivitas terhadap kelembapan, sehingga sebaiknya diletakkan di ruangan ber-AC atau area tertutup. Pemilihan jenis kayu juga memengaruhi harga; jati dan mahoni lebih mahal namun lebih padat dan awet dibanding pine. Finishing dove, natural, atau glossy dapat disesuaikan dengan gaya interior agar papan nama terlihat menyatu dengan ruangan.</p>
 
-<img src="/images/produk-unggulan/papan-nama/papan-nama-gantung-3.png" alt="papan nama neon led custom" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/papan-nama/papan-nama-gantung-3-w640.webp" alt="papan nama neon led custom" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <h3>Papan Nama Neon dan LED</h3>
 <p>Papan nama neon atau berbasis LED menjadi tren kuat untuk event, booth pameran, studio foto, dan area reception yang ingin tampil eye catching. Cahaya yang dihasilkan membuat nama perusahaan tetap terbaca dengan dramatis meski dalam ruangan redup. Teknologi LED flexi saat ini lebih hemat energi dan tidak panas dibanding neon konvensional, serta lebih tahan benturan. Varian ini sangat efektif untuk branding malam hari, peluncuran produk, atau backdrop foto di acara. Kombinasi akrilik bening dengan strip LED di pinggirnya menghasilkan efek glow yang premium.</p>
@@ -14582,43 +14582,43 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
 
 <p>Memilih jenis bahan adalah langkah pertama yang menentukan tampilan, daya tahan, dan harga gantungan kunci Anda. Setiap bahan memiliki karakteristik fisik dan visual yang berbeda, sehingga pemilihan harus selalu didasarkan pada siapa penerima souvenir dan dalam acara apa produk tersebut dibagikan. Berikut varian yang paling banyak dipesan dan proven cocok untuk berbagai kebutuhan.</p>
 
-<img src="/images/produk-unggulan/gantungan-kunci/gantungan-kunci-1.png" alt="gantungan kunci acrylic custom" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/gantungan-kunci/gantungan-kunci-1-w640.webp" alt="gantungan kunci acrylic custom" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Gantungan Kunci Acrylic</h3>
 <p>Acrylic adalah bahan paling diminati karena ringan, bening, dan mudah dibentuk dengan cutting custom. Permukaan acrylic cocok untuk cetak UV full color sehingga foto dan gradasi warna bisa tampil tajam dan cerah. Gantungan kunci acrylic sering dipakai sebagai merchandise brand, suvenir pernikahan, dan cendera mata wisuda karena fleksibilitas desainnya yang tinggi. Variasi finishing meliputi acrylic bening, acrylic putih, acrylic gantung dua sisi, hingga acrylic dengan aksen metal ring.</p>
 
 <p>Keunggulan acrylic terletak pada kemudahan menangkap detail desain dan harganya yang kompetitif untuk pesanan besar. Kelemahannya adalah sedikit rentan retak jika terbentur keras, sehingga pengemasan yang baik sangat penting. Untuk tampilan mewah, acrylic bisa digabung dengan lapisan tipis logam atau tali pintal warna-warni agar lebih menarik.</p>
 
-<img src="/images/produk-unggulan/gantungan-kunci/gantungan-kunci-15.png" alt="gantungan kunci logam custom" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/gantungan-kunci/gantungan-kunci-15-w640.webp" alt="gantungan kunci logam custom" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Gantungan Kunci Logam</h3>
 <p>Gantungan kunci logam memberikan kesan premium dan sangat awet. Bahan umumnya terbuat dari aluminium, kuningan, atau besi dengan lapisan pelat anti karat. Teknik yang dipakai biasanya laser engraving untuk hasil ukiran tajam dan tahan lama, namun ada pula yang menggunakan cetak sublimasi pada pelat aluminium berlapis putih. Logam cocok untuk plakat mini, gift karyawan, atau suvenir eksklusif perusahaan karena terlihat elegan dan beratnya terasa solid di genggaman.</p>
 
 <p>Selain tahan lama, gantungan kunci logam memberikan kesan eksklusif yang sulit ditiru oleh bahan lain. Namun harganya lebih tinggi dan proses produksinya membutuhkan ketelitian tinggi agar ukiran tidak meleset. Untuk brand yang ingin tampil profesional, logam adalah investasi bernilai karena biasanya disimpan bertahun-tahun oleh penerima.</p>
 
-<img src="/images/produk-unggulan/gantungan-kunci/gantungan-kunci-16.png" alt="gantungan kunci PVC custom" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/gantungan-kunci/gantungan-kunci-16-w640.webp" alt="gantungan kunci PVC custom" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Gantungan Kunci PVC</h3>
 <p>Gantungan kunci PVC berbahan soft rubber yang lentur dan tahan benturan. Model ini sering dibuat dalam bentuk tiga dimensi atau dua dimensi soft enamel dengan warna solid yang menyatu dengan body. PVC sangat cocok untuk maskot brand, tokoh kartun, atau logo perusahaan karena bisa dibentuk menyimpang dari bentuk persegi. Kelebihannya anti pecah dan aman untuk anak-anak, serta nyaman digenggam tanpa rasa dingin seperti logam.</p>
 
 <p>Proses pembuatan PVC dimulai dari pembuatan cetakan atau mold, sehingga cocok untuk pesanan dalam jumlah besar agar biaya mold bisa terdistribusi. Detail warna pada PVC cenderung solid dan tidak gradasi, sehingga desain sebaiknya menggunakan warna datar yang kontras agar hasil maksimal.</p>
 
-<img src="/images/produk-unggulan/gantungan-kunci/gantungan-kunci-17.png" alt="gantungan kunci kayu custom" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/gantungan-kunci/gantungan-kunci-17-w640.webp" alt="gantungan kunci kayu custom" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Gantungan Kunci Kayu</h3>
 <p>Gantungan kunci kayu membawa nuansa natural dan ramah lingkungan. Bahan kayu seperti jati, mahoni, atau MDF dipotong dengan laser cutting dan diukir atau dicetak permukaannya. Kayu cocok untuk tema rustic, wedding outdoor, atau suvenir yang ingin terkesan handmade dan eksklusif. Daya tahannya baik asal tidak sering terkena air, dan tekstur serat kayu memberi karakter unik pada setiap pcs yang dihasilkan.</p>
 
 <p>Kelemahan kayu adalah sensitivitas terhadap kelembapan, sehingga finishing pelapis seperti varnish atau laminasi sangat disarankan. Bagi yang mengusung nilai keberlanjutan, kayu menjadi simbol komitmen ramah lingkungan yang bisa dikomunikasikan langsung kepada penerima souvenir. Selain itu, setiap lembar kayu memiliki serat unik sehingga tidak ada dua pcs yang benar-benar identik, memberi kesan eksklusif alami.</p>
 
-<img src="/images/produk-unggulan/gantungan-kunci/gantungan-kunci-18.png" alt="gantungan kunci resin custom" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/gantungan-kunci/gantungan-kunci-18-w640.webp" alt="gantungan kunci resin custom" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Gantungan Kunci Resin</h3>
 <p>Gantungan kunci resin dibuat dengan meneteskan resin epoxy bening di atas desain cetak, menghasilkan efek mengkilap seperti kaca yang melindungi gambar di dalamnya. Resin memungkinkan penyisipan benda kecil seperti bunga kering, foto, atau glitter di dalamnya. Ini menjadikannya pilihan unik untuk suvenir pernikahan dan oleh-oleh wisuda yang personal serta terasa mahal meski biayanya terjangkau.</p>
 
 <p>Resin memberikan proteksi fisik yang baik terhadap desain namun perlu dihindari dari paparan sinar matahari langsung dalam jangka panjang agar tidak menguning. Kombinasi resin dengan cutting acrylic berbentuk hati atau inisial nama menjadi tren suvenir pernikahan yang banyak diminati saat ini.</p>
 
-<img src="/images/produk-unggulan/gantungan-kunci/gantungan-kunci-19.png" alt="gantungan kunci flannel custom" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/gantungan-kunci/gantungan-kunci-19-w640.webp" alt="gantungan kunci flannel custom" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Gantungan Kunci Flannel</h3>
 <p>Gantungan kunci flannel atau kain berbahan fleece lembut, biasanya dijahit dengan sablon atau bordir pada permukaannya. Model ini nyaman digenggam, ringan, dan terasa hangat, sehingga cocok untuk suvenir anak, event komunitas, atau merchandise brand yang ingin kesan playful dan kasual. Flannel mudah dicuci dan tidak mudah rusak karena benturan, membuatnya awet dalam penggunaan sehari-hari.</p>
 
 <p>Kelebihan flannel adalah tekstur empuk yang membedakannya dari bahan keras lainnya, namun cetak pada kain biasanya kurang tajam dibanding UV print. Untuk hasil maksimal, gunakan desain dengan garis tebal dan warna kontras agar sablon atau bordir terbaca jelas dari jarak jauh.</p>
 
-<img src="/images/produk-unggulan/gantungan-kunci/gantungan-kunci-20.png" alt="gantungan kunci custom bentuk unik" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/gantungan-kunci/gantungan-kunci-20-w640.webp" alt="gantungan kunci custom bentuk unik" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Bentuk Custom dan Cutting Khusus</h3>
 <p>Selain bahan, kekuatan gantungan kunci custom terletak pada bentuk bebas. Dengan mesin laser cutting dan router CNC, kami bisa memotong sesuai logo, huruf nama, atau ilustrasi khusus tanpa terbatas pada bentuk persegi atau lingkaran. Cutting custom membuat suvenir terlihat eksklusif karena tidak ada di toko umum dan langsung merepresentasikan identitas brand atau tema acara Anda.</p>
 
@@ -14790,27 +14790,27 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
 
 <p>Sebelum menentukan pesanan, penting untuk mengenal ragam bahan dan finishing yang umum digunakan dalam produksi pin serta bross. Setiap jenis memiliki karakteristik, tingkat ketahanan, dan harga yang berbeda. Berikut adalah varian yang paling sering dipesan serta kelebihannya masing-masing.</p>
 
-<img src="/images/produk-unggulan/pin-bross/pin-bross-1.png" alt="Pin bross enamel custom warna cerah" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/pin-bross/pin-bross-1-w640.webp" alt="Pin bross enamel custom warna cerah" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Pin & Bross Soft Enamel</h3>
 <p>Soft enamel adalah jenis pin yang paling populer karena harganya terjangkau dan warnanya mencolok. Prosesnya diawali dengan mencetak logo ke dalam cetakan logam, lalu bagian rongga diisi cat enamel yang tidak rata permukaannya. Hasilnya adalah tekstur timbul di mana area logam lebih tinggi dari area warna. Keunggulan soft enamel adalah pilihan warna yang sangat luas, produksi cepat, dan cocok untuk desain dengan detail kecil. Pin ini sangat pas untuk merchandise event, lencana komunitas, dan souvenir massal karena biayanya rendah pada volume besar. Selain itu, soft enamel mudah dipadukan dengan berbagai warna brand sehingga identitas visual Anda tetap konsisten dan mudah dikenali oleh audiens.</p>
 
-<img src="/images/produk-unggulan/pin-bross/pin-bross-10.png" alt="Bross logam hard enamel mengkilap" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/pin-bross/pin-bross-10-w640.webp" alt="Bross logam hard enamel mengkilap" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Pin & Bross Hard Enamel</h3>
 <p>Berbeda dengan soft enamel, hard enamel menggunakan proses pembakaran pada suhu tinggi sehingga cat benar-benar rata dengan permukaan logam. Setelah dipoles, hasil akhirnya tampak halus, mengkilap, dan terasa premium. Hard enamel lebih tahan gores serta memberikan kesan mewah, sehingga cocok untuk lencana resmi, penghargaan internal, atau merchandise brand kelas atas. Harganya sedikit lebih mahal daripada soft enamel, namun daya tahannya jauh lebih baik untuk pemakaian jangka panjang.</p>
 
-<img src="/images/produk-unggulan/pin-bross/pin-bross-11.png" alt="Pin logam die struck polos elegan" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/pin-bross/pin-bross-11-w640.webp" alt="Pin logam die struck polos elegan" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Pin & Bross Logam (Die Struck)</h3>
 <p>Pin die struck merupakan pin tanpa pewarnaan cat, melainkan mengandalkan kemewahan bahan logam itu sendiri seperti kuningan, besi, atau zinc alloy. Desain dipahat melalui teknik die struck sehingga menonjolkan detail ukiran 3D yang elegan. Finishing yang umum meliputi emas, perak, antiq, atau rose gold. Jenis ini sangat cocok untuk lencana prestasi, tanda jabatan, dan merchandise eksklusif yang menonjolkan citra profesional tanpa warna mencolok.</p>
 
-<img src="/images/produk-unggulan/pin-bross/pin-bross-12.png" alt="Pin timah pewter halus detail" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/pin-bross/pin-bross-12-w640.webp" alt="Pin timah pewter halus detail" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Pin & Bross Timah (Pewter)</h3>
 <p>Pin timah atau pewter dibuat dari campuran logam lunak yang mudah dibentuk menjadi detail halus dan artistik. Karakter bahannya yang agak doff memberikan kesan klasik dan berbeda dari logam mengkilap. Pewter sering dipilih untuk souvenir bernuansa tradisional, cinderamata daerah, atau koleksi edisi terbatas. Meski lebih lunak, pin timah cukup kuat untuk pemakaian biasa dan memberi nilai estetika tinggi bagi kolektor.</p>
 
-<img src="/images/produk-unggulan/pin-bross/pin-bross-13.png" alt="Pin fiber akrilik ringan warna-warni" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/pin-bross/pin-bross-13-w640.webp" alt="Pin fiber akrilik ringan warna-warni" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Pin & Bross Fiber dan Akrilik</h3>
 <p>Untuk desain yang playful, ringan, dan sangat murah, pin fiber atau akrilik menjadi pilihan menarik. Bahan ini dicetak langsung sehingga mampu mereproduksi foto, gradasi warna, hingga ilustrasi rumit dengan cepat. Pin fiber biasanya digunakan untuk merchandise kampanye, merchandise band, atau souvenir acara kreatif. Bobotnya ringan sehingga nyaman dipasang di kain tipis, namun ketahanannya di bawah logam untuk pemakaian outdoor ekstrem.</p>
 
-<img src="/images/produk-unggulan/pin-bross/pin-bross-14.png" alt="Bross epoxy resin permukaan mengkilap" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/pin-bross/pin-bross-14-w640.webp" alt="Bross epoxy resin permukaan mengkilap" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Pin & Bross dengan Lapisan Epoxy</h3>
 <p>Epoxy adalah resin bening yang dilapisi di atas permukaan pin untuk melindungi cetakan dan memberi efek berkilau seperti kaca. Teknik ini sering dipadukan dengan cetak digital maupun soft enamel agar desain tidak mudah tergores atau luntur. Pin epoxy sangat populer untuk souvenir pernikahan, badge promosi, dan merchandise brand karena tampilannya glossy dan protektif. Kombinasi epoxy dengan logam memberi kesan premium sekaligus tahan lama.</p>
 
@@ -14945,7 +14945,7 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
 <h3>Pelapisan Epoxy (Resin)</h3>
 <p>Epoxy diaplikasikan sebagai lapisan bening di atas desain untuk perlindungan dan kilau. Prosesnya manual dengan menuang resin lalu mengeringkan agar permukaannya rata seperti kaca. Epoxy memperpanjang umur cetakan sekaligus memberi kesan premium pada souvenir.</p>
 
-<img src="/images/produk-unggulan/pin-bross/pin-bross-15.png" alt="Teknik cetak pin custom berbagai finishing" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/pin-bross/pin-bross-15-w640.webp" alt="Teknik cetak pin custom berbagai finishing" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Plating dan Finishing Logam</h3>
 <p>Setelah desain terbentuk, pin melalui tahap plating seperti emas, perak, nikel, antique, atau rose gold. Finishing ini menentukan warna dasar logam serta kesan akhir produk. Pemilihan plating yang tepat membuat pin tampak lebih mahal dan sesuai dengan identitas brand Anda.</p>
 
@@ -15066,27 +15066,27 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
 <h2>Jenis dan Varian Souvenir Pernikahan Custom</h2>
 <p>Memilih jenis souvenir adalah langkah awal yang menentukan kesan keseluruhan. Berikut varian paling populer yang bisa dikustomisasi dengan nama, tanggal, dan tema pernikahan Anda.</p>
 
-<img src="/images/produk-unggulan/souvenir-pernikahan/souvenir-pernikahan-1.png" alt="souvenir pernikahan custom gantungan kunci" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/souvenir-pernikahan/souvenir-pernikahan-1-w640.webp" alt="souvenir pernikahan custom gantungan kunci" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Gantungan Kunci Personalisasi</h3>
 <p>Gantungan kunci menjadi pilihan klasik yang tak lekang oleh waktu. Terbuat dari akrilik, kayu, resin, hingga logam, gantungan kunci bisa diukir nama pasangan, inisial, atau ilustrasi kartun. Kelebihannya ringan, murah, dan mudah dibagikan ke ratusan tamu. Untuk pernikahan dengan tamu banyak, ini solusi paling hemat namun tetap terasa personal karena tamu akan melihatnya setiap kali memegang kunci kendaraan atau rumah. Variasi bentuknya pun luas, mulai dari heart,Initial berlapis, hingga miniatur kartu undangan. Beberapa pasangan bahkan memasukkan QR code kecil untuk undangan digital sehingga souvenir sekaligus berfungsi sebagai pintu informasi acara.</p>
 
-<img src="/images/produk-unggulan/souvenir-pernikahan/souvenir-pernikahan-2.png" alt="souvenir pintu kunci pernikahan custom" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/souvenir-pernikahan/souvenir-pernikahan-2-w640.webp" alt="souvenir pintu kunci pernikahan custom" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Pintu Kunci dan Magnet Kulkas</h3>
 <p>Pintu kunci atau magnet kulkas adalah varian fungsional yang sering dipilih karena tamu benar-benar menggunakannya di rumah. Bentuknya bisa menyerupai love, cincin kawin, atau miniatur gedung. Magnet kulkas custom dengan foto prewedding mini menjadi tren belakangan ini karena menggabungkan fungsi dekorasi sekaligus kenangan visual. Selain praktis, magnet relatif awet dan tidak mudah rusak saat dibawa pulang, sehingga cocok untuk tamu dari luar kota. Finishing enamel atau laser engraving memberi pilihan antara warna cerah dan kesan elegan monokrom.</p>
 
-<img src="/images/produk-unggulan/souvenir-pernikahan/souvenir-pernikahan-3.png" alt="pigura souvenir pernikahan custom" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/souvenir-pernikahan/souvenir-pernikahan-3-w640.webp" alt="pigura souvenir pernikahan custom" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Pigura Foto Mini</h3>
 <p>Pigura foto mini dari akrilik atau kayu menjadi cinderamata elegan yang bisa langsung diisi kartu ucapan atau foto pasangan. Ukurannya compact sehingga tidak memakan tempat, namun cukup untuk menjadi pajangan meja kerja atau nakas. Pigura biasanya dicetak dengan teknik uv print agar warna tahan lama. Keunggulan pigura adalah sifatnya yang netral; tamu bisa mengganti foto di dalamnya dengan kenangan sendiri, sehingga benda ini tetap relevan bertahun-tahun setelah acara. Pilihan dengan kaki lipat atau gantung dinding menambah fleksibilitas penempatan.</p>
 
-<img src="/images/produk-unggulan/souvenir-pernikahan/souvenir-pernikahan-4.png" alt="gift box souvenir pernikahan custom" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/souvenir-pernikahan/souvenir-pernikahan-4-w640.webp" alt="gift box souvenir pernikahan custom" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Box dan Gift Set</h3>
 <p>Gift box pernikahan adalah kemasan berisi beberapa item kecil seperti sabun, madu, cokelat, atau lilin aromaterapi. Konsep ini memberikan kesan mewah karena tamu menerima semacam parcel mini. Box bisa dari karton kraft, akrilik, hingga mika transparan dengan pita satin. Bagi pasangan yang menginginkan souvenir undangan sekaligus gift, box adalah opsi serbaguna. Anda bisa menyesuaikan isi box dengan tema warna dekorasi agar keseluruhan tamu mendapat pengalaman membuka kemasan yang konsisten. Tambahan kartu ucapan tulisan tangan memperkuat kesan personal meski diproduksi massal.</p>
 
-<img src="/images/produk-unggulan/souvenir-pernikahan/souvenir-pernikahan-5.png" alt="sabun souvenir pernikahan custom" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/souvenir-pernikahan/souvenir-pernikahan-5-w640.webp" alt="sabun souvenir pernikahan custom" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Sabun, Madu, dan Produk Herbal</h3>
 <p>Souvenir bernuansa eco-friendly seperti sabun handmade, madu murni, atau teh seduh semakin digemari karena pesan keberlanjutan. Sabun berbentuk bunga atau love dengan kemasan kraft tag nama terasa personal sekaligus mindful. Tamu yang menerima biasanya langsung menggunakannya sehingga kenangan pernikahan Anda melekat dalam rutinitas harian mereka. Selain ramah lingkungan, varian ini relatif aman bagi berbagai usia dan tidak membutuhkan ruang penyimpanan besar. Kombinasi sabun dan teh dalam satu set kecil kerap menjadi pilihan favorit untuk pernikahan bergaya garden party.</p>
 
-<img src="/images/produk-unggulan/souvenir-pernikahan/souvenir-pernikahan-6.png" alt="tumbler souvenir pernikahan custom" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/souvenir-pernikahan/souvenir-pernikahan-6-w640.webp" alt="tumbler souvenir pernikahan custom" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Tumbler dan Plakat Akrilik Bertulis Nama</h3>
 <p>Tumbler custom adalah souvenir fungsional premium yang cocok untuk tamu dewasa. Terbuat dari stainless, aluminium, atau plastik BPA free, tumbler bisa diprint nama dan tanggal pernikahan. Sementara plakat akrilik bertulis nama hadir sebagai cinderamata eksklusif untuk family, sponsor, atau seserahan. Kombinasi keduanya menciptakan tiering souvenir yang rapi antara tamu umum dan tamu VIP. Tumbler juga menjadi ajang branding halus karena tamu membawanya ke kantor atau gym, memperpanjang paparan nama pasangan. Plakat dengan lapisan gold mirror atau clear acrylic tebal memberikan kesan prestisius untuk tamu kehormatan.</p>
 
@@ -15240,27 +15240,27 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
 <h2>Jenis Penanda Batas Wilayah</h2>
 <p>Secara umum, penanda batas wilayah dibagi menjadi beberapa varian bergantung pada fungsi, lokasi pemasangan, dan bentuk fisiknya. Penentuan varian yang tepat harus mempertimbangkan apakah penanda akan diletakkan di dalam ruangan atau di lapangan terbuka, serta siapa target pembaca informasinya. Berikut adalah varian yang paling sering dipesan untuk kebutuhan pemerintahan dan desa, lengkap dengan kelebihan dan situasi penggunaannya masing-masing agar instansi tidak salah memilih jenis penanda.</p>
 
-<img src="/images/produk-unggulan/plakat-batas-wilayah/center-point/center-point (2).png" alt="Center Point penanda batas wilayah kuningan" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/plakat-batas-wilayah/center-point/center-point (2)-w640.webp" alt="Center Point penanda batas wilayah kuningan" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Center Point (CP)</h3>
 <p>Center Point atau sering disingkat CP adalah penanda titik pusat atau titik referensi batas wilayah yang dirancang dalam bentuk monumen kecil berbahan kuningan atau brass. Produk ini umum dipasang di titik simpul batas antar wilayah administratif, seperti pertigaan batas desa, batas kecamatan, atau titik nol suatu kawasan pengembangan. Center Point biasanya dilengkapi dengan plakat ukir yang memuat nama wilayah, koordinat geografis, dan tahun penetapan. Keunggulannya terletak pada tampilan yang elegan, tahan cuaca, serta mudah diidentifikasi sebagai penanda resmi oleh masyarakat maupun petugas survei. Selain itu, ukurannya yang kompak membuatnya fleksibel ditempatkan di lahan sempit maupun di tengah persimpangan jalan desa. Bagi pemerintah desa, Center Point juga berfungsi sebagai titik kumpul dalam kegiatan pemetaan partisipatif bersama warga setempat.</p>
 
-<img src="/images/produk-unggulan/plakat-batas-wilayah/plakat-brastable/plakat-brastable (1).png" alt="Brass Table meja tandatangan kuningan" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/plakat-batas-wilayah/plakat-brastable/plakat-brastable (1)-w640.webp" alt="Brass Table meja tandatangan kuningan" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Brass Table (Meja Tandatangan Kuningan)</h3>
 <p>Brass Table adalah meja tandatangan berbahan kuningan yang difungsikan sebagai media penandatanganan berita acara atau prasasti batas wilayah pada momen peresmian. Selain berfungsi sebagai alas penandatanganan, Brass Table sering dijadikan cendera mata kenangan bagi pejabat yang hadir. Permukaannya dipoles halus dan diukir dengan logo instansi, sehingga memberikan kesan formal dan berkelas pada acara penetapan batas wilayah. Produk ini biasanya diletakkan di atas podium atau meja utama, lalu dipajang di ruang rapat sebagai arsip visual. Kami dapat menyesuaikan ukuran dan ketebalan kuningan agar sesuai dengan kebutuhan presentasi pejabat daerah.</p>
 
-<img src="/images/produk-unggulan/plakat-batas-wilayah/plakat-brastable/plakat-brastable (2).png" alt="Tugu batas wilayah permanen" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/plakat-batas-wilayah/plakat-brastable/plakat-brastable (2)-w640.webp" alt="Tugu batas wilayah permanen" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Tugu Batas Wilayah</h3>
 <p>Tugu batas wilayah adalah struktur tegak yang berdiri permanen di lapangan sebagai penanda fisik batas administrasi. Tugu ini dapat dibuat dari kombinasi batu alam, beton bertulang, dan pelat kuningan yang diukir detail koordinat serta keterangan wilayah. Tugu batas umumnya dipasang di titik koordinat yang telah disepakati antar pihak, dan menjadi rujukan visual yang kuat ketika terjadi sengketa atau verifikasi batas wilayah di masa depan. Tingginya dapat disesuaikan dengan visibilitas lokasi, mulai dari satu meter hingga lebih dari dua meter untuk area persawahan atau hutan. Konstruksi pondasi yang stabil menjadi kunci agar tugu tidak bergeser akibat erosi tanah.</p>
 
-<img src="/images/produk-unggulan/plakat-batas-wilayah/plakat-brastable/plakat-brastable (3).png" alt="Plakat batas wilayah akrilik dan kuningan" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/plakat-batas-wilayah/plakat-brastable/plakat-brastable (3)-w640.webp" alt="Plakat batas wilayah akrilik dan kuningan" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Plakat Batas Wilayah</h3>
 <p>Plakat batas wilayah adalah papan informasi yang memuat narasi lengkap penetapan batas, peta mini kawasan, dan daftar pihak yang terlibat. Plakat ini sering dibuat dari kombinasi akrilik transparan dan kuningan, atau full kuningan dengan teknik ukir laser. Plakat biasanya dipajang di kantor desa, kecamatan, atau balai wilayah sebagai dokumentasi tertulis yang melengkapi penanda fisik di lapangan. Kehadirannya memudahkan aparatur dan masyarakat umum memahami secara visual rentang wilayah yang sah. Desain plakat dapat disesuaikan dengan tema instansi, lengkap dengan lambang daerah dan tahun penetapan yang rapi.</p>
 
-<img src="/images/produk-unggulan/plakat-batas-wilayah/plakat-brastable/plakat-brastable (4).png" alt="Penanda wilayah custom bahan campuran" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/plakat-batas-wilayah/plakat-brastable/plakat-brastable (4)-w640.webp" alt="Penanda wilayah custom bahan campuran" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Penanda Wilayah Kombinasi</h3>
 <p>Beberapa instansi memilih penanda wilayah kombinasi yang menggabungkan tiang stainless atau besi, pelat kuningan ukir, dan basis batu atau beton. Varian ini memberikan kestabilan ekstra di area terbuka sekaligus estetika yang representatif. Kombinasi bahan memungkinkan penyesuaian anggaran tanpa mengurangi kesan otoritatif dari penanda batas wilayah itu sendiri. Misalnya, tiang dapat menggunakan besi corrosive resistant, sementara pelat informasinya tetap kuningan agar informasi tetap terbaca tajam. Pendekatan ini populer untuk batas antar kabupaten yang membutuhkan daya tahan ekstrem terhadap cuaca.</p>
 
-<img src="/images/produk-unggulan/plakat-batas-wilayah/plakat-brastable/plakat-brastable (5).png" alt="Detail ukiran penanda batas wilayah" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/plakat-batas-wilayah/plakat-brastable/plakat-brastable (5)-w640.webp" alt="Detail ukiran penanda batas wilayah" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Penanda Mini Portabel</h3>
 <p>Untuk kebutuhan sementara atau survei awal, penanda mini portabel berbahan akrilik atau kuningan tipis dapat digunakan sebagai penanda sementara sebelum tugu permanen dibangun. Model ini praktis dibawa, ringan, dan cocok untuk dokumentasi lapangan pada tahap pra penetapan batas wilayah. Tim survei dapat meletakkannya di titik sementara untuk foto dokumentasi, lalu menggantinya dengan penanda permanen setelah berita acara ditandatangani. Meski sederhana, penanda mini tetap dapat diukir dengan koordinat agar tidak terjadi kekeliruan titik saat konstruksi tugu sesungguhnya.</p>
 
@@ -15470,7 +15470,7 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
 
 <h2>Jenis dan Varian Plakat Akrilik Custom</h2>
 
-<img src="/images/produk-unggulan/plakat-akrilik/plakat-akrilik-1.png" alt="plakat akrilik custom bening" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/plakat-akrilik/plakat-akrilik-1-w640.webp" alt="plakat akrilik custom bening" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <h3>Plakat Akrilik Bening (Transparan)</h3>
 <p>Plakat akrilik bening merupakan varian paling klasik dan paling sering dipesan karena kesan bersih serta modern yang diberikannya. Material transparan membuat desain yang dicetak seolah mengambang, menghasilkan estetika minimalis yang sesuai dengan hampir semua tema acara. Teknik cetak UV pada permukaannya membuat warna desain menonjol dengan kontras tinggi terhadap latar bening, sehingga logo dan teks terbaca dengan sangat jelas meski dilihat dari jarak jauh.</p>
@@ -15480,7 +15480,7 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
 <p>Untuk kebutuhan yang lebih berwarna dan berkarakter, tersedia akrilik dengan tint solid seperti hitam, putih, biru, merah, hijau, hingga gradasi metalik. Akrilik berwarna memberi kesan eksklusif dan sering digunakan untuk penghargaan tingkat direksi, award tahunan, atau kompetisi bergengsi di mana kesan prestisius sangat diutamakan. Kombinasi warna dasar dengan cutting logo atau teks timbul memberikan dimensi visual yang kuat dan terkesan mahal meski harganya tetap ramah kantong.</p>
 <p>Pemilihan warna dasar akrilik sebaiknya diselaraskan dengan identitas brand atau tema acara. Misalnya, akrilik biru tua cocok untuk dunia perbankan, sementara putih doff memberi kesan medis atau akademik yang tenang. Fleksibilitas ini menjadikan plakat akrilik berwarna pilihan favorit event organizer yang menginginkan hasil berbeda dari tahun ke tahun.</p>
 
-<img src="/images/produk-unggulan/plakat-akrilik/plakat-akrilik-10.png" alt="plakat akrilik uv print" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/plakat-akrilik/plakat-akrilik-10-w640.webp" alt="plakat akrilik uv print" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <h3>Plakat Akrilik dengan UV Print</h3>
 <p>Teknik UV print memungkinkan pencetakan foto, gradasi warna, hingga detail logo full color langsung di atas permukaan akrilik tanpa memerlukan stiker pelapis. Hasil cetak tahan lama dan tidak mudah luntur karena tinta dikeringkan secara instan dengan sinar UV, menjadikannya solusi terbaik jika desain Anda kompleks dan membutuhkan reproduksi warna presisi tinggi. Teknik ini juga memungkinkan Anda mencetak foto wajah penerima, ilustrasi, atau background gradient yang menarik.</p>
@@ -15490,7 +15490,7 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
 <p>Jika Anda menginginkan hasil yang lebih artistik, permanen, dan berkesan mewah, laser engraving mengukir langsung ke permukaan akrilik menggunakan sinar laser presisi tinggi. Teknik ini menghasilkan efek ukiran halus, baik pada akrilik bening maupun berwarna, dengan kedalaman yang konsisten dan tepi yang sangat rapi. Laser engraving cocok untuk teks penghargaan, nama penerima, tanggal acara, dan logo yang ingin terlihat timbul tanpa tambahan tinta sama sekali.</p>
 <p>Salah satu nilai jual ukiran laser adalah sifatnya yang permanen; tidak akan luntur seiring waktu seperti cetak sablon konvensional. Untuk acara formal seperti penghargaan pemerintahan atau universitas, laser engraving pada akrilik bening dengan finishing doff memberikan kemewahan yang khas dan dihormati. Proses ini relatif cepat sehingga cocok untuk pesanan mendadak dengan jumlah besar.</p>
 
-<img src="/images/produk-unggulan/plakat-akrilik/plakat-akrilik-11.png" alt="plakat akrilik led" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/plakat-akrilik/plakat-akrilik-11-w640.webp" alt="plakat akrilik led" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <h3>Plakat Akrilik LED</h3>
 <p>Plakat akrilik LED memadukan material akrilik dengan sistem pencahayaan lampu LED di bagian bawah atau tepi sehingga menciptakan efek glow yang memukau. Varian ini sangat menarik untuk pajangan di lobi perusahaan, resepsionis, atau stage acara penghargaan malam hari yang membutuhkan spot visual memukau. Terdapat opsi LED putih statis, RGB berganti warna, maupun sensor gerak agar tampilan semakin interaktif dan modern.</p>
@@ -15500,7 +15500,7 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
 <p>Pemilihan finishing doff atau glossy memengaruhi kesan akhir plakat secara signifikan. Finishing glossy memberikan kilau mengkilap yang mempertegas warna dan memberi kesan segar serta energik, sedangkan doff memberi kesan lembut, elegan, dan minim pantulan cahaya sehingga nyaman dipandang dari segala sudut. Keduanya dapat disesuaikan dengan tema acara dan preferensi penerima penghargaan tanpa menambah biaya terlalu besar.</p>
 <p>Sebagai panduan umum, pilih glossy untuk acara muda, kreatif, dan penuh warna, sementara doff lebih tepat untuk acara formal, korporat, atau institusi yang mengedepankan kesan otoritas. Karyamedia Souvenir menyediakan kedua opsi finishing dengan kualitas coating merata sehingga permukaan plakat terasa halus dan premium di tangan.</p>
 
-<img src="/images/produk-unggulan/plakat-akrilik/plakat-akrilik-12.png" alt="plakat akrilik dengan baut" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/plakat-akrilik/plakat-akrilik-12-w640.webp" alt="plakat akrilik dengan baut" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <h2>Tabel Perbandingan Plakat Akrilik dengan Bahan Lain</h2>
 <table>
@@ -15517,7 +15517,7 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
 <p>Ketiga, fleksibilitas desain sangat tinggi; Anda bisa mencetak full color, mengukir laser, hingga menambah LED sesuai kreativitas tanpa batas teknis yang mengganggu. Keempat, proses produksi lebih cepat dan terstandardisasi karena akrilik dikerjakan dengan mesin cutting dan print digital yang presisi. Kelima, tampilannya netral sehingga cocok untuk pria maupun wanita, anak muda maupun eksekutif senior sebagai penerima penghargaan.</p>
 <p>Selain itu, plakat akrilik lebih mudah dibersihkan dan tampak selalu baru meski sudah bertahun-tahun dipajang. Untuk instansi yang rutin mengadakan acara penghargaan, konsistensi tampilan antar tahun sangat penting, dan akrilik memberikan standar kualitas visual yang stabil. Hal ini menjadikannya pilihan rasional sekaligus ekonomis dalam jangka panjang bagi siapa saja yang menginginkan souvenir penghargaan bermartabat.</p>
 
-<img src="/images/produk-unggulan/plakat-akrilik/plakat-akrilik-13.png" alt="plakat akrilik finishing doff" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/plakat-akrilik/plakat-akrilik-13-w640.webp" alt="plakat akrilik finishing doff" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <h2>Faktor yang Mempengaruhi Harga Plakat Akrilik</h2>
 <ul>
@@ -15657,32 +15657,32 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
 
 <p>Plakat marmer custom hadir dalam berbagai varian yang disesuaikan dengan tema acara, anggaran, dan preferensi estetika. Setiap varian memiliki kekuatan tersendiri tergantung pada tujuan penggunaannya, baik sebagai plakat peresmian, plakat penghargaan, maupun souvenir kenangan. Berikut adalah enam varian paling banyak diminati pelanggan Karyamedia beserta penjelasan lengkapnya.</p>
 
-<img src="/images/produk-unggulan/plakat-marmer/plakat-marmer-10.png" alt="plakat marmer custom aksen kuningan" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/plakat-marmer/plakat-marmer-10-w640.webp" alt="plakat marmer custom aksen kuningan" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <h3>Plakat Marmer dengan Aksen Kuningan</h3>
 <p>Varian ini menjadi yang paling klasik dan paling sering dipesan untuk acara peresmian. Bodinya berupa lempengan marmer asli dengan permukaan dipoles halus, sementara tulisan, logo, dan ornamen dibuat dari pelat kuningan yang ditempel atau dipaku ke permukaan marmer. Kelebihannya adalah ketajaman teks yang tinggi dan kilau logam yang tidak mudah pudar meski terpapar udara ruangan bertahun-tahun. Warna marmer yang umum digunakan berkisar dari putih susu, krem, hingga hitam doff bergantung pada kesan yang ingin ditonjolkan. Plakat ini sangat cocok diletakkan di lobi, ruang direksi, atau ruang recepsionis karena tampil formal dan berwibawa. Bagi instansi yang menginginkan kesan otoritatif, kombinasi marmer hitam dengan teks kuningan emas adalah pilihan paling aman dan elegan.</p>
 
-<img src="/images/produk-unggulan/plakat-marmer/plakat-marmer-11.png" alt="plakat marmer ukir pahat tangan" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/plakat-marmer/plakat-marmer-11-w640.webp" alt="plakat marmer ukir pahat tangan" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <h3>Plakat Marmer Ukir Tangan (Pahat)</h3>
 <p>Bagi Anda yang menginginkan kesan seni yang lebih mendalam, plakat marmer ukir tangan menjadi pilihan istimewa. Teknik pahat dilakukan secara manual oleh pengrajin berpengalaman sehingga setiap goresan memiliki karakter unik yang tidak bisa diproduksi massal. Teks dan logo diukir langsung ke dalam batu, lalu bisa dibiarkan polos atau diberi sentuhan cat emas untuk meningkatkan keterbacaan dan kesan mewah. Proses ini memang membutuhkan waktu lebih lama dibanding cetak, namun hasilnya memberikan nilai artistik dan eksklusivitas yang sulit ditiru oleh mesin. Plakat ukir tangan sangat direkomendasikan untuk penghargaan bergengsi, hadiah untuk tokoh penting, atau plakat peresmian yang ingin menyiratkan ketelitian dan penghargaan tinggi. Kelemahannya hanya pada waktu pengerjaan yang lebih panjang serta harga yang sedikit di atas rata-rata.</p>
 
-<img src="/images/produk-unggulan/plakat-marmer/plakat-marmer-12.png" alt="plakat marmer kombinasi akrilik" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/plakat-marmer/plakat-marmer-12-w640.webp" alt="plakat marmer kombinasi akrilik" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <h3>Plakat Marmer Kombinasi Akrilik</h3>
 <p>Varian hybrid ini memadukan kekokohan marmer dengan transparansi akrilik bening atau berwarna. Bagian marmer berfungsi sebagai base atau dudukan yang memberikan bobot alami, sementara panel akrilik menampung desain cetak full color yang lebih detail, termasuk foto gedung, grafis, dan teks berwarna. Kombinasi ini memberi kesan modern namun tetap memiliki fondasi premium dari marmer. Cocok untuk instansi yang menginginkan tampilan kontemporer tanpa kehilangan kesan berkelas. Keuntungan lainnya, desain di panel akrilik bisa diganti relatif lebih mudah apabila ada revisi teks mendadak sebelum acara berlangsung. Namun perlu diingat bahwa akrilik lebih rentan terhadap goresan dibanding marmer, sehingga penempatan plakat sebaiknya di area yang tidak sering tersentuh.</p>
 
-<img src="/images/produk-unggulan/plakat-marmer/plakat-marmer-13.png" alt="plakat marmer tema peresmian gedung" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/plakat-marmer/plakat-marmer-13-w640.webp" alt="plakat marmer tema peresmian gedung" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <h3>Plakat Marmer Bertema Peresmian Gedung</h3>
 <p>Khusus untuk acara peresmian, desain sering menampilkan siluet atau miniatur gedung, tanggal peresmian, nama instansi, serta kata sambutan singkat. Plakat bertema peresmian biasanya dibuat dalam ukuran besar, antara 25 hingga 35 sentimeter, agar informasi lengkap tetap terbaca jelas dari jarak beberapa meter. Karyamedia dapat merender bentuk fasad gedung ke dalam kuningan maupun ukiran sehingga bangunan nyata terekam dalam benda peringatan. Ini menjadi dokumentasi fisik yang kuat untuk dipajang di sudut strategis bangunan yang diresmikan, misalnya di dekat pintu masuk utama. Teks peresmian biasanya ditulis dengan gaya font formal agar membangkitkan rasa hormat dan kebanggaan institusi.</p>
 
-<img src="/images/produk-unggulan/plakat-marmer/plakat-marmer-14.png" alt="plakat marmer penghargaan minimalis" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/plakat-marmer/plakat-marmer-14-w640.webp" alt="plakat marmer penghargaan minimalis" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <h3>Plakat Marmer Penghargaan Minimalis</h3>
 <p>Tren desain masa kini cenderung ke arah minimalis dan clean. Plakat marmer penghargaan minimalis menggunakan sedikit ornamen, fokus pada tipografi elegan dan ruang kosong yang memberi kesan lapang dan modern. Cocok untuk apresiasi internal, hari jadi perusahaan, atau penghargaan karyawan berprestasi yang ingin tampil sopan tanpa berlebihan. Meski sederhana, penggunaan marmer sebagai material membuatnya tetap terasa mahal dan berwibawa. Varian ini juga lebih ringan di kantong karena proses produksinya tidak serumit ukiran detail maupun pemasangan kuningan berukir rumit. Bagi perusahaan yang memesan dalam jumlah banyak untuk acara tahunan, desain minimalis juga memudahkan konsistensi visual antar tahun.</p>
 
-<img src="/images/produk-unggulan/plakat-marmer/plakat-marmer-15.png" alt="plakat marmer souvenir kenangan" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/plakat-marmer/plakat-marmer-15-w640.webp" alt="plakat marmer souvenir kenangan" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <h3>Plakat Marmer Souvenir Kenangan</h3>
 <p>Selain untuk penghargaan formal, marmer juga kerap dijadikan souvenir kenangan dalam acara seperti wisuda, pernikahan, atau syukuran. Ukurannya lebih kecil dan desainnya lebih personal, misalnya memuat nama pasangan, tanggal, dan quote singkat yang bermakna. Sebagai souvenir, marmer memberikan kesan eksklusif karena bukan barang sekali pakai dan bisa dipajang lama di rumah penerima. Pelanggan sering memesan dalam jumlah puluhan hingga ratusan untuk dibagikan kepada tamu terhormat, dan diskon volume membuatnya tetap terjangkau. Warna marmer netral seperti putih susu sangat fleksibel dipadukan dengan beragam tema acara sehingga mudah menyatu dengan dekorasi penerima.</p>
@@ -15867,27 +15867,27 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
 <h2>Jenis / Varian Plakat Wayang</h2>
 <p>Plakat wayang dibedakan berdasarkan motif ukiran, jenis kayu, serta bentuk dasar plakat. Berikut adalah varian yang paling banyak diminati oleh instansi dan lembaga.</p>
 
-<img src="/images/produk-unggulan/plakat-wayang/plakat-wayang-1.png" alt="plakat wayang custom ukiran kayu" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/plakat-wayang/plakat-wayang-1-w640.webp" alt="plakat wayang custom ukiran kayu" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Plakat Wayang Kayu Jati</h3>
 <p>Varian ini menggunakan kayu jati sebagai material utama karena kekuatannya, seratnya yang indah, serta daya tahan yang sangat tinggi terhadap cuaca dan serangga. Plakat wayang kayu jati biasanya diukir dengan motif tokoh seperti Raden Wijaya, Arjuna, atau Gatotkaca dalam posisi berdiri atau duduk. Bagian dasar plakat berbentuk persegi panjang dengan ruang untuk gravir nama instansi, sedangkan bagian atas menonjolkan figur wayang yang diukir timbul. Kelebihannya adalah kesan mewah dan sangat cocok untuk penghargaan tingkat tinggi seperti pensiun pejabat atau apresiasi tahunan direksi. Selain itu, kayu jati memiliki nilai ekonomis yang cenderung stabil bahkan naik seiring waktu, sehingga plakat ini bisa dianggap sebagai aset kenang-kenangan bernilai. Proses pengeringan kayu juga kami lakukan secara alami agar tidak mudah retak di masa depan.</p>
 
-<img src="/images/produk-unggulan/plakat-wayang/plakat-wayang-10.png" alt="plakat wayang motif punakawan" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/plakat-wayang/plakat-wayang-10-w640.webp" alt="plakat wayang motif punakawan" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Plakat Wayang Motif Punakawan</h3>
 <p>Punakawan seperti Semar, Gareng, Petruk, dan Bagong kerap dipilih karena merepresentasikan kebijaksanaan, keluguan yang jujur, dan kesetiaan. Plakat dengan motif punakawan sangat populer untuk apresiasi kepada karyawan teladan, pegawai yang memasuki masa purna tugas, atau sebagai kenang-kenangan acara internal perusahaan. Ukiran punakawan cenderung lebih dinamis dan humonis, sehingga plakat terasa lebih dekat secara emosional dengan penerimanya. finishing pada varian ini biasanya menggunakan cat duco semi doff agar detail wajah tetap terbaca jelas.</p>
 
-<img src="/images/produk-unggulan/plakat-wayang/plakat-wayang-11.png" alt="plakat wayang kombinasi relief" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/plakat-wayang/plakat-wayang-11-w640.webp" alt="plakat wayang kombinasi relief" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Plakat Wayang Relief Datar</h3>
 <p>Berbeda dengan figur timbul, plakat wayang relief datar memahat motif wayang pada permukaan papan kayu secara dua dimensi. Teknik ini menghasilkan kesan minimalis namun tetap elegan. Relief datar lebih ringan dan lebih mudah diproduksi dalam jumlah banyak, sehingga cocok untuk plakat partisipasi, plakat ucapan terima kasih, atau plakat untuk peserta kegiatan. Varian ini sering dipadukan dengan teknik laser engraving untuk tulisan dan logo instansi agar rapi dan presisi. Bagi instansi dengan anggaran terbatas namun ingin nuansa budaya, relief datar adalah jalan tengah yang sangat direkomendasikan.</p>
 
-<img src="/images/produk-unggulan/plakat-wayang/plakat-wayang-12.png" alt="plakat wayang kombinasi marmer" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/plakat-wayang/plakat-wayang-12-w640.webp" alt="plakat wayang kombinasi marmer" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Plakat Wayang Kombinasi Marmer</h3>
 <p>Varian kombinasi menghubungkan ukiran kayu wayang dengan pelat marmer atau akrilik sebagai media tulisan. Bagian atas berupa figur wayang kayu, sementara bagian bawah berupa pelat marmer hitam dengan ukiran emas berisi nama, jabatan, dan tahun. Perpaduan dua material ini memberi kesan kontras yang kuat antara hangatnya kayu dan elegannya marmer. Plakat ini banyak dipesan oleh instansi pemerintah untuk penghargaan kinerja dan booth pameran.</p>
 
-<img src="/images/produk-unggulan/plakat-wayang/plakat-wayang-13.png" alt="plakat wayang ukiran full board" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/plakat-wayang/plakat-wayang-13-w640.webp" alt="plakat wayang ukiran full board" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Plakat Wayang Ukiran Full Board</h3>
 <p>Varian ini memahat seluruh permukaan papan kayu menjadi satu komposisi wayang yang utuh, tanpa figur terpisah. Ukiran meliputi latar gunungan, tokoh utama, dan ornamen tradisional di tepian. Plakat wayang ukiran full board adalah karya seni yang paling detail dan membutuhkan waktu pengerjaan paling lama. Cocok untuk hadiah spesial seperti peringatan hari jadi instansi atau penghargaan kepada tamu negara. Karena tingkat kerumitan tinggi, kami menyarankan pemesanan jauh hari sebelum acara agar pengrajin memiliki ruang waktu yang cukup untuk menghasilkan detail terbaik tanpa mengorbankan kualitas.</p>
 
-<img src="/images/produk-unggulan/plakat-wayang/plakat-wayang-14.png" alt="plakat wayang ukuran mini" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/plakat-wayang/plakat-wayang-14-w640.webp" alt="plakat wayang ukuran mini" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Plakat Wayang Ukuran Mini</h3>
 <p>Untuk kebutuhan suvenir massal atau cendera mata acara, plakat wayang ukuran mini hadir sebagai pilihan ekonomis. Tingginya biasanya hanya sepuluh sampai lima belas sentimeter dengan motif wayang simpel. Meski kecil, kualitas ukiran tetap dijaga. Varian mini banyak dipakai sebagai suvenir rapat kerja nasional, seminar, atau pembagian kenang-kenangan kepada peserta pelatihan. Mini plakat sering dibuat dalam bentuk gantung atau berdiri bebas sehingga fleksibel diletakkan di meja kerja maupun dipajang di ruang tamu instansi.</p>
 
@@ -16043,42 +16043,42 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
 
 <h2>Jenis Varian Box Bludru Custom</h2>
 
-<img src="/images/produk-unggulan/box-bludru/box-bludru-1.png" alt="box bludru custom untuk medali" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/box-bludru/box-bludru-1-w640.webp" alt="box bludru custom untuk medali" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <h3>Box Bludru Medali</h3>
 <p>Box bludru medali dirancang khusus dengan bantalan berlekuk (molded foam) agar medali tidak bergerak di dalamnya. Ukuran umum disesuaikan dengan diameter medali 5 cm hingga 9 cm. Bagian dalam biasanya dilapisi velvet ekstra halus dan dilengkapi tali medali yang disimpan rapi di ruang terpisah. Varian ini sangat populer untuk perlombaan, turnamen olahraga, dan penghargaan internal perusahaan.</p>
 
 <p>Untuk medali dengan diameter besar atau bentuk tidak standar, kami membuat cetakan foam khusus agar medali bersandar dengan aman. Tutup box sering diberi bantalan tipis tambahan supaya saat ditutup, medali tidak bergesekan dengan permukaan atas. Beberapa klien juga meminta kompartemen kecil di sisi dalam untuk menyimpan sertifikat lipat. Kombinasi ini membuat box medali terasa seperti produk ritel premium而非 sekadar wadah darurat.</p>
 
-<img src="/images/produk-unggulan/box-bludru/box-bludru-2.png" alt="box bludru untuk plakat" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/box-bludru/box-bludru-2-w640.webp" alt="box bludru untuk plakat" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <h3>Box Bludru Plakat</h3>
 <p>Berbeda dengan medali, plakat cenderung berbentuk persegi panjang dan lebih tebal. Box bludru plakat menggunakan padding ekstra di bagian bawah dan tutup agar plakat tidak tergores. Beberapa klien memilih model box bersudut tajam dengan magnet pada tutupnya agar tampak lebih formal. Ini sering dipakai untuk penghargaan service excellent, retirement gift, dan souvenir peresmian gedung.</p>
 
 <p>Karena plakat sering memiliki bagian timbul seperti logo akrilik atau logam, kami menambahkan ruang kosong pada foam agar tonjolan tersebut tidak tertekan. Magnet pada tutup box juga kami perkuat dengan lem industri supaya tidak lepas meski box dibuka tutup berkali-kali. Untuk plakat marmer atau kaca yang berat, rangka karton diganti dengan material lebih kaku agar box tidak melengkung di bagian bawah saat diangkat.</p>
 
-<img src="/images/produk-unggulan/box-bludru/box-bludru-3.png" alt="box bludru cincin dan perhiasan" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/box-bludru/box-bludru-3-w640.webp" alt="box bludru cincin dan perhiasan" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <h3>Box Bludru Cincin dan Perhiasan</h3>
 <p>Untuk cincin, bros, atau perhiasan kecil, box bludru hadir dalam ukuran kompak dengan bantalan berlubang kecil di tengah. Model ini memberi kesan eksklusif layaknya kemasan perhiasan branded. Cocok untuk souvenir pernikahan, anniversary perusahaan, atau gift untuk tamu VIP. Warna klasik seperti merah marun, hitam, dan navy paling banyak diminati.</p>
 
 <p>Varian cincin biasanya dibagi menjadi dua model, yakni model tutup atas yang membuka seperti buku dan model geser. Model buku lebih dramatis saat dibuka, sementara model geser lebih ringkas untuk dibawa dalam pouch. Kami sering menambahkan cermin kecil di bagian tutup untuk kenyamanan pengguna saat mencoba perhiasan. Detail kecil seperti ini sering diingat oleh penerima dan memperkuat citra merek pemberi hadiah.</p>
 
-<img src="/images/produk-unggulan/box-bludru/box-bludru-4.png" alt="box bludru souvenir umum" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/box-bludru/box-bludru-4-w640.webp" alt="box bludru souvenir umum" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <h3>Box Bludru Souvenir Umum</h3>
 <p>Varian multifungsi ini tidak memiliki cetakan khusus sehingga bisa menampung jam tangan, koin, pulpen eksklusif, hingga miniatur. Fleksibilitas inilah yang membuat box bludru souvenir umum menjadi opsi paling aman untuk pesanan skala besar dengan isi bervariasi. Anda cukup menentukan dimensi dalam dan warna luar sesuai identitas brand.</p>
 
 <p>Kelebihan utama box umum adalah lead time produksi yang lebih singkat karena tidak membutuhkan pembuatan cetakan foam baru. Klien hanya perlu menentukan panjang, lebar, dan tinggi dalam, lalu kami melapisi velvet secara merata. Untuk isi seperti jam tangan, kami menyisipkan strap holder kecil agar tali tetap melingkar rapi. Variasi ini menjadi solusi ekonomis namun tetap berkelas untuk event dengan ribuan peserta.</p>
 
-<img src="/images/produk-unggulan/box-bludru/box-bludru-5.png" alt="box bludru dengan logo sablon" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/box-bludru/box-bludru-5-w640.webp" alt="box bludru dengan logo sablon" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <h3>Box Bludru dengan Logo Sablon</h3>
 <p>Ini bukan bentuk fisik tersendiri, melainkan opsi personalisasi yang bisa diaplikasikan ke semua jenis di atas. Logo atau nama instansi disablon maupun dibordir di bagian tutup box. Hasilnya memperkuat kesan profesional dan membuat penerima langsung mengenali pengirim hadiah. Kami menyarankan warna sablon kontras dengan warna kain agar logo tetap terbaca jelas.</p>
 
 <p>Posisi logo sebaiknya berada di tengah tutup dengan margin simetris agar seimbang secara visual. Jika logo memiliki banyak detail halus, kami menyarankan teknik bordir dengan benang ketebalan sedang agar tidak terlihat berantakan. Untuk box berwarna gelap, sablon warna emas atau silver memberikan kontras paling elegan. Sebaliknya, box berwarna terang lebih cocok dengan sablon warna gelap agar tidak luntur secara visual.</p>
 
-<img src="/images/produk-unggulan/box-bludru/box-bludru-6.png" alt="box bludru hadiah mewah" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/box-bludru/box-bludru-6-w640.webp" alt="box bludru hadiah mewah" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <h3>Box Bludru Hadiah Mewah</h3>
 <p>Varian premium menggunakan kain velvet dengan ketebalan lebih dan rangka karton kaku berlapis sehingga box tidak mudah penyok. Beberapa model dilengkapi pita satin atau lapisan dalam berwarna emas. Cocok untuk apresiasi level direksi, hadiah HUT perusahaan, atau penghargaan tingkat nasional yang membutuhkan first impression maksimal.</p>
@@ -16252,23 +16252,23 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
 
 <p>Box kertas import tidak hanya hadir dalam satu model. Variasi bahan dasar, struktur, dan finishing menciptakan karakter visual serta fungsi yang berbeda. Pemahaman terhadap masing-masing varian penting agar Anda tidak salah memilih kemasan yang justru menurunkan nilai produk. Berikut adalah enam varian utama yang sering dipesan untuk kebutuhan kemasan premium.</p>
 
-<img src="/images/produk-unggulan/box-kertas-import/box-kertas-import-1.png" alt="box kertas import art paper polos premium" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/box-kertas-import/box-kertas-import-1-w640.webp" alt="box kertas import art paper polos premium" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Box Kertas Import Art Paper Polos</h3>
 <p>Varian paling dasar menggunakan kertas art paper import sebagai pelapis luar pada box karton yang dibentuk kaku. Keunggulan utamanya adalah permukaan yang halus dan rata sehingga sangat nyaman untuk dicetak maupun dibiarkan polos dengan sedikit aksen branding. Box art paper polos cocok untuk brand yang mengusung gaya minimalis elegan karena warna solid dapat tampak lebih mewah tanpa banyak ornament. Karena tidak memerlukan banyak proses tambahan, varian ini biasanya menjadi opsi paling ekonomis di kelas kemasan premium. Anda masih bisa menambahkan logo kecil atau stempel foil sebagai pemanis tanpa merusak kesan simpelnya.</p>
 
-<img src="/images/produk-unggulan/box-kertas-import/box-kertas-import-2.png" alt="box kertas import hard box rigid struktur kaku" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/box-kertas-import/box-kertas-import-2-w640.webp" alt="box kertas import hard box rigid struktur kaku" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Box Kertas Import Hard Box atau Rigid Box</h3>
 <p>Hard box atau rigid box merupakan struktur kemasan kaku yang tidak mudah melipat karena sudah dibentuk permanen sejak awal produksi. Variasi ini memberikan kesan berat dan mewah saat dipegang, sehingga sering digunakan untuk packaging parfum, jam tangan, perhiasan, hingga souvenir eksklusif. Kertas import melapisi papan kaku di bagian luar agar tekstur dan warna terjaga rapi. Kelemahannya adalah memakan tempat penyimpanan dan biaya kirim karena tidak bisa ditekuk, namun untuk produk bernilai tinggi, pengorbanan ini sebanding dengan kesan premium yang dihasilkan. Selain itu, rigid box biasanya memiliki tutup yang menyatu dengan badan sehingga memberikan perlindungan ekstra bagi isi yang rapuh selama pengiriman.</p>
 
-<img src="/images/produk-unggulan/box-kertas-import/box-kertas-import-3.png" alt="box kertas import laminating doff glossy finishing" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/box-kertas-import/box-kertas-import-3-w640.webp" alt="box kertas import laminating doff glossy finishing" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Box Kertas Import Laminating Doff atau Glossy</h3>
 <p>Laminating adalah lapisan tipis berbahan plastik yang dilapiskan di atas cetakan untuk melindungi tinta sekaligus mengubah tampilan permukaan. Laminating doff memberikan kesan lembut, anti silau, dan terasa seperti beludru tipis saat disentuh, sedangkan laminating glossy memunculkan kilau mengkilap yang membuat warna lebih vibrant. Keduanya sama-sama melindungi box dari noda air dan goresan ringan. Pemilihan antara doff dan glossy biasanya disesuaikan dengan identitas brand, di mana produk kecantikan dan skincare cenderung memilih doff, sementara produk mainan atau promosi ceria lebih cocok dengan glossy.</p>
 
-<img src="/images/produk-unggulan/box-kertas-import/box-kertas-import-4.png" alt="box kertas import dengan penutup magnet" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/box-kertas-import/box-kertas-import-4-w640.webp" alt="box kertas import dengan penutup magnet" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Box Kertas Import dengan Magnet</h3>
 <p>Box dengan sistem penutup magnet merupakan varian favorit untuk kemasan hadiah dan produk premium karena memberikan sensasi membuka tutup dengan halus dan menutup dengan bunyi lembut yang khas. Magnet ditanam di dalam lipatan kertas sehingga tidak terlihat namun tetap kuat menahan tutup tertutup. Varian ini sangat cocok untuk box souvenir pernikahan, hampers lebaran, maupun packaging produk skincare edition khusus. Selain estetika, magnet juga menambah fungsi praktis karena pengguna tidak perlu repot dengan pita pengikat setiap kali membuka kemasan.</p>
 
-<img src="/images/produk-unggulan/box-kertas-import/box-kertas-import-5.png" alt="box kertas import dengan pita ribbon aksesori" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/box-kertas-import/box-kertas-import-5-w640.webp" alt="box kertas import dengan pita ribbon aksesori" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Box Kertas Import dengan Pita atau Ribbon</h3>
 <p>Pita atau ribbon menjadi aksesori klasik yang tidak pernah lekang oleh waktu untuk kemasan hadiah. Box kertas import yang dipadukan dengan pita satin, organza, atau ribbon metalik langsung terlihat istimewa tanpa harus mencetak terlalu banyak warna. Pita dapat dipesan dalam warna senada dengan tema acara, misalnya emas untuk pernikahan mewah atau pastel untuk baby shower. Beberapa desain bahkan menggabungkan pita dengan kartu ucapan kecil yang dimasukkan di dalamnya, sehingga kemasan sekaligus berfungsi sebagai media pesan personal bagi penerima.</p>
 
@@ -16511,22 +16511,22 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
 
 <h2>Jenis Varian Box Batik Custom</h2>
 
-<img src="/images/produk-unggulan/box-batik/box-batik-1.png" alt="box batik custom motif parang" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/box-batik/box-batik-1-w640.webp" alt="box batik custom motif parang" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Box Batik Kapas Bungkus Penuh</h3>
 <p>Varian yang paling klasik adalah box batik dengan kain kapas dibungkus penuh mengelilingi kotak. Kain batik tulis atau batik cap dipasang melapisi seluruh sisi luar box karton tebal yang telah dilapisi fondasi. Hasilnya adalah kemasan yang terlihat seperti bantal batik mewah namun tetap kaku dan aman untuk menyimpan isi di dalamnya. Varian ini cocok untuk souvenir pernikahan, ulang tahun perusahaan, hingga hampers Lebaran.</p>
 <p>Keunggulan utama model bungkus penuh adalah tampilannya yang seamless sehingga tidak terlihat sambungan karton di luar. Kami biasanya menambahkan padding tipis di dalam agar isi souvenir tidak terguncang. Untuk pesanan massal, model ini paling efisien karena pola pemotongan kain dapat dioptimasi sehingga minim sisa material. Warna dalam dapat disesuaikan dengan isi, misalnya kertas tissue emas untuk kesan festive.</p>
 
-<img src="/images/produk-unggulan/box-batik/box-batik-2.png" alt="box batik kombinasi box bludru" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/box-batik/box-batik-2-w640.webp" alt="box batik kombinasi box bludru" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Box Batik Kombinasi Bludru</h3>
 <p>Untuk kesan yang lebih mewah, kain batik kerap dipadukan dengan box bludru di bagian dalam. Box bludru memberikan tekstur halus dan warna pekat, sementara aksen batik di luar menambahkan nilai budaya. Kombinasi ini sangat diminati untuk souvenir eksklusif seperti cincin, perhiasan, atau jam tangan. Anda bisa menyesuaikan warna batik dengan warna bludru agar harmoni.</p>
 <p>Pada varian ini, batik biasanya kami letakkan sebagai panel dekoratif di tutup box atau sebagai pita selempang, bukan menutupi seluruh permukaan, agar tekstur bludru tetap terlihat mendominasi. Pendekatan ini membuat kemasan terlihat seperti kotak jewelry branded namun bernuansa lokal. Kami juga menyediakan bantalan busa berlapis satin di dalam agar produk berharga tidak tergores selama pengiriman.</p>
 
-<img src="/images/produk-unggulan/box-batik/box-batik-3.png" alt="box batik dengan box kayu" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/box-batik/box-batik-3-w640.webp" alt="box batik dengan box kayu" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Box Batik dengan Box Kayu</h3>
 <p>Varian premium lainnya memadukan kain batik dengan wadah box kayu solid. Box kayu memberikan kekokohan dan umur pakai yang panjang, sedangkan batik berfungsi sebagai pembungkus dekoratif atau alas pelapis bagian tutup. Ini adalah pilihan tepat untuk souvenir kenang-kenangan tingkat tinggi seperti plakat mini, patung wisuda, atau produk kerajinan. Box kayu juga bisa dipoles agar awet digunakan berkali-kali.</p>
 <p>Kayu yang kami gunakan umumnya jenis plywood bersertifikat atau kayu albasia yang ringan namun kokoh. Batik dipasang dengan lem khusus furniture dan di-finishing dengan pelitur tipis agar tidak lengket. Kelebihan box kayu adalah penerima dapat memanfaatkannya kembali sebagai wadah perhiasan atau penyimpanan, sehingga nilai souvenir bertahan lama di rumah mereka.</p>
 
-<img src="/images/produk-unggulan/box-batik/box-batik-4.png" alt="box batik motif bunga dan geometris" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/box-batik/box-batik-4-w640.webp" alt="box batik motif bunga dan geometris" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Box Batik Motif Bunga dan Geometris</h3>
 <p>Motif memengaruhi karakter kemasan. Box batik motif bunga seperti kawung atau ceplok memberi kesan lembut dan feminin, cocok untuk souvenir bridal shower atau arisan ibu-ibu. Sementara motif geometris seperti parang atau lereng terkesan maskulin dan formal, tepat untuk corporate gift. Pemilihan motif menjadi bagian dari personalisasi yang kami sediakan.</p>
 <p>Selain motif klasik, kami juga menerima permintaan motif kontemporer seperti batik modern abstrak yang cocok untuk anak muda dan event kreatif. Kombinasi warna dapat disesuaikan dengan palet acara, misalnya batik gradasi biru untuk wisuda atau merah marun untuk pernikahan adat Jawa. Kami menyarankan melihat langsung contoh kain sebelum memutuskan agar warna sesuai ekspektasi.</p>
@@ -16694,26 +16694,26 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
 
 <p>Sebelum menentukan pesanan, penting memahami bahwa istilah kalung rektor mencakup berbagai bentuk: ada yang berupa medali besar bergantung di rantai, ada pula yang menyerupai kalung berlapis lambang universitas. Berikut enam varian yang paling sering dipesan untuk kebutuhan wisuda kampus.</p>
 
-<img src="/images/produk-unggulan/kalung-rektor/kalung-rektor-1.png" alt="kalung rektor custom logam emas" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/kalung-rektor/kalung-rektor-1-w640.webp" alt="kalung rektor custom logam emas" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Kalung Rektor Logam Emas</h3>
 <p>Varian paling prestisius adalah kalung rektor yang terbuat dari logam dengan finishing emas. Bahan dasarnya biasanya kuningan atau alloy yang dilapisi emas melalui proses plating, sehingga menghasilkan kilau seperti emas asli tanpa biaya terlalu tinggi. Lambang universitas diukir timbul menggunakan mesin CNC atau teknik cetak logam, lalu dipoles hingga detail lambang terlihat tajam. Kalung rektor logam emas sangat cocok untuk upacara wisuda resmi karena tampil berwibawa di atas toga. Kelemahannya hanya pada perawatan rutin agar lapisan emas tidak kusam jika sering terkena keringat dan cuaca lembap.</p>
-<img src="/images/produk-unggulan/kalung-rektor/kalung-rektor-10.png" alt="kalung rektor sablon custom" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/kalung-rektor/kalung-rektor-10-w640.webp" alt="kalung rektor sablon custom" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Kalung Rektor Sablon</h3>
 <p>Untuk kebutuhan massal seperti suvenir untuk wisudawan atau panitia, kalung rektor sablon menjadi pilihan ekonomis. Media dasarnya bisa berupa akrilik, resin, atau logam tipis yang permukaannya dicetak menggunakan tinta sablon. Keunggulannya adalah fleksibilitas warna dan kemampuan mereproduksi logo kampus yang kompleks dengan biaya rendah per piece. Namun hasil sablon kurang memiliki kesan timbul dibanding logam emas, sehingga lebih cocok untuk suvenir kenang-kenangan daripada atribut resmi rektor. Kami menyarankan sablon untuk pesanan di atas lima puluh unit agar efisiensi biaya maksimal.</p>
 
-<img src="/images/produk-unggulan/kalung-rektor/kalung-rektor-11.png" alt="kalung rektor rantai kombinasi" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/kalung-rektor/kalung-rektor-11-w640.webp" alt="kalung rektor rantai kombinasi" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Kalung Rektor Rantai Kombinasi</h3>
 <p>Varian ini menggabungkan medali utama dari logam emas dengan rantai tambahan berbahan alloy atau stainless steel. Kombinasi tersebut membuat kalung lebih ringan di leher sekaligus tetap elegan. Panjang rantai dapat disesuaikan, umumnya antara 45 hingga 60 sentimeter, agar medali jatuh tepat di dada. Kalung rektor rantai kombinasi sering dipesan untuk dekan dan pejabat akademik lain yang membutuhkan atribut seragam namun tidak harus setebal kalung rektor utama. Pemilihan rantai yang tepat juga memengaruhi kenyamanan saat upacara berlangsung cukup lama.</p>
 
-<img src="/images/produk-unggulan/kalung-rektor/kalung-rektor-12.png" alt="kalung rektor mini keepstone" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/kalung-rektor/kalung-rektor-12-w640.webp" alt="kalung rektor mini keepstone" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Kalung Rektor Mini Keepstone</h3>
 <p>Kalung rektor mini keepstone berbentuk medali kecil yang di dalamnya dapat memuat foto, lambang, atau tulisan khusus. Ukurannya lebih kompak sehingga nyaman dipakai sehari-hari sebagai aksesori alumni. Banyak kampus menggunakan keepstone sebagai suvenir eksklusif untuk wisudawan berprestasi atau orang tua yang hadir. Body medali biasanya dari logam dengan lapisan emas, sedangkan bagian dalam tertutup resin bening agar desain tetap awet. Varian ini unik karena menyimpan nilai emosional tinggi bagi pemakainya.</p>
 
-<img src="/images/produk-unggulan/kalung-rektor/kalung-rektor-13.png" alt="kalung rektor akrilik custom" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/kalung-rektor/kalung-rektor-13-w640.webp" alt="kalung rektor akrilik custom" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Kalung Rektor Akrilik</h3>
 <p>Kalung rektor akrilik memanfaatkan bahan akrilik bening atau berwarna yang dipotong presisi laser dan dilapisi cetak full color. Beratnya sangat ringan, sehingga pas untuk suvenir wisuda massal yang dibagikan kepada seluruh wisudawan. Walaupun tidak seberat logam, akrilik tetap terlihat menarik jika dikombinasikan dengan finishing mengkilap. Kekurangannya adalah daya tahan goresan lebih rendah dibanding logam, sehingga sebaiknya disimpan dalam kotak atau pouch khusus setelah acara selesai.</p>
 
-<img src="/images/produk-unggulan/kalung-rektor/kalung-rektor-14.png" alt="kalung rektor resin marmer" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/kalung-rektor/kalung-rektor-14-w640.webp" alt="kalung rektor resin marmer" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Kalung Rektor Resin Marmer</h3>
 <p>Varian mewah lainnya adalah kalung rektor dengan medali berbahan resin yang dimotifkan seperti marmer. Tekstur marmer memberikan kesan artistik dan eksklusif, kerap dipakai untuk edisi wisuda spesial atau peringatan ulang tahun kampus. Kombinasi resin marmer dengan pinggiran logam emas menonjolkan kemewahan tanpa harga setinggi emas murni. Kami merekomendasikan varian ini untuk kampus yang ingin tampil beda dan meninggalkan kesan mendalam pada tamu undangan maupun dokumentasi foto wisuda.</p>
 
@@ -16893,22 +16893,22 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
 
 <h2>Jenis dan Varian Samir Gordon Wisuda</h2>
 
-<img src="/images/produk-unggulan/samir-wisuda/samir-wisuda-akrilik-1.png" alt="samir wisuda akrilik custom" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/samir-wisuda/samir-wisuda-akrilik-1-w640.webp" alt="samir wisuda akrilik custom" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <h3>Samir Wisuda Akrilik</h3>
 <p>Varian samir wisuda akrilik menawarkan tampilan yang elegan dengan aksen bahan akrilik pada bagian tertentu seperti kerah atau pelat nama. Jenis ini sering dipilih untuk wisuda tingkat universitas yang mengedepankan kesan mewah dan modern. Kelebihannya terletak pada daya tahan bentuk serta kilau permukaan yang tetap menarik meski digunakan berkali-kali dalam berbagai sesi foto. Bagi kampus yang menginginkan identitas visual kuat, samir akrilik dapat dipadukan dengan sablon nama dan logo fakultas secara presisi sehingga menghasilkan busana wisuda yang eksklusif dan berkesan mendalam bagi setiap wisudawan. Selain itu, aksen akrilik memudahkan panitia membersihkan noda ringan karena permukaannya tidak menyerap cairan, sehingga samir tetap tampak baru meski dipakai dalam beberapa gelombang upacara pada hari yang sama.</p>
 
-<img src="/images/produk-unggulan/samir-wisuda/samir-wisuda-akrilik-10.png" alt="samir gordon satin wisuda" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/samir-wisuda/samir-wisuda-akrilik-10-w640.webp" alt="samir gordon satin wisuda" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <h3>Samir Gordon Satin</h3>
 <p>Samir Gordon berbahan satin memberikan kesan mengkilap dan halus saat dipakai. Bahan ini nyaman di kulit dan memiliki jatuhan yang rapi sehingga cocok untuk upacara indoor maupun outdoor. Samir Gordon satin biasanya diproduksi dengan jahitan rapi dan detail kerah yang tegak, memberikan kesan formal khas toga wisuda. Variasi warna satin juga luas, mulai dari hitam klasik, biru tua, hingga merah marun sesuai identitas kampus. Selain itu, bahan satin relatif mudah dirawat karena tidak mudah kusut sehingga praktis untuk dipakai dalam rangkaian acara yang panjang dan melelahkan. Keunggulan lainnya adalah satin memiliki berat yang ringan sehingga wisudawan tidak merasa gerah meski mengenakannya berjam-jam di ruang tertutup yang penuh tamu undangan.</p>
 
-<img src="/images/produk-unggulan/samir-wisuda/samir-wisuda-akrilik-11.png" alt="samir gordon brokat wisuda" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/samir-wisuda/samir-wisuda-akrilik-11-w640.webp" alt="samir gordon brokat wisuda" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <h3>Samir Gordon Brokat</h3>
 <p>Untuk acara wisuda yang ingin tampil lebih feminin dan anggun, samir Gordon brokat menjadi pilihan populer. Bahan brokat memberikan tekstur transparan berornamen yang cantik tanpa meninggalkan kesan berat di tubuh. Varian ini banyak diminati program studi seperti keperawatan, pendidikan, dan seni yang mengedepankan kelembutan penampilan. Meski tampak detail, samir brokat tetap diproduksi dengan rangka dalam agar bentuknya stabil selama prosesi pelantikan. Kombinasi brokat dengan inner kain polos membuat wisudawan tetap nyaman bergerak di atas panggung. Kami menyediakan pilihan warna inner yang senada maupun kontras agar tampilan lebih dinamis, dan setiap bordir tepi brokat dijahit rapi agar tidak mudah robek saat digunakan berulang kali oleh wisudawan berikutnya.</p>
 
-<img src="/images/produk-unggulan/samir-wisuda/samir-wisuda-akrilik-12.png" alt="samir wisuda custom sablon nama" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/samir-wisuda/samir-wisuda-akrilik-12-w640.webp" alt="samir wisuda custom sablon nama" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
 <h3>Samir Wisuda Custom Sablon Nama</h3>
 <p>Samir wisuda custom dengan sablon nama menjadi favorit karena memuat identitas langsung si wisudawan. Teknik sablon dilakukan pada bagian dada atau punggung dengan tinta khusus yang tahan gesek dan cuci. Selain nama, panitia dapat menyertakan logo universitas, fakultas, hingga tahun angkatan agar setiap busana terasa personal. Hal ini membuat setiap samir terasa istimewa sekaligus menjadi kenang-kenangan berharga setelah acara selesai. Bagi kampus yang ingin dokumentasi rapi, sablon nama juga memudahkan panitia mengelompokkan dan membagikan samir sesuai daftar hadir wisudawan. Kami dapat mencetak hingga dua baris teks dengan ukuran font yang dapat disesuaikan, sehingga nama panjang sekalipun tetap terbaca jelas dalam foto ukuran besar maupun siaran langsung upacara wisuda.</p>
@@ -17085,7 +17085,7 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
 <p>Kehadiran patung wisuda custom juga menjadi bagian dari strategi branding kampus. Setiap kali lulusan menaruh figur tersebut di meja kerja atau rak buku, ia secara tidak langsung mengenang alma maternya. Hal ini menciptakan ikatan emosional jangka panjang antara institusi dan alumni, yang kelak bermanfaat untuk jejaring profesional serta donasi kampus. Oleh karena itu, memilih vendor yang memahami detail identitas kampus sangat krusial agar patung yang dihasilkan benar-benar merepresentasikan nilai kebanggaan institusi.</p>
 
 <h2>Jenis dan Varian Patung Wisuda</h2>
-<img src="/images/produk-unggulan/patung-wisuda/patung-wisuda-11.png" alt="patung wisuda custom figur toga resin" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/patung-wisuda/patung-wisuda-11-w640.webp" alt="patung wisuda custom figur toga resin" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Patung Wisuda Figur Toga Klasik</h3>
 <p>Varian paling populer adalah figur wisudawan mengenakan toga lengkap dengan baju dan cap toga di kepala. Tangan memegang gulungan diploma yang bisa diukir nama atau motto kampus. Model klasik ini cocok untuk hadiah rektor kepada lulusan terbaik, atau sebagai trophy pelengkap acara penghargaan internal fakultas. Proporsi figur biasanya setinggi 12 hingga 25 sentimeter tergantung ukuran alas.</p>
 <p>Keunggulan figur toga klasik terletak pada kemudahan produksi massal karena mold sudah tersedia, sehingga kampus dapat memesannya dengan lead time lebih pendek dibanding varian eksklusif. Warna toga dapat disesuaikan dengan warna kebanggaan kampus, misalnya toga hitam dengan jubah dalam berwarna biru, merah, atau hijau sesuai fakultas. Kombinasi warna ini memberi kesan seragam ketika seluruh wisudawan dari berbagai fakultas menerima patung dengan nuansa yang selaras namun tetap khas.</p>
@@ -17093,7 +17093,7 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
 <h3>Patung Wisuda dengan Aksen Diploma Terbuka</h3>
 <p>Varian ini menonjolkan gulungan ijazah yang dibuka sehingga bagian dalamnya bisa dicetak dengan nama wisudawan, jurusan, dan IPK secara artistik. Cocok untuk kampus yang ingin personalisasi tinggi karena tiap satuan tampak unik. Detail diploma terbuka membutuhkan teknik cetak sablon atau label timbul, sehingga prosesnya sedikit lebih panjang dibanding figur standar.</p>
 <p>Kelebihan utama diploma terbuka adalah ruang untuk narasi singkat. Selain nama dan jurusan, kampus dapat menambahkan tanggal wisuda, nama rektor, atau bahkan quotes motivasi di bagian dalam gulungan. Hal ini membuat patung terasa sangat personal dan sulit ditemukan di vendor lain. Untuk menjaga keterbacaan teks, kami menyarankan ukuran figur minimal 15 sentimeter agar font ukiran tidak terlalu kecil dan tetap elegan saat dilihat dari dekat.</p>
-<img src="/images/produk-unggulan/patung-wisuda/patung-wisuda-12.png" alt="patung wisuda figur diploma custom" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/patung-wisuda/patung-wisuda-12-w640.webp" alt="patung wisuda figur diploma custom" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Patung Wisuda Berpasangan</h3>
 <p>Untuk wisuda pasangan suami istri atau sahabat, tersedia model berpasangan di satu alas kayu atau akrilik. Dua figur berdiri berdampingan dengan tulisan nama masing-masing. Model ini banyak dipesan oleh kampus untuk program wisudawan berprestasi yang ingin diabadikan bersama pendampingnya. Alas bisa dipilih dari kayu solid, akrilik bening, atau marmer sintetis.</p>
 <p>Patung berpasangan sering dijadikan hadiah spesial dari orang tua yang menghadiri wisuda anaknya bersama pasangan. Selain itu, beberapa fakultas kedokteran dan keperawatan menggunakan model ini untuk merayakan pasangan suami istri yang lulus bersamaan. Komposisi dua figur membutuhkan keseimbangan berat agar alas tidak miring, sehingga kami menambahkan pemberat halus di bagian bawah alas kayu untuk kestabilan maksimal.</p>
@@ -17101,7 +17101,7 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
 <h3>Patung Wisuda Mini Tabletop</h3>
 <p>Varian mini dirancang untuk diletakkan di meja kerja atau dashboard mobil. Tingginya sekitar 8 hingga 10 sentimeter dengan alas magnetik atau datar. Mini tabletop biasanya dipesan dalam jumlah besar sebagai souvenir massal karena harganya lebih ramah anggaran. Meski kecil, detail toga dan diploma tetap dipertahankan melalui cetakan resin presisi.</p>
 <p>Keunikan mini tabletop adalah fleksibilitas distribusinya. Karena ukurannya compact, patung ini mudah dimasukkan ke dalam goodie bag wisuda bersama souvenir lain seperti pin dan gantungan kunci tanpa menambah volume kemasan secara berarti. Beberapa kampus bahkan menyematkan mini tabletop sebagai bonus bagi mahasiswa yang mengambil paket foto wisuda, sehingga memperkuat kesan eksklusif di hari penting tersebut.</p>
-<img src="/images/produk-unggulan/patung-wisuda/patung-wisuda-13.png" alt="patung wisuda mini tabletop resin" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/patung-wisuda/patung-wisuda-13-w640.webp" alt="patung wisuda mini tabletop resin" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Patung Wisuda Tema Khusus</h3>
 <p>Beberapa kampus meminta figur dengan pose khusus, misalnya memegang buku, globe, atau atribut jurusan seperti stetoskop untuk kedokteran dan penggaris untuk teknik. Tema khusus ini membutuhkan pembuatan cetakan baru sehingga ada biaya mold tambahan, namun hasilnya sangat eksklusif dan merepresentasikan identitas fakultas dengan kuat.</p>
 <p>Pembuatan tema khusus biasanya diawali dari sketsa referensi yang diberikan kampus, lalu kami ubah menjadi model tiga dimensi sebelum dicetak menjadi mold silikon. Proses ini memakan waktu lebih lama, namun memberi kebebasan penuh bagi kampus untuk menonjolkan ciri khas program studinya. Bagi institusi yang ingin patung display permanen di lobby, tema khusus berbahan fiberglass menjadi pilihan paling tepat karena daya tahannya terhadap cuaca ruangan terbuka sekalipun.</p>
@@ -17144,7 +17144,7 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
 
 <h2>Metode Cetak dan Teknik Produksi</h2>
 <p>Kualitas akhir patung wisuda sangat bergantung pada metode produksi yang digunakan. Di workshop Karyamedia, kami mengombinasikan teknologi cetak modern dengan sentuhan tangan pengrajin berpengalaman agar setiap figur memiliki detail memuaskan. Berikut penjelasan tiap tahapan teknis yang kami terapkan.</p>
-<img src="/images/produk-unggulan/patung-wisuda/patung-wisuda-14.png" alt="teknik produksi patung wisuda resin" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/patung-wisuda/patung-wisuda-14-w640.webp" alt="teknik produksi patung wisuda resin" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Cetak Resin Casting</h3>
 <p>Metode utama kami adalah resin casting menggunakan cetakan silikon. Cairan resin dituang ke mold dan dibiarkan mengeras membentuk figur detail. Kelebihannya adalah ketajaman detail wajah, lipatan toga, dan diploma sangat tinggi. Resin juga ringan namun kokoh sehingga aman dikirim jarak jauh.</p>
 
@@ -17159,7 +17159,7 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
 
 <h2>Panduan Memilih Patung Wisuda Berdasarkan Kebutuhan</h2>
 <p>Menentukan varian patung yang tepat harus didasarkan pada jumlah lulusan, anggaran fakultas, serta tujuan pemberian souvenir itu sendiri. Kampus dengan ribuan peserta tentu membutuhkan pendekatan efisiensi, sementara acara penghargaan internal mengutamakan eksklusivitas. Berikut adalah panduan praktis memilih patung sesuai situasi acara wisuda Anda.</p>
-<img src="/images/produk-unggulan/patung-wisuda/patung-wisuda-15.png" alt="panduan memilih patung wisuda kampus" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/patung-wisuda/patung-wisuda-15-w640.webp" alt="panduan memilih patung wisuda kampus" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Untuk Wisuda Massal Ribuan Mahasiswa</h3>
 <p>Jika kampus Anda mewisuda ribuan mahasiswa tiap periode, pilih varian mini tabletop atau figur klasik standar tanpa tema khusus agar biaya per pcs rendah. Gunakan alas resin polos dengan sablon nama untuk efisiensi waktu produksi dan pengiriman.</p>
 
@@ -17253,22 +17253,22 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
 
     <h2>Jenis dan Varian Map Ijazah Wisuda Custom</h2>
 
-    <img src="/images/produk-unggulan/map-ijazah/map-wisuda-1.png" alt="Map ijazah wisuda custom hard cover" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+    <img src="/images/opt/produk-unggulan/map-ijazah/map-wisuda-1-w640.webp" alt="Map ijazah wisuda custom hard cover" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
     <h3>Map Ijazah Kertas Art Paper</h3>
     <p>Varian paling umum dan ekonomis adalah map ijazah berbahan art paper dengan ketebalan 210 gram hingga 310 gram. Map ini memiliki permukaan halus yang cocok untuk cetak foto dan sablon nama. Cocok untuk pesanan dalam jumlah besar karena harganya terjangkau namun tetap rapi. Sisi dalam biasanya dilapisi dengan kantong plastik bening untuk menyimpan ijazah dan transkrip. Kelebihannya ringan dan mudah didistribusikan, sedangkan kekurangannya relatif kurang kaku dibanding hard cover sehingga perlu penanganan hati-hati saat dibawa.</p>
 
-    <img src="/images/produk-unggulan/map-ijazah/map-wisuda-2.png" alt="Map ijazah sablon nama dan foto wisudawan" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+    <img src="/images/opt/produk-unggulan/map-ijazah/map-wisuda-2-w640.webp" alt="Map ijazah sablon nama dan foto wisudawan" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
     <h3>Map Ijazah Hard Cover Laminasi</h3>
     <p>Untuk kesan lebih mewah, map hard cover dilapisi laminasi doff atau glossy sehingga lebih kaku dan tahan lama. Cover depan dapat disablon dengan logo kampus, nama wisudawan, dan foto ukuran 3x4 atau 4x6. Jenis ini sering dipilih untuk wisuda tingkat universitas dan acara resmi karena tampilannya elegan dan nyaman digenggam saat prosesi penyerahan ijazah. Laminasi juga berfungsi sebagai pelindung agar warna tidak mudah pudar dan permukaan tahan terhadap cipratan air ringan.</p>
 
-    <img src="/images/produk-unggulan/map-ijazah/map-wisuda-10.png" alt="Map kenang-kenangan wisuda premium" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+    <img src="/images/opt/produk-unggulan/map-ijazah/map-wisuda-10-w640.webp" alt="Map kenang-kenangan wisuda premium" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
     <h3>Map Ijazah Soft Cover Spiral</h3>
     <p>Map soft cover dengan jilidan spiral atau ring memberikan fleksibilitas membuka halaman penuh tanpa mudah robek. Varian ini ringan dan praktis, cocok untuk dibawa dalam tas wisudawan. Biasanya digunakan sebagai map kenang-kenangan tambahan yang berisi foto dokumentasi, ucapan selamat, dan rangkuman perjalanan kuliah. Desain interior dapat diisi dengan layout foto kolase sehingga wisudawan memiliki mini album perjalanan selama menuntut ilmu.</p>
 
-    <img src="/images/produk-unggulan/map-ijazah/map-wisuda-11.png" alt="Map wisuda custom desain eksklusif" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+    <img src="/images/opt/produk-unggulan/map-ijazah/map-wisuda-11-w640.webp" alt="Map wisuda custom desain eksklusif" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
     <h3>Map Ijazah Couverture Eksklusif</h3>
     <p>Varian tertinggi menggunakan kertas couverture atau bahan karton tebal bertekstur dengan finishing hot print emas atau silver. Map ini sangat eksklusif dan kerap dipesan khusus untuk wisudawan berprestasi, peraih cumlaude, atau tamu kehormatan. Harga lebih tinggi sebanding dengan kesan mewah dan ketahanannya yang bisa disimpan puluhan tahun. Tekstur couverture memberi kesan tactile yang mewah sehingga map terasa seperti buku prestisius ketika dibuka.</p>
@@ -17464,19 +17464,19 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
 
 <h2>Jenis dan Varian Medali 3D Custom</h2>
 
-<img src="/images/produk-unggulan/medali-3d/medali-3d-1.png" alt="medali 3d custom zink alloy finishing emas" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/medali-3d/medali-3d-1-w640.webp" alt="medali 3d custom zink alloy finishing emas" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Medali 3D Zink Alloy Finishing Emas</h3>
 <p>Varian paling populer adalah medali 3D zink alloy dengan finishing emas. Cetakan timbulnya dibentuk melalui cetakan presisi sehingga logo, angka, atau figur pahlawan terlihat menyembul secara realistis. Finishing emas memberikan kesan prestisius dan sangat cocok untuk juara umum, medali emas olahraga, maupun penghargaan tingkat tinggi. Warna emas diaplikasikan melalui proses plating yang membuat permukaan tahan terhadap goresan ringan dan tidak mudah luntur selama bertahun-tahun.</p>
 
-<img src="/images/produk-unggulan/medali-3d/medali-3d-2.png" alt="medali 3d custom zink alloy finishing silver" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/medali-3d/medali-3d-2-w640.webp" alt="medali 3d custom zink alloy finishing silver" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Medali 3D Zink Alloy Finishing Silver</h3>
 <p>Bagi Anda yang menginginkan tampilan elegan namun lebih netral, finishing silver menjadi pilihan tepat. Medali 3D silver menonjolkan detail cetakan timbul dengan pencahayaan yang lebih lembut dibanding emas. Varian ini sering dipakai untuk medali partisipasi, medali juara harapan, atau ajang musik dan seni di mana warna silver terasa lebih modern. Secara struktur, bahan dasar zink alloy membuat medali cukup berat di genggaman sehingga terasa solid dan berkualitas. Silver juga lebih fleksibel dipadukan dengan pita berwarna apa pun tanpa bentrokan warna, sehingga banyak panitia menjadikannya pilihan aman untuk event dengan identitas visual yang belum fix.</p>
 
-<img src="/images/produk-unggulan/medali-3d/medali-3d-10.png" alt="medali 3d custom zink alloy finishing perunggu" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/medali-3d/medali-3d-10-w640.webp" alt="medali 3d custom zink alloy finishing perunggu" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Medali 3D Zink Alloy Finishing Perunggu</h3>
 <p>Finishing perunggu menghadirkan nuansa klasik dan bersejarah. Warna kecokelatannya mengingatkan pada medali tradisional turnamen lama, sehingga cocok untuk event dengan tema heritage, komunitas, atau perlombaan antarinstansi yang ingin kesan formal. Medali perunggu biasanya dipakai untuk juara ketiga, namun banyak klien yang justru memesan seluruh seri juara dalam finishing perunggu demi konsistensi desain. Keunggulan perunggu adalah ketahanannya terhadap noda ringan dan tampilannya yang tidak terlalu mencolok sehingga cocok untuk penghargaan internal perusahaan seperti employee of the year.</p>
 
-<img src="/images/produk-unggulan/medali-3d/medali-3d-11.png" alt="medali 3d custom soft enamel warna" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
+<img src="/images/opt/produk-unggulan/medali-3d/medali-3d-11-w640.webp" alt="medali 3d custom soft enamel warna" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 <h3>Medali 3D Soft Enamel Berwarna</h3>
 <p>Jika Anda ingin medali tampak lebih hidup, teknik soft enamel memungkinkan area tertentu diisi warna cat enamel yang sedikit lebih rendah dari permukaan timbul. Hasilnya adalah medali dengan kontras warna mencolok namun tetap memiliki tekstur 3D yang teraba. Soft enamel sangat digemari untuk medali lomba anak, kompetisi sekolah, dan event komunitas karena warna brand dapat disesuaikan persis dengan identitas panitia. Proses pewarnaan dilakukan secara manual per area lalu dipanggang agar cat menempel kuat, sehingga meski ada puluhan warna berbeda, hasilnya tetap rapi dan tahan lama.</p>
 

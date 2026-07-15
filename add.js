@@ -109,6 +109,14 @@ if (imageMatch) {
       console.log("Gambar: " + newPath)
     }
   }
+
+  // Convert content <img src> ke WebP (opt) agar konsisten dgn optimizer
+  article = article.replace(/src=(["'])(\/images\/[^"']+\.(?:png|jpe?g))\1/g, (m, q, p) => {
+    const srcFile = "public" + p
+    if (!fs.existsSync(srcFile)) return m
+    const opt = p.replace(/\.(png|jpe?g)$/i, "").replace("/images/", "/images/opt/") + "-w640.webp"
+    return `src=${q}${opt}${q}`
+  })
 }
 
 // Tambahkan ke array

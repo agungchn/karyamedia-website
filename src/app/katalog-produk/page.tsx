@@ -8,6 +8,9 @@ import { getWhatsAppLink, generateWhatsAppMessage } from "@/lib/utils"
 import { categoryIconMap } from "@/components/icons/product-icons"
 import { KategoriCards } from "@/components/kategori-cards"
 
+// Selalu render dari data terkini (produk sering ditambah via script).
+export const dynamic = "force-dynamic"
+
 export const metadata: Metadata = {
   title: "Katalog Produk Souvenir Custom",
   description: "Jelajahi katalog souvenir custom Karyamedia: plakat, medali, piala, souvenir wisuda, gift box, aksesoris, & prasasti. Custom desain, kualitas terbaik.",

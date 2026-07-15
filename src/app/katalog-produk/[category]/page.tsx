@@ -10,6 +10,9 @@ import { products } from "@/data/products"
 import { getWhatsAppLink, generateWhatsAppMessage } from "@/lib/utils"
 import { BreadcrumbSchema } from "@/components/json-ld"
 
+// Selalu render dari data terkini (produk sering ditambah via script).
+export const dynamic = "force-dynamic"
+
 interface Props {
   params: Promise<{ category: string }>
 }

@@ -10,6 +10,9 @@ import { BreadcrumbSchema } from "@/components/json-ld"
 import { readdirSync } from "fs"
 import { join } from "path"
 
+// Selalu render dari filesystem/data terkini (hindari snapshot build statis usang
+// yang bisa menampilkan kartu produk tanpa gambar).
+export const dynamic = "force-dynamic"
 
 interface Props {
   params: Promise<{ category: string; subcategory: string }>

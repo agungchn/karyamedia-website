@@ -7,10 +7,8 @@ import { categories } from "@/data/categories"
 import { products } from "@/data/products"
 import { getWhatsAppLink, generateWhatsAppMessage } from "@/lib/utils"
 import { BreadcrumbSchema } from "@/components/json-ld"
-import { readdirSync } from "fs"
-import { join } from "path"
 
-// Selalu render dari filesystem/data terkini (hindari snapshot build statis usang
+// Selalu render dari data terkini (hindari snapshot build statis usang
 // yang bisa menampilkan kartu produk tanpa gambar).
 export const dynamic = "force-dynamic"
 
@@ -30,74 +28,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     : `/katalog-produk/${category}/${subcategory}`
 
   return {
-      title: `${sub.name} ${cat.name} Custom`,
+    title: `${sub.name} ${cat.name} Custom`,
     description: `Produksi ${sub.name} ${cat.name} custom harga murah di Jogja. Cocok untuk penghargaan, event, dan souvenir instansi.`,
     alternates: {
       canonical,
     },
     openGraph: {
-    title: `${sub.name} ${cat.name} Custom`,
+      title: `${sub.name} ${cat.name} Custom`,
       description: `Produksi ${sub.name} ${cat.name} custom oleh Karyamedia Souvenir Jogja.`,
       url: canonical,
     },
-  }
-}
-
-function getImagesFromFolder(subcategorySlug: string): { path: string; slug: string }[] {
-  const folderMap: Record<string, string> = {
-    "plakat-akrilik": "plakat-akrilik",
-    "plakat-kayu": "plakat-kayu",
-    "plakat-kayu-premium": "plakat-kayu-eksklusif",
-    "plakat-marmer": "plakat-marmer",
-    "plakat-fiberglass": "plakat-fiberglass",
-    "plakat-wayang": "plakat-wayang",
-    "medali-custom": "medali-custom",
-    "medali-3d": "medali-3d",
-    "piala-trophy": "piala-trophy",
-    "piala-golf": "piala-golf",
-    "samir-gordon-wisuda": "samir-wisuda",
-    "patung-wisuda": "patung-wisuda",
-    "kalung-rektor": "kalung-rektor",
-    "pedel-tongkat-rektor": "tongkat-rektor",
-    "map-ijazah": "map-ijazah",
-    "box-bludru": "box-bludru",
-    "box-kertas-import": "box-kertas-import",
-    "box-batik": "box-batik",
-    "box-kertas-marga": "box-kertas-marga",
-    "name-tag": "name-tag",
-    "pin-bross": "pin-bross",
-    "gantungan-kunci": "gantungan-kunci",
-    "tumbler": "tumbler",
-    "papan-nama": "papan-nama",
-    "prasasti-marmer": "prasasti-marmer",
-    "prasasti-kuningan": "prasasti-kuningan",
-    "prasasti-stainless-steel": "prasasti-stainless-steel",
-    "souvenir-pernikahan": "souvenir-pernikahan",
-  }
-
-  const folderName = folderMap[subcategorySlug] || subcategorySlug
-
-  try {
-    const folderPath = join(process.cwd(), "public", "images", "produk-unggulan", folderName)
-    const files = readdirSync(folderPath)
-    return files
-      .filter((f) => f.endsWith(".png") || f.endsWith(".jpg") || f.endsWith(".jpeg"))
-      .sort((a, b) => {
-        const numA = parseInt(a.match(/\d+/)?.[0] || "0")
-        const numB = parseInt(b.match(/\d+/)?.[0] || "0")
-        if (numA !== numB) return numA - numB
-        return a.localeCompare(b)
-      })
-      .map((f) => {
-        const slug = f
-          .replace(/\.(png|jpg|jpeg)$/i, "")
-          .replace(/\s*\(\d+\)\s*$/, (m) => "-" + m.match(/\d+/)?.[0] || "")
-          .replace(/\s+/g, "-")
-          .replace(/\(+|\)+/g, "")
-        return { path: `/images/produk-unggulan/${folderName}/${f}`, slug }
-      })
-  } catch {
-    return []
   }
 }
 
@@ -112,24 +52,12 @@ export default async function SubCategoryPage({ params }: Props) {
     (p) => p.categoryId === cat.id && p.subcategoryId === sub.id
   )
 
-  const firstProduct = subProducts[0]
-
-  const folderImages = getImagesFromFolder(sub.slug)
-
-  const cards: { product: typeof subProducts[0]; image: string; imageIndex: number }[] = []
-
-  if (folderImages.length > 0 && subProducts.length > 0) {
-    folderImages.forEach((img) => {
-      const product = subProducts.find((p) => p.slug === img.slug) || subProducts[0]
-      cards.push({ product, image: img.path, imageIndex: 0 })
-    })
-  } else if (subProducts.length > 0) {
-    subProducts.forEach((product) => {
-      if (product.images.length > 0) {
-        cards.push({ product, image: product.images[0], imageIndex: 0 })
-      }
-    })
-  }
+  // Satu kartu per produk, pakai gambar produk masing-masing (sumber terpercaya).
+  const cards: { product: (typeof subProducts)[number]; image: string }[] =
+    subProducts.map((product) => ({
+      product,
+      image: product.images[0] ?? "",
+    }))
 
   return (
     <>
@@ -165,15 +93,21 @@ export default async function SubCategoryPage({ params }: Props) {
                 className="group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
               >
                 <div className="aspect-[3/4] bg-gradient-to-br from-gray-100 to-gray-200 relative overflow-hidden">
-                  <Image
-                    src={card.image}
-                    alt={card.product.name}
-                    fill
-                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
+                  {card.image ? (
+                    <Image
+                      src={card.image}
+                      alt={card.product.name}
+                      fill
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                      className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <Award className="w-16 h-16 text-gray-300" />
+                    </div>
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  {card.imageIndex === 0 && card.product.bestSeller && (
+                  {card.product.bestSeller && (
                     <span className="absolute top-3 left-3 bg-accent text-white text-xs font-medium px-2.5 py-1 rounded-full">
                       Best Seller
                     </span>

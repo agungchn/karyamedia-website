@@ -9,6 +9,13 @@ const GREETING =
 
 type Msg = { role: "user" | "assistant"; content: string }
 
+const SUGGESTIONS = [
+  "Jam buka Karyamedia kapan?",
+  "Minimal order berapa?",
+  "Gimana cara pesan?",
+  "Ada katalog produknya?",
+]
+
 export function ChatbotWidget() {
   const [open, setOpen] = useState(false)
   const [msgs, setMsgs] = useState<Msg[]>([{ role: "assistant", content: GREETING }])
@@ -25,8 +32,8 @@ export function ChatbotWidget() {
     if (open) inputRef.current?.focus()
   }, [open])
 
-  async function send() {
-    const text = input.trim()
+  async function send(preset?: string) {
+    const text = (preset ?? input).trim()
     if (!text || loading) return
     const history = [...msgs, { role: "user", content: text }] as Msg[]
     setMsgs(history)
@@ -113,6 +120,20 @@ export function ChatbotWidget() {
                 </div>
               </div>
             ))}
+            {msgs.length === 1 && !loading && (
+              <div className="flex flex-wrap justify-start gap-2">
+                {SUGGESTIONS.map((s) => (
+                  <button
+                    key={s}
+                    type="button"
+                    onClick={() => send(s)}
+                    className="rounded-full border border-accent/40 bg-white px-3 py-1.5 text-xs text-primary shadow-sm transition hover:bg-accent/10"
+                  >
+                    {s}
+                  </button>
+                ))}
+              </div>
+            )}
             {loading && (
               <div className="flex justify-start">
                 <div className="rounded-2xl rounded-bl-sm bg-white px-3 py-2 text-sm text-gray-400 shadow-sm">

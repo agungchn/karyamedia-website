@@ -60,6 +60,12 @@ const PILLAR_TOPICS = [
   { pillar: "panduan-lengkap-patung-wisuda-custom", re: /patung-wisuda/ },
   { pillar: "panduan-lengkap-map-ijazah-custom", re: /map-ijazah|map-wisuda/ },
   { pillar: "panduan-lengkap-medali-3d-custom", re: /medali-3d/ },
+  { pillar: "panduan-lengkap-plakat-kayu-custom", re: /plakat-kayu/ },
+  { pillar: "panduan-lengkap-plakat-fiberglass-custom", re: /plakat-fiberglass/ },
+  { pillar: "panduan-lengkap-tongkat-rektor-custom", re: /tongkat-rektor/ },
+  { pillar: "panduan-lengkap-tabung-wisuda-custom", re: /tabung-wisuda/ },
+  { pillar: "panduan-lengkap-prasasti-kuningan-custom", re: /prasasti-kuningan/ },
+  { pillar: "panduan-lengkap-prasasti-stainless-steel-custom", re: /prasasti-stainless-steel/ },
 ]
 
 const text0 = readFileSync(articlesPath, "utf8")

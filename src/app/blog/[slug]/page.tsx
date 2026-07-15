@@ -89,6 +89,13 @@ const subcategoryMap: Record<string, string> = {
   "piala-17-agustus-custom-untuk-lomba-kemerdekaan": "piala-trophy",
   "toga-wisuda-custom-untuk-upacara-kelulusan": "souvenir-wisuda",
   "bingkai-ijazah-dan-foto-wisuda-custom": "souvenir-wisuda",
+
+  "panduan-lengkap-plakat-kayu-custom": "plakat-kayu-premium",
+  "panduan-lengkap-plakat-fiberglass-custom": "plakat-fiberglass",
+  "panduan-lengkap-tongkat-rektor-custom": "pedel-tongkat-rektor",
+  "panduan-lengkap-tabung-wisuda-custom": "tabung-wisuda",
+  "panduan-lengkap-prasasti-kuningan-custom": "prasasti-kuningan",
+  "panduan-lengkap-prasasti-stainless-steel-custom": "prasasti-stainless-steel",
 }
 
 export async function generateStaticParams() {

@@ -39,6 +39,13 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false)
   const catalogRef = useRef<HTMLDivElement>(null)
   const pathname = usePathname()
+  const [prevPathname, setPrevPathname] = useState(pathname)
+
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname)
+    setMobileOpen(false)
+    setCatalogOpen(false)
+  }
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
@@ -55,11 +62,6 @@ export function Header() {
     document.addEventListener("mousedown", handleClickOutside)
     return () => document.removeEventListener("mousedown", handleClickOutside)
   }, [])
-
-  useEffect(() => {
-    setMobileOpen(false)
-    setCatalogOpen(false)
-  }, [pathname])
 
   return (
     <header

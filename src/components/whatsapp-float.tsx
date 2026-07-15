@@ -6,7 +6,11 @@ import { getWhatsAppLink } from "@/lib/utils"
 
 function playChime() {
   try {
-    const ctx = new (window.AudioContext || (window as any).webkitAudioContext)()
+    const AudioCtx =
+      window.AudioContext ||
+      (window as Window & { webkitAudioContext?: typeof AudioContext })
+        .webkitAudioContext
+    const ctx = new AudioCtx()
     const now = ctx.currentTime
 
     const osc = ctx.createOscillator()

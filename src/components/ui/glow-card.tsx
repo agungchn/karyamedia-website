@@ -39,11 +39,12 @@ const GlowCard: React.FC<GlowCardProps> = ({
 }) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const styleRef = useRef<HTMLStyleElement>(null);
-  const [isMobile, setIsMobile] = useState(true);
-
-  useEffect(() => {
-    setIsMobile(window.matchMedia('(pointer: coarse)').matches || window.innerWidth < 768);
-  }, []);
+  const [isMobile] = useState(
+    () =>
+      typeof window !== "undefined" &&
+      (window.matchMedia("(pointer: coarse)").matches ||
+        window.innerWidth < 768)
+  );
 
   const { base, spread } = glowColorMap[glowColor];
 

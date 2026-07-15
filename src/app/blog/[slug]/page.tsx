@@ -170,7 +170,7 @@ export default async function ArticlePage({ params }: Props) {
 
   const faqStart = contentWithIds.indexOf('<h2 id="faq">FAQ</h2>')
   let contentBeforeFaq = contentWithIds
-  let faqItems: { q: string; a: string }[] = []
+  const faqItems: { q: string; a: string }[] = []
   let contentAfterFaq = ""
 
   if (faqStart !== -1) {

@@ -89,7 +89,6 @@ export function TentangKamiBanner() {
   const glareRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    setTheme(getTimeTheme())
     const interval = setInterval(() => {
       setTheme(getTimeTheme())
     }, 60000)

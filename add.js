@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports -- Node CJS helper script */
 const fs = require("fs")
 const path = require("path")
 

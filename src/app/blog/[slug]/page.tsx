@@ -101,12 +101,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!article) return {}
 
   const readTime = Math.max(1, Math.round(article.content.replace(/<[^>]*>/g, "").split(/\s+/).length / 200))
+  const canonicalSlug = article.canonical ?? slug
+  const canonicalUrl = `https://karyamediasouvenir.com/blog/${canonicalSlug}`
 
   return {
     title: article.title,
     description: article.description,
     alternates: {
-      canonical: `https://karyamediasouvenir.com/blog/${slug}`,
+      canonical: canonicalUrl,
     },
     openGraph: {
       title: article.title,

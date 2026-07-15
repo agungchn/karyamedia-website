@@ -41,6 +41,7 @@ export interface Article {
   image: string
   content: string
   tags: string[]
+  canonical?: string
 }
 
 export const articles: Article[] = [

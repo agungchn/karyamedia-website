@@ -179,6 +179,51 @@ const TEMPLATE_VARIANTS = [
     ],
     emphasis:
       "Sertakan angka 'mulai dari' & range harga bila relevan. Sebutkan 2-3 produk: piala, medali, prasasti.",
+    },
+  {
+    name: "trends",
+    angle: "Buka dengan tren & inovasi terkini di industri {kw}.",
+    headings: [
+      "Tren Terkini {kw} di Indonesia",
+      "Inovasi Bahan & Finishing",
+      "Yang Diincar Pasar Sekarang",
+      "Prediksi Ke Depan",
+      "Adopsi di {loc}",
+      "Cara Ikut Tren Tanpa Berlebihan",
+      "FAQ",
+    ],
+    emphasis:
+      "Sertakan poin tren konkret & data bila ada. Sebutkan 2-3 produk: gift box, name tag, souvenir wisuda.",
+  },
+  {
+    name: "decision",
+    angle: "Buka dengan panduan keputusan: kapan {kw} tepat untuk Anda.",
+    headings: [
+      "Apakah {kw} Tepat untuk Anda?",
+      "Pilih Berdasarkan Tujuan",
+      "Skala & Anggaran yang Cocok",
+      "Red Flags Saat Memesan",
+      "Konteks di {loc}",
+      "Langkah Selanjutnya",
+      "FAQ",
+    ],
+    emphasis:
+      "Gunakan nada panduan keputusan praktis. Sebutkan 2-3 produk: piala, plakat, medali.",
+  },
+  {
+    name: "local",
+    angle: "Buka dengan spotlight kebutuhan komunitas/lokal spesifik di {loc}.",
+    headings: [
+      "Potret Kebutuhan di {loc}",
+      "Komunitas & Event Lokal",
+      "Solusi yang Paling Diminati",
+      "Cerita Pengadaan Kecil",
+      "Tips Khusus Wilayah Ini",
+      "Merawat Hasil Jangka Panjang",
+      "FAQ",
+    ],
+    emphasis:
+      "Fokus narasi lokal & komunitas spesifik. Sebutkan 2-3 produk: prasasti, gift box, souvenir wisuda.",
   },
 ]
 
@@ -207,6 +252,15 @@ function variantBlock(variant, keyword, loc) {
   )
 }
 
+const VARIATION_INSTR = `
+VARIASI GAYA PENULISAN (WAJIB agar tidak terasa template/assembly-line):
+- Pembuka BERVARIASI antar-artikel: jangan selalu buka dengan pola "Banyak [segmen] di [loc] yang masih ragu...". Gilir gaya pembuka, mis. pertanyaan retoris, fakta/angka mengejutkan, adegan/lokasi lokal spesifik, pain-point konkret, atau anekdot singkat.
+- Keyword utama TETAP harus muncul utuh di 240 karakter PERTAMA (syarat SEO), tapi cara menyisipkannya boleh bervariasi (tidak harus persis di kalimat pertama).
+- Bukti perusahaan (Karyamedia sejak 2001, Yogyakarta, produsen langsung) dirajut SECARA ALAMI & dengan DIKSI BERBEDA tiap artikel — jangan salin kalimat persis yang dipakai di artikel lain.
+- Rotasi contoh & produk terkait: jangan selalu sebut urutan produk yang sama; variasikan contoh kasus & nama produk yang memimpin tiap section.
+- Variasikan ritme kalimat (pendek–panjang) dan hindari frasa klise berulang ("tentu saja", "dapat diandalkan", "terpercaya") dalam artikel yang sama.
+- Tujuannya: tiap artikel terasa ditulis oleh penulis manusia dengan sudut pandang unik, bukan konten seragam.`
+
 function buildPrompt({ keyword, category, location = null, segment = null, segmentCtx = null, variant = null, extra = "" }) {
   const loc = location || "seluruh Indonesia"
   const seg = segment || "instansi, kampus, dan event"
@@ -231,8 +285,8 @@ Buat objek JSON dengan field berikut:
   * WAJIB ada bagian <h2>FAQ</h2> di akhir dengan 3-5 pasang pertanyaan & jawaban, tiap pasang PASTI format <h3>Pertanyaan?</h3><p>Jawaban.</p> (pakai <h3> untuk pertanyaan dan <p> untuk jawaban)
   * bahasa Indonesia natural & mudah dipahami, SEO-friendly, sebutkan "Karyamedia" secara wajar 1-2 kali
   * JANGAN gunakan markdown; hanya HTML inline (<p>, <h2>, <h3>, <strong>, <ul><li> bila perlu)
-  * JANGAN sertakan satupun link/hyperlink (akan ditambahkan otomatis nanti)
-  Return HANYA objek JSON, tanpa teks lain.${vBlock}${extra}`
+   * JANGAN sertakan satupun link/hyperlink (akan ditambahkan otomatis nanti)
+   Return HANYA objek JSON, tanpa teks lain.${VARIATION_INSTR}${vBlock}${extra}`
 }
 
 export function buildBeatPrompt({ keyword, category, competitor = null, location = null, segment = null, segmentCtx = null, variant = null, extra = "" }) {
@@ -273,8 +327,8 @@ Buat objek JSON dengan field berikut:
   * WAJIB <h2>FAQ</h2> di akhir dengan 5-7 pasang <h3>Pertanyaan?</h3><p>Jawaban.</p>
   * Bahasa natural, SEO-friendly, sebut "Karyamedia" wajar 1-2x.
   * JANGAN markdown; hanya HTML inline (<p>, <h2>, <h3>, <table>, <ul><li>, <strong>).
-  * JANGAN satupun hyperlink (link disuntik otomatis nanti).
-  Return HANYA objek JSON, tanpa teks lain.${vBlock}${extra}`
+   * JANGAN satupun hyperlink (link disuntik otomatis nanti).
+   Return HANYA objek JSON, tanpa teks lain.${VARIATION_INSTR}${vBlock}${extra}`
 }
 
 export async function generateArticle(input) {

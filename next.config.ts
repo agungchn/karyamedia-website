@@ -2,9 +2,12 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    // Sajikan gambar dalam format modern (AVIF/WebP) lewat next/image
-    // untuk memperkecil bytes & memperbaiki Core Web Vitals (LCP).
-    formats: ["image/avif", "image/webp"],
+    // Optimasi next/image dibatalkan karena kuota Image Optimization Vercel
+    // (402 Payment Required) memblokir SELURUH gambar di situs live.
+    // Gambar kini disaji langsung dari file statis /public (CDN statis Vercel,
+    // tanpa kuota) sehingga selalu tampil. Untuk kompresi modern, pindahkan
+    // gambar ke penyimpanan eksternal (Cloudinary/S3+CloudFront) bila diperlukan.
+    unoptimized: true,
   },
   async redirects() {
     return [

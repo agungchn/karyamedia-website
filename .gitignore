@@ -76,3 +76,9 @@ convert-tmp.mjs
 .vercel
 article-gen-log.txt
 article-gen-test-run.txt
+
+# generated article/SEO logs (local only)
+gen-*-log.txt
+seo-*-log.txt
+seo-*-last*.txt
+dev-server.log

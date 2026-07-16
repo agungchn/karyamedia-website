@@ -3,7 +3,6 @@ import localFont from "next/font/local"
 import "./globals.css"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { WhatsAppFloat } from "@/components/whatsapp-float"
 import { BackToTop } from "@/components/ui/back-to-top"
 import { ChatbotWidget } from "@/components/ui/chatbot-widget"
 import { OrganizationSchema, WebSiteSchema, LocalBusinessReviewsSchema } from "@/components/json-ld"
@@ -119,7 +118,6 @@ export default function RootLayout({
         <Header />
         <main id="main-content" className="flex-1 pt-[100px] lg:pt-[112px]">{children}</main>
         <Footer />
-        <WhatsAppFloat />
         <ChatbotWidget />
         <BackToTop />
       </body>

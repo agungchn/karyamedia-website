@@ -73,14 +73,15 @@ export function ChatbotWidget() {
 
   return (
     <>
-      {/* Launcher bulat polos */}
+      {/* Launcher kapsul dengan label Hubungi Kami */}
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-label={open ? "Tutup chat" : "Buka chat asisten"}
-        className="fixed bottom-24 right-5 z-[60] flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-accent to-accent-accessible text-primary shadow-xl shadow-accent/30 transition hover:scale-105 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
+        className="fixed bottom-6 right-5 z-[60] flex items-center gap-2 rounded-full bg-gradient-to-br from-accent to-accent-accessible px-5 py-3.5 text-primary shadow-xl shadow-accent/30 transition hover:scale-105 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
       >
-        {open ? <X className="h-6 w-6" /> : <MessageCircle className="h-6 w-6" />}
+        {open ? <X className="h-5 w-5" /> : <MessageCircle className="h-5 w-5" />}
+        <span className="text-sm font-semibold">{open ? "Tutup" : "Hubungi Kami"}</span>
       </button>
 
       {/* Panel */}

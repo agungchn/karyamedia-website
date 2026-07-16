@@ -78,7 +78,7 @@ export function ChatbotWidget() {
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-label={open ? "Tutup chat" : "Buka chat asisten"}
-        className="fixed bottom-6 right-5 z-[60] flex items-center gap-2 rounded-full bg-[#075E54] hover:bg-[#054E43] px-5 py-3.5 text-white shadow-xl shadow-[#25D366]/30 transition-all hover:scale-105 animate-pulse-glow focus:outline-none focus:ring-2 focus:ring-[#075E54] focus:ring-offset-2"
+        className="fixed bottom-6 right-5 z-[60] flex items-center gap-2 rounded-full bg-accent hover:bg-accent-light px-5 py-3.5 text-primary shadow-xl shadow-accent/30 transition-all hover:scale-105 animate-pulse-glow focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
       >
         {open ? <X className="h-5 w-5" /> : <MessageCircle className="h-5 w-5" />}
         <span className="text-sm font-semibold">{open ? "Tutup" : "CS Online"}</span>

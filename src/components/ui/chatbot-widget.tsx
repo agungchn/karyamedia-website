@@ -78,7 +78,7 @@ export function ChatbotWidget() {
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-label={open ? "Tutup chat" : "Buka chat asisten"}
-        className="fixed bottom-6 right-5 z-[60] flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-accent to-accent-accessible text-primary shadow-xl shadow-accent/30 transition hover:scale-105 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
+        className="fixed bottom-6 right-5 z-[60] flex h-14 w-14 items-center justify-center rounded-full bg-[#075E54] hover:bg-[#054E43] text-white shadow-xl shadow-[#25D366]/30 transition-all hover:scale-105 animate-pulse-glow focus:outline-none focus:ring-2 focus:ring-[#075E54] focus:ring-offset-2"
       >
         {open ? <X className="h-6 w-6" /> : <MessageCircle className="h-6 w-6" />}
       </button>

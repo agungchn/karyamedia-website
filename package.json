@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/optimize-images.mjs && next build",
+    "build": "node scripts/optimize-images.mjs && next build && (npm run seo:gsc-submit || true)",
+    "seo:gsc-submit": "node scripts/seo/submit-sitemap.mjs",
     "start": "next start",
     "lint": "eslint",
     "optimize:images": "node scripts/optimize-images.mjs",

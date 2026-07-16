@@ -122,7 +122,7 @@ export function HeroSection() {
   const [searchOpen, setSearchOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState("")
   return (
-    <section className="relative bg-primary overflow-hidden py-6 pt-[84px]">
+    <section className="relative bg-gradient-to-b from-[#06122A] to-[#0B1F3A] overflow-hidden py-6 pt-[84px]">
       {/* Cinematic background effects */}
       <div className="absolute top-0 z-[0] h-full w-full bg-[radial-gradient(ellipse_20%_80%_at_50%_-20%,rgba(29,78,216,0.15),rgba(11,31,58,0))]" />
       

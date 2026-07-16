@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react"
 import { Building } from "lucide-react"
 import { SparklesCore } from "@/components/ui/sparkles-core"
+import { RetroGrid } from "@/components/ui/retro-grid"
 
 type TimeTheme = {
   bg: string
@@ -14,6 +15,23 @@ type TimeTheme = {
   headingFrom: string
   headingTo: string
   panel: string
+}
+
+function lighten(hex: string, amount = 0.25): string {
+  const h = hex.replace("#", "")
+  const num = parseInt(
+    h.length === 3
+      ? h.split("").map((c) => c + c).join("")
+      : h,
+    16,
+  )
+  let r = (num >> 16) & 255
+  let g = (num >> 8) & 255
+  let b = num & 255
+  r = Math.round(r + (255 - r) * amount)
+  g = Math.round(g + (255 - g) * amount)
+  b = Math.round(b + (255 - b) * amount)
+  return `rgb(${r}, ${g}, ${b})`
 }
 
 function getTimeTheme(): TimeTheme {
@@ -132,17 +150,31 @@ export function TentangKamiBanner() {
           100% { background-position: 200% 0; }
         }
       `}</style>
-      <div className="absolute inset-0" style={{ backgroundColor: theme.bg }}>
-        <SparklesCore
-          id="tentang-kami-sparkles"
-          background="transparent"
-          minSize={0.6}
-          maxSize={1.8}
-          particleColor={theme.particleColor}
-          particleDensity={100}
-          speed={3}
-          className="w-full h-full"
-        />
+      <div
+        className="absolute inset-0"
+        style={{ backgroundImage: `linear-gradient(to bottom, ${theme.bg} 0%, ${lighten(theme.bg)} 100%)` }}
+      >
+        <div className="absolute bottom-0 left-0 right-0 h-[70%] overflow-hidden">
+          <RetroGrid
+            angle={45}
+            cellSize={80}
+            opacity={0.18}
+            lightLineColor="rgba(255,255,255,0.5)"
+            darkLineColor="rgba(255,255,255,0.5)"
+          />
+        </div>
+        <div className="absolute top-0 left-0 right-0 h-[40%] overflow-hidden">
+          <SparklesCore
+            id="tentang-kami-sparkles"
+            background="transparent"
+            minSize={0.5}
+            maxSize={1.3}
+            particleColor={theme.particleColor}
+            particleDensity={70}
+            speed={1}
+            className="w-full h-full"
+          />
+        </div>
       </div>
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div

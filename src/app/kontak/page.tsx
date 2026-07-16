@@ -15,6 +15,7 @@ import {
 } from "lucide-react"
 import { companyInfo } from "@/data/company"
 import { getWhatsAppLink } from "@/lib/utils"
+import { RetroGrid } from "@/components/ui/retro-grid"
 import { SparklesCore } from "@/components/ui/sparkles-core"
 import { GbpReviewCta } from "@/components/gbp-review-cta"
 
@@ -49,20 +50,28 @@ const faqs = [
 export default function KontakPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-primary py-20">
-        <div className="absolute inset-0 opacity-50">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#06122A] to-[#0B1F3A] py-20">
+        <div className="absolute top-0 left-0 right-0 h-[55%] overflow-hidden">
           <SparklesCore
             id="kontak-sparkles"
             background="transparent"
-            minSize={1}
-            maxSize={2.4}
+            minSize={0.5}
+            maxSize={1.3}
             particleColor="#FFD700"
-            particleDensity={140}
-            speed={2}
+            particleDensity={70}
+            speed={1}
             className="w-full h-full"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-primary" />
+        <RetroGrid
+          angle={65}
+          cellSize={54}
+          opacity={0.25}
+          lightLineColor="#D4AF37"
+          darkLineColor="#1D4ED8"
+        />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-light/15 rounded-full blur-[110px]" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/15 rounded-full blur-[110px]" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white/80 hover:text-white px-4 py-1.5 rounded-full text-sm mb-6 transition-all duration-300 cursor-default">
             <MessageCircle className="w-4 h-4" />

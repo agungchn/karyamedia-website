@@ -39,7 +39,7 @@ export default function BlogPage() {
       <BreadcrumbSchema items={breadcrumbItems} />
       <section className="bg-gradient-to-br from-primary to-foreground py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="heading-display text-4xl md:text-5xl text-white mb-4">
+          <h1 className="heading-display text-4xl md:text-5xl mb-4 bg-gradient-to-r from-yellow-200 via-yellow-400 to-amber-600 bg-clip-text text-transparent">
             Blog & Artikel
           </h1>
           <p className="text-blue-200 max-w-2xl mx-auto">

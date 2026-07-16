@@ -133,7 +133,7 @@ export default function CaraPesanPage() {
             <ClipboardList className="w-4 h-4" />
             Cara Pesan
           </div>
-          <h1 className="heading-display text-4xl md:text-5xl text-white mb-4">
+          <h1 className="heading-display text-4xl md:text-5xl mb-4 bg-gradient-to-r from-yellow-200 via-yellow-400 to-amber-600 bg-clip-text text-transparent">
             Cara Memesan di<br />Karyamedia Souvenir
           </h1>
           <p className="text-blue-200 max-w-2xl mx-auto">

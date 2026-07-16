@@ -50,25 +50,25 @@ export default function KontakPage() {
   return (
     <>
       <section className="relative overflow-hidden bg-primary py-20">
-        <div className="absolute inset-0 opacity-30">
+        <div className="absolute inset-0 opacity-50">
           <SparklesCore
             id="kontak-sparkles"
             background="transparent"
-            minSize={0.8}
-            maxSize={2}
-            particleColor="#D4AF37"
-            particleDensity={80}
+            minSize={1}
+            maxSize={2.4}
+            particleColor="#FFD700"
+            particleDensity={140}
             speed={2}
             className="w-full h-full"
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-primary" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 bg-accent/15 text-accent-accessible px-4 py-1.5 rounded-full text-sm mb-6 border border-accent/20">
+          <div className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white/80 hover:text-white px-4 py-1.5 rounded-full text-sm mb-6 transition-all duration-300 cursor-default">
             <MessageCircle className="w-4 h-4" />
             Hubungi Kami
           </div>
-          <h1 className="heading-display text-4xl md:text-5xl text-white mb-4">
+          <h1 className="heading-display text-4xl md:text-5xl text-transparent bg-clip-text mb-4" style={{ backgroundImage: "linear-gradient(to right, #D4AF37, #FFD700)", letterSpacing: "0.02em", wordSpacing: "0.1em" }}>
             Hubungi Karyamedia Souvenir
           </h1>
           <p className="text-blue-200/80 max-w-2xl mx-auto mb-8">

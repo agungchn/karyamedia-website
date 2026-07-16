@@ -332,7 +332,7 @@ Buat objek JSON dengan field berikut:
 }
 
 export async function generateArticle(input) {
-  if (process.env.LLM_MOCK) return MOCK
+  if (process.env.LLM_MOCK && process.env.LLM_MOCK !== "0" && process.env.LLM_MOCK !== "false") return MOCK
 
   const prompt = input.prompt || buildPrompt(input)
   const zenKey = getZenKey()
@@ -350,7 +350,8 @@ export async function generateArticle(input) {
   }
 
   if (geminiKey && geminiKey !== "PASTE_GEMINI_API_KEY_HERE") {
-    const models = (process.env.GEMINI_MODELS || process.env.GEMINI_MODEL || "gemini-3.5-flash")
+    const models = (process.env.GEMINI_MODELS || process.env.GEMINI_MODEL ||
+      "gemini-2.0-flash,gemini-flash-latest")
       .split(",").map((m) => m.trim()).filter(Boolean)
     return await callGemini(prompt, geminiKey, models)
   }
@@ -362,7 +363,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
 
 async function callZen(prompt, key) {
   const ctrl = new AbortController()
-  const timer = setTimeout(() => ctrl.abort(), 30000)
+  const timer = setTimeout(() => ctrl.abort(), 60000)
   try {
     for (let attempt = 0; attempt < 2; attempt++) {
       try {

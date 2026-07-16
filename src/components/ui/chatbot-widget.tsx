@@ -18,6 +18,7 @@ const SUGGESTIONS = [
 
 export function ChatbotWidget() {
   const [open, setOpen] = useState(false)
+  const [offline, setOffline] = useState(false)
   const [msgs, setMsgs] = useState<Msg[]>([{ role: "assistant", content: GREETING }])
   const [input, setInput] = useState("")
   const [loading, setLoading] = useState(false)
@@ -31,6 +32,16 @@ export function ChatbotWidget() {
   useEffect(() => {
     if (open) inputRef.current?.focus()
   }, [open])
+
+  useEffect(() => {
+    const check = () => {
+      const h = new Date().getHours()
+      setOffline(h >= 21)
+    }
+    check()
+    const t = setInterval(check, 60 * 1000)
+    return () => clearInterval(t)
+  }, [])
 
   async function send(preset?: string) {
     const text = (preset ?? input).trim()
@@ -81,7 +92,7 @@ export function ChatbotWidget() {
         className="fixed bottom-6 right-5 z-[60] flex items-center gap-2 rounded-full bg-[#075E54] hover:bg-[#054E43] px-5 py-3.5 text-white shadow-xl shadow-[#25D366]/30 transition-all hover:scale-105 animate-pulse-glow focus:outline-none focus:ring-2 focus:ring-[#075E54] focus:ring-offset-2"
       >
         {open ? <X className="h-5 w-5" /> : <MessageCircle className="h-5 w-5" />}
-        <span className="text-sm font-semibold">{open ? "Tutup" : "Hubungi Kami"}</span>
+        <span className="text-sm font-semibold">{open ? "Tutup" : offline ? "CS Offline" : "CS Online"}</span>
       </button>
 
       {/* Panel */}

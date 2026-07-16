@@ -478,6 +478,9 @@ async function main() {
   console.log("\n--- regenerate og-meta.json ---")
   execSync(`node scripts/seo/gen-og-meta.mjs`, { cwd: root, stdio: "inherit" })
 
+  console.log("\n--- generate WebP (biar gambar artikel tidak 404, lewat custom loader) ---")
+  execSync(`node scripts/optimize-images.mjs`, { cwd: root, stdio: "inherit" })
+
   console.log("\n--- gate: cek duplikat ---")
   execSync(`node scripts/seo/article-check.mjs`, { env: { ...process.env, ARTICLE_LINT_SLUGS: slug }, cwd: root, stdio: "inherit" })
   console.log("\n--- gate: cek standart ---")

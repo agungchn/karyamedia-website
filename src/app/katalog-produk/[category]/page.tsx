@@ -3,7 +3,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { ChevronRight, Award, Sparkles } from "lucide-react"
 import { categoryIconMap } from "@/components/icons/product-icons"
-import { GradientWave } from "@/components/ui/gradient-wave"
+import { SparklesCore } from "@/components/ui/sparkles-core"
 import { Metadata } from "next"
 import { categories } from "@/data/categories"
 import { products } from "@/data/products"
@@ -68,15 +68,18 @@ export default async function CategoryPage({ params }: Props) {
         ]}
       />
       <section className="relative overflow-hidden bg-gradient-to-br from-[#C2DAEE] via-[#A9CDE8] to-[#8BB8D6] py-8">
-        <GradientWave
-          colors={["#C2DAEE", "#A9CDE8", "#8BB8D6", "#FFFFFF", "#C2DAEE", "#A9CDE8"]}
-          darkenTop={false}
-          shadowPower={6}
-          noiseSpeed={0.000008}
-          noiseFrequency={[0.00012, 0.0004]}
-          deform={{ incline: 0.3, noiseAmp: 180, noiseFlow: 4 }}
-          className="opacity-70"
-        />
+        <div className="absolute inset-0 opacity-30">
+          <SparklesCore
+            id={`category-sparkles-${cat.slug}`}
+            background="transparent"
+            minSize={0.4}
+            maxSize={1.2}
+            particleColor="#FFFFFF"
+            particleDensity={300}
+            speed={1}
+            className="w-full h-full"
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#C2DAEE]/60" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="flex items-center gap-2 text-sm text-gray-600/80 mb-4">

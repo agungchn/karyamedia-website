@@ -7,6 +7,7 @@ import { MessageCircle, Search, X, Shield, Calendar, Users, Truck, Sparkles, Sta
 import { getWhatsAppLink } from "@/lib/utils"
 import { products } from "@/data/products"
 import { categories } from "@/data/categories"
+import { GradientWave } from "@/components/ui/gradient-wave"
 
 const RetroGrid = ({
   angle = 65,
@@ -123,6 +124,16 @@ export function HeroSection() {
   const [searchQuery, setSearchQuery] = useState("")
   return (
     <section className="relative bg-primary overflow-hidden py-6 pt-[84px]">
+      {/* WebGL animated gradient wave background */}
+      <GradientWave
+        colors={["#0B1F3A", "#1D4ED8", "#0B1F3A", "#D4AF37", "#0B1F3A", "#1D4ED8"]}
+        darkenTop
+        shadowPower={8}
+        noiseSpeed={0.000008}
+        noiseFrequency={[0.00012, 0.0004]}
+        deform={{ incline: 0.4, noiseAmp: 220, noiseFlow: 4 }}
+      />
+
       {/* Cinematic background effects */}
       <div className="absolute top-0 z-[0] h-full w-full bg-[radial-gradient(ellipse_20%_80%_at_50%_-20%,rgba(29,78,216,0.15),rgba(11,31,58,0))]" />
       

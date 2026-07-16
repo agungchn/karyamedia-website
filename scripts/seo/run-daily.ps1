@@ -74,7 +74,26 @@ $slugs = [regex]::Matches($out, "GENERATED_SLUG:(\S+)") | ForEach-Object { $_.Gr
 $titles = [regex]::Matches($out, "Artikel disisipkan: blog/(\S+)") | ForEach-Object { $_.Groups[1].Value.Trim() }
 
 if ($ideasExit -ne 0) {
-  Show-Popup -Title "Gagal Generate Artikel" -Message "Generator error (exit $ideasExit). Cek log article-gen-log.txt. Mungkin kuota LLM habis."
+  # Deteksi apakah penyebabnya kuota/usage LLM (Zen free "Free usage exceeded", Gemini 429/503, dll)
+  $quotaHit = $false
+  $reason = ""
+  if ($out -match "Free usage exceeded") {
+    $quotaHit = $true
+    $reason = "Kuota OpenCode Zen (deepseek-v4-flash-free) habis/tercapai fair-use limit."
+  } elseif ($out -match "429|quota|rate.?limit|RESOURCE_EXHAUSTED|rateLimitExceeded") {
+    $quotaHit = $true
+    $reason = "API LLM kena rate-limit/quota (429)."
+  } elseif ($out -match "503|overload|high demand") {
+    $quotaHit = $true
+    $reason = "LLM sedang overload (503)."
+  }
+  if ($quotaHit) {
+    Add-Content -Path $log -Value "QUOTA/USAGE ERROR: $reason Cek apakah Zen free sudah 'exceeded' atau fallback Gemini juga habis."
+    Show-Popup -Title "Gagal Generate Artikel" -Message "$reason Artikel tidak dibuat hari ini. Akan coba lagi di jadwal berikutnya."
+  } else {
+    Add-Content -Path $log -Value "GENERATOR ERROR (exit $ideasExit): $($out | Select-Object -Last 20 | Out-String)"
+    Show-Popup -Title "Gagal Generate Artikel" -Message "Generator error (exit $ideasExit). Cek log article-gen-log.txt."
+  }
   exit 1
 }
 

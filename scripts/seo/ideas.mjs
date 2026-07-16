@@ -140,25 +140,43 @@ async function main() {
     target = "MOCK"
     console.log("GSC_MOCK aktif — pakai query fixture (tanpa network)\n")
   } else {
-    const token = await getToken()
-    target = await getSite(token)
-    if (!target) {
-      console.error("Tidak menemukan property Search Console.")
-      process.exit(1)
+    let token
+    try {
+      token = await getToken()
+    } catch (e) {
+      console.error(`GSC token gagal (${e.message}); lanjut tanpa GSC.`)
+      token = null
     }
-    console.log(`GSC property: ${target}\n`)
-
-    const end = new Date()
-    const start = new Date()
-    start.setDate(start.getDate() - DAYS)
-    const enc = encodeURIComponent(target)
-    const report = await api(token, `/sites/${enc}/searchAnalytics/query`, {
-      startDate: fmtDate(start),
-      endDate: fmtDate(end),
-      dimensions: ["query"],
-      rowLimit: 1000,
-    })
-    rows = report.rows || []
+    if (token) {
+      try {
+        target = await getSite(token)
+      } catch (e) {
+        console.error(`GSC getSite gagal (${e.message}); lanjut tanpa GSC.`)
+        target = ""
+      }
+    }
+    if (!target) {
+      console.error("Tidak menemukan property Search Console — menggunakan fallback (Geo + Bing + curated).")
+      rows = []
+    } else {
+      console.log(`GSC property: ${target}\n`)
+      const end = new Date()
+      const start = new Date()
+      start.setDate(start.getDate() - DAYS)
+      const enc = encodeURIComponent(target)
+      try {
+        const report = await api(token, `/sites/${enc}/searchAnalytics/query`, {
+          startDate: fmtDate(start),
+          endDate: fmtDate(end),
+          dimensions: ["query"],
+          rowLimit: 1000,
+        })
+        rows = report.rows || []
+      } catch (e) {
+        console.error(`GSC searchAnalytics gagal (${e.message}); lanjut tanpa GSC.`)
+        rows = []
+      }
+    }
   }
 
   // --- Bing Webmaster Tools: real queries (Bing's GSC equivalent) ---

@@ -373,14 +373,23 @@ async function main() {
         ARTICLE_SEGMENT: o._segment || "",
       }
       console.log(`\n### "${o.query}" (kategori: ${cat}${o._province ? ", lokasi: " + o._province : ""}${o._segment ? ", segmen: " + o._segment : ""})`)
-      const out = execSync(`node scripts/seo/article-generate.mjs "${o.query}" --category "${cat}"`, {
-        env: genEnv,
-        cwd: root,
-        stdio: "pipe",
-      }).toString()
-      process.stdout.write(out)
-      const m = out.match(/GENERATED_SLUG:(\S+)/)
-      if (m) generatedSlugs.push(m[1])
+      // Per-topik: satu topik gagal (mis. duplikat / LLM error) tidak boleh
+      // membatalkan topik lain maupun seluruh run.
+      try {
+        const out = execSync(`node scripts/seo/article-generate.mjs "${o.query}" --category "${cat}"`, {
+          env: genEnv,
+          cwd: root,
+          stdio: "pipe",
+        }).toString()
+        process.stdout.write(out)
+        const m = out.match(/GENERATED_SLUG:(\S+)/)
+        if (m) generatedSlugs.push(m[1])
+      } catch (err) {
+        const msg = (err.stderr || err.stdout || err.message || "").toString().trim()
+        const tail = msg.split("\n").slice(-3).join("\n")
+        console.error(`✗ Generate gagal untuk "${o.query}": ${tail || err.message}`)
+        console.error("  Lanjut ke topik berikutnya...")
+      }
     }
 
     if (COMMIT_PUSH && generatedSlugs.length) {
@@ -396,7 +405,13 @@ async function main() {
         gateOk = false
       }
       if (gateOk) {
-        commitAndPush(`feat(seo): auto-generate ${generatedSlugs.length} article(s) from GSC + Bing opportunities`)
+        try {
+          commitAndPush(`feat(seo): auto-generate ${generatedSlugs.length} article(s) from GSC + Bing opportunities`)
+        } catch (err) {
+          console.error(
+            `\nGagal: commit/push error (${err.message}). Artikel sudah tersimpan di src/data/articles.ts — lakukan git commit/push manual.`,
+          )
+        }
       } else {
         console.error(
           "\nGagal: ada artikel yang tidak lolos standar. Tidak di-commit/push. Perbaiki lalu commit manual.",

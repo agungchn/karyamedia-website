@@ -19,8 +19,7 @@ import {
 } from "lucide-react"
 import { companyInfo } from "@/data/company"
 import { getWhatsAppLink } from "@/lib/utils"
-import { RetroGrid } from "@/components/ui/retro-grid"
-import { SparklesCore } from "@/components/ui/sparkles-core"
+import { LazyRetroGrid, LazySparklesCore } from "@/components/ui/lazy-effects"
 import { FaqAccordion } from "@/components/faq-accordion"
 import { KetentuanCards } from "@/components/ketentuan-cards"
 
@@ -131,7 +130,7 @@ export default function CaraPesanPage() {
     <>
       <section className="relative overflow-hidden bg-gradient-to-b from-[#06122A] to-[#0B1F3A] py-20">
         <div className="absolute top-0 left-0 right-0 h-[55%] overflow-hidden">
-          <SparklesCore
+          <LazySparklesCore
             id="carapesan-sparkles"
             background="transparent"
             minSize={0.5}
@@ -142,7 +141,7 @@ export default function CaraPesanPage() {
             className="w-full h-full"
           />
         </div>
-        <RetroGrid
+        <LazyRetroGrid
           angle={65}
           cellSize={54}
           opacity={0.25}

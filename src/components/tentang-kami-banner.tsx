@@ -2,8 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import { Building } from "lucide-react"
-import { SparklesCore } from "@/components/ui/sparkles-core"
-import { RetroGrid } from "@/components/ui/retro-grid"
+import { LazySparklesCore, LazyRetroGrid } from "@/components/ui/lazy-effects"
 
 type TimeTheme = {
   bg: string
@@ -155,7 +154,7 @@ export function TentangKamiBanner() {
         style={{ backgroundImage: `linear-gradient(to bottom, ${theme.bg} 0%, ${lighten(theme.bg)} 100%)` }}
       >
         <div className="absolute bottom-0 left-0 right-0 h-[70%] overflow-hidden">
-          <RetroGrid
+          <LazyRetroGrid
             angle={45}
             cellSize={80}
             opacity={0.18}
@@ -164,7 +163,7 @@ export function TentangKamiBanner() {
           />
         </div>
         <div className="absolute top-0 left-0 right-0 h-[40%] overflow-hidden">
-          <SparklesCore
+          <LazySparklesCore
             id="tentang-kami-sparkles"
             background="transparent"
             minSize={0.5}

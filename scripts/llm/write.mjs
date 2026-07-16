@@ -30,7 +30,7 @@ function getZenKey() {
   }
 }
 
-const GEMINI_MODEL = process.env.GEMINI_MODEL || "gemini-3.5-flash"
+const GEMINI_MODEL = process.env.GEMINI_MODELS || process.env.GEMINI_MODEL || "gemini-3.5-flash,gemini-flash-latest"
 const ZEN_MODEL = process.env.ZEN_MODEL || "deepseek-v4-flash-free"
 const ZEN_URL = process.env.ZEN_URL || "https://opencode.ai/zen/v1/chat/completions"
 
@@ -350,7 +350,9 @@ export async function generateArticle(input) {
   }
 
   if (geminiKey && geminiKey !== "PASTE_GEMINI_API_KEY_HERE") {
-    return await callGemini(prompt, geminiKey)
+    const models = (process.env.GEMINI_MODELS || process.env.GEMINI_MODEL || "gemini-3.5-flash")
+      .split(",").map((m) => m.trim()).filter(Boolean)
+    return await callGemini(prompt, geminiKey, models)
   }
 
   throw new Error("Tidak ada API key LLM valid. Taruh di scripts/llm/zen-key.txt atau scripts/llm/apikey.txt.")
@@ -359,110 +361,143 @@ export async function generateArticle(input) {
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
 
 async function callZen(prompt, key) {
-  for (let attempt = 0; attempt < 4; attempt++) {
-    try {
-      const res = await fetch(ZEN_URL, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": `Bearer ${key}`,
-        },
-        body: JSON.stringify({
-          model: ZEN_MODEL,
-          messages: [
-            {
-              role: "system",
-              content:
-                "Anda adalah penulis konten SEO ahli yang SELALU mengembalikan HANYA objek JSON valid, tanpa teks atau markdown lain di luar JSON.",
-            },
-            { role: "user", content: prompt },
-          ],
-          temperature: 0.7,
-          response_format: { type: "json_object" },
-        }),
-      })
-      const j = await res.json()
-      if (j.error) {
-        if (res.status === 429 || res.status >= 500) {
-          const wait = 2000 * (attempt + 1)
-          console.error(`Zen ${res.status} (${j.error.message || "server error"}), retry ${attempt + 1}/4 dalam ${wait}ms...`)
+  const ctrl = new AbortController()
+  const timer = setTimeout(() => ctrl.abort(), 30000)
+  try {
+    for (let attempt = 0; attempt < 2; attempt++) {
+      try {
+        const res = await fetch(ZEN_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${key}`,
+          },
+          body: JSON.stringify({
+            model: ZEN_MODEL,
+            messages: [
+              {
+                role: "system",
+                content:
+                  "Anda adalah penulis konten SEO ahli yang SELALU mengembalikan HANYA objek JSON valid, tanpa teks atau markdown lain di luar JSON.",
+              },
+              { role: "user", content: prompt },
+            ],
+            temperature: 0.7,
+            response_format: { type: "json_object" },
+          }),
+          signal: ctrl.signal,
+        })
+        const j = await res.json()
+        if (j.error) {
+          if (res.status === 429 || res.status >= 500) {
+            const wait = 1500 * (attempt + 1)
+            console.error(`Zen ${res.status} (${j.error.message || "server error"}), retry ${attempt + 1}/2 dalam ${wait}ms...`)
+            await sleep(wait)
+            continue
+          }
+          throw new Error(`Zen error ${res.status}: ${j.error.message || JSON.stringify(j.error)}`)
+        }
+        const text = j.choices?.[0]?.message?.content
+        if (!text) {
+          console.error(`Zen mengembalikan teks kosong, retry ${attempt + 1}/2...`)
+          await sleep(1500 * (attempt + 1))
+          continue
+        }
+        let parsed
+        try {
+          parsed = JSON.parse(text)
+        } catch {
+          // Zen balas teks biasa, bukan JSON -> fallback cepat ke Gemini
+          throw new Error("Zen tidak mengembalikan JSON valid")
+        }
+        if (!parsed.title || !parsed.description || !parsed.content || !Array.isArray(parsed.tags)) {
+          throw new Error("Zen JSON tidak lengkap (field wajib title/description/content/tags hilang)")
+        }
+        return parsed
+      } catch (e) {
+        // JSON-invalid / aborted / network -> jangan retry lama, biarkan fallback Gemini
+        if (/tidak mengembalikan JSON valid|aborted|abort|timeout/i.test(e.message)) {
+          throw e
+        }
+        if (attempt < 1 && /fetch|network|5\d\d|429|failed/i.test(e.message)) {
+          const wait = 1500 * (attempt + 1)
+          console.error(`Zen error (${e.message}), retry ${attempt + 1}/2 dalam ${wait}ms...`)
           await sleep(wait)
           continue
         }
-        throw new Error(`Zen error ${res.status}: ${j.error.message || JSON.stringify(j.error)}`)
+        throw e
       }
-      const text = j.choices?.[0]?.message?.content
-      if (!text) {
-        console.error(`Zen mengembalikan teks kosong, retry ${attempt + 1}/4...`)
-        await sleep(1500 * (attempt + 1))
-        continue
-      }
-      const parsed = JSON.parse(text)
-      if (!parsed.title || !parsed.description || !parsed.content || !Array.isArray(parsed.tags)) {
-        throw new Error("Zen JSON tidak lengkap (field wajib title/description/content/tags hilang)")
-      }
-      return parsed
-    } catch (e) {
-      if (attempt < 3 && /fetch|network|timeout|5\d\d|429|failed|JSON/i.test(e.message)) {
-        const wait = 2000 * (attempt + 1)
-        console.error(`Zen error (${e.message}), retry ${attempt + 1}/4 dalam ${wait}ms...`)
-        await sleep(wait)
-        continue
-      }
-      throw e
     }
+    throw new Error("Zen gagal menghasilkan konten setelah 2 percobaan.")
+  } finally {
+    clearTimeout(timer)
   }
-  throw new Error("Zen gagal menghasilkan konten setelah 4 percobaan.")
 }
 
-async function callGemini(prompt, key) {
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${key}`
+async function callGemini(prompt, key, models = [GEMINI_MODEL]) {
+  let lastErr = ""
   let lastFinish = ""
-  for (let attempt = 0; attempt < 4; attempt++) {
-    try {
-      const res = await fetch(url, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          contents: [{ parts: [{ text: prompt }] }],
-          generationConfig: {
-            responseMimeType: "application/json",
-            responseSchema: SCHEMA,
-            temperature: 0.7,
-          },
-        }),
-      })
-      const j = await res.json()
-      if (j.error && (j.error.code === 503 || j.error.code === 429)) {
-        const wait = 2000 * (attempt + 1)
-        console.error(`Gemini ${j.error.code} (high demand/quota), retry ${attempt + 1}/4 dalam ${wait}ms...`)
-        await sleep(wait)
-        continue
+  for (const model of models) {
+    console.error(`Mencoba Gemini model: ${model}...`)
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${key}`
+    let ok = false
+    for (let attempt = 0; attempt < 4; attempt++) {
+      try {
+        const res = await fetch(url, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            contents: [{ parts: [{ text: prompt }] }],
+            generationConfig: {
+              responseMimeType: "application/json",
+              responseSchema: SCHEMA,
+              temperature: 0.7,
+            },
+          }),
+        })
+        const j = await res.json()
+        if (j.error && (j.error.code === 503 || j.error.code === 429)) {
+          const wait = 2000 * (attempt + 1)
+          console.error(`Gemini ${model} ${j.error.code} (high demand/quota), retry ${attempt + 1}/4 dalam ${wait}ms...`)
+          await sleep(wait)
+          continue
+        }
+        if (j.error) {
+          // error keras (400/403/404) -> coba model berikutnya, jangan retry model ini
+          lastErr = `Gemini ${model} error ${j.error.code}: ${j.error.message || JSON.stringify(j.error)}`
+          console.error(lastErr)
+          break
+        }
+        const cand = j.candidates?.[0]
+        const text = cand?.content?.parts?.[0]?.text
+        if (cand && cand.finishReason && cand.finishReason !== "STOP") {
+          lastFinish = cand.finishReason
+          console.error(`Gemini ${model} finishReason=${cand.finishReason}, retry ${attempt + 1}/4 (rephrase orisinal)...`)
+          prompt += `\n\nPENTING: hasil sebelumnya difilter (${cand.finishReason}). Tulis ULANG sepenuhnya dengan bahasa Anda sendiri, 100% orisinal, tanpa meniru/mengutip teks pihak ketiga mana pun.`
+          await sleep(1500 * (attempt + 1))
+          continue
+        }
+        if (!text) {
+          console.error(`Gemini ${model} mengembalikan teks kosong, retry ${attempt + 1}/4...`)
+          await sleep(1500 * (attempt + 1))
+          continue
+        }
+        const parsed = JSON.parse(text)
+        ok = true
+        return parsed
+      } catch (e) {
+        if (attempt < 3) {
+          const wait = 2000 * (attempt + 1)
+          console.error(`Gemini ${model} network error, retry ${attempt + 1}/4 dalam ${wait}ms...`)
+          await sleep(wait)
+          continue
+        }
+        lastErr = `Gemini ${model} gagal: ${e.message}`
+        break
       }
-      const cand = j.candidates?.[0]
-      const text = cand?.content?.parts?.[0]?.text
-      if (cand && cand.finishReason && cand.finishReason !== "STOP") {
-        lastFinish = cand.finishReason
-        console.error(`Gemini finishReason=${cand.finishReason}, retry ${attempt + 1}/4 (rephrase orisinal)...`)
-        prompt += `\n\nPENTING: hasil sebelumnya difilter (${cand.finishReason}). Tulis ULANG sepenuhnya dengan bahasa Anda sendiri, 100% orisinal, tanpa meniru/mengutip teks pihak ketiga mana pun.`
-        await sleep(1500 * (attempt + 1))
-        continue
-      }
-      if (!text) {
-        console.error(`Gemini mengembalikan teks kosong, retry ${attempt + 1}/4...`)
-        await sleep(1500 * (attempt + 1))
-        continue
-      }
-      return JSON.parse(text)
-    } catch (e) {
-      if (attempt < 3) {
-        const wait = 2000 * (attempt + 1)
-        console.error(`Gemini network error, retry ${attempt + 1}/4 dalam ${wait}ms...`)
-        await sleep(wait)
-        continue
-      }
-      throw e
     }
+    if (ok) return
+    console.error(`Model ${model} gagal, lanjut ke model berikutnya (jika ada).`)
   }
-  throw new Error(`Gemini gagal menghasilkan konten setelah 4 percobaan (finishReason=${lastFinish}).`)
+  throw new Error(`Semua model Gemini gagal (finishReason=${lastFinish}). ${lastErr}`)
 }

@@ -103,6 +103,7 @@ export function Footer() {
             <ul className="space-y-2.5 text-sm text-gray-300">
               {[
                 { label: "Profil Perusahaan", href: "/profil" },
+                { label: "Katalog Produk", href: "/katalog-produk" },
                 { label: "Galeri Proyek", href: "/gallery" },
                 { label: "Testimoni", href: "/testimoni" },
                 { label: "Cara Pesan", href: "/cara-pesan" },

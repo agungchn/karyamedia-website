@@ -49,11 +49,19 @@ try {
 try {
   & npm run seo:consolidate 2>&1 | Tee-Object -FilePath $log -Append | Out-String
   # jika konsolidasi mengubah file, commit + push agar tidak tertimpa push berikutnya
+  # PENTING: jangan pernah staging file di .github/ (terutama workflows) agar push
+  # tidak butuh scope 'workflow' & tidak mengganggu otomatisasi lain.
   $consStat = & git status --porcelain 2>$null
   if ($consStat) {
     & git add -A 2>&1 | Out-Null
-    & git commit -m "chore(seo): auto-consolidate duplicate articles" 2>&1 | Tee-Object -FilePath $log -Append | Out-String
-    & git push 2>&1 | Tee-Object -FilePath $log -Append | Out-String
+    & git reset -q -- .github 2>&1 | Out-Null
+    $consStat2 = & git status --porcelain 2>$null
+    if ($consStat2) {
+      & git commit -m "chore(seo): auto-consolidate duplicate articles" 2>&1 | Tee-Object -FilePath $log -Append | Out-String
+      & git push 2>&1 | Tee-Object -FilePath $log -Append | Out-String
+    } else {
+      Add-Content -Path $log -Value "Konsolidasi hanya menyentuh .github, push dilewati (aman)."
+    }
   }
 } catch {
   # konsolidasi gagal bukan masalah kritis

@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Generate source maps agar Lighthouse bisa memberi detail & memudahkan
+  // debug produksi (tidak menambah ukuran JS yang di-download user).
+  productionBrowserSourceMaps: true,
   images: {
     // Pakai custom loader -> file WebP pra-teroptimasi (scripts/optimize-images.mjs)
     // di folder public/images/opt. Ini menghindari layanan Image Optimization
@@ -8,8 +11,8 @@ const nextConfig: NextConfig = {
     // WebP dihasilkan saat build (prebuild) & tiap gambar baru (add.js).
     loader: "custom",
     loaderFile: "./src/image-loader.ts",
-    // Hanya 2 lebar yg dihasilkan -> srcSet responsif (mobile 640, desktop 1280).
-    deviceSizes: [640, 1280],
+    // 2 lebar: 480 (grid 4 kolom ~315px + retina mobile), 960 (desktop retina).
+    deviceSizes: [480, 960],
     imageSizes: [],
   },
   async redirects() {

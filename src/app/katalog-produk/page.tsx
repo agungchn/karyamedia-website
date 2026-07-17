@@ -97,7 +97,10 @@ export default function KatalogPage() {
                 <div className="h-px flex-1 bg-gradient-to-r from-gray-200 to-transparent" />
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-                {group.products.map((product) => (
+                {group.products.map((product) => {
+                  const _cat = categories.find((c) => c.id === product.categoryId)
+                  const _sub = _cat?.subcategories.find((s) => s.id === product.subcategoryId)
+                  return (
                   <div
                     key={product.id}
                     className="group bg-white rounded-xl border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
@@ -106,7 +109,7 @@ export default function KatalogPage() {
                       {product.images[0] ? (
                         <Image
                           src={product.images[0]}
-                          alt={product.name}
+                          alt={`${product.name} - ${_sub?.name || _cat?.name || "Souvenir"} Karyamedia Jogja`}
                           fill
                           sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                           className="object-cover group-hover:scale-110 transition-transform duration-700"
@@ -151,7 +154,8 @@ export default function KatalogPage() {
                       </div>
                     </div>
                   </div>
-                ))}
+                  )
+                })}
               </div>
             </div>
           ))}

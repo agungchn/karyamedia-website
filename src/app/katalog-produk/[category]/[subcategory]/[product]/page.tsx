@@ -35,13 +35,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const subSlug = getSubSlug(product)
   return {
     title: `${product.name}${sub?.name ? " - " + sub.name : ""}`,
-    description: `${product.shortDescription} | Bahan: ${product.material} | Ukuran: ${product.size} | ${product.price}`,
+    description: `${product.shortDescription} | Custom ${sub?.name || cat?.name || "souvenir"} berkualitas di Karyamedia Souvenir Jogja. Bahan: ${product.material} | Ukuran: ${product.size} | ${product.price}`,
     alternates: {
       canonical: `/katalog-produk/${category}/${subSlug}/${product.slug}`,
     },
     openGraph: {
       title: `${product.name} - ${product.code}`,
-      description: `${product.shortDescription} | Custom ${sub?.name || ""} di Karyamedia Souvenir`,
+      description: `${product.shortDescription} | Custom ${sub?.name || ""} di Karyamedia Souvenir Jogja`,
       url: `/katalog-produk/${category}/${subSlug}/${product.slug}`,
       images: [{ url: imageUrl, width: 800, height: 800 }],
     },
@@ -131,7 +131,7 @@ export default async function ProductDetailPage({ params }: Props) {
           <div>
             <div className="aspect-[3/4] bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl overflow-hidden relative">
               {product.images.length > 0 ? (
-                <Image src={product.images[0]} alt={product.name} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
+                <Image src={product.images[0]} alt={`${product.name} - ${sub?.name || cat?.name || "Souvenir"} Karyamedia Jogja`} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
               ) : (
                 <div className="absolute inset-0 flex items-center justify-center">
                   <Award className="w-32 h-32 text-gray-300" />
@@ -152,7 +152,7 @@ export default async function ProductDetailPage({ params }: Props) {
               <div className="grid grid-cols-4 gap-2 mt-3">
                 {product.images.map((img, i) => (
                   <div key={i} className="aspect-square bg-gray-100 rounded-lg overflow-hidden relative">
-                    <Image src={img} alt={`${product.name} ${i + 1}`} fill sizes="25vw" className="object-cover" />
+                    <Image src={img} alt={`${product.name} - ${sub?.name || cat?.name || "Souvenir"} Karyamedia Jogja (${i + 1})`} fill sizes="25vw" className="object-cover" />
                   </div>
                 ))}
               </div>
@@ -259,7 +259,7 @@ export default async function ProductDetailPage({ params }: Props) {
                     {rp.images.length > 0 ? (
                       <Image
                         src={rp.images[0]}
-                        alt={rp.name}
+                        alt={`${rp.name} - ${categories.find((c) => c.id === rp.categoryId)?.subcategories.find((s) => s.id === rp.subcategoryId)?.name || categories.find((c) => c.id === rp.categoryId)?.name || "Souvenir"} Karyamedia Jogja`}
                         fill
                         sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                         className="object-cover group-hover:scale-110 transition-transform duration-700"

@@ -109,7 +109,7 @@ function SearchDropdown({ query, onQueryChange, onClose }: { query: string; onQu
               className="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition-colors group border-b border-gray-50 last:border-0"
             >
               <div className="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center shrink-0 overflow-hidden">
-                <Image src={p.images[0] || "/placeholder.png"} alt={p.name} width={40} height={40} className="object-cover w-full h-full" />
+                <Image src={p.images[0] || "/placeholder.png"} alt={`${p.name} - ${categories.find((c) => c.id === p.categoryId)?.subcategories.find((s) => s.id === p.subcategoryId)?.name || categories.find((c) => c.id === p.categoryId)?.name || "Souvenir"} Karyamedia Jogja`} width={40} height={40} className="object-cover w-full h-full" />
               </div>
               <div className="min-w-0 flex-1">
                 <div className="font-medium text-sm text-gray-900 group-hover:text-accent-accessible transition-colors truncate">{p.name}</div>

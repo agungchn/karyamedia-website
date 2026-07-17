@@ -983,7 +983,7 @@ export default function HomePage() {
                       {featuredImageMap[product.slug] && (
                         <Image
                           src={featuredImageMap[product.slug]}
-                          alt={product.name}
+                          alt={`${product.name} - ${categories.find((c) => c.id === product.categoryId)?.subcategories.find((s) => s.id === product.subcategoryId)?.name || categories.find((c) => c.id === product.categoryId)?.name || "Souvenir"} Karyamedia Jogja`}
                           fill
                           sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                           className="object-cover group-hover:scale-110 transition-transform duration-700"

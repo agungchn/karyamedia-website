@@ -97,7 +97,7 @@ export default async function SubCategoryPage({ params }: Props) {
                   {card.image ? (
                     <Image
                       src={card.image}
-                      alt={card.product.name}
+                      alt={`${card.product.name} - ${sub?.name || cat?.name || "Souvenir"} Karyamedia Jogja`}
                       fill
                       sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                       className="object-cover group-hover:scale-110 transition-transform duration-700"

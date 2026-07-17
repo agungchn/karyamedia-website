@@ -8,7 +8,8 @@ import { GbpReviewCta } from "@/components/gbp-review-cta"
 
 export function Footer() {
   return (
-    <footer className="bg-primary text-white">
+    <footer className="text-white relative" style={{ backgroundImage: "linear-gradient(to bottom, #002878, #000030)" }}>
+      <div className="absolute top-0 left-0 right-0 h-0.5 shimmer-line" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           <div className="lg:col-span-2">
@@ -163,7 +164,8 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-white/10 bg-primary-light/10">
+      <div className="relative border-t border-white/10 bg-primary-light/10">
+        <div className="absolute top-0 left-0 right-0 h-0.5 shimmer-line" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
           <p className="text-sm text-blue-100/70">Sudah pernah pesan di Karyamedia? Bantu klien lain dengan ulasan Anda:</p>
           <GbpReviewCta variant="compact" />

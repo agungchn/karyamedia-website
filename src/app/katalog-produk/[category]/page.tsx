@@ -66,22 +66,22 @@ export default async function CategoryPage({ params }: Props) {
           { name: cat.name, url: `/katalog-produk/${category}` },
         ]}
       />
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#028FEF] via-[#EBF7FF] to-[#ADDAFD] py-8">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#000030] to-[#002878] py-8">
         <div className="absolute inset-x-0 bottom-0 h-0.5 shimmer-line rounded-full" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="flex items-center gap-2 text-sm text-gray-600/80 mb-4">
-            <Link href="/" className="hover:text-gray-900 transition-colors">Beranda</Link>
+          <nav className="flex items-center gap-2 text-sm text-blue-100/70 mb-4">
+            <Link href="/" className="hover:text-white transition-colors">Beranda</Link>
             <ChevronRight className="w-4 h-4" />
-            <Link href="/katalog-produk" className="hover:text-gray-900 transition-colors">Katalog Produk</Link>
+            <Link href="/katalog-produk" className="hover:text-white transition-colors">Katalog Produk</Link>
             <ChevronRight className="w-4 h-4" />
-            <span className="text-gray-900 font-medium">{cat.name}</span>
+            <span className="text-white font-medium">{cat.name}</span>
           </nav>
           <h1 className="heading-display text-4xl md:text-5xl mb-4 flex items-center gap-4">
             {(() => {
               const CatIcon = categoryIconMap[cat.slug]
-              return CatIcon ? <CatIcon size={40} className="shrink-0" /> : null
+              return CatIcon ? <CatIcon size={40} className="shrink-0 text-accent-accessible" /> : null
             })()}
-            <span className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(to right, #0B1F3A, #2563EB)" }}>
+            <span className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(to right, #FFE9A8, #FFD700)" }}>
               {cat.name}
             </span>
           </h1>

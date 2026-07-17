@@ -19,7 +19,7 @@ export function GbpReviewCta({ variant = "full" }: { variant?: "full" | "compact
   }
 
   return (
-    <section className="bg-gradient-to-br from-primary to-[#0A1A30] py-16">
+    <section className="bg-[#000030] py-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="inline-flex items-center gap-1.5 mb-4">
           {[...Array(5)].map((_, i) => (

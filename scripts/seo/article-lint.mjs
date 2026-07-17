@@ -145,6 +145,18 @@ export function lintText(text, { onlySlugs = null } = {}) {
       const avg = sentences.length ? words / sentences.length : 0
       if (avg > 30) warnings.push(`${at}: rata-rata ${Math.round(avg)} kata/kalimat (terlalu panjang, kurang readable)`)
 
+      // alt attribute: every <img> MUST have a non-empty alt (accessibility + image SEO)
+      const imgs = [...content.matchAll(/<img\b[^>]*>/gi)]
+      for (const im of imgs) {
+        const tag = im[0]
+        const hasAlt = /\balt\s*=\s*"([^"]*)"/i.test(tag)
+        const altVal = hasAlt ? (tag.match(/\balt\s*=\s*"([^"]*)"/i)?.[1] ?? "") : null
+        if (!hasAlt || altVal.trim() === "") {
+          errors.push(`${at}: setiap <img> wajib punya atribut alt yang deskriptif (ditemukan tag tanpa alt)`)
+          break
+        }
+      }
+
       const hrefs = [...content.matchAll(/href="([^"]+)"/g)].map((x) => x[1])
       let internal = 0
       for (const href of hrefs) {

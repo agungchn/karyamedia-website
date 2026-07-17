@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     template: "%s | Karyamedia Souvenir",
   },
   description:
-    "Produsen souvenir custom berpengalaman sejak 2001. Plakat, medali, piala, prasasti, souvenir wisuda, dan merchandise custom. Berbadan hukum, berbasis Yogyakarta, melayani seluruh Indonesia.",
+    "Produsen souvenir custom & plakat Jogja berpengalaman sejak 2001. Plakat akrilik, medali, piala, prasasti, souvenir wisuda, dan merchandise custom. Berbadan hukum, berbasis Yogyakarta, melayani seluruh Indonesia.",
   keywords: [
     "souvenir custom",
     "plakat custom",
@@ -62,6 +62,9 @@ export const metadata: Metadata = {
     "souvenir pernikahan",
     "souvenir murah",
     "souvenir jogja",
+    "plakat jogja",
+    "plakat akrilik jogja",
+    "toko souvenir jogja",
     "yogyakarta",
     "karyamedia",
   ],

@@ -210,11 +210,11 @@ export function HeroSection() {
             {/* Headline */}
             <h1 className="heading-display text-3xl md:text-4xl lg:text-5xl">
               <span className="text-transparent bg-clip-text" style={{ backgroundImage: `linear-gradient(to right, ${theme.headingFrom}, ${theme.headingTo})` }}>
-                Souvenir Custom
+                Souvenir Custom &amp; Plakat
               </span>
               <br />
               <span className="text-transparent bg-clip-text" style={{ backgroundImage: `linear-gradient(to right, ${theme.headingFrom}, ${theme.headingTo})` }}>
-                Premium
+                Premium Jogja
               </span>
             </h1>
 

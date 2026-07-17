@@ -16,13 +16,13 @@ import { SearchGlow } from "@/components/search-glow"
 export const dynamic = "force-dynamic"
 
 export const metadata: Metadata = {
-  title: "Katalog Produk Souvenir Custom",
-  description: "Jelajahi katalog souvenir custom Karyamedia: plakat, medali, piala, souvenir wisuda, gift box, aksesoris, & prasasti. Custom desain, kualitas terbaik.",
+  title: "Katalog Plakat & Souvenir Custom Jogja",
+  description: "Jelajahi katalog souvenir custom Karyamedia Jogja: plakat, medali, piala, souvenir wisuda, gift box, aksesoris, & prasasti. Custom desain, kualitas terbaik.",
   alternates: {
     canonical: "/katalog-produk",
   },
   openGraph: {
-    title: "Katalog Produk Souvenir Custom - Karyamedia",
+    title: "Katalog Plakat & Souvenir Custom Jogja - Karyamedia",
     description: "Jelajahi berbagai kategori produk souvenir custom berkualitas tinggi yang kami produksi sejak 2001.",
     url: "/katalog-produk",
   },
@@ -58,7 +58,7 @@ export default function KatalogPage() {
             </div>
           </div>
           <TimeHeading className="text-4xl md:text-5xl mb-4" style={{ letterSpacing: "0.02em", wordSpacing: "0.1em" } as React.CSSProperties}>
-            Temukan Souvenir Custom<br />Sesuai Kebutuhan Anda
+            Temukan Souvenir &amp; Plakat Jogja<br />Sesuai Kebutuhan Anda
           </TimeHeading>
           <TimeText className="max-w-2xl mx-auto mb-8">
             Jelajahi berbagai kategori produk souvenir custom berkualitas tinggi yang kami produksi sejak 2001

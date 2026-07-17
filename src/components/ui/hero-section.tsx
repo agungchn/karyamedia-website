@@ -166,7 +166,7 @@ export function HeroSection() {
             minSize={0.5}
             maxSize={1.3}
             particleColor={theme.particleColor}
-            particleDensity={70}
+            particleDensity={40}
             speed={1}
             className="w-full h-full"
           />

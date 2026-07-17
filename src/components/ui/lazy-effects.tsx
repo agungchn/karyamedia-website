@@ -32,6 +32,7 @@ export function LazySparklesCore(props: {
   particleDensity?: number
 }) {
   const [isMobile, setIsMobile] = useState(false)
+  const [ready, setReady] = useState(false)
 
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 768px)")
@@ -41,11 +42,24 @@ export function LazySparklesCore(props: {
     return () => mq.removeEventListener("change", update)
   }, [])
 
+  // Defer mounting until the browser is idle so the particles animation
+  // does not block initial render / TBT / LCP.
+  useEffect(() => {
+    const w = window as unknown as { requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number; cancelIdleCallback?: (h: number) => void }
+    if (typeof w.requestIdleCallback === "function") {
+      const h = w.requestIdleCallback(() => setReady(true), { timeout: 1500 })
+      return () => w.cancelIdleCallback?.(h)
+    }
+    const t = setTimeout(() => setReady(true), 800)
+    return () => clearTimeout(t)
+  }, [])
+
   const density =
     isMobile && props.particleDensity
       ? Math.min(props.particleDensity, MOBILE_DENSITY)
       : props.particleDensity
 
+  if (!ready) return null
   return <SparklesCoreImpl {...props} particleDensity={density} />
 }
 

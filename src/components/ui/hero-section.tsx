@@ -7,6 +7,8 @@ import { MessageCircle, Search, X, Shield, Calendar, Users, Truck, Sparkles, Sta
 import { getWhatsAppLink } from "@/lib/utils"
 import { products } from "@/data/products"
 import { categories } from "@/data/categories"
+import { getTimeTheme, TimeTheme } from "@/lib/time-theme"
+import { LazySparklesCore } from "@/components/ui/lazy-effects"
 
 const RetroGrid = ({
   angle = 65,
@@ -14,6 +16,14 @@ const RetroGrid = ({
   opacity = 0.5,
   lightLineColor = "gray",
   darkLineColor = "gray",
+  overlayColor = "from-primary",
+}: {
+  angle?: number
+  cellSize?: number
+  opacity?: number
+  lightLineColor?: string
+  darkLineColor?: string
+  overlayColor?: string
 }) => {
   const gridStyles = {
     "--grid-angle": `${angle}deg`,
@@ -31,7 +41,7 @@ const RetroGrid = ({
       <div className="absolute inset-0 [transform:rotateX(var(--grid-angle))]">
         <div className="animate-grid [background-image:linear-gradient(to_right,var(--light-line)_1px,transparent_0),linear-gradient(to_bottom,var(--light-line)_1px,transparent_0)] [background-repeat:repeat] [background-size:var(--cell-size)_var(--cell-size)] [height:130vh] [inset:0%_0px] [margin-left:-50%] [transform-origin:100%_0_0] [width:200vw] dark:[background-image:linear-gradient(to_right,var(--dark-line)_1px,transparent_0),linear-gradient(to_bottom,var(--dark-line)_1px,transparent_0)]" />
       </div>
-      <div className="absolute inset-0 bg-gradient-to-t from-primary to-transparent to-90%" />
+      <div className={`absolute inset-0 bg-gradient-to-t ${overlayColor} to-transparent to-90%`} />
     </div>
   )
 }
@@ -121,41 +131,77 @@ function SearchDropdown({ query, onQueryChange, onClose }: { query: string; onQu
 export function HeroSection() {
   const [searchOpen, setSearchOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState("")
+  const [theme, setTheme] = useState<TimeTheme>(() => getTimeTheme())
+  const isNight = theme.bgTop === "#000030"
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTheme(getTimeTheme())
+    }, 60000)
+    return () => clearInterval(interval)
+  }, [])
+
   return (
-    <section className="relative bg-gradient-to-b from-[#06122A] to-[#0B1F3A] overflow-hidden py-6 pt-[84px]">
+    <>
+      <section className="relative overflow-hidden py-6 pt-[84px]">
+      {/* Time-based background */}
+      <div
+        className="absolute inset-0 z-0"
+        style={{ backgroundImage: `linear-gradient(to bottom, ${theme.bgTop} 0%, ${theme.bgMid} 50%, ${theme.bgBottom} 100%)` }}
+      >
+        <div className="absolute bottom-0 left-0 right-0 h-[70%] overflow-hidden">
+          <RetroGrid
+            angle={65}
+            opacity={0.3}
+            cellSize={50}
+            lightLineColor="rgba(255,255,255,0.5)"
+            darkLineColor="rgba(255,255,255,0.5)"
+            overlayColor="from-transparent"
+          />
+        </div>
+        <div className="absolute top-0 left-0 right-0 h-[40%] overflow-hidden">
+          <LazySparklesCore
+            id="hero-sparkles"
+            background="transparent"
+            minSize={0.5}
+            maxSize={1.3}
+            particleColor={theme.particleColor}
+            particleDensity={70}
+            speed={1}
+            className="w-full h-full"
+          />
+        </div>
+      </div>
+
       {/* Cinematic background effects */}
       <div className="absolute top-0 z-[0] h-full w-full bg-[radial-gradient(ellipse_20%_80%_at_50%_-20%,rgba(29,78,216,0.15),rgba(11,31,58,0))]" />
       
-      {/* Animated light rays */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-light/10 rounded-full blur-[100px]" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-[100px]" style={{ animationDelay: "1s" }} />
-      
-      {/* Particle effects */}
-      <div className="absolute top-20 left-56">
-        <div className="w-10 h-10 bg-accent/20 rounded-full blur-xl absolute -top-3 -left-3 animate-pulse" />
-        <div className="w-8 h-8 bg-white/10 rounded-full blur-md absolute -top-1.5 -left-1.5" />
-        <div className="w-5 h-5 bg-accent rounded-full opacity-90 shadow-[0_0_10px_white,0_0_20px_#D4AF37/50] animate-float" />
-      </div>
-      <div className="absolute top-16 right-48 w-3 h-3 bg-white rounded-full opacity-80 shadow-[0_0_6px_white] animate-float" style={{ animationDelay: "0.5s" }} />
-      <div className="absolute top-12 left-[30%] w-3 h-3 bg-accent rounded-full opacity-80 shadow-[0_0_6px_#D4AF37] animate-float" style={{ animationDelay: "1.5s" }} />
-      <div className="absolute top-24 right-32 w-3 h-3 bg-accent rounded-full opacity-90 shadow-[0_0_6px_#D4AF37] animate-float" style={{ animationDelay: "2s" }} />
-
-      <RetroGrid
-        angle={65}
-        opacity={0.3}
-        cellSize={50}
-        lightLineColor="#D4AF37"
-        darkLineColor="#1D4ED8"
-      />
+      {/* Animated light rays + glow orbs (night only) */}
+      {isNight && (
+        <>
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-light/10 rounded-full blur-[100px]" />
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-[100px]" style={{ animationDelay: "1s" }} />
+          
+          {/* Particle effects */}
+          <div className="absolute top-20 left-56">
+            <div className="w-10 h-10 bg-accent/20 rounded-full blur-xl absolute -top-3 -left-3 animate-pulse" />
+            <div className="w-8 h-8 bg-white/10 rounded-full blur-md absolute -top-1.5 -left-1.5" />
+            <div className="w-5 h-5 bg-accent rounded-full opacity-90 shadow-[0_0_10px_white,0_0_20px_#D4AF37/50] animate-float" />
+          </div>
+          <div className="absolute top-16 right-48 w-3 h-3 bg-white rounded-full opacity-80 shadow-[0_0_6px_white] animate-float" style={{ animationDelay: "0.5s" }} />
+          <div className="absolute top-12 left-[30%] w-3 h-3 bg-accent rounded-full opacity-80 shadow-[0_0_6px_#D4AF37] animate-float" style={{ animationDelay: "1.5s" }} />
+          <div className="absolute top-24 right-32 w-3 h-3 bg-accent rounded-full opacity-90 shadow-[0_0_6px_#D4AF37] animate-float" style={{ animationDelay: "2s" }} />
+        </>
+      )}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left content */}
           <div className="space-y-6">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-gradient-to-tr from-accent/20 via-primary-light/20 to-transparent border-[2px] border-accent/30 rounded-3xl px-5 py-2.5 backdrop-blur-sm">
+            <div className={`inline-flex items-center gap-2 border-[2px] rounded-3xl px-5 py-2.5 backdrop-blur-sm ${theme.badge}`}>
               <Sparkles className="w-4 h-4 text-accent-accessible" />
-              <span className="text-white text-sm font-medium">
+              <span className={`text-sm font-medium ${theme.desc}`}>
                 Souvenir Custom Premium
               </span>
               <Star className="w-3 h-3 text-accent-accessible fill-accent" />
@@ -163,22 +209,22 @@ export function HeroSection() {
 
             {/* Headline */}
             <h1 className="heading-display text-3xl md:text-4xl lg:text-5xl">
-              <span className="text-transparent bg-clip-text bg-[linear-gradient(180deg,_#FFF_0%,_rgba(255,_255,_255,_0.75)_100%)]">
+              <span className="text-transparent bg-clip-text" style={{ backgroundImage: `linear-gradient(to right, ${theme.headingFrom}, ${theme.headingTo})` }}>
                 Souvenir Custom
               </span>
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-accessible to-accent">
+              <span className="text-transparent bg-clip-text" style={{ backgroundImage: `linear-gradient(to right, ${theme.headingFrom}, ${theme.headingTo})` }}>
                 Premium
               </span>
             </h1>
 
             {/* Subtitle */}
-            <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-xl">
+            <p className={`text-lg md:text-xl leading-relaxed max-w-xl ${theme.desc}`}>
               untuk Penghargaan, Wisuda, Event, dan Instansi
             </p>
 
             {/* Description */}
-            <p className="text-base text-gray-400 leading-relaxed max-w-xl">
+            <p className={`text-base leading-relaxed max-w-xl ${theme.desc}`}>
               Karyamedia Souvenir telah melayani pembuatan Plakat, Medali, Piala/Trohy, kebutuhan Souvenir untuk Perlengkapan Wisuda dan Souvenir Custom lebih dari 15 Tahun.
             </p>
 
@@ -219,7 +265,7 @@ export function HeroSection() {
                     <item.icon className="w-4 h-4 text-accent-accessible" />
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-gray-200">{item.label}</p>
+                    <p className={`text-sm font-medium ${theme.desc}`}>{item.label}</p>
                   </div>
                 </div>
               ))}
@@ -300,13 +346,19 @@ export function HeroSection() {
               </div>
             </div>
 
-            {/* Floating decorative elements */}
-            <div className="absolute -top-4 left-1/3 w-16 h-16 bg-accent/20 rounded-full blur-2xl animate-float" />
-            <div className="absolute bottom-8 right-0 w-20 h-20 bg-primary-light/15 rounded-full blur-2xl animate-float" style={{ animationDelay: "1s" }} />
-            <div className="absolute top-1/2 left-0 w-12 h-12 bg-accent/15 rounded-full blur-2xl animate-float" style={{ animationDelay: "2s" }} />
+            {/* Floating decorative elements (night only) */}
+            {isNight && (
+              <>
+                <div className="absolute -top-4 left-1/3 w-16 h-16 bg-accent/20 rounded-full blur-2xl animate-float" />
+                <div className="absolute bottom-8 right-0 w-20 h-20 bg-primary-light/15 rounded-full blur-2xl animate-float" style={{ animationDelay: "1s" }} />
+                <div className="absolute top-1/2 left-0 w-12 h-12 bg-accent/15 rounded-full blur-2xl animate-float" style={{ animationDelay: "2s" }} />
+              </>
+            )}
           </div>
         </div>
       </div>
     </section>
+    <div className="w-full h-0.5 shimmer-line" />
+    </>
   )
 }

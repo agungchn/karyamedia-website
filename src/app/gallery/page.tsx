@@ -3,7 +3,10 @@ import Image from "next/image"
 import { Metadata } from "next"
 import { Camera, Sparkles, Zap, Award, ArrowRight } from "lucide-react"
 import { getWhatsAppLink } from "@/lib/utils"
-import { GeometricBackground } from "@/components/ui/geometric-bg"
+import { TimeHeroBg } from "@/components/ui/time-hero-bg"
+import { TimeHeading } from "@/components/ui/time-heading"
+import { TimeText } from "@/components/ui/time-text"
+import { TimeBadge } from "@/components/ui/time-badge"
 
 const engineItems = [
   {
@@ -123,15 +126,15 @@ export default function GalleryPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-[#030303] py-20 overflow-hidden">
-        <GeometricBackground />
+      <section className="relative py-20 overflow-hidden">
+        <TimeHeroBg />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <nav className="flex items-center gap-2 text-sm text-white/80 mb-6">
-            <Link href="/" className="hover:text-white transition-colors">Beranda</Link>
-            <span className="text-white/60">›</span>
-            <span className="text-white font-medium">Galeri</span>
+          <nav className="flex items-center gap-2 text-sm mb-6">
+            <Link href="/" className="hover:opacity-100 opacity-80 transition-opacity">Beranda</Link>
+            <span className="opacity-60">›</span>
+            <span className="font-medium">Galeri</span>
           </nav>
-          
+
           <div className="text-center">
             <div className="relative inline-flex overflow-hidden rounded-full p-[1.5px] mb-6 cursor-default hover:scale-105 transition-transform duration-300">
               <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#D4AF37_0%,#1D4ED8_50%,#D4AF37_100%)]" />
@@ -142,36 +145,37 @@ export default function GalleryPage() {
                 </span>
               </div>
             </div>
-            
-            <h1 className="heading-display text-5xl md:text-7xl mb-4 tracking-[0.2em]">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-accessible to-accent">
+
+            <TimeHeading className="text-5xl md:text-7xl mb-4 tracking-[0.2em]">
+              <span className="bg-clip-text">
                 GALERI
               </span>
               <br />
-              <span className="text-white">KARYAMEDIA</span>
-            </h1>
-            
-            <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8 font-light">
+              <span>KARYAMEDIA</span>
+            </TimeHeading>
+
+            <TimeText className="max-w-2xl mx-auto mb-8">
               Karyamedia Souvenir telah menjadi penyedia souvenir custom full custom sejak 2001.
-            </p>
-            
+            </TimeText>
+
             <div className="flex items-center justify-center gap-4 flex-wrap">
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+              <TimeBadge>
                 <Sparkles className="w-4 h-4 text-accent-accessible" />
-                <span className={"text-white text-sm"}>Mesin Modern</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+                <span className="text-sm">Mesin Modern</span>
+              </TimeBadge>
+              <TimeBadge>
                 <Zap className="w-4 h-4 text-accent-accessible" />
-                <span className={"text-white text-sm"}>Teknologi Terbaru</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+                <span className="text-sm">Teknologi Terbaru</span>
+              </TimeBadge>
+              <TimeBadge>
                 <Award className="w-4 h-4 text-accent-accessible" />
-                <span className={"text-white text-sm"}>Kualitas Terjamin</span>
-              </div>
+                <span className="text-sm">Kualitas Terjamin</span>
+              </TimeBadge>
             </div>
           </div>
         </div>
       </section>
+      <div className="w-full h-0.5 shimmer-line" />
 
       {/* Engine Section */}
       <section className="py-20 bg-gradient-to-b from-white to-gray-50">

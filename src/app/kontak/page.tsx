@@ -15,8 +15,11 @@ import {
 } from "lucide-react"
 import { companyInfo } from "@/data/company"
 import { getWhatsAppLink } from "@/lib/utils"
-import { LazyRetroGrid, LazySparklesCore } from "@/components/ui/lazy-effects"
+import { TimeHeroBg } from "@/components/ui/time-hero-bg"
+import { TimeHeading } from "@/components/ui/time-heading"
+import { TimeText } from "@/components/ui/time-text"
 import { GbpReviewCta } from "@/components/gbp-review-cta"
+import { BatikBackground } from "@/components/ui/batik-bg"
 
 export const metadata: Metadata = {
   title: "Kontak Kami",
@@ -49,28 +52,8 @@ const faqs = [
 export default function KontakPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#06122A] to-[#0B1F3A] py-20">
-        <div className="absolute top-0 left-0 right-0 h-[55%] overflow-hidden">
-          <LazySparklesCore
-            id="kontak-sparkles"
-            background="transparent"
-            minSize={0.5}
-            maxSize={1.3}
-            particleColor="#FFD700"
-            particleDensity={70}
-            speed={1}
-            className="w-full h-full"
-          />
-        </div>
-        <LazyRetroGrid
-          angle={65}
-          cellSize={54}
-          opacity={0.25}
-          lightLineColor="#D4AF37"
-          darkLineColor="#1D4ED8"
-        />
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-light/15 rounded-full blur-[110px]" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/15 rounded-full blur-[110px]" />
+      <section className="relative overflow-hidden py-20">
+        <TimeHeroBg />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="relative inline-flex overflow-hidden rounded-full p-[1.5px] mb-6 cursor-default hover:scale-105 transition-transform duration-300">
             <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#D4AF37_0%,#1D4ED8_50%,#D4AF37_100%)]" />
@@ -81,15 +64,16 @@ export default function KontakPage() {
               </span>
             </div>
           </div>
-          <h1 className="heading-display text-4xl md:text-5xl text-transparent bg-clip-text mb-4" style={{ backgroundImage: "linear-gradient(to right, #D4AF37, #FFD700)", letterSpacing: "0.02em", wordSpacing: "0.1em" }}>
+          <TimeHeading className="text-4xl md:text-5xl mb-4" style={{ letterSpacing: "0.02em", wordSpacing: "0.1em" } as React.CSSProperties}>
             Hubungi Karyamedia Souvenir
-          </h1>
-          <p className="text-blue-200/80 max-w-2xl mx-auto mb-8">
+          </TimeHeading>
+          <TimeText className="max-w-2xl mx-auto mb-8">
             Kami siap membantu kebutuhan souvenir custom Anda. Hubungi kami melalui channel yang paling nyaman.
-          </p>
+          </TimeText>
           <div className="w-32 h-0.5 bg-gradient-to-r from-accent to-accent-accessible rounded-full shimmer-line mx-auto" />
         </div>
       </section>
+      <div className="w-full h-0.5 shimmer-line" />
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
@@ -165,7 +149,9 @@ export default function KontakPage() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div>
+          <div className="relative overflow-hidden rounded-2xl">
+            <BatikBackground noWhite />
+            <div className="relative z-10 p-6 md:p-8">
             <h2 className="heading-display text-2xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-accessible mb-6">Form Konsultasi</h2>
             <p className="text-gray-600 text-sm mb-6">
               Isi form berikut untuk konsultasi. Tim kami akan merespons dalam 5–30 menit di jam operasional.
@@ -177,7 +163,7 @@ export default function KontakPage() {
                   <input
                     id="nama"
                     type="text"
-                    className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#1D4ED8]/20 focus:border-[#1D4ED8]"
+                    className="w-full px-4 py-2.5 rounded-xl border border-gray-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#1D4ED8]/20 focus:border-[#1D4ED8]"
                     placeholder="Masukkan nama Anda"
                   />
                 </div>
@@ -186,7 +172,7 @@ export default function KontakPage() {
                   <input
                     id="instansi"
                     type="text"
-                    className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#1D4ED8]/20 focus:border-[#1D4ED8]"
+                    className="w-full px-4 py-2.5 rounded-xl border border-gray-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#1D4ED8]/20 focus:border-[#1D4ED8]"
                     placeholder="Nama instansi"
                   />
                 </div>
@@ -197,7 +183,7 @@ export default function KontakPage() {
                   <input
                     id="wa"
                     type="tel"
-                    className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#1D4ED8]/20 focus:border-[#1D4ED8]"
+                    className="w-full px-4 py-2.5 rounded-xl border border-gray-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#1D4ED8]/20 focus:border-[#1D4ED8]"
                     placeholder="08xx-xxxx-xxxx"
                   />
                 </div>
@@ -206,14 +192,14 @@ export default function KontakPage() {
                   <input
                     id="email"
                     type="email"
-                    className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#1D4ED8]/20 focus:border-[#1D4ED8]"
+                    className="w-full px-4 py-2.5 rounded-xl border border-gray-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#1D4ED8]/20 focus:border-[#1D4ED8]"
                     placeholder="email@contoh.com"
                   />
                 </div>
               </div>
               <div>
                 <label htmlFor="produk" className="block text-sm font-medium text-gray-700 mb-1">Produk Diminati</label>
-                <select id="produk" className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#1D4ED8]/20 focus:border-[#1D4ED8] text-gray-700">
+                <select id="produk" className="w-full px-4 py-2.5 rounded-xl border border-gray-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#1D4ED8]/20 focus:border-[#1D4ED8] text-gray-700">
                   <option value="">Pilih subkategori produk</option>
                   <optgroup label="Plakat">
                     <option>Plakat Akrilik</option>
@@ -273,7 +259,7 @@ export default function KontakPage() {
                   <input
                     id="jumlah"
                     type="number"
-                    className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#1D4ED8]/20 focus:border-[#1D4ED8]"
+                    className="w-full px-4 py-2.5 rounded-xl border border-gray-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#1D4ED8]/20 focus:border-[#1D4ED8]"
                     placeholder="Estimasi jumlah"
                   />
                 </div>
@@ -282,7 +268,7 @@ export default function KontakPage() {
                   <input
                     id="kota"
                     type="text"
-                    className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#1D4ED8]/20 focus:border-[#1D4ED8]"
+                    className="w-full px-4 py-2.5 rounded-xl border border-gray-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#1D4ED8]/20 focus:border-[#1D4ED8]"
                     placeholder="Kota pengiriman"
                   />
                 </div>
@@ -292,7 +278,7 @@ export default function KontakPage() {
                 <textarea
                   id="pesan"
                   rows={4}
-                  className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#1D4ED8]/20 focus:border-[#1D4ED8] resize-none"
+                  className="w-full px-4 py-2.5 rounded-xl border border-gray-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#1D4ED8]/20 focus:border-[#1D4ED8] resize-none"
                   placeholder="Jelaskan kebutuhan Anda..."
                 />
               </div>
@@ -300,17 +286,18 @@ export default function KontakPage() {
                 href={getWhatsAppLink("Halo Karyamedia Souvenir, saya ingin konsultasi melalui form.")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 bg-primary hover:bg-[#0A1A30] text-white py-3 rounded-xl font-medium transition-colors"
+                style={{ backgroundImage: "linear-gradient(to bottom, #D4AF37, #FFD700)" }}
+                className="w-full inline-flex items-center justify-center gap-2 text-white py-3 rounded-xl font-medium transition-all duration-200 hover:shadow-lg hover:shadow-amber-500/40 hover:brightness-110 hover:-translate-y-0.5"
               >
                 <Send className="w-4 h-4" />
                 Kirim Konsultasi via WhatsApp
               </a>
             </form>
+            </div>
           </div>
 
           <div className="space-y-8">
-            <div>
-              <h2 className="heading-display text-2xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-accessible mb-6">Lokasi Kami</h2>
+            <h2 className="heading-display text-2xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-accessible mb-6">Lokasi Kami</h2>
               <div className="rounded-2xl overflow-hidden shadow-sm border border-gray-100">
                 <iframe
                   src="https://maps.google.com/maps?q=Karyamedia+Souvenir&output=embed"
@@ -334,33 +321,31 @@ export default function KontakPage() {
                     Buka di Google Maps <ArrowRight className="w-4 h-4" />
                   </a>
                 </div>
-              </div>
-            </div>
-
-            <div className="bg-amber-50 border border-amber-200 rounded-2xl p-6">
-              <div className="flex items-start gap-3">
-                <Shield className="w-6 h-6 text-amber-600 shrink-0 mt-0.5" />
-                <div>
-                  <h3 className="font-semibold text-amber-900 mb-1">Keamanan Kontak Resmi</h3>
-                  <ul className="text-sm text-amber-800 space-y-1">
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 shrink-0" />
-                      Satu-satunya nomor WhatsApp resmi: {companyInfo.whatsapp}
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 shrink-0" />
-                      Pembayaran hanya ke BCA 1260580864
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 shrink-0" />
-                      Kami tidak pernah meminta transfer ke rekening lain
-                    </li>
-                  </ul>
+                <div className="bg-amber-50 border-t border-amber-200 p-6">
+                  <div className="flex items-start gap-3">
+                    <Shield className="w-6 h-6 text-amber-600 shrink-0 mt-0.5" />
+                    <div>
+                      <h3 className="font-semibold text-amber-900 mb-1">Keamanan Kontak Resmi</h3>
+                      <ul className="text-sm text-amber-800 space-y-1">
+                        <li className="flex items-center gap-2">
+                          <CheckCircle2 className="w-4 h-4 shrink-0" />
+                          Satu-satunya nomor WhatsApp resmi: {companyInfo.whatsapp}
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <CheckCircle2 className="w-4 h-4 shrink-0" />
+                          Pembayaran hanya ke BCA 1260580864
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <CheckCircle2 className="w-4 h-4 shrink-0" />
+                          Kami tidak pernah meminta transfer ke rekening lain
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
           </div>
-        </div>
+          </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
           <div>

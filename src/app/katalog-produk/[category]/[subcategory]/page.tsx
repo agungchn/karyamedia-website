@@ -69,7 +69,7 @@ export default async function SubCategoryPage({ params }: Props) {
           { name: sub.name, url: `/katalog-produk/${category}/${subcategory}` },
         ]}
       />
-      <section className="bg-gradient-to-br from-primary to-foreground py-16">
+      <section className="bg-gradient-to-br from-[#000030] to-[#002878] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="flex items-center gap-2 text-sm text-blue-200 mb-6 flex-wrap">
             <Link href="/" className="hover:text-white transition-colors">Beranda</Link>
@@ -80,9 +80,10 @@ export default async function SubCategoryPage({ params }: Props) {
             <ChevronRight className="w-4 h-4 shrink-0" />
             <span className="text-white">{sub.name}</span>
           </nav>
-          <h1 className="heading-display text-3xl md:text-4xl text-white mb-3">{sub.name}</h1>
+          <h1 className="heading-display text-3xl md:text-4xl text-transparent bg-clip-text mb-3" style={{ backgroundImage: "linear-gradient(to right, #D4AF37, #FFD700)" }}>{sub.name}</h1>
         </div>
       </section>
+      <div className="w-full h-0.5 shimmer-line" />
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {cards.length > 0 ? (

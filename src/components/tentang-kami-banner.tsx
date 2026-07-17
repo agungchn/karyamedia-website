@@ -3,103 +3,7 @@
 import { useState, useEffect, useRef } from "react"
 import { Building } from "lucide-react"
 import { LazySparklesCore, LazyRetroGrid } from "@/components/ui/lazy-effects"
-
-type TimeTheme = {
-  bgTop: string
-  bgMid: string
-  bgBottom: string
-  particleColor: string
-  badge: string
-  desc: string
-  glowFrom: string
-  glowVia: string
-  headingFrom: string
-  headingTo: string
-  panel: string
-}
-
-function lighten(hex: string, amount = 0.25): string {
-  const h = hex.replace("#", "")
-  const num = parseInt(
-    h.length === 3
-      ? h.split("").map((c) => c + c).join("")
-      : h,
-    16,
-  )
-  let r = (num >> 16) & 255
-  let g = (num >> 8) & 255
-  let b = num & 255
-  r = Math.round(r + (255 - r) * amount)
-  g = Math.round(g + (255 - g) * amount)
-  b = Math.round(b + (255 - b) * amount)
-  return `rgb(${r}, ${g}, ${b})`
-}
-
-function getTimeTheme(): TimeTheme {
-  const h = new Date().getHours()
-  // Pagi: 05:00 - 10:59
-  if (h >= 5 && h < 11) {
-    return {
-      bgTop: "#7EDAFF",
-      bgMid: "#FFF6F2",
-      bgBottom: "#FDC64A",
-      particleColor: "#FFFFFF",
-      badge: "bg-black/10 text-gray-800",
-      desc: "text-gray-800",
-      glowFrom: "#FFFFFF",
-      glowVia: "#FDC64A",
-      headingFrom: "#0B1F3A",
-      headingTo: "#028FEF",
-      panel: "bg-white/55 backdrop-blur-md",
-    }
-  }
-  // Siang: 11:00 - 14:59
-  if (h >= 11 && h < 15) {
-    return {
-      bgTop: "#028FEF",
-      bgMid: "#CFECFF",
-      bgBottom: "#ADDAFD",
-      particleColor: "#FFFFFF",
-      badge: "bg-black/10 text-gray-800",
-      desc: "text-gray-800",
-      glowFrom: "#FFFFFF",
-      glowVia: "#ADDAFD",
-      headingFrom: "#0B1F3A",
-      headingTo: "#1D4ED8",
-      panel: "bg-white/50 backdrop-blur-md",
-    }
-  }
-  // Sore: 15:00 - 17:59
-  if (h >= 15 && h < 18) {
-    return {
-      bgTop: "#F42507",
-      bgMid: "#F42507",
-      bgBottom: "#F9DB09",
-      particleColor: "#FFF1CF",
-      badge: "bg-black/10 text-red-950",
-      desc: "text-red-950",
-      glowFrom: "#F42507",
-      glowVia: "#F9DB09",
-      headingFrom: "#7C2D12",
-      headingTo: "#9A3412",
-      panel: "bg-white/50 backdrop-blur-md",
-    }
-  }
-  // Malam: 18:00 - 04:59
-  return {
-    bgTop: "#000030",
-    bgMid: "#000030",
-    bgBottom: "#002878",
-    particleColor: "#D4AF37",
-    badge: "bg-white/10 text-white/80",
-    desc: "text-blue-100",
-    glowFrom: "#FFD700",
-    glowVia: "#002878",
-    headingFrom: "#FFD700",
-    headingTo: "#FFFFFF",
-    panel: "bg-black/55 backdrop-blur-md",
-  }
-}
+import { getTimeTheme, TimeTheme } from "@/lib/time-theme"
 
 export function TentangKamiBanner() {
   const [theme, setTheme] = useState<TimeTheme>(getTimeTheme())
@@ -138,7 +42,8 @@ export function TentangKamiBanner() {
   }
 
   return (
-    <section className="relative overflow-hidden py-20">
+    <>
+      <section className="relative overflow-hidden py-20">
       <style>{`
         .shimmer-line {
           background: linear-gradient(90deg, #B8860B 0%, #D4AF37 20%, #FFE9A8 45%, #FFFFFF 50%, #FFE9A8 55%, #D4AF37 80%, #B8860B 100%);
@@ -215,5 +120,7 @@ export function TentangKamiBanner() {
         </div>
       </div>
     </section>
+    <div className="w-full h-0.5 shimmer-line" />
+    </>
   )
 }

@@ -209,7 +209,7 @@ export default async function ArticlePage({ params }: Props) {
         wordCount={article.content.replace(/<[^>]*>/g, "").split(/\s+/).length}
         readTime={readTime}
       />
-      <section className="relative bg-gradient-to-br from-primary to-foreground overflow-hidden">
+      <section className="relative bg-gradient-to-br from-[#000030] to-[#002878] overflow-hidden">
         <div className="absolute top-0 left-1/4 w-64 h-64 bg-accent/5 rounded-full blur-[100px]" />
         <div className="absolute bottom-0 right-1/4 w-48 h-48 bg-primary-light/10 rounded-full blur-[80px]" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -237,11 +237,12 @@ export default async function ArticlePage({ params }: Props) {
             <span className="text-blue-200/40">|</span>
             <span className="text-blue-200/80 text-xs">{readTime} menit baca</span>
           </div>
-          <h1 className="heading-display text-3xl md:text-4xl lg:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-accent-accessible via-accent to-accent-accessible">
+          <h1 className="heading-display text-3xl md:text-4xl lg:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-[#FFE9A8] via-[#FFD700] to-[#FFF3C0]">
             {article.title}
           </h1>
         </div>
       </section>
+      <div className="w-full h-0.5 shimmer-line" />
 
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {article.image && (
@@ -261,8 +262,9 @@ export default async function ArticlePage({ params }: Props) {
           <div className="mb-8 p-5 bg-gray-50 rounded-xl border border-gray-100">
             <h2 className="text-sm font-bold text-primary mb-3 uppercase tracking-wider">Daftar Isi</h2>
             <nav className="space-y-1.5">
-              {headingMatches.map(([_, h2]) => {
-                const id = h2.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")
+              {headingMatches.map(([_, h2], i) => {
+                const baseId = h2.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")
+                const id = baseId + (i > 0 && headingMatches.slice(0, i).some(([__m, prev]) => prev.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "") === baseId) ? `-${i}` : "")
                 return (
                   <a
                     key={id}
@@ -336,7 +338,7 @@ export default async function ArticlePage({ params }: Props) {
         <div className="mt-12 pt-8 border-t border-gray-200">
           <div className="flex flex-wrap items-center gap-2 mb-8">
             <Tag className="w-4 h-4 text-gray-400" />
-            {article.tags.map((tag) => (
+            {Array.from(new Set(article.tags)).map((tag) => (
               <span
                 key={tag}
                 className="px-3 py-1.5 bg-gray-100 text-gray-700 text-sm rounded-full hover:bg-accent/10 hover:text-accent-accessible transition-colors"

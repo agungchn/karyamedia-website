@@ -59,13 +59,18 @@ export default function TestimoniPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewsSchema) }}
       />
 
-      <section className="bg-primary py-20">
+      <section className="bg-gradient-to-br from-[#000030] to-[#002878] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 bg-accent/15 text-accent-accessible px-4 py-1.5 rounded-full text-sm mb-6 border border-accent/20">
-            <MessageCircle className="w-4 h-4" />
-            Testimoni Klien
+          <div className="relative inline-flex overflow-hidden rounded-full p-[1.5px] mb-6 cursor-default hover:scale-105 transition-transform duration-300">
+            <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#D4AF37_0%,#1D4ED8_50%,#D4AF37_100%)]" />
+            <div className="inline-flex items-center gap-2 rounded-full bg-primary text-xs font-medium backdrop-blur-3xl">
+              <span className="inline-flex items-center gap-2 rounded-full text-center bg-gradient-to-tr from-accent/20 via-primary-light/30 to-transparent text-white border-[1px] border-accent/30 py-2.5 px-6 text-sm font-medium">
+                <MessageCircle className="w-4 h-4" />
+                Testimoni Klien
+              </span>
+            </div>
           </div>
-          <h1 className="heading-display text-4xl md:text-5xl text-white mb-4">
+          <h1 className="heading-display text-4xl md:text-5xl text-transparent bg-clip-text mb-4" style={{ backgroundImage: "linear-gradient(to right, #D4AF37, #FFD700)" }}>
             Apa Kata Klien Kami
           </h1>
           <p className="text-blue-200/80 max-w-2xl mx-auto">
@@ -83,6 +88,7 @@ export default function TestimoniPage() {
           </div>
         </div>
       </section>
+      <div className="w-full h-0.5 shimmer-line" />
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

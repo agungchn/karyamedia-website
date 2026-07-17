@@ -37,16 +37,17 @@ export default function BlogPage() {
   return (
     <>
       <BreadcrumbSchema items={breadcrumbItems} />
-      <section className="bg-gradient-to-br from-primary to-foreground py-20">
+      <section className="bg-gradient-to-br from-[#000030] to-[#002878] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="heading-display text-4xl md:text-5xl mb-4 bg-gradient-to-r from-yellow-200 via-yellow-400 to-amber-600 bg-clip-text text-transparent">
             Blog & Artikel
           </h1>
-          <p className="text-blue-200 max-w-2xl mx-auto">
+          <p className="text-white max-w-2xl mx-auto">
             Panduan, tips, dan informasi seputar souvenir custom, plakat, medali, dan perlengkapan wisuda
           </p>
         </div>
       </section>
+      <div className="w-full h-0.5 shimmer-line" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
         <nav className="flex items-center gap-2 text-sm text-gray-500">

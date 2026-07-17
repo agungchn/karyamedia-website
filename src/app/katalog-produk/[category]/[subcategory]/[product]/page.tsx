@@ -101,7 +101,7 @@ export default async function ProductDetailPage({ params }: Props) {
         category={sub?.name || product.categoryId}
         price={product.price}
       />
-      <section className="bg-gradient-to-br from-primary to-foreground py-3">
+      <section className="bg-gradient-to-br from-[#000030] to-[#002878] py-3">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="flex items-center gap-2 text-sm text-blue-200 mb-3 flex-wrap">
             <Link href="/" className="hover:text-white transition-colors">Beranda</Link>
@@ -124,6 +124,7 @@ export default async function ProductDetailPage({ params }: Props) {
           </nav>
         </div>
       </section>
+      <div className="w-full h-0.5 shimmer-line" />
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">

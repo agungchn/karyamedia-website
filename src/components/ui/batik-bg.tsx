@@ -1,11 +1,15 @@
 export function BatikBackground({ noWhite }: { noWhite?: boolean }) {
   return (
     <div className="absolute inset-0 pointer-events-none overflow-hidden">
-      <div className={`absolute inset-0 ${noWhite ? "opacity-[0.18]" : "opacity-[0.3]"}`}
+      <div className={`absolute inset-y-0 ${noWhite ? "opacity-[0.4]" : "opacity-[0.3]"}`}
         style={{
+          top: "-30px",
+          left: "-30px",
+          height: "calc(100% + 30px)",
+          width: "calc(100% + 30px)",
           maskImage: "linear-gradient(to bottom, black 0%, black 25%, rgba(0,0,0,0.6) 50%, transparent 80%)",
           WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 25%, rgba(0,0,0,0.6) 50%, transparent 80%)",
-          transform: noWhite ? "rotate(180deg)" : undefined,
+          transform: undefined,
         }}
       >
         <svg
@@ -17,20 +21,20 @@ export function BatikBackground({ noWhite }: { noWhite?: boolean }) {
         >
           <defs>
             <pattern id="ceplok" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
-              <polygon points="30,2 58,30 30,58 2,30" fill="none" stroke="#D4AF37" strokeWidth="1" />
-              <polygon points="30,10 50,30 30,50 10,30" fill="none" stroke="#D4AF37" strokeWidth="0.7" />
-              <circle cx="30" cy="30" r="2.5" fill="#D4AF37" opacity="0.6" />
-              <circle cx="30" cy="30" r="1" fill="#D4AF37" />
-              <polygon points="0,30 28,2" fill="none" stroke="#D4AF37" strokeWidth="0.3" />
-              <polygon points="30,0 2,28" fill="none" stroke="#D4AF37" strokeWidth="0.3" />
-              <polygon points="60,30 32,2" fill="none" stroke="#D4AF37" strokeWidth="0.3" />
-              <polygon points="30,60 2,32" fill="none" stroke="#D4AF37" strokeWidth="0.3" />
-              <polygon points="30,0 58,28" fill="none" stroke="#D4AF37" strokeWidth="0.3" />
-              <polygon points="60,30 32,58" fill="none" stroke="#D4AF37" strokeWidth="0.3" />
-              <circle cx="2" cy="28" r="1" fill="#D4AF37" opacity="0.4" />
-              <circle cx="28" cy="2" r="1" fill="#D4AF37" opacity="0.4" />
-              <circle cx="58" cy="28" r="1" fill="#D4AF37" opacity="0.4" />
-              <circle cx="28" cy="58" r="1" fill="#D4AF37" opacity="0.4" />
+              <polygon points="30,2 58,30 30,58 2,30" fill="none" stroke="#E8C84B" strokeWidth="1.6" />
+              <polygon points="30,10 50,30 30,50 10,30" fill="none" stroke="#E8C84B" strokeWidth="1.1" />
+              <circle cx="30" cy="30" r="2.5" fill="#E8C84B" opacity="0.85" />
+              <circle cx="30" cy="30" r="1" fill="#E8C84B" />
+              <polygon points="0,30 28,2" fill="none" stroke="#E8C84B" strokeWidth="0.6" />
+              <polygon points="30,0 2,28" fill="none" stroke="#E8C84B" strokeWidth="0.6" />
+              <polygon points="60,30 32,2" fill="none" stroke="#E8C84B" strokeWidth="0.6" />
+              <polygon points="30,60 2,32" fill="none" stroke="#E8C84B" strokeWidth="0.6" />
+              <polygon points="30,0 58,28" fill="none" stroke="#E8C84B" strokeWidth="0.6" />
+              <polygon points="60,30 32,58" fill="none" stroke="#E8C84B" strokeWidth="0.6" />
+              <circle cx="2" cy="28" r="1" fill="#E8C84B" opacity="0.7" />
+              <circle cx="28" cy="2" r="1" fill="#E8C84B" opacity="0.7" />
+              <circle cx="58" cy="28" r="1" fill="#E8C84B" opacity="0.7" />
+              <circle cx="28" cy="58" r="1" fill="#E8C84B" opacity="0.7" />
             </pattern>
           </defs>
 

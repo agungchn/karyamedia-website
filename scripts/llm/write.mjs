@@ -284,7 +284,8 @@ Buat objek JSON dengan field berikut:
   * gunakan nada ahli produsen yang rendah hati & berbukti: sertakan bukti konkret (Karyamedia berdiri sejak 2001, berbasis Yogyakarta, melayani ratusan instansi & event nasional, standar ukiran/produksi presisi) bila relevan; tekankan kualitas, presisi, dan bahwa Karyamedia adalah produsen langsung (pabrik) sehingga harga lebih sehat & transparan; hindari bahasa promosi murahan dan JANGAN menyebut pihak lain (calo/agen) secara negatif
   * WAJIB ada bagian <h2>FAQ</h2> di akhir dengan 3-5 pasang pertanyaan & jawaban, tiap pasang PASTI format <h3>Pertanyaan?</h3><p>Jawaban.</p> (pakai <h3> untuk pertanyaan dan <p> untuk jawaban)
   * bahasa Indonesia natural & mudah dipahami, SEO-friendly, sebutkan "Karyamedia" secara wajar 1-2 kali
-  * JANGAN gunakan markdown; hanya HTML inline (<p>, <h2>, <h3>, <strong>, <ul><li> bila perlu)
+   * JANGAN gunakan markdown; hanya HTML inline (<p>, <h2>, <h3>, <strong>, <ul><li> bila perlu)
+   * JIKA menyisipkan gambar, SETIAP tag <img> WAJIB punya atribut alt yang deskriptif berbahasa Indonesia (contoh: alt="Plakat akrilik custom untuk penghargaan"); JANGAN pernah membuat <img> tanpa alt
    * JANGAN sertakan satupun link/hyperlink (akan ditambahkan otomatis nanti)
    Return HANYA objek JSON, tanpa teks lain.${VARIATION_INSTR}${vBlock}${extra}`
 }
@@ -326,7 +327,8 @@ Buat objek JSON dengan field berikut:
   * ${c ? "Tutupi SEMUA poin pesaing DI ATAS, lalu TAMBAHKAN minimal 3 sudut pandang/section BARU yang TIDAK dibahas pesaing (lebih mendalam, contoh kasus, tips praktis, mitos, checklist, atau data Karyamedia)." : "Buat artikel paling komprehensif & otoritatif di topik ini."}
   * WAJIB <h2>FAQ</h2> di akhir dengan 5-7 pasang <h3>Pertanyaan?</h3><p>Jawaban.</p>
   * Bahasa natural, SEO-friendly, sebut "Karyamedia" wajar 1-2x.
-  * JANGAN markdown; hanya HTML inline (<p>, <h2>, <h3>, <table>, <ul><li>, <strong>).
+   * JANGAN markdown; hanya HTML inline (<p>, <h2>, <h3>, <table>, <ul><li>, <strong>).
+   * JIKA menyisipkan gambar, SETIAP tag <img> WAJIB punya atribut alt yang deskriptif berbahasa Indonesia (contoh: alt="Medali custom untuk lomba dan turnamen"); JANGAN pernah membuat <img> tanpa alt.
    * JANGAN satupun hyperlink (link disuntik otomatis nanti).
    Return HANYA objek JSON, tanpa teks lain.${VARIATION_INSTR}${vBlock}${extra}`
 }

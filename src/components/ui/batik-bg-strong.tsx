@@ -1,0 +1,46 @@
+export function BatikBackgroundStrong() {
+  return (
+    <div className="absolute inset-0 pointer-events-none overflow-hidden">
+      <div className="absolute inset-y-0 opacity-[0.4]"
+        style={{
+          top: "-30px",
+          left: "-30px",
+          height: "calc(100% + 30px)",
+          width: "calc(100% + 30px)",
+          maskImage: "linear-gradient(to bottom, black 0%, black 25%, rgba(0,0,0,0.6) 50%, transparent 80%)",
+          WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 25%, rgba(0,0,0,0.6) 50%, transparent 80%)",
+          transform: undefined,
+        }}
+      >
+        <svg
+          className="w-full h-full"
+          xmlns="http://www.w3.org/2000/svg"
+          width="100%"
+          height="100%"
+          preserveAspectRatio="none"
+        >
+          <defs>
+            <pattern id="ceplok-strong" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+              <polygon points="30,2 58,30 30,58 2,30" fill="none" stroke="#E8C84B" strokeWidth="1.6" />
+              <polygon points="30,10 50,30 30,50 10,30" fill="none" stroke="#E8C84B" strokeWidth="1.1" />
+              <circle cx="30" cy="30" r="2.5" fill="#E8C84B" opacity="0.85" />
+              <circle cx="30" cy="30" r="1" fill="#E8C84B" />
+              <polygon points="0,30 28,2" fill="none" stroke="#E8C84B" strokeWidth="0.6" />
+              <polygon points="30,0 2,28" fill="none" stroke="#E8C84B" strokeWidth="0.6" />
+              <polygon points="60,30 32,2" fill="none" stroke="#E8C84B" strokeWidth="0.6" />
+              <polygon points="30,60 2,32" fill="none" stroke="#E8C84B" strokeWidth="0.6" />
+              <polygon points="30,0 58,28" fill="none" stroke="#E8C84B" strokeWidth="0.6" />
+              <polygon points="60,30 32,58" fill="none" stroke="#E8C84B" strokeWidth="0.6" />
+              <circle cx="2" cy="28" r="1" fill="#E8C84B" opacity="0.7" />
+              <circle cx="28" cy="2" r="1" fill="#E8C84B" opacity="0.7" />
+              <circle cx="58" cy="28" r="1" fill="#E8C84B" opacity="0.7" />
+              <circle cx="28" cy="58" r="1" fill="#E8C84B" opacity="0.7" />
+            </pattern>
+          </defs>
+
+          <rect x="0" y="0" width="100%" height="100%" fill="url(#ceplok-strong)" />
+        </svg>
+      </div>
+    </div>
+  )
+}

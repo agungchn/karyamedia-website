@@ -19,7 +19,7 @@ import { TimeHeroBg } from "@/components/ui/time-hero-bg"
 import { TimeHeading } from "@/components/ui/time-heading"
 import { TimeText } from "@/components/ui/time-text"
 import { GbpReviewCta } from "@/components/gbp-review-cta"
-import { BatikBackground } from "@/components/ui/batik-bg"
+import { BatikBackgroundStrong } from "@/components/ui/batik-bg-strong"
 
 export const metadata: Metadata = {
   title: "Kontak Kami",
@@ -150,7 +150,7 @@ export default function KontakPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="relative overflow-hidden rounded-2xl">
-            <BatikBackground noWhite />
+            <BatikBackgroundStrong />
             <div className="relative z-10 p-6 md:p-8">
             <h2 className="heading-display text-2xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-accessible mb-6">Form Konsultasi</h2>
             <p className="text-gray-600 text-sm mb-6">

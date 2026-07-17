@@ -280,7 +280,7 @@ export default function ProfilPage() {
               const Icon = IconMap[adv.icon] || CheckCircle
               const glowColors = ['red', 'orange', 'red', 'orange', 'red', 'orange'] as const
               return (
-                <GlowCard key={i} glowColor={glowColors[i % glowColors.length]} customSize className="!p-6">
+                <GlowCard key={i} glowColor={glowColors[i % glowColors.length]} customSize className="!p-6 border border-[#D4AF37]/60 rounded-2xl">
                   <Icon className="w-8 h-8 text-accent-accessible mb-4" />
                   <h3 className="font-semibold text-white mb-1">{adv.title}</h3>
                   <p className="text-sm text-white/70">{adv.description}</p>

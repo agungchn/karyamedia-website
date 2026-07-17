@@ -32,8 +32,8 @@ function getTimeTheme(): TimeTheme {
       overlay: "from-transparent",
     }
   }
-  // Siang: 11:00 - 14:59
-  if (h >= 11 && h < 15) {
+  // Siang: 11:00 - 16:59
+  if (h >= 11 && h < 17) {
     return {
       bgTop: "#028FEF",
       bgMid: "#CFECFF",
@@ -49,19 +49,19 @@ function getTimeTheme(): TimeTheme {
       overlay: "from-transparent",
     }
   }
-  // Sore: 15:00 - 17:59
-  if (h >= 15 && h < 18) {
+  // Sore: 17:00 - 17:59
+  if (h >= 17 && h < 18) {
     return {
-      bgTop: "#F42507",
-      bgMid: "#F42507",
-      bgBottom: "#F9DB09",
+      bgTop: "#E8A0B0",
+      bgMid: "#B59DC4",
+      bgBottom: "#6A7BA8",
       particleColor: "#FFF1CF",
-      badge: "bg-black/10 text-red-950",
-      desc: "text-red-950",
-      glowFrom: "#F42507",
-      glowVia: "#F9DB09",
-      headingFrom: "#7C2D12",
-      headingTo: "#9A3412",
+      badge: "bg-black/10 text-purple-950",
+      desc: "text-purple-950",
+      glowFrom: "#E8A0B0",
+      glowVia: "#B59DC4",
+      headingFrom: "#4A3A6B",
+      headingTo: "#2E3A5C",
       panel: "bg-white/50 backdrop-blur-md",
       overlay: "from-transparent",
     }

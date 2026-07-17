@@ -30,6 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${sub.name} ${cat.name} Custom`,
     description: `Produksi ${sub.name} ${cat.name} custom harga murah di Jogja. Cocok untuk penghargaan, event, dan souvenir instansi.`,
+    robots: { index: true, follow: true },
     alternates: {
       canonical,
     },

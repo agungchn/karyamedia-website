@@ -1,21 +1,11 @@
 import { companyInfo } from "@/data/company"
 import { categories } from "@/data/categories"
-import products from "@/data/products.json"
-
-type Product = {
-  categoryId?: string
-  name?: string
-}
+import catalogSummary from "@/data/catalog-summary.json"
 
 function buildCatalogSummary() {
-  const byCat = new Map<string, string[]>()
-  for (const p of products as Product[]) {
-    const id = p.categoryId
-    if (!id) continue
-    if (!byCat.has(id)) byCat.set(id, [])
-    const arr = byCat.get(id)!
-    if (arr.length < 4 && p.name) arr.push(p.name)
-  }
+  const byCat = new Map<string, string[]>(
+    (catalogSummary as { categoryId: string; samples: string[] }[]).map((c) => [c.categoryId, c.samples])
+  )
   const lines: string[] = []
   for (const c of categories) {
     const subs = c.subcategories.map((s) => s.name).join(", ")
@@ -40,7 +30,7 @@ IDENTITAS & LAYANAN:
 - Keunggulan: ${companyInfo.advantages.map((a) => a.title).join(", ")}
 - Alur pemesanan: ${companyInfo.orderSteps.map((o) => o.title).join(" -> ")}
 
-KATALOG PRODUK (${products.length} produk, contoh per kategori):
+KATALOG PRODUK (contoh per kategori):
 ${catalog}
 
 GAYA & ATURAN JAWABAN:

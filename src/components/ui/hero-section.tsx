@@ -132,7 +132,7 @@ export function HeroSection() {
   const [searchOpen, setSearchOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState("")
   const [theme, setTheme] = useState<TimeTheme>(() => getTimeTheme())
-  const isNight = theme.bgTop === "#000030"
+  const isNight = theme.bgTop === "#020617"
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -152,10 +152,10 @@ export function HeroSection() {
         <div className="absolute bottom-0 left-0 right-0 h-[70%] overflow-hidden">
           <RetroGrid
             angle={65}
-            opacity={0.3}
-            cellSize={50}
-            lightLineColor="rgba(255,255,255,0.5)"
-            darkLineColor="rgba(255,255,255,0.5)"
+            opacity={0.025}
+            cellSize={60}
+            lightLineColor="rgba(255,255,255,0.35)"
+            darkLineColor="rgba(255,255,255,0.35)"
             overlayColor="from-transparent"
           />
         </div>
@@ -179,18 +179,19 @@ export function HeroSection() {
       {/* Animated light rays + glow orbs (night only) */}
       {isNight && (
         <>
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-light/10 rounded-full blur-[100px]" />
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-[100px]" style={{ animationDelay: "1s" }} />
-          
+          <div className="absolute top-0 left-1/4 w-[28rem] h-[28rem] bg-blue-500/30 rounded-full blur-[120px]" />
+          <div className="absolute bottom-0 right-1/4 w-[28rem] h-[28rem] bg-amber-400/25 rounded-full blur-[120px]" style={{ animationDelay: "1s" }} />
+          <div className="absolute top-1/3 right-1/3 w-72 h-72 bg-cyan-400/20 rounded-full blur-[100px]" />
+
           {/* Particle effects */}
           <div className="absolute top-20 left-56">
-            <div className="w-10 h-10 bg-accent/20 rounded-full blur-xl absolute -top-3 -left-3 animate-pulse" />
-            <div className="w-8 h-8 bg-white/10 rounded-full blur-md absolute -top-1.5 -left-1.5" />
-            <div className="w-5 h-5 bg-accent rounded-full opacity-90 shadow-[0_0_10px_white,0_0_20px_#D4AF37/50] animate-float" />
+            <div className="w-10 h-10 bg-amber-400/40 rounded-full blur-xl absolute -top-3 -left-3 animate-pulse" />
+            <div className="w-8 h-8 bg-blue-400/30 rounded-full blur-md absolute -top-1.5 -left-1.5" />
+            <div className="w-5 h-5 bg-amber-300 rounded-full opacity-95 shadow-[0_0_12px_white,0_0_24px_#D4AF37] animate-float" />
           </div>
-          <div className="absolute top-16 right-48 w-3 h-3 bg-white rounded-full opacity-80 shadow-[0_0_6px_white] animate-float" style={{ animationDelay: "0.5s" }} />
-          <div className="absolute top-12 left-[30%] w-3 h-3 bg-accent rounded-full opacity-80 shadow-[0_0_6px_#D4AF37] animate-float" style={{ animationDelay: "1.5s" }} />
-          <div className="absolute top-24 right-32 w-3 h-3 bg-accent rounded-full opacity-90 shadow-[0_0_6px_#D4AF37] animate-float" style={{ animationDelay: "2s" }} />
+          <div className="absolute top-16 right-48 w-3 h-3 bg-white rounded-full opacity-90 shadow-[0_0_8px_white] animate-float" style={{ animationDelay: "0.5s" }} />
+          <div className="absolute top-12 left-[30%] w-3 h-3 bg-amber-300 rounded-full opacity-90 shadow-[0_0_8px_#D4AF37] animate-float" style={{ animationDelay: "1.5s" }} />
+          <div className="absolute top-24 right-32 w-3 h-3 bg-blue-300 rounded-full opacity-95 shadow-[0_0_8px_#3B82F6] animate-float" style={{ animationDelay: "2s" }} />
         </>
       )}
 

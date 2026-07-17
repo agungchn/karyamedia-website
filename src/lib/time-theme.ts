@@ -68,16 +68,16 @@ function getTimeTheme(): TimeTheme {
   }
   // Malam: 18:00 - 04:59
   return {
-    bgTop: "#000030",
-    bgMid: "#000030",
-    bgBottom: "#002878",
-    particleColor: "#D4AF37",
+    bgTop: "#020617",
+    bgMid: "#0F172A",
+    bgBottom: "#1E3A5F",
+    particleColor: "#7DD3FC",
     badge: "bg-white/10 text-white/80",
     desc: "text-blue-100",
-    glowFrom: "#FFD700",
-    glowVia: "#002878",
-    headingFrom: "#FFD700",
-    headingTo: "#FFFFFF",
+    glowFrom: "#3B82F6",
+    glowVia: "#0F172A",
+    headingFrom: "#E8C84B",
+    headingTo: "#FEF9C3",
     panel: "bg-black/55 backdrop-blur-md",
     overlay: "from-transparent",
   }

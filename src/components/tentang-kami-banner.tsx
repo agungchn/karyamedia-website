@@ -57,7 +57,7 @@ function getTimeTheme(): TimeTheme {
   if (h >= 11 && h < 15) {
     return {
       bgTop: "#028FEF",
-      bgMid: "#028FEF",
+      bgMid: "#CFECFF",
       bgBottom: "#ADDAFD",
       particleColor: "#FFFFFF",
       badge: "bg-black/10 text-gray-800",

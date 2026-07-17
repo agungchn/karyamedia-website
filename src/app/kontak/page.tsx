@@ -72,9 +72,14 @@ export default function KontakPage() {
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-light/15 rounded-full blur-[110px]" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/15 rounded-full blur-[110px]" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white/80 hover:text-white px-4 py-1.5 rounded-full text-sm mb-6 transition-all duration-300 cursor-default">
-            <MessageCircle className="w-4 h-4" />
-            Hubungi Kami
+          <div className="relative inline-flex overflow-hidden rounded-full p-[1.5px] mb-6 cursor-default hover:scale-105 transition-transform duration-300">
+            <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#D4AF37_0%,#1D4ED8_50%,#D4AF37_100%)]" />
+            <div className="inline-flex items-center gap-2 rounded-full bg-primary text-xs font-medium backdrop-blur-3xl">
+              <span className="inline-flex items-center gap-2 rounded-full text-center bg-gradient-to-tr from-accent/20 via-primary-light/30 to-transparent text-white border-[1px] border-accent/30 py-2.5 px-6 text-sm font-medium">
+                <MessageCircle className="w-4 h-4" />
+                Hubungi Kami
+              </span>
+            </div>
           </div>
           <h1 className="heading-display text-4xl md:text-5xl text-transparent bg-clip-text mb-4" style={{ backgroundImage: "linear-gradient(to right, #D4AF37, #FFD700)", letterSpacing: "0.02em", wordSpacing: "0.1em" }}>
             Hubungi Karyamedia Souvenir

@@ -133,9 +133,14 @@ export default function GalleryPage() {
           </nav>
           
           <div className="text-center">
-            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm mb-6">
-              <Camera className="w-4 h-4" />
-              <span className="font-medium">Galeri Produksi</span>
+            <div className="relative inline-flex overflow-hidden rounded-full p-[1.5px] mb-6 cursor-default hover:scale-105 transition-transform duration-300">
+              <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#D4AF37_0%,#1D4ED8_50%,#D4AF37_100%)]" />
+              <div className="inline-flex items-center gap-2 rounded-full bg-primary text-xs font-medium backdrop-blur-3xl">
+                <span className="inline-flex items-center gap-2 rounded-full text-center bg-gradient-to-tr from-accent/20 via-primary-light/30 to-transparent text-white border-[1px] border-accent/30 py-2.5 px-6 text-sm font-medium">
+                  <Camera className="w-4 h-4" />
+                  <span className="font-medium">Galeri Produksi</span>
+                </span>
+              </div>
             </div>
             
             <h1 className="heading-display text-5xl md:text-7xl mb-4 tracking-[0.2em]">

@@ -4,6 +4,7 @@ interface RetroGridProps {
   opacity?: number
   lightLineColor?: string
   darkLineColor?: string
+  overlayColor?: string
   className?: string
 }
 
@@ -13,6 +14,7 @@ export function RetroGrid({
   opacity = 0.5,
   lightLineColor = "gray",
   darkLineColor = "gray",
+  overlayColor = "from-primary",
   className = "",
 }: RetroGridProps) {
   const gridStyles = {
@@ -31,7 +33,7 @@ export function RetroGrid({
       <div className="absolute inset-0 [transform:rotateX(var(--grid-angle))]">
         <div className="animate-grid [background-image:linear-gradient(to_right,var(--light-line)_1px,transparent_0),linear-gradient(to_bottom,var(--light-line)_1px,transparent_0)] [background-repeat:repeat] [background-size:var(--cell-size)_var(--cell-size)] [height:130vh] [inset:0%_0px] [margin-left:-50%] [transform-origin:100%_0_0] [width:200vw] dark:[background-image:linear-gradient(to_right,var(--dark-line)_1px,transparent_0),linear-gradient(to_bottom,var(--dark-line)_1px,transparent_0)]" />
       </div>
-      <div className="absolute inset-0 bg-gradient-to-t from-primary to-transparent to-90%" />
+      <div className={`absolute inset-0 bg-gradient-to-t ${overlayColor} to-transparent to-90%`} />
     </div>
   )
 }

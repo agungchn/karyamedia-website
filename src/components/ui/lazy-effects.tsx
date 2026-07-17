@@ -55,6 +55,7 @@ export function LazyRetroGrid(props: {
   opacity?: number
   lightLineColor?: string
   darkLineColor?: string
+  overlayColor?: string
   className?: string
 }) {
   return <RetroGridImpl {...props} />

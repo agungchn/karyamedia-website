@@ -5,7 +5,9 @@ import { Building } from "lucide-react"
 import { LazySparklesCore, LazyRetroGrid } from "@/components/ui/lazy-effects"
 
 type TimeTheme = {
-  bg: string
+  bgTop: string
+  bgMid: string
+  bgBottom: string
   particleColor: string
   badge: string
   desc: string
@@ -35,65 +37,64 @@ function lighten(hex: string, amount = 0.25): string {
 
 function getTimeTheme(): TimeTheme {
   const h = new Date().getHours()
-  if (h >= 6 && h < 10) {
+  // Pagi: 05:00 - 10:59
+  if (h >= 5 && h < 11) {
     return {
-      bg: "#C2DAEE",
+      bgTop: "#7EDAFF",
+      bgMid: "#FFF6F2",
+      bgBottom: "#FDC64A",
       particleColor: "#FFFFFF",
       badge: "bg-black/10 text-gray-800",
       desc: "text-gray-800",
       glowFrom: "#FFFFFF",
-      glowVia: "#C2DAEE",
+      glowVia: "#FDC64A",
       headingFrom: "#0B1F3A",
-      headingTo: "#2563EB",
+      headingTo: "#028FEF",
       panel: "bg-white/55 backdrop-blur-md",
     }
   }
-  if (h >= 10 && h < 14) {
+  // Siang: 11:00 - 14:59
+  if (h >= 11 && h < 15) {
     return {
-      bg: "#A9CDE8",
+      bgTop: "#028FEF",
+      bgMid: "#028FEF",
+      bgBottom: "#ADDAFD",
       particleColor: "#FFFFFF",
       badge: "bg-black/10 text-gray-800",
-      desc: "text-gray-700",
+      desc: "text-gray-800",
       glowFrom: "#FFFFFF",
-      glowVia: "#A9CDE8",
+      glowVia: "#ADDAFD",
       headingFrom: "#0B1F3A",
       headingTo: "#1D4ED8",
       panel: "bg-white/50 backdrop-blur-md",
     }
   }
-  if (h >= 14 && h < 18) {
+  // Sore: 15:00 - 17:59
+  if (h >= 15 && h < 18) {
     return {
-      bg: "#EFA368",
+      bgTop: "#F42507",
+      bgMid: "#F42507",
+      bgBottom: "#F9DB09",
       particleColor: "#FFF1CF",
       badge: "bg-black/10 text-red-950",
       desc: "text-red-950",
-      glowFrom: "#7C2D12",
-      glowVia: "#EFA368",
+      glowFrom: "#F42507",
+      glowVia: "#F9DB09",
       headingFrom: "#7C2D12",
       headingTo: "#9A3412",
       panel: "bg-white/50 backdrop-blur-md",
     }
   }
-  if (h >= 18 && h < 19) {
-    return {
-      bg: "#6B6BA0",
-      particleColor: "#FFE6A8",
-      badge: "bg-white/20 text-white",
-      desc: "text-purple-50",
-      glowFrom: "#FFE6A8",
-      glowVia: "#6B6BA0",
-      headingFrom: "#FFD700",
-      headingTo: "#FFFFFF",
-      panel: "bg-[#1E1B4B]/45 backdrop-blur-md",
-    }
-  }
+  // Malam: 18:00 - 04:59
   return {
-    bg: "#0B1B3A",
+    bgTop: "#000030",
+    bgMid: "#000030",
+    bgBottom: "#002878",
     particleColor: "#D4AF37",
     badge: "bg-white/10 text-white/80",
     desc: "text-blue-100",
     glowFrom: "#FFD700",
-    glowVia: "#C9D6FF",
+    glowVia: "#002878",
     headingFrom: "#FFD700",
     headingTo: "#FFFFFF",
     panel: "bg-black/55 backdrop-blur-md",
@@ -151,7 +152,7 @@ export function TentangKamiBanner() {
       `}</style>
       <div
         className="absolute inset-0"
-        style={{ backgroundImage: `linear-gradient(to bottom, ${theme.bg} 0%, ${lighten(theme.bg)} 100%)` }}
+        style={{ backgroundImage: `linear-gradient(to bottom, ${theme.bgTop} 0%, ${theme.bgMid} 50%, ${theme.bgBottom} 100%)` }}
       >
         <div className="absolute bottom-0 left-0 right-0 h-[70%] overflow-hidden">
           <LazyRetroGrid
@@ -160,6 +161,7 @@ export function TentangKamiBanner() {
             opacity={0.18}
             lightLineColor="rgba(255,255,255,0.5)"
             darkLineColor="rgba(255,255,255,0.5)"
+            overlayColor="from-transparent"
           />
         </div>
         <div className="absolute top-0 left-0 right-0 h-[40%] overflow-hidden">

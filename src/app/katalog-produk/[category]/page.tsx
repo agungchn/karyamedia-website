@@ -3,7 +3,6 @@ import Link from "next/link"
 import Image from "next/image"
 import { ChevronRight, Award, Sparkles } from "lucide-react"
 import { categoryIconMap } from "@/components/icons/product-icons"
-import { SparklesCore } from "@/components/ui/sparkles-core"
 import { Metadata } from "next"
 import { categories } from "@/data/categories"
 import { products } from "@/data/products"
@@ -67,20 +66,8 @@ export default async function CategoryPage({ params }: Props) {
           { name: cat.name, url: `/katalog-produk/${category}` },
         ]}
       />
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#C2DAEE] via-[#A9CDE8] to-[#8BB8D6] py-8">
-        <div className="absolute inset-0 opacity-30">
-          <SparklesCore
-            id={`category-sparkles-${cat.slug}`}
-            background="transparent"
-            minSize={0.4}
-            maxSize={1.2}
-            particleColor="#FFFFFF"
-            particleDensity={300}
-            speed={1}
-            className="w-full h-full"
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#C2DAEE]/60" />
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#028FEF] via-[#EBF7FF] to-[#ADDAFD] py-8">
+        <div className="absolute inset-x-0 bottom-0 h-0.5 shimmer-line rounded-full" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="flex items-center gap-2 text-sm text-gray-600/80 mb-4">
             <Link href="/" className="hover:text-gray-900 transition-colors">Beranda</Link>

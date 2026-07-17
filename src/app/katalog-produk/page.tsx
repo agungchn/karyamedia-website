@@ -7,6 +7,8 @@ import { products } from "@/data/products"
 import { getWhatsAppLink, generateWhatsAppMessage } from "@/lib/utils"
 import { categoryIconMap } from "@/components/icons/product-icons"
 import { KategoriCards } from "@/components/kategori-cards"
+import { LazySparklesCore, LazyRetroGrid } from "@/components/ui/lazy-effects"
+import { SearchGlow } from "@/components/search-glow"
 
 // Selalu render dari data terkini (produk sering ditambah via script).
 export const dynamic = "force-dynamic"
@@ -41,11 +43,37 @@ export default function KatalogPage() {
 
   return (
     <>
-      <section className="bg-gradient-to-br from-primary to-foreground py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 bg-white/10 text-white/80 px-4 py-1.5 rounded-full text-sm mb-6">
-            <Award className="w-4 h-4" />
-            Katalog Produk
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#06122A] to-[#0B1F3A] py-20">
+        <div className="absolute top-0 left-0 right-0 h-[55%] overflow-hidden">
+          <LazySparklesCore
+            id="katalog-sparkles"
+            background="transparent"
+            minSize={0.5}
+            maxSize={1.3}
+            particleColor="#FFD700"
+            particleDensity={70}
+            speed={1}
+            className="w-full h-full"
+          />
+        </div>
+        <LazyRetroGrid
+          angle={65}
+          cellSize={54}
+          opacity={0.25}
+          lightLineColor="#D4AF37"
+          darkLineColor="#1D4ED8"
+        />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-light/15 rounded-full blur-[110px]" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/15 rounded-full blur-[110px]" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="relative inline-flex overflow-hidden rounded-full p-[1.5px] mb-6 cursor-default hover:scale-105 transition-transform duration-300">
+            <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#D4AF37_0%,#1D4ED8_50%,#D4AF37_100%)]" />
+            <div className="inline-flex items-center gap-2 rounded-full bg-primary text-xs font-medium backdrop-blur-3xl">
+              <span className="inline-flex items-center gap-2 rounded-full text-center bg-gradient-to-tr from-accent/20 via-primary-light/30 to-transparent text-white border-[1px] border-accent/30 py-2.5 px-6 text-sm font-medium">
+                <Award className="w-4 h-4" />
+                Katalog Produk
+              </span>
+            </div>
           </div>
           <h1 className="heading-display text-4xl md:text-5xl text-transparent bg-clip-text mb-4" style={{ backgroundImage: "linear-gradient(to right, #D4AF37, #FFD700)", letterSpacing: "0.02em", wordSpacing: "0.1em" }}>
             Temukan Souvenir Custom<br />Sesuai Kebutuhan Anda
@@ -54,12 +82,16 @@ export default function KatalogPage() {
             Jelajahi berbagai kategori produk souvenir custom berkualitas tinggi yang kami produksi sejak 2001
           </p>
           <div className="max-w-xl mx-auto relative">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-            <input
-              type="text"
-              placeholder="Cari produk, kategori, atau kode produk..."
-              className="w-full pl-12 pr-4 py-3.5 rounded-xl bg-white text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1D4ED8]/50 shadow-xl"
-            />
+            <SearchGlow>
+              <div className="relative z-10">
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 z-20" />
+                <input
+                  type="text"
+                  placeholder="Cari produk, kategori, atau kode produk..."
+                  className="w-full pl-12 pr-4 py-3.5 rounded-xl bg-white text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1D4ED8]/50 shadow-xl relative z-10"
+                />
+              </div>
+            </SearchGlow>
           </div>
         </div>
       </section>

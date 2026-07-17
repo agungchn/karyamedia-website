@@ -1,4 +1,5 @@
 {
-  "buildCommand": "npm run build",
-  "$schema": "https://openapi.vercel.sh/vercel.json"
+    "buildCommand": "npm run build",
+    "installCommand": "npm install --prefer-offline",
+    "$schema": "https://openapi.vercel.sh/vercel.json"
 }

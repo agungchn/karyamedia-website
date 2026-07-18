@@ -17713,7 +17713,7 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
 <p>Sangat cocok. Soft enamel berwarna cerah dengan desain playful dapat dibuat untuk lomba sekolah dan kegiatan anak.</p>
 
 <h2>FAQ</h2><h3>Apakah Karyamedia melayani pembuatan custom?</h3><p>Ya, Karyamedia melayani pembuatan custom yang disesuaikan dengan kebutuhan dan tema acara Anda.</p><h3>Bagaimana cara pemesanan?</h3><p>Silakan pelajari melalui halaman <a href="/cara-pesan">cara pesan</a> atau hubungi kami di <a href="/profil">profil Karyamedia</a>.</p>
-`,
+<p>Artikel terkait: <a href="/blog/medali-custom-lombok">medali - Draft Mock Plakat Akrilik Custom</a></p>`,
   },
   {
     slug: "plakat-akrilik-untuk-pemerintahan-sulawesi-utara-custom",

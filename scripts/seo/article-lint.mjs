@@ -87,7 +87,8 @@ export function lintText(text, { onlySlugs = null } = {}) {
       errors.push(`${at}: category "${category}" tidak dikenali (harus salah satu: ${[...allowedCategories].join(", ")})`)
 
     const canonical = field(block, "canonical")
-    if (canonical && !allSlugsSet.has(canonical))
+    const canonicalSlug = canonical ? canonical.replace(/^\/blog\//, "") : null
+    if (canonicalSlug && !allSlugsSet.has(canonicalSlug))
       errors.push(`${at}: canonical "${canonical}" harus merujuk ke slug artikel yang ada`)
 
     if (date && !/^\d{4}-\d{2}-\d{2}$/.test(date))

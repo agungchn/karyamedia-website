@@ -30,6 +30,30 @@ function getZenKey() {
   }
 }
 
+function getAlibabaKey() {
+  if (process.env.ALIBABA_API_KEY) return process.env.ALIBABA_API_KEY
+  try {
+    const txt = readFileSync(join(here, "alibaba cloude.txt"), "utf8")
+    const m = txt.match(/api key\s+(\S+)/i)
+    return m ? m[1] : ""
+  } catch {
+    return ""
+  }
+}
+function getAlibabaUrl() {
+  if (process.env.ALIBABA_URL) return process.env.ALIBABA_URL
+  try {
+    const txt = readFileSync(join(here, "alibaba cloude.txt"), "utf8")
+    const m = txt.match(/OpenAI Compatible Endpoint\s+(\S+)/)
+    return m ? m[1] : "https://ws-tcg785c7rcx4lc75.eu-central-1.maas.aliyuncs.com/compatible-mode/v1"
+  } catch {
+    return ""
+  }
+}
+function getAlibabaModel() {
+  return process.env.ALIBABA_MODEL || "qwen-plus"
+}
+
 const GEMINI_MODEL = process.env.GEMINI_MODELS || process.env.GEMINI_MODEL || "gemini-3.5-flash,gemini-flash-latest"
 const ZEN_MODEL = process.env.ZEN_MODEL || "mimo-v2.5-free,deepseek-v4-flash-free"
 const ZEN_URL = process.env.ZEN_URL || "https://opencode.ai/zen/v1/chat/completions"
@@ -339,16 +363,30 @@ export async function generateArticle(input) {
   const prompt = input.prompt || buildPrompt(input)
   const zenKey = getZenKey()
   const geminiKey = getGeminiKey()
+  const alibabaKey = getAlibabaKey()
+  const alibabaUrl = getAlibabaUrl()
+  const alibabaModel = getAlibabaModel()
 
   if (zenKey && zenKey !== "PASTE_ZEN_API_KEY_HERE") {
     try {
       console.error(`Menggunakan OpenCode Zen (${ZEN_MODEL})...`)
       return await callZen(prompt, zenKey)
     } catch (e) {
-      console.error(`Zen gagal: ${e.message}. Fallback ke Gemini...`)
+      console.error(`Zen gagal: ${e.message}. Fallback ke Alibaba Qwen...`)
     }
   } else {
-    console.error("API key Zen belum diisi, fallback ke Gemini.")
+    console.error("API key Zen belum diisi, fallback ke Alibaba Qwen.")
+  }
+
+  if (alibabaKey && alibabaUrl) {
+    try {
+      console.error(`Menggunakan Alibaba Qwen (${alibabaModel})...`)
+      return await callAlibaba(prompt, alibabaKey, alibabaUrl, alibabaModel)
+    } catch (e) {
+      console.error(`Alibaba Qwen gagal: ${e.message}. Fallback ke Gemini...`)
+    }
+  } else {
+    console.error("API key/URL Alibaba belum diisi, fallback ke Gemini.")
   }
 
   if (geminiKey && geminiKey !== "PASTE_GEMINI_API_KEY_HERE") {
@@ -358,7 +396,7 @@ export async function generateArticle(input) {
     return await callGemini(prompt, geminiKey, models)
   }
 
-  throw new Error("Tidak ada API key LLM valid. Taruh di scripts/llm/zen-key.txt atau scripts/llm/apikey.txt.")
+  throw new Error("Tidak ada API key LLM valid. Taruh di scripts/llm/zen-key.txt atau scripts/llm/alibaba cloude.txt atau scripts/llm/apikey.txt.")
 }
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
@@ -442,7 +480,75 @@ async function callZen(prompt, key) {
       clearTimeout(timer)
     }
   }
-  throw new Error("Semua model Zen gagal. Fallback ke Gemini.")
+  throw new Error("Semua model Zen gagal.")
+}
+
+// ---- Alibaba Cloud (OpenAI-compatible) ----
+async function callAlibaba(prompt, key, url, model) {
+  const ctrl = new AbortController()
+  const timer = setTimeout(() => ctrl.abort(), 90000)
+  try {
+    for (let attempt = 0; attempt < 3; attempt++) {
+      try {
+        const res = await fetch(url + "/chat/completions", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${key}`,
+          },
+          body: JSON.stringify({
+            model,
+            messages: [
+              {
+                role: "system",
+                content:
+                  "Anda adalah penulis konten SEO ahli yang SELALU mengembalikan HANYA objek JSON valid, tanpa teks atau markdown lain di luar JSON.",
+              },
+              { role: "user", content: prompt },
+            ],
+            temperature: 0.7,
+            response_format: { type: "json_object" },
+          }),
+          signal: ctrl.signal,
+        })
+        if (!res.ok) {
+          const text = await res.text()
+          if (res.status === 429 || res.status >= 500) {
+            const wait = 2000 * (attempt + 1)
+            console.error(`Alibaba ${model} ${res.status}, retry ${attempt + 1}/3 dalam ${wait}ms...`)
+            await sleep(wait)
+            continue
+          }
+          throw new Error(`Alibaba ${model} error ${res.status}: ${text}`)
+        }
+        const j = await res.json()
+        const text = j.choices?.[0]?.message?.content
+        if (!text) {
+          console.error(`Alibaba ${model} teks kosong, retry ${attempt + 1}/3...`)
+          await sleep(2000 * (attempt + 1))
+          continue
+        }
+        try {
+          const parsed = JSON.parse(text)
+          if (!parsed.title || !parsed.description || !parsed.content || !Array.isArray(parsed.tags))
+            throw new Error("JSON tidak lengkap")
+          return parsed
+        } catch {
+          throw new Error("Alibaba tidak mengembalikan JSON valid")
+        }
+      } catch (e) {
+        if (/aborted|abort|timeout/i.test(e.message)) throw new Error("Alibaba timeout")
+        if (attempt < 2) {
+          const wait = 2000 * (attempt + 1)
+          console.error(`Alibaba ${model} error (${e.message}), retry ${attempt + 1}/3 dalam ${wait}ms...`)
+          await sleep(wait)
+        } else throw e
+      }
+    }
+  } finally {
+    clearTimeout(timer)
+  }
+  throw new Error("Alibaba gagal setelah 3 percobaan")
 }
 
 async function callGemini(prompt, key, models = [GEMINI_MODEL]) {

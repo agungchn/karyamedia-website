@@ -367,26 +367,26 @@ export async function generateArticle(input) {
   const alibabaUrl = getAlibabaUrl()
   const alibabaModel = getAlibabaModel()
 
-  if (zenKey && zenKey !== "PASTE_ZEN_API_KEY_HERE") {
-    try {
-      console.error(`Menggunakan OpenCode Zen (${ZEN_MODEL})...`)
-      return await callZen(prompt, zenKey)
-    } catch (e) {
-      console.error(`Zen gagal: ${e.message}. Fallback ke Alibaba Qwen...`)
-    }
-  } else {
-    console.error("API key Zen belum diisi, fallback ke Alibaba Qwen.")
-  }
-
   if (alibabaKey && alibabaUrl) {
     try {
       console.error(`Menggunakan Alibaba Qwen (${alibabaModel})...`)
       return await callAlibaba(prompt, alibabaKey, alibabaUrl, alibabaModel)
     } catch (e) {
-      console.error(`Alibaba Qwen gagal: ${e.message}. Fallback ke Gemini...`)
+      console.error(`Alibaba Qwen gagal: ${e.message}. Fallback ke Zen...`)
     }
   } else {
-    console.error("API key/URL Alibaba belum diisi, fallback ke Gemini.")
+    console.error("API key/URL Alibaba belum diisi, fallback ke Zen.")
+  }
+
+  if (zenKey && zenKey !== "PASTE_ZEN_API_KEY_HERE") {
+    try {
+      console.error(`Menggunakan OpenCode Zen (${ZEN_MODEL})...`)
+      return await callZen(prompt, zenKey)
+    } catch (e) {
+      console.error(`Zen gagal: ${e.message}. Fallback ke Gemini...`)
+    }
+  } else {
+    console.error("API key Zen belum diisi, fallback ke Gemini.")
   }
 
   if (geminiKey && geminiKey !== "PASTE_GEMINI_API_KEY_HERE") {
@@ -396,7 +396,7 @@ export async function generateArticle(input) {
     return await callGemini(prompt, geminiKey, models)
   }
 
-  throw new Error("Tidak ada API key LLM valid. Taruh di scripts/llm/zen-key.txt atau scripts/llm/alibaba cloude.txt atau scripts/llm/apikey.txt.")
+  throw new Error("Tidak ada API key LLM valid. Taruh di scripts/llm/alibaba cloude.txt atau scripts/llm/zen-key.txt atau scripts/llm/apikey.txt.")
 }
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))

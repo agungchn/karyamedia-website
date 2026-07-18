@@ -31,7 +31,7 @@ function getZenKey() {
 }
 
 const GEMINI_MODEL = process.env.GEMINI_MODELS || process.env.GEMINI_MODEL || "gemini-3.5-flash,gemini-flash-latest"
-const ZEN_MODEL = process.env.ZEN_MODEL || "deepseek-v4-flash-free"
+const ZEN_MODEL = process.env.ZEN_MODEL || "mimo-v2.5-free,deepseek-v4-flash-free"
 const ZEN_URL = process.env.ZEN_URL || "https://opencode.ai/zen/v1/chat/completions"
 
 const SCHEMA = {
@@ -342,7 +342,7 @@ export async function generateArticle(input) {
 
   if (zenKey && zenKey !== "PASTE_ZEN_API_KEY_HERE") {
     try {
-      console.error("Menggunakan OpenCode Zen (deepseek-v4-flash-free)...")
+      console.error(`Menggunakan OpenCode Zen (${ZEN_MODEL})...`)
       return await callZen(prompt, zenKey)
     } catch (e) {
       console.error(`Zen gagal: ${e.message}. Fallback ke Gemini...`)
@@ -364,77 +364,85 @@ export async function generateArticle(input) {
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
 
 async function callZen(prompt, key) {
-  const ctrl = new AbortController()
-  const timer = setTimeout(() => ctrl.abort(), 60000)
-  try {
-    for (let attempt = 0; attempt < 2; attempt++) {
-      try {
-        const res = await fetch(ZEN_URL, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${key}`,
-          },
-          body: JSON.stringify({
-            model: ZEN_MODEL,
-            messages: [
-              {
-                role: "system",
-                content:
-                  "Anda adalah penulis konten SEO ahli yang SELALU mengembalikan HANYA objek JSON valid, tanpa teks atau markdown lain di luar JSON.",
-              },
-              { role: "user", content: prompt },
-            ],
-            temperature: 0.7,
-            response_format: { type: "json_object" },
-          }),
-          signal: ctrl.signal,
-        })
-        const j = await res.json()
-        if (j.error) {
-          if (res.status === 429 || res.status >= 500) {
+  const models = ZEN_MODEL.split(",").map((m) => m.trim()).filter(Boolean)
+  for (const model of models) {
+    console.error(`Menggunakan OpenCode Zen (${model})...`)
+    const ctrl = new AbortController()
+    const timer = setTimeout(() => ctrl.abort(), 60000)
+    try {
+      let exhausted = true
+      for (let attempt = 0; attempt < 2; attempt++) {
+        try {
+          const res = await fetch(ZEN_URL, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "Authorization": `Bearer ${key}`,
+            },
+            body: JSON.stringify({
+              model,
+              messages: [
+                {
+                  role: "system",
+                  content:
+                    "Anda adalah penulis konten SEO ahli yang SELALU mengembalikan HANYA objek JSON valid, tanpa teks atau markdown lain di luar JSON.",
+                },
+                { role: "user", content: prompt },
+              ],
+              temperature: 0.7,
+              response_format: { type: "json_object" },
+            }),
+            signal: ctrl.signal,
+          })
+          const j = await res.json()
+          if (j.error) {
+            if (res.status === 429 || res.status >= 500) {
+              const wait = 1500 * (attempt + 1)
+              console.error(`Zen ${model} ${res.status} (${j.error.message || "server error"}), retry ${attempt + 1}/2 dalam ${wait}ms...`)
+              await sleep(wait)
+              continue
+            }
+            throw new Error(`Zen ${model} error ${res.status}: ${j.error.message || JSON.stringify(j.error)}`)
+          }
+          const text = j.choices?.[0]?.message?.content
+          if (!text) {
+            console.error(`Zen ${model} mengembalikan teks kosong, retry ${attempt + 1}/2...`)
+            await sleep(1500 * (attempt + 1))
+            continue
+          }
+          let parsed
+          try {
+            parsed = JSON.parse(text)
+          } catch {
+            throw new Error("Zen tidak mengembalikan JSON valid")
+          }
+          if (!parsed.title || !parsed.description || !parsed.content || !Array.isArray(parsed.tags)) {
+            throw new Error("Zen JSON tidak lengkap (field wajib title/description/content/tags hilang)")
+          }
+          return parsed
+        } catch (e) {
+          if (/aborted|abort|timeout/i.test(e.message)) {
+            console.error(`Zen ${model} timeout, lanjut model berikutnya...`)
+            exhausted = false
+            break
+          }
+          if (attempt < 1 && /fetch|network|5\d\d|429|failed/i.test(e.message)) {
             const wait = 1500 * (attempt + 1)
-            console.error(`Zen ${res.status} (${j.error.message || "server error"}), retry ${attempt + 1}/2 dalam ${wait}ms...`)
+            console.error(`Zen ${model} error (${e.message}), retry ${attempt + 1}/2 dalam ${wait}ms...`)
             await sleep(wait)
             continue
           }
-          throw new Error(`Zen error ${res.status}: ${j.error.message || JSON.stringify(j.error)}`)
+          console.error(`Zen ${model} error keras (${e.message}), lanjut model berikutnya...`)
+          exhausted = false
+          break
         }
-        const text = j.choices?.[0]?.message?.content
-        if (!text) {
-          console.error(`Zen mengembalikan teks kosong, retry ${attempt + 1}/2...`)
-          await sleep(1500 * (attempt + 1))
-          continue
-        }
-        let parsed
-        try {
-          parsed = JSON.parse(text)
-        } catch {
-          // Zen balas teks biasa, bukan JSON -> fallback cepat ke Gemini
-          throw new Error("Zen tidak mengembalikan JSON valid")
-        }
-        if (!parsed.title || !parsed.description || !parsed.content || !Array.isArray(parsed.tags)) {
-          throw new Error("Zen JSON tidak lengkap (field wajib title/description/content/tags hilang)")
-        }
-        return parsed
-      } catch (e) {
-        // JSON-invalid / aborted / network -> jangan retry lama, biarkan fallback Gemini
-        if (/tidak mengembalikan JSON valid|aborted|abort|timeout/i.test(e.message)) {
-          throw e
-        }
-        if (attempt < 1 && /fetch|network|5\d\d|429|failed/i.test(e.message)) {
-          const wait = 1500 * (attempt + 1)
-          console.error(`Zen error (${e.message}), retry ${attempt + 1}/2 dalam ${wait}ms...`)
-          await sleep(wait)
-          continue
-        }
-        throw e
       }
+      if (exhausted) console.error(`Zen ${model} gagal setelah 2 percobaan, lanjut ke model berikutnya...`)
+    } finally {
+      clearTimeout(timer)
     }
-    throw new Error("Zen gagal menghasilkan konten setelah 2 percobaan.")
-  } finally {
-    clearTimeout(timer)
   }
+  throw new Error("Semua model Zen gagal. Fallback ke Gemini.")
 }
 
 async function callGemini(prompt, key, models = [GEMINI_MODEL]) {

@@ -32,6 +32,10 @@ const nextConfig: NextConfig = {
       // Alias: nama dada / papan nama dada → Name Tag
       { source: "/katalog-produk/accessories/nama-dada", destination: "/katalog-produk/accessories/name-tag", permanent: true },
       { source: "/katalog-produk/accessories/papan-nama-dada", destination: "/katalog-produk/accessories/name-tag", permanent: true },
+      // Alias: kalung/medali wisuda → Samir/Gordon Wisuda
+      { source: "/katalog-produk/souvenir-wisuda/kalung-wisuda", destination: "/katalog-produk/souvenir-wisuda/samir-gordon-wisuda", permanent: true },
+      { source: "/katalog-produk/souvenir-wisuda/medali-wisuda", destination: "/katalog-produk/souvenir-wisuda/samir-gordon-wisuda", permanent: true },
+      { source: "/katalog-produk/souvenir-wisuda/mendali-wisuda", destination: "/katalog-produk/souvenir-wisuda/samir-gordon-wisuda", permanent: true },
     ];
   },
   async headers() {

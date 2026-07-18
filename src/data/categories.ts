@@ -60,7 +60,7 @@ export const categories: Category[] = [
     icon: "GraduationCap",
     description: "Perlengkapan wisuda dan souvenir akademik",
     subcategories: [
-      { id: "gw", name: "Samir/Gordon Wisuda", slug: "samir-gordon-wisuda" },
+      { id: "gw", name: "Samir/Gordon Wisuda", slug: "samir-gordon-wisuda", aliases: ["kalung wisuda", "medali wisuda", "mendali wisuda"] },
       { id: "ptw", name: "Patung Wisuda", slug: "patung-wisuda" },
       { id: "pwa", name: "Plakat Wisuda Akrilik", slug: "plakat-wisuda-akrilik" },
       { id: "kr", name: "Kalung Rektor", slug: "kalung-rektor" },

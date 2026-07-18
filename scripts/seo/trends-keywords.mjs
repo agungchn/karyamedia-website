@@ -232,7 +232,7 @@ TUGAS: Pilih ${generateNext} query PALING MENARIK dari daftar di atas untuk dija
 
 STRATEGI:
 - Publikasikan artikel SEKARANG (Juli 2026) agar terindeks sebelum puncak pencarian
-- Gunakan data WILAYAH untuk menentukan angle artikel: mis. "Kebutuhan di ${region}" jika region spesifik
+- Gunakan data WILAYAH untuk menentukan angle artikel (jika data wilayah ada, artikel harus spesifik ke provinsi tersebut)
 - Pilih query yang belum ada artikelnya (slug aman) dan spesifik
 
 Untuk setiap query, tentukan kategori yang TEPAT:
@@ -240,7 +240,7 @@ Untuk setiap query, tentukan kategori yang TEPAT:
 - "Accessories" | "Prasasti" | "Batas Wilayah" | "Souvenir" | "Blog"
 
 Kembalikan JSON array:
-[{ "keyword": "...", "category": "...", "slug": "...", "reason": "jelaskan angle + region target + timing" }]
+[{ "keyword": "...", "category": "...", "slug": "...", "province": "nama provinsi jika region spesifik, atau kosongkan jika nasional", "reason": "jelaskan angle + region target + timing" }]
 HANYA JSON array.`
 
     const res = await fetch(alibabaUrl + "/chat/completions", {
@@ -267,11 +267,14 @@ HANYA JSON array.`
         for (const pick of picks.slice(0, generateNext)) {
           const kw = pick.keyword
           const cat = pick.category || "Blog"
-          console.error(`\n⏳ Generate: "${kw}" (${cat})...`)
+          const province = pick.province || ""
+          const seg = pick.segment || ""
+          let cmd = `node scripts/seo/article-generate.mjs "${kw}" --category "${cat}"`
+          if (province) cmd += ` --province "${province}"`
+          if (seg) cmd += ` --segment "${seg}"`
+          console.error(`\n⏳ Generate: "${kw}" (${cat})${province ? " — target: " + province : ""}...`)
           try {
-            execSync(`node scripts/seo/article-generate.mjs "${kw}" --category "${cat}"`, {
-              cwd: root, stdio: "inherit", timeout: 180000,
-            })
+            execSync(cmd, { cwd: root, stdio: "inherit", timeout: 180000 })
           } catch (e) {
             console.error(`⚠️  "${kw}" gagal: ${e.message}`)
           }

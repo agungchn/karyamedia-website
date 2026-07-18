@@ -133,6 +133,7 @@ export function HeroSection() {
   const [searchQuery, setSearchQuery] = useState("")
   const [theme, setTheme] = useState<TimeTheme>(() => getTimeTheme())
   const isNight = theme.bgTop === "#020617"
+  const isSore = theme.bgTop === "#E8A0B0"
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -200,13 +201,13 @@ export function HeroSection() {
           {/* Left content */}
           <div className="space-y-6">
             {/* Badge */}
-            <div className="relative inline-flex items-center gap-2 border-[2px] border-[#D4AF37]/60 rounded-3xl px-5 py-2.5 backdrop-blur-sm bg-[#D4AF37]/10">
-              <div className="absolute -top-px left-3 right-3 h-px bg-[#D4AF37]/70 rounded-full" />
-              <Sparkles className="w-4 h-4 text-[#D4AF37]" />
-              <span className="text-sm font-medium text-[#FFE9A8]">
+            <div className={`relative inline-flex items-center gap-2 border-[2px] rounded-3xl px-5 py-2.5 backdrop-blur-sm ${isNight || isSore ? 'border-[#D4AF37]/60 bg-[#D4AF37]/10' : 'border-white/30 bg-white/10'}`}>
+              <div className={`absolute -top-px left-3 right-3 h-px rounded-full ${isNight || isSore ? 'bg-[#D4AF37]/70' : 'bg-white/40'}`} />
+              <Sparkles className={`w-4 h-4 ${isNight || isSore ? 'text-[#D4AF37]' : 'text-amber-600'}`} />
+              <span className={`text-sm ${isNight || isSore ? 'text-[#FFE9A8]' : 'text-white'}`}>
                 Souvenir Custom Premium
               </span>
-              <Star className="w-3 h-3 text-[#D4AF37] fill-[#D4AF37]" />
+              <Star className={`w-3 h-3 ${isNight || isSore ? 'text-[#D4AF37] fill-[#D4AF37]' : 'text-amber-600 fill-amber-600'}`} />
             </div>
 
             {/* Headline */}
@@ -263,11 +264,11 @@ export function HeroSection() {
                 { icon: Truck, label: "Pengiriman Indonesia" },
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3 group">
-                  <div className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center hover:bg-[#D4AF37]/20 transition-colors">
-                    <item.icon className="w-4 h-4 text-[#FFE9A8]" />
+                  <div className={`w-9 h-9 rounded-full flex items-center justify-center transition-colors ${isNight ? 'bg-white/20 hover:bg-[#D4AF37]/20' : 'bg-black/10 hover:bg-black/20'}`}>
+                    <item.icon className={`w-4 h-4 ${isNight ? 'text-[#FFE9A8]' : 'text-gray-700'}`} />
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-white">{item.label}</p>
+                    <p className={`text-sm font-medium ${theme.badge}`}>{item.label}</p>
                   </div>
                 </div>
               ))}

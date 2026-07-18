@@ -15,34 +15,17 @@ export type TimeTheme = {
 
 function getTimeTheme(): TimeTheme {
   const h = new Date().getHours()
-  // Pagi: 05:00 - 10:59
-  if (h >= 5 && h < 11) {
+  // Siang: 05:00 - 16:59
+  if (h >= 5 && h < 17) {
     return {
-      bgTop: "#7EDAFF",
-      bgMid: "#FFF6F2",
-      bgBottom: "#FDC64A",
+      bgTop: "#2E86C1",
+      bgMid: "#85C1E9",
+      bgBottom: "#A9DFBF",
       particleColor: "#FFFFFF",
-      badge: "bg-black/10 text-gray-800",
+      badge: "text-gray-800",
       desc: "text-gray-800",
       glowFrom: "#FFFFFF",
-      glowVia: "#FDC64A",
-      headingFrom: "#0B1F3A",
-      headingTo: "#028FEF",
-      panel: "bg-white/55 backdrop-blur-md",
-      overlay: "from-transparent",
-    }
-  }
-  // Siang: 11:00 - 16:59
-  if (h >= 11 && h < 17) {
-    return {
-      bgTop: "#028FEF",
-      bgMid: "#CFECFF",
-      bgBottom: "#ADDAFD",
-      particleColor: "#FFFFFF",
-      badge: "bg-black/10 text-gray-800",
-      desc: "text-gray-800",
-      glowFrom: "#FFFFFF",
-      glowVia: "#ADDAFD",
+      glowVia: "#A9DFBF",
       headingFrom: "#0B1F3A",
       headingTo: "#1D4ED8",
       panel: "bg-white/50 backdrop-blur-md",
@@ -56,7 +39,7 @@ function getTimeTheme(): TimeTheme {
       bgMid: "#B59DC4",
       bgBottom: "#6A7BA8",
       particleColor: "#FFF1CF",
-      badge: "bg-black/10 text-purple-950",
+      badge: "text-purple-950",
       desc: "text-purple-950",
       glowFrom: "#E8A0B0",
       glowVia: "#B59DC4",
@@ -72,7 +55,7 @@ function getTimeTheme(): TimeTheme {
     bgMid: "#0F172A",
     bgBottom: "#1E3A5F",
     particleColor: "#7DD3FC",
-    badge: "bg-white/10 text-white/80",
+    badge: "text-white/80",
     desc: "text-blue-100",
     glowFrom: "#3B82F6",
     glowVia: "#0F172A",

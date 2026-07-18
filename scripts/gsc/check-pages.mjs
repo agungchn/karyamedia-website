@@ -6,7 +6,7 @@ const urls = [
   "https://karyamediasouvenir.com/kontak",
   "https://karyamediasouvenir.com/profil",
   "https://karyamediasouvenir.com/katalog-produk",
-  "https://karyamediasouvenir.com/cara-pesan",
+  "https://karyamediasouvenir.com/cara-pesan", "https://karyamediasouvenir.com/blog", "https://karyamediasouvenir.com/katalog-produk/plakat-akrilik", "https://karyamediasouvenir.com/katalog-produk/plakat/plakat-akrilik", "https://karyamediasouvenir.com/katalog-produk/plakat-akrilik/plakat-akrilik-51",
 ];
 
 async function inspect(token, site, url) {
@@ -59,3 +59,4 @@ main().catch((e) => {
   console.error("ERROR:", e.message);
   process.exit(1);
 });
+

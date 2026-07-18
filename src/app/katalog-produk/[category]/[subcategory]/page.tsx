@@ -87,7 +87,10 @@ export default async function SubCategoryPage({ params }: Props) {
             <ChevronRight className="w-4 h-4 shrink-0" />
             <span className="text-white">{sub.name}</span>
           </nav>
-          <h1 className="heading-display text-3xl md:text-4xl text-transparent bg-clip-text mb-3" style={{ backgroundImage: "linear-gradient(to right, #D4AF37, #FFD700)" }}>{sub.name}</h1>
+          <h1 className="heading-display text-3xl md:text-4xl text-transparent bg-clip-text mb-1" style={{ backgroundImage: "linear-gradient(to right, #D4AF37, #FFD700)" }}>{sub.name}</h1>
+          {sub.aliases && sub.aliases.length > 0 && (
+            <p className="text-sm text-gray-300">Juga dikenal sebagai: {sub.aliases.join(" / ")}</p>
+          )}
         </div>
       </section>
       <div className="w-full h-0.5 shimmer-line" />

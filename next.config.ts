@@ -29,6 +29,9 @@ const nextConfig: NextConfig = {
       { source: "/blog/tumbler-stainless-steel-custom-untuk-merchandise-premium", destination: "/blog/tumbler-promosi-untuk-branding-dan-merchandise-event", permanent: true },
       { source: "/blog/tumbler-custom-murah-berkualitas-untuk-semua-kebutuhan", destination: "/blog/tumbler-souvenir-untuk-event-dan-merchandise-custom", permanent: true },
       { source: "/blog/medali-custom-untuk-kompetisi-dan-event", destination: "/blog/medali-custom-panduan-memilih-dan-memesan", permanent: true },
+      // Alias: nama dada / papan nama dada → Name Tag
+      { source: "/katalog-produk/accessories/nama-dada", destination: "/katalog-produk/accessories/name-tag", permanent: true },
+      { source: "/katalog-produk/accessories/papan-nama-dada", destination: "/katalog-produk/accessories/name-tag", permanent: true },
     ];
   },
   async headers() {

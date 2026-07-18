@@ -22,7 +22,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!cat) return {}
 
   const catProducts = products.filter((p) => p.categoryId === cat.id)
-  const firstImage = catProducts[0]?.images?.[0]
+  const allImages = catProducts.flatMap((p) => p.images || []).filter(Boolean)
+  const ogImage = allImages.length > 0
+    ? allImages[Math.floor(Math.random() * allImages.length)]
+    : undefined
 
   return {
     title: `${cat.name} Custom Murah Jogja`,
@@ -35,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: `${cat.name} Custom`,
       description: cat.description,
       url: `/katalog-produk/${category}`,
-      images: firstImage ? [{ url: firstImage, width: 800, height: 800 }] : [],
+      images: ogImage ? [{ url: ogImage, width: 800, height: 800 }] : [],
     },
   }
 }

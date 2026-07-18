@@ -30,7 +30,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const subs = products.filter(
     (p) => p.categoryId === cat.id && p.subcategoryId === sub.id
   )
-  const firstImage = subs[0]?.images?.[0]
+  const allImages = subs.flatMap((p) => p.images || []).filter(Boolean)
+  const ogImage = allImages.length > 0
+    ? allImages[Math.floor(Math.random() * allImages.length)]
+    : undefined
 
   return {
     title: `${sub.name} ${cat.name} Custom`,
@@ -43,7 +46,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: `${sub.name} ${cat.name} Custom`,
       description: `Produksi ${sub.name} ${cat.name} custom oleh Karyamedia Souvenir Jogja.`,
       url: canonical,
-      images: firstImage ? [{ url: firstImage, width: 800, height: 800 }] : [],
+      images: ogImage ? [{ url: ogImage, width: 800, height: 800 }] : [],
     },
   }
 }

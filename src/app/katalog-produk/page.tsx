@@ -17,7 +17,10 @@ export const dynamic = "force-dynamic"
 
 export async function generateMetadata(): Promise<Metadata> {
   const featured = products.filter((p) => p.featured)
-  const firstImage = featured[0]?.images?.[0]
+  const allImages = featured.flatMap((p) => p.images || []).filter(Boolean)
+  const ogImage = allImages.length > 0
+    ? allImages[Math.floor(Math.random() * allImages.length)]
+    : undefined
 
   return {
     title: "Katalog Plakat & Souvenir Custom Jogja",
@@ -29,7 +32,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title: "Katalog Plakat & Souvenir Custom Jogja - Karyamedia",
       description: "Jelajahi berbagai kategori produk souvenir custom berkualitas tinggi yang kami produksi sejak 2001.",
       url: "/katalog-produk",
-      images: firstImage ? [{ url: firstImage, width: 800, height: 800 }] : [],
+      images: ogImage ? [{ url: ogImage, width: 800, height: 800 }] : [],
     },
   }
 }

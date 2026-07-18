@@ -2,6 +2,7 @@ export interface SubCategory {
   id: string;
   name: string;
   slug: string;
+  aliases?: string[];
 }
 
 export interface Category {
@@ -90,7 +91,7 @@ export const categories: Category[] = [
     icon: "Gem",
     description: "Aksesoris dan merchandise custom",
     subcategories: [
-      { id: "nt", name: "Name Tag", slug: "name-tag" },
+      { id: "nt", name: "Name Tag", slug: "name-tag", aliases: ["nama dada", "papan nama dada"] },
       { id: "pb", name: "Pin/Bross", slug: "pin-bross" },
       { id: "gk", name: "Gantungan Kunci", slug: "gantungan-kunci" },
       { id: "tm", name: "Tumbler", slug: "tumbler" },

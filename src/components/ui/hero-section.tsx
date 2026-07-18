@@ -69,12 +69,19 @@ function SearchDropdown({ query, onQueryChange, onClose }: { query: string; onQu
   const q = query.toLowerCase().trim()
   const results = q
     ? products
-        .filter(
-          (p) =>
+        .filter((p) => {
+          const cat = categories.find((c) => c.id === p.categoryId)
+          const sub = cat?.subcategories.find((s) => s.id === p.subcategoryId)
+          const aliases = sub?.aliases ?? []
+          return (
             p.name.toLowerCase().includes(q) ||
             p.code.toLowerCase().includes(q) ||
-            p.description.toLowerCase().includes(q)
-        )
+            p.description.toLowerCase().includes(q) ||
+            cat?.name.toLowerCase().includes(q) ||
+            sub?.name.toLowerCase().includes(q) ||
+            aliases.some((a) => a.toLowerCase().includes(q))
+          )
+        })
         .slice(0, 8)
     : []
 

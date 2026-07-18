@@ -8,7 +8,7 @@ function buildCatalogSummary() {
   )
   const lines: string[] = []
   for (const c of categories) {
-    const subs = c.subcategories.map((s) => s.name).join(", ")
+    const subs = c.subcategories.map((s) => s.name + (s.aliases?.length ? ` (${s.aliases.join(", ")})` : "")).join(", ")
     const samples = (byCat.get(c.id) || []).join(", ")
     const example = samples ? ` — contoh: ${samples}` : ""
     lines.push(`- ${c.name} (sub: ${subs})${example}`)

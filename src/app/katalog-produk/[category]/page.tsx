@@ -21,6 +21,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const cat = categories.find((c) => c.slug === category)
   if (!cat) return {}
 
+  const catProducts = products.filter((p) => p.categoryId === cat.id)
+  const firstImage = catProducts[0]?.images?.[0]
+
   return {
     title: `${cat.name} Custom Murah Jogja`,
     description: `Produsen ${cat.name.toLowerCase()} custom murah di Jogja. ${cat.description}. Pesan sekarang, kirim seluruh Indonesia.`,
@@ -32,6 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: `${cat.name} Custom`,
       description: cat.description,
       url: `/katalog-produk/${category}`,
+      images: firstImage ? [{ url: firstImage, width: 800, height: 800 }] : [],
     },
   }
 }

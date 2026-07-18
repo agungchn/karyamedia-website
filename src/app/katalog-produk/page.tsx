@@ -15,17 +15,23 @@ import { SearchGlow } from "@/components/search-glow"
 // Selalu render dari data terkini (produk sering ditambah via script).
 export const dynamic = "force-dynamic"
 
-export const metadata: Metadata = {
-  title: "Katalog Plakat & Souvenir Custom Jogja",
-  description: "Jelajahi katalog souvenir custom Karyamedia Jogja: plakat, medali, piala, souvenir wisuda, gift box, aksesoris, & prasasti. Custom desain, kualitas terbaik.",
-  alternates: {
-    canonical: "/katalog-produk",
-  },
-  openGraph: {
-    title: "Katalog Plakat & Souvenir Custom Jogja - Karyamedia",
-    description: "Jelajahi berbagai kategori produk souvenir custom berkualitas tinggi yang kami produksi sejak 2001.",
-    url: "/katalog-produk",
-  },
+export async function generateMetadata(): Promise<Metadata> {
+  const featured = products.filter((p) => p.featured)
+  const firstImage = featured[0]?.images?.[0]
+
+  return {
+    title: "Katalog Plakat & Souvenir Custom Jogja",
+    description: "Jelajahi katalog souvenir custom Karyamedia Jogja: plakat, medali, piala, souvenir wisuda, gift box, aksesoris, & prasasti. Custom desain, kualitas terbaik.",
+    alternates: {
+      canonical: "/katalog-produk",
+    },
+    openGraph: {
+      title: "Katalog Plakat & Souvenir Custom Jogja - Karyamedia",
+      description: "Jelajahi berbagai kategori produk souvenir custom berkualitas tinggi yang kami produksi sejak 2001.",
+      url: "/katalog-produk",
+      images: firstImage ? [{ url: firstImage, width: 800, height: 800 }] : [],
+    },
+  }
 }
 
 export default function KatalogPage() {

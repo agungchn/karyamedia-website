@@ -27,6 +27,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? `/katalog-produk/${category}`
     : `/katalog-produk/${category}/${subcategory}`
 
+  const subs = products.filter(
+    (p) => p.categoryId === cat.id && p.subcategoryId === sub.id
+  )
+  const firstImage = subs[0]?.images?.[0]
+
   return {
     title: `${sub.name} ${cat.name} Custom`,
     description: `Produksi ${sub.name} ${cat.name} custom harga murah di Jogja. Cocok untuk penghargaan, event, dan souvenir instansi.`,
@@ -38,6 +43,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: `${sub.name} ${cat.name} Custom`,
       description: `Produksi ${sub.name} ${cat.name} custom oleh Karyamedia Souvenir Jogja.`,
       url: canonical,
+      images: firstImage ? [{ url: firstImage, width: 800, height: 800 }] : [],
     },
   }
 }

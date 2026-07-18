@@ -36,6 +36,16 @@ const nextConfig: NextConfig = {
       { source: "/katalog-produk/souvenir-wisuda/kalung-wisuda", destination: "/katalog-produk/souvenir-wisuda/samir-gordon-wisuda", permanent: true },
       { source: "/katalog-produk/souvenir-wisuda/medali-wisuda", destination: "/katalog-produk/souvenir-wisuda/samir-gordon-wisuda", permanent: true },
       { source: "/katalog-produk/souvenir-wisuda/mendali-wisuda", destination: "/katalog-produk/souvenir-wisuda/samir-gordon-wisuda", permanent: true },
+      // Alias: medali penghargaan/lomba/dll → Medali Custom
+      { source: "/katalog-produk/medali/medali-penghargaan", destination: "/katalog-produk/medali/medali-custom", permanent: true },
+      { source: "/katalog-produk/medali/medali-lomba", destination: "/katalog-produk/medali/medali-custom", permanent: true },
+      { source: "/katalog-produk/medali/medali-kompetisi", destination: "/katalog-produk/medali/medali-custom", permanent: true },
+      { source: "/katalog-produk/medali/medali-event", destination: "/katalog-produk/medali/medali-custom", permanent: true },
+      { source: "/katalog-produk/medali/medali-kelulusan", destination: "/katalog-produk/medali/medali-custom", permanent: true },
+      // Alias: medali 3d/logam/alloy → Medali 3D Zink Alloy
+      { source: "/katalog-produk/medali/medali-3d", destination: "/katalog-produk/medali/medali-3d-zink-alloy", permanent: true },
+      { source: "/katalog-produk/medali/medali-logam", destination: "/katalog-produk/medali/medali-3d-zink-alloy", permanent: true },
+      { source: "/katalog-produk/medali/medali-alloy", destination: "/katalog-produk/medali/medali-3d-zink-alloy", permanent: true },
     ];
   },
   async headers() {

@@ -38,8 +38,8 @@ export const categories: Category[] = [
     icon: "Medal",
     description: "Medali custom untuk kompetisi, penghargaan, dan event",
     subcategories: [
-      { id: "md", name: "Medali Custom", slug: "medali-custom" },
-      { id: "md3d", name: "Medali 3D Zink Alloy", slug: "medali-3d-zink-alloy" },
+      { id: "md", name: "Medali Custom", slug: "medali-custom", aliases: ["medali penghargaan", "medali lomba", "medali kompetisi", "medali event", "medali kelulusan"] },
+      { id: "md3d", name: "Medali 3D Zink Alloy", slug: "medali-3d-zink-alloy", aliases: ["medali 3d", "medali logam", "medali alloy"] },
     ],
   },
   {

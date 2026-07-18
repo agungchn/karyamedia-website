@@ -49,6 +49,61 @@ export function inferCategory(kw) {
   return "Blog"
 }
 
+// ---- English→Indonesian auto-fix for common LLM slip-ups ----
+const EN_TO_ID = [
+  [/\bremains\b/gi, "tetap"],
+  [/\bremaining\b/gi, "tersisa"],
+  [/\bprovide\b/gi, "menyediakan"],
+  [/\bprovided\b/gi, "menyediakan"],
+  [/\bprovides\b/gi, "menyediakan"],
+  [/\bhowever\b/gi, "namun"],
+  [/\btherefore\b/gi, "oleh karena itu"],
+  [/\bensure\b/gi, "memastikan"],
+  [/\bregarding\b/gi, "mengenai"],
+  [/\bwithout\b/gi, "tanpa"],
+  [/\bwithin\b/gi, "dalam"],
+  [/\baccording\b/gi, "menurut"],
+  [/\bespecially\b/gi, "terutama"],
+  [/\bthrough\b/gi, "melalui"],
+  [/\bbecause\b/gi, "karena"],
+  [/\bexample\b/gi, "contoh"],
+  [/\busage\b/gi, "penggunaan"],
+]
+function fixEnglishWords(text) {
+  let fixed = text
+  for (const [re, id] of EN_TO_ID) {
+    fixed = fixed.replace(re, id)
+  }
+  return fixed
+}
+
+// ---- description: enforce SEO length (120-160) & fix truncation ----
+function enforceDescription(desc, location = null) {
+  if (!desc) return desc
+  let d = desc.trim()
+
+  // Jika tidak diakhiri tanda baca, coba potong di batas kalimat terakhir
+  if (!/[.!?]$/.test(d)) {
+    const boundaries = []
+    for (let i = 0; i < d.length; i++) if (".!?".includes(d[i])) boundaries.push(i)
+    if (boundaries.length) {
+      const last = boundaries[boundaries.length - 1]
+      const cut = d.slice(0, last + 1)
+      if (cut.length >= 100) d = cut
+    }
+  }
+
+  if (d.length > 160) return d.slice(0, d.lastIndexOf(" ", 157)).trim() || d.slice(0, 157).trim()
+  if (d.length < 120) {
+    const loc = location || "seluruh Indonesia"
+    const pad = ` Karya berkualitas dari Karyamedia, produsen souvenir & custom manufacturing berbasis Yogyakarta sejak 2001 yang melayani ${loc}.`
+    d = (d + pad).slice(0, 160)
+    // Jika masih < 120, ulangi
+    if (d.length < 120) d = (d + pad).slice(0, 160)
+  }
+  return d
+}
+
 // ---- authority gate: ensure the draft contains concrete proof signals ----
 function isAuthoritative(content) {
   const c = content || ""
@@ -109,19 +164,6 @@ function enforceTitle(title, headKw) {
     t = (t ? `${pre} - ${t}` : pre).slice(0, 60)
   }
   return t || (headKw ? headKw.slice(0, 60) : title || "")
-}
-function enforceDescription(desc, location = null) {
-  if (!desc) return desc
-  if (desc.length > 160) return trimToWords(desc, 157)
-  if (desc.length < 120) {
-    const loc = location || "seluruh Indonesia"
-    const pad =
-      ` Karya berkualitas dari Karyamedia, produsen souvenir & custom manufacturing berbasis Yogyakarta sejak 2001 yang melayani ${loc}.`
-    let d = desc
-    while (d.length < 120 && d.length + pad.length <= 160) d += pad
-    return d.slice(0, 160)
-  }
-  return desc
 }
 
 // ---- duplicate detection (lightweight; full check runs at commit) ----
@@ -460,6 +502,38 @@ async function main() {
     data = await generateArticle(genOpts("\n\nPENTING: draf sebelumnya KURANG OTORITATIF dan tidak punya bukti konkret. Wajib sertakan fakta: Karyamedia BERDIRI SEJAK 2001, berbasis YOGYAKARTA/JOGJA, melayani RATUSAN INSTANSI & EVENT nasional, serta cantumkan ANGKA/TAHUN/STANDAR produksi. Hindari kalimat promosi generik tanpa bukti."))
   }
 
+  // Auto-fix English words that slipped into Indonesian content
+  data.content = fixEnglishWords(data.content || "")
+  data.title = fixEnglishWords(data.title || keyword)
+  data.description = fixEnglishWords(data.description || "")
+
+  // Auto-fix ejaan Indonesia (Sumatra↔Sumatera, Karawang↔Kerawang, dll)
+  // agar kata kunci utama (tags[0]) muncul di title & intro content.
+  const rawTags = Array.isArray(data.tags) ? data.tags.map(String).slice(0, 6) : []
+  if (rawTags.length) {
+    const kw = rawTags[0].toLowerCase()
+    const plainContent = (data.content || "").replace(/<[^>]*>/g, '').toLowerCase()
+    const needsFix = (
+      !plainContent.includes(kw) ||
+      !(data.title || "").toLowerCase().includes(kw.split(" ")[0])
+    )
+    if (needsFix) {
+      const VARIANTS = [
+        [/\bsumatra\b/gi, "sumatera"], [/\bsumatera\b/gi, "sumatra"],
+        [/\bkarawang\b/gi, "kerawang"], [/\bkerawang\b/gi, "karawang"],
+      ]
+      for (const [re, replacement] of VARIANTS) {
+        if (kw.match(re)) {
+          data.content = (data.content || "").replace(new RegExp(re.source, 'gi'), replacement)
+          data.title = (data.title || "").replace(new RegExp(re.source, 'gi'), replacement)
+          data.description = (data.description || "").replace(new RegExp(re.source, 'gi'), replacement)
+          console.error(`[FIX] Ejaan "${re.source}" diselaraskan dengan tags[0] di content + title + description.`)
+          break
+        }
+      }
+    }
+  }
+
   // Guarantee title/description length rules (LLM sometimes overshoots).
   const headKw = (keyword || "").toLowerCase().split(" ")[0]
   data.title = enforceTitle(data.title || keyword, headKw)
@@ -512,31 +586,6 @@ async function main() {
 
   let tags = Array.isArray(data.tags) ? data.tags.map(String).slice(0, 6) : []
   while (tags.length < 4) tags.push(slugify(keyword).split("-").filter((w) => w && w !== "custom")[tags.length] || `karyamedia${tags.length}`)
-
-  // auto-fix: jika tags[0] tidak ada di 240 karakter pertama konten,
-  // coba perbaiki ejaan umum (Sumatra↔Sumatera, dll) agar linter lolos.
-  if (tags.length) {
-    const kw = tags[0].toLowerCase()
-    const plainIntro = content.replace(/<[^>]*>/g, '').slice(0, 240).toLowerCase()
-    if (!plainIntro.includes(kw)) {
-      const VARIANTS = [
-        [/\bsumatra\b/gi, "sumatera"], [/\bsumatera\b/gi, "sumatra"],
-        [/\bkarawang\b/gi, "kerawang"], [/\bkerawang\b/gi, "karawang"],
-      ]
-      let fixed = content
-      for (const [re, replacement] of VARIANTS) {
-        if (kw.match(re)) {
-          const testFixed = fixed.replace(new RegExp(re.source, 'gi'), replacement)
-          const testIntro = testFixed.replace(/<[^>]*>/g, '').slice(0, 240).toLowerCase()
-          if (testIntro.includes(kw)) { fixed = testFixed; break }
-        }
-      }
-      if (fixed !== content) {
-        content = fixed
-        console.error(`[FIX] Ejaan konten diselaraskan dengan tags[0] agar lolos linter.`)
-      }
-    }
-  }
 
   const image = pickImage(category, used, keyword)
   const obj =

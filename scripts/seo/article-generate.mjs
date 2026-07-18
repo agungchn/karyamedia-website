@@ -547,6 +547,9 @@ async function main() {
 
   let content = (data.content || "").trim()
     .replace(/^```(?:html)?/i, "").replace(/```$/i, "").trim()
+  // Safety net: hapus stray closing tags (</h2>, </h3>, </p>) yang muncul
+  // sebelum tag buka sejenis — indikasi HTML kotor dari LLM.
+  content = content.replace(/<\/(h2|h3|p)>\s*(?=<\1\b)/gi, '')
   if (!/<h2[^>]*>\s*FAQ\s*<\/h2>/i.test(content)) {
     const faqKw = keyword
     const faqLoc = location || "seluruh Indonesia"

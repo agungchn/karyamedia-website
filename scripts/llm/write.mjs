@@ -297,7 +297,7 @@ Kategori: ${category}
 Segmen target: ${seg}${segCtxTxt}; gunakan contoh kasus, narasi, kebutuhan, dan kata kunci long-tail yang relevan dengan ${loc} serta segmen tersebut secara natural; jangan ubah fakta bahwa Karyamedia berbasis Yogyakarta.
 
 Buat objek JSON dengan field berikut:
-- "title": judul artikel, MAKSIMAL 60 karakter, HARUS mengandung keyword utama secara utuh (contoh: jika keyword "plakat akrilik custom" maka title mengandung frasa tersebut).
+- "title": judul artikel, MAKSIMAL 60 karakter, HARUS mengandung keyword utama secara utuh (contoh: jika keyword "plakat akrilik custom" maka title mengandung frasa tersebut). GUNAKAN HURUF KAPITAL AWAL (Title Case), contoh: "Plakat Akrilik Custom untuk Kantor Desa: Solusi Presisi" — jangan seluruhnya huruf kecil.
 - "description": meta description, 120-160 karakter, mengandung keyword utama.
 - "tags": array 4-6 kata kunci Indonesia relevan (semua lowercase); tags[0] HARUS sama dengan keyword utama.
 - "content": artikel lengkap dalam bentuk HTML (string tunggal). Syarat content:
@@ -311,6 +311,7 @@ Buat objek JSON dengan field berikut:
    * JANGAN gunakan markdown; hanya HTML inline (<p>, <h2>, <h3>, <strong>, <ul><li> bila perlu)
    * JIKA menyisipkan gambar, SETIAP tag <img> WAJIB punya atribut alt yang deskriptif berbahasa Indonesia (contoh: alt="Plakat akrilik custom untuk penghargaan"); JANGAN pernah membuat <img> tanpa alt
    * JANGAN sertakan satupun link/hyperlink (akan ditambahkan otomatis nanti)
+   * HTML WAJIB valid: semua tag <h2>, <h3>, <p>, <ul>, <li> harus ditutup dengan benar, tidak boleh ada tag tutup tanpa buka atau sebaliknya (contoh SALAH: ...teks.</h2><h2>FAQ...) — tag harus rapi dan properti nested.
    Return HANYA objek JSON, tanpa teks lain.${VARIATION_INSTR}${vBlock}${extra}`
 }
 
@@ -338,7 +339,7 @@ Kategori: ${category}
 Segmen target: ${seg}${segCtxTxt}; gunakan contoh kasus, narasi, kebutuhan, dan kata kunci long-tail yang relevan dengan ${loc} serta segmen tersebut secara natural; jangan ubah fakta bahwa Karyamedia berbasis Yogyakarta.
 ${compBlock}
 Buat objek JSON dengan field berikut:
-- "title": MAKSIMAL 60 karakter, HARUS mengandung keyword utama secara utuh.
+- "title": MAKSIMAL 60 karakter, HARUS mengandung keyword utama secara utuh. GUNAKAN HURUF KAPITAL AWAL (Title Case), contoh: "Plakat Akrilik Custom untuk Kantor Desa: Solusi Presisi" — jangan seluruhnya huruf kecil.
 - "description": 120-160 karakter, mengandung keyword utama.
 - "tags": array 4-6 kata kunci Indonesia lowercase; tags[0] SAMA dengan keyword utama.
 - "content": artikel HTML (string tunggal) dengan syarat:
@@ -354,6 +355,7 @@ Buat objek JSON dengan field berikut:
    * JANGAN markdown; hanya HTML inline (<p>, <h2>, <h3>, <table>, <ul><li>, <strong>).
    * JIKA menyisipkan gambar, SETIAP tag <img> WAJIB punya atribut alt yang deskriptif berbahasa Indonesia (contoh: alt="Medali custom untuk lomba dan turnamen"); JANGAN pernah membuat <img> tanpa alt.
    * JANGAN satupun hyperlink (link disuntik otomatis nanti).
+   * HTML WAJIB valid: semua tag <h2>, <h3>, <p>, <ul>, <li> harus ditutup dengan benar, tidak boleh ada tag tutup tanpa buka atau sebaliknya (contoh SALAH: ...teks.</h2><h2>FAQ...) — tag harus rapi dan properti nested.
    Return HANYA objek JSON, tanpa teks lain.${VARIATION_INSTR}${vBlock}${extra}`
 }
 

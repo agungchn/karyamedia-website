@@ -82,24 +82,31 @@ function enforceDescription(desc, location = null) {
   if (!desc) return desc
   let d = desc.trim()
 
-  // Jika tidak diakhiri tanda baca, coba potong di batas kalimat terakhir
-  if (!/[.!?]$/.test(d)) {
-    const boundaries = []
-    for (let i = 0; i < d.length; i++) if (".!?".includes(d[i])) boundaries.push(i)
-    if (boundaries.length) {
-      const last = boundaries[boundaries.length - 1]
-      const cut = d.slice(0, last + 1)
-      if (cut.length >= 100) d = cut
-    }
+  // Potong di batas kalimat terakhir (dalam 90-159 chars) agar rapi
+  const boundaries = []
+  for (let i = 0; i < d.length; i++) if (".!?".includes(d[i])) boundaries.push(i)
+  const nearEnd = boundaries.filter((b) => b >= 90 && b < 160)
+  if (nearEnd.length) {
+    d = d.slice(0, nearEnd[nearEnd.length - 1] + 1).trim()
+  } else if (d.length > 160) {
+    d = d.slice(0, d.lastIndexOf(" ", 157)).trim() || d.slice(0, 157).trim()
   }
 
-  if (d.length > 160) return d.slice(0, d.lastIndexOf(" ", 157)).trim() || d.slice(0, 157).trim()
+  // Bersihkan trailing koma, dash, konjungsi
+  d = d.replace(/[,;:\-–—]+(?:\s*(dan|untuk|di|ke|dari|pada|atau|dengan|yang|bagi|serta)?)?\s*$/, "").trim()
+  if (d && !/[.!?]$/.test(d)) d += "."
+
+  if (d.length > 160) {
+    d = d.slice(0, d.lastIndexOf(" ", 157)).trim() || d.slice(0, 157).trim()
+    d = d.replace(/[,;:\-–—]+(?:\s*(dan|untuk|di|ke|dari|pada|atau|dengan|yang|bagi|serta)?)?\s*$/, "").trim()
+    if (d && !/[.!?]$/.test(d)) d += "."
+  }
   if (d.length < 120) {
     const loc = location || "seluruh Indonesia"
-    const pad = ` Karya berkualitas dari Karyamedia, produsen souvenir & custom manufacturing berbasis Yogyakarta sejak 2001 yang melayani ${loc}.`
-    d = (d + pad).slice(0, 160)
-    // Jika masih < 120, ulangi
-    if (d.length < 120) d = (d + pad).slice(0, 160)
+    const pad = ` Produsen langsung Yogyakarta sejak 2001, melayani ${loc}.`
+    d = trimToWords(d + pad, 160)
+    if (d.length < 120) d = trimToWords(d + pad, 160)
+    if (d && !/[.!?]$/.test(d)) d += "."
   }
   return d
 }

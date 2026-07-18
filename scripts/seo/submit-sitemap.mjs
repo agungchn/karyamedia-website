@@ -15,7 +15,11 @@ const SITEMAP = "https://karyamediasouvenir.com/sitemap.xml";
 
 function gscCreds() {
   if (process.env.GSC_CREDENTIALS) return JSON.parse(process.env.GSC_CREDENTIALS);
-  return JSON.parse(fs.readFileSync(path.join(root, "scripts/gsc/credentials.json"), "utf8"));
+  try {
+    return JSON.parse(fs.readFileSync(path.join(root, "scripts/gsc/credentials.json"), "utf8"));
+  } catch {
+    return null;
+  }
 }
 
 async function gscToken(creds) {
@@ -62,7 +66,12 @@ async function resolveSite(token) {
 }
 
 async function main() {
-  const token = await gscToken(gscCreds());
+  const creds = gscCreds();
+  if (!creds) {
+    console.log("SKIP: credentials.json tidak ada (Vercel). Sitemap sudah terdaftar di GSC.");
+    return;
+  }
+  const token = await gscToken(creds);
   const site = await resolveSite(token);
   const encSite = encodeURIComponent(site);
   const encSm = encodeURIComponent(SITEMAP);

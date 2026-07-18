@@ -270,6 +270,49 @@ function resolveProductCategory(category, keyword, catSlugs) {
   if (catSlugs[inf]) return inf
   return null
 }
+// ---- pillar detection (sama dengan link-pillar.mjs) ----
+const PILLAR_FOR = {
+  Plakat: "panduan-lengkap-plakat-custom",
+  "Souvenir Wisuda": "panduan-lengkap-souvenir-wisuda-custom",
+  "Piala & Trophy": "panduan-lengkap-piala-dan-trophy-custom",
+  Accessories: "panduan-lengkap-tumbler-custom",
+  Medali: "panduan-lengkap-medali-custom",
+  Prasasti: "panduan-lengkap-prasasti-custom",
+  "Gift Box": "panduan-lengkap-gift-box-custom",
+  Souvenir: "panduan-lengkap-souvenir-custom",
+  Blog: "panduan-lengkap-souvenir-custom",
+}
+const PILLAR_TOPICS = [
+  { pillar: "panduan-lengkap-name-tag-custom", re: /name-tag|nametag|id-card|id card/ },
+  { pillar: "panduan-lengkap-papan-nama-custom", re: /papan-nama|papan nama/ },
+  { pillar: "panduan-lengkap-gantungan-kunci-custom", re: /gantungan-kunci|keychain/ },
+  { pillar: "panduan-lengkap-pin-bross-custom", re: /pin-bross|pin bross|bross/ },
+  { pillar: "panduan-lengkap-souvenir-pernikahan-custom", re: /souvenir-pernikahan|pernikahan|nikah/ },
+  { pillar: "panduan-lengkap-batas-wilayah-custom", re: /batas-wilayah|center-point|brass-table|tugu/ },
+  { pillar: "panduan-lengkap-plakat-akrilik-custom", re: /plakat-akrilik/ },
+  { pillar: "panduan-lengkap-plakat-marmer-custom", re: /plakat-marmer/ },
+  { pillar: "panduan-lengkap-plakat-wayang-custom", re: /plakat-wayang/ },
+  { pillar: "panduan-lengkap-box-bludru-custom", re: /box-bludru/ },
+  { pillar: "panduan-lengkap-box-kertas-import-custom", re: /box-kertas-import/ },
+  { pillar: "panduan-lengkap-box-batik-custom", re: /box-batik/ },
+  { pillar: "panduan-lengkap-kalung-rektor-custom", re: /kalung-rektor/ },
+  { pillar: "panduan-lengkap-samir-gordon-wisuda-custom", re: /samir-wisuda|samir-gordon/ },
+  { pillar: "panduan-lengkap-patung-wisuda-custom", re: /patung-wisuda/ },
+  { pillar: "panduan-lengkap-map-ijazah-custom", re: /map-ijazah|map-wisuda/ },
+  { pillar: "panduan-lengkap-medali-3d-custom", re: /medali-3d/ },
+  { pillar: "panduan-lengkap-plakat-kayu-custom", re: /plakat-kayu/ },
+  { pillar: "panduan-lengkap-plakat-fiberglass-custom", re: /plakat-fiberglass/ },
+  { pillar: "panduan-lengkap-tongkat-rektor-custom", re: /tongkat-rektor/ },
+  { pillar: "panduan-lengkap-tabung-wisuda-custom", re: /tabung-wisuda/ },
+  { pillar: "panduan-lengkap-prasasti-kuningan-custom", re: /prasasti-kuningan/ },
+  { pillar: "panduan-lengkap-prasasti-stainless-steel-custom", re: /prasasti-stainless-steel/ },
+]
+function resolvePillar(slug, category, allSlugs) {
+  const topic = PILLAR_TOPICS.find((t) => t.re.test(slug))
+  const pillarSlug = topic && allSlugs.has(topic.pillar) ? topic.pillar : PILLAR_FOR[category]
+  return pillarSlug && allSlugs.has(pillarSlug) ? pillarSlug : null
+}
+
 function injectCategoryLink(content, category, catSlugs) {
   const slug = catSlugs[category]
   if (!slug) return content
@@ -441,6 +484,23 @@ async function main() {
   const rel = findRelatedLinks(slug, category, working, 3)
   content += rel
 
+  // regional article -> auto canonical + pillar link
+  let canonical = null
+  if (location) {
+    const allSlugs = new Set(extractArticles(working).map((a) => slugRe.exec(a.block)?.[1]).filter(Boolean))
+    const pillarSlug = resolvePillar(slug, category, allSlugs)
+    if (pillarSlug) {
+      canonical = `/blog/${pillarSlug}`
+      if (!content.includes(`/blog/${pillarSlug}`)) {
+        const pBlock = extractArticles(working).find((a) => slugRe.exec(a.block)?.[1] === pillarSlug)?.block
+        const pTitle = pBlock ? (titleRe.exec(pBlock)?.[1] || pillarSlug) : pillarSlug
+        const anchor = `<p>Baca juga panduan lengkap kami: <a href="/blog/${pillarSlug}">${escTpl(pTitle)}</a> sebagai referensi menyeluruh seputar ${escTpl(category)}.</p>`
+        const faqIdx = content.search(/<h2[^>]*>\s*FAQ\s*<\/h2>/i)
+        content = faqIdx >= 0 ? content.slice(0, faqIdx) + anchor + content.slice(faqIdx) : content + anchor
+      }
+    }
+  }
+
   // backward links: older same-category articles reference the new article
   let modified = working
   for (const a of extractArticles(working)) {
@@ -463,6 +523,7 @@ async function main() {
     `    date: "${new Date().toISOString().slice(0, 10)}",\n` +
     `    image: "${escStr(image)}",\n` +
     `    tags: [${tags.map((t) => `"${escStr(t)}"`).join(", ")}],\n` +
+    (canonical ? `    canonical: "${canonical}",\n` : ``) +
     `    content: \`${escTpl(content)}\`,\n` +
     `  },\n`
 

@@ -283,8 +283,8 @@ const PILLAR_FOR = {
   Blog: "panduan-lengkap-souvenir-custom",
 }
 const PILLAR_TOPICS = [
-  { pillar: "panduan-lengkap-name-tag-custom", re: /name-tag|nametag|id-card|id card/ },
-  { pillar: "panduan-lengkap-papan-nama-custom", re: /papan-nama|papan nama/ },
+  { pillar: "panduan-lengkap-name-tag-custom", re: /name-tag|nametag|id-card|id card|nama-dada|papan-nama-dada/ },
+  { pillar: "panduan-lengkap-papan-nama-custom", re: /^papan-nama(?!-dada)/ },
   { pillar: "panduan-lengkap-gantungan-kunci-custom", re: /gantungan-kunci|keychain/ },
   { pillar: "panduan-lengkap-pin-bross-custom", re: /pin-bross|pin bross|bross/ },
   { pillar: "panduan-lengkap-souvenir-pernikahan-custom", re: /souvenir-pernikahan|pernikahan|nikah/ },
@@ -296,7 +296,7 @@ const PILLAR_TOPICS = [
   { pillar: "panduan-lengkap-box-kertas-import-custom", re: /box-kertas-import/ },
   { pillar: "panduan-lengkap-box-batik-custom", re: /box-batik/ },
   { pillar: "panduan-lengkap-kalung-rektor-custom", re: /kalung-rektor/ },
-  { pillar: "panduan-lengkap-samir-gordon-wisuda-custom", re: /samir-wisuda|samir-gordon/ },
+  { pillar: "panduan-lengkap-samir-gordon-wisuda-custom", re: /samir-wisuda|samir-gordon|kalung-wisuda|mendali-wisuda|gordon-wisuda/ },
   { pillar: "panduan-lengkap-patung-wisuda-custom", re: /patung-wisuda/ },
   { pillar: "panduan-lengkap-map-ijazah-custom", re: /map-ijazah|map-wisuda/ },
   { pillar: "panduan-lengkap-medali-3d-custom", re: /medali-3d/ },

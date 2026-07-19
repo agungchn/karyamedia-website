@@ -1,7 +1,7 @@
 import { articles } from "@/data/articles"
 import { NextResponse } from "next/server"
 
-const SITE_URL = "https://karyamediasouvenir.co.id"
+const SITE_URL = "https://karyamediasouvenir.com"
 
 export const dynamic = "force-static"
 

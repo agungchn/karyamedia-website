@@ -91,6 +91,9 @@ export const metadata: Metadata = {
     siteName: "Karyamedia Souvenir",
     images: [{ url: "/images/logo-karyamedia.png", width: 512, height: 512 }],
   },
+  other: {
+    "p:domain_verify": "b9506a88c2041ed047b0340ab52dd933",
+  },
   twitter: {
     card: "summary_large_image",
     title: "Karyamedia Souvenir - Produsen Souvenir Custom Sejak 2001",

@@ -110,7 +110,7 @@ export function Footer() {
                 { label: "Cara Pesan", href: "/cara-pesan" },
                 { label: "FAQ", href: "/faq" },
                 { label: "Artikel & Tips", href: "/blog" },
-                { label: "Kontak", href: "/kontak" },
+                { label: "Behind the Scenes", href: "/behind-the-scenes" },
               ].map((item) => (
                 <li key={item.label}>
                   <Link href={item.href} className="hover:text-accent-accessible hover:underline underline-offset-2 transition-colors">

@@ -1296,7 +1296,27 @@
   },
   "name-tag-mpls-2026-custom": {
     "title": "Name Tag MPLS 2026 untuk Sekolah & Kampus Nasional",
-    "category": "name tag",
+    "category": "Accessories",
     "image": "/images/produk-unggulan/name-tag/name-tag-12.png"
+  },
+  "name-tag-tema-laut-custom": {
+    "title": "Name Tag Tema Laut untuk Event Instansi & Kampus di South",
+    "category": "Souvenir",
+    "image": "/images/produk-unggulan/name-tag/name-tag-13.png"
+  },
+  "blind-box-custom": {
+    "title": "Blind Box untuk Souvenir Instansi & Event di Jakarta",
+    "category": "Souvenir",
+    "image": "/images/produk-unggulan/box-batik/box-batik-2.png"
+  },
+  "contoh-plakat-akrilik-custom": {
+    "title": "Contoh Plakat Akrilik untuk Instansi & Event di North Maluku",
+    "category": "Plakat",
+    "image": "/images/produk-unggulan/plakat-akrilik/plakat-akrilik-46.png"
+  },
+  "toko-souvenir-terdekat-custom": {
+    "title": "Toko Souvenir Terdekat untuk Instansi & Event di Yogyakarta",
+    "category": "Souvenir",
+    "image": "/images/produk-unggulan/souvenir-pernikahan/souvenir-pernikahan-4.png"
   }
 }

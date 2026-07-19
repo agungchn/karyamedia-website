@@ -25,6 +25,7 @@ const shorts = [
   { id: "1DHXRn_Cjs0", title: "Behind the Scenes 3" },
   { id: "MSJ8-mGuvFE", title: "Behind the Scenes 4" },
   { id: "9xH0gHVQzYo", title: "Behind the Scenes 5" },
+  { id: "McB5xhbnS0I", title: "Behind the Scenes 6" },
 ]
 
 export default function BehindTheScenesPage() {

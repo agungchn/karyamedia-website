@@ -8,7 +8,7 @@
 //   node scripts/seo/trends-keywords.mjs --generate-next 3    # draft articles for top 3
 
 import { execSync } from "node:child_process"
-import { readFileSync, writeFileSync } from "node:fs"
+import { readFileSync, writeFileSync, existsSync } from "node:fs"
 import { resolve, join, dirname } from "node:path"
 import { fileURLToPath } from "node:url"
 import googleTrends from "google-trends-api"
@@ -18,15 +18,14 @@ const root = resolve(here, "..", "..")
 const articlesPath = join(root, "src/data/articles.ts")
 
 const SEEDS = [
-  "plakat akrilik", "plakat kayu", "plakat marmer", "plakat fiberglass", "plakat wayang",
-  "medali custom", "medali 3d", "piala trophy", "piala golf",
-  "souvenir wisuda", "samir wisuda", "patung wisuda", "kalung rektor", "tongkat rektor",
-  "baju toga", "map ijazah", "tabung wisuda",
-  "gift box souvenir", "box bludru", "box batik",
-  "name tag", "pin bross", "gantungan kunci", "tumbler souvenir", "papan nama",
-  "prasasti marmer", "prasasti kuningan", "brass table", "center point batas wilayah",
-  "souvenir pernikahan", "souvenir acara", "souvenir seminar",
+  "plakat akrilik", "medali custom", "piala trophy",
+  "souvenir wisuda", "nama dada", "gantungan kunci",
+  "souvenir pernikahan", "prasasti",
 ]
+
+// 3 detik antar request biar tidak kena rate limit
+const SLEEP_MS = 3000
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
 
 function loadExistingSlugs() {
   try {
@@ -40,19 +39,25 @@ function loadExistingSlugs() {
 }
 
 async function fetchRelated(keyword) {
-  try {
-    const res = await googleTrends.relatedQueries({
-      keyword, startTime: new Date("2025-01-01"), geo: "ID",
-    })
-    const data = JSON.parse(res)
-    const ranked = data.default?.rankedList
-    if (!ranked) return { top: [], rising: [] }
-    const top = (ranked[0]?.rankedKeyword || []).map((i) => ({ query: i.query, value: i.value, type: "top" }))
-    const rising = (ranked[1]?.rankedKeyword || []).map((i) => ({ query: i.query, value: i.value, type: "rising" }))
-    return { top, rising }
-  } catch {
-    return { top: [], rising: [] }
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      const res = await googleTrends.relatedQueries({
+        keyword, startTime: new Date("2025-01-01"), geo: "ID",
+      })
+      const data = JSON.parse(res)
+      const ranked = data.default?.rankedList
+      if (!ranked) return { top: [], rising: [] }
+      const top = (ranked[0]?.rankedKeyword || []).map((i) => ({ query: i.query, value: i.value, type: "top" }))
+      const rising = (ranked[1]?.rankedKeyword || []).map((i) => ({ query: i.query, value: i.value, type: "rising" }))
+      return { top, rising }
+    } catch {
+      if (attempt < 2) {
+        console.error(`  ⏳ ${keyword} gagal, coba lagi ${attempt + 2}/3...`)
+        await sleep(5000)
+      }
+    }
   }
+  return { top: [], rising: [] }
 }
 
 async function fetchRegion(keyword) {
@@ -111,11 +116,34 @@ const STOP_QUERY = new Set([
   "nagita slavina", "attahalil", "aurak", "thariq", "aqilla",
   "disney", "marvel", "star wars", "hello kitty",
   "cara membuat", "tutorial", "how to",
+  "prasasti kerajaan", "prasasti peninggalan", "prasasti mulawarman",
+  "prasasti mataram", "prasasti tarumanegara", "prasasti kutai",
+  "prasasti sriwijaya", "kerajaan mataram kuno", "peninggalan kerajaan",
+  "prasasti kebon kopi", "prasasti kedukan bukit", "prasasti talang tuo",
+  "prasasti kota kapur", "prasasti pasir awi", "prasasti tts",
+  "prasasti center", "tulisan kuno pada prasasti",
+  "boneka", "blind box", "pokemon",
+  "kartu ucapan souvenir pernikahan", "souvenir pernikahan bermanfaat",
+  "gambar gantungan kunci", "kerajaan majapahit",
+  "ucapan souvenir pernikahan", "bahan gantungan kunci",
+  "souvenir pernikahan murah", "membuat gantungan kunci",
+  "kartu souvenir pernikahan", "tas souvenir pernikahan",
+  "buat gantungan kunci", "souvenir pernikahan yang bermanfaat",
 ])
+
+// "prasasti" hanya diterima jika mengandung kata produk ini
+const PRASASTI_PRODUCT = [
+  "marmer", "kuningan", "tembaga", "stainless", "stenlist",
+  "peresmian", "gedung", "kantor", "masjid", "musala", "gereja", "pura", "vihara",
+  "showroom", "monumen", "plakat", "granit", "nama", "tanda", "arah",
+  "papan", "label", "plat", "tag", "logo",
+]
 
 function isRelevant(query) {
   const q = query.toLowerCase()
   for (const stop of STOP_QUERY) if (q.includes(stop)) return false
+  // prasasti harus disertai kata produk, tanpa itu = sejarah
+  if (q.includes("prasasti") && !PRASASTI_PRODUCT.some((w) => q.includes(w))) return false
   return true
 }
 
@@ -142,12 +170,16 @@ async function main() {
   const existingSlugs = loadExistingSlugs()
   console.error(`  ${existingSlugs.size} slug ditemukan.`)
 
-  // Pass 1: related queries
-  console.error(`\nMengambil relatedQueries untuk ${SEEDS.length} seed keyword...`)
-  const results = await Promise.all(SEEDS.map(async (seed) => {
+  // Pass 1: related queries — SEQUENTIAL dengan delay biar tidak kena rate limit
+  console.error(`\nMengambil relatedQueries untuk ${SEEDS.length} seed keyword (1 per ${SLEEP_MS / 1000}s)...`)
+  const results = []
+  for (let i = 0; i < SEEDS.length; i++) {
+    const seed = SEEDS[i]
+    console.error(`  [${i + 1}/${SEEDS.length}] ${seed}...`)
     const r = await fetchRelated(seed)
-    return { seed, ...r }
-  }))
+    results.push({ seed, ...r })
+    if (i < SEEDS.length - 1) await sleep(SLEEP_MS)
+  }
 
   const seen = new Set()
   const candidates = []
@@ -168,23 +200,60 @@ async function main() {
     }
   }
   candidates.sort((a, b) => b.score - a.score || b.value - a.value)
-  const topCandidates = candidates.slice(0, 15)
+  let topCandidates = candidates.slice(0, 15)
 
-  // Pass 2: enrich top candidates with region + peak timing
+  // Fallback: jika Trends tidak cukup, pakai data ideas.json (GSC+Bing)
+  if (topCandidates.length < 5) {
+    const ideasPath = join(root, "scripts/seo/ideas.json")
+    if (existsSync(ideasPath)) {
+      console.error(`\nTrends hanya menghasilkan ${topCandidates.length} kandidat. Fallback ke ideas.json...`)
+      const ideas = JSON.parse(readFileSync(ideasPath, "utf8"))
+      const slugSet = new Set([...existingSlugs, ...candidates.map((c) => c.slug)])
+      const fallback = []
+      for (const idea of ideas) {
+        const q = (idea.query || "").toLowerCase().trim()
+        const slug = slugify(q)
+        if (slugSet.has(slug) || slugSet.has(slug + "-custom")) continue
+        if (q.length < 8 || q.split(" ").length < 2) continue
+        if (!isRelevant(q)) continue
+        slugSet.add(slug)
+        fallback.push({
+          query: idea.query,
+          slug,
+          value: idea.impressions || 0,
+          type: "ideas",
+          seed: idea._category || "ideas",
+          score: scoreQuery(q, existingSlugs),
+          trend: "📊",
+          regions: idea._province ? [{ province: idea._province, interest: 100 }] : [],
+          timeline: null,
+        })
+        if (topCandidates.length + fallback.length >= 15) break
+      }
+      if (fallback.length) {
+        console.error(`  ${fallback.length} kandidat tambahan dari ideas.json.`)
+        topCandidates = [...topCandidates, ...fallback]
+      }
+    }
+  }
+
+  // Pass 2: enrich top candidates with region + peak timing (sequential)
   console.error(`\nMemperkaya ${topCandidates.length} kandidat dengan data region & timeline...`)
-  for (const c of topCandidates) {
-    console.error(`  ${c.query}...`)
+  for (let i = 0; i < topCandidates.length; i++) {
+    const c = topCandidates[i]
+    console.error(`  [${i + 1}/${topCandidates.length}] ${c.query}...`)
     const [regions, timeline] = await Promise.all([
-      fetchRegion(c.query),
-      fetchTimeline(c.query),
+      fetchRegion(c.query).catch(() => []),
+      fetchTimeline(c.query).catch(() => null),
     ])
     c.regions = regions
     c.timeline = timeline
+    if (i < topCandidates.length - 1) await sleep(SLEEP_MS)
   }
 
   // Display
   console.error("\n" + "=".repeat(120))
-  console.error("GOOGLE TRENDS — KEYWORD CANDIDATES + REGION + PEAK TIMING")
+  console.error("KEYWORD CANDIDATES — Google Trends + GSC/Bing Ideas")
   console.error("=".repeat(120))
   for (const c of topCandidates) {
     const regionStr = c.regions?.length
@@ -225,15 +294,19 @@ async function main() {
 
     const prompt = `Anda ahli strategi konten SEO Karyamedia.com (produsen souvenir Yogyakarta sejak 2001).
 
-DATA DARI GOOGLE TRENDS (query nyata yang dicari orang Indonesia — lengkap dengan wilayah & waktu puncak):
+DATA DARI GOOGLE TRENDS & GSC/BING (query nyata yang dicari orang Indonesia — lengkap dengan wilayah & waktu puncak jika tersedia):
 ${trendData}
 
-TUGAS: Pilih ${generateNext} query PALING MENARIK dari daftar di atas untuk dijadikan artikel.
+TUGAS: Pilih ${Math.max(generateNext * 3, 5)} query PALING MENARIK dari daftar di atas untuk dijadikan artikel (urutkan dari yang paling menarik).
 
 STRATEGI:
 - Publikasikan artikel SEKARANG (Juli 2026) agar terindeks sebelum puncak pencarian
 - Gunakan data WILAYAH untuk menentukan angle artikel (jika data wilayah ada, artikel harus spesifik ke provinsi tersebut)
 - Pilih query yang belum ada artikelnya (slug aman) dan spesifik
+
+JANGAN pilih produk yang TIDAK KAMI jual, seperti: mpls, ospek, banner, spanduk, stiker, undangan, kartu nama, seragam, kaos, topi, mug, gelas, tas, goodie bag, standing banner, backdrop, poster, flyer, kalender, boneka, blind box, pokemon.
+JANGAN pilih: kartu ucapan souvenir pernikahan, souvenir pernikahan bermanfaat, gambar gantungan kunci, kerajaan majapahit, ucapan souvenir pernikahan, bahan gantungan kunci, souvenir pernikahan murah, membuat gantungan kunci, kartu souvenir pernikahan, tas souvenir pernikahan, buat gantungan kunci, souvenir pernikahan yang bermanfaat.
+JANGAN pilih topik sejarah/arkeologi seperti: prasasti kerajaan, prasasti peninggalan, prasasti mulawarman, prasasti mataram kuno, prasasti tarumanegara, prasasti kutai, prasasti sriwijaya, prasasti kebon kopi, prasasti kedukan bukit, prasasti talang tuo, prasasti kota kapur, prasasti pasir awi, prasasti tts, prasasti center, apa itu prasasti, tulisan kuno — fokus pada prasasti sebagai PRODUK PLAQUE/PIALA, bukan sebagai artefak sejarah.
 
 Untuk setiap query, tentukan kategori yang TEPAT:
 - "Plakat" | "Medali" | "Piala & Trophy" | "Souvenir Wisuda" | "Gift Box"
@@ -264,7 +337,9 @@ HANYA JSON array.`
     try {
       const picks = JSON.parse(text)
       if (Array.isArray(picks)) {
-        for (const pick of picks.slice(0, generateNext)) {
+        let success = 0
+        for (const pick of picks) {
+          if (success >= generateNext) break
           const kw = pick.keyword
           const cat = pick.category || "Blog"
           const province = pick.province || ""
@@ -275,10 +350,13 @@ HANYA JSON array.`
           console.error(`\n⏳ Generate: "${kw}" (${cat})${province ? " — target: " + province : ""}...`)
           try {
             execSync(cmd, { cwd: root, stdio: "inherit", timeout: 180000 })
+            success++
+            console.error(`✅ "${kw}" berhasil (${success}/${generateNext})`)
           } catch (e) {
-            console.error(`⚠️  "${kw}" gagal: ${e.message}`)
+            console.error(`⚠️  "${kw}" gagal: ${e.message}. Coba kandidat berikutnya...`)
           }
         }
+        if (success < generateNext) console.error(`\n⚠️  Hanya ${success}/${generateNext} artikel berhasil dibuat.`)
       }
     } catch {
       console.error("Gagal parse JSON dari LLM.")

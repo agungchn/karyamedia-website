@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     "kalung rektor",
     "prasasti peresmian",
     "gift box souvenir",
-    "name tag custom",
+    "nama dada custom",
     "gantungan kunci custom",
     "souvenir pernikahan",
     "souvenir murah",

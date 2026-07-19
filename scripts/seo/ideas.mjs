@@ -57,7 +57,7 @@ const FALLBACK_KEYWORDS = [
   "samir wisuda bordir logo",
   "gift box souvenir batik isi 5 pcs",
   "box kertas custom untuk souvenir",
-  "name tag akrilik premium",
+  "nama dada akrilik premium",
   "gantungan kunci akrilik custom",
   "pin bross custom untuk event",
   "patung wisuda fiber custom",
@@ -182,7 +182,7 @@ async function main() {
   // --- Bing Webmaster Tools: real queries (Bing's GSC equivalent) ---
   let bingRows = []
   if (process.env.BING_MOCK) {
-    bingRows = ["piala golf custom untuk event", "name tag akrilik premium", "plakat resin custom"].map(
+    bingRows = ["piala golf custom untuk event", "nama dada akrilik premium", "plakat resin custom"].map(
       (q) => ({ keys: [q], impressions: 300, clicks: 3, ctr: 0.01, position: 6 }),
     )
     console.log("BING_MOCK aktif — pakai query fixture (tanpa network)")

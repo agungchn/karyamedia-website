@@ -33,7 +33,7 @@ export const SEGMENTS = [
     key: "pemerintahan",
     label: "pemerintahan",
     ctx:
-      "pemerintah daerah, OPD, dinas, lembaga negara (legislatif DPR/DPRD, yudikatif/pengadilan/MA/MK), BUMN/BUMD, koperasi, dan Kementerian Agama (haji/umrah)",
+      "pemerintah daerah, OPD, dinas, lembaga negara (legislatif DPR/DPRD, yudikatif/pengadilan/MA/MK, kejaksaan), TNI, POLRI, PNS (pegawai negeri sipil), guru, hakim, serta pejabat negara: presiden, gubernur, walikota, bupati, camat, lurah, dan Trias Politika",
   },
   {
     key: "kampus",
@@ -67,7 +67,23 @@ export const PRODUCTS = [
   { phrase: "prasasti marmer", category: "Prasasti" },
   { phrase: "prasasti kuningan", category: "Prasasti" },
   { phrase: "gift box souvenir", category: "Gift Box" },
-  { phrase: "name tag akrilik", category: "Accessories" },
+  { phrase: "nama dada akrilik", category: "Accessories" },
+  { phrase: "nama dada PNS", category: "Accessories" },
+  { phrase: "nama dada guru", category: "Accessories" },
+  { phrase: "nama dada TNI", category: "Accessories" },
+  { phrase: "nama dada POLRI", category: "Accessories" },
+  { phrase: "nama dada DPRD", category: "Accessories" },
+  { phrase: "nama dada kejaksaan", category: "Accessories" },
+  { phrase: "nama dada hakim", category: "Accessories" },
+  { phrase: "papan nama dada pejabat", category: "Accessories" },
+  { phrase: "pin bross PNS", category: "Accessories" },
+  { phrase: "pin bross guru", category: "Accessories" },
+  { phrase: "pin bross TNI", category: "Accessories" },
+  { phrase: "pin bross POLRI", category: "Accessories" },
+  { phrase: "pin bross DPRD", category: "Accessories" },
+  { phrase: "pin bross kejaksaan", category: "Accessories" },
+  { phrase: "pin bross hakim", category: "Accessories" },
+  { phrase: "pin bross ASN", category: "Accessories" },
   { phrase: "souvenir wisuda", category: "Souvenir Wisuda" },
 ]
 

@@ -39,7 +39,7 @@ const articlesPath = join(root, "src/data/articles.ts")
 
 const CAT_MAP = {
   plakat: "Plakat", medali: "Medali", piala: "Piala & Trophy", "gift box": "Gift Box",
-  prasasti: "Prasasti", "name tag": "Accessories", "gantungan kunci": "Accessories",
+  prasasti: "Prasasti",   "name tag": "Accessories", "nama dada": "Accessories", "gantungan kunci": "Accessories", "gantungan kunci": "Accessories",
   "souvenir wisuda": "Souvenir Wisuda", souvenir: "Souvenir", "batas wilayah": "Batas Wilayah",
   tumbler: "Souvenir", samir: "Souvenir Wisuda", toga: "Souvenir Wisuda",
 }
@@ -305,7 +305,7 @@ const CAT_LINK_WORD = {
   "Piala & Trophy": "piala",
   "Souvenir Wisuda": "souvenir wisuda",
   "Gift Box": "gift box",
-  "Accessories": "name tag",
+  "Accessories": "nama dada",
   "Souvenir": "souvenir",
   "Prasasti": "prasasti",
   "Batas Wilayah": "batas wilayah",
@@ -332,7 +332,7 @@ const PILLAR_FOR = {
   Blog: "panduan-lengkap-souvenir-custom",
 }
 const PILLAR_TOPICS = [
-  { pillar: "panduan-lengkap-name-tag-custom", re: /name-tag|nametag|id-card|id card|nama-dada|papan-nama-dada/ },
+  { pillar: "panduan-lengkap-name-tag-custom", re: /name-tag|nametag|id-card|id card|nama-dada|papan-nama-dada|nama-dada-akrilik|nama-dada-pns|nama-dada-guru|nama-dada-pgri|nama-dada-pegawai/ },
   { pillar: "panduan-lengkap-papan-nama-custom", re: /^papan-nama(?!-dada)/ },
   { pillar: "panduan-lengkap-gantungan-kunci-custom", re: /gantungan-kunci|keychain/ },
   { pillar: "panduan-lengkap-pin-bross-custom", re: /pin-bross|pin bross|bross/ },
@@ -365,9 +365,16 @@ function resolvePillar(slug, category, allSlugs) {
 function injectCategoryLink(content, category, catSlugs) {
   const slug = catSlugs[category]
   if (!slug) return content
-  const word = CAT_LINK_WORD[category] || category
-  const re = new RegExp(`\\b(${escapeRe(word)})\\b`, "i")
-  return content.replace(re, `<a href="/katalog-produk/${slug}">$1</a>`)
+  // Link first 3 occurrences of the category keyword naturally in content
+  const words = [
+    CAT_LINK_WORD[category] || category,
+    (CAT_LINK_WORD[category] || category).toLowerCase(),
+  ]
+  let count = 0
+  return content.replace(new RegExp(`\\b(${words.map((w) => escapeRe(w)).join("|")})\\b`, "gi"), (m) => {
+    if (++count > 3) return m
+    return `<a href="/katalog-produk/${slug}">${m}</a>`
+  })
 }
 function injectTestimoniLink(content) {
   const re = /(instansi|klien|pelanggan|testimoni|customer)/i

@@ -91,7 +91,7 @@ export const categories: Category[] = [
     icon: "Gem",
     description: "Aksesoris dan merchandise custom",
     subcategories: [
-      { id: "nt", name: "Name Tag", slug: "name-tag", aliases: ["nama dada", "papan nama dada"] },
+      { id: "nt", name: "Nama Dada", slug: "name-tag", aliases: ["nama dada", "papan nama dada", "nama dada akrilik", "nama dada PNS", "nama dada guru", "nama dada PGRI", "nama dada pegawai", "name tag"] },
       { id: "pb", name: "Pin/Bross", slug: "pin-bross" },
       { id: "gk", name: "Gantungan Kunci", slug: "gantungan-kunci" },
       { id: "tm", name: "Tumbler", slug: "tumbler" },

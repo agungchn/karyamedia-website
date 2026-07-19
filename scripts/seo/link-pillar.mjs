@@ -43,7 +43,7 @@ const PILLAR_TARGETS = {
 // pemetaan berbasis topik (slug) untuk pilar yang berbagi kategori.
 // dipakai untuk mengarahkan artikel cluster ke pilar yang TEPAT (bukan cuma per kategori).
 const PILLAR_TOPICS = [
-  { pillar: "panduan-lengkap-name-tag-custom", re: /name-tag|nametag|id-card|id card|nama-dada|papan-nama-dada/ },
+  { pillar: "panduan-lengkap-name-tag-custom", re: /name-tag|nametag|id-card|id card|nama-dada|papan-nama-dada|nama-dada-akrilik|nama-dada-pns|nama-dada-guru|nama-dada-pgri|nama-dada-pegawai/ },
   { pillar: "panduan-lengkap-papan-nama-custom", re: /^papan-nama(?!-dada)/ },
   { pillar: "panduan-lengkap-gantungan-kunci-custom", re: /gantungan-kunci|keychain/ },
   { pillar: "panduan-lengkap-pin-bross-custom", re: /pin-bross|pin bross|bross/ },

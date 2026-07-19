@@ -47,7 +47,7 @@ const DEFAULT_SEEDS = [
   "souvenir pernikahan",
   "prasasti",
   "gift box",
-  "name tag",
+  "nama dada akrilik",
   "samir wisuda",
   "patung wisuda",
   "map ijazah",

@@ -36,7 +36,7 @@ const faqs = [
   },
   {
     q: "Produk apa saja yang bisa dipesan?",
-    a: "Kami memproduksi plakat (akrilik, kayu, marmer, fiberglass, wayang), medali custom & 3D, piala & trophy, prasasti (marmer, kuningan, stainless), souvenir wisuda (samir, patung, plakat, kalung rektor, toga), gift box, name tag, pin/bross, gantungan kunci, tumbler, dan papan nama.",
+    a: "Kami memproduksi plakat (akrilik, kayu, marmer, fiberglass, wayang), medali custom & 3D, piala & trophy, prasasti (marmer, kuningan, stainless), souvenir wisuda (samir, patung, plakat, kalung rektor, toga), gift box, nama dada, pin/bross, gantungan kunci, tumbler, dan papan nama.",
   },
   {
     q: "Apakah semua produk bisa custom desain?",

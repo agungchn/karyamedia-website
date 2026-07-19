@@ -3,7 +3,7 @@ import { NextResponse } from "next/server"
 
 const SITE_URL = "https://karyamediasouvenir.com"
 
-export const dynamic = "force-static"
+export const dynamic = "force-dynamic"
 
 function xmlEscape(s: string): string {
   return s

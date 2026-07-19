@@ -1,6 +1,4 @@
 import { NextRequest, NextResponse } from "next/server"
-import { promises as fs } from "fs"
-import path from "path"
 
 const SITE_URL = process.env.SITE_URL || "https://karyamediasouvenir.com"
 const FB_PAGE_ID = process.env.FB_PAGE_ID
@@ -10,10 +8,6 @@ const SECRET = process.env.AUTOPOST_SECRET
 const LIMIT = Math.max(1, Number(process.env.AUTOPOST_LIMIT || "3"))
 const DRYRUN = process.env.AUTOPOST_DRYRUN === "1"
 const GRAPH = "https://graph.facebook.com/v21.0"
-
-const STORE_PATH = path.join(process.cwd(), "data", "autopost-posted.json")
-const KV_URL = process.env.AUTOPOST_STATE_URL || process.env.UPSTASH_REDIS_REST_URL
-const KV_TOKEN = process.env.AUTOPOST_STATE_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN
 
 export const dynamic = "force-dynamic"
 
@@ -61,51 +55,6 @@ function parseFeed(xml: string): FeedItem[] {
     (a, b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime()
   )
   return items
-}
-
-// ---- persistent store (dedupe) ----
-async function getPosted(): Promise<Set<string>> {
-  if (KV_URL && KV_TOKEN) {
-    try {
-      const res = await fetch(`${KV_URL}/get/autopost_posted`, {
-        headers: { Authorization: `Bearer ${KV_TOKEN}` },
-      })
-      const json = await res.json()
-      if (json.result) return new Set(JSON.parse(json.result))
-    } catch (e) {
-      console.error("KV get failed:", e)
-    }
-    return new Set()
-  }
-  try {
-    const raw = await fs.readFile(STORE_PATH, "utf8")
-    return new Set(JSON.parse(raw))
-  } catch {
-    return new Set()
-  }
-}
-
-async function markPosted(guid: string): Promise<void> {
-  const set = await getPosted()
-  set.add(guid)
-  const arr = JSON.stringify([...set])
-  if (KV_URL && KV_TOKEN) {
-    try {
-      await fetch(`${KV_URL}/set/autopost_posted/${encodeURIComponent(arr)}`, {
-        method: "POST",
-        headers: { Authorization: `Bearer ${KV_TOKEN}` },
-      })
-    } catch (e) {
-      console.error("KV set failed:", e)
-    }
-    return
-  }
-  try {
-    await fs.mkdir(path.dirname(STORE_PATH), { recursive: true })
-    await fs.writeFile(STORE_PATH, arr)
-  } catch (e) {
-    console.error("local store write failed:", e)
-  }
 }
 
 // ---- Meta Graph API ----
@@ -185,14 +134,17 @@ export async function GET(req: NextRequest) {
     )
   }
 
-  const posted = await getPosted()
+  const postedRaw = req.nextUrl.searchParams.get("posted") || ""
+  const posted = new Set(postedRaw ? postedRaw.split(",") : [])
+
   const toPost = items.filter((i) => !posted.has(i.guid)).slice(0, LIMIT)
 
   if (toPost.length === 0) {
-    return NextResponse.json({ message: "tidak ada artikel baru", posted: [] })
+    return NextResponse.json({ message: "tidak ada artikel baru", posted: [], nextPosted: [...posted] })
   }
 
   const results: Array<Record<string, unknown>> = []
+  const updatedPosted = new Set(posted)
   for (const item of toPost) {
     const r: Record<string, unknown> = { title: item.title, link: item.link }
     if (DRYRUN) {
@@ -201,7 +153,10 @@ export async function GET(req: NextRequest) {
       continue
     }
     try {
-      if (FB_PAGE_ID && FB_PAGE_TOKEN) r.fb = await postToFacebook(item)
+      if (FB_PAGE_ID && FB_PAGE_TOKEN) {
+        r.fb = await postToFacebook(item)
+        updatedPosted.add(item.guid)
+      }
       if (IG_USER_ID && FB_PAGE_TOKEN) {
         try {
           r.ig = await postToInstagram(item)
@@ -209,23 +164,11 @@ export async function GET(req: NextRequest) {
           r.igError = String(e)
         }
       }
-      await markPosted(item.guid)
     } catch (e) {
       r.error = String(e)
     }
     results.push(r)
   }
 
-  const ok = results.filter((r) => r.fb || r.ig).length
-  const fail = results.filter((r) => r.error || r.igError).length
-  const lines = results.map((r) => {
-    let s = `• ${r.title}`
-    if (r.fb) s += " ✅FB"
-    if (r.ig) s += " ✅IG"
-    if (r.error) s += " ❌FB"
-    if (r.igError) s += " ❌IG"
-    return s
-  })
-
-  return NextResponse.json({ message: "ok", posted: results })
+  return NextResponse.json({ message: "ok", posted: results, nextPosted: [...updatedPosted] })
 }

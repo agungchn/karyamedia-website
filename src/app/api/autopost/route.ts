@@ -7,10 +7,11 @@ const FB_PAGE_ID = process.env.FB_PAGE_ID
 const FB_PAGE_TOKEN = process.env.FB_PAGE_ACCESS_TOKEN
 const IG_USER_ID = process.env.IG_USER_ID
 const SECRET = process.env.AUTOPOST_SECRET
-const BOT_TOKEN = "8623671184:AAF4tj4dnm8TXw7aL9O2GgWwdh3C6sFNlRQ"
+const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || ""
 const CHAT_ID = "1998667945"
 
 async function sendTelegram(text: string) {
+  if (!BOT_TOKEN) return
   try {
     await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
       method: "POST",

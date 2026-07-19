@@ -7,6 +7,18 @@ const FB_PAGE_ID = process.env.FB_PAGE_ID
 const FB_PAGE_TOKEN = process.env.FB_PAGE_ACCESS_TOKEN
 const IG_USER_ID = process.env.IG_USER_ID
 const SECRET = process.env.AUTOPOST_SECRET
+const BOT_TOKEN = "8623671184:AAF4tj4dnm8TXw7aL9O2GgWwdh3C6sFNlRQ"
+const CHAT_ID = "1998667945"
+
+async function sendTelegram(text: string) {
+  try {
+    await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ chat_id: CHAT_ID, text, parse_mode: "HTML" }),
+    })
+  } catch { /* not critical */ }
+}
 const LIMIT = Math.max(1, Number(process.env.AUTOPOST_LIMIT || "3"))
 const DRYRUN = process.env.AUTOPOST_DRYRUN === "1"
 const GRAPH = "https://graph.facebook.com/v21.0"
@@ -192,6 +204,8 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ message: "tidak ada artikel baru", posted: [] })
   }
 
+  await sendTelegram(`📢 <b>Autopost: ${toPost.length} artikel</b> akan diposting ke FB/IG`)
+
   const results: Array<Record<string, unknown>> = []
   for (const item of toPost) {
     const r: Record<string, unknown> = { title: item.title, link: item.link }
@@ -215,6 +229,18 @@ export async function GET(req: NextRequest) {
     }
     results.push(r)
   }
+
+  const ok = results.filter((r) => r.fb || r.ig).length
+  const fail = results.filter((r) => r.error || r.igError).length
+  const lines = results.map((r) => {
+    let s = `• ${r.title}`
+    if (r.fb) s += " ✅FB"
+    if (r.ig) s += " ✅IG"
+    if (r.error) s += " ❌FB"
+    if (r.igError) s += " ❌IG"
+    return s
+  })
+  await sendTelegram(`✅ <b>Autopost Selesai</b> (${ok} ok, ${fail} gagal)\n${lines.join("\n")}`)
 
   return NextResponse.json({ message: "ok", posted: results })
 }

@@ -353,6 +353,12 @@ async function main() {
 
   // Re-rank SETELAH geo pool disertakan agar topik provinsi×segmen (imp ${GEO_IMP})
   // benar-benar memimpin daftar, di atas competitor-derived & bing-seed.
+  // +300 boost untuk kategori prioritas: Plakat & Souvenir Wisuda (beserta turunannya).
+  const catBoost = (o) => {
+    const cat = o._category || inferCategory(o.query)
+    if (cat === "Plakat" || cat === "Souvenir Wisuda") return 300
+    return 0
+  }
   const reBoost = (q) => {
     const lq = (q || "").toLowerCase()
     let b = 0
@@ -361,9 +367,9 @@ async function main() {
   }
   if (seedVol.size) {
     for (const o of opportunities) o._boost = reBoost(o.query)
-    opportunities.sort((a, b) => b.impressions + (b._boost || 0) - (a.impressions + (a._boost || 0)))
+    opportunities.sort((a, b) => b.impressions + (b._boost || 0) + catBoost(b) - (a.impressions + (a._boost || 0) + catBoost(a)))
   } else {
-    opportunities.sort((a, b) => b.impressions - a.impressions)
+    opportunities.sort((a, b) => b.impressions + catBoost(b) - (a.impressions + catBoost(a)))
   }
 
   console.log(`Sudah punya artikel: ${covered}`)

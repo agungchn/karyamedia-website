@@ -295,6 +295,7 @@ function buildPrompt({ keyword, category, location = null, segment = null, segme
 Keyword utama: "${keyword}"
 Kategori: ${category}
 Segmen target: ${seg}${segCtxTxt}; gunakan contoh kasus, narasi, kebutuhan, dan kata kunci long-tail yang relevan dengan ${loc} serta segmen tersebut secara natural; jangan ubah fakta bahwa Karyamedia berbasis Yogyakarta.
+**PREFERENSI KATEGORI:** Jika memungkinkan, prioritaskan angle/konten yang berkaitan dengan PLAKAT (plakat akrilik, resin, kayu, marmer, fiberglass, wayang — beserta variannya) atau SOUVENIR WISUDA (samir, map ijazah, patung wisuda, kalung rektor, tongkat rektor, tabung wisuda, toga, gordon wisuda).
 
 Buat objek JSON dengan field berikut:
 - "title": judul artikel, MAKSIMAL 60 karakter, HARUS mengandung keyword utama secara utuh (contoh: jika keyword "plakat akrilik custom" maka title mengandung frasa tersebut). GUNAKAN HURUF KAPITAL AWAL (Title Case), contoh: "Plakat Akrilik Custom untuk Kantor Desa: Solusi Presisi" — jangan seluruhnya huruf kecil.
@@ -339,6 +340,7 @@ Panjang artikel pesaing: ~${c.words || "?"} kata.
 Keyword utama: "${keyword}"
 Kategori: ${category}
 Segmen target: ${seg}${segCtxTxt}; gunakan contoh kasus, narasi, kebutuhan, dan kata kunci long-tail yang relevan dengan ${loc} serta segmen tersebut secara natural; jangan ubah fakta bahwa Karyamedia berbasis Yogyakarta.
+**PREFERENSI KATEGORI:** Jika memungkinkan, prioritaskan angle/konten yang berkaitan dengan PLAKAT (plakat akrilik, resin, kayu, marmer, fiberglass, wayang — beserta variannya) atau SOUVENIR WISUDA (samir, map ijazah, patung wisuda, kalung rektor, tongkat rektor, tabung wisuda, toga, gordon wisuda).
 ${compBlock}
 Buat objek JSON dengan field berikut:
 - "title": MAKSIMAL 60 karakter, HARUS mengandung keyword utama secara utuh. GUNAKAN HURUF KAPITAL AWAL (Title Case), contoh: "Plakat Akrilik Custom untuk Kantor Desa: Solusi Presisi" — jangan seluruhnya huruf kecil.

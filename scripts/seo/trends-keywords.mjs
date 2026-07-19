@@ -299,6 +299,11 @@ ${trendData}
 
 TUGAS: Pilih ${Math.max(generateNext * 3, 5)} query PALING MENARIK dari daftar di atas untuk dijadikan artikel (urutkan dari yang paling menarik).
 
+PREFERENSI PRODUK (urutkan prioritas):
+1. PLAKAT & TURUNANNYA (plakat akrilik, plakat resin, plakat kayu, plakat marmer, plakat fiberglass, plakat wayang, plakat penghargaan)
+2. SOUVENIR WISUDA & TURUNANNYA (souvenir wisuda, samir wisuda, map ijazah, patung wisuda, kalung rektor, tongkat rektor, tabung wisuda, toga wisuda, gordon wisuda)
+3. Produk lainnya (piala, medali, prasasti, gift box, name tag, dll hanya jika top 1-2 tidak mencukupi)
+
 STRATEGI:
 - Publikasikan artikel SEKARANG (Juli 2026) agar terindeks sebelum puncak pencarian
 - Gunakan data WILAYAH untuk menentukan angle artikel (jika data wilayah ada, artikel harus spesifik ke provinsi tersebut)

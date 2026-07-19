@@ -60,6 +60,10 @@ export const PRODUCTS = [
   { phrase: "plakat penghargaan", category: "Plakat" },
   { phrase: "plakat akrilik", category: "Plakat" },
   { phrase: "plakat resin", category: "Plakat" },
+  { phrase: "plakat kayu", category: "Plakat" },
+  { phrase: "plakat marmer", category: "Plakat" },
+  { phrase: "plakat fiberglass", category: "Plakat" },
+  { phrase: "plakat wayang", category: "Plakat" },
   { phrase: "medali custom", category: "Medali" },
   { phrase: "medali emas", category: "Medali" },
   { phrase: "piala trophy", category: "Piala & Trophy" },
@@ -85,6 +89,14 @@ export const PRODUCTS = [
   { phrase: "pin bross hakim", category: "Accessories" },
   { phrase: "pin bross ASN", category: "Accessories" },
   { phrase: "souvenir wisuda", category: "Souvenir Wisuda" },
+  { phrase: "samir wisuda", category: "Souvenir Wisuda" },
+  { phrase: "map ijazah", category: "Souvenir Wisuda" },
+  { phrase: "patung wisuda", category: "Souvenir Wisuda" },
+  { phrase: "kalung rektor", category: "Souvenir Wisuda" },
+  { phrase: "tongkat rektor", category: "Souvenir Wisuda" },
+  { phrase: "tabung wisuda", category: "Souvenir Wisuda" },
+  { phrase: "toga wisuda", category: "Souvenir Wisuda" },
+  { phrase: "gordon wisuda", category: "Souvenir Wisuda" },
 ]
 
 // Medali dengan angle buyer-intent spesifik & konteks acara/lembaga NYATA di

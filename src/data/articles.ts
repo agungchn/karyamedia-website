@@ -18488,7 +18488,7 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
   },
   {
     slug: "piala-resin-untuk-pemerintahan-kepulauan-riau-custom",
-    title: "Piala Resin untuk Pemerintahan Kepulauan Riau: Presisi &",
+    title: "Piala Resin untuk Pemerintahan Kepulauan Riau: Presisi & Kualitas Terbaik",
     description: "Piala resin untuk pemerintahan Kepulauan Riau — diproduksi langsung oleh Karyamedia sejak 2001 di Yogyakarta, presisi ukiran 0,2 mm, finishing glossy/matte.",
     category: "Piala & Trophy",
     date: "2026-07-19",

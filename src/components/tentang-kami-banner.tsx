@@ -96,9 +96,14 @@ export function TentangKamiBanner() {
             style={{ background: "radial-gradient(circle at 50% 0%, rgba(255,255,255,0.25), rgba(255,255,255,0) 55%)" }}
           />
           <div className="relative z-10">
-          <div className={`inline-flex items-center gap-2 ${theme.badge} px-5 py-2 rounded-full text-sm font-medium mb-6 backdrop-blur-md border border-white/10 shadow-lg hover:scale-105 hover:shadow-xl hover:border-white/30 transition-all duration-300 cursor-default`}>
-            <Building className="w-4 h-4" />
-            Tentang Kami
+          <div className="relative inline-flex overflow-hidden rounded-full p-[1.5px] mb-6 cursor-default hover:scale-105 transition-transform duration-300">
+            <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#D4AF37_0%,#1D4ED8_50%,#D4AF37_100%)]" />
+            <div className="inline-flex items-center gap-2 rounded-full bg-primary text-xs font-medium backdrop-blur-3xl">
+              <span className="inline-flex items-center gap-2 rounded-full text-center bg-gradient-to-tr from-accent/20 via-primary-light/30 to-transparent text-white border-[1px] border-accent/30 py-2.5 px-6 text-sm font-medium">
+                <Building className="w-4 h-4" />
+                Tentang Kami
+              </span>
+            </div>
           </div>
           <h1
             className="heading-display text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r mb-4"

@@ -19,9 +19,11 @@ export function TimeBadge({
     return () => clearInterval(interval)
   }, [])
 
+  const isSore = theme.bgTop === "#E8A0B0"
+
   return (
     <div
-      className={`inline-flex items-center gap-2 backdrop-blur-sm px-4 py-2 rounded-full transition-transform duration-300 hover:scale-105 cursor-default ${theme.badge} ${className}`}
+      className={`inline-flex items-center gap-2 backdrop-blur-sm px-4 py-2 rounded-full transition-transform duration-300 hover:scale-105 cursor-default ${isSore ? 'bg-white/70 text-blue-950' : theme.badge} ${className}`}
     >
       {children}
     </div>

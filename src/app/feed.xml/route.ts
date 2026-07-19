@@ -32,6 +32,7 @@ export function GET() {
       <guid isPermaLink="true">${url}</guid>
       <description>${xmlEscape(a.description)}</description>
       <category>${xmlEscape(a.category)}</category>
+      <image>${xmlEscape(image)}</image>
       <enclosure url="${xmlEscape(image)}" length="0" type="${mime}" />
       <media:content url="${xmlEscape(image)}" medium="image" type="${mime}" />
       <pubDate>${pubDate}</pubDate>

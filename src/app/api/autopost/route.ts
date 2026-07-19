@@ -65,7 +65,12 @@ function parseFeed(xml: string): FeedItem[] {
       link,
       guid: get("guid") || link,
       description: get("description"),
-      image: get("image"),
+      image: (() => {
+        const img = get("image")
+        if (img) return img
+        const enc = block.match(/<enclosure[^>]+url="([^"]+)"/)
+        return enc ? unescapeXml(enc[1]) : ""
+      })(),
       pubDate: get("pubDate"),
     })
   }

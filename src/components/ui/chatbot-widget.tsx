@@ -1,25 +1,42 @@
 "use client"
 
 import { useState, useRef, useEffect } from "react"
-import { MessageCircle, X, Send, MessageSquareText } from "lucide-react"
+import { MessageCircle, X, Send, MessageSquareText, ExternalLink } from "lucide-react"
 import { getWhatsAppLink } from "@/lib/utils"
 
 const GREETING =
   "Halo! Saya asisten virtual Karyamedia Souvenir 👋\nAda yang bisa saya bantu seputar plakat, medali, piala, souvenir wisuda, & souvenir custom? Untuk pemesanan & penawaran, bisa lanjut ke WhatsApp CS kami ya."
 
-type Msg = { role: "user" | "assistant"; content: string }
+type Msg = { role: "user" | "assistant"; content: string; links?: string[] }
+
+const ARTICLE_RE = /https:\/\/karyamediasouvenir\.com\/blog\/\S+/g
+
+function extractLinks(text: string): string[] {
+  return [...new Set(text.match(ARTICLE_RE) || [])]
+}
 
 const SUGGESTIONS = [
   "Jam buka Karyamedia kapan?",
   "Minimal order berapa?",
   "Gimana cara pesan?",
   "Ada katalog produknya?",
+  "Berapa harga plakat akrilik?",
 ]
+
+function TypingDots() {
+  return (
+    <div className="flex items-center gap-1 px-1">
+      <span className="h-2 w-2 animate-bounce rounded-full bg-gray-400" style={{ animationDelay: "0ms" }} />
+      <span className="h-2 w-2 animate-bounce rounded-full bg-gray-400" style={{ animationDelay: "150ms" }} />
+      <span className="h-2 w-2 animate-bounce rounded-full bg-gray-400" style={{ animationDelay: "300ms" }} />
+    </div>
+  )
+}
 
 export function ChatbotWidget() {
   const [open, setOpen] = useState(false)
   const [offline, setOffline] = useState(false)
-  const [msgs, setMsgs] = useState<Msg[]>([{ role: "assistant", content: GREETING }])
+  const [msgs, setMsgs] = useState<Msg[]>([{ role: "assistant", content: GREETING, links: [] }])
   const [input, setInput] = useState("")
   const [loading, setLoading] = useState(false)
   const listRef = useRef<HTMLDivElement>(null)
@@ -58,14 +75,17 @@ export function ChatbotWidget() {
       })
       const data = await res.json()
       if (!res.ok) throw new Error(data.error || "Gagal memproses")
-      setMsgs([...history, { role: "assistant", content: data.reply || "(tanpa balasan)" }])
-    } catch (e: any) {
+      const reply = data.reply || "(tanpa balasan)"
+      const links = extractLinks(reply)
+      setMsgs([...history, { role: "assistant", content: reply, links }])
+    } catch {
       setMsgs([
         ...history,
         {
           role: "assistant",
           content:
             "Maaf, saya sedang tidak bisa menjawab 😔 Silakan hubungi CS kami langsung via WhatsApp ya.",
+          links: [],
         },
       ])
     } finally {
@@ -117,19 +137,36 @@ export function ChatbotWidget() {
           {/* Messages */}
           <div ref={listRef} className="flex-1 space-y-3 overflow-y-auto bg-gray-50 p-4">
             {msgs.map((m, i) => (
-              <div
-                key={i}
-                className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}
-              >
+              <div key={i}>
                 <div
-                  className={`max-w-[85%] whitespace-pre-wrap rounded-2xl px-3 py-2 text-sm leading-relaxed ${
-                    m.role === "user"
-                      ? "rounded-br-sm bg-accent text-primary"
-                      : "rounded-bl-sm bg-white text-gray-800 shadow-sm"
-                  }`}
+                  className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}
                 >
-                  {m.content}
+                  <div
+                    className={`max-w-[85%] whitespace-pre-wrap rounded-2xl px-3 py-2 text-sm leading-relaxed ${
+                      m.role === "user"
+                        ? "rounded-br-sm bg-accent text-primary"
+                        : "rounded-bl-sm bg-white text-gray-800 shadow-sm"
+                    }`}
+                  >
+                    {m.content}
+                  </div>
                 </div>
+                {m.links && m.links.length > 0 && (
+                  <div className="mt-1.5 flex flex-wrap gap-1.5 pl-2">
+                    {m.links.map((link) => (
+                      <a
+                        key={link}
+                        href={link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 rounded-lg bg-accent/10 px-2.5 py-1 text-xs font-medium text-accent transition hover:bg-accent/20"
+                      >
+                        <ExternalLink className="h-3 w-3" />
+                        {link.split("/").pop()?.slice(0, 30) || "Baca artikel"}
+                      </a>
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
             {msgs.length === 1 && !loading && (
@@ -148,8 +185,8 @@ export function ChatbotWidget() {
             )}
             {loading && (
               <div className="flex justify-start">
-                <div className="rounded-2xl rounded-bl-sm bg-white px-3 py-2 text-sm text-gray-400 shadow-sm">
-                  mengetik…
+                <div className="rounded-2xl rounded-bl-sm bg-white px-3 py-2 shadow-sm">
+                  <TypingDots />
                 </div>
               </div>
             )}

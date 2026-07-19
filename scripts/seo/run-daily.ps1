@@ -8,7 +8,6 @@ $root = "H:\karyamedia-web"
 Set-Location $root
 $log = Join-Path $root "article-gen-log.txt"
 $popup = Join-Path $root "scripts\seo\popup.ps1"
-$sendTelegram = Join-Path $root "scripts\send-telegram.ps1"
 
 # Show a visible popup window (launched detached so it never blocks the task).
 function Show-Popup {
@@ -29,7 +28,6 @@ function Submit-SitemapGSC {
 
 $ts = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
 Add-Content -Path $log -Value "`n===== $ts ====="
-& $sendTelegram -Message "🔄 <b>Generate Artikel</b> dimulai — $ts WIB"
 
 # safety net: pastikan seluruh artikel mematuhi standar lint terbaru sebelum generate
 try {
@@ -92,25 +90,21 @@ if ($ideasExit -ne 0) {
   if ($quotaHit) {
     Add-Content -Path $log -Value "QUOTA/USAGE ERROR: $reason Cek apakah Zen free sudah 'exceeded' atau fallback Gemini juga habis."
     Show-Popup -Title "Gagal Generate Artikel" -Message "$reason Artikel tidak dibuat hari ini. Akan coba lagi di jadwal berikutnya."
-    & $sendTelegram -Message "⚠️ <b>Gagal Generate Artikel</b> — $reason"
   } else {
     Add-Content -Path $log -Value "GENERATOR ERROR (exit $ideasExit): $($out | Select-Object -Last 20 | Out-String)"
     Show-Popup -Title "Gagal Generate Artikel" -Message "Generator error (exit $ideasExit). Cek log article-gen-log.txt."
-    & $sendTelegram -Message "❌ <b>Generator Error</b> (exit $ideasExit) — cek log"
   }
   exit 1
 }
 
 if ($slugs.Count -eq 0) {
   Show-Popup -Title "Karyamedia SEO" -Message "Tidak ada artikel baru hari ini (semua topik sudah ada)."
-  & $sendTelegram -Message "ℹ️ Tidak ada artikel baru — semua topik sudah ada"
   exit 0
 }
 
 $n = $slugs.Count
 $titleList = $titles -join "`, "
 Show-Popup -Title "$n Artikel Baru Terbit" -Message "$titleList berhasil dibuat & di-push. Menunggu deploy..."
-& $sendTelegram -Message "✅ <b>$n Artikel Baru</b> berhasil dibuat`n$titleList`nMenunggu deploy..."
 
 # tunggu Vercel deploy sekali saja
 Start-Sleep -Seconds 120
@@ -124,7 +118,6 @@ foreach ($slug in $slugs) {
     $r = Invoke-WebRequest -Uri $url -Method Head -TimeoutSec 25 -UseBasicParsing
     if ($r.StatusCode -eq 200) {
       Show-Popup -Title "Sudah Online" -Message "Artikel live: $url"
-      & $sendTelegram -Message "🌐 <b>Live:</b> $url"
     } else {
       Show-Popup -Title "Belum Online" -Message "Status $($r.StatusCode) untuk $url"
     }

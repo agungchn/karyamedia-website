@@ -50,6 +50,16 @@ export function inferCategory(kw) {
 }
 
 // ---- English→Indonesian auto-fix for common LLM slip-ups ----
+const FIX_KATA = [
+  [/\bkepaluan\b/gi, "kepulauan"],
+  [/\bdikarenakan\b/gi, "karena"],
+  [/\bmerupakan\b/gi, "adalah"],
+  [/\bdiantaranya\b/gi, "antara lain"],
+  [/\bterdapat\b/gi, "ada"],
+  [/\btidak hanya\b/gi, "bukan hanya"],
+  [/\bsehingga\b/gi, "sehingga"],
+  [/\bdimana\b/gi, "yang"],
+]
 const EN_TO_ID = [
   [/\bremains\b/gi, "tetap"],
   [/\bremaining\b/gi, "tersisa"],
@@ -72,6 +82,9 @@ const EN_TO_ID = [
 function fixEnglishWords(text) {
   let fixed = text
   for (const [re, id] of EN_TO_ID) {
+    fixed = fixed.replace(re, id)
+  }
+  for (const [re, id] of FIX_KATA) {
     fixed = fixed.replace(re, id)
   }
   return fixed
@@ -166,11 +179,14 @@ function trimToWords(s, max) {
 }
 function enforceTitle(title, headKw) {
   let t = trimToWords(title, 60)
+  // Bersihkan trailing konjungsi/preposisi yang terpotong
+  t = t.replace(/[,;:\-–—]?\s*(dan|untuk|di|ke|dari|pada|atau|dengan|yang|bagi|serta|&)\s*$/i, "").trim()
   if (headKw && t && !t.toLowerCase().includes(headKw)) {
     const pre = headKw.length <= 54 ? headKw : headKw.slice(0, 54)
     t = (t ? `${pre} - ${t}` : pre).slice(0, 60)
   }
-  return t || (headKw ? headKw.slice(0, 60) : title || "")
+  t = t.replace(/[,;:\-–—]?\s*(dan|untuk|di|ke|dari|pada|atau|dengan|yang|bagi|serta|&)\s*$/i, "")
+  return t.trim() || (headKw ? headKw.slice(0, 60) : title || "")
 }
 
 // ---- duplicate detection (lightweight; full check runs at commit) ----

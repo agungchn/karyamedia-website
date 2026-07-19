@@ -298,7 +298,7 @@ Segmen target: ${seg}${segCtxTxt}; gunakan contoh kasus, narasi, kebutuhan, dan 
 **PREFERENSI KATEGORI:** Jika memungkinkan, prioritaskan angle/konten yang berkaitan dengan PLAKAT (plakat akrilik, resin, kayu, marmer, fiberglass, wayang — beserta variannya) atau SOUVENIR WISUDA (samir, map ijazah, patung wisuda, kalung rektor, tongkat rektor, tabung wisuda, toga, gordon wisuda).
 
 Buat objek JSON dengan field berikut:
-- "title": judul artikel, MAKSIMAL 60 karakter, HARUS mengandung keyword utama secara utuh (contoh: jika keyword "plakat akrilik custom" maka title mengandung frasa tersebut). GUNAKAN HURUF KAPITAL AWAL (Title Case), contoh: "Plakat Akrilik Custom untuk Kantor Desa: Solusi Presisi" — jangan seluruhnya huruf kecil.
+- "title": judul artikel, MAKSIMAL 60 karakter (WAJIB ≤60, HITUNG KARAKTERNYA! Jika lebih akan dipotong paksa dan jadi tidak rapi), HARUS mengandung keyword utama secara utuh (contoh: jika keyword "plakat akrilik custom" maka title mengandung frasa tersebut). GUNAKAN HURUF KAPITAL AWAL (Title Case), contoh: "Plakat Akrilik Custom untuk Kantor Desa" — jangan seluruhnya huruf kecil. AKHIRI dengan kata LENGKAP (bukan "dan", "&", "dari", "untuk", "di", "ke", "yang").
 - "description": meta description, 120-160 karakter, mengandung keyword utama.
 - "tags": array 4-6 kata kunci Indonesia relevan (semua lowercase); tags[0] HARUS sama dengan keyword utama.
 - "content": artikel lengkap dalam bentuk HTML (string tunggal). Syarat content:
@@ -343,7 +343,7 @@ Segmen target: ${seg}${segCtxTxt}; gunakan contoh kasus, narasi, kebutuhan, dan 
 **PREFERENSI KATEGORI:** Jika memungkinkan, prioritaskan angle/konten yang berkaitan dengan PLAKAT (plakat akrilik, resin, kayu, marmer, fiberglass, wayang — beserta variannya) atau SOUVENIR WISUDA (samir, map ijazah, patung wisuda, kalung rektor, tongkat rektor, tabung wisuda, toga, gordon wisuda).
 ${compBlock}
 Buat objek JSON dengan field berikut:
-- "title": MAKSIMAL 60 karakter, HARUS mengandung keyword utama secara utuh. GUNAKAN HURUF KAPITAL AWAL (Title Case), contoh: "Plakat Akrilik Custom untuk Kantor Desa: Solusi Presisi" — jangan seluruhnya huruf kecil.
+- "title": MAKSIMAL 60 karakter (WAJIB ≤60, HITUNG KARAKTERNYA! Jika lebih akan dipotong paksa dan jadi tidak rapi), HARUS mengandung keyword utama secara utuh. GUNAKAN HURUF KAPITAL AWAL (Title Case), contoh: "Plakat Akrilik Custom untuk Kantor Desa" — jangan seluruhnya huruf kecil. AKHIRI dengan kata LENGKAP (bukan "dan", "&", "dari", "untuk", "di", "ke", "yang").
 - "description": 120-160 karakter, mengandung keyword utama.
 - "tags": array 4-6 kata kunci Indonesia lowercase; tags[0] SAMA dengan keyword utama.
 - "content": artikel HTML (string tunggal) dengan syarat:

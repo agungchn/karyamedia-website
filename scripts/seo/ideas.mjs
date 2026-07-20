@@ -270,6 +270,8 @@ async function main() {
   // Scrape PUBLIC sitemaps of competitor sites (scripts/seo/competitors.json)
   // and turn their article slugs into candidate topics. Strong market signal
   // (these are proven-ranking topics). Ranked with a demand proxy + seed boost.
+  // Filter: skip product codes, merek pihak ketiga, dan topic terlalu pendek.
+  const COMP_SKIP = /^[a-z]{1,3}\d{2,4}\b|\b(regenic|sinau\s?jogja|bulog|krakatau|annova|bca|btn|pln|pnm|bni|bri|mandiri|unpad|smpn|sman|smkn|sdn)\b/i
   try {
     const comp = await competitorTopics()
     const have = new Set(opportunities.map((o) => o.query.trim().toLowerCase()))
@@ -278,9 +280,12 @@ async function main() {
       const q = c.query.trim().toLowerCase()
       if (have.has(q)) continue
       if (nearDup(c.query, working)) continue
+      const words = q.split(/\s+/).filter(Boolean)
+      if (words.length < 4) continue
+      if (COMP_SKIP.test(q)) continue
       opportunities.push({
         query: c.query,
-        impressions: 100,
+        impressions: 50,
         clicks: 0,
         ctr: 0,
         position: 0,
@@ -289,7 +294,7 @@ async function main() {
       have.add(q)
       added++
     }
-    if (added) console.log(`Competitor-derived topics: ${added} (dari sitemap pesaing)`)
+    if (added) console.log(`Competitor-derived topics: ${added} (dari sitemap pesaing, sudah difilter)`)
   } catch (e) {
     console.error(`Competitor topics gagal (${e.message}); lanjut tanpa itu.`)
   }

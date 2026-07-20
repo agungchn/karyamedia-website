@@ -114,7 +114,7 @@ export default function RootLayout({
     <html lang="id" className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable}`}>
       <Script src="https://www.googletagmanager.com/gtag/js?id=G-MS0T6T71GH" strategy="afterInteractive" />
       <Script id="google-analytics" strategy="afterInteractive">
-        {`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-MS0T6T71GH');`}
+        {`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-MS0T6T71GH'); gtag('config', 'AW-18331670296');`}
       </Script>
       <body className="min-h-screen flex flex-col antialiased">
         <FaviconThemeSwitcher />

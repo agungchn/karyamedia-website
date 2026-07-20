@@ -351,9 +351,11 @@ async function main() {
   }
   console.log(`Geo pool: ${geoAdded} opportunity provinsi×segmen (imp ${GEO_IMP}) disertakan.`)
 
-  // Re-rank SETELAH geo pool disertakan agar topik provinsi×segmen (imp ${GEO_IMP})
-  // benar-benar memimpin daftar, di atas competitor-derived & bing-seed.
-  // +300 boost untuk kategori prioritas: Plakat & Souvenir Wisuda (beserta turunannya).
+  // Re-rank SETELAH geo pool disertakan. Real GSC/Bing queries (tanpa marker
+  // sintetik) mendapat multiplier 3x agar demand asli selalu menang. Turunan
+  // competitor & Bing seed tetap lebih rendah dari GSC.
+  const isRealQuery = (o) => !o._comp && !o._seed && !o._province
+  const realImp = (o) => (isRealQuery(o) ? (o.impressions || 0) * 3 : o.impressions || 0)
   const catBoost = (o) => {
     const cat = o._category || inferCategory(o.query)
     if (cat === "Plakat" || cat === "Souvenir Wisuda") return 300
@@ -367,9 +369,9 @@ async function main() {
   }
   if (seedVol.size) {
     for (const o of opportunities) o._boost = reBoost(o.query)
-    opportunities.sort((a, b) => b.impressions + (b._boost || 0) + catBoost(b) - (a.impressions + (a._boost || 0) + catBoost(a)))
+    opportunities.sort((a, b) => realImp(b) + (b._boost || 0) + catBoost(b) - (realImp(a) + (a._boost || 0) + catBoost(a)))
   } else {
-    opportunities.sort((a, b) => b.impressions + catBoost(b) - (a.impressions + catBoost(a)))
+    opportunities.sort((a, b) => realImp(b) + catBoost(b) - (realImp(a) + catBoost(a)))
   }
 
   console.log(`Sudah punya artikel: ${covered}`)

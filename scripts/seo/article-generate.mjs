@@ -235,7 +235,7 @@ function dupCheck(slug, title, workingText, newContent = "") {
           let shared = 0
           for (const h of nHeadings) if (eHeadings.has(h)) shared++
           const headingSim = shared / Math.min(nHeadings.size, eHeadings.size)
-          if (headingSim >= 0.6) {
+          if (headingSim >= 0.8) {
             const eTokens = tokensOf(eContent)
             const c = cont(nTokens, eTokens)
             if (c >= 0.5) return `konten mirip dengan "${t}" (blog/${s}, heading ${(headingSim * 100).toFixed(0)}%, konten ${(c * 100).toFixed(0)}%)`

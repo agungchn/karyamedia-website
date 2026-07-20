@@ -285,7 +285,7 @@ async function main() {
       if (COMP_SKIP.test(q)) continue
       opportunities.push({
         query: c.query,
-        impressions: 50,
+        impressions: 20,
         clicks: 0,
         ctr: 0,
         position: 0,

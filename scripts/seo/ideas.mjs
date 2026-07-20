@@ -322,7 +322,7 @@ async function main() {
   // sebaran geografis — namun tetap di bawah demand riil GSC/Bing bila ada.
   // Rotasi per-hari di buildTopics() menjamin provinsi/segmen terdistribusi
   // merata, dan topik yang sudah jadi artikel gugur otomatis via nearDup.
-  const GEO_IMP = 500
+  const GEO_IMP = 100
   const geo = buildTopics()
   const haveQ = new Set(opportunities.map((o) => o.query.trim().toLowerCase()))
   let geoAdded = 0

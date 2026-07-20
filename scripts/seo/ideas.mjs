@@ -290,6 +290,7 @@ async function main() {
         ctr: 0,
         position: 0,
         _comp: true,
+        _compUrl: c.url,
       })
       have.add(q)
       added++
@@ -403,11 +404,12 @@ async function main() {
         ARTICLE_PROVINCE: o._province || "",
         ARTICLE_SEGMENT: o._segment || "",
       }
-      console.log(`\n### "${o.query}" (kategori: ${cat}${o._province ? ", lokasi: " + o._province : ""}${o._segment ? ", segmen: " + o._segment : ""})`)
+      const beatFlags = o._comp && o._compUrl ? ` --beat --competitor-url "${o._compUrl}"` : ""
+      console.log(`\n### "${o.query}" (kategori: ${cat}${o._province ? ", lokasi: " + o._province : ""}${o._segment ? ", segmen: " + o._segment : ""}${beatFlags ? " [BEAT MODE]" : ""})`)
       // Per-topik: satu topik gagal (mis. duplikat / LLM error) tidak boleh
       // membatalkan topik lain maupun seluruh run.
       try {
-        const out = execSync(`node scripts/seo/article-generate.mjs "${o.query}" --category "${cat}"`, {
+        const out = execSync(`node scripts/seo/article-generate.mjs "${o.query}" --category "${cat}"${beatFlags}`, {
           env: genEnv,
           cwd: root,
           stdio: "pipe",

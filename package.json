@@ -23,6 +23,7 @@
     "seo:consolidate": "node scripts/seo/consolidate.mjs",
     "seo:indexnow": "node scripts/seo/indexnow.mjs",
     "social:autopost": "node scripts/social/autopost.mjs",
+    "social:gbp": "node scripts/social/autopost-gbp.mjs",
     "social:generate": "node scripts/social/generate-content.mjs",
     "social:video": "node scripts/social/generate-video.mjs"
   },

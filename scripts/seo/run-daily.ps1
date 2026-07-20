@@ -1,8 +1,9 @@
 # Daily SEO article generator wrapper:
-# 1. generate + commit + push 3 artikel (seo:ideas --generate-top 3 --commit-push)
+# 1. generate + commit + push 5 artikel (seo:ideas --generate-top 5 --commit-push)
 # 2. show a Windows toast when done
 # 3. after Vercel deploy, check the live URL(s) and toast again if online
-# Dijadwalkan 2x sehari (mis. 12:30 & 18:30) via Task Scheduler -> total 6 artikel/hari.
+# 4. auto-post ke GBP, FB & IG lewat fire-and-forget
+# Dijadwalkan 2x sehari (mis. 12:30 & 18:30) via Task Scheduler -> total 10 artikel/hari.
 $ErrorActionPreference = "Continue"
 $root = "H:\karyamedia-web"
 Set-Location $root
@@ -67,7 +68,7 @@ try {
   # konsolidasi gagal bukan masalah kritis
 }
 
-$out = & npm run seo:ideas -- --generate-top 3 --commit-push 2>&1 | Tee-Object -FilePath $log -Append | Out-String
+$out = & npm run seo:ideas -- --generate-top 5 --commit-push 2>&1 | Tee-Object -FilePath $log -Append | Out-String
 $ideasExit = $LASTEXITCODE
 
 $slugs = [regex]::Matches($out, "GENERATED_SLUG:(\S+)") | ForEach-Object { $_.Groups[1].Value }
@@ -142,4 +143,34 @@ try {
   Show-Popup -Title "Status Indexing Google" -Message "$status"
 } catch {
   Show-Popup -Title "Status Indexing Google" -Message "Tidak bisa cek status indexing."
+}
+
+# auto-post ke GBP (fire-and-forget, tidak blokir sisa script)
+try {
+  Add-Content -Path $log -Value "[gbp] auto-post dimulai..."
+  $gbpOut = & npm run social:gbp 2>&1 | Out-String
+  Add-Content -Path $log -Value $gbpOut
+  if ($gbpOut -match "tidak ada artikel baru") {
+    Add-Content -Path $log -Value "[gbp] Tidak ada artikel baru untuk GBP."
+  } elseif ($gbpOut -match "OK") {
+    Show-Popup -Title "GBP Auto-Post" -Message "Artikel baru berhasil diposting ke Google Business Profile."
+    Add-Content -Path $log -Value "[gbp] GBP auto-post berhasil."
+  }
+} catch {
+  Add-Content -Path $log -Value "[gbp] GBP auto-post gagal (mungkin quota blm approve): $($_.Exception.Message)"
+}
+
+# auto-post ke FB + IG
+try {
+  Add-Content -Path $log -Value "[fb] auto-post dimulai..."
+  $fbOut = & npm run social:autopost 2>&1 | Out-String
+  Add-Content -Path $log -Value $fbOut
+  if ($fbOut -match "tidak ada artikel baru") {
+    Add-Content -Path $log -Value "[fb] Tidak ada artikel baru untuk FB/IG."
+  } elseif ($fbOut -match "fb|ig|posted") {
+    Show-Popup -Title "FB & IG Auto-Post" -Message "Artikel baru berhasil diposting ke Facebook & Instagram."
+    Add-Content -Path $log -Value "[fb] FB/IG auto-post berhasil."
+  }
+} catch {
+  Add-Content -Path $log -Value "[fb] FB/IG auto-post gagal: $($_.Exception.Message)"
 }

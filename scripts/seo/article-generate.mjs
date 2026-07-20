@@ -116,7 +116,7 @@ function enforceDescription(desc, location = null) {
   }
   if (d.length < 120) {
     const loc = location || "seluruh Indonesia"
-    const pad = ` Produsen langsung Yogyakarta sejak 2001, melayani ${loc}.`
+    const pad = ` Produsen langsung Yogyakarta, melayani ${loc}.`
     d = trimToWords(d + pad, 160)
     if (d.length < 120) d = trimToWords(d + pad, 160)
     if (d && !/[.!?]$/.test(d)) d += "."
@@ -529,7 +529,7 @@ async function main() {
   for (let a = 1; a <= 2; a++) {
     if (isAuthoritative(data.content || "")) break
     console.log(`Konten kurang otoritatif (tidak ada bukti konkret), regenerate (percobaan ${a})...`)
-    data = await generateArticle(genOpts("\n\nPENTING: draf sebelumnya KURANG OTORITATIF dan tidak punya bukti konkret. Wajib sertakan fakta: Karyamedia BERDIRI SEJAK 2001, berbasis YOGYAKARTA/JOGJA, melayani RATUSAN INSTANSI & EVENT nasional, serta cantumkan ANGKA/TAHUN/STANDAR produksi. Hindari kalimat promosi generik tanpa bukti."))
+    data = await generateArticle(genOpts("\n\nPENTING: draf sebelumnya KURANG OTORITATIF dan tidak punya bukti konkret. Wajib sertakan fakta: Karyamedia berbasis YOGYAKARTA/JOGJA, produsen langsung, melayani RATUSAN INSTANSI & EVENT nasional, serta cantumkan ANGKA/TAHUN/STANDAR produksi. Hindari kalimat promosi generik tanpa bukti."))
   }
 
   // Auto-fix English words that slipped into Indonesian content

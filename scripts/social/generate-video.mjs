@@ -26,7 +26,7 @@ const SVG_BG = `<svg width="${W}" height="${H}">
   <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#000030"/><stop offset="100%" stop-color="#002878"/></linearGradient></defs>
   <rect width="${W}" height="${H}" fill="url(#g)"/>
   <text x="${W/2}" y="140" text-anchor="middle" font-family="sans-serif" font-size="38" font-weight="bold" fill="#FFE9A8">Karyamedia Souvenir</text>
-  <text x="${W/2}" y="190" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#ffffff" opacity="0.7">Jogja sejak 2001</text>
+  <text x="${W/2}" y="190" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#ffffff" opacity="0.7">Jogja</text>
   <rect x="${IX-2}" y="${IY-2}" width="${IW+4}" height="${IH+4}" rx="12" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-opacity="0.3"/>
   <text x="${W/2}" y="920" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#D4AF37">Custom sesuai kebutuhan Anda</text>
   <rect x="${W/2-140}" y="980" width="280" height="46" rx="23" fill="#075E54"/>

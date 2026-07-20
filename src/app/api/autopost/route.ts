@@ -9,6 +9,9 @@ const LIMIT = Math.max(1, Number(process.env.AUTOPOST_LIMIT || "3"))
 const DRYRUN = process.env.AUTOPOST_DRYRUN === "1"
 const GRAPH = "https://graph.facebook.com/v21.0"
 
+const LI_TOKEN = process.env.LINKEDIN_ACCESS_TOKEN
+const LI_PERSON_URN = process.env.LINKEDIN_PERSON_URN || "urn:li:person:gJJdD_DcmC"
+
 export const dynamic = "force-dynamic"
 
 interface FeedItem {
@@ -57,9 +60,13 @@ function parseFeed(xml: string): FeedItem[] {
   return items
 }
 
+function cleanDesc(d: string): string {
+  return d.replace(/<[^>]*>/g, "").replace(/&amp;/g, "&").replace(/\s+/g, " ").trim().replace(/\b[Ss]ejak\s+2001[,.]?\s*/g, "")
+}
+
 // ---- Meta Graph API ----
 async function postToFacebook(item: FeedItem): Promise<string> {
-  const caption = `${item.title}\n\n${item.description}\n\n${item.link}`
+  const caption = `${item.title}\n\n${cleanDesc(item.description)}\n\n${item.link}`
   // Facebook /photos requires the image uploaded as a file (multipart),
   // not just a URL. Download it first, then upload.
   const imgRes = await fetch(item.image)
@@ -79,7 +86,7 @@ async function postToFacebook(item: FeedItem): Promise<string> {
 }
 
 async function postToInstagram(item: FeedItem): Promise<string> {
-  const caption = `${item.title}\n\n${item.description}\n\nBaca selengkapnya:\n${item.link}\n\n#KaryamediaSouvenir #SouvenirJogja #PlakatCustom #PrasastiCustom`
+  const caption = `${item.title}\n\n${cleanDesc(item.description)}\n\nBaca selengkapnya:\n${item.link}\n\n#KaryamediaSouvenir #SouvenirJogja #PlakatCustom #PrasastiCustom`
   const cUrl = new URL(`${GRAPH}/${IG_USER_ID}/media`)
   cUrl.searchParams.set("image_url", encodeURI(item.image))
   cUrl.searchParams.set("caption", caption)
@@ -111,16 +118,74 @@ async function postToInstagram(item: FeedItem): Promise<string> {
   return pJson.id
 }
 
+// ---- LinkedIn API ----
+async function uploadLinkedInImage(imageUrl: string): Promise<string> {
+  const initRes = await fetch("https://api.linkedin.com/rest/images?action=initializeUpload", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${LI_TOKEN}`,
+      "Content-Type": "application/json",
+      "LinkedIn-Version": "202508",
+      "X-Restli-Protocol-Version": "2.0.0",
+    },
+    body: JSON.stringify({ initializeUploadRequest: { owner: LI_PERSON_URN } }),
+  })
+  if (!initRes.ok) throw new Error(`LI init upload ${initRes.status}`)
+  const { value } = await initRes.json()
+  const imgRes = await fetch(imageUrl)
+  if (!imgRes.ok) throw new Error(`LI dl image ${imgRes.status}`)
+  const buf = await imgRes.arrayBuffer()
+  const upRes = await fetch(value.uploadUrl, { method: "POST", headers: { "Content-Type": "application/octet-stream" }, body: buf })
+  if (!upRes.ok) throw new Error(`LI upload ${upRes.status}`)
+  return value.image
+}
+
+async function postToLinkedIn(item: FeedItem): Promise<string> {
+  const clean = cleanDesc(item.description).substring(0, 300)
+  const commentary = `${item.title}\n\n${clean}`.substring(0, 3000)
+  const body: Record<string, unknown> = {
+    author: LI_PERSON_URN,
+    commentary,
+    visibility: "PUBLIC",
+    distribution: { feedDistribution: "MAIN_FEED", targetEntities: [], thirdPartyDistributionChannels: [] },
+    lifecycleState: "PUBLISHED",
+    isReshareDisabledByAuthor: false,
+  }
+  if (item.image) {
+    try {
+      const imageUrn = await uploadLinkedInImage(item.image)
+      body.content = { article: { source: item.link, thumbnail: imageUrn, title: item.title.substring(0, 200), description: clean.substring(0, 250) } }
+    } catch { /* fallback ke text-only */ }
+  }
+  const res = await fetch("https://api.linkedin.com/rest/posts", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${LI_TOKEN}`,
+      "Content-Type": "application/json",
+      "LinkedIn-Version": "202508",
+      "X-Restli-Protocol-Version": "2.0.0",
+    },
+    body: JSON.stringify(body),
+  })
+  if (!res.ok) {
+    const json = await res.json().catch(() => ({}))
+    throw new Error(`LI ${res.status}: ${(json as Record<string, string>).message || JSON.stringify(json)}`)
+  }
+  return res.headers.get("x-restli-id") || "published"
+}
+
 export async function GET(req: NextRequest) {
   if (SECRET && req.nextUrl.searchParams.get("secret") !== SECRET) {
     return NextResponse.json({ error: "unauthorized" }, { status: 401 })
   }
 
   if (!FB_PAGE_ID || !FB_PAGE_TOKEN) {
-    return NextResponse.json(
-      { error: "FB_PAGE_ID / FB_PAGE_ACCESS_TOKEN belum di-set" },
-      { status: 500 }
-    )
+    if (!LI_TOKEN) {
+      return NextResponse.json(
+        { error: "FB_PAGE_ID / FB_PAGE_ACCESS_TOKEN dan LINKEDIN_ACCESS_TOKEN belum di-set" },
+        { status: 500 }
+      )
+    }
   }
 
   let items: FeedItem[] = []
@@ -162,6 +227,14 @@ export async function GET(req: NextRequest) {
           r.ig = await postToInstagram(item)
         } catch (e) {
           r.igError = String(e)
+        }
+      }
+      if (LI_TOKEN) {
+        try {
+          r.li = await postToLinkedIn(item)
+          updatedPosted.add(item.guid)
+        } catch (e) {
+          r.liError = String(e)
         }
       }
     } catch (e) {

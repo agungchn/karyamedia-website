@@ -57,7 +57,7 @@ async function generate() {
       </defs>
       <rect width="${W}" height="${H}" fill="url(#bg)" rx="0"/>
       <text x="${W/2}" y="160" text-anchor="middle" font-family="sans-serif" font-size="42" font-weight="bold" fill="#FFE9A8">Karyamedia Souvenir</text>
-      <text x="${W/2}" y="220" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#ffffff" opacity="0.7">Jogja sejak 2001</text>
+      <text x="${W/2}" y="220" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#ffffff" opacity="0.7">Jogja</text>
 
       ${imgData ? `<image x="${(W-520)/2}" y="290" width="520" height="520" href="data:image/webp;base64,${imgData}"/>` : `<rect x="${(W-400)/2}" y="330" width="400" height="400" fill="#ffffff" opacity="0.1" rx="20"/><text x="${W/2}" y="560" text-anchor="middle" font-size="28" fill="#aaa">${p.categoryId || "souvenir"}</text>`}
 

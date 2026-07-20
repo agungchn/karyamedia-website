@@ -235,7 +235,7 @@ export function HeroSection() {
 
             {/* Description */}
             <p className={`text-base leading-relaxed max-w-xl ${theme.desc}`}>
-              Karyamedia Souvenir telah melayani pembuatan Plakat, Medali, Piala/Trohy, kebutuhan Souvenir untuk Perlengkapan Wisuda dan Souvenir Custom lebih dari 15 Tahun.
+              Karyamedia Souvenir telah melayani pembuatan Plakat, Medali, Piala/Trophy, kebutuhan Souvenir untuk Perlengkapan Wisuda dan Souvenir Custom lebih dari 15 Tahun.
             </p>
 
             {/* CTA Buttons */}

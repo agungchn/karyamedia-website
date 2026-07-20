@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import localFont from "next/font/local"
+import Script from "next/script"
 import "./globals.css"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
@@ -111,6 +112,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable}`}>
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-MS0T6T71GH" strategy="afterInteractive" />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-MS0T6T71GH');`}
+      </Script>
       <body className="min-h-screen flex flex-col antialiased">
         <FaviconThemeSwitcher />
         <OrganizationSchema />

@@ -56,7 +56,7 @@ async function callOpenAICompatible(system: string, messages: ChatMessage[], use
     body: JSON.stringify({
       model,
       temperature: 0.5,
-      max_tokens: 800,
+      max_tokens: 4096,
       messages: [{ role: "system", content: system + context }, ...messages],
     }),
   })
@@ -65,7 +65,8 @@ async function callOpenAICompatible(system: string, messages: ChatMessage[], use
     throw new Error(`LLM ${res.status}: ${t.slice(0, 300)}`)
   }
   const j = await res.json()
-  return j.choices?.[0]?.message?.content?.trim() || ""
+  const msg = j.choices?.[0]?.message
+  return msg?.content?.trim() || msg?.reasoning_content?.trim() || ""
 }
 
 async function callGemini(system: string, messages: ChatMessage[], userQuery: string) {
@@ -119,7 +120,7 @@ async function callAnthropic(system: string, messages: ChatMessage[], userQuery:
     },
     body: JSON.stringify({
       model,
-      max_tokens: 800,
+      max_tokens: 4096,
       system: system + context,
       messages,
     }),

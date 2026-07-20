@@ -374,7 +374,7 @@ async function main() {
     return Math.round(b / 10)
   }
   if (seedVol.size) {
-    for (const o of opportunities) if (!o._comp) o._boost = reBoost(o.query)
+    for (const o of opportunities) o._boost = o._comp ? 0 : reBoost(o.query)
     opportunities.sort((a, b) => realImp(b) + (b._boost || 0) + catBoost(b) - (realImp(a) + (a._boost || 0) + catBoost(a)))
   } else {
     opportunities.sort((a, b) => realImp(b) + catBoost(b) - (realImp(a) + catBoost(a)))

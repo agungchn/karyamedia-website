@@ -39,7 +39,7 @@ const articlesPath = join(root, "src/data/articles.ts")
 
 const CAT_MAP = {
   plakat: "Plakat", medali: "Medali", piala: "Piala & Trophy", "gift box": "Gift Box",
-  prasasti: "Prasasti",   "name tag": "Accessories", "nama dada": "Accessories", "gantungan kunci": "Accessories", "gantungan kunci": "Accessories",
+  prasasti: "Prasasti",   "name tag": "Accessories", "nama dada": "Accessories", "gantungan kunci": "Accessories",
   "souvenir wisuda": "Souvenir Wisuda", souvenir: "Souvenir", "batas wilayah": "Batas Wilayah",
   tumbler: "Souvenir", samir: "Souvenir Wisuda", toga: "Souvenir Wisuda",
 }
@@ -57,7 +57,6 @@ const FIX_KATA = [
   [/\bdiantaranya\b/gi, "antara lain"],
   [/\bterdapat\b/gi, "ada"],
   [/\btidak hanya\b/gi, "bukan hanya"],
-  [/\bsehingga\b/gi, "sehingga"],
   [/\bdimana\b/gi, "yang"],
 ]
 const EN_TO_ID = [
@@ -117,8 +116,9 @@ function enforceDescription(desc, location = null) {
   if (d.length < 120) {
     const loc = location || "seluruh Indonesia"
     const pad = ` Produsen langsung Yogyakarta, melayani ${loc}.`
+    const pad2 = ` Hubungi tim Karyamedia untuk konsultasi ${loc}.`
     d = trimToWords(d + pad, 160)
-    if (d.length < 120) d = trimToWords(d + pad, 160)
+    if (d.length < 120) d = trimToWords(d + pad2, 160)
     if (d && !/[.!?]$/.test(d)) d += "."
   }
   return d
@@ -128,12 +128,12 @@ function enforceDescription(desc, location = null) {
 function isAuthoritative(content) {
   const c = content || ""
   let score = 0
-  if (/\b(19|20)\d{2}\b/.test(c)) score++ // contains a year
-  if (/Yogyakarta|Jogja/i.test(c)) score++ // mentions base location
-  if (/\b\d+\s?(tahun|instansi|klien|event|mm|cm|pcs|ribu|ratusan|%|x)\b/i.test(c)) score++ // number + unit
-  if (/sejak|berdiri|pengalaman|ratusan|ribuan|1\.000|1000\+/i.test(c)) score++ // experience / scale proof
-  if (/instansi|klien|pelanggan|event nasional|universitas|kementerian/i.test(c)) score++ // credible clients
-  return score >= 2
+  if (/\b(19|20)\d{2}\b/.test(c)) score += 1
+  if (/Yogyakarta|Jogja/i.test(c)) score += 2
+  if (/\b\d+\s?(tahun|instansi|klien|event|mm|cm|pcs|ribu|ratusan|%|x)\b/i.test(c)) score += 2
+  if (/sejak|berdiri|pengalaman|ratusan|ribuan|1\.000|1000\+/i.test(c)) score += 2
+  if (/instansi|klien|pelanggan|event nasional|universitas|kementerian/i.test(c)) score += 1
+  return score >= 3
 }
 async function fetchOutline(url) {
   const ctrl = new AbortController()
@@ -205,7 +205,21 @@ const cont = (a, b) => {
 const slugRe = /slug:\s*"([^"]*)"/
 const titleRe = /title:\s*"([^"]*)"/
 const catRe = /category:\s*"([^"]*)"/
-function dupCheck(slug, title, workingText) {
+const contentRe = /content:\s*`([\s\S]*?)`,\s*\n\s*\},/
+function contentFromBlock(block) {
+  const m = contentRe.exec(block)
+  return m ? m[1] : ""
+}
+function headingsFromContent(text) {
+  return [...text.matchAll(/<h2[^>]*>([\s\S]*?)<\/h2>/gi)]
+    .map((h) => h[1].replace(/<[^>]*>/g, "").trim().toLowerCase())
+    .filter(Boolean)
+}
+function dupCheck(slug, title, workingText, newContent = "") {
+  const nc = newContent || ""
+  const nHeadings = new Set(headingsFromContent(nc))
+  const nTokens = tokensOf(nc)
+  const nTokSet = new Set(nTokens)
   for (const a of extractArticles(workingText)) {
     const s = slugRe.exec(a.block)?.[1]
     if (s === slug) return `slug "${slug}" sudah ada`
@@ -213,6 +227,22 @@ function dupCheck(slug, title, workingText) {
     const tt = tk(tokensOf(t)), nt = tk(tokensOf(title))
     if (tt && nt && tt === nt) return `title mirip dengan "${t}"`
     if (nt && cont(tokensOf(title), tokensOf(t)) >= 1) return `topik mirip dengan "${t}"`
+    if (nTokSet.size && nc) {
+      const eContent = contentFromBlock(a.block)
+      if (eContent) {
+        const eHeadings = new Set(headingsFromContent(eContent))
+        if (eHeadings.size && nHeadings.size) {
+          let shared = 0
+          for (const h of nHeadings) if (eHeadings.has(h)) shared++
+          const headingSim = shared / Math.min(nHeadings.size, eHeadings.size)
+          if (headingSim >= 0.6) {
+            const eTokens = tokensOf(eContent)
+            const c = cont(nTokens, eTokens)
+            if (c >= 0.5) return `konten mirip dengan "${t}" (blog/${s}, heading ${(headingSim * 100).toFixed(0)}%, konten ${(c * 100).toFixed(0)}%)`
+          }
+        }
+      }
+    }
   }
   return null
 }
@@ -569,7 +599,7 @@ async function main() {
   data.title = enforceTitle(data.title || keyword, headKw)
   data.description = enforceDescription(data.description || "", location)
 
-  const dup = dupCheck(slug, data.title || keyword, working)
+  const dup = dupCheck(slug, data.title || keyword, working, data.content || "")
   if (dup) {
     console.error(`DUPLIKAT setelah generate: ${dup}. Batal menyisipkan.`)
     process.exit(1)

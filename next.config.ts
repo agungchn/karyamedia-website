@@ -23,6 +23,7 @@ const nextConfig: NextConfig = {
         destination: "https://karyamediasouvenir.com/:path*",
         permanent: true,
       },
+
       // Consolidation: near-duplicate articles (>=80% Jaccard) 301'd to their
       // canonical hub so ranking signals merge. See scripts/seo/consolidate.mjs.
       { source: "/blog/tumbler-souvenir-perusahaan-untuk-branding-bisnis", destination: "/blog/tumbler-promosi-untuk-branding-dan-merchandise-event", permanent: true },

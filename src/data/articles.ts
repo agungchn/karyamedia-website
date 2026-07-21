@@ -3769,7 +3769,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
     description: "Panduan memilih piala akrilik custom untuk kejuaraan olahraga, lomba sekolah, dan event perusahaan. Simak keunggulan, estimasi harga, dan tips memesan.",
     category: "Piala & Trophy",
     date: "2026-07-12",
-    image: "/images/produk-unggulan/piala-trophy/trophy-figur-6.png",
+    image: "/images/plakat-akrilik/plakat-akrilik-11.png",
     tags: ["piala akrilik", "piala akrilik custom", "piala custom", "piala lomba", "piala kejuaraan", "piala akrilik murah"],
     content: `
 <p>Piala akrilik telah menjadi pilihan utama dalam dunia penghargaan modern. Bahan akrilik yang transparan dan ringan memungkinkan desain yang lebih fleksibel dengan hasil akhir yang elegan. Berbeda dengan piala fiberglass yang dicetak dengan mold, piala akrilik dapat dipotong menggunakan laser cutting dengan presisi tinggi, sehingga bentuk apapun bisa diwujudkan dengan detail yang sempurna.</p>
@@ -3826,7 +3826,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
     description: "Panduan memilih piala fiberglass custom untuk turnamen futsal, basket, voli, dan berbagai kejuaraan olahraga. Simak keunggulan, harga, dan cara pesan.",
     category: "Piala & Trophy",
     date: "2026-07-12",
-    image: "/images/produk-unggulan/piala-trophy/trophy-figur-2.png",
+    image: "/images/plakat-akrilik/plakat-akrilik-12.png",
     tags: ["piala fiberglass", "piala fiberglass custom", "piala olahraga", "piala turnamen", "piala futsal", "piala basket"],
     content: `
 <p>Piala fiberglass adalah jenis piala yang paling umum dan populer di Indonesia. Bahan fiberglass yang kuat, ringan, dan mudah dibentuk membuatnya menjadi pilihan ideal untuk trophy kejuaraan olahraga. Dari turnamen futsal antar desa hingga kejuaraan nasional, piala fiberglass selalu menjadi pusat perhatian di atas podium.</p>

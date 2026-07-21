@@ -1,0 +1,20 @@
+SUDUT PENGAMBILAN:
+- Canvas vertikal 3:4
+- Posisi kamera lebih rendah dari objek dan diarahkan sedikit ke atas
+- Sedikit high angle (kamera sedikit lebih tinggi dari objek, sekitar 15-20° dari atas)
+- Bukan dari depan lurus, bukan dari samping ekstrem
+
+PENCAHAYAAN:
+- Studio softbox lighting yang lembut dan merata
+- Highlight natural pada bagian emas/emas mengkilap di plakat
+- Bayangan lembut dan natural di bawah plakat
+- Produk tetap tajam dan detail, tidak overexposed
+
+BACKGROUND:
+- Gradasi smooth dari abu-abu terang di bagian atas ke putih/abu sangat terang di bagian bawah
+- Seamless, tanpa elemen lain
+
+TEKNIS:
+- Shot on 35mm lens
+- Photorealistic, 8k, highly detailed
+- Commercial product photography style

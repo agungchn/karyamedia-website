@@ -26,6 +26,9 @@ const SITE_URL = process.env.SITE_URL || "https://karyamediasouvenir.com"
 
 const ACCESS_TOKEN = process.env.LINKEDIN_ACCESS_TOKEN
 const PERSON_URN = process.env.LINKEDIN_PERSON_URN || "urn:li:person:gJJdD_DcmC"
+const ORG_URN = process.env.LINKEDIN_ORG_URN || "urn:li:organization:142911940"
+const POST_AS = process.env.LINKEDIN_POST_AS || "person" // "organization" or "person"
+const AUTHOR_URN = POST_AS === "person" ? PERSON_URN : ORG_URN
 const LIMIT = Math.max(1, Number(process.env.LINKEDIN_AUTOPOST_LIMIT || "3"))
 const DRYRUN = process.env.LINKEDIN_DRYRUN === "1"
 
@@ -68,7 +71,7 @@ async function uploadImage(imageUrl) {
       "LinkedIn-Version": "202508",
       "X-Restli-Protocol-Version": "2.0.0",
     },
-    body: JSON.stringify({ initializeUploadRequest: { owner: PERSON_URN } }),
+    body: JSON.stringify({ initializeUploadRequest: { owner: AUTHOR_URN } }),
   })
 
   if (!initRes.ok) {
@@ -98,7 +101,7 @@ async function postToLinkedIn(item) {
   if (commentary.length > 3000) commentary = commentary.substring(0, 2997) + "..."
 
   const body = {
-    author: PERSON_URN,
+    author: AUTHOR_URN,
     commentary,
     visibility: "PUBLIC",
     distribution: {
@@ -173,7 +176,7 @@ async function main() {
     return
   }
 
-  console.log(`[linkedin] ${toPost.length} artikel baru akan diposting ke profil`)
+  console.log(`[linkedin] ${toPost.length} artikel baru akan diposting ke ${POST_AS === "person" ? "profil" : "halaman bisnis"} (${AUTHOR_URN})`)
 
   if (DRYRUN) {
     for (const item of toPost) {

@@ -79,6 +79,9 @@ scripts/bing/submitted.json
 dev-server.*
 convert-tmp.mjs
 
+# GBP helper scripts (one-off tools for local setup)
+gbp-update-ids.mjs
+
 .vercel
 article-gen-log.txt
 article-gen-test-run.txt

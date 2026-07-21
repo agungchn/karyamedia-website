@@ -9,7 +9,7 @@ $ClientId = Read-Host "Masukkan LINKEDIN_CLIENT_ID"
 $ClientSecret = Read-Host "Masukkan LINKEDIN_CLIENT_SECRET"
 
 $redirectUri = "https://karyamediasouvenir.com/api/linkedin/callback"
-$scope = [System.Uri]::EscapeDataString("w_member_social")
+$scope = [System.Uri]::EscapeDataString("w_member_social w_organization_social rw_organization_admin")
 $authUrl = "https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=$ClientId&redirect_uri=$([System.Uri]::EscapeDataString($redirectUri))&scope=$scope"
 
 Write-Host ""

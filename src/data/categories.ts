@@ -75,7 +75,7 @@ export const categories: Category[] = [
     name: "Gift Box",
     slug: "gift-box",
     icon: "Package",
-    description: "Box premium untuk souvenir dan hadiah",
+    description: "Box premium untuk souvenir, hadiah, kemasan plakat, kemasan medali, box tempat plakat, dan kemasan pin/bross custom",
     subcategories: [
       { id: "bb", name: "Box Bludru", slug: "box-bludru" },
       { id: "bk", name: "Box Kertas Import", slug: "box-kertas-import" },

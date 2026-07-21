@@ -42,6 +42,7 @@ const CAT_MAP = {
   prasasti: "Prasasti",   "name tag": "Accessories", "nama dada": "Accessories", "gantungan kunci": "Accessories",
   "souvenir wisuda": "Souvenir Wisuda", souvenir: "Souvenir", "batas wilayah": "Batas Wilayah",
   tumbler: "Souvenir", samir: "Souvenir Wisuda", toga: "Souvenir Wisuda",
+  "box plakat": "Gift Box", "box medali": "Gift Box", kemasan: "Gift Box", "tempat plakat": "Gift Box",
 }
 export function inferCategory(kw) {
   const k = kw.toLowerCase()
@@ -552,6 +553,39 @@ async function main() {
       if (extraHtml) data.content = (data.content || "") + "\n" + extraHtml
       plain = (data.content || "").replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim()
       words = plain ? plain.split(/\s+/).length : 0
+    }
+  }
+
+  // ---- quality self-check: H2 count, keyword in first 240 chars, FAQ format ----
+  {
+    const minH2 = beat ? 6 : 4
+    const headingCount = (data.content || "").match(/<h2[^>]*>/gi)?.length || 0
+    if (headingCount < minH2) {
+      console.log(`Kualitas: hanya ${headingCount} heading <h2> (min ${minH2}), perbaiki (percobaan 1)...`)
+      data = await generateArticle(genOpts("\n\nPENTING: draf sebelumnya hanya memiliki " + headingCount + " heading <h2>. Buat ULANG artikel dengan MINIMAL " + minH2 + " heading <h2> yang berbeda."))
+      const headingCount2 = (data.content || "").match(/<h2[^>]*>/gi)?.length || 0
+      if (headingCount2 < minH2) {
+        console.log(`Peringatan: setelah retry masih ${headingCount2} heading <h2>. Lanjutkan...`)
+      }
+    }
+
+    const plainIntro = (data.content || "").replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim().slice(0, 240)
+    const kw = keyword.toLowerCase()
+    if (!plainIntro.toLowerCase().includes(kw)) {
+      console.log(`Kualitas: keyword "${kw}" tidak muncul di 240 karakter pertama, perbaiki...`)
+      data = await generateArticle(genOpts("\n\nPENTING: draf sebelumnya TIDAK mengandung keyword \"" + kw + "\" di 240 karakter pertama konten. Buat ULANG artikel dengan memastikan keyword \"" + kw + "\" muncul dalam 240 karakter pertama."))
+    }
+
+    const faqTagRe = /<h2[^>]*>\s*FAQ\s*<\/h2>/i
+    const hasFaq = faqTagRe.test(data.content || "")
+    if (hasFaq) {
+      const faqParts = (data.content || "").split(faqTagRe)
+      const faqSection = faqParts.length > 1 ? faqParts[1] : ""
+      const h3Count = (faqSection.match(/<h3[^>]*>/g) || []).length
+      if (h3Count < 3) {
+        console.log(`Kualitas: FAQ hanya ${h3Count} pertanyaan (min 3), regenerate...`)
+        data = await generateArticle(genOpts("\n\nPENTING: draf sebelumnya memiliki bagian FAQ tetapi hanya " + h3Count + " pertanyaan. Buat ULANG artikel dengan minimal 3-5 pertanyaan FAQ, masing-masing dalam format <h3>Pertanyaan?</h3><p>Jawaban.</p>."))
+      }
     }
   }
 

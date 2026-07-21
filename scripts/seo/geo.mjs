@@ -52,6 +52,36 @@ export const SEGMENTS = [
     ctx:
       "komunitas, karang taruna, almamater, klub, serta individu (KKN, PPL, seminar, dies natalis, wedding award)",
   },
+  {
+    key: "bisnis",
+    label: "bisnis & perusahaan",
+    ctx:
+      "korporasi, perusahaan swasta, BUMN/BUMD, startup, UMKM, perkantoran, HRD, divisi pengembangan SDM, dan manajemen untuk merchandise company profile, gift box karyawan, plakat pensiun, penghargaan employee of the month, serta souvenir meeting dan gathering",
+  },
+  {
+    key: "kesehatan",
+    label: "kesehatan",
+    ctx:
+      "rumah sakit, puskesmas, klinik, dinas kesehatan, rumah sakit swasta, IBI, IDI, organisasi profesi kesehatan, apotek, dan laboratorium untuk plakat penghargaan tenaga medis, nama dada dokter perawat, souvenir seminar kesehatan, prasasti peresmian",
+  },
+  {
+    key: "kontraktor",
+    label: "kontraktor & properti",
+    ctx:
+      "developer properti, kontraktor, konsultan, pengembang perumahan, pengelola gedung, asosiasi real estate (REI, APERSI), perusahaan konstruksi untuk prasasti peresmian, ground breaking, center point, brass table batas wilayah, plakat penghargaan kontraktor",
+  },
+  {
+    key: "olahraga",
+    label: "olahraga",
+    ctx:
+      "klub olahraga, federasi olahraga (PSSI, PBVSI, PERBASI, dll), KONI, sekolah olahraga, panitia turnamen daerah, komunitas lari/bersepeda/futsal, acara olahraga sekolah dan kampus untuk piala trophy, medali juara, plakat penghargaan atlet",
+  },
+  {
+    key: "pariwisata",
+    label: "pariwisata & perhotelan",
+    ctx:
+      "dinas pariwisata, hotel, resort, pengelola destinasi wisata, biro perjalanan, asosiasi perhotelan (PHRI), pengelola museum dan galeri untuk souvenir khas daerah, gift box batik, plakat cinderamata, prasasti selamat datang",
+  },
 ]
 
 // Produk dipilih agar cocok dengan inferCategory() di article-generate.mjs
@@ -97,6 +127,29 @@ export const PRODUCTS = [
   { phrase: "tabung wisuda", category: "Souvenir Wisuda" },
   { phrase: "toga wisuda", category: "Souvenir Wisuda" },
   { phrase: "gordon wisuda", category: "Souvenir Wisuda" },
+  { phrase: "gift box souvenir perusahaan", category: "Gift Box" },
+  { phrase: "gift box hampers karyawan", category: "Gift Box" },
+  { phrase: "plakat penghargaan karyawan", category: "Plakat" },
+  { phrase: "plakat pensiun", category: "Plakat" },
+  { phrase: "souvenir company profile", category: "Souvenir" },
+  { phrase: "plakat klinik", category: "Plakat" },
+  { phrase: "nama dada puskesmas", category: "Accessories" },
+  { phrase: "souvenir seminar kesehatan", category: "Gift Box" },
+  { phrase: "prasasti peresmian gedung", category: "Prasasti" },
+  { phrase: "prasasti selamat datang", category: "Prasasti" },
+  { phrase: "center point perumahan", category: "Batas Wilayah" },
+  { phrase: "brass table batas kavling", category: "Batas Wilayah" },
+  { phrase: "plakat ground breaking", category: "Prasasti" },
+  { phrase: "piala olahraga", category: "Piala & Trophy" },
+  { phrase: "medali olimpiade", category: "Medali" },
+  { phrase: "plakat atlet", category: "Plakat" },
+  { phrase: "souvenir khas daerah", category: "Souvenir" },
+  { phrase: "gift box batik", category: "Gift Box" },
+  { phrase: "box plakat akrilik", category: "Gift Box" },
+  { phrase: "box medali custom", category: "Gift Box" },
+  { phrase: "kemasan souvenir custom", category: "Gift Box" },
+  { phrase: "box tempat plakat", category: "Gift Box" },
+  { phrase: "kemasan pin bross", category: "Gift Box" },
 ]
 
 // Medali dengan angle buyer-intent spesifik & konteks acara/lembaga NYATA di

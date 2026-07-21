@@ -362,11 +362,6 @@ async function main() {
   // competitor & Bing seed tetap lebih rendah dari GSC.
   const isRealQuery = (o) => !o._comp && !o._seed && !o._province
   const realImp = (o) => (isRealQuery(o) ? (o.impressions || 0) * 3 : o.impressions || 0)
-  const catBoost = (o) => {
-    const cat = o._category || inferCategory(o.query)
-    if (cat === "Plakat" || cat === "Souvenir Wisuda") return 300
-    return 0
-  }
   const reBoost = (q) => {
     const lq = (q || "").toLowerCase()
     let b = 0
@@ -375,9 +370,9 @@ async function main() {
   }
   if (seedVol.size) {
     for (const o of opportunities) o._boost = o._comp ? 0 : reBoost(o.query)
-    opportunities.sort((a, b) => realImp(b) + (b._boost || 0) + catBoost(b) - (realImp(a) + (a._boost || 0) + catBoost(a)))
+    opportunities.sort((a, b) => realImp(b) + (b._boost || 0) - (realImp(a) + (a._boost || 0)))
   } else {
-    opportunities.sort((a, b) => realImp(b) + catBoost(b) - (realImp(a) + catBoost(a)))
+    opportunities.sort((a, b) => realImp(b) - realImp(a))
   }
 
   console.log(`Sudah punya artikel: ${covered}`)

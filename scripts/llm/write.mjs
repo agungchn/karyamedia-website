@@ -276,6 +276,42 @@ function variantBlock(variant, keyword, loc) {
   )
 }
 
+// ---- Produk yang TIDAK BOLEH disebut (bukan yang kami jual) ----
+const BANNED_PRODUCTS = [
+  "banner, spanduk, undangan, kartu nama, seragam, kaos, topi, mug, gelas, tas, goodie bag",
+  "standing banner, backdrop, poster, flyer, kalender, mpls, ospek, boneka, blind box, pokemon",
+  "kartu ucapan souvenir pernikahan, souvenir pernikahan bermanfaat, kertas cetak biasa",
+  "souvenir pernikahan murah, membuat gantungan kunci, tas souvenir pernikahan, buat gantungan kunci",
+  "souvenir pernikahan yang bermanfaat, gambar gantungan kunci, kerajaan majapahit",
+  "ucapan souvenir pernikahan, prasasti kerajaan, prasasti peninggalan, prasasti mulawarman",
+  "prasasti mataram kuno, prasasti tarumanegara, prasasti kutai, prasasti sriwijaya",
+  "prasasti kebon kopi, prasasti kedukan bukit, prasasti talang tuo, prasasti kota kapur",
+  "prasasti pasir awi, prasasti tts, apa itu prasasti, tulisan kuno",
+]
+const BANNED_BLOCK = "JANGAN menyebut/mempromosikan produk yang TIDAK KAMI jual: " + BANNED_PRODUCTS.join(", ") + "."
+
+// ---- Per-segment article angle examples (untuk variasi konten) ----
+const SEGMENT_EXAMPLES = {
+  pemerintahan:
+    "Contoh angle: 'pengadaan plakat untuk OPD', 'anggaran souvenir DPRD', 'nama dada PNS/TNI/POLRI untuk instansi'.",
+  kampus:
+    "Contoh angle: 'souvenir wisuda untuk universitas', 'plakat rektorat', 'samir wisuda untuk dies natalis'.",
+  eo:
+    "Contoh angle: 'piala untuk turnamen', 'medali kompetisi olahraga', 'gift box untuk peserta seminar'.",
+  komunitas:
+    "Contoh angle: 'plakat untuk acara karang taruna', 'souvenir reuni alumni', 'nama dada untuk acara komunitas'.",
+  bisnis:
+    "Contoh angle: 'gift box hampers untuk karyawan', 'plakat penghargaan employee of the month', 'souvenir company profile untuk gathering', 'nama dada seragam kantor'.",
+  kesehatan:
+    "Contoh angle: 'nama dada dokter dan perawat RS', 'plakat penghargaan tenaga kesehatan', 'prasasti peresmian puskesmas', 'souvenir seminar kesehatan'.",
+  kontraktor:
+    "Contoh angle: 'prasasti peresmian gedung', 'center point dan brass table untuk perumahan', 'plakat ground breaking proyek', 'plakat penghargaan kontraktor'.",
+  olahraga:
+    "Contoh angle: 'piala trophy untuk turnamen futsal', 'medali juara lomba olahraga', 'plakat penghargaan atlet daerah', 'medali olimpiade sekolah'.",
+  pariwisata:
+    "Contoh angle: 'souvenir khas daerah untuk hotel', 'gift box batik untuk cinderamata', 'prasasti selamat datang destinasi wisata', 'plakat cinderamata untuk tamu'.",
+}
+
 const VARIATION_INSTR = `
 VARIASI GAYA PENULISAN (WAJIB agar tidak terasa template/assembly-line):
 - Pembuka BERVARIASI antar-artikel: jangan selalu buka dengan pola "Banyak [segmen] di [loc] yang masih ragu...". Gilir gaya pembuka, mis. pertanyaan retoris, fakta/angka mengejutkan, adegan/lokasi lokal spesifik, pain-point konkret, atau anekdot singkat.
@@ -289,25 +325,26 @@ function buildPrompt({ keyword, category, location = null, segment = null, segme
   const loc = location || "seluruh Indonesia"
   const seg = segment || "instansi, kampus, dan event"
   const segCtxTxt = segmentCtx ? ` (mis. ${segmentCtx})` : ""
+  const segExTxt = segment ? (SEGMENT_EXAMPLES[segment] || "") : ""
   const vBlock = variantBlock(resolveVariant(variant, keyword), keyword, loc)
-  return `Tulis artikel SEO berbahasa Indonesia, 100% orisinal (jangan kutip/meniru teks pihak ketiga mana pun), untuk bisnis "Karyamedia" (produsen souvenir & custom manufacturing berbasis Yogyakarta yang melayani seluruh Indonesia, termasuk ${loc}).
+  return `Tulis artikel SEO berbahasa Indonesia, 100% orisinal (jangan kutip/meniru teks pihak ketiga mana pun), untuk bisnis "Karyamedia" (produsen souvenir & custom manufacturing berbasis Yogyakarta yang melayani seluruh Indonesia, termasuk ${loc}: plakat, medali, piala, prasasti, gift box / box kemasan, souvenir wisuda, nama dada, dll).
 
 Keyword utama: "${keyword}"
 Kategori: ${category}
 Segmen target: ${seg}${segCtxTxt}; gunakan contoh kasus, narasi, kebutuhan, dan kata kunci long-tail yang relevan dengan ${loc} serta segmen tersebut secara natural; jangan ubah fakta bahwa Karyamedia berbasis Yogyakarta.
-**PREFERENSI KATEGORI:** Jika memungkinkan, prioritaskan angle/konten yang berkaitan dengan PLAKAT (plakat akrilik, resin, kayu, marmer, fiberglass, wayang — beserta variannya) atau SOUVENIR WISUDA (samir, map ijazah, patung wisuda, kalung rektor, tongkat rektor, tabung wisuda, toga, gordon wisuda).
+${segExTxt}
+SESUAIKAN angle dengan kategori keyword: jika keyword tentang medali → bahas medali, jika gift box → bahas gift box, jangan memaksakan topik plakat atau souvenir wisuda jika tidak relevan.
 
 Buat objek JSON dengan field berikut:
 - "title": judul artikel, MAKSIMAL 60 karakter (WAJIB ≤60, HITUNG KARAKTERNYA! Jika lebih akan dipotong paksa dan jadi tidak rapi), HARUS mengandung keyword utama secara utuh (contoh: jika keyword "plakat akrilik custom" maka title mengandung frasa tersebut). GUNAKAN HURUF KAPITAL AWAL (Title Case), contoh: "Plakat Akrilik Custom untuk Kantor Desa" — jangan seluruhnya huruf kecil. AKHIRI dengan kata LENGKAP (bukan "dan", "&", "dari", "untuk", "di", "ke", "yang").
-- "description": meta description, 120-160 karakter, mengandung keyword utama.
+- "description": meta description, 120-160 karakter, mengandung keyword utama. PASTI berupa kalimat UTUH yang natural, BUKAN potongan kalimat. HITUNG karakternya: jika lebih dari 160 akan dipotong paksa dan jadi tidak rapi. Idealnya 155-160 karakter.
 - "tags": array 4-6 kata kunci Indonesia relevan (semua lowercase); tags[0] HARUS sama dengan keyword utama.
 - "content": artikel lengkap dalam bentuk HTML (string tunggal). Syarat content:
   * minimal 800 kata (wajib >=800 agar lolos standar)
-  * minimal 4 heading <h2> (pakai tag <h2>...</h2>)
+  * minimal 4 heading <h2> (pakai tag <h2>...</h2>); HARUS ada satu <h2>FAQ</h2> di akhir
   * 240 karakter PERTAMA konten (paragraf pembuka) HARUS mengandung keyword utama secara utuh
-   * sebutkan nama produk/kategori terkait (plakat, piala, medali, prasasti, gift box, souvenir wisuda, nama dada, dll) SECARA NATURAL di paragraf pembuka/awal artikel, agar tautan ke katalog produk otomatis bisa disematkan di bagian atas
-  * JANGAN menyebut/mempromosikan produk yang TIDAK KAMI jual: banner, spanduk, stiker, undangan, kartu nama, seragam, kaos, topi, mug, gelas, tas, goodie bag, standing banner, backdrop, poster, flyer, kalender, mpls, ospek, boneka, blind box, pokemon, kartu ucapan souvenir pernikahan, souvenir pernikahan bermanfaat, gambar gantungan kunci, kerajaan majapahit, ucapan souvenir pernikahan, bahan gantungan kunci, souvenir pernikahan murah, membuat gantungan kunci, kartu souvenir pernikahan, tas souvenir pernikahan, buat gantungan kunci, souvenir pernikahan yang bermanfaat
-  * JANGAN menulis topik sejarah/arkeologi: prasasti kerajaan, prasasti peninggalan, prasasti mulawarman, prasasti mataram kuno, prasasti tarumanegara, prasasti kutai, prasasti sriwijaya, prasasti kebon kopi, prasasti kedukan bukit, prasasti talang tuo, prasasti kota kapur, prasasti pasir awi, prasasti tts, apa itu prasasti, tulisan kuno — fokus pada prasasti sebagai PRODUK PLAQUE/PIALA, bukan artefak sejarah
+  * sebutkan nama produk/kategori terkait (plakat, piala, medali, prasasti, gift box / box kemasan, souvenir wisuda, nama dada, dll) SECARA NATURAL di paragraf pembuka/awal artikel, agar tautan ke katalog produk otomatis bisa disematkan di bagian atas
+  * ${BANNED_BLOCK} — fokus pada prasasti sebagai PRODUK PLAQUE/PIALA, bukan artefak sejarah
   * gunakan nada ahli produsen yang rendah hati & berbukti: sertakan bukti konkret (Karyamedia berbasis Yogyakarta, produsen langsung, melayani ratusan instansi & event nasional, standar ukiran/produksi presisi) bila relevan; tekankan kualitas, presisi, dan bahwa Karyamedia adalah produsen langsung (pabrik) sehingga harga lebih sehat & transparan; hindari bahasa promosi murahan dan JANGAN menyebut pihak lain (calo/agen) secara negatif
   * WAJIB ada bagian <h2>FAQ</h2> di akhir dengan 3-5 pasang pertanyaan & jawaban, tiap pasang PASTI format <h3>Pertanyaan?</h3><p>Jawaban.</p> (pakai <h3> untuk pertanyaan dan <p> untuk jawaban)
   * bahasa Indonesia natural & mudah dipahami, SEO-friendly, sebutkan "Karyamedia" secara wajar 1-2 kali
@@ -334,25 +371,26 @@ Panjang artikel pesaing: ~${c.words || "?"} kata.
   const loc = location || "seluruh Indonesia"
   const seg = segment || "instansi, kampus, dan event"
   const segCtxTxt = segmentCtx ? ` (mis. ${segmentCtx})` : ""
+  const segExTxt = segment ? (SEGMENT_EXAMPLES[segment] || "") : ""
   const vBlock = variantBlock(resolveVariant(variant, keyword), keyword, loc)
-  return `Tulis artikel SEO berbahasa Indonesia, 100% ORISINAL (JANGAN meniru/mengutip teks pesaing; pakai sudut pandang & contoh sendiri), untuk bisnis "Karyamedia" (produsen souvenir & custom manufacturing berbasis Yogyakarta yang melayani seluruh Indonesia, termasuk ${loc}: plakat, medali, piala, prasasti, gift box, souvenir wisuda, nama dada, dll).
+  return `Tulis artikel SEO berbahasa Indonesia, 100% ORISINAL (JANGAN meniru/mengutip teks pesaing; pakai sudut pandang & contoh sendiri), untuk bisnis "Karyamedia" (produsen souvenir & custom manufacturing berbasis Yogyakarta yang melayani seluruh Indonesia, termasuk ${loc}: plakat, medali, piala, prasasti, gift box / box kemasan, souvenir wisuda, nama dada, dll).
 
 Keyword utama: "${keyword}"
 Kategori: ${category}
 Segmen target: ${seg}${segCtxTxt}; gunakan contoh kasus, narasi, kebutuhan, dan kata kunci long-tail yang relevan dengan ${loc} serta segmen tersebut secara natural; jangan ubah fakta bahwa Karyamedia berbasis Yogyakarta.
-**PREFERENSI KATEGORI:** Jika memungkinkan, prioritaskan angle/konten yang berkaitan dengan PLAKAT (plakat akrilik, resin, kayu, marmer, fiberglass, wayang — beserta variannya) atau SOUVENIR WISUDA (samir, map ijazah, patung wisuda, kalung rektor, tongkat rektor, tabung wisuda, toga, gordon wisuda).
+${segExTxt}
+SESUAIKAN angle dengan kategori keyword: jika keyword tentang medali → bahas medali, jika gift box → bahas gift box, jangan memaksakan topik plakat atau souvenir wisuda jika tidak relevan.
 ${compBlock}
 Buat objek JSON dengan field berikut:
 - "title": MAKSIMAL 60 karakter (WAJIB ≤60, HITUNG KARAKTERNYA! Jika lebih akan dipotong paksa dan jadi tidak rapi), HARUS mengandung keyword utama secara utuh. GUNAKAN HURUF KAPITAL AWAL (Title Case), contoh: "Plakat Akrilik Custom untuk Kantor Desa" — jangan seluruhnya huruf kecil. AKHIRI dengan kata LENGKAP (bukan "dan", "&", "dari", "untuk", "di", "ke", "yang").
-- "description": 120-160 karakter, mengandung keyword utama.
+- "description": 120-160 karakter, mengandung keyword utama. PASTI kalimat UTUH natural, BUKAN potongan. HITUNG karakternya: jika >160 dipotong paksa, ideal 155-160.
 - "tags": array 4-6 kata kunci Indonesia lowercase; tags[0] SAMA dengan keyword utama.
 - "content": artikel HTML (string tunggal) dengan syarat:
   * PANJANG 1500-2200 kata (wajib >=1500).
-  * MINIMAL 6 heading <h2> (lebih dalam & komprehensif dari pesaing).
+  * MINIMAL 6 heading <h2> (lebih dalam & komprehensif dari pesaing); HARUS ada satu <h2>FAQ</h2> di akhir
   * 240 karakter PERTAMA (paragraf pembuka) HARUS mengandung keyword utama secara utuh.
   * sebutkan nama produk/kategori terkait (plakat, piala, medali, prasasti, gift box, souvenir wisuda, nama dada, dll) SECARA NATURAL di awal artikel, agar tautan ke katalog produk otomatis bisa disematkan di bagian atas.
-  * JANGAN menyebut/mempromosikan produk yang TIDAK KAMI jual: banner, spanduk, stiker, undangan, kartu nama, seragam, kaos, topi, mug, gelas, tas, goodie bag, standing banner, backdrop, poster, flyer, kalender, mpls, ospek, boneka, blind box, pokemon, kartu ucapan souvenir pernikahan, souvenir pernikahan bermanfaat, gambar gantungan kunci, kerajaan majapahit, ucapan souvenir pernikahan, bahan gantungan kunci, souvenir pernikahan murah, membuat gantungan kunci, kartu souvenir pernikahan, tas souvenir pernikahan, buat gantungan kunci, souvenir pernikahan yang bermanfaat
-  * JANGAN menulis topik sejarah/arkeologi: prasasti kerajaan, prasasti peninggalan, prasasti mulawarman, prasasti mataram kuno, prasasti tarumanegara, prasasti kutai, prasasti sriwijaya, prasasti kebon kopi, prasasti kedukan bukit, prasasti talang tuo, prasasti kota kapur, prasasti pasir awi, prasasti tts, apa itu prasasti, tulisan kuno — fokus pada prasasti sebagai PRODUK PLAQUE/PIALA, bukan artefak sejarah
+  * ${BANNED_BLOCK} — fokus pada prasasti sebagai PRODUK PLAQUE/PIALA, bukan artefak sejarah
   * JIKA topik membandingkan (vs / atau / mending / perbandingan), sertakan <table> perbandingan jelas (kolom: aspek, opsi A, opsi B) dengan narasi Karyamedia.
   * Gunakan nada ahli produsen & sertakan BUKTI KONKRET: Karyamedia berbasis YOGYAKARTA, produsen langsung, melayani RATUSAN instansi & event nasional, sebutkan angka/spesifikasi riil (ukuran mm, lead time, range harga "mulai dari", standar quality control). Tekankan bahwa Karyamedia adalah PRODUSEN LANGSUNG (pabrik) sehingga harga lebih sehat & transparan; hindari bahasa promosi murahan dan JANGAN menyebut pihak lain (calo/agen) secara negatif.
   * ${c ? "Tutupi SEMUA poin pesaing DI ATAS, lalu TAMBAHKAN minimal 3 sudut pandang/section BARU yang TIDAK dibahas pesaing (lebih mendalam, contoh kasus, tips praktis, mitos, checklist, atau data Karyamedia)." : "Buat artikel paling komprehensif & otoritatif di topik ini."}

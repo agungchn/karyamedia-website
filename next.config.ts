@@ -1,9 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Generate source maps agar Lighthouse bisa memberi detail & memudahkan
-  // debug produksi (tidak menambah ukuran JS yang di-download user).
-  productionBrowserSourceMaps: true,
+  // Source maps tidak dibutuhkan di produksi — nonaktifkan untuk kurangi
+  // CPU time Lighthouse & error fetch source map di PSI.
+  productionBrowserSourceMaps: false,
   images: {
     // Pakai custom loader -> file WebP pra-teroptimasi (scripts/optimize-images.mjs)
     // di folder public/images/opt. Ini menghindari layanan Image Optimization

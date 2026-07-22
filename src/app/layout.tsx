@@ -112,10 +112,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable}`}>
-      <Script src="https://www.googletagmanager.com/gtag/js?id=G-MS0T6T71GH" strategy="lazyOnload" />
-      <Script id="google-analytics" strategy="lazyOnload">
-        {`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-MS0T6T71GH'); gtag('config', 'AW-18331670296');`}
+      <Script id="google-tag-manager" strategy="afterInteractive">
+        {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-T43BWBSQ");`}
       </Script>
+      <noscript dangerouslySetInnerHTML={{ __html: '<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T43BWBSQ" height="0" width="0" style="display:none;visibility:hidden"></iframe>' }} />
       <body className="min-h-screen flex flex-col antialiased">
         <FaviconThemeSwitcher />
         <OrganizationSchema />

@@ -181,3 +181,35 @@ try {
 } catch {
   Add-Content -Path $log -Value "[fb] FB/IG auto-post gagal: $($_.Exception.Message)"
 }
+
+# schema generator: update schema-cache.json setiap hari (setelah artikel baru)
+try {
+  Add-Content -Path $log -Value "[schema] Regenerasi schema markup..."
+  $schemaOut = & node scripts/seo/generate-schema.mjs 2>&1 | Out-String
+  Add-Content -Path $log -Value $schemaOut
+} catch {
+  Add-Content -Path $log -Value "[schema] Gagal: $($_.Exception.Message)"
+}
+
+# meta description check: notifikasi kalau ada deskripsi artikel bermasalah
+try {
+  $metaOut = & node scripts/seo/check-descriptions.mjs 2>&1 | Out-String
+  $problemCount = ($metaOut | Select-String -Pattern "Pendek|Kelebihan|Tidak diakhiri" | Measure-Object).Count
+  if ($problemCount -gt 0) {
+    Add-Content -Path $log -Value "[meta] Ditemukan $problemCount artikel dengan deskripsi perlu diperbaiki."
+    Add-Content -Path $log -Value $metaOut
+  } else {
+    Add-Content -Path $log -Value "[meta] Semua deskripsi artikel OK."
+  }
+} catch {
+  Add-Content -Path $log -Value "[meta] Gagal: $($_.Exception.Message)"
+}
+
+# redirect mapper: update redirect-map.json setiap hari
+try {
+  Add-Content -Path $log -Value "[redirect] Update redirect map..."
+  $redirOut = & node scripts/seo/check-redirects.mjs 2>&1 | Out-String
+  Add-Content -Path $log -Value $redirOut
+} catch {
+  Add-Content -Path $log -Value "[redirect] Gagal: $($_.Exception.Message)"
+}

@@ -213,12 +213,3 @@ try {
 } catch {
   Add-Content -Path $log -Value "[redirect] Gagal: $($_.Exception.Message)"
 }
-
-# faq schema: inject FAQPage JSON-LD ke artikel baru
-try {
-  Add-Content -Path $log -Value "[faq-schema] Inject FAQ schema ke artikel baru..."
-  $faqOut = & node scripts/seo/inject-faq-schema.mjs 2>&1 | Out-String
-  Add-Content -Path $log -Value $faqOut
-} catch {
-  Add-Content -Path $log -Value "[faq-schema] Gagal: $($_.Exception.Message)"
-}

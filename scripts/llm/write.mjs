@@ -51,11 +51,11 @@ function getAlibabaUrl() {
   }
 }
 function getAlibabaModel() {
-  return process.env.ALIBABA_MODEL || "qwen-plus"
+  return process.env.ALIBABA_MODEL || "qwen3.7-plus"
 }
 
 const GEMINI_MODEL = process.env.GEMINI_MODELS || process.env.GEMINI_MODEL || "gemini-3.5-flash,gemini-flash-latest"
-const GO_MODEL = process.env.GO_MODEL || process.env.ZEN_MODEL || "qwen3.6-plus"
+const GO_MODEL = process.env.GO_MODEL || process.env.ZEN_MODEL || "qwen3.7-plus"
 const GO_URL = process.env.GO_URL || process.env.ZEN_URL || "https://opencode.ai/zen/v1/chat/completions"
 
 const SCHEMA = {

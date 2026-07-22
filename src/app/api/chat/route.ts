@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server"
 import { buildSystemPrompt } from "@/lib/chat-context"
 import { articles } from "@/data/articles"
 
-export const runtime = "nodejs"
+export const runtime = "edge"
 
 type ChatMessage = { role: "user" | "assistant"; content: string }
 

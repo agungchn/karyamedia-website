@@ -1,0 +1,204 @@
+"use client"
+
+import { useState, useRef, useEffect } from "react"
+import { SendIcon, MessageSquareTextIcon, ExternalLinkIcon, XIcon } from "./chatbot-icons"
+import { getWhatsAppLink } from "@/lib/utils"
+
+const GREETING =
+  "Halo! Saya asisten virtual Karyamedia Souvenir 👋\nAda yang bisa saya bantu seputar plakat, medali, piala, souvenir wisuda, & souvenir custom? Untuk pemesanan & penawaran, bisa lanjut ke WhatsApp CS kami ya."
+
+type Msg = { role: "user" | "assistant"; content: string; links?: string[] }
+
+const ARTICLE_RE = /https:\/\/karyamediasouvenir\.com\/blog\/\S+/g
+
+function extractLinks(text: string): string[] {
+  return [...new Set(text.match(ARTICLE_RE) || [])]
+}
+
+const SUGGESTIONS = [
+  "Jam buka Karyamedia kapan?",
+  "Minimal order berapa?",
+  "Gimana cara pesan?",
+  "Ada katalog produknya?",
+  "Berapa harga plakat akrilik?",
+]
+
+function TypingDots() {
+  return (
+    <div className="flex items-center gap-1 px-1">
+      <span className="h-2 w-2 animate-bounce rounded-full bg-gray-400" style={{ animationDelay: "0ms" }} />
+      <span className="h-2 w-2 animate-bounce rounded-full bg-gray-400" style={{ animationDelay: "150ms" }} />
+      <span className="h-2 w-2 animate-bounce rounded-full bg-gray-400" style={{ animationDelay: "300ms" }} />
+    </div>
+  )
+}
+
+export function ChatbotPanel({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
+  const [msgs, setMsgs] = useState<Msg[]>([{ role: "assistant", content: GREETING, links: [] }])
+  const [input, setInput] = useState("")
+  const [loading, setLoading] = useState(false)
+  const listRef = useRef<HTMLDivElement>(null)
+  const inputRef = useRef<HTMLInputElement>(null)
+
+  useEffect(() => {
+    listRef.current?.scrollTo({ top: listRef.current.scrollHeight, behavior: "smooth" })
+  }, [msgs, loading, isOpen])
+
+  useEffect(() => {
+    if (isOpen) inputRef.current?.focus()
+  }, [isOpen])
+
+  async function send(preset?: string) {
+    const text = (preset ?? input).trim()
+    if (!text || loading) return
+    const history = [...msgs, { role: "user", content: text }] as Msg[]
+    setMsgs(history)
+    setInput("")
+    setLoading(true)
+    try {
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ messages: history }),
+      })
+      const data = await res.json()
+      if (!res.ok) throw new Error(data.error || "Gagal memproses")
+      const reply = data.reply || "(tanpa balasan)"
+      const links = extractLinks(reply)
+      setMsgs([...history, { role: "assistant", content: reply, links }])
+    } catch {
+      setMsgs([
+        ...history,
+        {
+          role: "assistant",
+          content:
+            "Maaf, saya sedang tidak bisa menjawab 😔 Silakan hubungi CS kami langsung via WhatsApp ya.",
+          links: [],
+        },
+      ])
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  function onKey(e: React.KeyboardEvent<HTMLInputElement>) {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault()
+      send()
+    }
+  }
+
+  const waLink = getWhatsAppLink("Halo, saya ingin konsultasi & memesan souvenir custom.")
+
+  return (
+    <>
+      {isOpen && (
+        <div className="fixed bottom-[7.5rem] right-5 z-[60] flex h-[520px] max-h-[calc(100vh-9rem)] w-[360px] max-w-[calc(100vw-2.5rem)] flex-col overflow-hidden rounded-2xl border border-accent/20 bg-white shadow-2xl">
+          {/* Header */}
+          <div className="flex items-center justify-between bg-primary px-4 py-3 text-white">
+            <div>
+              <p className="text-sm font-semibold">Asisten Karyamedia</p>
+              <p className="text-[11px] text-accent">Online · CS Souvenir Custom</p>
+            </div>
+            <button
+              type="button"
+              onClick={onClose}
+              aria-label="Tutup"
+              className="rounded-lg p-1 text-white/80 transition hover:bg-white/10 hover:text-white"
+            >
+              <XIcon className="h-5 w-5" />
+            </button>
+          </div>
+
+          {/* Messages */}
+          <div ref={listRef} className="flex-1 space-y-3 overflow-y-auto bg-gray-50 p-4">
+            {msgs.map((m, i) => (
+              <div key={i}>
+                <div className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
+                  <div
+                    className={`max-w-[85%] whitespace-pre-wrap rounded-2xl px-3 py-2 text-sm leading-relaxed ${
+                      m.role === "user"
+                        ? "rounded-br-sm bg-accent text-primary"
+                        : "rounded-bl-sm bg-white text-gray-800 shadow-sm"
+                    }`}
+                  >
+                    {m.content}
+                  </div>
+                </div>
+                {m.links && m.links.length > 0 && (
+                  <div className="mt-1.5 flex flex-wrap gap-1.5 pl-2">
+                    {m.links.map((link) => (
+                      <a
+                        key={link}
+                        href={link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 rounded-lg bg-accent/10 px-2.5 py-1 text-xs font-medium text-accent transition hover:bg-accent/20"
+                      >
+                        <ExternalLinkIcon className="h-3 w-3" />
+                        {link.split("/").pop()?.slice(0, 30) || "Baca artikel"}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+            {msgs.length === 1 && !loading && (
+              <div className="flex flex-wrap justify-start gap-2">
+                {SUGGESTIONS.map((s) => (
+                  <button
+                    key={s}
+                    type="button"
+                    onClick={() => send(s)}
+                    className="rounded-full border border-accent/40 bg-white px-3 py-1.5 text-xs text-primary shadow-sm transition hover:bg-accent/10"
+                  >
+                    {s}
+                  </button>
+                ))}
+              </div>
+            )}
+            {loading && (
+              <div className="flex justify-start">
+                <div className="rounded-2xl rounded-bl-sm bg-white px-3 py-2 shadow-sm">
+                  <TypingDots />
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* WhatsApp handoff */}
+          <a
+            href={waLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 bg-[#25D366] px-4 py-2 text-sm font-medium text-white transition hover:brightness-105"
+          >
+            <MessageSquareTextIcon className="h-4 w-4" />
+            Lanjut ke WhatsApp CS
+          </a>
+
+          {/* Input */}
+          <div className="flex items-center gap-2 border-t border-gray-100 bg-white p-3">
+            <input
+              ref={inputRef}
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={onKey}
+              placeholder="Tulis pertanyaan…"
+              className="flex-1 rounded-full border border-gray-200 px-4 py-2 text-sm outline-none focus:border-accent focus:ring-1 focus:ring-accent"
+            />
+            <button
+              type="button"
+              onClick={() => send()}
+              disabled={loading || !input.trim()}
+              aria-label="Kirim"
+              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-white transition hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-40"
+            >
+              <SendIcon className="h-4 w-4" />
+            </button>
+          </div>
+        </div>
+      )}
+    </>
+  )
+}

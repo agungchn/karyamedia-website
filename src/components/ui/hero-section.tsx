@@ -9,6 +9,7 @@ import { products } from "@/data/products"
 import { categories } from "@/data/categories"
 import { getTimeTheme, TimeTheme } from "@/lib/time-theme"
 import { LazySparklesCore } from "@/components/ui/lazy-effects"
+import { OrbitHeroGrid } from "@/components/ui/orbit-hero-grid"
 
 const RetroGrid = ({
   angle = 65,
@@ -282,88 +283,9 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Right - Product showcase */}
+          {/* Right - Product showcase with orbital rotation */}
           <div className="relative hidden lg:block h-[500px]">
-            {/* Glow effects behind products */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary-light/15 rounded-full blur-[120px]" />
-            <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-accent/10 rounded-full blur-[100px]" />
-
-            {/* Grid layout - Featured + Stack */}
-            <div className="grid grid-cols-[2fr_1fr] gap-3 h-full content-center relative z-10">
-              {/* Featured: Plakat Akrilik (full height) */}
-              <div className="row-span-3 rounded-2xl overflow-hidden shadow-xl shadow-[#1D4ED8]/20 group hover:scale-[1.02] transition-transform duration-500">
-                <Image
-                  src="/images/hero/plakat-akrilik (2).webp"
-                  alt="Plakat Akrilik Custom"
-                  unoptimized
-                  width={300}
-                  height={300}
-                  priority
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-              </div>
-
-              {/* Right top: Kalung Rektor */}
-              <div className="rounded-2xl overflow-hidden shadow-xl shadow-accent/20 group hover:scale-[1.02] transition-transform duration-500">
-                <Image
-                  src="/images/hero/kalung-rektor (12).webp"
-                  alt="Kalung Rektor"
-                  unoptimized
-                  width={250}
-                  height={250}
-                  loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-              </div>
-
-              {/* Right middle: Plakat Wayang */}
-              <div className="rounded-2xl overflow-hidden shadow-xl shadow-accent/20 group hover:scale-[1.02] transition-transform duration-500">
-                <Image
-                  src="/images/hero/plakat-wayang (33).webp"
-                  alt="Plakat Wayang"
-                  unoptimized
-                  width={180}
-                  height={180}
-                  loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-              </div>
-
-              {/* Right bottom: Map Ijazah + Patung Wisuda */}
-              <div className="flex gap-3">
-                <div className="flex-1 rounded-2xl overflow-hidden shadow-xl shadow-black/30 group hover:scale-[1.02] transition-transform duration-500">
-                  <Image
-                  src="/images/hero/map-wisuda (8).webp"
-                  alt="Medali"
-                  unoptimized
-                  width={200}
-                    height={200}
-                    loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                </div>
-                <div className="flex-1 rounded-2xl overflow-hidden shadow-xl shadow-[#1D4ED8]/20 group hover:scale-[1.02] transition-transform duration-500">
-                  <Image
-                  src="/images/hero/patung-wisuda (20).webp"
-                  alt="Patung Wisuda"
-                  unoptimized
-                  width={280}
-                    height={280}
-                    loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* Floating decorative elements (night only) */}
-            {isNight && (
-              <>
-                <div className="absolute -top-4 left-1/3 w-16 h-16 bg-accent/20 rounded-full blur-2xl animate-float" />
-                <div className="absolute bottom-8 right-0 w-20 h-20 bg-primary-light/15 rounded-full blur-2xl animate-float" style={{ animationDelay: "1s" }} />
-                <div className="absolute top-1/2 left-0 w-12 h-12 bg-accent/15 rounded-full blur-2xl animate-float" style={{ animationDelay: "2s" }} />
-              </>
-            )}
+            <OrbitHeroGrid />
           </div>
         </div>
       </div>

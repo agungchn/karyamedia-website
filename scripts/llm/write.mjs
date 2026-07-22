@@ -21,7 +21,7 @@ function getGeminiKey() {
   }
 }
 
-function getZenKey() {
+function getGoKey() {
   if (process.env.ZEN_API_KEY) return process.env.ZEN_API_KEY
   try {
     return readFileSync(join(here, "zen-key.txt"), "utf8").trim()
@@ -55,8 +55,8 @@ function getAlibabaModel() {
 }
 
 const GEMINI_MODEL = process.env.GEMINI_MODELS || process.env.GEMINI_MODEL || "gemini-3.5-flash,gemini-flash-latest"
-const ZEN_MODEL = process.env.ZEN_MODEL || "mimo-v2.5-free,deepseek-v4-flash-free"
-const ZEN_URL = process.env.ZEN_URL || "https://opencode.ai/zen/v1/chat/completions"
+const GO_MODEL = process.env.GO_MODEL || process.env.ZEN_MODEL || "qwen3.6-plus"
+const GO_URL = process.env.GO_URL || process.env.ZEN_URL || "https://opencode.ai/zen/v1/chat/completions"
 
 const SCHEMA = {
   type: "OBJECT",
@@ -407,7 +407,7 @@ export async function generateArticle(input) {
   if (process.env.LLM_MOCK && process.env.LLM_MOCK !== "0" && process.env.LLM_MOCK !== "false") return MOCK
 
   const prompt = input.prompt || buildPrompt(input)
-  const zenKey = getZenKey()
+  const zenKey = getGoKey()
   const geminiKey = getGeminiKey()
   const alibabaKey = getAlibabaKey()
   const alibabaUrl = getAlibabaUrl()
@@ -418,21 +418,21 @@ export async function generateArticle(input) {
       console.error(`Menggunakan Alibaba Qwen (${alibabaModel})...`)
       return await callAlibaba(prompt, alibabaKey, alibabaUrl, alibabaModel)
     } catch (e) {
-      console.error(`Alibaba Qwen gagal: ${e.message}. Fallback ke Zen...`)
+      console.error(`Alibaba Qwen gagal: ${e.message}. Fallback ke OpenCode Go...`)
     }
   } else {
-    console.error("API key/URL Alibaba belum diisi, fallback ke Zen.")
+    console.error("API key/URL Alibaba belum diisi, fallback ke OpenCode Go.")
   }
 
   if (zenKey && zenKey !== "PASTE_ZEN_API_KEY_HERE") {
     try {
-      console.error(`Menggunakan OpenCode Zen (${ZEN_MODEL})...`)
-      return await callZen(prompt, zenKey)
+      console.error(`Menggunakan OpenCode Go (${GO_MODEL})...`)
+      return await callGo(prompt, zenKey)
     } catch (e) {
-      console.error(`Zen gagal: ${e.message}. Fallback ke Gemini...`)
+      console.error(`OpenCode Go gagal: ${e.message}. Fallback ke Gemini...`)
     }
   } else {
-    console.error("API key Zen belum diisi, fallback ke Gemini.")
+    console.error("API key OpenCode Go belum diisi, fallback ke Gemini.")
   }
 
   if (geminiKey && geminiKey !== "PASTE_GEMINI_API_KEY_HERE") {
@@ -447,17 +447,17 @@ export async function generateArticle(input) {
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
 
-async function callZen(prompt, key) {
-  const models = ZEN_MODEL.split(",").map((m) => m.trim()).filter(Boolean)
+async function callGo(prompt, key) {
+  const models = GO_MODEL.split(",").map((m) => m.trim()).filter(Boolean)
   for (const model of models) {
-    console.error(`Menggunakan OpenCode Zen (${model})...`)
+    console.error(`Menggunakan OpenCode Go (${model})...`)
     const ctrl = new AbortController()
     const timer = setTimeout(() => ctrl.abort(), 60000)
     try {
       let exhausted = true
       for (let attempt = 0; attempt < 2; attempt++) {
         try {
-          const res = await fetch(ZEN_URL, {
+          const res = await fetch(GO_URL, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -482,15 +482,15 @@ async function callZen(prompt, key) {
           if (j.error) {
             if (res.status === 429 || res.status >= 500) {
               const wait = 1500 * (attempt + 1)
-              console.error(`Zen ${model} ${res.status} (${j.error.message || "server error"}), retry ${attempt + 1}/2 dalam ${wait}ms...`)
+              console.error(`Go ${model} ${res.status} (${j.error.message || "server error"}), retry ${attempt + 1}/2 dalam ${wait}ms...`)
               await sleep(wait)
               continue
             }
-            throw new Error(`Zen ${model} error ${res.status}: ${j.error.message || JSON.stringify(j.error)}`)
+            throw new Error(`Go ${model} error ${res.status}: ${j.error.message || JSON.stringify(j.error)}`)
           }
           const text = j.choices?.[0]?.message?.content
           if (!text) {
-            console.error(`Zen ${model} mengembalikan teks kosong, retry ${attempt + 1}/2...`)
+            console.error(`Go ${model} mengembalikan teks kosong, retry ${attempt + 1}/2...`)
             await sleep(1500 * (attempt + 1))
             continue
           }
@@ -498,35 +498,35 @@ async function callZen(prompt, key) {
           try {
             parsed = JSON.parse(text)
           } catch {
-            throw new Error("Zen tidak mengembalikan JSON valid")
+            throw new Error("Go tidak mengembalikan JSON valid")
           }
           if (!parsed.title || !parsed.description || !parsed.content || !Array.isArray(parsed.tags)) {
-            throw new Error("Zen JSON tidak lengkap (field wajib title/description/content/tags hilang)")
+            throw new Error("Go JSON tidak lengkap (field wajib title/description/content/tags hilang)")
           }
           return parsed
         } catch (e) {
           if (/aborted|abort|timeout/i.test(e.message)) {
-            console.error(`Zen ${model} timeout, lanjut model berikutnya...`)
+            console.error(`Go ${model} timeout, lanjut model berikutnya...`)
             exhausted = false
             break
           }
           if (attempt < 1 && /fetch|network|5\d\d|429|failed/i.test(e.message)) {
             const wait = 1500 * (attempt + 1)
-            console.error(`Zen ${model} error (${e.message}), retry ${attempt + 1}/2 dalam ${wait}ms...`)
+            console.error(`Go ${model} error (${e.message}), retry ${attempt + 1}/2 dalam ${wait}ms...`)
             await sleep(wait)
             continue
           }
-          console.error(`Zen ${model} error keras (${e.message}), lanjut model berikutnya...`)
+          console.error(`Go ${model} error keras (${e.message}), lanjut model berikutnya...`)
           exhausted = false
           break
         }
       }
-      if (exhausted) console.error(`Zen ${model} gagal setelah 2 percobaan, lanjut ke model berikutnya...`)
+      if (exhausted) console.error(`Go ${model} gagal setelah 2 percobaan, lanjut ke model berikutnya...`)
     } finally {
       clearTimeout(timer)
     }
   }
-  throw new Error("Semua model Zen gagal.")
+  throw new Error("Semua model Go gagal.")
 }
 
 // ---- Alibaba Cloud (OpenAI-compatible) ----

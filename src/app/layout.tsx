@@ -5,7 +5,7 @@ import "./globals.css"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { BackToTop } from "@/components/ui/back-to-top"
-import { ChatbotWidget } from "@/components/ui/chatbot-widget"
+import { LazyChatbot } from "@/components/ui/lazy-chatbot"
 import { OrganizationSchema, WebSiteSchema, LocalBusinessReviewsSchema } from "@/components/json-ld"
 import { FaviconThemeSwitcher } from "@/components/favicon-theme-switcher"
 
@@ -127,7 +127,7 @@ export default function RootLayout({
         <Header />
         <main id="main-content" className="flex-1 pt-[100px] lg:pt-[112px]">{children}</main>
         <Footer />
-        <ChatbotWidget />
+        <LazyChatbot />
         <BackToTop />
       </body>
     </html>

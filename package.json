@@ -20,6 +20,7 @@
     "seo:bing-traffic": "node scripts/bing/traffic.mjs",
     "seo:fix-lint": "node scripts/seo/fix-lint.mjs",
     "seo:link-pillar": "node scripts/seo/link-pillar.mjs",
+    "seo:link-old": "node scripts/seo/link-old.mjs",
     "seo:consolidate": "node scripts/seo/consolidate.mjs",
     "seo:indexnow": "node scripts/seo/indexnow.mjs",
     "social:autopost": "node scripts/social/autopost.mjs",

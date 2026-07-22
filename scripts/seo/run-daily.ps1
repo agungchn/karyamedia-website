@@ -44,6 +44,13 @@ try {
   # biarkan lanjut meskipun link-pillar tidak mengubah apa pun
 }
 
+# enrich: tambah "Artikel terkait" antar artikel (max 4 link/artikel, 2 link/run)
+try {
+  & npm run seo:link-old 2>&1 | Tee-Object -FilePath $log -Append | Out-String
+} catch {
+  # biarkan lanjut meskipun tidak ada yang perlu ditambahkan
+}
+
 # auto-konsolidasi: deteksi artikel duplikat (>=80% Jaccard) secara otomatis,
 # rewire link internal, dan merge + 301 untuk yang nyaris identik (>=85%).
 # Hasil disimpan ke consolidate.merges.json (idempoten).

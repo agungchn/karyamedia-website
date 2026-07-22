@@ -306,6 +306,29 @@ function pickImage(category, used, keyword = "") {
   const kw = (keyword || "").toLowerCase()
   const kwTokens = new Set(kw.split(/[^a-z0-9]+/).filter((w) => w.length > 2))
 
+  // RULE: judul mengandung "plakat akrilik", "plakat resin", atau "plakat fiberglass"
+  // → ambil gambar dari /public/images/plakat-akrilik/ (nomor terkecil yang belum dipakai)
+  const isPlakatVariant =
+    /plakat[\s-]+(akrilik|resin|fiberglass)/i.test(keyword || "")
+  if (isPlakatVariant) {
+    const specialDir = join(root, "public/images/plakat-akrilik")
+    if (existsSync(specialDir)) {
+      const files = readdirSync(specialDir)
+        .filter((n) => /^plakat-akrilik-\d+\.png$/i.test(n))
+        .sort((a, b) => {
+          const na = parseInt(a.match(/(\d+)/)?.[1] || "0", 10)
+          const nb = parseInt(b.match(/(\d+)/)?.[1] || "0", 10)
+          return na - nb
+        })
+      for (const f of files) {
+        const url = `/images/plakat-akrilik/${f}`
+        if (!used.has(url)) return url
+      }
+      // fallback: kalau semua sudah dipakai, pakai nomor 1
+      if (files.length) return `/images/plakat-akrilik/${files[0]}`
+    }
+  }
+
   let folders = FOLDER[category] || []
   if (!folders.length) {
     const inf = inferCategory(keyword)

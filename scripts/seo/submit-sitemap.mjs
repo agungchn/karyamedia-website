@@ -82,6 +82,13 @@ async function main() {
     process.exit(1);
   }
   console.log("OK: Google diberitahu sitemap diperbarui (artikel baru akan ter-crawl lebih cepat)");
+
+  // Also ping Bing/Yandex
+  try {
+    const feedUrl = "https://karyamediasouvenir.com/sitemap.xml";
+    await fetch(`https://www.bing.com/ping?siteMap=${encodeURIComponent(feedUrl)}`);
+    console.log("Bing juga di-ping.");
+  } catch {}
 }
 
 main().catch((e) => {

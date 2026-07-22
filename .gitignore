@@ -64,6 +64,7 @@ BING_API_KEY
 scripts/llm/apikey.txt
 scripts/llm/zen-key.txt
 scripts/llm/alibaba cloude.txt
+scripts/llm/*.bak
 GEMINI_API_KEY
 ALIBABA_API_KEY
 

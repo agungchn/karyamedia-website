@@ -56,7 +56,7 @@ function getAlibabaModel() {
 
 const GEMINI_MODEL = process.env.GEMINI_MODELS || process.env.GEMINI_MODEL || "gemini-3.5-flash,gemini-flash-latest"
 const GO_MODEL = process.env.GO_MODEL || process.env.ZEN_MODEL || "deepseek-v4-flash"
-const GO_URL = process.env.GO_URL || process.env.ZEN_URL || "https://opencode.ai/zen/v1/chat/completions"
+const GO_URL = process.env.GO_URL || process.env.ZEN_URL || "https://opencode.ai/zen/go/v1/chat/completions"
 
 const SCHEMA = {
   type: "OBJECT",
@@ -452,7 +452,7 @@ async function callGo(prompt, key) {
   for (const model of models) {
     console.error(`Menggunakan OpenCode Go (${model})...`)
     const ctrl = new AbortController()
-    const timer = setTimeout(() => ctrl.abort(), 60000)
+    const timer = setTimeout(() => ctrl.abort(), 120000)
     try {
       let exhausted = true
       for (let attempt = 0; attempt < 2; attempt++) {
@@ -532,7 +532,7 @@ async function callGo(prompt, key) {
 // ---- Alibaba Cloud (OpenAI-compatible) ----
 async function callAlibaba(prompt, key, url, model) {
   const ctrl = new AbortController()
-  const timer = setTimeout(() => ctrl.abort(), 90000)
+  const timer = setTimeout(() => ctrl.abort(), 180000)
   try {
     for (let attempt = 0; attempt < 3; attempt++) {
       try {

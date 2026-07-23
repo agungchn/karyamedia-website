@@ -534,6 +534,25 @@ async function main() {
     process.exit(1)
   }
 
+  // RULE: hindari artikel plakat akrilik baru — sudah 44+ artikel
+  const AKRILIK_KW = /plakat\s*akrilik|akrilik.*plakat|acrylic/i
+  const ALLOWED_PLAKAT = /plakat\s*(kayu|marmer|resin|fiberglass|fiber|wayang)/i
+  if (
+    (category === "Plakat" || category === "Blog" || !category) &&
+    AKRILIK_KW.test(keyword) &&
+    !ALLOWED_PLAKAT.test(keyword)
+  ) {
+    console.error(`BATAL: Keyword "${keyword}" mengarah ke plakat akrilik.`)
+    console.error("  Sudah ada 44+ artikel plakat akrilik. Pilih jenis plakat lain:")
+    console.error("  - plakat kayu")
+    console.error("  - plakat marmer")
+    console.error("  - plakat resin")
+    console.error("  - plakat fiberglass")
+    console.error("  - plakat wayang")
+    console.error("  - souvenir wayang")
+    process.exit(1)
+  }
+
   console.log(`Keyword: "${keyword}"  ->  slug: ${slug}  kategori: ${category}${beat ? "  [BEAT MODE]" : ""}`)
 
   // Pilih varian kerangka artikel secara deterministik dari slug agar tiap

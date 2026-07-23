@@ -553,6 +553,18 @@ async function main() {
     process.exit(1)
   }
 
+  // RULE: hindari artikel tumbler baru — sudah 5 artikel dan kurang terindex Google
+  const TUMBLER_KW = /tumbler|botol.*minum.*custom|souvenir.*botol/i
+  if (
+    (category === "Gift Box" || category === "Souvenir" || category === "Blog" || !category) &&
+    TUMBLER_KW.test(keyword)
+  ) {
+    console.error(`BATAL: Keyword "${keyword}" mengarah ke tumbler.`)
+    console.error("  Sudah ada 5 artikel tumbler dan kurang terindex Google.")
+    console.error("  Fokus ke jenis produk lain.")
+    process.exit(1)
+  }
+
   console.log(`Keyword: "${keyword}"  ->  slug: ${slug}  kategori: ${category}${beat ? "  [BEAT MODE]" : ""}`)
 
   // Pilih varian kerangka artikel secara deterministik dari slug agar tiap

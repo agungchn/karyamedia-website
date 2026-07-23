@@ -114,7 +114,6 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        <link rel="preload" as="image" href="/images/hero/kalung-rektor-hero.webp" type="image/webp" />
         <script
           id="google-tag-manager"
           suppressHydrationWarning

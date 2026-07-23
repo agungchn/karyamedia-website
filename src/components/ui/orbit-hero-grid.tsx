@@ -103,7 +103,6 @@ export function OrbitHeroGrid() {
                 <Image
                   src={currentImg.src}
                   alt={currentImg.alt}
-                  unoptimized
                   width={isMain ? 400 : 200}
                   height={isMain ? 400 : 200}
                   priority={isMain}

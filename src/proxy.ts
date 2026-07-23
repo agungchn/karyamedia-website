@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server"
 import type { NextRequest } from "next/server"
 
-export function middleware(req: NextRequest) {
+export function proxy(req: NextRequest) {
   const { protocol, host, pathname, search } = req.nextUrl
   if (protocol === "http:" && host !== "localhost:3456" && host !== "localhost:3000") {
     return NextResponse.redirect(

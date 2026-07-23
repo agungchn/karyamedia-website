@@ -5,7 +5,6 @@ import Link from "next/link"
 import { Search, Shield, Calendar, Users, Truck, Sparkles, Star } from "lucide-react"
 import { getTimeTheme, TimeTheme } from "@/lib/time-theme"
 import { LazySparklesCore } from "@/components/ui/lazy-effects"
-import { OrbitHeroGrid } from "@/components/ui/orbit-hero-grid"
 import dynamic from "next/dynamic"
 
 const RetroGrid = ({
@@ -50,6 +49,11 @@ const HeroSearch = dynamic(
     ssr: false,
     loading: () => <div className="w-full max-w-md h-[52px] rounded-full bg-white/20 animate-pulse" />,
   }
+)
+
+const OrbitHeroGrid = dynamic(
+  () => import("@/components/ui/orbit-hero-grid").then((m) => m.OrbitHeroGrid),
+  { ssr: false }
 )
 
 export function HeroSection() {

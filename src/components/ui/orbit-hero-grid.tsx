@@ -4,12 +4,64 @@ import Image from "next/image"
 import { useState, useEffect, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
-const IMAGES = [
-  { src: "/images/hero/kalung-rektor-hero.webp", alt: "Kalung Rektor" },
-  { src: "/images/hero/medali-hero.webp", alt: "Medali 3D" },
-  { src: "/images/hero/patung-wisuda-hero.webp", alt: "Patung Wisuda" },
-  { src: "/images/hero/plakat-akrilik-hero.webp", alt: "Plakat Akrilik" },
-  { src: "/images/hero/plakat-wayang-hero.webp", alt: "Plakat Wayang" },
+// 7 set gambar — berganti setiap hari
+const IMAGE_SETS: { src: string; alt: string }[][] = [
+  // Set 0 — Minggu (existing)
+  [
+    { src: "/images/hero/kalung-rektor-hero.webp", alt: "Kalung Rektor" },
+    { src: "/images/hero/medali-hero.webp", alt: "Medali 3D" },
+    { src: "/images/hero/patung-wisuda-hero.webp", alt: "Patung Wisuda" },
+    { src: "/images/hero/plakat-akrilik-hero.webp", alt: "Plakat Akrilik" },
+    { src: "/images/hero/plakat-wayang-hero.webp", alt: "Plakat Wayang" },
+  ],
+  // Set 1 — Senin (day-1)
+  [
+    { src: "/images/hero/day-1/medali.webp", alt: "Medali" },
+    { src: "/images/hero/day-1/patung-wisuda.webp", alt: "Patung Wisuda" },
+    { src: "/images/hero/day-1/plakat-akrilik.webp", alt: "Plakat Akrilik" },
+    { src: "/images/hero/day-1/plakat-akrilik-miror.webp", alt: "Plakat Akrilik" },
+    { src: "/images/hero/day-1/tongkat-rektor.webp", alt: "Tongkat Rektor" },
+  ],
+  // Set 2 — Selasa (day-2)
+  [
+    { src: "/images/hero/day-2/medali.webp", alt: "Medali" },
+    { src: "/images/hero/day-2/patung-wisuda.webp", alt: "Patung Wisuda" },
+    { src: "/images/hero/day-2/plakat-akrilik.webp", alt: "Plakat Akrilik" },
+    { src: "/images/hero/day-2/plakat-wayang.webp", alt: "Plakat Wayang" },
+    { src: "/images/hero/day-2/tongkat-rektor-9.webp", alt: "Tongkat Rektor" },
+  ],
+  // Set 3 — Rabu (day-3)
+  [
+    { src: "/images/hero/day-3/medali.webp", alt: "Medali" },
+    { src: "/images/hero/day-3/patung-wisuda.webp", alt: "Patung Wisuda" },
+    { src: "/images/hero/day-3/plakat-akrilik.webp", alt: "Plakat Akrilik" },
+    { src: "/images/hero/day-3/souvenir-wayang.webp", alt: "Souvenir Wayang" },
+    { src: "/images/hero/day-3/tongkat-rektor-5.webp", alt: "Tongkat Rektor" },
+  ],
+  // Set 4 — Kamis (day-4)
+  [
+    { src: "/images/hero/day-4/medali.webp", alt: "Medali" },
+    { src: "/images/hero/day-4/patung-wisuda.webp", alt: "Patung Wisuda" },
+    { src: "/images/hero/day-4/plakat-akrilik.webp", alt: "Plakat Akrilik" },
+    { src: "/images/hero/day-4/plakat-wayang.webp", alt: "Plakat Wayang" },
+    { src: "/images/hero/day-4/tongkat-rektor.webp", alt: "Tongkat Rektor" },
+  ],
+  // Set 5 — Jumat (day-5)
+  [
+    { src: "/images/hero/day-5/medali.webp", alt: "Medali" },
+    { src: "/images/hero/day-5/patung-wisuda.webp", alt: "Patung Wisuda" },
+    { src: "/images/hero/day-5/plakat-akrilik.webp", alt: "Plakat Akrilik" },
+    { src: "/images/hero/day-5/plakat-wayang.webp", alt: "Plakat Wayang" },
+    { src: "/images/hero/day-5/tongkat-rektor.webp", alt: "Tongkat Rektor" },
+  ],
+  // Set 6 — Sabtu (day-6)
+  [
+    { src: "/images/hero/day-6/medali.webp", alt: "Medali" },
+    { src: "/images/hero/day-6/patung-wisuda.webp", alt: "Patung Wisuda" },
+    { src: "/images/hero/day-6/plakat-akrilik.webp", alt: "Plakat Akrilik" },
+    { src: "/images/hero/day-6/plakat-wayang.webp", alt: "Plakat Wayang" },
+    { src: "/images/hero/day-6/tongkat-rektor.webp", alt: "Tongkat Rektor" },
+  ],
 ]
 
 const POSITIONS = [
@@ -45,7 +97,15 @@ function rotatePositions(prev: number[]) {
   return [last, ...prev.slice(0, -1)]
 }
 
+function getTodaySet(): number {
+  // 0=Minggu, 1=Senin, ... 6=Sabtu
+  return new Date().getDay()
+}
+
 export function OrbitHeroGrid() {
+  const setIndex = getTodaySet()
+  const IMAGES = IMAGE_SETS[setIndex]
+
   const [current, setCurrent] = useState([0, 1, 2, 3, 4])
   const [next, setNext] = useState<number[] | null>(null)
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)

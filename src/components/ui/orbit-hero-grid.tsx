@@ -23,7 +23,7 @@ const POSITIONS = [
 const GRID_TEMPLATE = {
   gridTemplateColumns: "6fr 2fr 2fr",
   gridTemplateRows: "1fr 1fr 1fr",
-  gap: "24px",
+  gap: "12px",
   gridTemplateAreas: `
     "main top top"
     "main mid mid"

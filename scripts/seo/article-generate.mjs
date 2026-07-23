@@ -565,6 +565,26 @@ async function main() {
     process.exit(1)
   }
 
+  // RULE: hindari artikel souvenir wisuda umum — sudah 10+ artikel
+  const ALLOWED_WISUDA = /samir\s*wisuda|gordon\s*wisuda|patung\s*wisuda|plakat\s*wisuda\s*akrilik|kalung\s*rektor|tongkat\s*rektor|map\s*ijazah|tabung\s*wisuda/i
+  if (
+    (category === "Souvenir Wisuda" || category === "Blog" || !category) &&
+    /wisuda/i.test(keyword) &&
+    !ALLOWED_WISUDA.test(keyword)
+  ) {
+    console.error(`BATAL: Keyword "${keyword}" mengarah ke souvenir wisuda umum.`)
+    console.error("  Sudah ada 10+ artikel souvenir wisuda. Gunakan keyword spesifik:")
+    console.error("  - samir wisuda")
+    console.error("  - gordon wisuda")
+    console.error("  - patung wisuda")
+    console.error("  - plakat wisuda akrilik")
+    console.error("  - kalung rektor")
+    console.error("  - tongkat rektor")
+    console.error("  - map ijazah")
+    console.error("  - tabung wisuda")
+    process.exit(1)
+  }
+
   console.log(`Keyword: "${keyword}"  ->  slug: ${slug}  kategori: ${category}${beat ? "  [BEAT MODE]" : ""}`)
 
   // Pilih varian kerangka artikel secara deterministik dari slug agar tiap

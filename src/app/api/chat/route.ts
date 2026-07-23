@@ -4,6 +4,15 @@ import { articles } from "@/data/articles"
 
 export const runtime = "edge"
 
+const LLM_TIMEOUT_MS = 30000
+
+async function fetchWithTimeout(url: string, init: RequestInit): Promise<Response> {
+  return fetch(url, {
+    ...init,
+    signal: (AbortSignal as any).timeout(LLM_TIMEOUT_MS),
+  })
+}
+
 type ChatMessage = { role: "user" | "assistant"; content: string }
 
 function sanitize(messages: unknown): ChatMessage[] {
@@ -12,7 +21,7 @@ function sanitize(messages: unknown): ChatMessage[] {
     .filter(
       (m): m is ChatMessage =>
         !!m &&
-        (m as any).role === "user" || (m as any).role === "assistant",
+        ((m as any).role === "user" || (m as any).role === "assistant"),
     )
     .filter((m) => typeof m.content === "string" && m.content.trim().length > 0)
     .slice(-12)
@@ -50,13 +59,13 @@ async function callOpenAICompatible(system: string, messages: ChatMessage[], use
     ? `\n\nARTIKEL TERKAIT DARI WEBSITE:\n${searchResult}\n\nGunakan artikel di atas jika relevan untuk merekomendasikan konten website kepada pengguna. Cantumkan link artikel jika kamu merekomendasikannya.`
     : ""
 
-  const res = await fetch(`${base}/chat/completions`, {
+  const res = await fetchWithTimeout(`${base}/chat/completions`, {
     method: "POST",
     headers: { "Content-Type": "application/json", Authorization: `Bearer ${key}` },
     body: JSON.stringify({
       model,
       temperature: 0.5,
-      max_tokens: 4096,
+      max_tokens: 800,
       messages: [{ role: "system", content: system + context }, ...messages],
     }),
   })
@@ -84,7 +93,7 @@ async function callGemini(system: string, messages: ChatMessage[], userQuery: st
     role: m.role === "assistant" ? "model" : "user",
     parts: [{ text: m.content }],
   }))
-  const res = await fetch(url, {
+  const res = await fetchWithTimeout(url, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -99,38 +108,6 @@ async function callGemini(system: string, messages: ChatMessage[], userQuery: st
   }
   const j = await res.json()
   return j.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || ""
-}
-
-async function callAnthropic(system: string, messages: ChatMessage[], userQuery: string) {
-  const key = process.env.ANTHROPIC_API_KEY
-  if (!key) throw new Error("ANTHROPIC_API_KEY belum diatur di environment")
-  const model = process.env.ANTHROPIC_MODEL || "claude-haiku-4-5"
-
-  const searchResult = searchArticles(userQuery)
-  const context = searchResult
-    ? `\n\nARTIKEL TERKAIT DARI WEBSITE:\n${searchResult}\n\nGunakan artikel di atas jika relevan untuk merekomendasikan konten website kepada pengguna. Cantumkan link artikel jika kamu merekomendasikannya.`
-    : ""
-
-  const res = await fetch("https://api.anthropic.com/v1/messages", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "x-api-key": key,
-      "anthropic-version": "2023-06-01",
-    },
-    body: JSON.stringify({
-      model,
-      max_tokens: 4096,
-      system: system + context,
-      messages,
-    }),
-  })
-  if (!res.ok) {
-    const t = await res.text()
-    throw new Error(`Anthropic ${res.status}: ${t.slice(0, 300)}`)
-  }
-  const j = await res.json()
-  return j.content?.[0]?.text?.trim() || ""
 }
 
 export async function POST(req: NextRequest) {
@@ -153,7 +130,6 @@ export async function POST(req: NextRequest) {
   try {
     let reply: string
     if (provider === "gemini") reply = await callGemini(system, messages, userQuery)
-    else if (provider === "anthropic") reply = await callAnthropic(system, messages, userQuery)
     else reply = await callOpenAICompatible(system, messages, userQuery)
     return NextResponse.json({ reply })
   } catch (e: any) {

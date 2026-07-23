@@ -4,6 +4,7 @@ import { MapPin, Phone, Mail, Clock, ArrowRight, MessageCircle, Package, Truck, 
 import { companyInfo } from "@/data/company"
 import { getWhatsAppLink } from "@/lib/utils"
 import { BatikBackground } from "@/components/ui/batik-bg"
+import { GoogleMapEmbed } from "@/components/ui/google-map-embed"
 
 export const metadata: Metadata = {
   title: "Lokasi Kami",
@@ -35,16 +36,7 @@ export default function LokasiKamiPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             <div className="lg:col-span-8">
               <div className="rounded-2xl overflow-hidden shadow-sm border border-gray-100">
-                <iframe
-                  src="https://maps.google.com/maps?q=Karyamedia+Souvenir&output=embed"
-                  width="100%"
-                  height="450"
-                  style={{ border: 0, display: "block" }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Peta Lokasi Karyamedia Souvenir"
-                />
+                <GoogleMapEmbed title="Peta Lokasi Karyamedia Souvenir" height={450} />
               </div>
             </div>
 

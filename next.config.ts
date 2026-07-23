@@ -19,7 +19,7 @@ const nextConfig: NextConfig = {
     loader: "custom",
     loaderFile: "./src/image-loader.ts",
     // 2 lebar: 480 (grid 4 kolom ~315px + retina mobile), 960 (desktop retina).
-    deviceSizes: [480, 960],
+    deviceSizes: [320, 480, 960],
     imageSizes: [],
   },
   async redirects() {

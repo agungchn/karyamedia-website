@@ -10,7 +10,7 @@ import path from "path";
 
 const PUBLIC = path.join(process.cwd(), "public", "images");
 const OPT = path.join(PUBLIC, "opt");
-const WIDTHS = [480, 640, 960];
+const WIDTHS = [320, 480, 640, 960];
 const QUALITY = 80;
 
 function walk(dir) {

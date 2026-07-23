@@ -585,6 +585,16 @@ async function main() {
     process.exit(1)
   }
 
+  // RULE: hindari artikel piala & trophy baru — sudah 46 artikel
+  if (
+    (category === "Piala & Trophy" || category === "Blog" || !category) &&
+    /piala|trophy|trofi/i.test(keyword)
+  ) {
+    console.error(`BATAL: Keyword "${keyword}" mengarah ke piala & trophy.`)
+    console.error("  Sudah ada 46 artikel piala & trophy. Fokus ke produk lain.")
+    process.exit(1)
+  }
+
   console.log(`Keyword: "${keyword}"  ->  slug: ${slug}  kategori: ${category}${beat ? "  [BEAT MODE]" : ""}`)
 
   // Pilih varian kerangka artikel secara deterministik dari slug agar tiap

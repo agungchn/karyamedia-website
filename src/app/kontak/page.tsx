@@ -20,6 +20,7 @@ import { TimeHeading } from "@/components/ui/time-heading"
 import { TimeText } from "@/components/ui/time-text"
 import { GbpReviewCta } from "@/components/gbp-review-cta"
 import { BatikBackgroundStrong } from "@/components/ui/batik-bg-strong"
+import { GoogleMapEmbed } from "@/components/ui/google-map-embed"
 
 export const metadata: Metadata = {
   title: "Kontak Kami",
@@ -299,16 +300,7 @@ export default function KontakPage() {
           <div className="space-y-8">
             <h2 className="heading-display text-2xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-accessible mb-6">Lokasi Kami</h2>
               <div className="rounded-2xl overflow-hidden shadow-sm border border-gray-100">
-                <iframe
-                  src="https://maps.google.com/maps?q=Karyamedia+Souvenir&output=embed"
-                  width="100%"
-                  height="300"
-                  style={{ border: 0, display: "block" }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Lokasi Karyamedia Souvenir"
-                />
+                <GoogleMapEmbed title="Lokasi Karyamedia Souvenir" height={300} />
                 <div className="p-4 bg-white">
                   <p className="text-sm text-gray-700 font-medium">Jl. Menteri Supeno No. 90</p>
                   <p className="text-sm text-gray-500">Pandeyan, Umbulharjo, Yogyakarta 55161</p>

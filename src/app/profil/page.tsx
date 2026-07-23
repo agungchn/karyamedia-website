@@ -30,6 +30,7 @@ import { BatikBackground } from "@/components/ui/batik-bg"
 import { TentangKamiBanner } from "@/components/tentang-kami-banner"
 import { VisiMisiCards } from "@/components/visi-misi-cards"
 import { TiltLogo } from "@/components/tilt-logo"
+import { GoogleMapEmbed } from "@/components/ui/google-map-embed"
 
 export const metadata: Metadata = {
   title: "Profil Perusahaan",
@@ -321,16 +322,7 @@ export default function ProfilPage() {
           <div>
             <h2 className="heading-display text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-accessible mb-6">Lokasi Kami</h2>
             <div className="rounded-2xl overflow-hidden shadow-sm border border-gray-100">
-              <iframe
-                src="https://maps.google.com/maps?q=Karyamedia+Souvenir&output=embed"
-                width="100%"
-                height="200"
-                style={{ border: 0, display: "block" }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Lokasi Karyamedia Souvenir"
-              />
+              <GoogleMapEmbed title="Lokasi Karyamedia Souvenir" height={200} />
               <div className="p-3 bg-white">
                 <p className="text-sm text-gray-700 font-medium">Jl. Menteri Supeno No. 90</p>
                 <p className="text-sm text-gray-500">Pandeyan, Umbulharjo, Yogyakarta 55161</p>

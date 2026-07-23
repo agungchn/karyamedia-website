@@ -56,6 +56,7 @@ export function HeroSection() {
   const [searchOpen, setSearchOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState("")
   const [theme, setTheme] = useState<TimeTheme>(() => getTimeTheme())
+  const [isDesktop, setIsDesktop] = useState(false)
   const isNight = theme.bgTop === "#020617"
   const isSore = theme.bgTop === "#E8A0B0"
 
@@ -64,6 +65,14 @@ export function HeroSection() {
       setTheme(getTimeTheme())
     }, 60000)
     return () => clearInterval(interval)
+  }, [])
+
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)")
+    setIsDesktop(mq.matches)
+    const handler = (e: MediaQueryListEvent) => setIsDesktop(e.matches)
+    mq.addEventListener("change", handler)
+    return () => mq.removeEventListener("change", handler)
   }, [])
 
   return (
@@ -200,9 +209,11 @@ export function HeroSection() {
           </div>
 
           {/* Right - Product showcase with orbital rotation */}
-          <div className="relative hidden lg:block h-[500px]">
-            <OrbitHeroGrid />
-          </div>
+          {isDesktop && (
+            <div className="relative h-[500px]">
+              <OrbitHeroGrid />
+            </div>
+          )}
         </div>
       </div>
     </section>

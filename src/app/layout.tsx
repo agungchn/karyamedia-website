@@ -5,6 +5,8 @@ import "./globals.css"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { BackToTop } from "@/components/ui/back-to-top"
+import { GbpReviewCta } from "@/components/gbp-review-cta"
+import { GtmNoscript } from "@/components/gtm-noscript"
 import { LazyChatbot } from "@/components/ui/lazy-chatbot"
 import { OrganizationSchema, WebSiteSchema, LocalBusinessReviewsSchema } from "@/components/json-ld"
 import { FaviconThemeSwitcher } from "@/components/favicon-theme-switcher"
@@ -124,12 +126,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen flex flex-col antialiased">
-        <noscript
-          suppressHydrationWarning
-          dangerouslySetInnerHTML={{
-            __html: '<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T43BWBSQ" height="0" width="0" style="display:none;visibility:hidden"></iframe>',
-          }}
-        />
+        <GtmNoscript />
         <FaviconThemeSwitcher />
         <OrganizationSchema />
         <LocalBusinessReviewsSchema />

@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   images: {
     loader: "custom",
     loaderFile: "./src/image-loader.ts",
-    deviceSizes: [480, 960],
+    deviceSizes: [320, 480, 640, 960],
     imageSizes: [],
   },
   async redirects() {

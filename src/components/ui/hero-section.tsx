@@ -9,7 +9,12 @@ import { products } from "@/data/products"
 import { categories } from "@/data/categories"
 import { getTimeTheme, TimeTheme } from "@/lib/time-theme"
 import { LazySparklesCore } from "@/components/ui/lazy-effects"
-import { OrbitHeroGrid } from "@/components/ui/orbit-hero-grid"
+import dynamic from "next/dynamic"
+
+const OrbitHeroGrid = dynamic(
+  () => import("@/components/ui/orbit-hero-grid").then((m) => ({ default: m.OrbitHeroGrid })),
+  { ssr: false }
+)
 
 const RetroGrid = ({
   angle = 65,

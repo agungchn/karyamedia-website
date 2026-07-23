@@ -106,7 +106,8 @@ export function OrbitHeroGrid() {
                   unoptimized
                   width={isMain ? 400 : 200}
                   height={isMain ? 400 : 200}
-                  loading="lazy"
+                  priority={isMain}
+                  fetchPriority={isMain ? "high" : undefined}
                   className="w-full h-full object-cover"
                 />
               </motion.div>

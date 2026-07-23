@@ -1,8 +1,8 @@
 "use client"
 
 import Image from "next/image"
-import { useState, useEffect, useRef } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { useState, useEffect, useRef, useCallback } from "react"
+import { motion } from "framer-motion"
 
 const IMAGES = [
   { src: "/images/hero/kalung-rektor-hero.webp", alt: "Kalung Rektor" },
@@ -31,13 +31,12 @@ const GRID_TEMPLATE = {
   `,
 }
 
-// Arah slide: [exitX, exitY, enterX, enterY]
-const DIRECTIONS = [
-  ["-100%", "0", "-100%", "0"],   // main
-  ["0", "100%", "0", "-100%"],     // top
-  ["0", "100%", "0", "-100%"],     // mid
-  ["100%", "0", "100%", "0"],      // btm1
-  ["100%", "0", "100%", "0"],      // btm2
+const DIRECTIONS: [string, string, string, string][] = [
+  ["-100%", "0", "-100%", "0"],
+  ["0", "100%", "0", "-100%"],
+  ["0", "100%", "0", "-100%"],
+  ["100%", "0", "100%", "0"],
+  ["100%", "0", "100%", "0"],
 ]
 
 function rotatePositions(prev: number[]) {
@@ -45,38 +44,43 @@ function rotatePositions(prev: number[]) {
   return [last, ...prev.slice(0, -1)]
 }
 
-export function OrbitHeroGrid() {
-  const [positions, setPositions] = useState([0, 1, 2, 3, 4])
-  const [transitioning, setTransitioning] = useState(false)
-  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
+const DURATION = 1
+const TOTAL_CYCLE = 6000
 
-  const rotate = useRef(() => {
-    setPositions((prev) => {
-      setTransitioning(true)
-      return rotatePositions(prev)
-    })
-  }).current
+export function OrbitHeroGrid() {
+  const [occupants, setOccupants] = useState([0, 1, 2, 3, 4])
+  const [animOut, setAnimOut] = useState(false)
+  const [animIn, setAnimIn] = useState(false)
+  const positions = useRef([0, 1, 2, 3, 4])
+
+  const rotate = useCallback(() => {
+    positions.current = rotatePositions(positions.current)
+    setAnimOut(true)
+  }, [])
 
   useEffect(() => {
-    timerRef.current = setInterval(rotate, 6000)
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current)
-    }
+    const timer = setInterval(rotate, TOTAL_CYCLE)
+    return () => clearInterval(timer)
   }, [rotate])
 
   useEffect(() => {
-    if (!transitioning) return
-    const t = setTimeout(() => setTransitioning(false), 2000)
-    return () => clearTimeout(t)
-  }, [transitioning])
+    if (!animOut) return
+    const t1 = setTimeout(() => {
+      setAnimOut(false)
+      setOccupants(positions.current)
+      setAnimIn(true)
+    }, DURATION * 1000)
+    const t2 = setTimeout(() => setAnimIn(false), (DURATION + DURATION) * 1000)
+    return () => { clearTimeout(t1); clearTimeout(t2) }
+  }, [animOut])
 
   return (
     <div className="relative h-[500px] overflow-hidden">
       <div className="relative z-10 grid h-full" style={GRID_TEMPLATE}>
         {POSITIONS.map((pos, posIdx) => {
-          const [exitX, exitY, enterX, enterY] = DIRECTIONS[posIdx]
-          const img = IMAGES[positions[posIdx]]
           const isMain = posIdx === 0
+          const [exitX, exitY, enterX, enterY] = DIRECTIONS[posIdx]
+          const img = IMAGES[occupants[posIdx]]
 
           return (
             <div
@@ -84,18 +88,13 @@ export function OrbitHeroGrid() {
               style={{ gridArea: pos.gridArea }}
               className="relative rounded-2xl overflow-hidden"
             >
-              <AnimatePresence>
+              {animOut && (
                 <motion.div
-                  key={`img-${positions[posIdx]}`}
+                  key={`out-${occupants[posIdx]}`}
                   className="absolute inset-0"
-                  initial={{ x: enterX, y: enterY, opacity: 0 }}
-                  animate={{ x: "0%", y: "0%", opacity: 1 }}
-                  exit={{
-                    x: transitioning ? exitX : "0%",
-                    y: transitioning ? exitY : "0%",
-                    opacity: transitioning ? 0 : 1,
-                  }}
-                  transition={{ duration: 2, ease: "easeInOut" }}
+                  initial={{ x: "0%", y: "0%", opacity: 1 }}
+                  animate={{ x: exitX, y: exitY, opacity: 0 }}
+                  transition={{ duration: DURATION, ease: "easeInOut" }}
                 >
                   <Image
                     src={img.src}
@@ -106,7 +105,25 @@ export function OrbitHeroGrid() {
                     className="w-full h-full object-cover"
                   />
                 </motion.div>
-              </AnimatePresence>
+              )}
+              {!animOut && (
+                <motion.div
+                  key={`in-${occupants[posIdx]}`}
+                  className="absolute inset-0"
+                  initial={animIn ? { x: enterX, y: enterY, opacity: 0 } : undefined}
+                  animate={{ x: "0%", y: "0%", opacity: 1 }}
+                  transition={animIn ? { duration: DURATION, ease: "easeInOut" } : { duration: 0 }}
+                >
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    width={isMain ? 400 : 200}
+                    height={isMain ? 400 : 200}
+                    priority
+                    className="w-full h-full object-cover"
+                  />
+                </motion.div>
+              )}
             </div>
           )
         })}

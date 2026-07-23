@@ -46,42 +46,37 @@ function rotatePositions(prev: number[]) {
 }
 
 export function OrbitHeroGrid() {
-  const [current, setCurrent] = useState([0, 1, 2, 3, 4])
-  const [next, setNext] = useState<number[] | null>(null)
+  const [positions, setPositions] = useState([0, 1, 2, 3, 4])
+  const [transitioning, setTransitioning] = useState(false)
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
-  useEffect(() => {
-    timerRef.current = setInterval(() => {
-      setNext((prev) => {
-        if (prev) return prev
-        return rotatePositions(current)
-      })
-    }, 6000)
+  const rotate = useRef(() => {
+    setPositions((prev) => {
+      setTransitioning(true)
+      return rotatePositions(prev)
+    })
+  }).current
 
+  useEffect(() => {
+    timerRef.current = setInterval(rotate, 6000)
     return () => {
       if (timerRef.current) clearInterval(timerRef.current)
     }
-  }, [current])
+  }, [rotate])
 
   useEffect(() => {
-    if (!next) return
-    const t = setTimeout(() => {
-      setCurrent(next)
-      setNext(null)
-    }, 2000)
+    if (!transitioning) return
+    const t = setTimeout(() => setTransitioning(false), 2000)
     return () => clearTimeout(t)
-  }, [next])
-
-  const transitioning = next !== null
+  }, [transitioning])
 
   return (
     <div className="relative h-[500px] overflow-hidden">
       <div className="relative z-10 grid h-full" style={GRID_TEMPLATE}>
         {POSITIONS.map((pos, posIdx) => {
-          const isMain = posIdx === 0
           const [exitX, exitY, enterX, enterY] = DIRECTIONS[posIdx]
-          const currentImg = IMAGES[current[posIdx]]
-          const nextImg = next ? IMAGES[next[posIdx]] : null
+          const img = IMAGES[positions[posIdx]]
+          const isMain = posIdx === 0
 
           return (
             <div
@@ -89,51 +84,28 @@ export function OrbitHeroGrid() {
               style={{ gridArea: pos.gridArea }}
               className="relative rounded-2xl overflow-hidden"
             >
-              {/* Gambar saat ini (akan keluar) */}
-              <motion.div
-                key={`current-${currentImg.src}`}
-                className="absolute inset-0"
-                animate={{
-                  x: transitioning ? exitX : "0%",
-                  y: transitioning ? exitY : "0%",
-                  opacity: transitioning ? 0 : 1,
-                }}
-                transition={{ duration: 2, ease: "easeInOut" }}
-              >
-                <Image
-                  src={currentImg.src}
-                  alt={currentImg.alt}
-                  width={isMain ? 400 : 200}
-                  height={isMain ? 400 : 200}
-                  priority={isMain}
-                  loading={isMain ? undefined : "lazy"}
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
-
-              {/* Gambar berikutnya (akan masuk) */}
               <AnimatePresence>
-                {nextImg && (
-                  <motion.div
-                    key={`next-${nextImg.src}`}
-                    className="absolute inset-0"
-                    initial={{ x: enterX, y: enterY, opacity: 0 }}
-                    animate={{ x: "0%", y: "0%", opacity: 1 }}
-                    exit={{ x: "0%", y: "0%", opacity: 1 }}
-                    transition={{ duration: 2, ease: "easeInOut" }}
-                  >
-                    <Image
-                      src={nextImg.src}
-                      alt={nextImg.alt}
-                      unoptimized
-                      width={isMain ? 400 : 200}
-                      height={isMain ? 400 : 200}
-                      priority={isMain}
-                      loading={isMain ? undefined : "lazy"}
-                      className="w-full h-full object-cover"
-                    />
-                  </motion.div>
-                )}
+                <motion.div
+                  key={`img-${positions[posIdx]}`}
+                  className="absolute inset-0"
+                  initial={{ x: enterX, y: enterY, opacity: 0 }}
+                  animate={{ x: "0%", y: "0%", opacity: 1 }}
+                  exit={{
+                    x: transitioning ? exitX : "0%",
+                    y: transitioning ? exitY : "0%",
+                    opacity: transitioning ? 0 : 1,
+                  }}
+                  transition={{ duration: 2, ease: "easeInOut" }}
+                >
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    width={isMain ? 400 : 200}
+                    height={isMain ? 400 : 200}
+                    priority
+                    className="w-full h-full object-cover"
+                  />
+                </motion.div>
               </AnimatePresence>
             </div>
           )

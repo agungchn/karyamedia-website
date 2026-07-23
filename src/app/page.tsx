@@ -25,20 +25,11 @@ import {
   ArrowRight,
 } from "lucide-react"
 import { productIconMap, advantageIconMap } from "@/components/icons/product-icons"
-import dynamic from "next/dynamic"
 import { HeroSection } from "@/components/ui/hero-section"
 import GeometricBackgroundLazy from "@/components/ui/geometric-bg-lazy"
 import { HolographicCard } from "@/components/ui/holographic-card"
-
-const LatestArticlesSlider = dynamic(
-  () => import("@/components/ui/latest-articles-slider").then((m) => m.LatestArticlesSlider),
-  { ssr: true }
-)
-
-
-const TestimonialCarousel = dynamic(() =>
-  import("@/components/ui/testimonial-carousel").then((m) => m.TestimonialCarousel)
-)
+import { LazyLatestArticles } from "@/components/lazy-latest-articles"
+import { LazyTestimonials } from "@/components/lazy-testimonials"
 
 import { categories } from "@/data/categories"
 import { products } from "@/data/products"
@@ -1106,12 +1097,12 @@ Didukung lebih dari 25 pengrajin profesional yang ahli di bidangnya masing-masin
           </p>
         </div>
           <div className="max-w-6xl mx-auto">
-            <TestimonialCarousel testimonials={testimonials} />
+            <LazyTestimonials testimonials={testimonials} />
             <LocalBusinessReviewsSchema />
           </div>
       </section>
 
-      <LatestArticlesSlider articles={latestArticles} />
+      <LazyLatestArticles articles={latestArticles} />
 
       <GbpReviewCta />
 

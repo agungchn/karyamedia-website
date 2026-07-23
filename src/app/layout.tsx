@@ -110,7 +110,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="id" className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable}`}>
+    <html lang="id" className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable}`} suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />

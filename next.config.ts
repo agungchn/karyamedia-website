@@ -1,6 +1,13 @@
 import type { NextConfig } from "next";
+import path from "path";
 
 const nextConfig: NextConfig = {
+  // Turbopack di Next.js 16 kadang salah infer workspace root di path WSL/drive
+  // eksternal. Paksa root project ke direktori ini supaya next/package.json
+  // selalu bisa ditemukan.
+  turbopack: {
+    root: path.resolve(),
+  },
   // Source maps tidak dibutuhkan di produksi — nonaktifkan untuk kurangi
   // CPU time Lighthouse & error fetch source map di PSI.
   productionBrowserSourceMaps: false,

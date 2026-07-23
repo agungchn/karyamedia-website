@@ -102,11 +102,12 @@ export function OrbitHeroGrid() {
               >
                 <Image
                   src={currentImg.src}
-                  alt=""
+                  alt={currentImg.alt}
                   unoptimized
                   width={isMain ? 400 : 200}
                   height={isMain ? 400 : 200}
-                  loading="lazy"
+                  priority={isMain}
+                  loading={isMain ? undefined : "lazy"}
                   className="w-full h-full object-cover"
                 />
               </motion.div>

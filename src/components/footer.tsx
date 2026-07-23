@@ -15,7 +15,7 @@ export function Footer() {
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-4">
               <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                <Image src="/images/logo-karyamedia.png" alt="Karyamedia Souvenir" width={40} height={40} className="w-10 h-10 object-contain" />
+                <Image src="/images/logo-karyamedia-80.webp" alt="Karyamedia Souvenir" width={80} height={80} unoptimized className="w-10 h-10 object-contain" />
                 <div>
                   <div className="font-bold text-lg leading-tight">Karyamedia</div>
                   <div className="text-[10px] text-accent font-medium tracking-widest uppercase">Souvenir</div>

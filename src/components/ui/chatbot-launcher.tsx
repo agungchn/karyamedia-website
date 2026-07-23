@@ -20,7 +20,6 @@ export function ChatbotLauncher({ onClick, open }: { onClick: () => void; open: 
     <button
       type="button"
       onClick={onClick}
-      aria-label={open ? "Tutup chat" : "Buka chat asisten"}
       className="fixed bottom-6 right-5 z-[60] flex items-center gap-2 rounded-full bg-[#075E54] hover:bg-[#054E43] px-5 py-3.5 text-white shadow-xl shadow-[#25D366]/30 transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#075E54] focus:ring-offset-2"
     >
       {open ? <XIcon className="h-5 w-5" /> : <MessageCircleIcon className="h-5 w-5" />}

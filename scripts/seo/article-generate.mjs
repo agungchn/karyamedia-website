@@ -595,6 +595,16 @@ async function main() {
     process.exit(1)
   }
 
+  // RULE: hindari artikel gift box baru — sudah 10 artikel
+  if (
+    // category check removed — block all gift box keywords
+    /gift.?box|box.?plakat|box.?medali|kemasan/i.test(keyword)
+  ) {
+    console.error(`BATAL: Keyword "${keyword}" mengarah ke gift box.`)
+    console.error("  Sudah ada 10 artikel gift box. Cukup.")
+    process.exit(1)
+  }
+
   console.log(`Keyword: "${keyword}"  ->  slug: ${slug}  kategori: ${category}${beat ? "  [BEAT MODE]" : ""}`)
 
   // Pilih varian kerangka artikel secara deterministik dari slug agar tiap

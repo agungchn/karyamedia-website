@@ -1,94 +1,49 @@
-import sharp from "sharp";
-import fs from "fs";
-import path from "path";
+import { readFileSync } from "fs"
+import sharp from "sharp"
+import { existsSync, mkdirSync } from "fs"
 
-// Pra-optimasi gambar: konversi PNG/JPG di public/images -> WebP
-// di beberapa lebar ke public/images/opt (struktur mirror).
-// Next.js memakai custom loader yg mengarahkan ke file opt ini, sehingga
-// tak ada lagi permintaan ke layanan Image Optimization Vercel (kuota 402).
-// Script idempoten: file opt yg sudah ada dilewati.
+const c = readFileSync("src/data/articles.ts", "utf8")
+// Find all image paths
+const matches = c.match(/image: "[^"]+"/g)
+const images = new Set()
+if (matches) {
+  for (const m of matches) {
+    const img = m.slice(8, -1) // remove 'image: "' and '"'
+    images.add(img)
+  }
+}
+console.log(`Found ${images.size} unique images in articles.ts`)
 
-const PUBLIC = path.join(process.cwd(), "public", "images");
-const OPT = path.join(PUBLIC, "opt");
-const WIDTHS = [320, 480, 640, 960];
-const QUALITY = 80;
-
-function walk(dir) {
-  const out = [];
-  for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
-    const p = path.join(dir, e.name);
-    if (e.isDirectory()) {
-      if (e.name === "opt") continue; // jangan proses hasil optimasi
-      out.push(...walk(p));
-    } else if (/\.(png|jpe?g)$/i.test(e.name)) {
-      if (/-w\d+\.webp$/i.test(e.name)) continue; // sudah opt
-      out.push(p);
+let optimized = 0
+for (const img of images) {
+  const src = `public${img}`
+  if (!existsSync(src)) {
+    console.log(`❌ Source not found: ${src}`)
+    continue
+  }
+  // Determine output directory: public/images/opt/<same path without leading /images/> but with .webp
+  // Example: /images/produk-unggulan/xyz.png -> public/images/opt/produk-unggulan/xyz-w320.webp
+  const pathWithoutLeadingSlash = img.startsWith('/') ? img.slice(1) : img
+  const base = pathWithoutLeadingSlash.replace(/\.[^.]+$/, '') // remove extension
+  for (const w of [320, 480, 640, 960]) {
+    const outDir = `public/images/opt/${base.split('/').slice(0, -1).join('/')}` // directory without filename
+    const outFile = `public/images/opt/${base}-w${w}.webp`
+    // Ensure directory exists
+    if (!existsSync(outDir)) {
+      mkdirSync(outDir, { recursive: true })
+    }
+    if (!existsSync(outFile)) {
+      try {
+        await sharp(src)
+          .resize({ width: w, withoutEnlargement: true })
+          .webp({ quality: 80, effort: 4 })
+          .toFile(outFile)
+        console.log(`  ✅ ${outFile.split('/').pop()}`)
+        optimized++
+      } catch (e) {
+        console.log(`  ❌ Failed to process ${src} for width ${w}: ${e.message}`)
+      }
     }
   }
-  return out;
 }
-
-function ensureDir(p) {
-  fs.mkdirSync(path.dirname(p), { recursive: true });
-}
-
-async function optimizeFile(file) {
-  const rel = path.relative(PUBLIC, file).replace(/\\/g, "/");
-  const dot = rel.lastIndexOf(".");
-  const base = dot >= 0 ? rel.slice(0, dot) : rel;
-  const ext = (dot >= 0 ? rel.slice(dot + 1) : "").toLowerCase();
-  const optBase = path.join(OPT, base); // tanpa ext
-  ensureDir(optBase + ".webp");
-
-  let made = 0;
-  for (const w of WIDTHS) {
-    const out = `${optBase}-w${w}.webp`;
-    if (fs.existsSync(out) && fs.statSync(out).size > 0) continue;
-    let img = sharp(file, { failOn: "none" });
-    if (ext === "jpg" || ext === "jpeg") {
-      img = img.withMetadata({ orientation: undefined }).rotate();
-    }
-    await img
-      .resize({ width: w, withoutEnlargement: true })
-      .webp({ quality: QUALITY, effort: 4 })
-      .toFile(out);
-    made++;
-  }
-  return made;
-}
-
-async function main() {
-  const argFile = process.argv.indexOf("--file");
-  let files;
-  if (argFile >= 0) {
-    const rel = process.argv[argFile + 1];
-    const abs = path.isAbsolute(rel) ? rel : path.join(process.cwd(), rel);
-    if (!fs.existsSync(abs)) {
-      console.log("FILE TIDAK ADA: " + abs);
-      process.exit(1);
-    }
-    files = [abs];
-  } else {
-    files = walk(PUBLIC);
-  }
-
-  let total = 0;
-  let i = 0;
-  for (const f of files) {
-    i++;
-    try {
-      total += await optimizeFile(f);
-    } catch (e) {
-      console.log(`GAGAL ${f}: ${e.message}`);
-    }
-    if (i % 50 === 0) console.log(`  ...${i}/${files.length}`);
-  }
-  console.log(
-    `SELESAI: ${files.length} sumber -> ${total} file WebP dibuat di public/images/opt`
-  );
-}
-
-main().catch((e) => {
-  console.error(e);
-  process.exit(1);
-});
+console.log(`\nOptimization complete. Created ${optimized} WebP images.`)

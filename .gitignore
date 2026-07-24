@@ -93,5 +93,4 @@ seo-*-log.txt
 seo-*-last*.txt
 dev-server.log
 
-# Pra-optimasi gambar WebP (dibuat saat build / add.js, jangan di-commit)
-public/images/opt/
+# Pra-optimasi gambar WebP (dibuat saat build, di-commit agar online ready)

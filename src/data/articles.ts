@@ -19837,7 +19837,7 @@ Sebagai produsen langsung dari Yogyakarta, kami juga bisa membantu memproduksi p
     description: "Cari contoh medali wisuda SD? Lihat inspirasi desain medali kelulusan SD untuk putra-putri Anda. Karyamedia produsen medali custom jogja harga bersahabat.",
     category: "Medali",
     date: "2026-07-24",
-    image: "/images/produk-unggulan/medali-custom/medali-custom-29.png",
+    image: "/images/produk-unggulan/samir-wisuda/samir-wisuda-akrilik-5.png",
     tags: ["contoh medali wisuda sd", "medali wisuda sd", "contoh medali kelulusan sd", "medali kelulusan sd", "souvenir wisuda sd"],
     content: `<p>Momen kelulusan SD adalah pencapaian pertama yang berharga bagi setiap anak. Memberikan <strong>contoh medali wisuda SD</strong> sebagai kenang-kenangan kelulusan akan membuat momen tersebut semakin berkesan. Karyamedia, produsen souvenir dan medali custom berbasis di Yogyakarta sejak 2001, menyediakan berbagai pilihan desain medali wisuda SD yang bisa disesuaikan dengan tema kelulusan sekolah. Artikel ini menyajikan berbagai contoh medali wisuda SD yang bisa menjadi inspirasi untuk acara kelulusan di sekolah Anda.</p>
 

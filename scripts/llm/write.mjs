@@ -413,26 +413,27 @@ export async function generateArticle(input) {
   const alibabaUrl = getAlibabaUrl()
   const alibabaModel = getAlibabaModel()
 
-  if (alibabaKey && alibabaUrl) {
-    try {
-      console.error(`Menggunakan Alibaba Qwen (${alibabaModel})...`)
-      return await callAlibaba(prompt, alibabaKey, alibabaUrl, alibabaModel)
-    } catch (e) {
-      console.error(`Alibaba Qwen gagal: ${e.message}. Fallback ke OpenCode Go...`)
-    }
-  } else {
-    console.error("API key/URL Alibaba belum diisi, fallback ke OpenCode Go.")
-  }
-
+  // Prioritaskan OpenCode Go (gratis, paling stabil)
   if (zenKey && zenKey !== "PASTE_ZEN_API_KEY_HERE") {
     try {
       console.error(`Menggunakan OpenCode Go (${GO_MODEL})...`)
       return await callGo(prompt, zenKey)
     } catch (e) {
-      console.error(`OpenCode Go gagal: ${e.message}. Fallback ke Gemini...`)
+      console.error(`OpenCode Go gagal: ${e.message}. Fallback ke Alibaba...`)
     }
   } else {
-    console.error("API key OpenCode Go belum diisi, fallback ke Gemini.")
+    console.error("API key OpenCode Go belum diisi, fallback ke Alibaba.")
+  }
+
+  if (alibabaKey && alibabaUrl) {
+    try {
+      console.error(`Menggunakan Alibaba Qwen (${alibabaModel})...`)
+      return await callAlibaba(prompt, alibabaKey, alibabaUrl, alibabaModel)
+    } catch (e) {
+      console.error(`Alibaba Qwen gagal: ${e.message}. Fallback ke Gemini...`)
+    }
+  } else {
+    console.error("API key Alibaba belum diisi, fallback ke Gemini.")
   }
 
   if (geminiKey && geminiKey !== "PASTE_GEMINI_API_KEY_HERE") {

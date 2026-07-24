@@ -23,8 +23,8 @@ for (const img of images) {
   }
   // Determine output directory: public/images/opt/<same path without leading /images/> but with .webp
   // Example: /images/produk-unggulan/xyz.png -> public/images/opt/produk-unggulan/xyz-w320.webp
-  const pathWithoutLeadingSlash = img.startsWith('/') ? img.slice(1) : img
-  const base = pathWithoutLeadingSlash.replace(/\.[^.]+$/, '') // remove extension
+  const pathWithoutImages = img.startsWith('/images/') ? img.slice('/images/'.length) : (img.startsWith('/') ? img.slice(1) : img)
+  const base = pathWithoutImages.replace(/\.[^.]+$/, '') // remove extension
   for (const w of [320, 480, 640, 960]) {
     const outDir = `public/images/opt/${base.split('/').slice(0, -1).join('/')}` // directory without filename
     const outFile = `public/images/opt/${base}-w${w}.webp`

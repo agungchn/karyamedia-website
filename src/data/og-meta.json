@@ -305,7 +305,7 @@
     "image": "/images/produk-unggulan/plakat-batas-wilayah/center-point/center-point (1).png"
   },
   "samir-gordon-wisuda-custom-untuk-upacara-kelulusan": {
-    "title": "Samir Gordon Wisuda Custom untuk Upacara Kelulusan",
+    "title": "Samir dan Gordon Wisuda Custom untuk Upacara Kelulusan",
     "category": "Souvenir Wisuda",
     "image": "/images/produk-unggulan/samir-wisuda/samir-wisuda-akrilik-10.png"
   },
@@ -1593,5 +1593,35 @@
     "title": "Souvenir Wisuda Jogja Murah untuk Kampus dan Instansi",
     "category": "Souvenir Wisuda",
     "image": "/images/produk-unggulan/patung-wisuda/patung-wisuda-18.png"
+  },
+  "media-karya-plakat-custom": {
+    "title": "Media Karya dalam Dunia Plakat dan Souvenir Custom",
+    "category": "Plakat",
+    "image": "/images/produk-unggulan/plakat-akrilik/plakat-akrilik-1.png"
+  },
+  "biaya-pembuatan-plakat-custom": {
+    "title": "Biaya Pembuatan Plakat Custom: Akrilik, Kayu, Fiberglass",
+    "category": "Plakat",
+    "image": "/images/produk-unggulan/plakat-akrilik/plakat-akrilik-1.png"
+  },
+  "tabung-wisuda-akrilik-custom-jogja": {
+    "title": "Tabung Wisuda Akrilik Custom Jogja Eksklusif",
+    "category": "Blog",
+    "image": "/images/produk-unggulan/patung-wisuda/patung-wisuda-19.png"
+  },
+  "patung-wisuda-toga-custom": {
+    "title": "Patung Wisuda Toga Custom Mulai Rp35.000 Lengkap",
+    "category": "Souvenir Wisuda",
+    "image": "/images/produk-unggulan/patung-wisuda/patung-wisuda-20.png"
+  },
+  "gordon-wisuda-bordir-custom": {
+    "title": "Gordon Wisuda Bordir Custom: Pilihan Material Terbaik",
+    "category": "Blog",
+    "image": "/images/produk-unggulan/patung-wisuda/patung-wisuda-21.png"
+  },
+  "plakat-resin-custom-yogya": {
+    "title": "Plakat Resin Custom Yogya Untuk Instansi Pendidikan",
+    "category": "Plakat",
+    "image": "/images/plakat-akrilik/plakat-akrilik-2.png"
   }
 }

@@ -516,7 +516,43 @@ function pickImage(category, used, keyword = "") {
     }
   }
 
-  // RULE 6: keyword souvenir wisuda (samir, gordon, kalung wisuda, tali, slempang)
+  // RULE 6: Pin / Bross (produk aksesoris & apresiasi)
+  // → WAJIB ambil dari folder pin-bross, prioritaskan yang belum dipakai
+  // Keyword variations: pin, bross, pin custom, bross custom, pin logam, bross logam, pin enamel, bross enamel,
+  //                      pin badge, bross badge, pin instansi, bross instansi, pin kantor, bross kantor,
+  //                      pin sekolah, bross sekolah, pin universitas, bross universitas, pin organisasi, bross organisasi,
+  //                      pin komunitas, bross komunitas, pin acara, bross acara, pin seminar, bross seminar,
+  //                      pin wisuda, bross wisuda, pin premium, bross premium, pin eksklusif, bross eksklusif
+  const isPinBross = /\b(pin|bross|pin custom|bross custom|pin logam|bross logam|pin enamel|bross enamel|pin badge|bross badge|pin instansi|bross instansi|pin kantor|bross kantor|pin sekolah|bross sekolah|pin universitas|bross universitas|pin organisasi|bross organisasi|pin komunitas|bross komunitas|pin acara|bross acara|pin seminar|bross seminar|pin wisuda|bross wisuda|pin premium|bross premium|pin eksklusif|bross eksklusif)\b/i.test(keyword || "")
+  if (isPinBross) {
+    const specialDir = join(root, "public/images/pin-bross")
+    if (existsSync(specialDir)) {
+      const files = readdirSync(specialDir)
+        .filter((n) => /^pin-bross-\d+\.png$/i.test(n))
+        .sort((a, b) => {
+          const na = parseInt(a.match(/(\d+)/)?.[1] || "0", 10)
+          const nb = parseInt(b.match(/(\d+)/)?.[1] || "0", 10)
+          return na - nb
+        })
+      
+      // PRIORITAS: Cari gambar yang BELUM dipakai sama sekali
+      for (const f of files) {
+        const url = `/images/pin-bross/${f}`
+        const urlOld = `/images/produk-unggulan/pin-bross/${f}`
+        // Skip kalau SUDAH dipakai di salah satu folder
+        if (used.has(url) || used.has(urlOld)) continue
+        return url  // Return pertama yang belum dipakai
+      }
+      
+      // FALLBACK: Kalau SEMUA sudah dipakai, baru ambil yang pertama (boleh reuse)
+      if (files.length) {
+        console.error(`[IMAGE] Semua gambar pin-bross sudah dipakai, reuse ${files[0]}`)
+        return `/images/pin-bross/${files[0]}`
+      }
+    }
+  }
+
+  // RULE 7: keyword souvenir wisuda (samir, gordon, kalung wisuda, tali, slempang)
   // → WAJIB ambil dari folder samir-wisuda, prioritaskan yang belum dipakai
   const isSamirWisuda = /\b(samir|gordon|kalung wisuda|tali wisuda|slempang)\b/i.test(keyword || "")
   if (isSamirWisuda) {
@@ -547,7 +583,7 @@ function pickImage(category, used, keyword = "") {
     }
   }
 
-  // RULE 7: keyword patung wisuda, plakat wisuda, souvenir wisuda
+  // RULE 8: keyword patung wisuda, plakat wisuda, souvenir wisuda
   // → WAJIB ambil dari folder patung-wisuda, KECUALI ada kata "akrilik" → plakat-wisuda-akrilik
   // Keyword variations: patung wisuda, plakat wisuda, souvenir wisuda, hadiah wisuda, kenang-kenangan wisuda,
   //                      cinderamata wisuda, penghargaan wisuda, hadiah kelulusan, souvenir kelulusan

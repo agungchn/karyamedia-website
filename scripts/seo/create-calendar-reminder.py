@@ -17,36 +17,39 @@ from pathlib import Path
 # Output file untuk reminder schedule
 OUTPUT_FILE = Path(__file__).parent / "article-schedule.json"
 
-# Daftar keyword prioritas dengan jadwal
+# Daftar keyword prioritas dengan jadwal (PLAKAT BATAS WILAYAH ONLY)
+# Task scheduler otomatis handle general keywords (2 artikel/hari jam 20:00)
+# Schedule manual ini KHUSUS untuk priority keywords yang mau dikontrol
 SCHEDULE = [
-    # Priority 1 - High Search Volume
+    # Priority 1 - High Search Volume (2x/minggu)
     {"keyword": "plakat batas wilayah", "week": 1, "day": "Senin", "time": "10:00"},
-    {"keyword": "plakat BM", "week": 2, "day": "Senin", "time": "10:00"},
-    {"keyword": "plakat CP", "week": 3, "day": "Senin", "time": "10:00"},
-    {"keyword": "plakat peresmian gedung", "week": 4, "day": "Senin", "time": "10:00"},
-    {"keyword": "plakat center point", "week": 5, "day": "Senin", "time": "10:00"},
+    {"keyword": "plakat BM", "week": 1, "day": "Kamis", "time": "10:00"},
+    {"keyword": "plakat CP", "week": 2, "day": "Senin", "time": "10:00"},
+    {"keyword": "plakat peresmian gedung", "week": 2, "day": "Kamis", "time": "10:00"},
+    {"keyword": "plakat center point", "week": 3, "day": "Senin", "time": "10:00"},
+    {"keyword": "plakat bancmark", "week": 3, "day": "Kamis", "time": "10:00"},
     
-    # Priority 2 - Medium
-    {"keyword": "plakat batas desa", "week": 6, "day": "Senin", "time": "10:00"},
-    {"keyword": "plakat batas kecamatan", "week": 7, "day": "Senin", "time": "10:00"},
+    # Priority 2 - Medium (1x/minggu)
+    {"keyword": "plakat batas desa", "week": 4, "day": "Senin", "time": "10:00"},
+    {"keyword": "plakat batas kecamatan", "week": 5, "day": "Senin", "time": "10:00"},
+    {"keyword": "plakat batas kabupaten", "week": 6, "day": "Senin", "time": "10:00"},
+    {"keyword": "plakat batas provinsi", "week": 7, "day": "Senin", "time": "10:00"},
     
-    # Priority 3 - Long Tail (generate bertahap)
-    {"keyword": "plakat batas kabupaten", "week": 8, "day": "Senin", "time": "10:00"},
-    {"keyword": "plakat batas provinsi", "week": 9, "day": "Senin", "time": "10:00"},
-    {"keyword": "plakat batas administratif", "week": 10, "day": "Senin", "time": "10:00"},
-    {"keyword": "plakat batas wilayah desa", "week": 11, "day": "Senin", "time": "10:00"},
-    {"keyword": "plakat patok batas", "week": 12, "day": "Senin", "time": "10:00"},
-    {"keyword": "plakat patok wilayah", "week": 13, "day": "Senin", "time": "10:00"},
-    {"keyword": "plakat batas tanah", "week": 14, "day": "Senin", "time": "10:00"},
-    {"keyword": "plakat batas kawasan", "week": 15, "day": "Senin", "time": "10:00"},
-    {"keyword": "plakat batas area", "week": 16, "day": "Senin", "time": "10:00"},
-    {"keyword": "plakat batas zona", "week": 17, "day": "Senin", "time": "10:00"},
-    {"keyword": "plakat batas wilayah custom", "week": 18, "day": "Senin", "time": "10:00"},
-    {"keyword": "plakat batas wilayah logam", "week": 19, "day": "Senin", "time": "10:00"},
-    {"keyword": "plakat batas wilayah kuningan", "week": 20, "day": "Senin", "time": "10:00"},
-    {"keyword": "plakat batas wilayah tembaga", "week": 21, "day": "Senin", "time": "10:00"},
-    {"keyword": "plakat batas wilayah premium", "week": 22, "day": "Senin", "time": "10:00"},
-    {"keyword": "plakat batas wilayah eksklusif", "week": 23, "day": "Senin", "time": "10:00"},
+    # Priority 3 - Long Tail (1x/minggu)
+    {"keyword": "plakat batas administratif", "week": 8, "day": "Senin", "time": "10:00"},
+    {"keyword": "plakat batas wilayah desa", "week": 9, "day": "Senin", "time": "10:00"},
+    {"keyword": "plakat patok batas", "week": 10, "day": "Senin", "time": "10:00"},
+    {"keyword": "plakat patok wilayah", "week": 11, "day": "Senin", "time": "10:00"},
+    {"keyword": "plakat batas tanah", "week": 12, "day": "Senin", "time": "10:00"},
+    {"keyword": "plakat batas kawasan", "week": 13, "day": "Senin", "time": "10:00"},
+    {"keyword": "plakat batas area", "week": 14, "day": "Senin", "time": "10:00"},
+    {"keyword": "plakat batas zona", "week": 15, "day": "Senin", "time": "10:00"},
+    {"keyword": "plakat batas wilayah custom", "week": 16, "day": "Senin", "time": "10:00"},
+    {"keyword": "plakat batas wilayah logam", "week": 17, "day": "Senin", "time": "10:00"},
+    {"keyword": "plakat batas wilayah kuningan", "week": 18, "day": "Senin", "time": "10:00"},
+    {"keyword": "plakat batas wilayah tembaga", "week": 19, "day": "Senin", "time": "10:00"},
+    {"keyword": "plakat batas wilayah premium", "week": 20, "day": "Senin", "time": "10:00"},
+    {"keyword": "plakat batas wilayah eksklusif", "week": 21, "day": "Senin", "time": "10:00"},
 ]
 
 def calculate_dates():
@@ -169,12 +172,16 @@ def main():
             "csv_import": "Atau export ke CSV untuk import massal:\n"
                          "python create-calendar-reminder.py --export-csv\n"
                          "Lalu import CSV ke Google Calendar",
-            "auto_generate": "Task scheduler otomatis jalan SETIAP HARI jam 20:00 (terpisah dari jadwal ini)\n"
-                            "Jadwal ini HANYA untuk tracking manual jika mau kontrol penuh generate artikel\n"
-                            "Generate manual: node scripts/seo/article-generate.mjs \"<keyword>\" --category \"Plakat\"",
+            "auto_generate": "Task scheduler otomatis jalan SETIAP HARI jam 20:00 (2 artikel/hari = ~60 artikel/bulan)\n"
+                            "Jadwal manual ini KHUSUS untuk priority keywords (plakat batas wilayah) yang mau dikontrol\n"
+                            "Generate manual: node scripts/seo/article-generate.mjs \"<keyword>\" --category \"Plakat\"\n\n"
+                            "STRATEGI KOMBINASI:\n"
+                            "- Task scheduler: Handle general keywords (otomatis 2 artikel/hari)\n"
+                            "- Manual schedule: Handle priority keywords (plakat batas wilayah, 2x/minggu)\n"
+                            "- Total: ~60 artikel/bulan (otomatis) + 8 artikel/bulan (manual priority) = ~68 artikel/bulan",
             "note": "⚠️ JANGAN gabungkan jadwal ini dengan task scheduler otomatis!\n"
                    "Task scheduler = otomatis setiap hari 20:00 (2 artikel)\n"
-                   "Jadwal manual ini = kontrol penuh 1 artikel/minggu Senin 10:00"
+                   "Jadwal manual ini = kontrol penuh priority keywords (2x/minggu Senin & Kamis 10:00)"
         }
     }
     

@@ -2,9 +2,15 @@
 """
 Create Google Calendar reminders for SEO article generation schedule.
 Run this once to set up recurring reminders.
+
+Usage:
+    python create-calendar-reminder.py              # Generate JSON schedule
+    python create-calendar-reminder.py --export-csv # Export CSV for Google Calendar import
 """
 
 import json
+import csv
+import sys
 from datetime import datetime, timedelta
 from pathlib import Path
 
@@ -79,11 +85,75 @@ def calculate_dates():
     
     return reminders
 
+def export_csv(reminders, output_file):
+    """Export reminders to CSV format for Google Calendar import."""
+    
+    # Google Calendar CSV format
+    # Subject, Start Date, Start Time, End Date, End Time, All Day Event, Description, Location, Private
+    with open(output_file, 'w', newline='', encoding='utf-8') as f:
+        writer = csv.writer(f)
+        # Header
+        writer.writerow([
+            'Subject',
+            'Start Date',
+            'Start Time',
+            'End Date',
+            'End Time',
+            'All Day Event',
+            'Description',
+            'Location',
+            'Private'
+        ])
+        
+        for r in reminders:
+            # Parse date
+            start_date = r['date']
+            end_date = r['date']  # Same day
+            start_time = '10:00'
+            end_time = '10:30'  # 30 minutes duration
+            
+            # Clean description for CSV (remove newlines, escape quotes)
+            description = r['description'].replace('\n', '\\n').replace('"', '""')
+            
+            writer.writerow([
+                r['title'],
+                start_date,
+                start_time,
+                end_date,
+                end_time,
+                'False',
+                f'"{description}"',
+                '',  # Location
+                'False'  # Private
+            ])
+    
+    print(f"✅ CSV exported to: {output_file}")
+    print(f"📊 Total events: {len(reminders)}")
+    print(f"\n📋 Import ke Google Calendar:")
+    print(f"   1. Buka https://calendar.google.com")
+    print(f"   2. Settings (⚙️) → Import & Export")
+    print(f"   3. Upload file: {output_file}")
+    print(f"   4. Pilih calendar tujuan")
+    print(f"   5. Click Import")
+    print(f"\n💡 After import:")
+    print(f"   - Events akan muncul setiap Senin jam 10:00")
+    print(f"   - Set notification: 30 menit sebelum (default Google Calendar)")
+
 def main():
+    # Check for --export-csv flag
+    export_csv_flag = '--export-csv' in sys.argv
+    
     print("📅 Membuat jadwal reminder untuk generate artikel SEO...\n")
     
     reminders = calculate_dates()
     
+    if export_csv_flag:
+        # Export to CSV
+        csv_file = Path(__file__).parent / "article-schedule.csv"
+        export_csv(reminders, csv_file)
+        return 0
+    
+    # Default: save to JSON
     # Save to JSON file
     output_data = {
         "created_at": datetime.now().isoformat(),
@@ -96,6 +166,9 @@ def main():
                            "3. Set recurring: setiap Senin jam 10:00\n"
                            "4. Set duration: 30 menit\n"
                            "5. Add notification: 1 jam sebelum",
+            "csv_import": "Atau export ke CSV untuk import massal:\n"
+                         "python create-calendar-reminder.py --export-csv\n"
+                         "Lalu import CSV ke Google Calendar",
             "auto_generate": "Task scheduler otomatis jalan SETIAP HARI jam 20:00 (terpisah dari jadwal ini)\n"
                             "Jadwal ini HANYA untuk tracking manual jika mau kontrol penuh generate artikel\n"
                             "Generate manual: node scripts/seo/article-generate.mjs \"<keyword>\" --category \"Plakat\"",
@@ -120,8 +193,8 @@ def main():
     print("\n" + "=" * 80)
     print("\n💡 Tips:")
     print("1. Buka file JSON ini untuk lihat semua jadwal")
-    print("2. Import manual ke Google Calendar atau")
-    print("3. Biarkan task scheduler otomatis (sudah diset jam 20:00)")
+    print("2. Export ke CSV: python create-calendar-reminder.py --export-csv")
+    print("3. Import CSV ke Google Calendar untuk auto-reminder")
     print("4. Monitor performa per keyword di Google Search Console")
     
     return 0

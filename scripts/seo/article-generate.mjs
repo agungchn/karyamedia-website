@@ -289,29 +289,31 @@ function pickImage(category, used, keyword = "") {
   const kwTokens = new Set(kw.split(/[^a-z0-9]+/).filter((w) => w.length > 2))
 
   // RULE: judul mengandung "plakat akrilik", "plakat resin", atau "plakat fiberglass"
-  // → ambil gambar dari /public/images/plakat-akrilik/ (nomor terkecil yang BELUM dipakai)
+  // → ambil gambar dari folder yang sesuai (nomor terkecil yang BELUM dipakai)
   const isPlakatVariant =
     /plakat[\s-]+(akrilik|resin|fiberglass)/i.test(keyword || "")
   if (isPlakatVariant) {
-    const specialDir = join(root, "public/images/plakat-akrilik")
+    const match = keyword.match(/plakat[\s-]+(akrilik|resin|fiberglass)/i)
+    const variant = match ? match[1].toLowerCase() : "akrilik"
+    const specialDir = join(root, `public/images/plakat-${variant}`)
     if (existsSync(specialDir)) {
       const files = readdirSync(specialDir)
-        .filter((n) => /^plakat-akrilik-\d+\.png$/i.test(n))
+        .filter((n) => new RegExp(`^plakat-${variant}-\\\\d+\\\\.png$`, "i").test(n))
         .sort((a, b) => {
-          const na = parseInt(a.match(/(\d+)/)?.[1] || "0", 10)
-          const nb = parseInt(b.match(/(\d+)/)?.[1] || "0", 10)
+          const na = parseInt(a.match(/(\\d+)/)?.[1] || "0", 10)
+          const nb = parseInt(b.match(/(\\d+)/)?.[1] || "0", 10)
           return na - nb
         })
       // Gabung used dari kedua folder (markir folder baru + folder lama)
       for (const f of files) {
-        const url = `/images/plakat-akrilik/${f}`
-        const urlOld = `/images/produk-unggulan/plakat-akrilik/${f}`
+        const url = `/images/plakat-${variant}/${f}`
+        const urlOld = `/images/produk-unggulan/plakat-${variant}/${f}`
         // Skip kalau SUDAH dipakai di salah satu folder
         if (used.has(url) || used.has(urlOld)) continue
         return url
       }
       // fallback: kalau semua sudah dipakai
-      if (files.length) return `/images/plakat-akrilik/${files[0]}`
+      if (files.length) return `/images/plakat-${variant}/${files[0]}`
     }
   }
 

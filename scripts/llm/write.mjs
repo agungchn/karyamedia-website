@@ -460,7 +460,7 @@ Buat objek JSON dengan field berikut:
   * WAJIB ada bagian <h2>FAQ</h2> di akhir dengan 3-5 pasang pertanyaan & jawaban, tiap pasang PASTI format <h3>Pertanyaan?</h3><p>Jawaban.</p> (pakai <h3> untuk pertanyaan dan <p> untuk jawaban)
   * bahasa Indonesia natural & mudah dipahami, SEO-friendly, sebutkan "Karyamedia" secara wajar 1-2 kali
    * JANGAN gunakan markdown; hanya HTML inline (<p>, <h2>, <h3>, <strong>, <ul><li> bila perlu)
-   * JIKA menyisipkan gambar, SETIAP tag <img> WAJIB punya atribut alt yang deskriptif berbahasa Indonesia (contoh: alt="Plakat akrilik custom untuk penghargaan"); JANGAN pernah membuat <img> tanpa alt
+   * GAMBAR: TIDAK PERLU menyisipkan tag <img> di konten (gambar akan ditambahkan otomatis oleh sistem berdasarkan kategori produk)
    * JANGAN sertakan satupun link/hyperlink (akan ditambahkan otomatis nanti)
    * HTML WAJIB valid: semua tag <h2>, <h3>, <p>, <ul>, <li> harus ditutup dengan benar, tidak boleh ada tag tutup tanpa buka atau sebaliknya (contoh SALAH: ...teks.</h2><h2>FAQ...) — tag harus rapi dan properti nested.
    Return HANYA objek JSON, tanpa teks lain.${VARIATION_INSTR}${vBlock}${extra}`

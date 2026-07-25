@@ -366,7 +366,41 @@ function pickImage(category, used, keyword = "") {
     }
   }
 
-  // RULE 3: keyword souvenir wisuda (samir, gordon, kalung wisuda, tali, slempang)
+  // RULE 3: Map Ijazah (produk untuk penyimpanan dokumen penting)
+  // → WAJIB ambil dari folder map-ijazah, prioritaskan yang belum dipakai
+  // Keyword variations: map ijazah, map ijazah custom, map ijazah kayu, map ijazah kulit, map ijazah premium,
+  //                      map ijazah wisuda, map ijazah sekolah, map ijazah universitas, map ijazah kampus,
+  //                      map ijazah akademik, map ijazah dokumen, folder ijazah, tempat ijazah, map sertifikat, map dokumen penting
+  const isMapIjazah = /\b(map ijazah|map ijazah custom|map ijazah kayu|map ijazah kulit|map ijazah premium|map ijazah wisuda|map ijazah sekolah|map ijazah universitas|map ijazah kampus|map ijazah akademik|map ijazah dokumen|folder ijazah|tempat ijazah|map sertifikat|map dokumen penting)\b/i.test(keyword || "")
+  if (isMapIjazah) {
+    const specialDir = join(root, "public/images/map-ijazah")
+    if (existsSync(specialDir)) {
+      const files = readdirSync(specialDir)
+        .filter((n) => /^map-ijazah-\d+\.png$/i.test(n))
+        .sort((a, b) => {
+          const na = parseInt(a.match(/(\d+)/)?.[1] || "0", 10)
+          const nb = parseInt(b.match(/(\d+)/)?.[1] || "0", 10)
+          return na - nb
+        })
+      
+      // PRIORITAS: Cari gambar yang BELUM dipakai sama sekali
+      for (const f of files) {
+        const url = `/images/map-ijazah/${f}`
+        const urlOld = `/images/produk-unggulan/map-ijazah/${f}`
+        // Skip kalau SUDAH dipakai di salah satu folder
+        if (used.has(url) || used.has(urlOld)) continue
+        return url  // Return pertama yang belum dipakai
+      }
+      
+      // FALLBACK: Kalau SEMUA sudah dipakai, baru ambil yang pertama (boleh reuse)
+      if (files.length) {
+        console.error(`[IMAGE] Semua gambar map-ijazah sudah dipakai, reuse ${files[0]}`)
+        return `/images/map-ijazah/${files[0]}`
+      }
+    }
+  }
+
+  // RULE 4: keyword souvenir wisuda (samir, gordon, kalung wisuda, tali, slempang)
   // → WAJIB ambil dari folder samir-wisuda, prioritaskan yang belum dipakai
   const isSamirWisuda = /\b(samir|gordon|kalung wisuda|tali wisuda|slempang)\b/i.test(keyword || "")
   if (isSamirWisuda) {
@@ -397,7 +431,7 @@ function pickImage(category, used, keyword = "") {
     }
   }
 
-  // RULE 4: keyword patung wisuda, plakat wisuda, souvenir wisuda
+  // RULE 5: keyword patung wisuda, plakat wisuda, souvenir wisuda
   // → WAJIB ambil dari folder patung-wisuda, KECUALI ada kata "akrilik" → plakat-wisuda-akrilik
   // Keyword variations: patung wisuda, plakat wisuda, souvenir wisuda, hadiah wisuda, kenang-kenangan wisuda,
   //                      cinderamata wisuda, penghargaan wisuda, hadiah kelulusan, souvenir kelulusan

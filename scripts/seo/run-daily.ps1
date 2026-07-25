@@ -78,10 +78,23 @@ try {
 $out = & npm run seo:ideas -- --generate-top 2 --commit-push 2>&1 | Tee-Object -FilePath $log -Append | Out-String
 $ideasExit = $LASTEXITCODE
 
-$slugs = [regex]::Matches($out, "GENERATED_SLUG:(\S+)") | ForEach-Object { $_.Groups[1].Value }
-$titles = [regex]::Matches($out, "Artikel disisipkan: blog/(\S+)") | ForEach-Object { $_.Groups[1].Value.Trim() }
+$out = & npm run seo:ideas -- --generate-top 2 --commit-push 2>&1 | Tee-Object -FilePath $log -Append | Out-String
+$ideasExit = $LASTEXITCODE
+
+# Telegram notification
+$python = "python"
+$notifyScript = Join-Path $root "scripts\seo\telegram-notify.py"
 
 if ($ideasExit -ne 0) {
+  # Extract error message
+  $errorMsg = if ($out -match "DUPLIKAT.*batal") { "Duplikat konten" }
+              elseif ($out -match "timeout") { "LLM timeout" }
+              elseif ($out -match "quota|rate.?limit|429") { "Kuota LLM habis" }
+              else { "Error tidak diketahui" }
+  
+  # Send failure notification
+  & $python $notifyScript --status failure --keyword "auto-generate" --error $errorMsg --count 0 | Out-Null
+  
   # Deteksi apakah penyebabnya kuota/usage LLM (Zen free "Free usage exceeded", Gemini 429/503, dll)
   $quotaHit = $false
   $reason = ""
@@ -106,12 +119,20 @@ if ($ideasExit -ne 0) {
 }
 
 if ($slugs.Count -eq 0) {
+  # Telegram notification - no articles
+  & $python $notifyScript --status start --keyword "none" --count 0 | Out-Null
+  
   Show-Popup -Title "Karyamedia SEO" -Message "Tidak ada artikel baru hari ini (semua topik sudah ada)."
   exit 0
 }
 
 $n = $slugs.Count
-$titleList = $titles -join "`, "
+$titleList = $titles -join ", "
+
+# Telegram notification - success
+$keywords = ($out | Select-String "GENERATED_SLUG:" | ForEach-Object { ($_ -split ":")[1] }) -join ", "
+& $python $notifyScript --status success --keyword $keywords --count $n --slug ($slugs -join ", ") | Out-Null
+
 Show-Popup -Title "$n Artikel Baru Terbit" -Message "$titleList berhasil dibuat & di-push. Menunggu deploy..."
 
 # tunggu Vercel deploy sekali saja

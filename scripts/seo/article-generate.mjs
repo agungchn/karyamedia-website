@@ -552,7 +552,45 @@ function pickImage(category, used, keyword = "") {
     }
   }
 
-  // RULE 7: keyword souvenir wisuda (samir, gordon, kalung wisuda, tali, slempang)
+  // RULE 7: Plakat Batas Wilayah (BM/CP/Bancmark/Center Point)
+  // → WAJIB ambil dari folder plakat-batas-wilayah, prioritaskan yang belum dipakai
+  // Keyword variations: plakat batas wilayah, plakat BM, plakat CP, plakat bench mark, plakat center point,
+  //                      plakat bancmark, plakat batas desa, plakat batas kecamatan, plakat batas kabupaten,
+  //                      plakat batas provinsi, plakat batas administratif, plakat batas administrasi,
+  //                      plakat batas wilayah desa, plakat patok batas, plakat patok wilayah, plakat batas tanah,
+  //                      plakat batas kawasan, plakat batas area, plakat batas zona, plakat batas wilayah custom,
+  //                      plakat batas wilayah logam, plakat batas wilayah kuningan, plakat batas wilayah tembaga,
+  //                      plakat batas wilayah premium, plakat batas wilayah eksklusif
+  const isPlakatBatasWilayah = /\b(plakat batas wilayah|plakat BM|plakat CP|plakat bench mark|plakat center point|plakat bancmark|plakat batas desa|plakat batas kecamatan|plakat batas kabupaten|plakat batas provinsi|plakat batas administratif|plakat batas administrasi|plakat batas wilayah desa|plakat patok batas|plakat patok wilayah|plakat batas tanah|plakat batas kawasan|plakat batas area|plakat batas zona|plakat batas wilayah custom|plakat batas wilayah logam|plakat batas wilayah kuningan|plakat batas wilayah tembaga|plakat batas wilayah premium|plakat batas wilayah eksklusif)\b/i.test(keyword || "")
+  if (isPlakatBatasWilayah) {
+    const specialDir = join(root, "public/images/plakat-batas-wilayah")
+    if (existsSync(specialDir)) {
+      const files = readdirSync(specialDir)
+        .filter((n) => /^plakat-batas-wilayah-\d+\.png$/i.test(n))
+        .sort((a, b) => {
+          const na = parseInt(a.match(/(\d+)/)?.[1] || "0", 10)
+          const nb = parseInt(b.match(/(\d+)/)?.[1] || "0", 10)
+          return na - nb
+        })
+      
+      // PRIORITAS: Cari gambar yang BELUM dipakai sama sekali
+      for (const f of files) {
+        const url = `/images/plakat-batas-wilayah/${f}`
+        const urlOld = `/images/produk-unggulan/plakat-batas-wilayah/${f}`
+        // Skip kalau SUDAH dipakai di salah satu folder
+        if (used.has(url) || used.has(urlOld)) continue
+        return url  // Return pertama yang belum dipakai
+      }
+      
+      // FALLBACK: Kalau SEMUA sudah dipakai, baru ambil yang pertama (boleh reuse)
+      if (files.length) {
+        console.error(`[IMAGE] Semua gambar plakat-batas-wilayah sudah dipakai, reuse ${files[0]}`)
+        return `/images/plakat-batas-wilayah/${files[0]}`
+      }
+    }
+  }
+
+  // RULE 8: keyword souvenir wisuda (samir, gordon, kalung wisuda, tali, slempang)
   // → WAJIB ambil dari folder samir-wisuda, prioritaskan yang belum dipakai
   const isSamirWisuda = /\b(samir|gordon|kalung wisuda|tali wisuda|slempang)\b/i.test(keyword || "")
   if (isSamirWisuda) {
@@ -583,7 +621,7 @@ function pickImage(category, used, keyword = "") {
     }
   }
 
-  // RULE 8: keyword patung wisuda, plakat wisuda, souvenir wisuda
+  // RULE 9: keyword patung wisuda, plakat wisuda, souvenir wisuda
   // → WAJIB ambil dari folder patung-wisuda, KECUALI ada kata "akrilik" → plakat-wisuda-akrilik
   // Keyword variations: patung wisuda, plakat wisuda, souvenir wisuda, hadiah wisuda, kenang-kenangan wisuda,
   //                      cinderamata wisuda, penghargaan wisuda, hadiah kelulusan, souvenir kelulusan

@@ -8,9 +8,13 @@
 import { readFileSync } from "node:fs"
 import { fileURLToPath } from "node:url"
 import { dirname, join, resolve } from "node:path"
+import { config } from "dotenv"
 
 const here = dirname(fileURLToPath(import.meta.url))
 const root = resolve(here, "..", "..")
+
+// Load environment variables from .env.local
+config({ path: join(root, ".env.local") })
 
 function getGeminiKey() {
   if (process.env.GEMINI_API_KEY) return process.env.GEMINI_API_KEY
@@ -41,6 +45,7 @@ function getAlibabaKey() {
   }
 }
 function getAlibabaUrl() {
+  if (process.env.ALIBABA_BASE_URL) return process.env.ALIBABA_BASE_URL
   if (process.env.ALIBABA_URL) return process.env.ALIBABA_URL
   try {
     const txt = readFileSync(join(here, "alibaba cloude.txt"), "utf8")
@@ -488,9 +493,9 @@ async function callGo(prompt, key) {
 // ---- Alibaba Cloud (OpenAI-compatible) ----
 async function callAlibaba(prompt, key, url, model) {
   const ctrl = new AbortController()
-  const timer = setTimeout(() => ctrl.abort(), 180000)
+  const timer = setTimeout(() => ctrl.abort(), 300000)
   try {
-    for (let attempt = 0; attempt < 3; attempt++) {
+    for (let attempt = 0; attempt < 2; attempt++) {
       try {
         const res = await fetch(url + "/chat/completions", {
           method: "POST",
@@ -509,6 +514,7 @@ async function callAlibaba(prompt, key, url, model) {
               { role: "user", content: prompt },
             ],
             temperature: 0.7,
+            max_tokens: 8192,
             response_format: { type: "json_object" },
           }),
           signal: ctrl.signal,

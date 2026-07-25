@@ -13,10 +13,14 @@ import { readFileSync, writeFileSync, existsSync, readdirSync } from "node:fs"
 import { execSync } from "node:child_process"
 import { fileURLToPath } from "node:url"
 import { dirname, join, resolve } from "node:path"
+import { config } from "dotenv"
 import { extractArticles } from "./article-lint.mjs"
 import { generateArticle, ARTICLE_TEMPLATE_VARIANT_COUNT } from "../llm/write.mjs"
 import { commitAndPush } from "./git.mjs"
 import { SEGMENTS } from "./geo.mjs"
+
+// Load environment variables from .env.local
+config({ path: join(dirname(fileURLToPath(import.meta.url)), "..", "..", ".env.local") })
 
 // map segment key (pemerintahan/kampus/eo/komunitas) -> label manusiawi
 function segmentLabel(key) {

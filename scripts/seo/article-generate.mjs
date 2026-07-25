@@ -289,31 +289,39 @@ function pickImage(category, used, keyword = "") {
   const kwTokens = new Set(kw.split(/[^a-z0-9]+/).filter((w) => w.length > 2))
 
   // RULE: judul mengandung "plakat akrilik", "plakat resin", atau "plakat fiberglass"
-  // → ambil gambar dari folder yang sesuai (nomor terkecil yang BELUM dipakai)
+  // → ambil gambar dari folder plakat-fiberglass (karena resin & fiberglass = produk sama)
   const isPlakatVariant =
     /plakat[\s-]+(akrilik|resin|fiberglass)/i.test(keyword || "")
   if (isPlakatVariant) {
+    // Normalisasi: resin = fiberglass (produk sama)
     const match = keyword.match(/plakat[\s-]+(akrilik|resin|fiberglass)/i)
-    const variant = match ? match[1].toLowerCase() : "akrilik"
+    let variant = match ? match[1].toLowerCase() : "akrilik"
+    if (variant === "resin") variant = "fiberglass"  // resin = fiberglass
+    
     const specialDir = join(root, `public/images/plakat-${variant}`)
     if (existsSync(specialDir)) {
       const files = readdirSync(specialDir)
-        .filter((n) => new RegExp(`^plakat-${variant}-\\\\d+\\\\.png$`, "i").test(n))
+        .filter((n) => new RegExp(`^plakat-${variant}-\\d+\\.png$`, "i").test(n))
         .sort((a, b) => {
-          const na = parseInt(a.match(/(\\d+)/)?.[1] || "0", 10)
-          const nb = parseInt(b.match(/(\\d+)/)?.[1] || "0", 10)
+          const na = parseInt(a.match(/(\d+)/)?.[1] || "0", 10)
+          const nb = parseInt(b.match(/(\d+)/)?.[1] || "0", 10)
           return na - nb
         })
-      // Gabung used dari kedua folder (markir folder baru + folder lama)
+      
+      // PRIORITAS: Cari gambar yang BELUM dipakai sama sekali
       for (const f of files) {
         const url = `/images/plakat-${variant}/${f}`
         const urlOld = `/images/produk-unggulan/plakat-${variant}/${f}`
         // Skip kalau SUDAH dipakai di salah satu folder
         if (used.has(url) || used.has(urlOld)) continue
-        return url
+        return url  // Return pertama yang belum dipakai
       }
-      // fallback: kalau semua sudah dipakai
-      if (files.length) return `/images/plakat-${variant}/${files[0]}`
+      
+      // FALLBACK: Kalau SEMUA sudah dipakai, baru ambil yang pertama (boleh reuse)
+      if (files.length) {
+        console.error(`[IMAGE] Semua gambar plakat-${variant} sudah dipakai, reuse ${files[0]}`)
+        return `/images/plakat-${variant}/${files[0]}`
+      }
     }
   }
 

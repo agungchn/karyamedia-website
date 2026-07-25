@@ -590,7 +590,44 @@ function pickImage(category, used, keyword = "") {
     }
   }
 
-  // RULE 8: keyword souvenir wisuda (samir, gordon, kalung wisuda, tali, slempang)
+  // RULE 8: Gantungan Kunci (produk aksesoris & souvenir)
+  // → WAJIB ambil dari folder gantungan-kunci, prioritaskan yang belum dipakai
+  // Keyword variations: gantungan kunci, gantungan kunci custom, gantungan kunci logam, gantungan kunci kayu,
+  //                      gantungan kunci akrilik, gantungan kunci plastik, gantungan kunci kulit, gantungan kunci resin,
+  //                      gantungan kunci instansi, gantungan kunci kantor, gantungan kunci sekolah, gantungan kunci universitas,
+  //                      gantungan kunci organisasi, gantungan kunci komunitas, gantungan kunci acara, gantungan kunci seminar,
+  //                      gantungan kunci wisuda, gantungan kunci pernikahan, gantungan kunci souvenir, gantungan kunci promosi,
+  //                      gantungan kunci marketing, gantungan kunci branded, gantungan kunci logo, gantungan kunci premium, gantungan kunci eksklusif
+  const isGantunganKunci = /\b(gantungan kunci|gantungan kunci custom|gantungan kunci logam|gantungan kunci kayu|gantungan kunci akrilik|gantungan kunci plastik|gantungan kunci kulit|gantungan kunci resin|gantungan kunci instansi|gantungan kunci kantor|gantungan kunci sekolah|gantungan kunci universitas|gantungan kunci organisasi|gantungan kunci komunitas|gantungan kunci acara|gantungan kunci seminar|gantungan kunci wisuda|gantungan kunci pernikahan|gantungan kunci souvenir|gantungan kunci promosi|gantungan kunci marketing|gantungan kunci branded|gantungan kunci logo|gantungan kunci premium|gantungan kunci eksklusif)\b/i.test(keyword || "")
+  if (isGantunganKunci) {
+    const specialDir = join(root, "public/images/gantungan-kunci")
+    if (existsSync(specialDir)) {
+      const files = readdirSync(specialDir)
+        .filter((n) => /^gantungan-kunci-\d+\.png$/i.test(n))
+        .sort((a, b) => {
+          const na = parseInt(a.match(/(\d+)/)?.[1] || "0", 10)
+          const nb = parseInt(b.match(/(\d+)/)?.[1] || "0", 10)
+          return na - nb
+        })
+      
+      // PRIORITAS: Cari gambar yang BELUM dipakai sama sekali
+      for (const f of files) {
+        const url = `/images/gantungan-kunci/${f}`
+        const urlOld = `/images/produk-unggulan/gantungan-kunci/${f}`
+        // Skip kalau SUDAH dipakai di salah satu folder
+        if (used.has(url) || used.has(urlOld)) continue
+        return url  // Return pertama yang belum dipakai
+      }
+      
+      // FALLBACK: Kalau SEMUA sudah dipakai, baru ambil yang pertama (boleh reuse)
+      if (files.length) {
+        console.error(`[IMAGE] Semua gambar gantungan-kunci sudah dipakai, reuse ${files[0]}`)
+        return `/images/gantungan-kunci/${files[0]}`
+      }
+    }
+  }
+
+  // RULE 9: keyword souvenir wisuda (samir, gordon, kalung wisuda, tali, slempang)
   // → WAJIB ambil dari folder samir-wisuda, prioritaskan yang belum dipakai
   const isSamirWisuda = /\b(samir|gordon|kalung wisuda|tali wisuda|slempang)\b/i.test(keyword || "")
   if (isSamirWisuda) {
@@ -621,7 +658,7 @@ function pickImage(category, used, keyword = "") {
     }
   }
 
-  // RULE 9: keyword patung wisuda, plakat wisuda, souvenir wisuda
+  // RULE 10: keyword patung wisuda, plakat wisuda, souvenir wisuda
   // → WAJIB ambil dari folder patung-wisuda, KECUALI ada kata "akrilik" → plakat-wisuda-akrilik
   // Keyword variations: patung wisuda, plakat wisuda, souvenir wisuda, hadiah wisuda, kenang-kenangan wisuda,
   //                      cinderamata wisuda, penghargaan wisuda, hadiah kelulusan, souvenir kelulusan

@@ -14,33 +14,33 @@ OUTPUT_FILE = Path(__file__).parent / "article-schedule.json"
 # Daftar keyword prioritas dengan jadwal
 SCHEDULE = [
     # Priority 1 - High Search Volume
-    {"keyword": "plakat batas wilayah", "week": 1, "day": "Senin", "time": "20:00"},
-    {"keyword": "plakat BM", "week": 2, "day": "Senin", "time": "20:00"},
-    {"keyword": "plakat CP", "week": 3, "day": "Senin", "time": "20:00"},
-    {"keyword": "plakat peresmian gedung", "week": 4, "day": "Senin", "time": "20:00"},
-    {"keyword": "plakat center point", "week": 5, "day": "Senin", "time": "20:00"},
+    {"keyword": "plakat batas wilayah", "week": 1, "day": "Senin", "time": "10:00"},
+    {"keyword": "plakat BM", "week": 2, "day": "Senin", "time": "10:00"},
+    {"keyword": "plakat CP", "week": 3, "day": "Senin", "time": "10:00"},
+    {"keyword": "plakat peresmian gedung", "week": 4, "day": "Senin", "time": "10:00"},
+    {"keyword": "plakat center point", "week": 5, "day": "Senin", "time": "10:00"},
     
     # Priority 2 - Medium
-    {"keyword": "plakat batas desa", "week": 6, "day": "Senin", "time": "20:00"},
-    {"keyword": "plakat batas kecamatan", "week": 7, "day": "Senin", "time": "20:00"},
+    {"keyword": "plakat batas desa", "week": 6, "day": "Senin", "time": "10:00"},
+    {"keyword": "plakat batas kecamatan", "week": 7, "day": "Senin", "time": "10:00"},
     
     # Priority 3 - Long Tail (generate bertahap)
-    {"keyword": "plakat batas kabupaten", "week": 8, "day": "Senin", "time": "20:00"},
-    {"keyword": "plakat batas provinsi", "week": 9, "day": "Senin", "time": "20:00"},
-    {"keyword": "plakat batas administratif", "week": 10, "day": "Senin", "time": "20:00"},
-    {"keyword": "plakat batas wilayah desa", "week": 11, "day": "Senin", "time": "20:00"},
-    {"keyword": "plakat patok batas", "week": 12, "day": "Senin", "time": "20:00"},
-    {"keyword": "plakat patok wilayah", "week": 13, "day": "Senin", "time": "20:00"},
-    {"keyword": "plakat batas tanah", "week": 14, "day": "Senin", "time": "20:00"},
-    {"keyword": "plakat batas kawasan", "week": 15, "day": "Senin", "time": "20:00"},
-    {"keyword": "plakat batas area", "week": 16, "day": "Senin", "time": "20:00"},
-    {"keyword": "plakat batas zona", "week": 17, "day": "Senin", "time": "20:00"},
-    {"keyword": "plakat batas wilayah custom", "week": 18, "day": "Senin", "time": "20:00"},
-    {"keyword": "plakat batas wilayah logam", "week": 19, "day": "Senin", "time": "20:00"},
-    {"keyword": "plakat batas wilayah kuningan", "week": 20, "day": "Senin", "time": "20:00"},
-    {"keyword": "plakat batas wilayah tembaga", "week": 21, "day": "Senin", "time": "20:00"},
-    {"keyword": "plakat batas wilayah premium", "week": 22, "day": "Senin", "time": "20:00"},
-    {"keyword": "plakat batas wilayah eksklusif", "week": 23, "day": "Senin", "time": "20:00"},
+    {"keyword": "plakat batas kabupaten", "week": 8, "day": "Senin", "time": "10:00"},
+    {"keyword": "plakat batas provinsi", "week": 9, "day": "Senin", "time": "10:00"},
+    {"keyword": "plakat batas administratif", "week": 10, "day": "Senin", "time": "10:00"},
+    {"keyword": "plakat batas wilayah desa", "week": 11, "day": "Senin", "time": "10:00"},
+    {"keyword": "plakat patok batas", "week": 12, "day": "Senin", "time": "10:00"},
+    {"keyword": "plakat patok wilayah", "week": 13, "day": "Senin", "time": "10:00"},
+    {"keyword": "plakat batas tanah", "week": 14, "day": "Senin", "time": "10:00"},
+    {"keyword": "plakat batas kawasan", "week": 15, "day": "Senin", "time": "10:00"},
+    {"keyword": "plakat batas area", "week": 16, "day": "Senin", "time": "10:00"},
+    {"keyword": "plakat batas zona", "week": 17, "day": "Senin", "time": "10:00"},
+    {"keyword": "plakat batas wilayah custom", "week": 18, "day": "Senin", "time": "10:00"},
+    {"keyword": "plakat batas wilayah logam", "week": 19, "day": "Senin", "time": "10:00"},
+    {"keyword": "plakat batas wilayah kuningan", "week": 20, "day": "Senin", "time": "10:00"},
+    {"keyword": "plakat batas wilayah tembaga", "week": 21, "day": "Senin", "time": "10:00"},
+    {"keyword": "plakat batas wilayah premium", "week": 22, "day": "Senin", "time": "10:00"},
+    {"keyword": "plakat batas wilayah eksklusif", "week": 23, "day": "Senin", "time": "10:00"},
 ]
 
 def calculate_dates():
@@ -55,13 +55,16 @@ def calculate_dates():
         # Calculate date: week N from now
         reminder_date = next_monday + timedelta(weeks=item["week"] - 1)
         
+        # Override time to 10:00 (manual schedule, separate from auto scheduler at 20:00)
+        reminder_time = "10:00"
+        
         reminders.append({
             "keyword": item["keyword"],
             "week": item["week"],
             "date": reminder_date.strftime("%Y-%m-%d"),
             "day": item["day"],
-            "time": item["time"],
-            "datetime": f"{reminder_date.strftime('%Y-%m-%d')} {item['time']}",
+            "time": reminder_time,
+            "datetime": f"{reminder_date.strftime('%Y-%m-%d')} {reminder_time}",
             "title": f"📝 Generate Artikel SEO: {item['keyword']}",
             "description": f"Generate 1 artikel untuk keyword '{item['keyword']}'\n\n"
                           f"Jalankan: node scripts/seo/article-generate.mjs \"{item['keyword']}\" --category \"Plakat\"\n\n"
@@ -69,7 +72,8 @@ def calculate_dates():
                           f"- Pastikan keyword unik (cek dulu di articles.ts)\n"
                           f"- Gunakan --dry-run dulu untuk preview\n"
                           f"- Kalau OK, jalankan tanpa --dry-run\n"
-                          f"- Commit & push setelah generate",
+                          f"- Commit & push setelah generate\n\n"
+                          f"⚠️ JANGAN digabung dengan task scheduler otomatis (20:00)!",
             "priority": "High" if item["week"] <= 5 else "Medium" if item["week"] <= 7 else "Low"
         })
     
@@ -89,11 +93,15 @@ def main():
             "manual_setup": "Kamu bisa import ke Google Calendar dengan:\n"
                            "1. Buka https://calendar.google.com\n"
                            "2. Buat event manual untuk setiap reminder\n"
-                           "3. Set recurring: setiap Senin jam 20:00\n"
+                           "3. Set recurring: setiap Senin jam 10:00\n"
                            "4. Set duration: 30 menit\n"
                            "5. Add notification: 1 jam sebelum",
-            "auto_generate": "Atau biarkan task scheduler otomatis jalan setiap hari jam 20:00\n"
-                            "File ini hanya untuk tracking manual jika mau kontrol penuh"
+            "auto_generate": "Task scheduler otomatis jalan SETIAP HARI jam 20:00 (terpisah dari jadwal ini)\n"
+                            "Jadwal ini HANYA untuk tracking manual jika mau kontrol penuh generate artikel\n"
+                            "Generate manual: node scripts/seo/article-generate.mjs \"<keyword>\" --category \"Plakat\"",
+            "note": "⚠️ JANGAN gabungkan jadwal ini dengan task scheduler otomatis!\n"
+                   "Task scheduler = otomatis setiap hari 20:00 (2 artikel)\n"
+                   "Jadwal manual ini = kontrol penuh 1 artikel/minggu Senin 10:00"
         }
     }
     
@@ -103,8 +111,7 @@ def main():
     print(f"✅ Jadwal tersimpan di: {OUTPUT_FILE}\n")
     print(f"📊 Total reminder: {len(reminders)} artikel")
     print(f"📅 Periode: {reminders[0]['date']} - {reminders[-1]['date']}")
-    print(f"⏰ Waktu: Setiap Senin jam 20:00\n")
-    
+    print(f"⏰ Waktu: Setiap Senin jam 10:00 (manual, terpisah dari auto scheduler 20:00)\n")
     print("📋 Preview 5 reminder pertama:")
     print("=" * 80)
     for r in reminders[:5]:

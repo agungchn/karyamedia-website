@@ -330,7 +330,46 @@ function pickImage(category, used, keyword = "") {
     }
   }
 
-  // RULE 2: judul mengandung "plakat akrilik", "plakat resin", atau "plakat fiberglass"
+  // RULE 2: keyword patung wisuda, plakat wisuda, souvenir wisuda
+  // → WAJIB ambil dari folder patung-wisuda, KECUALI ada kata "akrilik" → plakat-wisuda-akrilik
+  // Keyword variations: patung wisuda, plakat wisuda, souvenir wisuda, hadiah wisuda, kenang-kenangan wisuda,
+  //                      cinderamata wisuda, penghargaan wisuda, hadiah kelulusan, souvenir kelulusan
+  const isWisudaGeneral = /\b(patung wisuda|plakat wisuda|souvenir wisuda|hadiah wisuda|kenang-kenangan wisuda|cinderamata wisuda|penghargaan wisuda|hadiah kelulusan|souvenir kelulusan)\b/i.test(keyword || "")
+  const hasAkrilik = /\bakrilik\b/i.test(keyword || "")
+  
+  if (isWisudaGeneral) {
+    // Kalau ada kata "akrilik" → ambil dari plakat-wisuda-akrilik
+    const targetFolder = hasAkrilik ? "plakat-wisuda-akrilik" : "patung-wisuda"
+    const specialDir = join(root, `public/images/${targetFolder}`)
+    
+    if (existsSync(specialDir)) {
+      const prefix = targetFolder.replace(/-/g, '-')  // e.g., "patung-wisuda" or "plakat-wisuda-akrilik"
+      const files = readdirSync(specialDir)
+        .filter((n) => new RegExp(`^${prefix}-\\d+\\.png$`, "i").test(n))
+        .sort((a, b) => {
+          const na = parseInt(a.match(/(\d+)/)?.[1] || "0", 10)
+          const nb = parseInt(b.match(/(\d+)/)?.[1] || "0", 10)
+          return na - nb
+        })
+      
+      // PRIORITAS: Cari gambar yang BELUM dipakai sama sekali
+      for (const f of files) {
+        const url = `/images/${targetFolder}/${f}`
+        const urlOld = `/images/produk-unggulan/${targetFolder}/${f}`
+        // Skip kalau SUDAH dipakai di salah satu folder
+        if (used.has(url) || used.has(urlOld)) continue
+        return url  // Return pertama yang belum dipakai
+      }
+      
+      // FALLBACK: Kalau SEMUA sudah dipakai, baru ambil yang pertama (boleh reuse)
+      if (files.length) {
+        console.error(`[IMAGE] Semua gambar ${targetFolder} sudah dipakai, reuse ${files[0]}`)
+        return `/images/${targetFolder}/${files[0]}`
+      }
+    }
+  }
+
+  // RULE 3: judul mengandung "plakat akrilik", "plakat resin", atau "plakat fiberglass"
   // → ambil gambar dari folder yang spesifik sesuai material
   const isPlakatVariant =
     /plakat[\s-]+(akrilik|resin|fiberglass)/i.test(keyword || "")

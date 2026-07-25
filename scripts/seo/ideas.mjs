@@ -25,6 +25,7 @@ import { googleSuggest } from "../google/suggest.mjs"
 import { extractArticles } from "./article-lint.mjs"
 import { inferCategory } from "./article-generate.mjs"
 import { commitAndPush } from "./git.mjs"
+import { isBlocked } from "./blocked-keywords.js"
 
 const here = dirname(fileURLToPath(import.meta.url))
 const root = resolve(here, "..", "..")
@@ -196,10 +197,18 @@ async function main() {
   const working = readFileSync(articlesPath, "utf8")
   const opportunities = []
   let covered = 0
+  // Dapatkan hari ini untuk blocked keywords check
+  const days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu']
+  const hariIni = days[new Date().getDay()]
+  
   for (const r of rows) {
     const query = r.keys[0]
     if (isCovered(query, working)) {
       covered++
+      continue
+    }
+    // Skip blocked keywords untuk hari ini (avoid duplikasi dengan 10:00 WIB)
+    if (isBlocked(query, hariIni)) {
       continue
     }
     opportunities.push({
@@ -226,6 +235,8 @@ async function main() {
       const q = s.query.trim().toLowerCase()
       if (haveQ.has(q)) continue
       if (nearDup(s.query, working)) continue
+      // Skip blocked keywords untuk hari ini
+      if (isBlocked(s.query, hariIni)) continue
       opportunities.push({
         query: s.query,
         impressions: s.impressions,

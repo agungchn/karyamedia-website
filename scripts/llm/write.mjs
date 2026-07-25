@@ -254,6 +254,111 @@ const TEMPLATE_VARIANTS = [
     emphasis:
       "Fokus narasi lokal & komunitas spesifik. Sebutkan 2-3 produk: prasasti, gift box, souvenir wisuda.",
   },
+  {
+    name: "guide",
+    angle: "Buka dengan panduan lengkap dari awal hingga akhir untuk {kw}.",
+    headings: [
+      "Panduan Lengkap {kw}",
+      "Apa yang Perlu Disiapkan",
+      "Proses Pemilihan & Pemesanan",
+      "Hal yang Wajib Diketahui",
+      "Pengalaman di {loc}",
+      "Tips agar Tidak Gagal Order",
+      "FAQ",
+    ],
+    emphasis:
+      "Gunakan gaya panduan tutorial langkah demi langkah. Sebutkan 2-3 produk: souvenir wisuda, gordon, samir.",
+  },
+  {
+    name: "qa",
+    angle: "Buka dengan pertanyaan paling umum tentang {kw} dan jawabannya.",
+    headings: [
+      "Pertanyaan Umum soal {kw}",
+      "Apa Itu {kw} dan Kenapa Dipilih?",
+      "Bagaimana Cara Memilih yang Tepat?",
+      "Berapa Estimasi Kebutuhan?",
+      "Siapa yang Paling Cocok Menggunakan?",
+      "Kapan Waktu Terbaik Order?",
+      "FAQ",
+    ],
+    emphasis:
+      "Gunakan format tanya-jawab natural. Sebutkan 2-3 produk: piala, medali, plakat.",
+  },
+  {
+    name: "beginner",
+    angle: "Buka dari sudut pandang pemula yang baru pertama kali order {kw}.",
+    headings: [
+      "Pertama Kali Order {kw}? Ini Panduannya",
+      "Istilah Penting yang Perlu Diketahui",
+      "Langkah Awal Memulai",
+      "Hal yang Sering Membingungkan Pemula",
+      "Kesalahan yang Wajar di Awal",
+      "Rekomendasi untuk Percobaan Pertama",
+      "FAQ",
+    ],
+    emphasis:
+      "Gunakan nada ramah dan sabar, cocok untuk pembaca baru. Sebutkan 2-3 produk: gift box, souvenir wisuda, plakat.",
+  },
+  {
+    name: "success-story",
+    angle: "Buka dengan cerita sukses klien yang menggunakan {kw} untuk acara mereka.",
+    headings: [
+      "Cerita Sukses: {kw} untuk Acara Spesial",
+      "Tantangan Sebelum Menemukan Solusi",
+      "Proses Kolaborasi dengan Karyamedia",
+      "Hasil yang Dicapai",
+      "Testimoni & Dampak untuk Klien",
+      "Pelajaran Berharga untuk Anda",
+      "FAQ",
+    ],
+    emphasis:
+      "Narasi seperti story telling, fokus pada pengalaman klien. Sebutkan 2-3 produk: plakat, piala, prasasti.",
+  },
+  {
+    name: "mistakes",
+    angle: "Buka dengan kesalahan umum yang sering dilakukan saat membeli {kw}.",
+    headings: [
+      "Kesalahan Umum saat Memilih {kw}",
+      "Salah Paham soal Bahan & Kualitas",
+      "Kesalahan dalam Menentukan Budget",
+      "Waktu Pemesanan yang Keliru",
+      "Cara Menghindari Kekecewaan",
+      "Praktik Terbaik agar Puas",
+      "FAQ",
+    ],
+    emphasis:
+      "Gunakan gaya 'pelajari dari kesalahan orang lain'. Sebutkan 2-3 produk: souvenir wisuda, gordon, samir.",
+  },
+  {
+    name: "seasonal",
+    angle: "Buka dengan momen/event musiman yang relevan dengan {kw}.",
+    headings: [
+      "{kw} untuk Musim Acara Ini",
+      "Kenapa Sekarang Waktu yang Tepat",
+      "Persiapan agar Tidak Kehabisan",
+      "Rekomendasi Produk untuk Event Terkini",
+      "Pengalaman Pelanggan di {loc}",
+      "Antisipasi Lonjakan Pesanan",
+      "FAQ",
+    ],
+    emphasis:
+      "Kaitkan dengan event/momen yang sedang berlangsung. Sebutkan 2-3 produk: medali, piala, souvenir wisuda.",
+  },
+  {
+    name: "comprehensive",
+    angle: "Buka dengan gambaran menyeluruh semua aspek {kw} dalam satu artikel.",
+    headings: [
+      "Semua tentang {kw}",
+      "Definisi & Jenis-jenisnya",
+      "Kelebihan & Kekurangan Tiap Jenis",
+      "Cara Memilih Sesuai Kebutuhan",
+      "Estimasi Biaya & Proses Produksi",
+      "Inspirasi & Rekomendasi",
+      "FAQ",
+    ],
+    emphasis:
+      "Jadikan artikel ini referensi lengkap satu-atap. Sebutkan 2-3 produk: plakat, medali, piala.",
+  },
 ]
 
 export const ARTICLE_TEMPLATE_VARIANT_COUNT = TEMPLATE_VARIANTS.length

@@ -299,7 +299,40 @@ function pickImage(category, used, keyword = "") {
     "plakat-wisuda-akrilik",
   ]
 
-  // RULE 1: keyword souvenir wisuda (samir, gordon, kalung, tali, slempang)
+  // RULE 1: Kalung Rektor (produk premium untuk rektorat)
+  // → WAJIB ambil dari folder kalung-rektor, prioritaskan yang belum dipakai
+  // Keyword variations: kalung rektor, kalung kehormatan rektor, kalung gordon rektor, 
+  //                      kalung wisuda rektor, kalung rektorat, kalung jabatan rektor
+  const isKalungRektor = /\b(kalung rektor|kalung kehormatan rektor|kalung gordon rektor|kalung wisuda rektor|kalung rektorat|kalung jabatan rektor)\b/i.test(keyword || "")
+  if (isKalungRektor) {
+    const specialDir = join(root, "public/images/kalung-rektor")
+    if (existsSync(specialDir)) {
+      const files = readdirSync(specialDir)
+        .filter((n) => /^kalung-rektor-\d+\.png$/i.test(n))
+        .sort((a, b) => {
+          const na = parseInt(a.match(/(\d+)/)?.[1] || "0", 10)
+          const nb = parseInt(b.match(/(\d+)/)?.[1] || "0", 10)
+          return na - nb
+        })
+      
+      // PRIORITAS: Cari gambar yang BELUM dipakai sama sekali
+      for (const f of files) {
+        const url = `/images/kalung-rektor/${f}`
+        const urlOld = `/images/produk-unggulan/kalung-rektor/${f}`
+        // Skip kalau SUDAH dipakai di salah satu folder
+        if (used.has(url) || used.has(urlOld)) continue
+        return url  // Return pertama yang belum dipakai
+      }
+      
+      // FALLBACK: Kalau SEMUA sudah dipakai, baru ambil yang pertama (boleh reuse)
+      if (files.length) {
+        console.error(`[IMAGE] Semua gambar kalung-rektor sudah dipakai, reuse ${files[0]}`)
+        return `/images/kalung-rektor/${files[0]}`
+      }
+    }
+  }
+
+  // RULE 2: keyword souvenir wisuda (samir, gordon, kalung wisuda, tali, slempang)
   // → WAJIB ambil dari folder samir-wisuda, prioritaskan yang belum dipakai
   const isSamirWisuda = /\b(samir|gordon|kalung wisuda|tali wisuda|slempang)\b/i.test(keyword || "")
   if (isSamirWisuda) {
@@ -330,7 +363,7 @@ function pickImage(category, used, keyword = "") {
     }
   }
 
-  // RULE 2: keyword patung wisuda, plakat wisuda, souvenir wisuda
+  // RULE 3: keyword patung wisuda, plakat wisuda, souvenir wisuda
   // → WAJIB ambil dari folder patung-wisuda, KECUALI ada kata "akrilik" → plakat-wisuda-akrilik
   // Keyword variations: patung wisuda, plakat wisuda, souvenir wisuda, hadiah wisuda, kenang-kenangan wisuda,
   //                      cinderamata wisuda, penghargaan wisuda, hadiah kelulusan, souvenir kelulusan
@@ -369,7 +402,7 @@ function pickImage(category, used, keyword = "") {
     }
   }
 
-  // RULE 3: judul mengandung "plakat akrilik", "plakat resin", atau "plakat fiberglass"
+  // RULE 4: judul mengandung "plakat akrilik", "plakat resin", atau "plakat fiberglass"
   // → ambil gambar dari folder yang spesifik sesuai material
   const isPlakatVariant =
     /plakat[\s-]+(akrilik|resin|fiberglass)/i.test(keyword || "")

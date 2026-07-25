@@ -11874,20 +11874,17 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   },
   {
     slug: "pengrajin-medali-custom-jogja",
-    title: "Pengrajin Medali Custom di Yogyakarta: Karyamedia Souvenir",
-    description: "Cari pengrajin medali custom di Yogyakarta? Karyamedia Souvenir melayani pembuatan medali custom untuk lomba, turnamen, dan event. Konsultasi gratis.",
+    title: "Medali Custom Jogja: Pengrajin Terpercaya Sejak 2001",
+    description: "Cari medali custom jogja berkualitas? Karyamedia Souvenir melayani pembuatan medali custom untuk lomba, turnamen, dan event. Konsultasi gratis.",
     category: "Medali",
     date: "2026-07-12",
     image: "/images/produk-unggulan/medali-custom/medali-custom-12.png",
     tags: ["pengrajin medali", "pengrajin medali jogja", "medali custom jogja", "tukang medali", "pembuatan medali", "medali yogyakarta"],
-    content: `
-<p>Mencari <strong>pengrajin medali</strong> yang terpercaya di Yogyakarta? Karyamedia Souvenir adalah jawabannya. Sebagai produsen souvenir dan penghargaan yang telah berdiri sejak 2001, kami telah menjadi mitra berbagai sekolah, universitas, instansi pemerintah, perusahaan, dan komunitas dalam pembuatan medali custom berkualitas.</p>
-
-<p>Sebagai <strong>pengrajin medali</strong> profesional, kami memahami bahwa setiap detail pada medali memiliki makna. Dari pemilihan bahan, proses produksi, hingga finishing akhir, semua dilakukan dengan standar kualitas tertinggi. Artikel ini akan membahas layanan <strong>pengrajin medali custom</strong> yang kami tawarkan serta tips memilih pengrajin medali yang tepat.</p>
+    content: `<p>Mencari <strong>medali custom jogja</strong> yang berkualitas dan terpercaya? Karyamedia Souvenir adalah jawabannya. Sebagai produsen medali custom yang telah berdiri sejak 2001, kami telah menjadi mitra berbagai sekolah, universitas, instansi pemerintah, perusahaan, dan komunitas dalam pembuatan medali custom berkualitas tinggi.</p>
 
 <h2>Mengapa Memilih Karyamedia Souvenir sebagai Pengrajin Medali?</h2>
 
-<p>Ada beberapa alasan mengapa Karyamedia Souvenir menjadi pilihan utama sebagai <strong>pengrajin medali</strong> di Yogyakarta:</p>
+<p>Ada beberapa alasan mengapa Karyamedia Souvenir menjadi pilihan utama untuk <strong>medali custom jogja</strong>:</p>
 
 <ul>
   <li><strong>Berpengalaman sejak 2001:</strong> Lebih dari 20 tahun berkecimpung di industri souvenir dan penghargaan. Ribuan pelanggan telah mempercayakan pembuatan medali kepada kami.</li>
@@ -11898,9 +11895,9 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   <li><strong>Pengiriman ke seluruh Indonesia:</strong> Bekerja sama dengan JNE, TIKI, Lion Parcel, dan ekspedisi lainnya.</li>
 </ul>
 
-<h2>Layanan Pengrajin Medali Custom</h2>
+<h2>Layanan Medali Custom di Jogja</h2>
 
-<p>Sebagai <strong>pengrajin medali custom</strong> profesional, kami melayani pembuatan berbagai jenis medali:</p>
+<p>Sebagai produsen <strong>medali custom</strong> profesional, kami melayani pembuatan berbagai jenis medali:</p>
 
 <ul>
   <li><strong>Medali logam</strong> dengan finishing emas, perak, perunggu, nikel. Cocok untuk turnamen bergengsi, olimpiade, dan penghargaan resmi.</li>
@@ -11910,43 +11907,57 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   <li><strong>Medali dengan box</strong> eksklusif untuk hadiah corporate atau penghargaan VIP.</li>
 </ul>
 
-<p>Setiap jenis medali dikerjakan oleh <strong>pengrajin medali</strong> profesional yang ahli di bidangnya. Kami menggunakan peralatan modern untuk menghasilkan produk presisi dengan kualitas terbaik.</p>
+<p>Setiap jenis medali dikerjakan oleh tim profesional yang ahli di bidangnya. Kami menggunakan peralatan modern untuk menghasilkan produk presisi dengan kualitas terbaik.</p>
 
 <h2>Proses Produksi Medali Custom</h2>
 
-<p>Berikut alur produksi yang dilakukan <strong>pengrajin medali</strong> profesional di Karyamedia Souvenir:</p>
+<p>Berikut alur produksi medali custom di Karyamedia Souvenir:</p>
 
 <ol>
   <li><strong>Konsultasi desain:</strong> Tim kami berdiskusi dengan Anda untuk memahami kebutuhan, konsep desain, dan anggaran.</li>
   <li><strong>Pembuatan mockup:</strong> Desainer kami membuat mockup digital untuk visualisasi. Revisi gratis hingga Anda puas.</li>
   <li><strong>Persiapan produksi:</strong> Untuk medali logam, dibuat cetakan (mold) sesuai desain. Untuk medali akrilik, file siap cetak diproses.</li>
-  <li><strong>Produksi:</strong> Proses pencetakan, finishing, dan perakitan dilakukan oleh <strong>pengrajin medali</strong> berpengalaman.</li>
+  <li><strong>Produksi:</strong> Proses pencetakan, finishing, dan perakitan dilakukan dengan peralatan modern.</li>
   <li><strong>Quality control:</strong> Setiap medali diperiksa satu per satu untuk memastikan kualitas. Medali yang tidak sesuai standar akan diperbaiki atau diganti.</li>
   <li><strong>Pengemasan dan pengiriman:</strong> Medali dikemas rapi dan dikirimkan ke alamat tujuan menggunakan ekspedisi tepercaya.</li>
 </ol>
 
-<h2>Tips Memilih Pengrajin Medali yang Tepat</h2>
+<h2>Jenis Medali Custom di Jogja yang Kami Tawarkan</h2>
 
-<p>Agar tidak salah pilih, berikut tips memilih <strong>pengrajin medali custom</strong> yang berkualitas:</p>
+<p>Di Karyamedia Souvenir, kami menyediakan berbagai jenis <strong>medali custom jogja</strong> dengan kualitas premium untuk memenuhi kebutuhan beragam acara:</p>
+
+<ol>
+  <li><strong>Medali Logam Premium:</strong> Bahan zinc alloy atau brass dengan finishing emas, perak, atau perunggu. Cocok untuk kejuaraan bergengsi, wisuda universitas, dan penghargaan instansi.</li>
+  <li><strong>Medali Akrilik:</strong> Bahan akrilik bening dengan full color printing. Cocok untuk event sekolah, festival, dan acara kreatif.</li>
+  <li><strong>Medali Fiberglass:</strong> Bahan fiberglass ringan dan tahan banting. Cocok untuk turnamen olahraga outdoor dan event dengan jumlah peserta besar.</li>
+  <li><strong>Medali Resin:</strong> Bahan resin dengan detail 3D yang halus. Cocok untuk penghargaan khusus dan souvenir eksklusif.</li>
+  <li><strong>Medali Kayu:</strong> Bahan kayu jati atau mahoni dengan ukiran tradisional. Cocok untuk penghargaan budaya dan event bertema nusantara.</li>
+</ol>
+
+<p>Setiap jenis <strong>medali custom</strong> dapat disesuaikan dengan desain, ukuran, dan finishing sesuai kebutuhan Anda. Kami juga menyediakan layanan konsultasi gratis untuk membantu memilih jenis medali yang paling tepat untuk acara Anda.</p>
+
+<h2>Tips Memilih Produsen Medali Custom yang Tepat</h2>
+
+<p>Agar tidak salah pilih, berikut tips memilih produsen <strong>medali custom</strong> yang berkualitas:</p>
 
 <ul>
-  <li><strong>Cek portofolio:</strong> Minta contoh hasil kerja sebelumnya. Pengrajin berkualitas pasti memiliki portofolio yang bisa ditunjukkan.</li>
-  <li><strong>Kunjungi workshop:</strong> Jika memungkinkan, kunjungi langsung tempat produksi. Pengrajin profesional memiliki workshop yang rapi dan terorganisir.</li>
-  <li><strong>Tanyakan bahan baku:</strong> Pengrajin yang jujur akan menjelaskan jenis bahan yang digunakan secara detail, termasuk kualitas dan asalnya.</li>
+  <li><strong>Cek portofolio:</strong> Minta contoh hasil kerja sebelumnya. Produsen berkualitas pasti memiliki portofolio yang bisa ditunjukkan.</li>
+  <li><strong>Kunjungi workshop:</strong> Jika memungkinkan, kunjungi langsung tempat produksi. Produsen profesional memiliki workshop yang rapi dan terorganisir.</li>
+  <li><strong>Tanyakan bahan baku:</strong> Produsen yang jujur akan menjelaskan jenis bahan yang digunakan secara detail, termasuk kualitas dan asalnya.</li>
   <li><strong>Minta sample:</strong> Sebelum order besar, minta sample untuk melihat langsung kualitas finishing, berat, dan detail medali.</li>
   <li><strong>Cek review pelanggan:</strong> Testimoni dari pelanggan sebelumnya bisa menjadi referensi yang berharga.</li>
   <li><strong>Bandingkan harga:</strong> Minta penawaran dari beberapa <strong>pengrajin medali</strong> dan bandingkan. Harga yang terlalu murah patut dicurigai kualitasnya.</li>
 </ul>
 
-<h2>Mengapa Memilih Pengrajin Medali Lokal?</h2>
+<h2>Mengapa Memilih Medali Custom dari Jogja?</h2>
 
-<p>Memilih <strong>pengrajin medali</strong> lokal seperti Karyamedia Souvenir di Yogyakarta memiliki beberapa keuntungan: komunikasi lebih mudah karena satu waktu, bisa datang langsung ke workshop untuk konsultasi tatap muka, proses produksi lebih fleksibel, dan Anda mendukung pengrajin lokal Indonesia. Selain itu, <strong>harga medali custom</strong> dari pengrajin lokal biasanya lebih murah dibandingkan produsen dari kota besar karena biaya operasional yang lebih rendah.</p>
+<p>Memilih <strong>medali custom dari Jogja</strong> seperti Karyamedia Souvenir memiliki beberapa keuntungan: komunikasi lebih mudah karena satu waktu, bisa datang langsung ke workshop untuk konsultasi tatap muka, proses produksi lebih fleksibel, dan Anda mendukung pengrajin lokal Indonesia. Selain itu, <strong>harga medali custom</strong> dari Jogja biasanya lebih kompetitif dibandingkan produsen dari kota besar karena biaya operasional yang lebih rendah.</p>
 
 <p>Karyamedia Souvenir berlokasi di Jl. Menteri Supeno No. 90, Yogyakarta. Kami melayani pemesanan dari seluruh Indonesia dengan pengiriman via JNE, TIKI, Lion Parcel. Untuk Anda yang berada di Yogyakarta, bisa langsung ambil di workshop kami.</p>
 
-<h2>Jenis Acara yang Dilayani Pengrajin Medali</h2>
+<h2>Jenis Acara yang Dilayani untuk Medali Custom</h2>
 
-<p>Sebagai <strong>pengrajin medali custom</strong> yang telah berpengalaman, Karyamedia Souvenir melayani pembuatan medali untuk berbagai jenis acara:</p>
+<p>Sebagai produsen <strong>medali custom</strong> yang telah berpengalaman, Karyamedia Souvenir melayani pembuatan medali untuk berbagai jenis acara:</p>
 
 <ul>
 <li><strong>Turnamen olahraga:</strong> Futsal, basket, badminton, voli, lari, renang, golf, pencak silat, karate, taekwondo. Medali logam dengan finishing emas/perak/perunggu adalah pilihan utama. Baca artikel <a href="/blog/medali-piala-souvenir-turnamen-olahraga">Harga Medali Olahraga untuk Turnamen</a> untuk referensi lengkap.</li>
@@ -11956,11 +11967,11 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 <li><strong>Acara komunitas dan keagamaan:</strong> MTQ, lomba Pramuka, lomba karang taruna, acara keagamaan. Medali fiberglass cocok untuk acara dengan jumlah peserta besar.</li>
 </ul>
 
-<p>Setiap jenis acara memiliki pendekatan berbeda dalam pemilihan bahan, desain, dan finishing. Tim <strong>pengrajin medali</strong> Karyamedia akan memberikan konsultasi gratis untuk menentukan pilihan terbaik sesuai dengan jenis acara dan anggaran Anda.</p>
+<p>Setiap jenis acara memiliki pendekatan berbeda dalam pemilihan bahan, desain, dan finishing. Tim Karyamedia akan memberikan konsultasi gratis untuk menentukan pilihan terbaik sesuai dengan jenis acara dan anggaran Anda.</p>
 
-<h2>Studi Kasus: Pesanan Medali dari Berbagai Klien</h2>
+<h2>Studi Kasus: Pesanan Medali Custom dari Berbagai Klien</h2>
 
-<p>Berikut beberapa contoh pesanan yang pernah dikerjakan oleh <strong>pengrajin medali</strong> Karyamedia Souvenir:</p>
+<p>Berikut beberapa contoh pesanan <strong>medali custom</strong> yang pernah dikerjakan oleh Karyamedia Souvenir:</p>
 
 <p><strong>Studi Kasus 1: Olimpiade Sains Kabupaten</strong><br />
 Dinas Pendidikan Kabupaten memesan 450 medali logam (150 emas, 150 perak, 150 perunggu) untuk olimpiade sains tingkat kabupaten. Diameter 6 cm dengan desain logo dinas pendidikan dan tahun penyelenggaraan. Waktu produksi 14 hari kerja. Klien puas dengan ketajaman detail etching dan konsistensi warna finishing. Total anggaran Rp9.000.000.</p>
@@ -11971,9 +11982,9 @@ Seorang ketua panitia memesan 300 medali akrilik full color untuk berbagai lomba
 <p><strong>Studi Kasus 3: Turnamen Futsal antar Kampus</strong><br />
 BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk turnamen futsal antar fakultas. Diameter 7 cm dengan desain ikon pemain futsal. Finishing electroplating berkualitas tinggi. Waktu produksi 12 hari kerja. Ditambah pita border hitam-emas untuk tampilan yang lebih eksklusif.</p>
 
-<h2>Keunggulan Memesan Langsung ke Pengrajin Medali</h2>
+<h2>Keunggulan Memesan Langsung ke Produsen Medali Custom</h2>
 
-<p>Memesan langsung ke <strong>pengrajin medali custom</strong> seperti Karyamedia Souvenir memberikan banyak keuntungan dibandingkan membeli dari reseller atau toko online:</p>
+<p>Memesan langsung ke produsen <strong>medali custom</strong> seperti Karyamedia Souvenir memberikan banyak keuntungan dibandingkan membeli dari reseller atau toko online:</p>
 
 <ol>
 <li><strong>Harga lebih murah 30-50%:</strong> Tanpa perantara, Anda mendapatkan harga langsung dari produsen. Tidak ada markup reseller yang menambah biaya.</li>
@@ -11987,23 +11998,23 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
 
 <h2 id="faq">FAQ</h2>
 
-<h3>Apa itu <strong>pengrajin medali</strong>?</h3>
-<h3>Pengrajin medali</h3><p>adalah pihak atau perusahaan yang memproduksi medali secara profesional, mulai dari desain, pembuatan cetakan, produksi, finishing, hingga pengemasan. Pengrajin medali biasanya memiliki workshop dan peralatan produksi sendiri.</p>
+<h3>Apa itu medali custom?</h3>
+<p>Medali custom adalah medali yang dibuat sesuai desain khusus, mulai dari bentuk, bahan, ukuran, hingga finishing sesuai kebutuhan acara Anda. Karyamedia memproduksi medali secara profesional, mulai dari desain, pembuatan cetakan, produksi, finishing, hingga pengemasan.</p>
 
 <h3>Apakah Karyamedia Souvenir menerima pesanan dari luar kota?</h3>
 <p>Ya, kami melayani pemesanan dari seluruh Indonesia via online. Proses konsultasi, desain, dan revisi dilakukan via WhatsApp. Hasil jadi dikirimkan melalui ekspedisi ke alamat tujuan.</p>
 
-<h3>Berapa estimasi <strong>harga medali custom</strong> dari pengrajin?</h3>
-<p>Estimasi harga dari <strong>pengrajin medali</strong> mulai Rp5.000 untuk medali akrilik hingga Rp35.000 untuk medali logam premium per pcs. Harga tergantung bahan, ukuran, jumlah, dan kerumitan desain.</p>
+<h3>Berapa estimasi harga medali custom?</h3>
+<p>Estimasi harga <strong>medali custom</strong> mulai Rp5.000 untuk medali akrilik hingga Rp35.000 untuk medali logam premium per pcs. Harga tergantung bahan, ukuran, jumlah, dan kerumitan desain.</p>
 
-<h3>Apakah bisa melihat workshop pengrajin medali di Yogyakarta?</h3>
+<h3>Apakah bisa melihat workshop di Yogyakarta?</h3>
 <p>Tentu. Karyamedia Souvenir berlokasi di Jl. Menteri Supeno No. 90, Yogyakarta. Anda bisa datang langsung untuk konsultasi, melihat sample, dan melihat proses produksi.</p>
 
 <h3>Berapa lama waktu produksi medali custom?</h3>
 <p>Medali akrilik 5-7 hari kerja. Medali fiberglass 7-10 hari kerja. Medali logam 10-14 hari kerja. Untuk kebutuhan mendesak, tersedia layanan rush dengan biaya tambahan.</p>
 
-<h3>Apa perbedaan <strong>pengrajin medali</strong> dengan reseller?</h3>
-<h3>Pengrajin medali</h3><p>memproduksi sendiri, sehingga harga lebih murah, kualitas lebih terjamin, dan lebih fleksibel dalam menerima pesanan custom. Reseller hanya menjual kembali produk dari pengrajin dengan harga markup.</p>
+<h3>Apa perbedaan medali custom dengan reseller?</h3>
+<p>Karyamedia memproduksi medali custom sendiri, sehingga harga lebih murah, kualitas lebih terjamin, dan lebih fleksibel dalam menerima pesanan custom. Reseller hanya menjual kembali produk dari produsen dengan harga markup.</p>
 
 <h3>Apakah Karyamedia menerima desain medali dari luar kota?</h3>
 <p>Tentu. Proses konsultasi dan revisi desain dilakukan sepenuhnya secara online via WhatsApp. Anda tinggal kirimkan file desain atau konsep, tim kami akan membuat mockup. Setelah disetujui, produksi dijalankan dan hasil jadi dikirim ke alamat Anda. Proses ini sudah kami lakukan untuk pelanggan dari berbagai provinsi di Indonesia.</p>

@@ -347,7 +347,7 @@ Buat objek JSON dengan field berikut:
 - "content": artikel lengkap dalam bentuk HTML (string tunggal). Syarat content:
   * minimal 1500 kata (wajib >=1500 agar lolos standar)
   * minimal 4 heading <h2> (pakai tag <h2>...</h2>); HARUS ada satu <h2>FAQ</h2> di akhir
-  * 240 karakter PERTAMA konten (paragraf pembuka) HARUS mengandung keyword utama secara utuh
+  * 240 karakter PERTAMA konten (paragraf pembuka) WAJIB mengandung keyword utama secara utuh. CARA: buka artikel dengan kalimat yang langsung menyebut keyword utama di 15-30 kata pertama, mis: 'Mencari {keyword} berkualitas di Indonesia? Karyamedia...' atau '{keyword} adalah pilihan tepat untuk...'. JANGAN buka dengan kalimat umum seperti 'Di era modern ini...' atau 'Banyak orang...' karena itu menunda penyebutan keyword. GAGAL memenuhi syarat ini = artikel ditolak otomatis.
   * sebutkan nama produk/kategori terkait (plakat, piala, medali, prasasti, gift box / box kemasan, souvenir wisuda, nama dada, dll) SECARA NATURAL di paragraf pembuka/awal artikel, agar tautan ke katalog produk otomatis bisa disematkan di bagian atas
   * ${BANNED_BLOCK} — fokus pada prasasti sebagai PRODUK PLAQUE/PIALA, bukan artefak sejarah
   * gunakan nada ahli produsen yang rendah hati & berbukti: sertakan bukti konkret (Karyamedia berbasis Yogyakarta, produsen langsung, melayani ratusan instansi & event nasional) bila relevan; tekankan kualitas dan bahwa Karyamedia adalah produsen langsung (pabrik) sehingga harga lebih sehat & transparan; hindari bahasa promosi murahan dan JANGAN menyebut pihak lain (calo/agen) secara negatif

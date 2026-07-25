@@ -400,7 +400,88 @@ function pickImage(category, used, keyword = "") {
     }
   }
 
-  // RULE 4: keyword souvenir wisuda (samir, gordon, kalung wisuda, tali, slempang)
+  // RULE 4: Box Plakat / Tempat Plakat (produk kemasan premium)
+  // → WAJIB ambil dari folder box sesuai bahan, prioritaskan yang belum dipakai
+  // Keyword variations: box plakat, tempat plakat, kotak plakat, kemasan plakat, box kemasan plakat, tempat kemasan plakat,
+  //                      box plakat premium, box plakat custom, box plakat eksklusif
+  // Materials: batik → box-batik/, bludru → box-bludru/, kertas import → box-kertas-import/, kertas marga → box-kertas-marga/
+  const isBoxPlakat = /\b(box plakat|tempat plakat|kotak plakat|kemasan plakat|box kemasan plakat|tempat kemasan plakat|box plakat premium|box plakat custom|box plakat eksklusif)\b/i.test(keyword || "")
+  const BOX_FOLDERS = ["box-batik", "box-bludru", "box-kertas-import", "box-kertas-marga"]
+  
+  if (isBoxPlakat) {
+    // Cek apakah ada spesifikasi bahan
+    let targetFolder = null
+    if (/\bbatik\b/i.test(keyword || "")) targetFolder = "box-batik"
+    else if (/\bbludru\b/i.test(keyword || "")) targetFolder = "box-bludru"
+    else if (/\bkertas import\b/i.test(keyword || "")) targetFolder = "box-kertas-import"
+    else if (/\bkertas marga\b/i.test(keyword || "")) targetFolder = "box-kertas-marga"
+    
+    // Kalau ada spesifikasi bahan, ambil dari folder itu saja
+    if (targetFolder) {
+      const specialDir = join(root, `public/images/${targetFolder}`)
+      if (existsSync(specialDir)) {
+        const files = readdirSync(specialDir)
+          .filter((n) => new RegExp(`^${targetFolder}-\\d+\\.png$`, "i").test(n))
+          .sort((a, b) => {
+            const na = parseInt(a.match(/(\d+)/)?.[1] || "0", 10)
+            const nb = parseInt(b.match(/(\d+)/)?.[1] || "0", 10)
+            return na - nb
+          })
+        
+        // PRIORITAS: Cari gambar yang BELUM dipakai sama sekali
+        for (const f of files) {
+          const url = `/images/${targetFolder}/${f}`
+          const urlOld = `/images/produk-unggulan/${targetFolder}/${f}`
+          // Skip kalau SUDAH dipakai di salah satu folder
+          if (used.has(url) || used.has(urlOld)) continue
+          return url  // Return pertama yang belum dipakai
+        }
+        
+        // FALLBACK: Kalau SEMUA sudah dipakai, baru ambil yang pertama (boleh reuse)
+        if (files.length) {
+          console.error(`[IMAGE] Semua gambar ${targetFolder} sudah dipakai, reuse ${files[0]}`)
+          return `/images/${targetFolder}/${files[0]}`
+        }
+      }
+    }
+    
+    // Kalau TIDAK ada spesifikasi bahan, boleh ambil dari SEMUA folder box
+    const allCandidates = []
+    for (const folder of BOX_FOLDERS) {
+      const dir = join(root, `public/images/${folder}`)
+      if (existsSync(dir)) {
+        for (const file of readdirSync(dir).filter((n) => /\.(png|jpe?g|webp)$/i.test(n))) {
+          const url = `/images/${folder}/${file}`
+          const urlOld = `/images/produk-unggulan/${folder}/${file}`
+          // Skip kalau SUDAH dipakai
+          if (used.has(url) || used.has(urlOld)) continue
+          allCandidates.push(url)
+        }
+      }
+    }
+    
+    // PRIORITAS: Return gambar yang belum dipakai
+    if (allCandidates.length) {
+      return allCandidates[0]  // Return pertama yang belum dipakai
+    }
+    
+    // FALLBACK: Kalau semua sudah dipakai, cari lagi tanpa filter used
+    const fallbackCandidates = []
+    for (const folder of BOX_FOLDERS) {
+      const dir = join(root, `public/images/${folder}`)
+      if (existsSync(dir)) {
+        for (const file of readdirSync(dir).filter((n) => /\.(png|jpe?g|webp)$/i.test(n))) {
+          fallbackCandidates.push(`/images/${folder}/${file}`)
+        }
+      }
+    }
+    if (fallbackCandidates.length) {
+      console.error(`[IMAGE] Semua gambar box plakat sudah dipakai, reuse ${fallbackCandidates[0]}`)
+      return fallbackCandidates[0]
+    }
+  }
+
+  // RULE 5: keyword souvenir wisuda (samir, gordon, kalung wisuda, tali, slempang)
   // → WAJIB ambil dari folder samir-wisuda, prioritaskan yang belum dipakai
   const isSamirWisuda = /\b(samir|gordon|kalung wisuda|tali wisuda|slempang)\b/i.test(keyword || "")
   if (isSamirWisuda) {
@@ -431,7 +512,7 @@ function pickImage(category, used, keyword = "") {
     }
   }
 
-  // RULE 5: keyword patung wisuda, plakat wisuda, souvenir wisuda
+  // RULE 6: keyword patung wisuda, plakat wisuda, souvenir wisuda
   // → WAJIB ambil dari folder patung-wisuda, KECUALI ada kata "akrilik" → plakat-wisuda-akrilik
   // Keyword variations: patung wisuda, plakat wisuda, souvenir wisuda, hadiah wisuda, kenang-kenangan wisuda,
   //                      cinderamata wisuda, penghargaan wisuda, hadiah kelulusan, souvenir kelulusan

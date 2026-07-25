@@ -302,8 +302,8 @@ function pickImage(category, used, keyword = "") {
   // RULE 1: Kalung Rektor (produk premium untuk rektorat)
   // → WAJIB ambil dari folder kalung-rektor, prioritaskan yang belum dipakai
   // Keyword variations: kalung rektor, kalung kehormatan rektor, kalung gordon rektor, 
-  //                      kalung wisuda rektor, kalung rektorat, kalung jabatan rektor
-  const isKalungRektor = /\b(kalung rektor|kalung kehormatan rektor|kalung gordon rektor|kalung wisuda rektor|kalung rektorat|kalung jabatan rektor)\b/i.test(keyword || "")
+  //                      kalung wisuda rektor, kalung rektorat, kalung jabatan rektor, kalung guru besar
+  const isKalungRektor = /\b(kalung rektor|kalung kehormatan rektor|kalung gordon rektor|kalung wisuda rektor|kalung rektorat|kalung jabatan rektor|kalung guru besar)\b/i.test(keyword || "")
   if (isKalungRektor) {
     const specialDir = join(root, "public/images/kalung-rektor")
     if (existsSync(specialDir)) {

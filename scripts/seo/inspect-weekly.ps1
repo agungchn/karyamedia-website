@@ -1,5 +1,5 @@
 # Weekly Google recap: indexing (inspect) + trafik (GSC), satu popup.
-# jalankan seo:inspect untuk ~1 minggu artikel terakhir (default 42 = 6/hari x 7)
+# jalankan seo:inspect untuk ~1 minggu artikel terakhir (default 14 = 2/hari x 7)
 # lalu tampilkan ringkasan yang jelas via popup (bukan cuma angka).
 # Arg opsional: jumlah artikel, mis. "inspect-weekly.ps1 10" untuk tes cepat.
 # Dijadwalkan mingguan (Senin 10:00 WIB) via Task Scheduler.
@@ -9,7 +9,7 @@ Set-Location $root
 $log = Join-Path $root "seo-inspect-log.txt"
 $popup = Join-Path $root "scripts\seo\popup.ps1"
 
-$n = if ($args.Count -gt 0) { [int]$args[0] } else { 42 }
+$n = if ($args.Count -gt 0) { [int]$args[0] } else { 14 }
 
 $ts = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
 Add-Content -Path $log -Value "`n===== $ts ====="

@@ -14,7 +14,7 @@ import { execSync } from "node:child_process"
 import { fileURLToPath } from "node:url"
 import { dirname, join, resolve } from "node:path"
 import { extractArticles } from "./article-lint.mjs"
-import { generateArticle, buildBeatPrompt, ARTICLE_TEMPLATE_VARIANT_COUNT } from "../llm/write.mjs"
+import { generateArticle, ARTICLE_TEMPLATE_VARIANT_COUNT } from "../llm/write.mjs"
 import { commitAndPush } from "./git.mjs"
 import { SEGMENTS } from "./geo.mjs"
 
@@ -126,40 +126,18 @@ function enforceDescription(desc, location = null) {
 }
 
 // ---- authority gate: ensure the draft contains concrete proof signals ----
+// NOTE: only reward SAFE/KNOWN facts (Yogyakarta, year, instansi count).
+// Do NOT reward specific measurements (mm, cm, pcs, %) — those encourage
+// the LLM to fabricate technical specs it doesn't actually know.
 function isAuthoritative(content) {
   const c = content || ""
   let score = 0
   if (/\b(19|20)\d{2}\b/.test(c)) score += 1
   if (/Yogyakarta|Jogja/i.test(c)) score += 2
-  if (/\b\d+\s?(tahun|instansi|klien|event|mm|cm|pcs|ribu|ratusan|%|x)\b/i.test(c)) score += 2
+  if (/\b\d+\s?(tahun|instansi|klien|event|ribu|ratusan)\b/i.test(c)) score += 2
   if (/sejak|berdiri|pengalaman|ratusan|ribuan|1\.000|1000\+/i.test(c)) score += 2
   if (/instansi|klien|pelanggan|event nasional|universitas|kementerian/i.test(c)) score += 1
   return score >= 3
-}
-async function fetchOutline(url) {
-  const ctrl = new AbortController()
-  const t = setTimeout(() => ctrl.abort(), 15000)
-  try {
-    const res = await fetch(url, { signal: ctrl.signal, headers: { "User-Agent": "Mozilla/5.0" } })
-    if (!res.ok) return null
-    const html = await res.text()
-    const clean = (s) => (s || "").replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim()
-    const title = (html.match(/<title>([^<]*)<\/title>/i) || [])[1] || ""
-    const outline = []
-    for (const m of html.matchAll(/<h[1-3][^>]*>([\s\S]*?)<\/h[1-3]>/gi)) {
-      const txt = clean(m[1])
-      if (txt) outline.push(txt)
-    }
-    const text = html.replace(/<(script|style)[^>]*>[\s\S]*?<\/(script|style)>/gi, " ")
-    const words = (text.replace(/<[^>]*>/g, " ").match(/\S+/g) || []).length
-    const bullets = [...html.matchAll(/<li[^>]*>([\s\S]*?)<\/li>/gi)]
-      .map((m) => clean(m[1])).filter(Boolean).slice(0, 15)
-    return { title, outline: outline.slice(0, 25), words, bullets }
-  } catch {
-    return null
-  } finally {
-    clearTimeout(t)
-  }
 }
 
 function slugify(s) {
@@ -499,20 +477,23 @@ const escTpl = (s) => String(s).replace(/\\/g, "\\\\").replace(/`/g, "\\`").repl
 // ---------------------------------------------------------------- main
 async function main() {
   const args = process.argv.slice(2)
-  let keyword = "", category = null
-  let commitPush = false, beat = false, competitorUrl = null
-  let province = null, segment = null
+  let keyword = ""
+  let category = null
+  let commitPush = false
+  let province = null
+  let segment = null
+  let dryRun = false
+  
   for (let i = 0; i < args.length; i++) {
     if (args[i] === "--category") category = args[++i]
     else if (args[i] === "--commit-push") commitPush = true
-    else if (args[i] === "--beat") beat = true
-    else if (args[i] === "--competitor-url") competitorUrl = args[++i]
     else if (args[i] === "--province") province = args[++i]
     else if (args[i] === "--segment") segment = args[++i]
+    else if (args[i] === "--dry-run") dryRun = true
     else if (!keyword) keyword = args[i]
   }
   if (!keyword) {
-    console.error('Pakai: node scripts/seo/article-generate.mjs "<keyword>" [--category X] [--province "Nama Provinsi"] [--segment pemerintahan|kampus|eo|komunitas] [--beat] [--competitor-url URL] [--commit-push]')
+    console.error('Pakai: node scripts/seo/article-generate.mjs "<keyword>" [--category X] [--province "Nama Provinsi"] [--segment pemerintahan|kampus|eo|komunitas] [--commit-push] [--dry-run]')
     process.exit(1)
   }
   // lokasi target (provinsi) & segmen — diinject dari ideas.mjs via env saat
@@ -521,10 +502,10 @@ async function main() {
   const seg = segment || process.env.ARTICLE_SEGMENT || null
   const segLabel = segmentLabel(seg)
   const segCtx = seg ? SEGMENTS.find((s) => s.key === seg)?.ctx || "" : ""
-  if (!category) category = beat ? "Blog" : inferCategory(keyword)
+  if (!category) category = inferCategory(keyword)
 
   let slug = slugify(keyword)
-  if (!beat && !/custom/.test(keyword.toLowerCase())) slug += "-custom"
+  if (!/custom/.test(keyword.toLowerCase())) slug += "-custom"
 
   const working = readFileSync(articlesPath, "utf8")
   const used = usedImages(working)
@@ -605,31 +586,16 @@ async function main() {
     process.exit(1)
   }
 
-  console.log(`Keyword: "${keyword}"  ->  slug: ${slug}  kategori: ${category}${beat ? "  [BEAT MODE]" : ""}`)
+  console.log(`Keyword: "${keyword}"  ->  slug: ${slug}  kategori: ${category}`)
 
   // Pilih varian kerangka artikel secara deterministik dari slug agar tiap
   // artikel punya struktur & sudut pandang berbeda (menekan kemiripan konten).
   const variantIdx = hashStr(slug) % ARTICLE_TEMPLATE_VARIANT_COUNT
 
-  // ---- competitor outline (skyscraper) ----
-  let competitor = null
-  if (beat && competitorUrl) {
-    console.log("Mengambil kerangka artikel pesaing: " + competitorUrl)
-    const o = await fetchOutline(competitorUrl)
-    if (o && o.outline.length) {
-      competitor = { ...o, url: competitorUrl }
-      console.log(`  pesaing: "${o.title}" (~${o.words} kata, ${o.outline.length} heading)`)
-    } else {
-      console.log("  gagal ambil kerangka pesaing, lanjut mode komprehensif.")
-    }
-  }
-
-  const minWords = beat ? 1500 : 800
-  const targetWords = beat ? 1800 : 1100
+  const minWords = 1500
+  const targetWords = 1800
   const genOpts = (extra) =>
-    beat
-      ? { keyword, category, prompt: buildBeatPrompt({ keyword, category, competitor, location, segment: segLabel, segmentCtx: segCtx, variant: variantIdx, extra }) }
-      : { keyword, category, location, segment: segLabel, segmentCtx: segCtx, variant: variantIdx, extra }
+    ({ keyword, category, location, segment: segLabel, segmentCtx: segCtx, variant: variantIdx, extra })
 
   console.log("Menulis prose via LLM...")
   let data = await generateArticle(genOpts())
@@ -656,7 +622,7 @@ async function main() {
 
   // ---- quality self-check: H2 count, keyword in first 240 chars, FAQ format ----
   {
-    const minH2 = beat ? 6 : 4
+    const minH2 = 6
     const headingCount = (data.content || "").match(/<h2[^>]*>/gi)?.length || 0
     if (headingCount < minH2) {
       console.log(`Kualitas: hanya ${headingCount} heading <h2> (min ${minH2}), perbaiki (percobaan 1)...`)
@@ -691,7 +657,7 @@ async function main() {
   for (let a = 1; a <= 2; a++) {
     if (isAuthoritative(data.content || "")) break
     console.log(`Konten kurang otoritatif (tidak ada bukti konkret), regenerate (percobaan ${a})...`)
-    data = await generateArticle(genOpts("\n\nPENTING: draf sebelumnya KURANG OTORITATIF dan tidak punya bukti konkret. Wajib sertakan fakta: Karyamedia berbasis YOGYAKARTA/JOGJA, produsen langsung, melayani RATUSAN INSTANSI & EVENT nasional, serta cantumkan ANGKA/TAHUN/STANDAR produksi. Hindari kalimat promosi generik tanpa bukti."))
+    data = await generateArticle(genOpts("\n\nPENTING: draf sebelumnya KURANG OTORITATIF dan tidak punya bukti konkret. Wajib sertakan fakta: Karyamedia berbasis YOGYAKARTA/JOGJA, produsen langsung, melayani RATUSAN INSTANSI & EVENT nasional. Hindari kalimat promosi generik tanpa bukti. JANGAN mengarang angka harga, lead time, atau spesifikasi teknis yang tidak disediakan."))
   }
 
   // Auto-fix English words that slipped into Indonesian content
@@ -801,6 +767,19 @@ async function main() {
     console.error("Gagal menyisipkan artikel (pola array tidak ditemukan).")
     process.exit(1)
   }
+  
+  if (dryRun) {
+    console.log(`\n[DRY-RUN] Artikel akan disisipkan: blog/${slug}`)
+    console.log(`[DRY-RUN] Image: ${image}`)
+    console.log(`[DRY-RUN] Category: ${category}`)
+    console.log(`[DRY-RUN] Tags: ${tags.join(', ')}`)
+    console.log(`\n[DRY-RUN] Preview content (500 karakter pertama):`)
+    console.log(content.substring(0, 500) + '...')
+    console.log(`\n[DRY-RUN] Mode dry-run aktif - tidak ada file yang ditulis atau commit.`)
+    console.log(`[DRY-RUN] Jalankan tanpa --dry-run untuk generate artikel sebenarnya.`)
+    return
+  }
+  
   writeFileSync(articlesPath, newText)
   console.log(`✓ Artikel disisipkan: blog/${slug} (image: ${image})`)
   console.log(`GENERATED_SLUG:${slug}`)

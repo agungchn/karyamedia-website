@@ -1,0 +1,13 @@
+Kunci API khusus paket
+sk-sp-H.DDDMH.cQgL.MEUCIDIQQX5T03GLhIGRtsNAp9ZagedMoY60gQYf-blSWXqgAiEAvMwuwakRFNiJEhk5jrzMmKRRJtTw1uLkHJ-EeIQ_Tzw
+Harap jaga kerahasiaan informasi kunci API Anda dan jangan membagikannya kepada orang lain atau mengungkapkannya dalam kode klien Anda. Untuk melindungi keamanan akun Anda, kami dapat secara otomatis menonaktifkan kunci API yang diungkapkan secara publik. Anda juga dapat mengatur ulang kunci API Anda kapan saja untuk menghasilkan kunci API baru.
+
+Saat ini belum ada Kunci API khusus. Klik tombol untuk membuatnya.
+
+URL Dasar Khusus Paket
+Alat yang kompatibel dengan protokol antarmuka OpenAI
+https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1
+
+Alat yang kompatibel dengan protokol antarmuka antroposentris
+https://token-plan.ap-southeast-1.maas.aliyuncs.com/apps/anthropic
+Akses alat AI dengan cepat.

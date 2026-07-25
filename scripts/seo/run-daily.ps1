@@ -1,9 +1,9 @@
 # Daily SEO article generator wrapper:
-# 1. generate + commit + push 5 artikel (seo:ideas --generate-top 5 --commit-push)
+# 1. generate + commit + push 2 artikel sekaligus (seo:ideas --generate-top 2 --commit-push)
 # 2. show a Windows toast when done
 # 3. after Vercel deploy, check the live URL(s) and toast again if online
 # 4. auto-post ke GBP, FB & IG lewat fire-and-forget
-# Dijadwalkan 2x sehari (mis. 12:30 & 18:30) via Task Scheduler -> total 10 artikel/hari.
+# Dijadwalkan 1x sehari (jam 20:00 WIB) via Task Scheduler -> total 2 artikel/hari.
 $ErrorActionPreference = "Continue"
 $root = "H:\karyamedia-web"
 Set-Location $root
@@ -75,7 +75,7 @@ try {
   # konsolidasi gagal bukan masalah kritis
 }
 
-$out = & npm run seo:ideas -- --generate-top 5 --commit-push 2>&1 | Tee-Object -FilePath $log -Append | Out-String
+$out = & npm run seo:ideas -- --generate-top 2 --commit-push 2>&1 | Tee-Object -FilePath $log -Append | Out-String
 $ideasExit = $LASTEXITCODE
 
 $slugs = [regex]::Matches($out, "GENERATED_SLUG:(\S+)") | ForEach-Object { $_.Groups[1].Value }

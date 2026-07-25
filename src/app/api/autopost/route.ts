@@ -200,16 +200,26 @@ export async function GET(req: NextRequest) {
   }
 
   const postedRaw = req.nextUrl.searchParams.get("posted") || ""
-  const posted = new Set(postedRaw ? postedRaw.split(",") : [])
+  const postedPlatforms = postedRaw ? JSON.parse(postedRaw) : { fb: [], ig: [], li: [] }
 
-  const toPost = items.filter((i) => !posted.has(i.guid)).slice(0, LIMIT)
+  const toPost = items.filter((i) => {
+    const fbDone = postedPlatforms.fb?.includes(i.guid)
+    const igDone = postedPlatforms.ig?.includes(i.guid)
+    const liDone = postedPlatforms.li?.includes(i.guid)
+    return !(fbDone && igDone && liDone)
+  }).slice(0, LIMIT)
 
   if (toPost.length === 0) {
-    return NextResponse.json({ message: "tidak ada artikel baru", posted: [], nextPosted: [...posted] })
+    return NextResponse.json({ message: "tidak ada artikel baru", posted: [], nextPosted: postedPlatforms })
   }
 
   const results: Array<Record<string, unknown>> = []
-  const updatedPosted = new Set(posted)
+  const updatedPosted = {
+    fb: [...(postedPlatforms.fb || [])],
+    ig: [...(postedPlatforms.ig || [])],
+    li: [...(postedPlatforms.li || [])],
+  }
+
   for (const item of toPost) {
     const r: Record<string, unknown> = { title: item.title, link: item.link }
     if (DRYRUN) {
@@ -217,25 +227,52 @@ export async function GET(req: NextRequest) {
       results.push(r)
       continue
     }
+
+    const fbDone = updatedPosted.fb.includes(item.guid)
+    const igDone = updatedPosted.ig.includes(item.guid)
+    const liDone = updatedPosted.li.includes(item.guid)
+
     try {
-      if (FB_PAGE_ID && FB_PAGE_TOKEN) {
-        r.fb = await postToFacebook(item)
-        updatedPosted.add(item.guid)
+      // Facebook
+      if (!fbDone && FB_PAGE_ID && FB_PAGE_TOKEN) {
+        try {
+          r.fb = await postToFacebook(item)
+          updatedPosted.fb.push(item.guid)
+          r.fbStatus = "success"
+        } catch (e) {
+          r.fbError = String(e)
+          r.fbStatus = "failed"
+        }
+      } else if (fbDone) {
+        r.fbStatus = "already_posted"
       }
-      if (IG_USER_ID && FB_PAGE_TOKEN) {
+
+      // Instagram
+      if (!igDone && IG_USER_ID && FB_PAGE_TOKEN) {
         try {
           r.ig = await postToInstagram(item)
+          updatedPosted.ig.push(item.guid)
+          r.igStatus = "success"
         } catch (e) {
           r.igError = String(e)
+          r.igStatus = "failed"
         }
+      } else if (igDone) {
+        r.igStatus = "already_posted"
       }
-      if (LI_TOKEN) {
+
+      // LinkedIn
+      if (!liDone && LI_TOKEN) {
         try {
           r.li = await postToLinkedIn(item)
-          updatedPosted.add(item.guid)
+          updatedPosted.li.push(item.guid)
+          r.liStatus = "success"
         } catch (e) {
           r.liError = String(e)
+          r.liStatus = "failed"
         }
+      } else if (liDone) {
+        r.liStatus = "already_posted"
       }
     } catch (e) {
       r.error = String(e)
@@ -243,5 +280,5 @@ export async function GET(req: NextRequest) {
     results.push(r)
   }
 
-  return NextResponse.json({ message: "ok", posted: results, nextPosted: [...updatedPosted] })
+  return NextResponse.json({ message: "ok", posted: results, nextPosted: updatedPosted })
 }

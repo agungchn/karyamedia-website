@@ -11,14 +11,20 @@ const STATE_PATH = join(__dirname, "..", "data", "autopost-posted.json")
 const SITE_URL = process.env.SITE_URL || "https://karyamediasouvenir.com"
 const SECRET = process.env.AUTOPOST_SECRET || ""
 
-// baca state lokal (daftar GUID artikel yg sudah pernah diposting)
-let postedGuids = []
+// baca state lokal (daftar GUID artikel yg sudah pernah diposting per platform)
+let postedPlatforms = { fb: [], ig: [], li: [] }
 if (existsSync(STATE_PATH)) {
   try {
-    postedGuids = JSON.parse(readFileSync(STATE_PATH, "utf8"))
+    const data = JSON.parse(readFileSync(STATE_PATH, "utf8"))
+    // backward compatibility: jika format lama (array), migrate ke format baru
+    if (Array.isArray(data)) {
+      postedPlatforms = { fb: data, ig: [], li: [] }
+    } else {
+      postedPlatforms = data
+    }
   } catch {}
 }
-const postedParam = postedGuids.length ? `&posted=${postedGuids.join(",")}` : ""
+const postedParam = `&posted=${encodeURIComponent(JSON.stringify(postedPlatforms))}`
 
 const url = `${SITE_URL}/api/autopost?secret=${SECRET}${postedParam}`
 
@@ -33,7 +39,21 @@ try {
   const json = JSON.parse(text)
   if (json.nextPosted) {
     writeFileSync(STATE_PATH, JSON.stringify(json.nextPosted))
-    console.log(`[autopost] state saved: ${json.nextPosted.length} guid(s)`)
+    const fbCount = json.nextPosted.fb?.length || 0
+    const igCount = json.nextPosted.ig?.length || 0
+    const liCount = json.nextPosted.li?.length || 0
+    console.log(`[autopost] state saved: FB=${fbCount}, IG=${igCount}, LI=${liCount}`)
+  }
+  
+  // tampilkan summary per platform
+  if (json.posted && json.posted.length > 0) {
+    console.log("\n[autopost] Summary:")
+    for (const item of json.posted) {
+      console.log(`  ${item.title}`)
+      console.log(`    FB: ${item.fbStatus || "skipped"}`)
+      console.log(`    IG: ${item.igStatus || "skipped"}`)
+      console.log(`    LI: ${item.liStatus || "skipped"}`)
+    }
   }
 } catch (e) {
   console.error("[autopost] gagal:", e)

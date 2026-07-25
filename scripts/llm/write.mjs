@@ -202,7 +202,7 @@ const TEMPLATE_VARIANTS = [
       "FAQ",
     ],
     emphasis:
-      "Sertakan angka 'mulai dari' & range harga bila relevan. Sebutkan 2-3 produk: piala, medali, prasasti.",
+      "Bahas faktor yang memengaruhi value produk tanpa menyebut angka harga spesifik. Sebutkan 2-3 produk: piala, medali, prasasti.",
     },
   {
     name: "trends",
@@ -270,9 +270,9 @@ function variantBlock(variant, keyword, loc) {
     headings.map((h, i) => `${i + 1}. <h2>${h}</h2>`).join("\n") +
     `\nSudut pandang pembuka: ${place(variant.angle)}` +
     `\nPenekanan isi: ${place(variant.emphasis)}` +
-    `\nKEKHUSUSAN (wajib agar tidak mirip artikel umum): sebutkan MINIMAL 3 konteks spesifik untuk ${place("{loc}")} ` +
-    `(mis. kategori instansi, kampus, komunitas, atau event lokal di wilayah tersebut) dan MINIMAL 2 spesifikasi teknis produk ` +
-    `(ukuran dalam mm, jenis bahan, atau jenis finishing). Gunakan istilah & contoh yang se-spesifik mungkin pada topik ini.`
+    `\\nKEKHUSUSAN (wajib agar tidak mirip artikel umum): sebutkan MINIMAL 3 konteks spesifik untuk ${place("{loc}")} ` +
+    `(mis. kategori instansi, kampus, komunitas, atau event lokal di wilayah tersebut). ` +
+    `PENTING: JANGAN mengarang angka harga, lead time, atau spesifikasi teknis (mm, gram, dll) yang tidak disediakan. Gunakan frasa umum seperti "harga kompetitif", "waktu pengerjaan bervariasi", "kualitas premium".`
   )
 }
 
@@ -340,12 +340,13 @@ Buat objek JSON dengan field berikut:
 - "description": meta description, 120-160 karakter, mengandung keyword utama. PASTI berupa kalimat UTUH yang natural, BUKAN potongan kalimat. HITUNG karakternya: jika lebih dari 160 akan dipotong paksa dan jadi tidak rapi. Idealnya 155-160 karakter.
 - "tags": array 4-6 kata kunci Indonesia relevan (semua lowercase); tags[0] HARUS sama dengan keyword utama.
 - "content": artikel lengkap dalam bentuk HTML (string tunggal). Syarat content:
-  * minimal 800 kata (wajib >=800 agar lolos standar)
+  * minimal 1500 kata (wajib >=1500 agar lolos standar)
   * minimal 4 heading <h2> (pakai tag <h2>...</h2>); HARUS ada satu <h2>FAQ</h2> di akhir
   * 240 karakter PERTAMA konten (paragraf pembuka) HARUS mengandung keyword utama secara utuh
   * sebutkan nama produk/kategori terkait (plakat, piala, medali, prasasti, gift box / box kemasan, souvenir wisuda, nama dada, dll) SECARA NATURAL di paragraf pembuka/awal artikel, agar tautan ke katalog produk otomatis bisa disematkan di bagian atas
   * ${BANNED_BLOCK} — fokus pada prasasti sebagai PRODUK PLAQUE/PIALA, bukan artefak sejarah
-  * gunakan nada ahli produsen yang rendah hati & berbukti: sertakan bukti konkret (Karyamedia berbasis Yogyakarta, produsen langsung, melayani ratusan instansi & event nasional, standar ukiran/produksi presisi) bila relevan; tekankan kualitas, presisi, dan bahwa Karyamedia adalah produsen langsung (pabrik) sehingga harga lebih sehat & transparan; hindari bahasa promosi murahan dan JANGAN menyebut pihak lain (calo/agen) secara negatif
+  * gunakan nada ahli produsen yang rendah hati & berbukti: sertakan bukti konkret (Karyamedia berbasis Yogyakarta, produsen langsung, melayani ratusan instansi & event nasional) bila relevan; tekankan kualitas dan bahwa Karyamedia adalah produsen langsung (pabrik) sehingga harga lebih sehat & transparan; hindari bahasa promosi murahan dan JANGAN menyebut pihak lain (calo/agen) secara negatif
+  * PENTING: JANGAN mengarang angka harga (Rp), lead time (hari kerja), atau spesifikasi teknis (mm, gram, mikron) yang tidak disediakan. Gunakan frasa umum seperti "harga kompetitif", "waktu pengerjaan bervariasi", "kualitas premium". Jika perlu menyebut angka, gunakan angka yang sudah umum diketahui (mis. "sejak 2001", "ratusan instansi")
   * WAJIB ada bagian <h2>FAQ</h2> di akhir dengan 3-5 pasang pertanyaan & jawaban, tiap pasang PASTI format <h3>Pertanyaan?</h3><p>Jawaban.</p> (pakai <h3> untuk pertanyaan dan <p> untuk jawaban)
   * bahasa Indonesia natural & mudah dipahami, SEO-friendly, sebutkan "Karyamedia" secara wajar 1-2 kali
    * JANGAN gunakan markdown; hanya HTML inline (<p>, <h2>, <h3>, <strong>, <ul><li> bila perlu)
@@ -353,57 +354,9 @@ Buat objek JSON dengan field berikut:
    * JANGAN sertakan satupun link/hyperlink (akan ditambahkan otomatis nanti)
    * HTML WAJIB valid: semua tag <h2>, <h3>, <p>, <ul>, <li> harus ditutup dengan benar, tidak boleh ada tag tutup tanpa buka atau sebaliknya (contoh SALAH: ...teks.</h2><h2>FAQ...) — tag harus rapi dan properti nested.
    Return HANYA objek JSON, tanpa teks lain.${VARIATION_INSTR}${vBlock}${extra}`
-}
+   }
 
-export function buildBeatPrompt({ keyword, category, competitor = null, location = null, segment = null, segmentCtx = null, variant = null, extra = "" }) {
-  const c = competitor && competitor.outline && competitor.outline.length ? competitor : null
-  const compBlock = c
-    ? `
-KONTEKS ARTIKEL PESAING (yang akan dikalahkan — URL: ${c.url || ""}):
-Judul pesaing: ${c.title || ""}
-Kerangka pesaing (heading):
-${c.outline.map((h) => "- " + h).join("\n")}
-Poin bullet pesaing:
-${(c.bullets || []).map((b) => "* " + b).join("\n")}
-Panjang artikel pesaing: ~${c.words || "?"} kata.
-`
-    : ""
-  const loc = location || "seluruh Indonesia"
-  const seg = segment || "instansi, kampus, dan event"
-  const segCtxTxt = segmentCtx ? ` (mis. ${segmentCtx})` : ""
-  const segExTxt = segment ? (SEGMENT_EXAMPLES[segment] || "") : ""
-  const vBlock = variantBlock(resolveVariant(variant, keyword), keyword, loc)
-  return `Tulis artikel SEO berbahasa Indonesia, 100% ORISINAL (JANGAN meniru/mengutip teks pesaing; pakai sudut pandang & contoh sendiri), untuk bisnis "Karyamedia" (produsen souvenir & custom manufacturing berbasis Yogyakarta yang melayani seluruh Indonesia, termasuk ${loc}: plakat, medali, piala, prasasti, gift box / box kemasan, souvenir wisuda, nama dada, dll).
-
-Keyword utama: "${keyword}"
-Kategori: ${category}
-Segmen target: ${seg}${segCtxTxt}; gunakan contoh kasus, narasi, kebutuhan, dan kata kunci long-tail yang relevan dengan ${loc} serta segmen tersebut secara natural; jangan ubah fakta bahwa Karyamedia berbasis Yogyakarta.
-${segExTxt}
-SESUAIKAN angle dengan kategori keyword: jika keyword tentang medali → bahas medali, jika gift box → bahas gift box, jangan memaksakan topik plakat atau souvenir wisuda jika tidak relevan.
-${compBlock}
-Buat objek JSON dengan field berikut:
-- "title": MAKSIMAL 60 karakter (WAJIB ≤60, HITUNG KARAKTERNYA! Jika lebih akan dipotong paksa dan jadi tidak rapi), HARUS mengandung keyword utama secara utuh. GUNAKAN HURUF KAPITAL AWAL (Title Case), contoh: "Plakat Akrilik Custom untuk Kantor Desa" — jangan seluruhnya huruf kecil. AKHIRI dengan kata LENGKAP (bukan "dan", "&", "dari", "untuk", "di", "ke", "yang").
-- "description": 120-160 karakter, mengandung keyword utama. PASTI kalimat UTUH natural, BUKAN potongan. HITUNG karakternya: jika >160 dipotong paksa, ideal 155-160.
-- "tags": array 4-6 kata kunci Indonesia lowercase; tags[0] SAMA dengan keyword utama.
-- "content": artikel HTML (string tunggal) dengan syarat:
-  * PANJANG 1500-2200 kata (wajib >=1500).
-  * MINIMAL 6 heading <h2> (lebih dalam & komprehensif dari pesaing); HARUS ada satu <h2>FAQ</h2> di akhir
-  * 240 karakter PERTAMA (paragraf pembuka) HARUS mengandung keyword utama secara utuh.
-  * sebutkan nama produk/kategori terkait (plakat, piala, medali, prasasti, gift box, souvenir wisuda, nama dada, dll) SECARA NATURAL di awal artikel, agar tautan ke katalog produk otomatis bisa disematkan di bagian atas.
-  * ${BANNED_BLOCK} — fokus pada prasasti sebagai PRODUK PLAQUE/PIALA, bukan artefak sejarah
-  * JIKA topik membandingkan (vs / atau / mending / perbandingan), sertakan <table> perbandingan jelas (kolom: aspek, opsi A, opsi B) dengan narasi Karyamedia.
-  * Gunakan nada ahli produsen & sertakan BUKTI KONKRET: Karyamedia berbasis YOGYAKARTA, produsen langsung, melayani RATUSAN instansi & event nasional, sebutkan angka/spesifikasi riil (ukuran mm, lead time, range harga "mulai dari", standar quality control). Tekankan bahwa Karyamedia adalah PRODUSEN LANGSUNG (pabrik) sehingga harga lebih sehat & transparan; hindari bahasa promosi murahan dan JANGAN menyebut pihak lain (calo/agen) secara negatif.
-  * ${c ? "Tutupi SEMUA poin pesaing DI ATAS, lalu TAMBAHKAN minimal 3 sudut pandang/section BARU yang TIDAK dibahas pesaing (lebih mendalam, contoh kasus, tips praktis, mitos, checklist, atau data Karyamedia)." : "Buat artikel paling komprehensif & otoritatif di topik ini."}
-  * WAJIB <h2>FAQ</h2> di akhir dengan 5-7 pasang <h3>Pertanyaan?</h3><p>Jawaban.</p>
-  * Bahasa natural, SEO-friendly, sebut "Karyamedia" wajar 1-2x.
-   * JANGAN markdown; hanya HTML inline (<p>, <h2>, <h3>, <table>, <ul><li>, <strong>).
-   * JIKA menyisipkan gambar, SETIAP tag <img> WAJIB punya atribut alt yang deskriptif berbahasa Indonesia (contoh: alt="Medali custom untuk lomba dan turnamen"); JANGAN pernah membuat <img> tanpa alt.
-   * JANGAN satupun hyperlink (link disuntik otomatis nanti).
-   * HTML WAJIB valid: semua tag <h2>, <h3>, <p>, <ul>, <li> harus ditutup dengan benar, tidak boleh ada tag tutup tanpa buka atau sebaliknya (contoh SALAH: ...teks.</h2><h2>FAQ...) — tag harus rapi dan properti nested.
-   Return HANYA objek JSON, tanpa teks lain.${VARIATION_INSTR}${vBlock}${extra}`
-}
-
-export async function generateArticle(input) {
+   export async function generateArticle(input) {
   if (process.env.LLM_MOCK && process.env.LLM_MOCK !== "0" && process.env.LLM_MOCK !== "false") return MOCK
 
   const prompt = input.prompt || buildPrompt(input)
@@ -413,29 +366,31 @@ export async function generateArticle(input) {
   const alibabaUrl = getAlibabaUrl()
   const alibabaModel = getAlibabaModel()
 
-  // Prioritaskan OpenCode Go (gratis, paling stabil)
-  if (zenKey && zenKey !== "PASTE_ZEN_API_KEY_HERE") {
-    try {
-      console.error(`Menggunakan OpenCode Go (${GO_MODEL})...`)
-      return await callGo(prompt, zenKey)
-    } catch (e) {
-      console.error(`OpenCode Go gagal: ${e.message}. Fallback ke Alibaba...`)
-    }
-  } else {
-    console.error("API key OpenCode Go belum diisi, fallback ke Alibaba.")
-  }
-
+  // Prioritaskan Alibaba Qwen (qwen3.7-max, paket berbayar)
   if (alibabaKey && alibabaUrl) {
     try {
       console.error(`Menggunakan Alibaba Qwen (${alibabaModel})...`)
       return await callAlibaba(prompt, alibabaKey, alibabaUrl, alibabaModel)
     } catch (e) {
-      console.error(`Alibaba Qwen gagal: ${e.message}. Fallback ke Gemini...`)
+      console.error(`Alibaba Qwen gagal: ${e.message}. Fallback ke OpenCode Go...`)
     }
   } else {
-    console.error("API key Alibaba belum diisi, fallback ke Gemini.")
+    console.error("API key Alibaba belum diisi, fallback ke OpenCode Go.")
   }
 
+  // Fallback ke OpenCode Go (gratis, tapi ada quota limit)
+  if (zenKey && zenKey !== "PASTE_ZEN_API_KEY_HERE") {
+    try {
+      console.error(`Menggunakan OpenCode Go (${GO_MODEL})...`)
+      return await callGo(prompt, zenKey)
+    } catch (e) {
+      console.error(`OpenCode Go gagal: ${e.message}. Fallback ke Gemini...`)
+    }
+  } else {
+    console.error("API key OpenCode Go belum diisi, fallback ke Gemini.")
+  }
+
+  // Fallback terakhir ke Gemini
   if (geminiKey && geminiKey !== "PASTE_GEMINI_API_KEY_HERE") {
     const models = (process.env.GEMINI_MODELS || process.env.GEMINI_MODEL ||
       "gemini-2.0-flash,gemini-flash-latest")

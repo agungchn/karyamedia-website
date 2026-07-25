@@ -1,10 +1,8 @@
 // SEO content-idea finder (steps 1-2 of the automation):
-// pulls real search queries from Google Search Console AND Bing Webmaster
-// Tools (merged & deduped by query), filters out queries that ALREADY have a
-// matching article (gap analysis), ranks the rest by search demand
-// (impressions, with a soft Bing seed-demand boost), and prints a prioritized
-// list of topics to write. Optionally chains straight into article:generate
-// for the top N.
+// pulls real search queries from Google Search Console, filters out queries
+// that ALREADY have a matching article (gap analysis), ranks the rest by
+// search demand (impressions), and prints a prioritized list of topics to
+// write. Optionally chains straight into article:generate for the top N.
 //
 //   node scripts/seo/ideas.mjs                 # print prioritized opportunities
 //   node scripts/seo/ideas.mjs --generate-top 3  # also draft top 3 via LLM
@@ -12,24 +10,18 @@
 //
 // Sources (merged, deduped, ranked by demand):
 //   1. GSC search-analytics (real Google queries)
-//   2. Bing GetQueryStats (real Bing queries)
-//   3. Bing GetKeywordStats -> seed-derived long-tail topics (data-driven,
-//      expanded from the top-demand seeds so content follows real market demand)
-//   4. Competitor sitemaps (scripts/seo/competitors.json) -> proven-ranking
-//      topics scraped from public sitemaps of rival sites
-//   5. Curated long-tail fallback (FALLBACK_KEYWORDS) when the above are empty.
-// Bing seed demand is also used as a soft ranking boost. Needs GSC credentials
-// (scripts/gsc/credentials.json). Set GSC_MOCK / BING_MOCK for offline fixtures.
-// Set GSC_MOCK / BING_MOCK to run offline with fixtures (no network).
+//   2. Geo pool (provinsi × segmen × produk)
+//   3. Curated long-tail fallback (FALLBACK_KEYWORDS) when the above are empty.
+// Needs GSC credentials (scripts/gsc/credentials.json).
+// Set GSC_MOCK to run offline with fixtures (no network).
 
 import { execSync } from "node:child_process"
 import { readFileSync, writeFileSync } from "node:fs"
 import { fileURLToPath } from "node:url"
 import { dirname, join, resolve } from "node:path"
 import { getToken, getSite, api } from "../gsc/analyze.mjs"
-import { bingQueryOpportunities, bingSeedVolumes, bingTopicIdeas } from "../bing/source.mjs"
-import { competitorTopics } from "./competitor-topics.mjs"
 import { buildTopics } from "./geo.mjs"
+import { googleSuggest } from "../google/suggest.mjs"
 import { extractArticles } from "./article-lint.mjs"
 import { inferCategory } from "./article-generate.mjs"
 import { commitAndPush } from "./git.mjs"
@@ -71,6 +63,7 @@ const opt = (name) => {
 const GEN_TOP = parseInt(opt("--generate-top") || "0", 10)
 const DAYS = parseInt(opt("--days") || "28", 10)
 const COMMIT_PUSH = args.includes("--commit-push")
+const DRY_RUN = args.includes("--dry-run")
 
 // --- query coverage check (reuse token logic) ---
 const STOP = new Set(
@@ -156,7 +149,7 @@ async function main() {
       }
     }
     if (!target) {
-      console.error("Tidak menemukan property Search Console — menggunakan fallback (Geo + Bing + curated).")
+      console.error("Tidak menemukan property Search Console — menggunakan fallback (Geo + curated).")
       rows = []
     } else {
       console.log(`GSC property: ${target}\n`)
@@ -179,25 +172,7 @@ async function main() {
     }
   }
 
-  // --- Bing Webmaster Tools: real queries (Bing's GSC equivalent) ---
-  let bingRows = []
-  if (process.env.BING_MOCK) {
-    bingRows = ["piala golf custom untuk event", "nama dada akrilik premium", "plakat resin custom"].map(
-      (q) => ({ keys: [q], impressions: 300, clicks: 3, ctr: 0.01, position: 6 }),
-    )
-    console.log("BING_MOCK aktif — pakai query fixture (tanpa network)")
-  } else if (!process.env.GSC_MOCK) {
-    try {
-      bingRows = await bingQueryOpportunities()
-      console.log(`Total query dari Bing WMT: ${bingRows.length}`)
-    } catch (e) {
-      console.error(`Bing WMT tidak tersedia (${e.message}); lanjut dengan GSC saja.`)
-    }
-  }
-
-  // Merge GSC + Bing by query (case-insensitive), summing demand signals so a
-  // query that ranks on BOTH engines gets the combined demand. Priority order
-  // GSC -> Bing is naturally preserved: real Google demand dominates ranking.
+  // Merge GSC queries by case-insensitive dedup
   const byQuery = new Map()
   const ingest = (r) => {
     const raw = r.keys?.[0] || ""
@@ -214,10 +189,9 @@ async function main() {
     }
   }
   rows.forEach(ingest)
-  bingRows.forEach(ingest)
   rows = [...byQuery.values()]
 
-  console.log(`Total query (GSC + Bing): ${rows.length}\n`)
+  console.log(`Total query (GSC): ${rows.length}\n`)
 
   const working = readFileSync(articlesPath, "utf8")
   const opportunities = []
@@ -234,103 +208,50 @@ async function main() {
       clicks: r.clicks,
       ctr: r.ctr,
       position: r.position,
+      _real: true, // GSC real queries
     })
   }
 
-  // --- Bing seed-derived topic ideas (data-driven from GetKeywordStats) ---
-  // Expand top-demand seeds into specific long-tail topics so the pipeline is
-  // driven by real market demand, not just a static list. Filtered with
-  // nearDup (full-subset) so broad product words already covered don't block
-  // these more specific angles.
-  try {
-    const seedIdeas = await bingTopicIdeas()
-    const have = new Set(opportunities.map((o) => o.query.trim().toLowerCase()))
-    let added = 0
-    for (const idea of seedIdeas) {
-      const q = idea.query.trim().toLowerCase()
-      if (have.has(q)) continue
-      if (nearDup(idea.query, working)) continue
-      opportunities.push({
-        query: idea.query,
-        impressions: Math.round((idea.impressions || 0) / 5),
-        clicks: 0,
-        ctr: 0,
-        position: 0,
-        _seed: true,
-      })
-      have.add(q)
-      added++
-    }
-    if (added) console.log(`Bing seed-derived topics: ${added} (by demand volume)`)
-  } catch (e) {
-    console.error(`Bing seed ideas gagal (${e.message}); lanjut tanpa itu.`)
-  }
+  opportunities.sort((a, b) => b.impressions - a.impressions)
 
-  // --- Competitor sitemap topics (Sumber 5) ---
-  // Scrape PUBLIC sitemaps of competitor sites (scripts/seo/competitors.json)
-  // and turn their article slugs into candidate topics. Strong market signal
-  // (these are proven-ranking topics). Ranked with a demand proxy + seed boost.
-  // Filter: skip product codes, merek pihak ketiga, dan topic terlalu pendek.
-  const COMP_SKIP = /^[a-z]{1,3}\d{2,4}\b|\b(regenic|sinau\s?jogja|bulog|krakatau|annova|bca|btn|pln|pnm|bni|bri|mandiri|unpad|smpn|sman|smkn|sdn)\b/i
+  // Track semua query yang sudah ada untuk dedup
+  const haveQ = new Set(opportunities.map((o) => o.query.trim().toLowerCase()))
+
+  // Google Suggest: fetch long-tail keywords dari Google Autocomplete
+  // Data real dari search behavior, lebih reliable dari geo pool sintetis
+  let suggestAdded = 0
   try {
-    const comp = await competitorTopics()
-    const have = new Set(opportunities.map((o) => o.query.trim().toLowerCase()))
-    let added = 0
-    for (const c of comp) {
-      const q = c.query.trim().toLowerCase()
-      if (have.has(q)) continue
-      if (nearDup(c.query, working)) continue
-      const words = q.split(/\s+/).filter(Boolean)
-      if (words.length < 4) continue
-      if (COMP_SKIP.test(q)) continue
+    const suggestions = await googleSuggest()
+    for (const s of suggestions) {
+      const q = s.query.trim().toLowerCase()
+      if (haveQ.has(q)) continue
+      if (nearDup(s.query, working)) continue
       opportunities.push({
-        query: c.query,
-        impressions: 20,
+        query: s.query,
+        impressions: s.impressions,
         clicks: 0,
         ctr: 0,
         position: 0,
-        _comp: true,
-        _compUrl: c.url,
+        _suggest: true,
       })
-      have.add(q)
-      added++
+      haveQ.add(q)
+      suggestAdded++
     }
-    if (added) console.log(`Competitor-derived topics: ${added} (dari sitemap pesaing, sudah difilter)`)
+    console.log(`Google Suggest: ${suggestAdded} long-tail keywords (imp ${suggestions[0]?.impressions || 50})`)
   } catch (e) {
-    console.error(`Competitor topics gagal (${e.message}); lanjut tanpa itu.`)
-  }
-  // Soft ranking boost from Bing broad seed demand (GetKeywordStats): a topic
-  // that sits under a high-volume seed gets nudged up without overriding the
-  // real per-query demand from GSC/Bing.
-  let seedVol = new Map()
-  try {
-    seedVol = await bingSeedVolumes()
-  } catch {
-    seedVol = new Map()
-  }
-  if (seedVol.size) {
-    const boost = (q) => {
-      const lq = (q || "").toLowerCase()
-      let b = 0
-      for (const [seed, vol] of seedVol) if (lq.includes(seed)) b += vol
-      return Math.round(b / 10)
-    }
-    for (const o of opportunities) o._boost = boost(o.query)
-    opportunities.sort((a, b) => b.impressions + (b._boost || 0) - (a.impressions + (a._boost || 0)))
-  } else {
-    opportunities.sort((a, b) => b.impressions - a.impressions)
+    console.warn(`Google Suggest gagal: ${e.message}`)
   }
 
   // Geo pool: provinsi × segmen × produk dijadikan MESIN KONTEN UTAMA agar
   // artikel baru menyebar ke seluruh Indonesia (bukan cuma Jogja). Selalu
-  // disertakan (bukan sekadar fallback) dengan impression sintetik yang lebih
-  // tinggi dari topik competitor-derived, sehingga generator memprioritaskan
-  // sebaran geografis — namun tetap di bawah demand riil GSC/Bing bila ada.
-  // Rotasi per-hari di buildTopics() menjamin provinsi/segmen terdistribusi
-  // merata, dan topik yang sudah jadi artikel gugur otomatis via nearDup.
-  const GEO_IMP = 100
-  const geo = buildTopics()
-  const haveQ = new Set(opportunities.map((o) => o.query.trim().toLowerCase()))
+  // disertakan (bukan sekadar fallback) dengan impression sintetik yang LEBIH
+  // RENDAH dari demand riil GSC, sehingga generator memprioritaskan
+  // query nyata. Rotasi per-hari di buildTopics() menjamin provinsi/segmen
+  // terdistribusi merata, dan topik yang sudah jadi artikel gugur otomatis
+  // via nearDup.
+  const GEO_IMP = 30
+  const GEO_LIMIT = 50 // Limit untuk performa (nearDup lambat di 22k+ topics)
+  const geo = buildTopics().slice(0, GEO_LIMIT)
   let geoAdded = 0
   for (const t of geo) {
     const q = t.query.trim().toLowerCase()
@@ -357,31 +278,27 @@ async function main() {
   }
   console.log(`Geo pool: ${geoAdded} opportunity provinsi×segmen (imp ${GEO_IMP}) disertakan.`)
 
-  // Re-rank SETELAH geo pool disertakan. Real GSC/Bing queries (tanpa marker
-  // sintetik) mendapat multiplier 3x agar demand asli selalu menang. Turunan
-  // competitor & Bing seed tetap lebih rendah dari GSC.
-  const isRealQuery = (o) => !o._comp && !o._seed && !o._province
-  const realImp = (o) => (isRealQuery(o) ? (o.impressions || 0) * 3 : o.impressions || 0)
-  const reBoost = (q) => {
-    const lq = (q || "").toLowerCase()
-    let b = 0
-    for (const [seed, vol] of seedVol) if (lq.includes(seed)) b += vol
-    return Math.round(b / 10)
+  // Re-rank SETELAH geo pool disertakan. Real GSC queries (dengan flag
+  // _real) mendapat multiplier 10x agar demand asli SELALU menang atas topik
+  // sintetis (geo). Google Suggest (_suggest) dapat multiplier 5x untuk
+  // prioritas di atas Geo pool.
+  const isRealQuery = (o) => o._real === true
+  const isSuggestQuery = (o) => o._suggest === true
+  const realImp = (o) => {
+    if (isRealQuery(o)) return (o.impressions || 0) * 10
+    if (isSuggestQuery(o)) return (o.impressions || 0) * 5
+    return o.impressions || 0
   }
-  if (seedVol.size) {
-    for (const o of opportunities) o._boost = o._comp ? 0 : reBoost(o.query)
-    opportunities.sort((a, b) => realImp(b) + (b._boost || 0) - (realImp(a) + (a._boost || 0)))
-  } else {
-    opportunities.sort((a, b) => realImp(b) - realImp(a))
-  }
+  opportunities.sort((a, b) => realImp(b) - realImp(a))
 
   console.log(`Sudah punya artikel: ${covered}`)
   console.log(`OPPORTUNITY (belum ada artikel): ${opportunities.length}\n`)
-  console.log("Rank | Impressions | Clicks | CTR  | Pos | Query")
-  console.log("-".repeat(70))
+  console.log("Rank | Impressions | Clicks | CTR  | Pos | Source | Query")
+  console.log("-".repeat(80))
   opportunities.slice(0, 30).forEach((o, i) => {
+    const source = o._real ? "GSC" : o._suggest ? "Suggest" : o._province ? "Geo" : "Fallback"
     console.log(
-      `${(i + 1).toString().padEnd(4)} | ${String(o.impressions).padStart(11)} | ${String(o.clicks).padStart(6)} | ${(o.ctr * 100).toFixed(1).padStart(4)}% | ${o.position.toFixed(1).padStart(4)} | ${o.query}`,
+      `${(i + 1).toString().padEnd(4)} | ${String(o.impressions).padStart(11)} | ${String(o.clicks).padStart(6)} | ${(o.ctr * 100).toFixed(1).padStart(4)}% | ${o.position.toFixed(1).padStart(4)} | ${source.padEnd(8)} | ${o.query}`,
     )
   })
 
@@ -399,12 +316,12 @@ async function main() {
         ARTICLE_PROVINCE: o._province || "",
         ARTICLE_SEGMENT: o._segment || "",
       }
-      const beatFlags = o._comp && o._compUrl ? ` --beat --competitor-url "${o._compUrl}"` : ""
-      console.log(`\n### "${o.query}" (kategori: ${cat}${o._province ? ", lokasi: " + o._province : ""}${o._segment ? ", segmen: " + o._segment : ""}${beatFlags ? " [BEAT MODE]" : ""})`)
+      console.log(`\n### "${o.query}" (kategori: ${cat}${o._province ? ", lokasi: " + o._province : ""}${o._segment ? ", segmen: " + o._segment : ""})`)
       // Per-topik: satu topik gagal (mis. duplikat / LLM error) tidak boleh
       // membatalkan topik lain maupun seluruh run.
       try {
-        const out = execSync(`node scripts/seo/article-generate.mjs "${o.query}" --category "${cat}"${beatFlags}`, {
+        const dryRunFlag = DRY_RUN ? " --dry-run" : ""
+        const out = execSync(`node scripts/seo/article-generate.mjs "${o.query}" --category "${cat}"${dryRunFlag}`, {
           env: genEnv,
           cwd: root,
           stdio: "pipe",
@@ -434,7 +351,7 @@ async function main() {
       }
       if (gateOk) {
         try {
-          commitAndPush(`feat(seo): auto-generate ${generatedSlugs.length} article(s) from GSC + Bing opportunities`)
+          commitAndPush(`feat(seo): auto-generate ${generatedSlugs.length} article(s) from GSC opportunities`)
         } catch (err) {
           console.error(
             `\nGagal: commit/push error (${err.message}). Artikel sudah tersimpan di src/data/articles.ts — lakukan git commit/push manual.`,

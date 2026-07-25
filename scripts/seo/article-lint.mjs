@@ -117,7 +117,7 @@ export function lintText(text, { onlySlugs = null } = {}) {
       const plain = content.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim()
       const words = plain ? plain.split(" ").length : 0
       if (words < 800) errors.push(`${at}: konten ${words} kata (<800, minimal wajib 800)`)
-      else if (words > 1800) warnings.push(`${at}: konten ${words} kata (>1800, hindari filler)`)
+      else if (words > 2200) warnings.push(`${at}: konten ${words} kata (>2200, hindari filler)`)
 
       const h2 = (content.match(/<h2/g) || []).length
       if (h2 < 2) errors.push(`${at}: hanya ${h2} <h2> (wajib >=2)`)

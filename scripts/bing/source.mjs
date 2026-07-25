@@ -44,6 +44,7 @@ async function bingCall(method, key) {
 // Real organic queries Bing sees for the site (Bing's equivalent of GSC).
 // Returns rows shaped like GSC search-analytics: { keys:[query], impressions, clicks, ctr, position }
 export async function bingQueryOpportunities() {
+  if (process.env.BING_MOCK) return []
   const key = getBingKey()
   if (!key) return []
   const j = await bingCall("GetQueryStats", key)
@@ -63,50 +64,4 @@ export async function bingQueryOpportunities() {
       }
     })
     .filter(Boolean)
-}
-
-// Broad seed demand (GetKeywordStats) used as a ranking boost, not as topics.
-export async function bingSeedVolumes() {
-  try {
-    const results = await bingOpportunities()
-    const map = new Map()
-    for (const r of results) map.set(r.q.toLowerCase(), r.total || 0)
-    return map
-  } catch {
-    return new Map()
-  }
-}
-
-// Distinctive modifiers used to turn a high-demand seed into specific,
-// coverable long-tail topics. Ordered sensibly so the first combos rank well.
-const MODIFIERS = [
-  "turnamen", "lomba", "kompetisi", "event", "pernikahan", "wisuda",
-  "peresmian", "sekolah", "universitas", "kantor", "perusahaan",
-  "instansi", "klub", "jogja", "yogyakarta", "akrilik", "resin",
-  "marmer", "fiberglass", "kuningan", "premium", "elegan",
-]
-
-// Data-driven topic ideas: expand the top Bing seeds (by real search volume)
-// into long-tail queries. Each candidate carries its seed's volume as a demand
-// proxy so ideas.mjs can rank it. Returns [{ query, impressions }].
-export async function bingTopicIdeas() {
-  let vols
-  try {
-    vols = await bingSeedVolumes()
-  } catch {
-    vols = new Map()
-  }
-  const seeds = [...vols.entries()].sort((a, b) => b[1] - a[1]).slice(0, 8)
-  const out = []
-  const seen = new Set()
-  for (const [seed, vol] of seeds) {
-    for (const m of MODIFIERS) {
-      const q = `${seed} ${m} custom`
-      const key = q.toLowerCase()
-      if (seen.has(key)) continue
-      seen.add(key)
-      out.push({ query: q, impressions: vol })
-    }
-  }
-  return out
 }

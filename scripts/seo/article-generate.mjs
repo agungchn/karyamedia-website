@@ -288,8 +288,19 @@ function pickImage(category, used, keyword = "") {
   const kw = (keyword || "").toLowerCase()
   const kwTokens = new Set(kw.split(/[^a-z0-9]+/).filter((w) => w.length > 2))
 
-  // RULE: judul mengandung "plakat akrilik", "plakat resin", atau "plakat fiberglass"
-  // → ambil gambar dari folder plakat-fiberglass (karena resin & fiberglass = produk sama)
+  // Daftar folder plakat yang tersedia (resin = fiberglass, produk sama)
+  const PLAKAT_FOLDERS = [
+    "plakat-akrilik",
+    "plakat-fiberglass",  // termasuk resin
+    "plakat-kayu",
+    "plakat-kayu-eksklusif",
+    "plakat-marmer",
+    "plakat-wayang",
+    "plakat-wisuda-akrilik",
+  ]
+
+  // RULE 1: judul mengandung "plakat akrilik", "plakat resin", atau "plakat fiberglass"
+  // → ambil gambar dari folder yang spesifik sesuai material
   const isPlakatVariant =
     /plakat[\s-]+(akrilik|resin|fiberglass)/i.test(keyword || "")
   if (isPlakatVariant) {
@@ -325,12 +336,63 @@ function pickImage(category, used, keyword = "") {
     }
   }
 
+  // RULE 2: judul hanya mengandung "plakat" (tanpa spesifikasi material)
+  // → boleh ambil dari SEMUA folder plakat, tapi prioritaskan yang paling relevan dengan keyword
+  const isGenericPlakat = /\bplakat\b/i.test(keyword || "") && !isPlakatVariant
+  if (isGenericPlakat) {
+    // Cari folder plakat yang paling match dengan keyword tokens
+    const relevantFolders = PLAKAT_FOLDERS.filter((folder) => {
+      const folderTokens = new Set(folder.toLowerCase().split(/[-_]+/))
+      // Folder relevan jika ada token keyword yang match (selain "plakat")
+      return [...kwTokens].some((t) => t !== "plakat" && folderTokens.has(t))
+    })
+    
+    // Kalau tidak ada yang match, pakai semua folder plakat
+    const foldersToUse = relevantFolders.length ? relevantFolders : PLAKAT_FOLDERS
+    
+    // Kumpulkan semua gambar dari folder yang dipilih
+    const allCandidates = []
+    for (const folder of foldersToUse) {
+      const dir = join(root, `public/images/${folder}`)
+      if (existsSync(dir)) {
+        for (const file of readdirSync(dir).filter((n) => /\.(png|jpe?g|webp)$/i.test(n))) {
+          const url = `/images/${folder}/${file}`
+          const urlOld = `/images/produk-unggulan/${folder}/${file}`
+          // Skip kalau SUDAH dipakai
+          if (used.has(url) || used.has(urlOld)) continue
+          allCandidates.push(url)
+        }
+      }
+    }
+    
+    // PRIORITAS: Return gambar yang belum dipakai
+    if (allCandidates.length) {
+      return allCandidates[0]  // Return pertama yang belum dipakai
+    }
+    
+    // FALLBACK: Kalau semua sudah dipakai, cari lagi tanpa filter used
+    const fallbackCandidates = []
+    for (const folder of foldersToUse) {
+      const dir = join(root, `public/images/${folder}`)
+      if (existsSync(dir)) {
+        for (const file of readdirSync(dir).filter((n) => /\.(png|jpe?g|webp)$/i.test(n))) {
+          fallbackCandidates.push(`/images/${folder}/${file}`)
+        }
+      }
+    }
+    if (fallbackCandidates.length) {
+      console.error(`[IMAGE] Semua gambar plakat sudah dipakai, reuse ${fallbackCandidates[0]}`)
+      return fallbackCandidates[0]
+    }
+  }
+
+  // RULE 3: Fallback ke logic existing (category-based)
   let folders = FOLDER[category] || []
   if (!folders.length) {
     const inf = inferCategory(keyword)
     if (inf !== "Blog") folders = FOLDER[inf] || []
   }
-
+  
   const allSubs = listSubfolders(base)
   const STOP_IMG = new Set("custom,souvenir,murah,berkualitas,untuk,ke,di,dan,atau,dengan,yang,pada".split(","))
   const boosted = allSubs.filter((f) => {

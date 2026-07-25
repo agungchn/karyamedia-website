@@ -299,7 +299,38 @@ function pickImage(category, used, keyword = "") {
     "plakat-wisuda-akrilik",
   ]
 
-  // RULE 1: judul mengandung "plakat akrilik", "plakat resin", atau "plakat fiberglass"
+  // RULE 1: keyword souvenir wisuda (samir, gordon, kalung, tali, slempang)
+  // → WAJIB ambil dari folder samir-wisuda, prioritaskan yang belum dipakai
+  const isSamirWisuda = /\b(samir|gordon|kalung wisuda|tali wisuda|slempang)\b/i.test(keyword || "")
+  if (isSamirWisuda) {
+    const specialDir = join(root, "public/images/samir-wisuda")
+    if (existsSync(specialDir)) {
+      const files = readdirSync(specialDir)
+        .filter((n) => /^samir-wisuda-\d+\.png$/i.test(n))
+        .sort((a, b) => {
+          const na = parseInt(a.match(/(\d+)/)?.[1] || "0", 10)
+          const nb = parseInt(b.match(/(\d+)/)?.[1] || "0", 10)
+          return na - nb
+        })
+      
+      // PRIORITAS: Cari gambar yang BELUM dipakai sama sekali
+      for (const f of files) {
+        const url = `/images/samir-wisuda/${f}`
+        const urlOld = `/images/produk-unggulan/samir-wisuda/${f}`
+        // Skip kalau SUDAH dipakai di salah satu folder
+        if (used.has(url) || used.has(urlOld)) continue
+        return url  // Return pertama yang belum dipakai
+      }
+      
+      // FALLBACK: Kalau SEMUA sudah dipakai, baru ambil yang pertama (boleh reuse)
+      if (files.length) {
+        console.error(`[IMAGE] Semua gambar samir-wisuda sudah dipakai, reuse ${files[0]}`)
+        return `/images/samir-wisuda/${files[0]}`
+      }
+    }
+  }
+
+  // RULE 2: judul mengandung "plakat akrilik", "plakat resin", atau "plakat fiberglass"
   // → ambil gambar dari folder yang spesifik sesuai material
   const isPlakatVariant =
     /plakat[\s-]+(akrilik|resin|fiberglass)/i.test(keyword || "")
@@ -336,7 +367,7 @@ function pickImage(category, used, keyword = "") {
     }
   }
 
-  // RULE 2: judul hanya mengandung "plakat" (tanpa spesifikasi material)
+  // RULE 3: judul hanya mengandung "plakat" (tanpa spesifikasi material)
   // → boleh ambil dari SEMUA folder plakat, tapi prioritaskan yang paling relevan dengan keyword
   const isGenericPlakat = /\bplakat\b/i.test(keyword || "") && !isPlakatVariant
   if (isGenericPlakat) {
@@ -386,7 +417,7 @@ function pickImage(category, used, keyword = "") {
     }
   }
 
-  // RULE 3: Fallback ke logic existing (category-based)
+  // RULE 4: Fallback ke logic existing (category-based)
   let folders = FOLDER[category] || []
   if (!folders.length) {
     const inf = inferCategory(keyword)

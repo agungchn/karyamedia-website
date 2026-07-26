@@ -28,8 +28,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     : undefined
 
   return {
-    title: `${cat.name} Custom Murah Jogja`,
-    description: `Produsen ${cat.name.toLowerCase()} custom murah di Jogja. ${cat.description}. Pesan sekarang, kirim seluruh Indonesia.`,
+    title: `${cat.name} Custom | Karyamedia Souvenir`,
+    description: `Produsen ${cat.name.toLowerCase()} custom berkualitas dari Yogyakarta. ${cat.description}. Pesan sekarang, kirim seluruh Indonesia.`,
     robots: { index: true, follow: true },
     alternates: {
       canonical: `/katalog-produk/${category}`,

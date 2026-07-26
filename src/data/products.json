@@ -5608,7 +5608,8 @@
       "/images/produk-unggulan/piala-trophy/trophy-kaki-dua-1.png"
     ],
     "featured": true,
-    "custom": true
+    "custom": true,
+    "bestSeller": true
   },
   {
     "id": "piala-pt-263",
@@ -5630,7 +5631,8 @@
       "/images/produk-unggulan/piala-trophy/trophy-kaki-empat-1.png"
     ],
     "featured": true,
-    "custom": true
+    "custom": true,
+    "bestSeller": true
   },
   {
     "id": "piala-pt-264",
@@ -5652,7 +5654,8 @@
       "/images/produk-unggulan/piala-trophy/trophy-kaki-satu-1.png"
     ],
     "featured": true,
-    "custom": true
+    "custom": true,
+    "bestSeller": true
   },
   {
     "id": "piala-pt-265",
@@ -5916,7 +5919,8 @@
       "/images/produk-unggulan/piala-trophy/trophy-kaki-satu-4.png"
     ],
     "featured": true,
-    "custom": true
+    "custom": true,
+    "bestSeller": true
   },
   {
     "id": "piala-pt-277",
@@ -16793,7 +16797,7 @@
       "/images/produk-unggulan/piala-golf/piala-golf-2.png"
     ],
     "featured": true,
-    "bestSeller": false,
+    "bestSeller": true,
     "custom": true
   },
   {

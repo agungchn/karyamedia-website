@@ -36,15 +36,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     : undefined
 
   return {
-    title: `${sub.name} ${cat.name} Custom`,
-    description: `Produksi ${sub.name} ${cat.name} custom harga murah di Jogja. Cocok untuk penghargaan, event, dan souvenir instansi.`,
+    title: `${sub.name} Custom | Karyamedia Souvenir`,
+    description: `${sub.name} custom berkualitas dari Yogyakarta untuk penghargaan, event, dan souvenir instansi.`,
     robots: { index: true, follow: true },
     alternates: {
       canonical,
     },
     openGraph: {
-      title: `${sub.name} ${cat.name} Custom`,
-      description: `Produksi ${sub.name} ${cat.name} custom oleh Karyamedia Souvenir Jogja.`,
+      title: `${sub.name} Custom | Karyamedia Souvenir`,
+      description: `${sub.name} custom berkualitas dari Karyamedia Souvenir Yogyakarta.`,
       url: canonical,
       images: ogImage ? [{ url: ogImage, width: 800, height: 800 }] : [],
     },

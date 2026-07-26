@@ -47,7 +47,7 @@ export interface Article {
 export const articles: Article[] = [
   {
     slug: "panduan-lengkap-souvenir-custom",
-    title: "Panduan Lengkap Souvenir Custom untuk Berbagai Acara dan…",
+    title: "Panduan Lengkap Souvenir Custom untuk Berbagai Acara",
     description: "Panduan lengkap souvenir custom untuk acara sekolah, kampus, perusahaan, dan event. Simak jenis souvenir custom seperti medali, plakat, piala, souvenir wisuda,…",
     category: "Blog",
     date: "2026-07-12",
@@ -569,7 +569,7 @@ export const articles: Article[] = [
   },
   {
     slug: "panduan-lengkap-souvenir-wisuda-custom",
-    title: "Panduan Lengkap Souvenir Wisuda Custom untuk Universitas…",
+    title: "Panduan Lengkap Souvenir Wisuda Custom untuk Universitas",
     description: "Panduan lengkap souvenir wisuda custom: samir, map ijazah, patung wisuda, kalung rektor, tongkat rektor, toga, dan tabung wisuda. Simak jenis, harga, tips…",
     category: "Souvenir Wisuda",
     date: "2026-07-12",
@@ -1021,7 +1021,7 @@ export const articles: Article[] = [
   },
   {
     slug: "panduan-lengkap-prasasti-custom",
-    title: "Panduan Lengkap Prasasti Custom untuk Peresmian dan…",
+    title: "Panduan Lengkap Prasasti Custom untuk Peresmian",
     description: "Panduan lengkap prasasti custom untuk peresmian gedung, pelantikan, dan penghargaan. Simak jenis prasasti marmer, kuningan, stainless steel, tips memilih,…",
     category: "Prasasti",
     date: "2026-07-12",
@@ -1229,7 +1229,7 @@ export const articles: Article[] = [
   },
   {
     slug: "panduan-lengkap-gift-box-custom",
-    title: "Panduan Lengkap Gift Box Custom untuk Kemasan Premium dan…",
+    title: "Panduan Lengkap Gift Box Custom untuk Kemasan Premium",
     description: "Panduan lengkap gift box custom untuk hampers, corporate gift, souvenir pernikahan, dan kemasan premium. Simak jenis box bludru, kertas import, batik, marga,…",
     category: "Gift Box",
     date: "2026-07-12",
@@ -1437,7 +1437,7 @@ export const articles: Article[] = [
   },
   {
     slug: "panduan-lengkap-tumbler-custom",
-    title: "Panduan Lengkap Tumbler Custom untuk Souvenir dan…",
+    title: "Panduan Lengkap Tumbler Custom untuk Souvenir",
     description: "Panduan lengkap tumbler custom untuk souvenir perusahaan, seminar, dan merchandise promosi. Simak jenis tumbler stainless, plastik, vacuum, tips memilih,…",
     category: "Accessories",
     date: "2026-07-12",
@@ -1657,7 +1657,7 @@ export const articles: Article[] = [
   },
   {
     slug: "panduan-lengkap-medali-custom",
-    title: "Panduan Lengkap Medali Custom 2026: Jenis, Bahan, Harga &…",
+    title: "Panduan Lengkap Medali Custom 2026: Jenis, Bahan, Harga",
     description: "Panduan medali custom terlengkap 2026. Bandingkan 5 jenis bahan (logam, akrilik, fiberglass, stainless, besi), harga mulai Rp5.000/pcs, finishing…",
     category: "Medali",
     date: "2026-07-12",
@@ -2083,7 +2083,7 @@ export const articles: Article[] = [
   },
   {
     slug: "souvenir-wisuda-custom-untuk-universitas",
-    title: "Souvenir Wisuda Custom: Panduan Lengkap untuk Universitas…",
+    title: "Souvenir Wisuda Custom: Panduan Lengkap untuk Universitas",
     description: "Panduan memilih souvenir wisuda custom seperti samir, map ijazah, patung wisuda, kalung rektor, dan toga. Cocok untuk universitas dan akademi di seluruh…",
     category: "Souvenir Wisuda",
     date: "2026-07-08",
@@ -2145,7 +2145,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   
   {
     slug: "medali-custom-panduan-memilih-dan-memesan",
-    title: "Panduan Memilih Medali Custom: Harga, Bahan, dan Tips…",
+    title: "Panduan Memilih Medali Custom: Harga, Bahan, dan Tips",
     description: "Panduan memilih medali custom berkualitas untuk lomba, sekolah, perusahaan, dan event. Simak harga medali custom, jenis bahan, desain, ukuran, dan tips…",
     category: "Medali",
     date: "2026-07-08",
@@ -3848,7 +3848,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   },
   {
     slug: "piala-fiberglass-custom-untuk-turnamen-olahraga",
-    title: "Piala Fiberglass Custom untuk Turnamen dan Kejuaraan…",
+    title: "Piala Fiberglass Custom untuk Turnamen dan Kejuaraan",
     description: "Panduan memilih piala fiberglass custom untuk turnamen futsal, basket, voli, dan berbagai kejuaraan olahraga. Simak keunggulan, harga, dan cara pesan.",
     category: "Piala & Trophy",
     date: "2026-07-12",
@@ -4927,7 +4927,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 },
   {
   slug: "plakat-wayang-custom-untuk-penghargaan-instansi",
-  title: "Plakat Wayang Custom untuk Penghargaan Instansi dan…",
+  title: "Plakat Wayang Custom untuk Penghargaan Instansi",
   description: "Plakat wayang custom untuk penghargaan instansi pemerintah, BUMN, dan perusahaan. Simak pilihan bahan, tokoh wayang, estimasi harga, dan tips memesannya.",
   category: "Plakat",
   date: "2026-07-11",
@@ -6580,7 +6580,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
 },
   {
     slug: "name-tag-custom-untuk-kantor-dan-event",
-    title: "Name Tag Custom untuk Identitas Profesional di Kantor dan…",
+    title: "Name Tag Custom untuk Identitas Profesional di Kantor",
     description: "Name tag custom untuk identitas profesional di kantor dan event. Simak jenis (acrylic, metal, PVC), tips memilih, serta estimasi harga mulai Rp15.000.",
     category: "Accessories",
     date: "2026-07-11",
@@ -8232,7 +8232,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   },
   {
     slug: "souvenir-seminar-dan-workshop-berkesan",
-    title: "Ide Souvenir Seminar dan Workshop yang Berkesan untuk…",
+    title: "Ide Souvenir Seminar dan Workshop yang Berkesan",
     description: "Ide souvenir seminar dan workshop yang berkesan untuk peserta. Rekomendasi jenis, estimasi harga, dan tips memilih souvenir acara profesional.",
     category: "Souvenir",
     date: "2026-07-11",
@@ -8713,7 +8713,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   },
   {
     slug: "souvenir-ulang-tahun-perusahaan",
-    title: "Ide Souvenir Ulang Tahun Perusahaan yang Berkesan untuk…",
+    title: "Ide Souvenir Ulang Tahun Perusahaan yang Berkesan",
     description: "Ide souvenir ulang tahun perusahaan untuk karyawan dan klien. Rekomendasi jenis, estimasi harga, dan tips memilih souvenir anniversary perusahaan.",
     category: "Souvenir",
     date: "2026-07-11",
@@ -8785,7 +8785,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   },
   {
     slug: "name-tag-dan-id-card-custom-untuk-acara",
-    title: "Panduan Memilih Name Tag dan ID Card Custom untuk Acara dan…",
+    title: "Panduan Memilih Name Tag dan ID Card Custom untuk Acara",
     description: "Panduan memilih name tag dan ID card custom untuk acara seminar, event, dan kantor. Simak jenis bahan, harga, dan tips desainnya.",
     category: "Souvenir",
     date: "2026-07-11",
@@ -8868,7 +8868,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   },
   {
     slug: "souvenir-plakat-untuk-acara-pensiun-dan-farewell",
-    title: "Ide Souvenir dan Plakat untuk Acara Pensiun dan Farewell…",
+    title: "Ide Souvenir dan Plakat untuk Acara Pensiun dan Farewell",
     description: "Ide souvenir dan plakat untuk acara pensiun dan farewell karyawan. Rekomendasi jenis, estimasi harga, dan tips memilih cinderamata perpisahan.",
     category: "Plakat",
     date: "2026-07-11",
@@ -8945,7 +8945,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   },
   {
     slug: "souvenir-gathering-outbond-perusahaan",
-    title: "Ide Souvenir Gathering dan Outbond Perusahaan yang Seru dan…",
+    title: "Ide Souvenir Gathering dan Outbond Perusahaan yang Seru",
     description: "Ide souvenir gathering dan outbond perusahaan yang seru dan fungsional. Rekomendasi jenis, estimasi harga, dan tips memilih merchandise team building.",
     category: "Souvenir",
     date: "2026-07-11",
@@ -9028,7 +9028,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   },
   {
     slug: "souvenir-plakat-milad-pondok-pesantren",
-    title: "Ide Souvenir dan Plakat untuk Milad Pondok Pesantren dan…",
+    title: "Ide Souvenir dan Plakat untuk Milad Pondok Pesantren",
     description: "Ide souvenir dan plakat untuk milad pondok pesantren dan harlah organisasi Islam. Rekomendasi jenis, estimasi harga, dan tips memilih souvenir acara religi.",
     category: "Plakat",
     date: "2026-07-11",
@@ -9107,7 +9107,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   },
   {
     slug: "plakat-penghargaan-karyawan-terbaik-eom",
-    title: "Plakat Penghargaan untuk Karyawan Terbaik dan Employee of…",
+    title: "Plakat Penghargaan untuk Karyawan Terbaik dan Employee of",
     description: "Panduan memilih plakat penghargaan untuk karyawan terbaik dan Employee of the Month. Simak jenis, desain, estimasi harga, dan tips memilihnya.",
     category: "Plakat",
     date: "2026-07-11",
@@ -9269,7 +9269,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   },
   {
     slug: "souvenir-plakat-hut-organisasi-ormas",
-    title: "Ide Souvenir dan Plakat untuk HUT Organisasi dan Ormas yang…",
+    title: "Ide Souvenir dan Plakat untuk HUT Organisasi dan Ormas yang",
     description: "Ide souvenir dan plakat untuk HUT organisasi masyarakat dan LSM. Rekomendasi jenis, estimasi harga, dan tips memilih souvenir acara ormas.",
     category: "Plakat",
     date: "2026-07-11",
@@ -9348,7 +9348,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   },
   {
     slug: "plakat-akrilik-grand-opening-toko-bisnis",
-    title: "Plakat Akrilik untuk Grand Opening Toko dan Bisnis Baru…",
+    title: "Plakat Akrilik untuk Grand Opening Toko dan Bisnis Baru",
     description: "Panduan memilih plakat akrilik untuk grand opening toko dan bisnis baru. Simak jenis desain, estimasi harga, dan tips memilih plakat ucapan selamat.",
     category: "Plakat",
     date: "2026-07-11",
@@ -9435,7 +9435,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   },
   {
     slug: "souvenir-merchandise-untuk-promosi-dan-pameran",
-    title: "Ide Souvenir Merchandise untuk Acara Promosi dan Pameran…",
+    title: "Ide Souvenir Merchandise untuk Acara Promosi dan Pameran",
     description: "Ide souvenir merchandise untuk acara promosi dan pameran yang efektif sebagai media branding. Rekomendasi jenis, estimasi harga, dan tips memilihnya.",
     category: "Souvenir",
     date: "2026-07-11",
@@ -9515,7 +9515,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   },
   {
     slug: "souvenir-baby-shower-dan-kelahiran-bayi",
-    title: "Ide Souvenir Baby Shower dan Kelahiran Bayi yang Lucu dan…",
+    title: "Ide Souvenir Baby Shower dan Kelahiran Bayi yang Lucu",
     description: "Ide souvenir baby shower dan kelahiran bayi yang lucu dan berkesan untuk tamu undangan. Rekomendasi jenis, estimasi harga, dan tips memilihnya.",
     category: "Souvenir",
     date: "2026-07-11",
@@ -9595,7 +9595,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   },
   {
     slug: "souvenir-pernikahan-wedding-favor",
-    title: "Ide Souvenir Pernikahan yang Unik dan Berkesan untuk Tamu…",
+    title: "Ide Souvenir Pernikahan yang Unik dan Berkesan untuk Tamu",
     description: "Ide souvenir pernikahan unik dan berkesan untuk tamu undangan. Rekomendasi jenis, estimasi harga, dan tips memilih wedding favor terbaik.",
     category: "Souvenir",
     date: "2026-07-11",
@@ -9683,7 +9683,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   },
   {
     slug: "souvenir-merchandise-untuk-komunitas-dan-club",
-    title: "Ide Souvenir dan Merchandise untuk Komunitas dan Club yang…",
+    title: "Ide Souvenir dan Merchandise untuk Komunitas dan Club yang",
     description: "Ide souvenir dan merchandise untuk komunitas dan club. Mulai dari kaos, pin, stiker, hingga aksesori kendaraan. Simak estimasi harga dan tipsnya.",
     category: "Souvenir",
     date: "2026-07-11",
@@ -9757,7 +9757,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   },
   {
     slug: "medali-piala-souvenir-turnamen-olahraga",
-    title: "Harga Medali Olahraga untuk Turnamen: Piala, Medali, dan…",
+    title: "Harga Medali Olahraga untuk Turnamen: Piala dan Medali",
     description: "Cek harga medali olahraga untuk turnamen futsal, basket, badminton, dan lomba. Simak harga medali lomba, jenis bahan, dan tips memilih penghargaan turnamen di…",
     category: "Medali",
     date: "2026-07-11",
@@ -9922,7 +9922,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   },
   {
     slug: "plakat-penghargaan-untuk-guru-dan-tenaga-pendidik",
-    title: "Plakat Penghargaan untuk Guru dan Tenaga Pendidik yang…",
+    title: "Plakat Penghargaan untuk Guru dan Tenaga Pendidik yang",
     description: "Panduan memilih plakat penghargaan untuk guru dan tenaga pendidik. Cocok untuk hari guru, purnabakti, atau penghargaan tahunan sekolah.",
     category: "Plakat",
     date: "2026-07-11",
@@ -10011,7 +10011,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   },
   {
     slug: "plakat-souvenir-pelantikan-pengurus-organisasi",
-    title: "Plakat dan Souvenir untuk Acara Pelantikan Pengurus…",
+    title: "Plakat dan Souvenir untuk Acara Pelantikan Pengurus",
     description: "Ide plakat dan souvenir untuk acara pelantikan pengurus organisasi. Rekomendasi jenis, estimasi harga, dan tips memilih cinderamata pelantikan.",
     category: "Plakat",
     date: "2026-07-11",
@@ -10087,7 +10087,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   },
   {
     slug: "plakat-ucapan-terima-kasih-dan-apresiasi",
-    title: "Plakat Akrilik untuk Ucapan Terima Kasih dan Apresiasi yang…",
+    title: "Plakat Akrilik untuk Ucapan Terima Kasih dan Apresiasi yang",
     description: "Panduan memilih plakat akrilik untuk ucapan terima kasih dan apresiasi. Cocok untuk donatur, sponsor, pembicara, dan relawan. Simak harga dan tipsnya.",
     category: "Plakat",
     date: "2026-07-11",
@@ -10166,7 +10166,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   },
   {
     slug: "souvenir-acara-maulid-nabi-dan-phbi",
-    title: "Ide Souvenir untuk Acara Maulid Nabi dan Peringatan Hari…",
+    title: "Ide Souvenir untuk Acara Maulid Nabi dan Peringatan Hari",
     description: "Ide souvenir untuk acara Maulid Nabi dan peringatan hari besar Islam. Rekomendasi jenis, estimasi harga, dan tips memilih souvenir acara religi.",
     category: "Souvenir",
     date: "2026-07-11",
@@ -10246,7 +10246,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   },
   {
     slug: "souvenir-plakat-peresmian-gedung-bangunan",
-    title: "Ide Souvenir dan Plakat untuk Acara Peresmian Gedung dan…",
+    title: "Ide Souvenir dan Plakat untuk Acara Peresmian Gedung",
     description: "Ide souvenir dan plakat untuk acara peresmian gedung dan bangunan baru. Rekomendasi jenis, estimasi harga, dan tips memilih souvenir ground breaking.",
     category: "Plakat",
     date: "2026-07-11",
@@ -10325,7 +10325,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   },
   {
     slug: "plakat-cinderamata-studi-banding-kunjungan",
-    title: "souvenir — Plakat Cinderamata untuk Studi Banding dan…",
+    title: "Souvenir — Plakat Cinderamata untuk Studi Banding",
     description: "Ide plakat cinderamata untuk studi banding dan kunjungan tamu antar institusi. Rekomendasi jenis, estimasi harga, dan tips memilih souvenir kunjungan.",
     category: "Plakat",
     date: "2026-07-11",
@@ -10404,7 +10404,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   },
   {
     slug: "plakat-akrilik-mutasi-promosi-jabatan",
-    title: "Plakat Akrilik untuk Mutasi, Promosi, dan Jabatan Baru yang…",
+    title: "Plakat Akrilik untuk Mutasi, Promosi, dan Jabatan Baru yang",
     description: "Panduan memilih plakat akrilik untuk mutasi, promosi, dan jabatan baru. Cocok untuk cinderamata pejabat yang promosi atau mutasi tugas.",
     category: "Plakat",
     date: "2026-07-11",
@@ -10481,7 +10481,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   },
   {
     slug: "souvenir-merchandise-acara-kampus-maba",
-    title: "Ide Souvenir dan Merchandise untuk Acara Kampus dan…",
+    title: "Ide Souvenir dan Merchandise untuk Acara Kampus",
     description: "Ide souvenir dan merchandise untuk acara kampus, orientasi mahasiswa baru, dan dies natalis. Rekomendasi jenis, harga, dan tips memilihnya.",
     category: "Souvenir",
     date: "2026-07-11",
@@ -10571,7 +10571,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   },
   {
     slug: "souvenir-plakat-peresmian-masjid",
-    title: "Ide Souvenir dan Plakat untuk Acara Peresmian Masjid dan…",
+    title: "Ide Souvenir dan Plakat untuk Acara Peresmian Masjid",
     description: "Ide souvenir dan plakat untuk acara peresmian masjid dan tempat ibadah. Rekomendasi jenis, estimasi harga, dan tips memilih cinderamata religi.",
     category: "Souvenir",
     date: "2026-07-11",
@@ -10648,7 +10648,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   },
   {
     slug: "papan-nama-akrilik-custom-kantor-meja",
-    title: "Papan Nama Akrilik Custom untuk Kantor, Meja, dan Ruangan…",
+    title: "Papan Nama Akrilik Custom untuk Kantor, Meja, dan Ruangan",
     description: "Panduan memilih papan nama akrilik custom untuk kantor, meja, dan ruangan. Simak jenis, desain, estimasi harga, dan tips memilih nameplate akrilik.",
     category: "Souvenir",
     date: "2026-07-11",
@@ -10807,7 +10807,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   },
   {
     slug: "toga-wisuda-custom-untuk-upacara-kelulusan",
-    title: "Toga Wisuda Custom untuk Upacara Kelulusan Universitas dan…",
+    title: "Toga Wisuda Custom untuk Upacara Kelulusan Universitas",
     description: "Panduan memilih toga wisuda custom untuk upacara kelulusan SD, SMP, SMA, dan universitas. Simak jenis bahan, ukuran, estimasi harga, dan tips pemesanan toga.",
     category: "Souvenir Wisuda",
     date: "2026-07-12",
@@ -10850,7 +10850,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   },
   {
     slug: "bingkai-ijazah-dan-foto-wisuda-custom",
-    title: "Bingkai Ijazah dan Foto Wisuda Custom untuk Kenang-Kenangan…",
+    title: "Bingkai Ijazah dan Foto Wisuda Custom untuk Kenang-Kenangan",
     description: "Cari bingkai ijazah dan foto wisuda custom untuk kenang-kenangan kelulusan. Simak jenis bahan, desain, estimasi harga bingkai premium, dan cara pemesanan.",
     category: "Souvenir Wisuda",
     date: "2026-07-12",
@@ -10892,7 +10892,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   },
   {
     slug: "tumbler-botol-minum-custom-souvenir",
-    title: "Tumbler dan Botol Minum Custom untuk Souvenir dan Promosi…",
+    title: "Tumbler dan Botol Minum Custom untuk Souvenir dan Promosi",
     description: "Panduan memilih tumbler dan botol minum custom untuk souvenir dan promosi. Simak jenis bahan, estimasi harga, dan tips memilih botol minum promosi.",
     category: "Souvenir",
     date: "2026-07-11",
@@ -10975,7 +10975,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   },
   {
     slug: "gantungan-kunci-akrilik-logam-custom-souvenir",
-    title: "Gantungan Kunci Akrilik dan Logam Custom untuk Souvenir…",
+    title: "Gantungan Kunci Akrilik dan Logam Custom untuk Souvenir",
     description: "Panduan memilih gantungan kunci akrilik dan logam custom untuk souvenir acara. Simak jenis bahan, estimasi harga, dan tips desain gantungan kunci.",
     category: "Souvenir",
     date: "2026-07-11",
@@ -11054,7 +11054,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   },
   {
     slug: "pin-bros-enamel-custom-souvenir-komunitas",
-    title: "Pin dan Bros Custom untuk Souvenir Acara dan Identitas…",
+    title: "Pin dan Bros Custom untuk Souvenir Acara dan Identitas",
     description: "Panduan memilih pin dan bros enamel custom untuk souvenir acara dan identitas komunitas. Simak jenis, bahan, estimasi harga, dan tips desainnya.",
     category: "Souvenir",
     date: "2026-07-11",
@@ -11294,7 +11294,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   },
   {
     slug: "prasasti-kuningan-stainless-steel-custom",
-    title: "Prasasti Kuningan dan Stainless Steel Custom untuk…",
+    title: "Prasasti Kuningan dan Stainless Steel Custom",
     description: "Panduan memilih prasasti kuningan dan stainless steel custom untuk penghargaan dan peresmian. Simak jenis, teknik ukir, estimasi harga, dan tips memilih.",
     category: "Plakat",
     date: "2026-07-11",
@@ -11367,7 +11367,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   },
   {
     slug: "medali-custom-untuk-lomba-sekolah",
-    title: "Medali Custom untuk Lomba Sekolah: Harga dan Panduan…",
+    title: "Medali Custom untuk Lomba Sekolah: Harga dan Panduan",
     description: "Cek harga medali untuk lomba sekolah, olimpiade akademik, dan event pendidikan. Simak jenis bahan, desain, estimasi harga medali custom, dan tips pemesanan.",
     category: "Medali",
     date: "2026-07-12",
@@ -11630,7 +11630,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
   },
   {
     slug: "tips-desain-medali-custom-menarik",
-    title: "Tips Desain Medali Custom yang Menarik dan Berkesan —…",
+    title: "Tips Desain Medali Custom yang Menarik dan Berkesan",
     description: "Panduan lengkap mendesain medali custom yang menarik dan profesional. Simak tips memilih bentuk, warna, finishing, ukuran, dan tata letak logo agar medali…",
     category: "Medali",
     date: "2026-07-12",
@@ -18566,7 +18566,7 @@ BEM Universitas memesan 90 medali logam (30 emas, 30 perak, 30 perunggu) untuk t
   },
   {
     slug: "piala-resin-untuk-pemerintahan-kepulauan-riau-custom",
-    title: "Piala Resin untuk Pemerintahan Kepulauan Riau: Presisi &…",
+    title: "Piala Resin untuk Pemerintahan Kepulauan Riau: Presisi",
     description: "Piala resin untuk pemerintahan Kepulauan Riau — diproduksi langsung oleh Karyamedia sejak 2001 di Yogyakarta, presisi ukiran 0,2 mm, finishing glossy/matte.",
     category: "Piala & Trophy",
     date: "2026-07-19",

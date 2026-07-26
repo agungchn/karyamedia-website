@@ -318,10 +318,10 @@ export const articles: Article[] = [
     date: "2026-07-12",
     image: "/images/produk-unggulan/plakat-kayu-eksklusif/plakat-kayu-eksklusif-17.png",
     tags: ["plakat custom", "plakat", "plakat akrilik", "plakat penghargaan", "plakat fiberglass", "plakat kayu"],
-    content: `<p>Mencari <strong>plakat custom</strong> berkualitas untuk penghargaan, seminar, atau acara spesial Anda? Karyamedia Souvenir, produsen langsung berbasis Yogyakarta sejak 2001, menyediakan berbagai jenis plakat custom dengan bahan dan desain yang dapat disesuaikan dengan kebutuhan.</p>
-<p>Plakat adalah salah satu bentuk penghargaan paling populer di Indonesia. Dari acara penghargaan karyawan, seminar, wisuda, peresmian gedung, hingga cinderamata kunjungan, plakat selalu menjadi pilihan utama karena tampilannya yang elegan dan fleksibilitas desainnya. Tidak seperti medali yang terbatas pada bentuk lingkaran, plakat bisa dibuat dalam berbagai bentuk, ukuran, dan bahan sesuai kebutuhan.</p>
+    content: `<p>Mencari <strong>plakat custom jogja</strong> berkualitas untuk penghargaan, seminar, atau acara spesial Anda? Karyamedia Souvenir, <strong>produsen plakat</strong> langsung berbasis Yogyakarta sejak 2001, menyediakan berbagai jenis <strong>custom plakat</strong> dengan bahan dan desain yang dapat disesuaikan dengan kebutuhan. Sebagai <strong>pabrik plakat</strong> terpercaya, kami melayani pembuatan plakat untuk penghargaan, seminar, wisuda, peresmian, dan berbagai acara di seluruh Indonesia.</p>
+<p>Plakat adalah salah satu bentuk penghargaan paling populer di Indonesia. Dari acara penghargaan karyawan, seminar, wisuda, peresmian gedung, hingga cinderamata kunjungan, plakat selalu menjadi pilihan utama karena tampilannya yang elegan dan fleksibilitas desainnya. Tidak seperti medali yang terbatas pada bentuk lingkaran, plakat bisa dibuat dalam berbagai bentuk, ukuran, dan bahan sesuai kebutuhan. <strong>Plakat custom jogja</strong> menjadi pilihan utama instansi dan perusahaan karena kualitas premium dengan harga kompetitif langsung dari produsen.</p>
 
-<p>Artikel ini adalah panduan lengkap tentang berbagai jenis plakat custom yang tersedia di Karyamedia Souvenir. Mulai dari plakat akrilik yang modern, plakat fiberglass yang kokoh, plakat kayu yang klasik, plakat marmer yang megah, hingga plakat wayang yang khas Indonesia serta plakat kuningan yang mewah. Setiap jenis plakat memiliki karakteristik dan keunggulan berbeda. Sebagai produsen yang telah berpengalaman sejak 2001, Karyamedia Souvenir melayani pembuatan plakat custom untuk berbagai kebutuhan di seluruh Indonesia.</p>
+<p>Artikel ini adalah panduan lengkap tentang berbagai jenis <strong>plakat custom</strong> yang tersedia di Karyamedia Souvenir. Mulai dari plakat akrilik yang modern, plakat fiberglass yang kokoh, plakat kayu yang klasik, plakat marmer yang megah, hingga plakat wayang yang khas Indonesia serta plakat kuningan yang mewah. Setiap jenis plakat memiliki karakteristik dan keunggulan berbeda. Sebagai <strong>produsen plakat jogja</strong> yang telah berpengalaman sejak 2001, Karyamedia Souvenir telah melayani ribuan pelanggan dari berbagai institusi di seluruh Indonesia.</p>
 
 <p>Apapun acara Anda — penghargaan tahunan perusahaan, wisuda kampus, peresmian gedung, atau cinderamata kunjungan — memahami jenis plakat yang tepat akan membantu Anda memilih produk yang sesuai dengan anggaran dan kesan yang ingin disampaikan.</p>
 
@@ -1623,32 +1623,50 @@ export const articles: Article[] = [
   },
   {
     slug: "panduan-lengkap-medali-custom",
-    title: "Panduan Lengkap Medali Custom: Jenis, Bahan, Harga, dan…",
-    description: "Panduan lengkap medali custom untuk lomba, turnamen, event sekolah, dan penghargaan. Simak jenis medali logam, akrilik, fiberglass, estimasi harga, tips…",
+    title: "Panduan Lengkap Medali Custom 2026: Jenis, Bahan, Harga & Tips Pesan",
+    description: "Panduan medali custom terlengkap 2026. Bandingkan 5 jenis bahan (logam, akrilik, fiberglass, stainless, besi), harga mulai Rp5.000/pcs, finishing emas-perak-perunggu, tips desain, & cara pesan dari produsen langsung Yogyakarta.",
     category: "Medali",
     date: "2026-07-12",
     image: "/images/produk-unggulan/medali-custom/medali-custom-10.png",
-    tags: ["panduan lengkap medali custom", "medali custom", "medali", "harga medali", "medali lomba", "medali olahraga"],
-    content: `<p>Artikel ini secara khusus membahas panduan lengkap medali custom sebagai panduan lengkap yang kami susun untuk membantu Anda menemukan referensi terbaik sebelum memesan.</p>
+    tags: ["panduan lengkap medali custom", "medali custom", "medali", "harga medali", "medali lomba", "medali olahraga", "medali wisuda", "medali kuningan", "medali akrilik", "jual medali custom", "pesan medali custom", "medali penghargaan", "medali emas perak perunggu", "produsen medali", "medali custom murah"],
+    content: `<p>Sedang mencari <strong>medali custom</strong> untuk lomba, turnamen, wisuda, atau penghargaan? Panduan ini membahas semua yang perlu Anda ketahui sebelum memesan: mulai dari perbandingan 5 jenis bahan, daftar harga terbaru 2026, pilihan finishing emas-perak-perunggu, ukuran standar, hingga tips memilih yang tepat sesuai acara dan anggaran Anda.</p>
+
 <p>Medali adalah salah satu bentuk penghargaan tertua dan paling universal di dunia. Dari Olimpiade kuno hingga kompetisi modern, medali selalu menjadi simbol pencapaian tertinggi yang membanggakan. Bagi para pemenang, medali bukan sekadar benda — ia adalah kenang-kenangan berharga yang akan disimpan seumur hidup.</p>
 
-<p>Sebagai produsen yang telah berpengalaman sejak 2001, Karyamedia Souvenir telah menjadi mitra terpercaya bagi ribuan sekolah, universitas, instansi pemerintah, perusahaan, dan komunitas dalam pembuatan <strong>medali custom</strong> berkualitas tinggi. Kami memahami bahwa setiap medali memiliki makna tersendiri bagi penerimanya, sehingga kualitas bukanlah hal yang bisa ditawar.</p>
+<p>Karyamedia Souvenir, produsen <a href="/katalog-produk/medali">medali custom</a> yang telah berpengalaman sejak 2001 dan berbasis di Yogyakarta, telah menjadi mitra terpercaya bagi ribuan sekolah, universitas, instansi pemerintah, perusahaan, dan komunitas. Dengan pengalaman lebih dari dua dekade melayani pemesanan medali untuk event nasional, kami memahami bahwa setiap medali memiliki makna tersendiri bagi penerimanya — sehingga kualitas bukanlah hal yang bisa ditawar.</p>
 
-<p>Artikel ini adalah panduan lengkap tentang medali custom — mulai dari jenis bahan, finishing, ukuran, estimasi harga, tips memilih, studi kasus, hingga FAQ. Baik Anda seorang ketua panitia turnamen, guru yang ingin memberikan penghargaan bagi siswa berprestasi, atau bagian humas perusahaan yang sedang merencanakan event, panduan ini akan membantu Anda membuat keputusan yang tepat.</p>
+<p>Baik Anda seorang ketua panitia turnamen, guru yang ingin memberikan penghargaan bagi siswa berprestasi, bagian pengadaan instansi, atau event organizer yang sedang merencanakan acara, panduan lengkap medali custom ini akan membantu Anda membuat keputusan yang tepat.</p>
 
-<h2>Mengapa Memilih Medali Custom?</h2>
+<nav>
+<p><strong>Daftar Isi:</strong></p>
+<ul>
+<li><a href="#mengapa-memilih-medali-custom">Mengapa Memilih Medali Custom?</a></li>
+<li><a href="#jenis-medali-custom-berdasarkan-bahan">5 Jenis Bahan Medali Custom</a></li>
+<li><a href="#tabel-harga-medali-custom-lengkap">Tabel Harga Medali Custom 2026</a></li>
+<li><a href="#tips-memilih-bahan-medali">Tips Memilih Bahan Berdasarkan Jenis Acara</a></li>
+<li><a href="#finishing-medali">Finishing Medali: Emas, Perak, Perunggu</a></li>
+<li><a href="#ukuran-medali-custom">Ukuran Medali Custom yang Tersedia</a></li>
+<li><a href="#proses-pembuatan-medali-custom">Proses Pembuatan Medali Custom</a></li>
+<li><a href="#perbandingan-medali-original-vs-tiruan">Medali Original vs Tiruan</a></li>
+<li><a href="#panduan-merawat-medali-custom">Panduan Merawat Medali</a></li>
+<li><a href="#studi-kasus">Studi Kasus Penggunaan Medali</a></li>
+<li><a href="#faq">FAQ Seputar Medali Custom</a></li>
+</ul>
+</nav>
 
-<p><img src="/images/opt/produk-unggulan/medali-custom/medali-custom-57-w640.webp" alt="Medali custom berkualitas dari Karyamedia Souvenir" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" /></p>
+<h2 id="mengapa-memilih-medali-custom">Mengapa Memilih Medali Custom?</h2>
 
-<p>Medali custom menawarkan keunggulan yang tidak bisa diberikan oleh medali jadi: personalisasi. Dengan medali custom, Anda bisa menambahkan logo institusi, nama event, tahun penyelenggaraan, bahkan nama penerima. Hal ini membuat medali menjadi lebih bermakna dan eksklusif.</p>
+<p><img src="/images/opt/produk-unggulan/medali-custom/medali-custom-57-w640.webp" alt="Medali custom berkualitas dari Karyamedia Souvenir - produsen langsung Yogyakarta sejak 2001" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" /></p>
 
-<p>Selain itu, medali custom memberikan fleksibilitas dalam pemilihan bahan, ukuran, bentuk, dan finishing. Anda bisa memilih medali logam dengan lapisan emas 24K untuk penghargaan bergengsi, atau medali akrilik dengan full color printing untuk event sekolah yang penuh warna. Setiap detail bisa disesuaikan dengan konsep acara dan anggaran yang tersedia.</p>
+<p>Medali custom menawarkan keunggulan utama yang tidak bisa diberikan oleh medali jadi (off-the-shelf): <strong>personalisasi penuh</strong>. Dengan medali custom, Anda bisa menambahkan logo institusi, nama event, tahun penyelenggaraan, bahkan nama penerima. Hal ini membuat medali menjadi lebih bermakna dan eksklusif dibandingkan medali generik yang dijual di pasaran.</p>
 
-<p>Dari segi anggaran, medali custom juga menawarkan value for money yang lebih baik. Dengan harga yang bersaing, Anda mendapatkan produk yang benar-benar sesuai dengan identitas acara. Hal ini akan meningkatkan citra profesional penyelenggara dan memberikan kesan mendalam bagi para peserta.</p>
+<p>Selain itu, medali custom memberikan fleksibilitas dalam pemilihan bahan, ukuran, bentuk, dan finishing. Anda bisa memilih medali logam kuningan dengan lapisan emas 24K untuk penghargaan bergengsi, medali akrilik dengan full color printing untuk event sekolah yang penuh warna, atau medali fiberglass ekonomis untuk lomba 17 Agustus-an. Setiap detail bisa disesuaikan dengan konsep acara dan anggaran yang tersedia.</p>
 
-<h2>Jenis Medali Custom Berdasarkan Bahan</h2>
+<p>Dari segi anggaran, memesan medali custom langsung dari produsen seperti Karyamedia Souvenir juga menawarkan <strong>value for money</strong> yang lebih baik. Tanpa perantara, harga lebih transparan — mulai dari Rp5.000 per pcs untuk medali akrilik hingga Rp50.000 per pcs untuk medali stainless steel premium. Anda mendapatkan produk yang benar-benar sesuai dengan identitas acara, meningkatkan citra profesional penyelenggara, dan memberikan kesan mendalam bagi para peserta.</p>
 
-<p>Pemilihan bahan adalah keputusan paling penting dalam pembuatan medali custom. Setiap bahan memiliki karakteristik unik yang mempengaruhi tampilan, bobot, daya tahan, dan tentu saja harga. Berikut adalah jenis-jenis bahan medali yang tersedia di Karyamedia Souvenir:</p>
+<h2 id="jenis-medali-custom-berdasarkan-bahan">Jenis Medali Custom Berdasarkan Bahan</h2>
+
+<p>Pemilihan bahan adalah keputusan paling penting dalam pembuatan medali custom. Setiap bahan memiliki karakteristik unik yang mempengaruhi tampilan, bobot, daya tahan, dan tentu saja harga. Berikut adalah 5 jenis bahan medali custom yang tersedia di Karyamedia Souvenir beserta kelebihan dan kekurangan masing-masing:</p>
 
 <h3>1. Medali Logam (Kuningan / Zinc Alloy)</h3>
 
@@ -1690,9 +1708,9 @@ export const articles: Article[] = [
 
 <p>Perbedaan utama dengan medali kuningan terletak pada bobot dan detail. Medali besi sedikit lebih ringan dan detail yang dihasilkan tidak setajam medali kuningan. Namun, untuk anggaran terbatas, medali besi adalah alternatif yang sangat baik. <strong>Estimasi harga:</strong> Rp8.000 – Rp20.000 per pcs.</p>
 
-<h2>Tabel Harga Medali Custom Lengkap</h2>
+<h2 id="tabel-harga-medali-custom-lengkap">Tabel Harga Medali Custom 2026</h2>
 
-<p>Berikut adalah estimasi harga medali custom berdasarkan jenis bahan, ukuran, dan jumlah pemesanan. Harga bersifat indikatif dan dapat berubah sesuai kerumitan desain serta kondisi pasar. Untuk harga pasti, silakan konsultasi gratis dengan tim Karyamedia Souvenir.</p>
+<p>Berikut adalah estimasi harga medali custom terbaru per Juli 2026 berdasarkan jenis bahan, ukuran, dan jumlah pemesanan. Harga bersifat indikatif dan dapat berubah sesuai kerumitan desain serta kondisi pasar bahan baku. Untuk penawaran harga pasti, silakan <a href="/cara-pesan">konsultasi gratis</a> dengan tim Karyamedia Souvenir.</p>
 
 <div style="overflow-x:auto">
 <table style="width:100%;border-collapse:collapse">
@@ -1708,11 +1726,11 @@ export const articles: Article[] = [
 </table>
 </div>
 
-<h2>Tips Memilih Bahan Medali Berdasarkan Jenis Acara</h2>
+<h2 id="tips-memilih-bahan-medali">Tips Memilih Bahan Medali Berdasarkan Jenis Acara</h2>
 
-<p><img src="/images/opt/produk-unggulan/medali-custom/medali-custom-8-w640.webp" alt="Tips memilih medali custom untuk berbagai acara" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" /></p>
+<p><img src="/images/opt/produk-unggulan/medali-custom/medali-custom-8-w640.webp" alt="Panduan memilih bahan medali custom untuk turnamen olahraga, lomba sekolah, dan event" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" /></p>
 
-<p>Tidak semua bahan medali cocok untuk semua jenis acara. Berikut panduan praktis untuk membantu Anda memilih bahan medali yang tepat:</p>
+<p>Tidak semua bahan medali cocok untuk semua jenis acara. Berikut panduan praktis untuk membantu Anda memilih bahan medali custom yang tepat berdasarkan jenis event:</p>
 
 <h3>Untuk Turnamen Olahraga (Futsal, Basket, Badminton, Lari, Renang)</h3>
 <p>Pilih medali logam kuningan atau besi dengan finishing emas, perak, dan perunggu. Bobotnya yang solid memberikan kesan prestisius. Untuk turnamen dengan anggaran terbatas, medali fiberglass adalah alternatif yang baik. Hindari medali akrilik untuk olahraga outdoor karena lebih mudah tergores. Baca artikel <a href="/blog/medali-piala-souvenir-turnamen-olahraga">Harga Medali Olahraga untuk Turnamen</a> untuk referensi lengkap.</p>
@@ -1726,7 +1744,7 @@ export const articles: Article[] = [
 <h3>Untuk Lomba 17 Agustus dan Acara Komunitas</h3>
 <p>Medali fiberglass adalah pilihan paling ekonomis untuk event dengan jumlah peserta besar. Ringan, tahan benturan, dan tersedia dalam berbagai warna cerah. Bisa dipesan dalam jumlah puluhan hingga ribuan dengan harga yang sangat terjangkau. Baca artikel <a href="/blog/medali-custom-panduan-memilih-dan-memesan">Harga Medali Custom untuk Kompetisi Olahraga dan Event Sekolah</a> untuk estimasi biaya.</p>
 
-<h2>Finishing Medali: Emas, Perak, dan Perunggu</h2>
+<h2 id="finishing-medali">Finishing Medali: Emas, Perak, dan Perunggu</h2>
 
 <p>Salah satu hal yang membedakan medali berkualitas adalah finishingnya. Tiga warna finishing yang paling populer adalah emas (gold), perak (silver), dan perunggu (bronze), masing-masing melambangkan juara 1, 2, dan 3. Karyamedia Souvenir menggunakan teknik electroplating untuk menghasilkan lapisan finishing yang rata, mengkilap, dan tahan lama.</p>
 
@@ -1740,7 +1758,7 @@ export const articles: Article[] = [
 
 <p>Selain tiga finishing standar, kami juga melayani finishing custom seperti: nikel (silver natural), hitam (black chrome), tembaga (copper), dan warna-warna khusus sesuai permintaan. Pita medali juga tersedia dalam berbagai warna dan bahan, termasuk pita polos, pita border, dan pita custom dengan logo.</p>
 
-<h2>Ukuran Medali Custom yang Tersedia</h2>
+<h2 id="ukuran-medali-custom">Ukuran Medali Custom yang Tersedia</h2>
 
 <p>Ukuran medali sangat bervariasi tergantung kebutuhan acara. Berikut ukuran standar yang tersedia:</p>
 
@@ -1755,7 +1773,7 @@ export const articles: Article[] = [
 
 <p>Untuk medali non-lingkaran (bintang, shield, custom shape), ukuran diukur dari dimensi terpanjang. Ketebalan medali bervariasi: akrilik 3–10 mm, logam 2–4 mm, fiberglass 5–8 mm. Konsultasikan dengan tim Karyamedia untuk menentukan ukuran yang paling sesuai dengan desain dan anggaran Anda.</p>
 
-<h2>Proses Pembuatan Medali Custom</h2>
+<h2 id="proses-pembuatan-medali-custom">Proses Pembuatan Medali Custom</h2>
 
 <p>Memahami proses pembuatan medali custom membantu Anda mengelola ekspektasi dan timeline acara. Berikut tahapan produksi medali custom di Karyamedia Souvenir:</p>
 
@@ -1771,7 +1789,7 @@ export const articles: Article[] = [
 
 <p>Estimasi waktu produksi: medali akrilik 5–7 hari kerja, medali logam 10–14 hari kerja, medali fiberglass 7–10 hari kerja. Waktu produksi bisa lebih cepat untuk pesanan mendesak (rush service, dikenakan biaya tambahan).</p>
 
-<h2>Perbandingan Medali Original Karyamedia vs Medali Tiruan</h2>
+<h2 id="perbandingan-medali-original-vs-tiruan">Perbandingan Medali Original Karyamedia vs Medali Tiruan</h2>
 
 <p>Di pasaran banyak beredar medali dengan harga murah namun kualitas rendah. Berikut perbandingan untuk membantu Anda mengenali perbedaannya:</p>
 
@@ -1790,7 +1808,7 @@ export const articles: Article[] = [
 
 <p>Memilih medali berkualitas sangat penting karena medali akan menjadi kenang-kenangan jangka panjang bagi penerima. Medali yang cepat pudar atau rusak akan menurunkan citra penyelenggara acara.</p>
 
-<h2>Panduan Merawat Medali Custom</h2>
+<h2 id="panduan-merawat-medali-custom">Panduan Merawat Medali Custom agar Tahan Lama</h2>
 
 <p><img src="/images/opt/produk-unggulan/medali-custom/medali-custom-15-w640.webp" alt="Cara merawat medali custom agar tahan lama" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" /></p>
 
@@ -1805,7 +1823,7 @@ export const articles: Article[] = [
 <li><strong>Untuk medali akrilik:</strong> Hindari pembersih berbasis amonia karena bisa membuat akrilik retak atau keruh. Cukup lap dengan kain lembab dan sabun ringan.</li>
 </ul>
 
-<h2>Studi Kasus: Penggunaan Medali Custom</h2>
+<h2 id="studi-kasus">Studi Kasus: Penggunaan Medali Custom di Berbagai Event</h2>
 
 <h3>Studi Kasus 1: Turnamen Futsal antar SMA se-DIY</h3>
 <p>Seorang panitia turnamen futsal memesan 90 medali: 30 medali emas, 30 perak, dan 30 perunggu dari bahan kuningan diameter 6 cm. Total biaya: 90 x Rp22.000 = Rp1.980.000. Ditambah pita border warna hitam-emas. Waktu produksi 12 hari kerja. Medali diterima 5 hari sebelum turnamen dimulai. Peserta sangat puas dengan kualitas medali yang kokoh dan finishing yang mengkilap. "Medali menjadi kenang-kenangan yang dibawa pulang dengan bangga oleh setiap peserta," kata sang panitia.</p>
@@ -1816,7 +1834,7 @@ export const articles: Article[] = [
 <h3>Studi Kasus 3: Olimpiade Sains Nasional tingkat Kabupaten</h3>
 <p>Dinas Pendidikan setempat memesan 150 medali logam (kuningan) diameter 7 cm: 50 emas, 50 perak, 50 perunggu. Desain menampilkan logo kabupaten dan tahun penyelenggaraan. Finishing menggunakan teknik etching untuk detail logo yang tajam. Total biaya: 150 x Rp28.000 = Rp4.200.000. Waktu produksi 14 hari kerja. Medali digunakan untuk penghargaan juara 1, 2, 3 dari 50 bidang lomba. Kualitas medali mendapat apresiasi dari para guru dan peserta. Baca artikel <a href="/blog/medali-custom-panduan-memilih-dan-memesan">Panduan Memilih Medali Custom</a> untuk tips lengkap memesan medali untuk acara akademik.</p>
 
-<h2>FAQ Seputar Medali Custom</h2>
+<h2 id="faq">FAQ Seputar Medali Custom</h2>
 
 <div itemscope itemtype="https://schema.org/FAQPage">
 <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
@@ -1830,7 +1848,7 @@ export const articles: Article[] = [
 
 <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <h3 itemprop="name">Apa perbedaan medali logam, akrilik, dan fiberglass?</h3>
-<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Question">
+<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
 <div itemprop="text">
 <p>Medali logam (kuningan/zinc alloy) memiliki bobot solid, finishing prestisius, dan detail tajam — cocok untuk penghargaan bergengsi. Medali akrilik ringan, bisa full color printing, dan terjangkau — ideal untuk lomba sekolah dan event kreatif. Medali fiberglass ringan, tahan benturan, dan ekonomis — tepat untuk event outdoor dan jumlah besar. Baca artikel <a href="/blog/perbandingan-medali-logam-akrilik">Perbandingan Harga Medali Logam vs Akrilik</a> untuk analisis lebih mendalam.</p>
 </div>
@@ -1839,7 +1857,7 @@ export const articles: Article[] = [
 
 <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <h3 itemprop="name">Berapa minimal pemesanan medali custom?</h3>
-<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Question">
+<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
 <div itemprop="text">
 <p>Minimal pemesanan: medali akrilik 10 pcs, medali logam 25 pcs, medali fiberglass 25 pcs, medali stainless steel 10 pcs. Untuk pemesanan di bawah 50 pcs, harga per unit sedikit lebih tinggi karena biaya setup cetakan dan desain. Kami sarankan memesan minimal 50–100 pcs untuk mendapatkan harga yang lebih efisien.</p>
 </div>
@@ -1848,7 +1866,7 @@ export const articles: Article[] = [
 
 <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <h3 itemprop="name">Berapa lama waktu produksi medali custom?</h3>
-<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Question">
+<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
 <div itemprop="text">
 <p>Estimasi waktu produksi: medali akrilik 5–7 hari kerja, medali logam 10–14 hari kerja, medali fiberglass 7–10 hari kerja, medali stainless steel 10–14 hari kerja. Waktu produksi bisa lebih cepat untuk pesanan mendesak (rush service, biaya tambahan 20–30%). Disarankan memesan minimal 3–4 minggu sebelum acara untuk hasil optimal.</p>
 </div>
@@ -1857,7 +1875,7 @@ export const articles: Article[] = [
 
 <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <h3 itemprop="name">Apakah bisa memesan medali dengan desain sendiri?</h3>
-<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Question">
+<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
 <div itemprop="text">
 <p>Tentu bisa. Anda bisa mengirimkan desain sendiri dalam format AI, CDR, PDF, PNG, atau JPG resolusi tinggi. Jika belum punya desain, tim grafis Karyamedia siap membantu membuatkan desain profesional secara gratis (maksimal 3 kali revisi). Baca artikel <a href="/blog/tips-desain-medali-custom-menarik">Tips Desain Medali Custom yang Menarik dan Berkesan</a> untuk panduan mendesain medali yang efektif.</p>
 </div>
@@ -1866,7 +1884,7 @@ export const articles: Article[] = [
 
 <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <h3 itemprop="name">Apakah medali bisa dicantumkan nama penerima?</h3>
-<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Question">
+<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
 <div itemprop="text">
 <p>Ya, medali custom bisa dicantumkan nama penerima, nama event, tahun, atau teks khusus lainnya. Untuk medali logam, teks dicetak menggunakan teknik etching atau press. Untuk medali akrilik, teks dicetak menggunakan UV printing. Pencantuman nama per individu tidak dikenakan biaya tambahan selama dalam jumlah wajar dan desain sudah fix.</p>
 </div>
@@ -1875,7 +1893,7 @@ export const articles: Article[] = [
 
 <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <h3 itemprop="name">Apa saja pilihan pita untuk medali?</h3>
-<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Question">
+<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
 <div itemprop="text">
 <p>Tersedia berbagai jenis pita: pita polos (solid color), pita border (dua warna dengan garis tepi), pita custom print (bisa dicetak logo dan teks), dan pita khusus dengan motif. Lebar pita standar 3 cm dan 4 cm. Panjang pita disesuaikan standar 45–60 cm. Warna pita bisa disesuaikan dengan tema acara atau kode warna juara (emas, perak, perunggu).</p>
 </div>
@@ -1884,7 +1902,7 @@ export const articles: Article[] = [
 
 <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <h3 itemprop="name">Apakah ada garansi untuk medali custom?</h3>
-<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Question">
+<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
 <div itemprop="text">
 <p>Ya, Karyamedia Souvenir memberikan garansi kualitas untuk setiap medali yang diproduksi. Jika ditemukan cacat produksi (bahan tidak sesuai, finishing tidak rata, desain tidak sesuai dengan mockup yang sudah di-approve), kami akan produksi ulang tanpa biaya tambahan. Garansi tidak berlaku untuk kerusakan akibat penggunaan yang tidak semestinya.</p>
 </div>
@@ -1893,7 +1911,7 @@ export const articles: Article[] = [
 
 <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <h3 itemprop="name">Bagaimana cara bedakan medali asli dan tiruan?</h3>
-<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Question">
+<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
 <div itemprop="text">
 <p>Medali asli memiliki bobot solid, finishing merata dan mengkilap, detail desain tajam, pita berkualitas dengan jahitan rapi, dan tidak ada bau cat menyengat. Medali tiruan biasanya ringan, finishing tidak rata dan mudah terkelupas, detail buram, pita mudah kusut dan luntur. Harga yang terlalu murah juga patut dicurigai. Baca bagian perbandingan di atas untuk panduan lengkap.</p>
 </div>
@@ -1902,7 +1920,7 @@ export const articles: Article[] = [
 
 <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <h3 itemprop="name">Apakah Karyamedia Souvenir melayani pengiriman ke luar pulau?</h3>
-<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Question">
+<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
 <div itemprop="text">
 <p>Ya, kami melayani pengiriman ke seluruh Indonesia melalui JNE, TIKI, Lion Parcel, Bus, dan Cargo. Medali dalam jumlah besar dikemas dalam kardus dengan sekat untuk mencegah gesekan antar medali. Biaya pengiriman tergantung berat total dan alamat tujuan. Untuk pemesanan di atas Rp5.000.000, kami memberikan subsidi ongkir.</p>
 </div>
@@ -1911,7 +1929,7 @@ export const articles: Article[] = [
 
 <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <h3 itemprop="name">Apakah medali bisa dikombinasikan dengan box bludru?</h3>
-<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Question">
+<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
 <div itemprop="text">
 <p>Tentu bisa. Box bludru adalah kemasan premium yang sangat cocok untuk medali bernilai tinggi. Tersedia box bludru dengan busa khusus yang memiliki alur untuk medali. Ukuran box disesuaikan dengan diameter medali. Baca artikel <a href="/blog/box-bludru-custom">Box Bludru Custom untuk Kemasan Premium</a> untuk informasi lengkap tentang pilihan box bludru.</p>
 </div>
@@ -1919,25 +1937,33 @@ export const articles: Article[] = [
 </div>
 </div>
 
-<h2>Kesimpulan</h2>
+<h2>Kesimpulan: Cara Tepat Memilih dan Memesan Medali Custom</h2>
 
-<p>Medali custom adalah investasi penghargaan yang akan dikenang oleh penerimanya seumur hidup. Pemilihan bahan, finishing, ukuran, dan desain yang tepat akan menentukan kesan yang ingin disampaikan melalui medali tersebut. Karyamedia Souvenir, dengan pengalaman lebih dari dua dekade, siap membantu Anda menciptakan medali custom berkualitas tinggi yang sesuai dengan kebutuhan dan anggaran.</p>
+<p>Medali custom adalah investasi penghargaan yang akan dikenang oleh penerimanya seumur hidup. Berikut rangkuman poin-poin penting dari panduan ini:</p>
 
-<p>Sebagai pengrajin medali profesional yang berbasis di Yogyakarta, kami melayani pemesanan dari seluruh Indonesia. Tim kami siap memberikan konsultasi gratis mengenai pemilihan bahan, desain, estimasi harga, dan proses pemesanan. Jangan ragu untuk menghubungi kami untuk mendapatkan penawaran terbaik.</p>
+<ul>
+<li><strong>Pilih bahan sesuai acara:</strong> Medali kuningan untuk turnamen bergengsi, akrilik untuk lomba sekolah, fiberglass untuk event massal, stainless steel untuk penghargaan eksklusif.</li>
+<li><strong>Perhatikan anggaran:</strong> Harga medali custom mulai dari Rp5.000/pcs (akrilik) hingga Rp50.000/pcs (stainless steel). Pesan langsung dari produsen untuk harga lebih sehat.</li>
+<li><strong>Rencanakan waktu:</strong> Idealnya pesan 3-4 minggu sebelum acara. Medali akrilik 5-7 hari kerja, medali logam 10-14 hari kerja.</li>
+<li><strong>Finishing menentukan kesan:</strong> Electroplating emas, perak, perunggu memberikan lapisan tahan lama dan prestisius.</li>
+<li><strong>Pilih produsen langsung:</strong> Hindari calo/perantara. Karyamedia Souvenir adalah produsen langsung di Yogyakarta sejak 2001 dengan garansi kualitas.</li>
+</ul>
+
+<p>Sebagai <a href="/blog/pengrajin-medali-custom-jogja">pengrajin medali profesional</a> yang berbasis di Yogyakarta, Karyamedia melayani pemesanan dari seluruh Indonesia — dari Aceh hingga Papua. Tim kami siap memberikan konsultasi gratis mengenai pemilihan bahan, desain, estimasi harga, dan proses pemesanan. Hubungi kami melalui halaman <a href="/cara-pesan">cara pesan</a> atau <a href="/profil">profil Karyamedia</a> untuk mendapatkan penawaran terbaik.</p>
 
 <p><strong>Baca juga artikel medali lainnya:</strong></p>
 <ul>
-<li><a href="/blog/medali-custom-panduan-memilih-dan-memesan">Panduan Memilih Medali Custom: Harga, Bahan, dan Tips Lengkap</a> — panduan komprehensif memilih medali custom</li>
-<li><a href="/blog/medali-custom-panduan-memilih-dan-memesan">Harga Medali Custom untuk Kompetisi Olahraga dan Event Sekolah</a> — estimasi harga medali untuk berbagai event</li>
-<li><a href="/blog/medali-piala-souvenir-turnamen-olahraga">Harga Medali Olahraga untuk Turnamen: Piala, Medali, dan Souvenir</a> — panduan penghargaan turnamen olahraga</li>
-<li><a href="/blog/medali-custom-untuk-lomba-sekolah">Medali Custom untuk Lomba Sekolah: Harga dan Panduan Pemesanan</a> — medali untuk acara pendidikan</li>
-<li><a href="/blog/perbandingan-medali-logam-akrilik">Perbandingan Harga Medali Logam vs Akrilik untuk Acara Anda</a> — analisis perbandingan bahan medali</li>
-<li><a href="/blog/tips-desain-medali-custom-menarik">Tips Desain Medali Custom yang Menarik dan Berkesan</a> — panduan mendesain medali profesional</li>
-<li><a href="/blog/harga-medali-perunggu-lengkap">Harga Medali Perunggu untuk Lomba dan Event: Panduan Lengkap</a> — informasi lengkap medali perunggu</li>
-<li><a href="/blog/pengrajin-medali-custom-jogja">Pengrajin Medali Custom di Yogyakarta: Karyamedia Souvenir</a> — profil produsen medali terpercaya</li>
+<li><a href="/blog/medali-custom-panduan-memilih-dan-memesan">Panduan Memilih Medali Custom: Harga, Bahan, dan Tips Lengkap</a></li>
+<li><a href="/blog/medali-piala-souvenir-turnamen-olahraga">Harga Medali Olahraga untuk Turnamen: Piala, Medali, dan Souvenir</a></li>
+<li><a href="/blog/medali-custom-untuk-lomba-sekolah">Medali Custom untuk Lomba Sekolah: Harga dan Panduan Pemesanan</a></li>
+<li><a href="/blog/perbandingan-medali-logam-akrilik">Perbandingan Harga Medali Logam vs Akrilik untuk Acara Anda</a></li>
+<li><a href="/blog/tips-desain-medali-custom-menarik">Tips Desain Medali Custom yang Menarik dan Berkesan</a></li>
+<li><a href="/blog/harga-medali-perunggu-lengkap">Harga Medali Perunggu untuk Lomba dan Event: Panduan Lengkap</a></li>
+<li><a href="/blog/medali-resin-custom">Pusat Pembuatan Medali Resin Custom Berkualitas</a></li>
+<li><a href="/blog/medali-3d-custom">Pesan Medali 3D Custom Presisi Tinggi</a></li>
 </ul>
 
-<p>Baca juga <a href="/blog/panduan-lengkap-souvenir-custom">Panduan Lengkap Souvenir Custom</a> untuk informasi tentang jenis souvenir lainnya seperti plakat, piala, souvenir wisuda, prasasti, gift box, dan tumbler.</p>
+<p>Baca juga <a href="/blog/panduan-lengkap-souvenir-custom">Panduan Lengkap Souvenir Custom</a> dan <a href="/blog/panduan-lengkap-piala-dan-trophy-custom">Panduan Lengkap Piala dan Trophy Custom</a> untuk informasi tentang jenis souvenir penghargaan lainnya.</p>
     <h2>FAQ</h2><h3>Apakah Karyamedia melayani pembuatan custom?</h3><p>Ya, Karyamedia melayani pembuatan custom yang disesuaikan dengan kebutuhan dan tema acara Anda.</p><h3>Bagaimana cara pemesanan?</h3><p>Silakan pelajari melalui halaman <a href="/cara-pesan">cara pesan</a> atau hubungi kami di <a href="/profil">profil Karyamedia</a>.</p><p>Artikel terkait: <a href="/blog/medali-resin-custom">Pusat Pembuatan Medali Resin Custom Berkualitas</a></p><p>Artikel terkait: <a href="/blog/medali-custom-untuk-komunitas-bali">Medali Custom untuk Komunitas Bali Berkualitas</a></p><p>Artikel terkait: <a href="/blog/medali-custom-dki-jakarta">Medali Custom DKI Jakarta: Pilih Bahan Tepat</a></p><p>Artikel terkait: <a href="/blog/medali-custom-aceh">Medali Custom Aceh: Perbandingan Material & Tips Pemilihan</a></p>`.trim(),
   },
   {

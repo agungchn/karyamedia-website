@@ -162,13 +162,13 @@ function trimToWords(s, max) {
 }
 function enforceTitle(title, headKw) {
   let t = trimToWords(title, 60)
-  // Bersihkan trailing konjungsi/preposisi yang terpotong
-  t = t.replace(/[,;:\-–—]?\s*(dan|untuk|di|ke|dari|pada|atau|dengan|yang|bagi|serta|&)\s*$/i, "").trim()
+  // Bersihkan trailing … dan konjungsi/preposisi yang terpotong
+  t = t.replace(/[,;:\-–—]?\s*(dan|untuk|di|ke|dari|pada|atau|dengan|yang|bagi|serta|&)\s*$/i, "").replace(/…\s*$/, "").trim()
   if (headKw && t && !t.toLowerCase().includes(headKw)) {
     const pre = headKw.length <= 54 ? headKw : headKw.slice(0, 54)
     t = (t ? `${pre} - ${t}` : pre).slice(0, 60)
   }
-  t = t.replace(/[,;:\-–—]?\s*(dan|untuk|di|ke|dari|pada|atau|dengan|yang|bagi|serta|&)\s*$/i, "")
+  t = t.replace(/[,;:\-–—]?\s*(dan|untuk|di|ke|dari|pada|atau|dengan|yang|bagi|serta|&)\s*$/i, "").replace(/…\s*$/, "")
   return t.trim() || (headKw ? headKw.slice(0, 60) : title || "")
 }
 

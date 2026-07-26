@@ -312,55 +312,55 @@ export const articles: Article[] = [
   },
   {
     slug: "panduan-lengkap-plakat-custom",
-    title: "Panduan Lengkap Plakat Custom: Jenis, Bahan, Harga, dan…",
-    description: "Panduan lengkap plakat custom untuk penghargaan, seminar, wisuda, peresmian, dan event. Simak jenis plakat akrilik, fiberglass, kayu, marmer, wayang, kuningan,…",
+    title: "Panduan Lengkap Plakat Custom: Jenis & Tips Memilih",
+    description: "Panduan lengkap plakat custom untuk penghargaan, seminar, wisuda, dan peresmian. Simak jenis plakat akrilik, fiberglass, kayu, marmer, wayang, dan kuningan.",
     category: "Plakat",
     date: "2026-07-12",
     image: "/images/produk-unggulan/plakat-kayu-eksklusif/plakat-kayu-eksklusif-17.png",
     tags: ["plakat custom", "plakat", "plakat akrilik", "plakat penghargaan", "plakat fiberglass", "plakat kayu"],
-    content: `<p>Artikel ini secara khusus membahas plakat custom sebagai panduan lengkap yang kami susun untuk membantu Anda menemukan referensi terbaik sebelum memesan.</p>
+    content: `<p>Mencari <strong>plakat custom</strong> berkualitas untuk penghargaan, seminar, atau acara spesial Anda? Karyamedia Souvenir, produsen langsung berbasis Yogyakarta sejak 2001, menyediakan berbagai jenis plakat custom dengan bahan dan desain yang dapat disesuaikan dengan kebutuhan.</p>
 <p>Plakat adalah salah satu bentuk penghargaan paling populer di Indonesia. Dari acara penghargaan karyawan, seminar, wisuda, peresmian gedung, hingga cinderamata kunjungan, plakat selalu menjadi pilihan utama karena tampilannya yang elegan dan fleksibilitas desainnya. Tidak seperti medali yang terbatas pada bentuk lingkaran, plakat bisa dibuat dalam berbagai bentuk, ukuran, dan bahan sesuai kebutuhan.</p>
 
-<p>Artikel ini adalah panduan lengkap tentang berbagai jenis plakat custom yang tersedia di Karyamedia Souvenir. Mulai dari plakat akrilik yang modern, plakat fiberglass yang kokoh, plakat kayu yang klasik, plakat marmer yang megah, hingga plakat wayang yang khas Indonesia. Setiap jenis plakat memiliki karakteristik, keunggulan, dan estimasi harga yang berbeda. Sebagai produsen yang telah berpengalaman sejak 2001, Karyamedia Souvenir melayani pembuatan plakat custom untuk berbagai kebutuhan di seluruh Indonesia.</p>
+<p>Artikel ini adalah panduan lengkap tentang berbagai jenis plakat custom yang tersedia di Karyamedia Souvenir. Mulai dari plakat akrilik yang modern, plakat fiberglass yang kokoh, plakat kayu yang klasik, plakat marmer yang megah, hingga plakat wayang yang khas Indonesia serta plakat kuningan yang mewah. Setiap jenis plakat memiliki karakteristik dan keunggulan berbeda. Sebagai produsen yang telah berpengalaman sejak 2001, Karyamedia Souvenir melayani pembuatan plakat custom untuk berbagai kebutuhan di seluruh Indonesia.</p>
 
 <p>Apapun acara Anda — penghargaan tahunan perusahaan, wisuda kampus, peresmian gedung, atau cinderamata kunjungan — memahami jenis plakat yang tepat akan membantu Anda memilih produk yang sesuai dengan anggaran dan kesan yang ingin disampaikan.</p>
 
 <h2>Jenis Plakat Custom Berdasarkan Bahan</h2>
 
 <img src="/images/opt/hasil-produksi/plakat/plakat-hasil-produksi (2)-w640.webp" alt="Plakat akrilik custom berbagai bentuk" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
-
+ 
 <p>Pemilihan bahan adalah faktor utama yang menentukan tampilan, daya tahan, dan <strong>harga plakat custom</strong>. Berikut adalah jenis-jenis plakat yang tersedia di Karyamedia Souvenir:</p>
 
 <h3>Plakat Akrilik</h3>
-<p>Plakat akrilik adalah jenis yang paling populer dan banyak dipesan. Dibuat dari bahan akrilik bening, putih susu, atau berwarna dengan teknik cetak UV atau ukir laser. Keunggulan plakat akrilik adalah tampilannya yang modern, bersih, dan profesional. Bisa dicetak full color dengan logo, foto, atau desain kompleks. Tersedia dalam berbagai bentuk: persegi, persegi panjang, lingkaran, hati, bintang, dan bentuk custom. <strong>Harga plakat akrilik</strong> mulai Rp15.000 hingga Rp50.000 per pcs tergantung ukuran dan kerumitan desain. Baca juga artikel <a href="/blog/panduan-memilih-plakat-akrilik-custom">Panduan Memilih Plakat Akrilik Custom</a> dan <a href="/blog/plakat-akrilik-custom-untuk-berbagai-kebutuhan">Plakat Akrilik Custom untuk Berbagai Kebutuhan</a>.</p>
+<p>Plakat akrilik adalah jenis yang paling populer dan banyak dipesan. Dibuat dari bahan akrilik bening, putih susu, atau berwarna dengan teknik cetak UV atau ukir laser. Keunggulan plakat akrilik adalah tampilannya yang modern, bersih, dan profesional. Bisa dicetak full color dengan logo, foto, atau desain kompleks. Tersedia dalam berbagai bentuk: persegi, persegi panjang, lingkaran, hati, bintang, dan bentuk custom. <strong>Harga plakat akrilik</strong> sangat kompetitif dan terjangkau tergantung ukuran serta kerumitan desain. Baca juga artikel <a href="/blog/panduan-memilih-plakat-akrilik-custom">Panduan Memilih Plakat Akrilik Custom</a> dan <a href="/blog/plakat-akrilik-custom-untuk-berbagai-kebutuhan">Plakat Akrilik Custom untuk Berbagai Kebutuhan</a>.</p>
 
 <h3>Plakat Fiberglass</h3>
-<p>Plakat fiberglass lebih ringan dari akrilik namun sangat kokoh dan tahan benturan. Cocok untuk plakat berukuran besar atau plakat yang akan dipajang di outdoor. Finishing cat solid memberikan warna yang cerah dan tahan lama. Harga mulai Rp20.000 hingga Rp60.000 per pcs. Baca juga artikel <a href="/blog/plakat-fiberglass-custom-untuk-penghargaan-dan-event">Plakat Fiberglass Custom untuk Penghargaan</a>.</p>
+<p>Plakat fiberglass lebih ringan dari akrilik namun sangat kokoh dan tahan benturan. Cocok untuk plakat berukuran besar atau plakat yang akan dipajang di outdoor. Finishing cat solid memberikan warna yang cerah dan tahan lama. Harga kompetitif untuk berbagai kebutuhan. Baca juga artikel <a href="/blog/plakat-fiberglass-custom-untuk-penghargaan-dan-event">Plakat Fiberglass Custom untuk Penghargaan</a>.</p>
 
 <h3>Plakat Kayu</h3>
-<p>Plakat kayu memberikan kesan klasik, hangat, dan natural. Tersedia dalam berbagai jenis kayu seperti jati, mahoni, sonokeling, dan kayu albasia. Bisa dikombinasikan dengan plat logam atau akrilik untuk tampilan yang lebih mewah. Cocok untuk penghargaan institusi tradisional, cinderamata kunjungan, atau plakat untuk guru. Harga mulai Rp25.000 hingga Rp100.000 per pcs tergantung jenis kayu dan ukuran.</p>
+<p>Plakat kayu memberikan kesan klasik, hangat, dan natural. Tersedia dalam berbagai jenis kayu seperti jati, mahoni, sonokeling, dan kayu albasia. Bisa dikombinasikan dengan plat logam atau akrilik untuk tampilan yang lebih mewah. Cocok untuk penghargaan institusi tradisional, cinderamata kunjungan, atau plakat untuk guru. Harga kelas menengah dengan kualitas premium.</p>
 
 <h3>Plakat Marmer</h3>
-<p>Plakat marmer adalah pilihan paling premium dan megah. Menggunakan bahan marmer asli dengan tekstur alami yang unik. Cocok untuk peresmian gedung, penghargaan institusi bergengsi, atau prasasti. Teknik pembuatan menggunakan ukir atau sandblast untuk menghasilkan tulisan dan logo yang presisi. Harga mulai Rp150.000 hingga Rp500.000 per pcs. Baca juga artikel Plakat Marmer Custom untuk Penghargaan dan Peresmian.</p>
+<p>Plakat marmer adalah pilihan paling premium dan megah. Menggunakan bahan marmer asli dengan tekstur alami yang unik. Cocok untuk peresmian gedung, penghargaan institusi bergengsi, atau prasasti. Teknik pembuatan menggunakan ukir atau sandblast untuk menghasilkan tulisan dan logo yang presisi. Tersedia dalam kisaran harga premium sesuai ukuran dan kerumitan.</p>
 
 <h3>Plakat Wayang</h3>
 <img src="/images/opt/hasil-produksi/plakat-wayang/plakat-wayang-1-w640.webp" alt="Plakat wayang custom khas Indonesia" style="float:left;margin-right:16px;margin-bottom:12px;max-width:200px;border-radius:12px" />
 
-<p>Plakat wayang adalah plakat khas Indonesia yang menggabungkan seni wayang dengan fungsi penghargaan. Wayang dari bahan fiberglass atau resin ditempelkan pada alas kayu atau akrilik. Sangat cocok untuk cinderamata kunjungan instansi pemerintah, penghargaan budaya, atau souvenir khas Yogyakarta. Setiap wayang memiliki makna filosofis yang mendalam. Harga mulai Rp50.000 hingga Rp200.000 per pcs. Baca juga artikel <a href="/blog/plakat-wayang-custom-untuk-penghargaan-instansi">Plakat Wayang Custom untuk Penghargaan Instansi</a>.</p>
+<p>Plakat wayang adalah plakat khas Indonesia yang menggabungkan seni wayang dengan fungsi penghargaan. Wayang dari bahan fiberglass atau resin ditempelkan pada alas kayu atau akrilik. Sangat cocok untuk cinderamata kunjungan instansi pemerintah, penghargaan budaya, atau souvenir khas Yogyakarta. Setiap wayang memiliki makna filosofis yang mendalam. Tersedia dalam kisaran harga kelas menengah hingga premium. Baca juga artikel <a href="/blog/plakat-wayang-custom-untuk-penghargaan-instansi">Plakat Wayang Custom untuk Penghargaan Instansi</a>.</p>
 
 <h3>Plakat Kuningan</h3>
-<p>Plakat kuningan atau brass plate memberikan kesan mewah dan klasik. Dibuat dari bahan kuningan berkualitas dengan finishing mengkilap atau doff. Cocok untuk penghargaan institusi, prasasti, atau name plate gedung. Teknik pembuatan menggunakan etching atau laser engraving untuk detail yang tajam. Harga mulai Rp50.000 hingga Rp200.000 per pcs.</p>
+<p>Plakat kuningan atau brass plate memberikan kesan mewah dan klasik. Dibuat dari bahan kuningan berkualitas dengan finishing mengkilap atau doff. Cocok untuk penghargaan institusi, prasasti, atau name plate gedung. Teknik pembuatan menggunakan etching atau laser engraving untuk detail yang tajam. Tersedia dalam kisaran harga premium.</p>
 
 <h2>Tabel Perbandingan Plakat Custom</h2>
 
 <table>
-  <tr><th>Jenis Plakat</th><th>Kesan</th><th>Daya Tahan</th><th>Harga/pcs</th><th>Cocok Untuk</th></tr>
-  <tr><td>Akrilik</td><td>Modern, bersih, profesional</td><td>Cukup (5-10 tahun)</td><td>Rp15.000–Rp50.000</td><td>Seminar, wisuda, penghargaan</td></tr>
-  <tr><td>Fiberglass</td><td>Kokoh, sporty, warna cerah</td><td>Tinggi (tahan benturan)</td><td>Rp20.000–Rp60.000</td><td>Plakat besar, outdoor</td></tr>
-  <tr><td>Kayu</td><td>Klasik, hangat, natural</td><td>Tinggi (10-20 tahun)</td><td>Rp25.000–Rp100.000</td><td>Cinderamata, guru, tradisional</td></tr>
-  <tr><td>Marmer</td><td>Megah, premium, abadi</td><td>Sangat tinggi (puluhan tahun)</td><td>Rp150.000–Rp500.000</td><td>Peresmian, penghargaan institusi</td></tr>
-  <tr><td>Wayang</td><td>Khas Indonesia, budaya, seni</td><td>Tinggi</td><td>Rp50.000–Rp200.000</td><td>Cinderamata kunjungan, budaya</td></tr>
-  <tr><td>Kuningan</td><td>Mewah, klasik, prestisius</td><td>Sangat tinggi</td><td>Rp50.000–Rp200.000</td><td>Prasasti, penghargaan institusi</td></tr>
+  <tr><th>Jenis Plakat</th><th>Kesan</th><th>Daya Tahan</th><th>Estimasi Harga</th><th>Cocok Untuk</th></tr>
+  <tr><td>Akrilik</td><td>Modern, bersih, profesional</td><td>Cukup (5-10 tahun)</td><td>Terjangkau</td><td>Seminar, wisuda, penghargaan</td></tr>
+  <tr><td>Fiberglass</td><td>Kokoh, sporty, warna cerah</td><td>Tinggi (tahan benturan)</td><td>Ekonomis</td><td>Plakat besar, outdoor</td></tr>
+  <tr><td>Kayu</td><td>Klasik, hangat, natural</td><td>Tinggi (10-20 tahun)</td><td>Kelas menengah</td><td>Cinderamata, guru, tradisional</td></tr>
+  <tr><td>Marmer</td><td>Megah, premium, abadi</td><td>Sangat tinggi (puluhan tahun)</td><td>Premium</td><td>Peresmian, penghargaan institusi</td></tr>
+  <tr><td>Wayang</td><td>Khas Indonesia, budaya, seni</td><td>Tinggi</td><td>Kelas menengah</td><td>Cinderamata kunjungan, budaya</td></tr>
+  <tr><td>Kuningan</td><td>Mewah, klasik, prestisius</td><td>Sangat tinggi</td><td>Premium</td><td>Prasasti, penghargaan institusi</td></tr>
 </table>
 
 <h2>Faktor yang Mempengaruhi Harga Plakat Custom</h2>
@@ -368,34 +368,15 @@ export const articles: Article[] = [
 <p><strong>Harga plakat custom</strong> ditentukan oleh beberapa faktor. Memahami faktor-faktor ini akan membantu Anda menyesuaikan anggaran tanpa mengorbankan kualitas:</p>
 
 <ul>
-  <li><strong>Jenis bahan:</strong> Marmer dan kuningan adalah bahan termahal. Akrilik dan fiberglass lebih terjangkau. Kayu berada di kisaran menengah. Setiap bahan memberikan kesan visual yang berbeda.</li>
-  <li><strong>Ukuran plakat:</strong> Semakin besar ukuran plakat, semakin banyak bahan yang dibutuhkan. Plakat ukuran 15x20 cm lebih murah dibandingkan 30x40 cm. Harga plakat akrilik naik sekitar 30-50% untuk setiap kenaikan ukuran.</li>
-  <li><strong>Teknik finishing:</strong> Cetak UV full color lebih mahal dibandingkan ukir laser monokrom. Sandblast pada marmer membutuhkan biaya lebih tinggi. Finishing dengan plat emas atau perak juga menambah biaya.</li>
-  <li><strong>Kerumitan desain:</strong> Desain dengan bentuk khusus (bukan persegi/persegi panjang) memerlukan pemotongan laser yang menambah biaya. Semakin banyak elemen desain, semakin tinggi biaya produksi.</li>
-  <li><strong>Jumlah pemesanan:</strong> Semakin banyak jumlah yang dipesan, semakin murah harga per unit. Diskon volume mulai berlaku untuk pemesanan 10 pcs atau lebih.</li>
-  <li><strong>Aksesoris tambahan:</strong> Box kemasan, pigura, atau dudukan meja menambah biaya. Plakat dengan dudukan kayu atau akrilik biasanya lebih mahal Rp10.000–Rp30.000.</li>
+  <li><strong>Jenis bahan:</strong> Marmer dan kuningan termasuk bahan premium. Akrilik dan fiberglass lebih terjangkau. Kayu berada di kisaran menengah. Setiap bahan memberikan kesan visual yang berbeda.</li>
+  <li><strong>Ukuran plakat:</strong> Semakin besar ukuran plakat, semakin banyak bahan yang dibutuhkan. Harga plakat akrilik bervariasi untuk setiap kenaikan ukuran.</li>
+  <li><strong>Teknik finishing:</strong> Cetak UV full color, ukir laser monokrom, sandblast pada marmer — setiap teknik memiliki biaya tersendiri. Finishing dengan plat emas atau perak juga menambah biaya.</li>
+  <li><strong>Kerumitan desain:</strong> Desain dengan bentuk khusus (bukan persegi/persegi panjang) memerlukan pemotongan laser. Semakin banyak elemen desain, semakin tinggi biaya produksi.</li>
+  <li><strong>Jumlah pemesanan:</strong> Semakin banyak jumlah yang dipesan, semakin kompetitif harga per unit. Diskon volume berlaku untuk pemesanan dalam jumlah tertentu.</li>
+  <li><strong>Aksesoris tambahan:</strong> Box kemasan, pigura, atau dudukan meja menambah biaya. Plakat dengan dudukan kayu atau akrilik umumnya memiliki harga lebih tinggi.</li>
 </ul>
 
-<h2>Estimasi Harga Plakat Custom Terbaru</h2>
-
-<table>
-  <tr><th>Jenis Plakat</th><th>Ukuran</th><th>Harga/pcs</th><th>Min. Order</th></tr>
-  <tr><td>Akrilik standar</td><td>15x20 cm</td><td>Rp15.000–Rp25.000</td><td>5 pcs</td></tr>
-  <tr><td>Akrilik sedang</td><td>20x30 cm</td><td>Rp25.000–Rp35.000</td><td>5 pcs</td></tr>
-  <tr><td>Akrilik besar</td><td>30x40 cm</td><td>Rp35.000–Rp50.000</td><td>5 pcs</td></tr>
-  <tr><td>Fiberglass kecil</td><td>20x25 cm</td><td>Rp20.000–Rp35.000</td><td>5 pcs</td></tr>
-  <tr><td>Fiberglass besar</td><td>30x40 cm</td><td>Rp35.000–Rp60.000</td><td>5 pcs</td></tr>
-  <tr><td>Kayu (jati/mahoni)</td><td>20x30 cm</td><td>Rp30.000–Rp60.000</td><td>5 pcs</td></tr>
-  <tr><td>Kayu ukir</td><td>30x40 cm</td><td>Rp50.000–Rp100.000</td><td>3 pcs</td></tr>
-  <tr><td>Marmer ukir</td><td>30x40 cm</td><td>Rp150.000–Rp300.000</td><td>1 pcs</td></tr>
-  <tr><td>Marmer besar</td><td>40x60 cm</td><td>Rp300.000–Rp500.000</td><td>1 pcs</td></tr>
-  <tr><td>Wayang + alas</td><td>20x30 cm</td><td>Rp50.000–Rp150.000</td><td>3 pcs</td></tr>
-  <tr><td>Wayang premium</td><td>30x40 cm</td><td>Rp100.000–Rp200.000</td><td>3 pcs</td></tr>
-  <tr><td>Kuningan ukir</td><td>15x20 cm</td><td>Rp50.000–Rp100.000</td><td>3 pcs</td></tr>
-  <tr><td>Kuningan besar</td><td>30x40 cm</td><td>Rp100.000–Rp200.000</td><td>3 pcs</td></tr>
-</table>
-
-<p>Harga di atas bersifat estimasi dan dapat berbeda tergantung jumlah pemesanan, kerumitan desain, dan finishing yang dipilih. Hubungi tim Karyamedia Souvenir untuk penawaran harga yang akurat sesuai kebutuhan Anda.</p>
+<p>Untuk informasi harga yang akurat sesuai kebutuhan spesifik Anda, silakan hubungi tim Karyamedia Souvenir untuk konsultasi gratis dan penawaran harga.</p>
 
 <h2>Panduan Memilih Plakat Berdasarkan Acara</h2>
 
@@ -409,7 +390,7 @@ export const articles: Article[] = [
 <p>Prasasti marmer atau kuningan adalah pilihan standar untuk peresmian gedung, pelantikan pejabat, atau peringatan hari jadi institusi. Marmer memberikan kesan megah dan abadi, sementara kuningan memberikan kesan mewah dan klasik. Ukuran disesuaikan dengan lokasi pemasangan dan skala acara. Baca juga artikel <a href="/blog/prasasti-marmer-custom-untuk-gedung-dan-peresmian">Prasasti Marmer untuk Gedung</a> dan <a href="/blog/prasasti-kuningan-custom-untuk-penghargaan-dan-peresmian">Prasasti Kuningan Custom</a>.</p>
 
 <h3>Cinderamata Kunjungan dan Studi Banding</h3>
-<p>Plakat wayang adalah pilihan paling khas untuk cinderamata kunjungan antar instansi, terutama di Yogyakarta. Setiap wayang memiliki makna filosofis yang mendalam. Alternatif lain adalah plakat kayu ukir dengan logo instansi tamu. Harga mulai Rp50.000 hingga Rp200.000 tergantung ukuran dan jenis wayang. Baca juga artikel <a href="/blog/plakat-wayang-custom-untuk-penghargaan-instansi">Plakat Wayang Custom</a> dan <a href="/blog/souvenir-wayang-khas-indonesia">Souvenir Wayang Khas Indonesia</a>.</p>
+<p>Plakat wayang adalah pilihan paling khas untuk cinderamata kunjungan antar instansi, terutama di Yogyakarta. Setiap wayang memiliki makna filosofis yang mendalam. Alternatif lain adalah plakat kayu ukir dengan logo instansi tamu. Tersedia dalam kisaran harga kelas menengah. Baca juga artikel <a href="/blog/plakat-wayang-custom-untuk-penghargaan-instansi">Plakat Wayang Custom</a> dan <a href="/blog/souvenir-wayang-khas-indonesia">Souvenir Wayang Khas Indonesia</a>.</p>
 
 <h3>Seminar dan Acara Akademik</h3>
 <p>Plakat akrilik ukuran 15x20 cm adalah pilihan standar untuk seminar, workshop, dan acara akademik. Bisa dicetak dengan logo acara, tema, dan nama pembicara atau narasumber. Pemesanan dalam jumlah besar (50-100 pcs) mendapatkan diskon volume yang signifikan.</p>
@@ -424,33 +405,18 @@ export const articles: Article[] = [
   <li><strong>Musim Sepi (April-Mei):</strong> Permintaan rendah. Anda bisa mendapatkan harga terbaik dan waktu produksi tercepat. Cocok untuk memesan plakat stok atau persiapan acara besar.</li>
 </ul>
 
-<p>Untuk menghindari keterlambatan, selalu pesan plakat custom minimal 2-3 minggu sebelum acara. Jika memungkinkan, pesan di luar musim sibuk untuk mendapatkan harga dan layanan yang lebih baik.</p>
-
-<h2>Simulasi Harga Berdasarkan Jumlah Pemesanan</h2>
-
-<p>Sama seperti produk custom lainnya, jumlah pemesanan sangat mempengaruhi <strong>harga plakat custom</strong> per unit. Berikut simulasi untuk plakat akrilik ukuran 20x30 cm dengan cetak UV full color:</p>
-
-<table>
-  <tr><th>Jumlah</th><th>Harga/pcs</th><th>Total</th><th>Hemat</th></tr>
-  <tr><td>5 pcs</td><td>Rp32.000</td><td>Rp160.000</td><td>-</td></tr>
-  <tr><td>10 pcs</td><td>Rp28.000</td><td>Rp280.000</td><td>~12%</td></tr>
-  <tr><td>25 pcs</td><td>Rp24.000</td><td>Rp600.000</td><td>~25%</td></tr>
-  <tr><td>50 pcs</td><td>Rp21.000</td><td>Rp1.050.000</td><td>~34%</td></tr>
-  <tr><td>100 pcs</td><td>Rp18.000</td><td>Rp1.800.000</td><td>~44%</td></tr>
-</table>
-
-<p>Dengan merencanakan jumlah pemesanan secara matang, Anda bisa menghemat biaya plakat custom hingga 44%. Untuk acara dengan jumlah penerima besar seperti seminar atau wisuda, pemesanan dalam jumlah banyak sangat disarankan.</p>
+<p>Untuk menghindari keterlambatan, selalu pesan plakat custom dengan waktu yang cukup sebelum acara. Jika memungkinkan, pesan di luar musim sibuk untuk mendapatkan harga dan layanan yang lebih baik.</p>
 
 <h2>Studi Kasus: Pengadaan Plakat untuk Berbagai Acara</h2>
 
 <h3>Seminar Nasional Pendidikan (200 peserta)</h3>
-<p>Seorang panitia seminar nasional memesan 200 plakat akrilik 15x20 cm untuk narasumber dan moderator. Desain menggunakan logo seminar, tema acara, dan nama masing-masing penerima. Total biaya: 200 x Rp18.000 = Rp3.600.000 (dengan diskon volume). Waktu produksi 7 hari kerja. Pesanan datang tepat waktu dan acara berjalan sukses. Peserta merasa dihargai dengan plakat yang elegan dan personal.</p>
+<p>Seorang panitia seminar nasional memesan 200 plakat akrilik 15x20 cm untuk narasumber dan moderator. Desain menggunakan logo seminar, tema acara, dan nama masing-masing penerima. Dengan diskon volume, biaya per unit menjadi sangat kompetitif. Pesanan datang tepat waktu dan acara berjalan sukses. Peserta merasa dihargai dengan plakat yang elegan dan personal.</p>
 
 <h3>Cinderamata Studi Banding Dinas Pendidikan</h3>
-<p>Dinas Pendidikan Kabupaten memesan 20 plakat wayang kombinasi kayu dan kuningan untuk cinderamata studi banding ke Dinas Pendidikan kota lain. Desain menggunakan logo kedua dinas dan teks cinderamata. Total biaya: 20 x Rp125.000 = Rp2.500.000. Plakat wayang diterima dengan sangat baik oleh tamu karena khas dan bermakna. Ini menjadi contoh pengadaan plakat yang menggabungkan unsur budaya dan profesionalisme.</p>
+<p>Dinas Pendidikan Kabupaten memesan 20 plakat wayang kombinasi kayu dan kuningan untuk cinderamata studi banding ke Dinas Pendidikan kota lain. Desain menggunakan logo kedua dinas dan teks cinderamata. Plakat wayang diterima dengan sangat baik oleh tamu karena khas dan bermakna. Ini menjadi contoh pengadaan plakat yang menggabungkan unsur budaya dan profesionalisme.</p>
 
 <h3>Peresmian Gedung Serbaguna Desa</h3>
-<p>Seorang kepala desa memesan 1 prasasti marmer ukuran 40x60 cm untuk peresmian gedung serbaguna. Desain menggunakan logo desa, teks peresmian, dan nama pejabat yang meresmikan. Total biaya: Rp350.000. Waktu produksi 10 hari kerja. Prasasti dipasang di dinding utama gedung sebagai penanda sejarah berdirinya gedung tersebut.</p>
+<p>Seorang kepala desa memesan 1 prasasti marmer untuk peresmian gedung serbaguna. Desain menggunakan logo desa, teks peresmian, dan nama pejabat yang meresmikan. Prasasti dipasang di dinding utama gedung sebagai penanda sejarah berdirinya gedung tersebut.</p>
 
 <h2>Finishing Plakat: Pilihan dan Karakteristik</h2>
 

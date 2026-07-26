@@ -305,7 +305,7 @@ function pickImage(category, used, keyword = "") {
   //                      kalung wisuda rektor, kalung rektorat, kalung jabatan rektor, kalung guru besar
   const isKalungRektor = /\b(kalung rektor|kalung kehormatan rektor|kalung gordon rektor|kalung wisuda rektor|kalung rektorat|kalung jabatan rektor|kalung guru besar)\b/i.test(keyword || "")
   if (isKalungRektor) {
-    const specialDir = join(root, "public/images/kalung-rektor")
+    const specialDir = join(root, "public/images/produk-unggulan/kalung-rektor")
     if (existsSync(specialDir)) {
       const files = readdirSync(specialDir)
         .filter((n) => /^kalung-rektor-\d+\.png$/i.test(n))
@@ -339,7 +339,7 @@ function pickImage(category, used, keyword = "") {
   //                      tongkat rektor akademik, tongkat rektor kayu, tongkat rektor logam, tongkat rektor ukir, tongkat rektor custom
   const isTongkatRektor = /\b(tongkat rektor|pedel|pedel tongkat rektor|tongkat wisuda rektor|tongkat jabatan rektor|tongkat kehormatan rektor|tongkat rektorat|tongkat rektor universitas|tongkat rektor institut|tongkat rektor akademik|tongkat rektor kayu|tongkat rektor logam|tongkat rektor ukir|tongkat rektor custom)\b/i.test(keyword || "")
   if (isTongkatRektor) {
-    const specialDir = join(root, "public/images/tongkat-rektor")
+    const specialDir = join(root, "public/images/produk-unggulan/tongkat-rektor")
     if (existsSync(specialDir)) {
       const files = readdirSync(specialDir)
         .filter((n) => /^tongkat-rektor-\d+\.png$/i.test(n))
@@ -373,7 +373,7 @@ function pickImage(category, used, keyword = "") {
   //                      map ijazah akademik, map ijazah dokumen, folder ijazah, tempat ijazah, map sertifikat, map dokumen penting
   const isMapIjazah = /\b(map ijazah|map ijazah custom|map ijazah kayu|map ijazah kulit|map ijazah premium|map ijazah wisuda|map ijazah sekolah|map ijazah universitas|map ijazah kampus|map ijazah akademik|map ijazah dokumen|folder ijazah|tempat ijazah|map sertifikat|map dokumen penting)\b/i.test(keyword || "")
   if (isMapIjazah) {
-    const specialDir = join(root, "public/images/map-ijazah")
+    const specialDir = join(root, "public/images/produk-unggulan/map-ijazah")
     if (existsSync(specialDir)) {
       const files = readdirSync(specialDir)
         .filter((n) => /^map-ijazah-\d+\.png$/i.test(n))
@@ -418,7 +418,7 @@ function pickImage(category, used, keyword = "") {
     
     // Kalau ada spesifikasi bahan, ambil dari folder itu saja
     if (targetFolder) {
-      const specialDir = join(root, `public/images/${targetFolder}`)
+      const specialDir = join(root, `public/images/produk-unggulan/${targetFolder}`)
       if (existsSync(specialDir)) {
         const files = readdirSync(specialDir)
           .filter((n) => new RegExp(`^${targetFolder}-\\d+\\.png$`, "i").test(n))
@@ -448,7 +448,7 @@ function pickImage(category, used, keyword = "") {
     // Kalau TIDAK ada spesifikasi bahan, boleh ambil dari SEMUA folder box
     const allCandidates = []
     for (const folder of BOX_FOLDERS) {
-      const dir = join(root, `public/images/${folder}`)
+      const dir = join(root, `public/images/produk-unggulan/${folder}`)
       if (existsSync(dir)) {
         for (const file of readdirSync(dir).filter((n) => /\.(png|jpe?g|webp)$/i.test(n))) {
           const url = `/images/${folder}/${file}`
@@ -468,7 +468,7 @@ function pickImage(category, used, keyword = "") {
     // FALLBACK: Kalau semua sudah dipakai, cari lagi tanpa filter used
     const fallbackCandidates = []
     for (const folder of BOX_FOLDERS) {
-      const dir = join(root, `public/images/${folder}`)
+      const dir = join(root, `public/images/produk-unggulan/${folder}`)
       if (existsSync(dir)) {
         for (const file of readdirSync(dir).filter((n) => /\.(png|jpe?g|webp)$/i.test(n))) {
           fallbackCandidates.push(`/images/${folder}/${file}`)
@@ -489,7 +489,7 @@ function pickImage(category, used, keyword = "") {
   //                      papan nama dada magnet, papan nama dada pin, name tag premium, name tag eksklusif
   const isNameTag = /\b(papan nama dada|name tag|name tag custom|papan nama dada custom|name tag kayu|name tag logam|name tag akrilik|name tag magnet|name tag pin|name tag instansi|name tag kantor|name tag sekolah|name tag universitas|name tag PNS|name tag TNI POLRI|papan nama dada magnet|papan nama dada pin|name tag premium|name tag eksklusif)\b/i.test(keyword || "")
   if (isNameTag) {
-    const specialDir = join(root, "public/images/name-tag")
+    const specialDir = join(root, "public/images/produk-unggulan/name-tag")
     if (existsSync(specialDir)) {
       const files = readdirSync(specialDir)
         .filter((n) => /^name-tag-\d+\.png$/i.test(n))
@@ -525,7 +525,7 @@ function pickImage(category, used, keyword = "") {
   //                      pin wisuda, bross wisuda, pin premium, bross premium, pin eksklusif, bross eksklusif
   const isPinBross = /\b(pin|bross|pin custom|bross custom|pin logam|bross logam|pin enamel|bross enamel|pin badge|bross badge|pin instansi|bross instansi|pin kantor|bross kantor|pin sekolah|bross sekolah|pin universitas|bross universitas|pin organisasi|bross organisasi|pin komunitas|bross komunitas|pin acara|bross acara|pin seminar|bross seminar|pin wisuda|bross wisuda|pin premium|bross premium|pin eksklusif|bross eksklusif)\b/i.test(keyword || "")
   if (isPinBross) {
-    const specialDir = join(root, "public/images/pin-bross")
+    const specialDir = join(root, "public/images/produk-unggulan/pin-bross")
     if (existsSync(specialDir)) {
       const files = readdirSync(specialDir)
         .filter((n) => /^pin-bross-\d+\.png$/i.test(n))
@@ -563,7 +563,7 @@ function pickImage(category, used, keyword = "") {
   //                      plakat batas wilayah premium, plakat batas wilayah eksklusif
   const isPlakatBatasWilayah = /\b(plakat batas wilayah|plakat BM|plakat CP|plakat bench mark|plakat center point|plakat bancmark|plakat batas desa|plakat batas kecamatan|plakat batas kabupaten|plakat batas provinsi|plakat batas administratif|plakat batas administrasi|plakat batas wilayah desa|plakat patok batas|plakat patok wilayah|plakat batas tanah|plakat batas kawasan|plakat batas area|plakat batas zona|plakat batas wilayah custom|plakat batas wilayah logam|plakat batas wilayah kuningan|plakat batas wilayah tembaga|plakat batas wilayah premium|plakat batas wilayah eksklusif)\b/i.test(keyword || "")
   if (isPlakatBatasWilayah) {
-    const specialDir = join(root, "public/images/plakat-batas-wilayah")
+    const specialDir = join(root, "public/images/produk-unggulan/plakat-batas-wilayah")
     if (existsSync(specialDir)) {
       const files = readdirSync(specialDir)
         .filter((n) => /^plakat-batas-wilayah-\d+\.png$/i.test(n))
@@ -600,7 +600,7 @@ function pickImage(category, used, keyword = "") {
   //                      gantungan kunci marketing, gantungan kunci branded, gantungan kunci logo, gantungan kunci premium, gantungan kunci eksklusif
   const isGantunganKunci = /\b(gantungan kunci|gantungan kunci custom|gantungan kunci logam|gantungan kunci kayu|gantungan kunci akrilik|gantungan kunci plastik|gantungan kunci kulit|gantungan kunci resin|gantungan kunci instansi|gantungan kunci kantor|gantungan kunci sekolah|gantungan kunci universitas|gantungan kunci organisasi|gantungan kunci komunitas|gantungan kunci acara|gantungan kunci seminar|gantungan kunci wisuda|gantungan kunci pernikahan|gantungan kunci souvenir|gantungan kunci promosi|gantungan kunci marketing|gantungan kunci branded|gantungan kunci logo|gantungan kunci premium|gantungan kunci eksklusif)\b/i.test(keyword || "")
   if (isGantunganKunci) {
-    const specialDir = join(root, "public/images/gantungan-kunci")
+    const specialDir = join(root, "public/images/produk-unggulan/gantungan-kunci")
     if (existsSync(specialDir)) {
       const files = readdirSync(specialDir)
         .filter((n) => /^gantungan-kunci-\d+\.png$/i.test(n))
@@ -642,7 +642,7 @@ function pickImage(category, used, keyword = "") {
   if (isPrasasti) {
     // Special case: prasasti center point/titik nol/batas wilayah → folder plakat-batas-wilayah
     if (isPrasastiBatasWilayah) {
-      const specialDir = join(root, "public/images/plakat-batas-wilayah")
+      const specialDir = join(root, "public/images/produk-unggulan/plakat-batas-wilayah")
       if (existsSync(specialDir)) {
         const files = readdirSync(specialDir)
           .filter((n) => /^plakat-batas-wilayah-\d+\.png$/i.test(n))
@@ -679,7 +679,7 @@ function pickImage(category, used, keyword = "") {
     
     // Kalau ada spesifikasi material, ambil dari folder itu saja
     if (targetFolder) {
-      const specialDir = join(root, `public/images/${targetFolder}`)
+      const specialDir = join(root, `public/images/produk-unggulan/${targetFolder}`)
       if (existsSync(specialDir)) {
         const files = readdirSync(specialDir)
           .filter((n) => new RegExp(`^${targetFolder}-\\d+\\.png$`, "i").test(n))
@@ -709,7 +709,7 @@ function pickImage(category, used, keyword = "") {
     // Kalau TIDAK ada spesifikasi material, boleh ambil dari SEMUA folder prasasti
     const allCandidates = []
     for (const folder of PRASASTI_FOLDERS) {
-      const dir = join(root, `public/images/${folder}`)
+      const dir = join(root, `public/images/produk-unggulan/${folder}`)
       if (existsSync(dir)) {
         for (const file of readdirSync(dir).filter((n) => /\.(png|jpe?g|webp)$/i.test(n))) {
           const url = `/images/${folder}/${file}`
@@ -729,7 +729,7 @@ function pickImage(category, used, keyword = "") {
     // FALLBACK: Kalau semua sudah dipakai, cari lagi tanpa filter used
     const fallbackCandidates = []
     for (const folder of PRASASTI_FOLDERS) {
-      const dir = join(root, `public/images/${folder}`)
+      const dir = join(root, `public/images/produk-unggulan/${folder}`)
       if (existsSync(dir)) {
         for (const file of readdirSync(dir).filter((n) => /\.(png|jpe?g|webp)$/i.test(n))) {
           fallbackCandidates.push(`/images/${folder}/${file}`)
@@ -746,7 +746,7 @@ function pickImage(category, used, keyword = "") {
   // → WAJIB ambil dari folder samir-wisuda, prioritaskan yang belum dipakai
   const isSamirWisuda = /\b(samir|gordon|kalung wisuda|tali wisuda|slempang)\b/i.test(keyword || "")
   if (isSamirWisuda) {
-    const specialDir = join(root, "public/images/samir-wisuda")
+    const specialDir = join(root, "public/images/produk-unggulan/samir-wisuda")
     if (existsSync(specialDir)) {
       const files = readdirSync(specialDir)
         .filter((n) => /^samir-wisuda-\d+\.png$/i.test(n))
@@ -783,7 +783,7 @@ function pickImage(category, used, keyword = "") {
   if (isWisudaGeneral) {
     // Kalau ada kata "akrilik" → ambil dari plakat-wisuda-akrilik
     const targetFolder = hasAkrilik ? "plakat-wisuda-akrilik" : "patung-wisuda"
-    const specialDir = join(root, `public/images/${targetFolder}`)
+    const specialDir = join(root, `public/images/produk-unggulan/${targetFolder}`)
     
     if (existsSync(specialDir)) {
       const prefix = targetFolder.replace(/-/g, '-')  // e.g., "patung-wisuda" or "plakat-wisuda-akrilik"
@@ -822,7 +822,7 @@ function pickImage(category, used, keyword = "") {
     let variant = match ? match[1].toLowerCase() : "akrilik"
     if (variant === "resin") variant = "fiberglass"  // resin = fiberglass
     
-    const specialDir = join(root, `public/images/plakat-${variant}`)
+    const specialDir = join(root, `public/images/produk-unggulan/plakat-${variant}`)
     if (existsSync(specialDir)) {
       const files = readdirSync(specialDir)
         .filter((n) => new RegExp(`^plakat-${variant}-\\d+\\.png$`, "i").test(n))
@@ -866,7 +866,7 @@ function pickImage(category, used, keyword = "") {
     // Kumpulkan semua gambar dari folder yang dipilih
     const allCandidates = []
     for (const folder of foldersToUse) {
-      const dir = join(root, `public/images/${folder}`)
+      const dir = join(root, `public/images/produk-unggulan/${folder}`)
       if (existsSync(dir)) {
         for (const file of readdirSync(dir).filter((n) => /\.(png|jpe?g|webp)$/i.test(n))) {
           const url = `/images/${folder}/${file}`
@@ -886,7 +886,7 @@ function pickImage(category, used, keyword = "") {
     // FALLBACK: Kalau semua sudah dipakai, cari lagi tanpa filter used
     const fallbackCandidates = []
     for (const folder of foldersToUse) {
-      const dir = join(root, `public/images/${folder}`)
+      const dir = join(root, `public/images/produk-unggulan/${folder}`)
       if (existsSync(dir)) {
         for (const file of readdirSync(dir).filter((n) => /\.(png|jpe?g|webp)$/i.test(n))) {
           fallbackCandidates.push(`/images/${folder}/${file}`)

@@ -19953,7 +19953,7 @@ Sebagai produsen langsung dari Yogyakarta, kami juga bisa membantu memproduksi p
     description: "Samir wisuda UGM produksi Karyamedia Yogyakarta hadir dengan kualitas premium untuk kampus dan instansi. Pesan langsung dari produsen untuk hasil terbaik.",
     category: "Souvenir Wisuda",
     date: "2026-07-26",
-    image: "/images/produk-unggulan/patung-wisuda/patung-wisuda-13.png",
+    image: "/images/produk-unggulan/samir-wisuda/samir-wisuda-logam-3.png",
     tags: ["samir wisuda ugm", "samir wisuda custom", "souvenir wisuda", "samir toga", "aksesoris wisuda kampus", "produsen samir wisuda"],
     content: `<p>Samir wisuda UGM menjadi salah satu elemen yang paling sering dicari oleh panitia kelulusan dari berbagai perguruan tinggi di Indonesia, baik negeri maupun swasta. Karyamedia, produsen langsung berbasis Yogyakarta, telah berpengalaman melayani kebutuhan samir, gordon, dan <a href="/katalog-produk/souvenir-wisuda">souvenir wisuda</a> lainnya untuk ratusan <a href="/profil">instansi</a> di seluruh nusantara. Sebagai pabrik yang menangani produksi secara mandiri—mulai dari desain hingga finishing—kami memahami bahwa setiap universitas memiliki standar dan identitas visual yang berbeda. Artikel ini akan mengajak Anda mempelajari beberapa kesalahan umum yang sering terjadi saat memesan samir wisuda, agar Anda bisa menghindarinya dan mendapatkan hasil yang benar-benar memuaskan.</p>
 

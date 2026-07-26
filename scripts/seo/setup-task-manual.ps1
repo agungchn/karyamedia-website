@@ -22,16 +22,16 @@ try {
   Register-ScheduledTask -TaskName $taskName -Action $action -Trigger $trigger -Settings $settings -Description $description -RunLevel Highest | Out-Null
   Write-Host "✅ Task '$taskName' berhasil dibuat!" -ForegroundColor Green
   Write-Host ""
-  Write-Host "📅 Schedule: Senin & Kamis jam 10:00 WIB" -ForegroundColor Cyan
-  Write-Host "📝 Script: $scriptPath" -ForegroundColor Cyan
+  Write-Host "📅 Schedule: Senin dan Kamis jam 10:00 WIB" -ForegroundColor Cyan
+  Write-Host " Script: $scriptPath" -ForegroundColor Cyan
   Write-Host "📊 Output: H:\karyamedia-web\article-gen-manual-log.txt" -ForegroundColor Cyan
   Write-Host "🔔 Notification: Telegram (success/failure)" -ForegroundColor Cyan
   Write-Host ""
-  Write-Host " Tips:" -ForegroundColor Yellow
-  Write-Host "   - Task akan mulai jalan Senin/Kamis berikutnya"
-  Write-Host "   - Cek log di: H:\karyamedia-web\article-gen-manual-log.txt"
-  Write-Host "   - Notifikasi Telegram akan dikirim otomatis"
-  Write-Host "   - Untuk test manual: jalankan script generate-manual.ps1"
+  Write-Host "  Tips:" -ForegroundColor Yellow
+  Write-Host "    - Task akan mulai jalan Senin/Kamis berikutnya"
+  Write-Host "    - Cek log di: H:\karyamedia-web\article-gen-manual-log.txt"
+  Write-Host "    - Notifikasi Telegram akan dikirim otomatis"
+  Write-Host "    - Untuk test manual: jalankan script generate-manual.ps1"
   Write-Host ""
   Write-Host "📋 Command untuk test manual:" -ForegroundColor Cyan
   Write-Host "   powershell -ExecutionPolicy Bypass -File H:\karyamedia-web\scripts\seo\generate-manual.ps1"

@@ -765,7 +765,7 @@ export const articles: Article[] = [
   },
   {
     slug: "panduan-lengkap-piala-dan-trophy-custom",
-    title: "Panduan Lengkap Piala dan Trophy Custom untuk Berbagai…",
+    title: "Panduan Lengkap Piala dan Trophy Custom",
     description: "Panduan lengkap piala dan trophy custom untuk turnamen olahraga, lomba, dan kejuaraan. Simak jenis piala fiberglass, logam, akrilik, tips memilih, estimasi…",
     category: "Piala & Trophy",
     date: "2026-07-12",
@@ -1623,13 +1623,13 @@ export const articles: Article[] = [
   },
   {
     slug: "panduan-lengkap-medali-custom",
-    title: "Panduan Lengkap Medali Custom 2026: Jenis, Bahan, Harga & Tips Pesan",
-    description: "Panduan medali custom terlengkap 2026. Bandingkan 5 jenis bahan (logam, akrilik, fiberglass, stainless, besi), harga mulai Rp5.000/pcs, finishing emas-perak-perunggu, tips desain, & cara pesan dari produsen langsung Yogyakarta.",
+    title: "Panduan Lengkap Medali Custom 2026: Jenis, Bahan, Harga &…",
+    description: "Panduan medali custom terlengkap 2026. Bandingkan 5 jenis bahan (logam, akrilik, fiberglass, stainless, besi), harga mulai Rp5.000/pcs, finishing…",
     category: "Medali",
     date: "2026-07-12",
     image: "/images/produk-unggulan/medali-custom/medali-custom-10.png",
-    tags: ["panduan lengkap medali custom", "medali custom", "medali", "harga medali", "medali lomba", "medali olahraga", "medali wisuda", "medali kuningan", "medali akrilik", "jual medali custom", "pesan medali custom", "medali penghargaan", "medali emas perak perunggu", "produsen medali", "medali custom murah"],
-    content: `<p>Sedang mencari <strong>medali custom</strong> untuk lomba, turnamen, wisuda, atau penghargaan? Panduan ini membahas semua yang perlu Anda ketahui sebelum memesan: mulai dari perbandingan 5 jenis bahan, daftar harga terbaru 2026, pilihan finishing emas-perak-perunggu, ukuran standar, hingga tips memilih yang tepat sesuai acara dan anggaran Anda.</p>
+    tags: ["panduan lengkap medali custom", "medali custom", "medali", "harga medali", "medali lomba", "medali olahraga"],
+    content: `<p>Artikel ini secara khusus membahas panduan lengkap medali custom sebagai panduan lengkap yang kami susun untuk membantu Anda menemukan referensi terbaik sebelum memesan.</p><p>Sedang mencari <strong>medali custom</strong> untuk lomba, turnamen, wisuda, atau penghargaan? Panduan ini membahas semua yang perlu Anda ketahui sebelum memesan: mulai dari perbandingan 5 jenis bahan, daftar harga terbaru 2026, pilihan finishing emas-perak-perunggu, ukuran standar, hingga tips memilih yang tepat sesuai acara dan anggaran Anda.</p>
 
 <p>Medali adalah salah satu bentuk penghargaan tertua dan paling universal di dunia. Dari Olimpiade kuno hingga kompetisi modern, medali selalu menjadi simbol pencapaian tertinggi yang membanggakan. Bagi para pemenang, medali bukan sekadar benda — ia adalah kenang-kenangan berharga yang akan disimpan seumur hidup.</p>
 
@@ -11872,7 +11872,7 @@ Musim wisuda adalah momen penting bagi universitas dan mahasiswa. Memilih souven
     date: "2026-07-12",
     image: "/images/produk-unggulan/medali-custom/medali-custom-12.png",
     tags: ["pengrajin medali", "pengrajin medali jogja", "medali custom jogja", "tukang medali", "pembuatan medali", "medali yogyakarta"],
-    content: `<p>Mencari <strong>medali custom jogja</strong> yang berkualitas dan terpercaya? Karyamedia Souvenir adalah jawabannya. Sebagai produsen medali custom yang telah berdiri sejak 2001, kami telah menjadi mitra berbagai sekolah, universitas, instansi pemerintah, perusahaan, dan komunitas dalam pembuatan medali custom berkualitas tinggi.</p>
+    content: `<p>Artikel ini secara khusus membahas pengrajin medali sebagai panduan lengkap yang kami susun untuk membantu Anda menemukan referensi terbaik sebelum memesan.</p><p>Mencari <strong>medali custom jogja</strong> yang berkualitas dan terpercaya? Karyamedia Souvenir adalah jawabannya. Sebagai produsen medali custom yang telah berdiri sejak 2001, kami telah menjadi mitra berbagai sekolah, universitas, instansi pemerintah, perusahaan, dan komunitas dalam pembuatan medali custom berkualitas tinggi.</p>
 
 <h2>Mengapa Memilih Karyamedia Souvenir sebagai Pengrajin Medali?</h2>
 

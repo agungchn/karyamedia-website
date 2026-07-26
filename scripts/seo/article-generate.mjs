@@ -1376,6 +1376,9 @@ async function main() {
   console.log("\n--- regenerate og-meta.json ---")
   execSync(`node scripts/seo/gen-og-meta.mjs`, { cwd: root, stdio: "inherit" })
 
+  console.log("\n--- regenerate schema-cache.json ---")
+  execSync(`node scripts/seo/generate-schema.mjs`, { cwd: root, stdio: "inherit" })
+
   console.log("\n--- generate WebP (biar gambar artikel tidak 404, lewat custom loader) ---")
   execSync(`node scripts/optimize-images.mjs`, { cwd: root, stdio: "inherit" })
 

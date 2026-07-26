@@ -8,7 +8,7 @@ export function OrganizationSchema() {
     "@type": "Organization",
     name: companyInfo.name,
     url: "https://karyamediasouvenir.com",
-    logo: "https://karyamediasouvenir.com/images/logo-karyamedia.png",
+    logo: "https://karyamediasouvenir.com/images/logo-square-512.png",
     foundingDate: "2001",
     address: {
       "@type": "PostalAddress",
@@ -40,7 +40,7 @@ export function LocalBusinessSchema() {
     "@type": "LocalBusiness",
     name: companyInfo.name,
     url: "https://karyamediasouvenir.com",
-    image: "https://karyamediasouvenir.com/images/logo-karyamedia.png",
+    image: "https://karyamediasouvenir.com/images/logo-square-512.png",
     telephone: "+62-822-4358-0777",
     email: companyInfo.email,
     priceRange: "$$",
@@ -91,7 +91,7 @@ export function LocalBusinessReviewsSchema() {
     "@type": "LocalBusiness",
     name: companyInfo.name,
     url: "https://karyamediasouvenir.com",
-    image: "https://karyamediasouvenir.com/images/logo-karyamedia.png",
+    image: "https://karyamediasouvenir.com/images/logo-square-512.png",
     telephone: "+62-822-4358-0777",
     email: companyInfo.email,
     priceRange: "$$",
@@ -275,7 +275,7 @@ export function ArticleSchema({
       name: companyInfo.name,
       logo: {
         "@type": "ImageObject",
-        url: "https://karyamediasouvenir.com/images/logo-karyamedia.png",
+        url: "https://karyamediasouvenir.com/images/logo-square-512.png",
       },
     },
     mainEntityOfPage: {

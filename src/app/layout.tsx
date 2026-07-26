@@ -83,7 +83,7 @@ export const metadata: Metadata = {
       { url: "/favicon/favicon.png", type: "image/png", sizes: "64x64" },
       { url: "/favicon/favicon.svg", type: "image/svg+xml" },
     ],
-    apple: { url: "/images/logo-karyamedia.png", sizes: "180x180" },
+    apple: { url: "/images/logo-square-512.png", sizes: "180x180" },
   },
   openGraph: {
     type: "website",
@@ -92,14 +92,14 @@ export const metadata: Metadata = {
     description:
       "Produsen souvenir custom berpengalaman sejak 2001. Plakat, medali, piala, souvenir wisuda, prasasti, dan merchandise custom. Berbadan hukum, berbasis Yogyakarta, melayani seluruh Indonesia.",
     siteName: "Karyamedia Souvenir",
-    images: [{ url: "/images/logo-karyamedia.png", width: 512, height: 512 }],
+    images: [{ url: "/images/logo-square-512.png", width: 512, height: 512 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Karyamedia Souvenir - Produsen Souvenir Custom Sejak 2001",
     description:
       "Produsen souvenir custom berpengalaman sejak 2001. Plakat, medali, piala, souvenir wisuda, prasasti, dan merchandise custom.",
-    images: ["/images/logo-karyamedia.png"],
+    images: ["/images/logo-square-512.png"],
   },
   other: {
     "p:domain_verify": "b9506a88c2041ed047b0340ab52dd933",

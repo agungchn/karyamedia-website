@@ -6,14 +6,14 @@ import { BreadcrumbSchema } from "@/components/json-ld"
 import { BlogSearch } from "@/components/blog-search"
 
 export const metadata: Metadata = {
-  title: "Blog & Artikel",
-  description: "Baca artikel dan panduan seputar souvenir custom, plakat, medali, souvenir wisuda, dan tips memilih produk souvenir berkualitas dari Karyamedia Souvenir.",
+  title: "Blog & Artikel - Karyamedia Souvenir",
+  description: "Baca panduan lengkap seputar souvenir custom, plakat, medali, souvenir wisuda, dan tips memilih produk berkualitas. Dapatkan inspirasi untuk acara Anda dari Karyamedia Souvenir.",
   alternates: {
     canonical: "https://karyamediasouvenir.com/blog",
   },
   openGraph: {
     title: "Blog & Artikel - Karyamedia Souvenir",
-    description: "Panduan dan tips seputar souvenir custom, plakat, medali, dan perlengkapan wisuda.",
+    description: "Panduan dan tips seputar souvenir custom, plakat, medali, dan perlengkapan wisuda dari Karyamedia Souvenir Yogyakarta.",
     url: "https://karyamediasouvenir.com/blog",
     siteName: "Karyamedia Souvenir",
     locale: "id_ID",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Blog & Artikel - Karyamedia Souvenir",
-    description: "Panduan dan tips seputar souvenir custom, plakat, medali, dan perlengkapan wisuda.",
+    description: "Panduan dan tips seputar souvenir custom, plakat, medali, dan perlengkapan wisuda dari Karyamedia Souvenir.",
   },
 }
 

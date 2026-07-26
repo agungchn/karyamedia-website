@@ -33,13 +33,13 @@ import { TiltLogo } from "@/components/tilt-logo"
 import { GoogleMapEmbed } from "@/components/ui/google-map-embed"
 
 export const metadata: Metadata = {
-  title: "Profil Perusahaan",
-  description: "Profil Karyamedia Souvenir - Produsen souvenir custom sejak 2001, berbadan hukum, berbasis di Yogyakarta. Pelajari sejarah, visi misi, dan keunggulan kami.",
+  title: "Profil Karyamedia Souvenir - Produsen Souvenir Custom Yogyakarta",
+  description: "Profil Karyamedia Souvenir — produsen souvenir custom sejak 2001, berbadan hukum, berbasis di Yogyakarta. Pelajari sejarah, visi misi, dan keunggulan kami.",
   alternates: {
     canonical: "/profil",
   },
   openGraph: {
-    title: "Profil Karyamedia Souvenir - Produsen Souvenir Custom Jogja",
+    title: "Profil Karyamedia Souvenir - Produsen Souvenir Custom Yogyakarta",
     description: "Produsen souvenir custom sejak 2001, berbadan hukum, berbasis di Yogyakarta.",
     url: "/profil",
   },

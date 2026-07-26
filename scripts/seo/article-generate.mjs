@@ -317,17 +317,15 @@ function pickImage(category, used, keyword = "") {
       
       // PRIORITAS: Cari gambar yang BELUM dipakai sama sekali
       for (const f of files) {
-        const url = `/images/kalung-rektor/${f}`
-        const urlOld = `/images/produk-unggulan/kalung-rektor/${f}`
-        // Skip kalau SUDAH dipakai di salah satu folder
-        if (used.has(url) || used.has(urlOld)) continue
-        return url  // Return pertama yang belum dipakai
+        const url = `/images/produk-unggulan/kalung-rektor/${f}`
+        if (used.has(url)) continue
+        return url
       }
       
       // FALLBACK: Kalau SEMUA sudah dipakai, baru ambil yang pertama (boleh reuse)
       if (files.length) {
         console.error(`[IMAGE] Semua gambar kalung-rektor sudah dipakai, reuse ${files[0]}`)
-        return `/images/kalung-rektor/${files[0]}`
+        return `/images/produk-unggulan/kalung-rektor/${files[0]}`
       }
     }
   }
@@ -351,17 +349,15 @@ function pickImage(category, used, keyword = "") {
       
       // PRIORITAS: Cari gambar yang BELUM dipakai sama sekali
       for (const f of files) {
-        const url = `/images/tongkat-rektor/${f}`
-        const urlOld = `/images/produk-unggulan/tongkat-rektor/${f}`
-        // Skip kalau SUDAH dipakai di salah satu folder
-        if (used.has(url) || used.has(urlOld)) continue
-        return url  // Return pertama yang belum dipakai
+        const url = `/images/produk-unggulan/tongkat-rektor/${f}`
+        if (used.has(url)) continue
+        return url
       }
       
       // FALLBACK: Kalau SEMUA sudah dipakai, baru ambil yang pertama (boleh reuse)
       if (files.length) {
         console.error(`[IMAGE] Semua gambar tongkat-rektor sudah dipakai, reuse ${files[0]}`)
-        return `/images/tongkat-rektor/${files[0]}`
+        return `/images/produk-unggulan/tongkat-rektor/${files[0]}`
       }
     }
   }
@@ -376,7 +372,7 @@ function pickImage(category, used, keyword = "") {
     const specialDir = join(root, "public/images/produk-unggulan/map-ijazah")
     if (existsSync(specialDir)) {
       const files = readdirSync(specialDir)
-        .filter((n) => /^map-ijazah-\d+\.png$/i.test(n))
+        .filter((n) => /^map-wisuda-\d+\.png$/i.test(n))
         .sort((a, b) => {
           const na = parseInt(a.match(/(\d+)/)?.[1] || "0", 10)
           const nb = parseInt(b.match(/(\d+)/)?.[1] || "0", 10)
@@ -385,17 +381,15 @@ function pickImage(category, used, keyword = "") {
       
       // PRIORITAS: Cari gambar yang BELUM dipakai sama sekali
       for (const f of files) {
-        const url = `/images/map-ijazah/${f}`
-        const urlOld = `/images/produk-unggulan/map-ijazah/${f}`
-        // Skip kalau SUDAH dipakai di salah satu folder
-        if (used.has(url) || used.has(urlOld)) continue
-        return url  // Return pertama yang belum dipakai
+        const url = `/images/produk-unggulan/map-ijazah/${f}`
+        if (used.has(url)) continue
+        return url
       }
       
       // FALLBACK: Kalau SEMUA sudah dipakai, baru ambil yang pertama (boleh reuse)
       if (files.length) {
         console.error(`[IMAGE] Semua gambar map-ijazah sudah dipakai, reuse ${files[0]}`)
-        return `/images/map-ijazah/${files[0]}`
+        return `/images/produk-unggulan/map-ijazah/${files[0]}`
       }
     }
   }
@@ -430,17 +424,15 @@ function pickImage(category, used, keyword = "") {
         
         // PRIORITAS: Cari gambar yang BELUM dipakai sama sekali
         for (const f of files) {
-          const url = `/images/${targetFolder}/${f}`
-          const urlOld = `/images/produk-unggulan/${targetFolder}/${f}`
-          // Skip kalau SUDAH dipakai di salah satu folder
-          if (used.has(url) || used.has(urlOld)) continue
-          return url  // Return pertama yang belum dipakai
+          const url = `/images/produk-unggulan/${targetFolder}/${f}`
+          if (used.has(url)) continue
+          return url
         }
         
         // FALLBACK: Kalau SEMUA sudah dipakai, baru ambil yang pertama (boleh reuse)
         if (files.length) {
           console.error(`[IMAGE] Semua gambar ${targetFolder} sudah dipakai, reuse ${files[0]}`)
-          return `/images/${targetFolder}/${files[0]}`
+          return `/images/produk-unggulan/${targetFolder}/${files[0]}`
         }
       }
     }
@@ -451,10 +443,8 @@ function pickImage(category, used, keyword = "") {
       const dir = join(root, `public/images/produk-unggulan/${folder}`)
       if (existsSync(dir)) {
         for (const file of readdirSync(dir).filter((n) => /\.(png|jpe?g|webp)$/i.test(n))) {
-          const url = `/images/${folder}/${file}`
-          const urlOld = `/images/produk-unggulan/${folder}/${file}`
-          // Skip kalau SUDAH dipakai
-          if (used.has(url) || used.has(urlOld)) continue
+          const url = `/images/produk-unggulan/${folder}/${file}`
+          if (used.has(url)) continue
           allCandidates.push(url)
         }
       }
@@ -471,7 +461,7 @@ function pickImage(category, used, keyword = "") {
       const dir = join(root, `public/images/produk-unggulan/${folder}`)
       if (existsSync(dir)) {
         for (const file of readdirSync(dir).filter((n) => /\.(png|jpe?g|webp)$/i.test(n))) {
-          fallbackCandidates.push(`/images/${folder}/${file}`)
+          fallbackCandidates.push(`/images/produk-unggulan/${folder}/${file}`)
         }
       }
     }
@@ -501,17 +491,15 @@ function pickImage(category, used, keyword = "") {
       
       // PRIORITAS: Cari gambar yang BELUM dipakai sama sekali
       for (const f of files) {
-        const url = `/images/name-tag/${f}`
-        const urlOld = `/images/produk-unggulan/name-tag/${f}`
-        // Skip kalau SUDAH dipakai di salah satu folder
-        if (used.has(url) || used.has(urlOld)) continue
-        return url  // Return pertama yang belum dipakai
+        const url = `/images/produk-unggulan/name-tag/${f}`
+        if (used.has(url)) continue
+        return url
       }
       
       // FALLBACK: Kalau SEMUA sudah dipakai, baru ambil yang pertama (boleh reuse)
       if (files.length) {
         console.error(`[IMAGE] Semua gambar name-tag sudah dipakai, reuse ${files[0]}`)
-        return `/images/name-tag/${files[0]}`
+        return `/images/produk-unggulan/name-tag/${files[0]}`
       }
     }
   }
@@ -537,17 +525,15 @@ function pickImage(category, used, keyword = "") {
       
       // PRIORITAS: Cari gambar yang BELUM dipakai sama sekali
       for (const f of files) {
-        const url = `/images/pin-bross/${f}`
-        const urlOld = `/images/produk-unggulan/pin-bross/${f}`
-        // Skip kalau SUDAH dipakai di salah satu folder
-        if (used.has(url) || used.has(urlOld)) continue
-        return url  // Return pertama yang belum dipakai
+        const url = `/images/produk-unggulan/pin-bross/${f}`
+        if (used.has(url)) continue
+        return url
       }
       
       // FALLBACK: Kalau SEMUA sudah dipakai, baru ambil yang pertama (boleh reuse)
       if (files.length) {
         console.error(`[IMAGE] Semua gambar pin-bross sudah dipakai, reuse ${files[0]}`)
-        return `/images/pin-bross/${files[0]}`
+        return `/images/produk-unggulan/pin-bross/${files[0]}`
       }
     }
   }
@@ -565,27 +551,27 @@ function pickImage(category, used, keyword = "") {
   if (isPlakatBatasWilayah) {
     const specialDir = join(root, "public/images/produk-unggulan/plakat-batas-wilayah")
     if (existsSync(specialDir)) {
-      const files = readdirSync(specialDir)
-        .filter((n) => /^plakat-batas-wilayah-\d+\.png$/i.test(n))
-        .sort((a, b) => {
-          const na = parseInt(a.match(/(\d+)/)?.[1] || "0", 10)
-          const nb = parseInt(b.match(/(\d+)/)?.[1] || "0", 10)
-          return na - nb
-        })
+      const files = readdirSync(specialDir, { withFileTypes: true }).flatMap((entry) => {
+        if (entry.isDirectory()) {
+          const subDir = join(specialDir, entry.name)
+          return readdirSync(subDir)
+            .filter((n) => /\.png$/i.test(n))
+            .map((n) => `${entry.name}/${n}`)
+        }
+        return []
+      }).sort()
       
       // PRIORITAS: Cari gambar yang BELUM dipakai sama sekali
       for (const f of files) {
-        const url = `/images/plakat-batas-wilayah/${f}`
-        const urlOld = `/images/produk-unggulan/plakat-batas-wilayah/${f}`
-        // Skip kalau SUDAH dipakai di salah satu folder
-        if (used.has(url) || used.has(urlOld)) continue
-        return url  // Return pertama yang belum dipakai
+        const url = `/images/produk-unggulan/plakat-batas-wilayah/${f}`
+        if (used.has(url)) continue
+        return url
       }
       
       // FALLBACK: Kalau SEMUA sudah dipakai, baru ambil yang pertama (boleh reuse)
       if (files.length) {
         console.error(`[IMAGE] Semua gambar plakat-batas-wilayah sudah dipakai, reuse ${files[0]}`)
-        return `/images/plakat-batas-wilayah/${files[0]}`
+        return `/images/produk-unggulan/plakat-batas-wilayah/${files[0]}`
       }
     }
   }
@@ -612,17 +598,15 @@ function pickImage(category, used, keyword = "") {
       
       // PRIORITAS: Cari gambar yang BELUM dipakai sama sekali
       for (const f of files) {
-        const url = `/images/gantungan-kunci/${f}`
-        const urlOld = `/images/produk-unggulan/gantungan-kunci/${f}`
-        // Skip kalau SUDAH dipakai di salah satu folder
-        if (used.has(url) || used.has(urlOld)) continue
-        return url  // Return pertama yang belum dipakai
+        const url = `/images/produk-unggulan/gantungan-kunci/${f}`
+        if (used.has(url)) continue
+        return url
       }
       
       // FALLBACK: Kalau SEMUA sudah dipakai, baru ambil yang pertama (boleh reuse)
       if (files.length) {
         console.error(`[IMAGE] Semua gambar gantungan-kunci sudah dipakai, reuse ${files[0]}`)
-        return `/images/gantungan-kunci/${files[0]}`
+        return `/images/produk-unggulan/gantungan-kunci/${files[0]}`
       }
     }
   }
@@ -644,27 +628,27 @@ function pickImage(category, used, keyword = "") {
     if (isPrasastiBatasWilayah) {
       const specialDir = join(root, "public/images/produk-unggulan/plakat-batas-wilayah")
       if (existsSync(specialDir)) {
-        const files = readdirSync(specialDir)
-          .filter((n) => /^plakat-batas-wilayah-\d+\.png$/i.test(n))
-          .sort((a, b) => {
-            const na = parseInt(a.match(/(\d+)/)?.[1] || "0", 10)
-            const nb = parseInt(b.match(/(\d+)/)?.[1] || "0", 10)
-            return na - nb
-          })
+        const files = readdirSync(specialDir, { withFileTypes: true }).flatMap((entry) => {
+          if (entry.isDirectory()) {
+            const subDir = join(specialDir, entry.name)
+            return readdirSync(subDir)
+              .filter((n) => /\.png$/i.test(n))
+              .map((n) => `${entry.name}/${n}`)
+          }
+          return []
+        }).sort()
         
         // PRIORITAS: Cari gambar yang BELUM dipakai sama sekali
         for (const f of files) {
-          const url = `/images/plakat-batas-wilayah/${f}`
-          const urlOld = `/images/produk-unggulan/plakat-batas-wilayah/${f}`
-          // Skip kalau SUDAH dipakai di salah satu folder
-          if (used.has(url) || used.has(urlOld)) continue
-          return url  // Return pertama yang belum dipakai
+          const url = `/images/produk-unggulan/plakat-batas-wilayah/${f}`
+          if (used.has(url)) continue
+          return url
         }
         
         // FALLBACK: Kalau SEMUA sudah dipakai, baru ambil yang pertama (boleh reuse)
         if (files.length) {
           console.error(`[IMAGE] Semua gambar plakat-batas-wilayah sudah dipakai, reuse ${files[0]}`)
-          return `/images/plakat-batas-wilayah/${files[0]}`
+          return `/images/produk-unggulan/plakat-batas-wilayah/${files[0]}`
         }
       }
     }
@@ -691,17 +675,15 @@ function pickImage(category, used, keyword = "") {
         
         // PRIORITAS: Cari gambar yang BELUM dipakai sama sekali
         for (const f of files) {
-          const url = `/images/${targetFolder}/${f}`
-          const urlOld = `/images/produk-unggulan/${targetFolder}/${f}`
-          // Skip kalau SUDAH dipakai di salah satu folder
-          if (used.has(url) || used.has(urlOld)) continue
-          return url  // Return pertama yang belum dipakai
+          const url = `/images/produk-unggulan/${targetFolder}/${f}`
+          if (used.has(url)) continue
+          return url
         }
         
         // FALLBACK: Kalau SEMUA sudah dipakai, baru ambil yang pertama (boleh reuse)
         if (files.length) {
           console.error(`[IMAGE] Semua gambar ${targetFolder} sudah dipakai, reuse ${files[0]}`)
-          return `/images/${targetFolder}/${files[0]}`
+          return `/images/produk-unggulan/${targetFolder}/${files[0]}`
         }
       }
     }
@@ -712,10 +694,8 @@ function pickImage(category, used, keyword = "") {
       const dir = join(root, `public/images/produk-unggulan/${folder}`)
       if (existsSync(dir)) {
         for (const file of readdirSync(dir).filter((n) => /\.(png|jpe?g|webp)$/i.test(n))) {
-          const url = `/images/${folder}/${file}`
-          const urlOld = `/images/produk-unggulan/${folder}/${file}`
-          // Skip kalau SUDAH dipakai
-          if (used.has(url) || used.has(urlOld)) continue
+          const url = `/images/produk-unggulan/${folder}/${file}`
+          if (used.has(url)) continue
           allCandidates.push(url)
         }
       }
@@ -732,7 +712,7 @@ function pickImage(category, used, keyword = "") {
       const dir = join(root, `public/images/produk-unggulan/${folder}`)
       if (existsSync(dir)) {
         for (const file of readdirSync(dir).filter((n) => /\.(png|jpe?g|webp)$/i.test(n))) {
-          fallbackCandidates.push(`/images/${folder}/${file}`)
+          fallbackCandidates.push(`/images/produk-unggulan/${folder}/${file}`)
         }
       }
     }
@@ -749,7 +729,7 @@ function pickImage(category, used, keyword = "") {
     const specialDir = join(root, "public/images/produk-unggulan/samir-wisuda")
     if (existsSync(specialDir)) {
       const files = readdirSync(specialDir)
-        .filter((n) => /^samir-wisuda-\d+\.png$/i.test(n))
+        .filter((n) => /^samir-wisuda-(akrilik|logam)-\d+\.png$/i.test(n))
         .sort((a, b) => {
           const na = parseInt(a.match(/(\d+)/)?.[1] || "0", 10)
           const nb = parseInt(b.match(/(\d+)/)?.[1] || "0", 10)
@@ -758,17 +738,15 @@ function pickImage(category, used, keyword = "") {
       
       // PRIORITAS: Cari gambar yang BELUM dipakai sama sekali
       for (const f of files) {
-        const url = `/images/samir-wisuda/${f}`
-        const urlOld = `/images/produk-unggulan/samir-wisuda/${f}`
-        // Skip kalau SUDAH dipakai di salah satu folder
-        if (used.has(url) || used.has(urlOld)) continue
-        return url  // Return pertama yang belum dipakai
+        const url = `/images/produk-unggulan/samir-wisuda/${f}`
+        if (used.has(url)) continue
+        return url
       }
       
       // FALLBACK: Kalau SEMUA sudah dipakai, baru ambil yang pertama (boleh reuse)
       if (files.length) {
         console.error(`[IMAGE] Semua gambar samir-wisuda sudah dipakai, reuse ${files[0]}`)
-        return `/images/samir-wisuda/${files[0]}`
+        return `/images/produk-unggulan/samir-wisuda/${files[0]}`
       }
     }
   }
@@ -786,9 +764,8 @@ function pickImage(category, used, keyword = "") {
     const specialDir = join(root, `public/images/produk-unggulan/${targetFolder}`)
     
     if (existsSync(specialDir)) {
-      const prefix = targetFolder.replace(/-/g, '-')  // e.g., "patung-wisuda" or "plakat-wisuda-akrilik"
       const files = readdirSync(specialDir)
-        .filter((n) => new RegExp(`^${prefix}-\\d+\\.png$`, "i").test(n))
+        .filter((n) => new RegExp(targetFolder === "plakat-wisuda-akrilik" ? "^pwa-\\d+\\.png$" : `^${targetFolder}-\\d+\\.png$`, "i").test(n))
         .sort((a, b) => {
           const na = parseInt(a.match(/(\d+)/)?.[1] || "0", 10)
           const nb = parseInt(b.match(/(\d+)/)?.[1] || "0", 10)
@@ -797,17 +774,15 @@ function pickImage(category, used, keyword = "") {
       
       // PRIORITAS: Cari gambar yang BELUM dipakai sama sekali
       for (const f of files) {
-        const url = `/images/${targetFolder}/${f}`
-        const urlOld = `/images/produk-unggulan/${targetFolder}/${f}`
-        // Skip kalau SUDAH dipakai di salah satu folder
-        if (used.has(url) || used.has(urlOld)) continue
-        return url  // Return pertama yang belum dipakai
+        const url = `/images/produk-unggulan/${targetFolder}/${f}`
+        if (used.has(url)) continue
+        return url
       }
       
       // FALLBACK: Kalau SEMUA sudah dipakai, baru ambil yang pertama (boleh reuse)
       if (files.length) {
         console.error(`[IMAGE] Semua gambar ${targetFolder} sudah dipakai, reuse ${files[0]}`)
-        return `/images/${targetFolder}/${files[0]}`
+        return `/images/produk-unggulan/${targetFolder}/${files[0]}`
       }
     }
   }
@@ -834,17 +809,15 @@ function pickImage(category, used, keyword = "") {
       
       // PRIORITAS: Cari gambar yang BELUM dipakai sama sekali
       for (const f of files) {
-        const url = `/images/plakat-${variant}/${f}`
-        const urlOld = `/images/produk-unggulan/plakat-${variant}/${f}`
-        // Skip kalau SUDAH dipakai di salah satu folder
-        if (used.has(url) || used.has(urlOld)) continue
-        return url  // Return pertama yang belum dipakai
+        const url = `/images/produk-unggulan/plakat-${variant}/${f}`
+        if (used.has(url)) continue
+        return url
       }
       
       // FALLBACK: Kalau SEMUA sudah dipakai, baru ambil yang pertama (boleh reuse)
       if (files.length) {
         console.error(`[IMAGE] Semua gambar plakat-${variant} sudah dipakai, reuse ${files[0]}`)
-        return `/images/plakat-${variant}/${files[0]}`
+        return `/images/produk-unggulan/plakat-${variant}/${files[0]}`
       }
     }
   }
@@ -869,10 +842,8 @@ function pickImage(category, used, keyword = "") {
       const dir = join(root, `public/images/produk-unggulan/${folder}`)
       if (existsSync(dir)) {
         for (const file of readdirSync(dir).filter((n) => /\.(png|jpe?g|webp)$/i.test(n))) {
-          const url = `/images/${folder}/${file}`
-          const urlOld = `/images/produk-unggulan/${folder}/${file}`
-          // Skip kalau SUDAH dipakai
-          if (used.has(url) || used.has(urlOld)) continue
+          const url = `/images/produk-unggulan/${folder}/${file}`
+          if (used.has(url)) continue
           allCandidates.push(url)
         }
       }
@@ -889,7 +860,7 @@ function pickImage(category, used, keyword = "") {
       const dir = join(root, `public/images/produk-unggulan/${folder}`)
       if (existsSync(dir)) {
         for (const file of readdirSync(dir).filter((n) => /\.(png|jpe?g|webp)$/i.test(n))) {
-          fallbackCandidates.push(`/images/${folder}/${file}`)
+          fallbackCandidates.push(`/images/produk-unggulan/${folder}/${file}`)
         }
       }
     }

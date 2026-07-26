@@ -506,9 +506,8 @@ export const articles: Article[] = [
 <p>Ukuran standar plakat adalah 15x20 cm (kecil), 20x30 cm (sedang), dan 30x40 cm (besar). Ukuran custom juga tersedia sesuai kebutuhan. Untuk prasasti peresmian, ukuran standar 40x60 cm.</p>
 
 <h3>Apakah bisa memesan plakat dengan bentuk custom?</h3>
-<p>Bisa. Plakat akrilik bisa dipotong dengan laser cutting untuk menghasilkan bentuk custom seperti bintang, lingkaran, hati, atau bentuk logo perusahaan. Biaya tambahan untuk pembuatan file potong laser sekitar Rp25.000–Rp50.000.</p>`.trim()
+<p>Bisa. Plakat akrilik bisa dipotong dengan laser cutting untuk menghasilkan bentuk custom seperti bintang, lingkaran, hati, atau bentuk logo perusahaan. Biaya tambahan untuk pembuatan file potong laser sekitar Rp25.000–Rp50.000.</p>
 
-# FAQ Schema untuk Rich Snippets Google
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",

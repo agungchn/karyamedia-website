@@ -506,7 +506,42 @@ export const articles: Article[] = [
 <p>Ukuran standar plakat adalah 15x20 cm (kecil), 20x30 cm (sedang), dan 30x40 cm (besar). Ukuran custom juga tersedia sesuai kebutuhan. Untuk prasasti peresmian, ukuran standar 40x60 cm.</p>
 
 <h3>Apakah bisa memesan plakat dengan bentuk custom?</h3>
-<p>Bisa. Plakat akrilik bisa dipotong dengan laser cutting untuk menghasilkan bentuk custom seperti bintang, lingkaran, hati, atau bentuk logo perusahaan. Biaya tambahan untuk pembuatan file potong laser sekitar Rp25.000–Rp50.000.</p>
+<p>Bisa. Plakat akrilik bisa dipotong dengan laser cutting untuk menghasilkan bentuk custom seperti bintang, lingkaran, hati, atau bentuk logo perusahaan. Biaya tambahan untuk pembuatan file potong laser sekitar Rp25.000–Rp50.000.</p>`.trim()
+
+# FAQ Schema untuk Rich Snippets Google
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Apa perbedaan plakat akrilik dan fiberglass?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Plakat akrilik memiliki tampilan lebih bening dan bisa dicetak full color. Plakat fiberglass lebih ringan, tahan benturan, dan cocok untuk ukuran besar."}
+    },
+    {
+      "@type": "Question",
+      "name": "Berapa minimal pemesanan plakat custom?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Plakat akrilik dan fiberglass minimal 5 pcs. Plakat kayu, marmer, wayang, dan kuningan minimal 3 pcs. Untuk pemesanan 1 pcs juga diterima dengan harga khusus."}
+    },
+    {
+      "@type": "Question",
+      "name": "Berapa lama waktu pembuatan plakat?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Plakat akrilik 5-7 hari kerja. Plakat fiberglass 7-10 hari kerja. Plakat kayu 7-14 hari kerja. Disarankan pesan 2-3 minggu sebelum acara."}
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah bisa memesan plakat dengan desain sendiri?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Bisa. Tim desain Karyamedia akan membuat mockup digital berdasarkan desain Anda. Gratis revisi tanpa batas sebelum produksi."}
+    },
+    {
+      "@type": "Question",
+      "name": "Di mana lokasi produsen plakat jogja?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Karyamedia Souvenir berlokasi di Jl. Menteri Supeno No. 90, Yogyakarta. Kami adalah produsen plakat jogja langsung dengan workshop sendiri. Buka untuk konsultasi dan melihat sample."}
+    }
+  ]
+}
+</script>
 
 <h3>Apakah ada plakat untuk guru dan tenaga pendidik?</h3>
 <p>Tentu. Kami memiliki desain khusus plakat untuk guru dengan kutipan inspiratif tentang pendidikan. Cocok untuk Hari Guru, purnabakti, atau penghargaan tahunan sekolah. Baca artikel <a href="/blog/plakat-penghargaan-untuk-guru-dan-tenaga-pendidik">Plakat Penghargaan untuk Guru dan Tenaga Pendidik</a> untuk referensi lebih lengkap.</p>

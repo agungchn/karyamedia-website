@@ -16,7 +16,7 @@
 // Set GSC_MOCK to run offline with fixtures (no network).
 
 import { execSync } from "node:child_process"
-import { readFileSync, writeFileSync } from "node:fs"
+import { readFileSync, writeFileSync, existsSync } from "node:fs"
 import { fileURLToPath } from "node:url"
 import { dirname, join, resolve } from "node:path"
 import { getToken, getSite, api } from "../gsc/analyze.mjs"
@@ -30,6 +30,8 @@ import { isBlocked } from "./blocked-keywords.js"
 const here = dirname(fileURLToPath(import.meta.url))
 const root = resolve(here, "..", "..")
 const articlesPath = join(root, "src/data/articles.ts")
+const FAILED_KEYWORDS_PATH = join(here, "failed-keywords.json")
+const MAX_FAILS = 2 // skip keyword permanently after 2nd duplicate failure
 
 // Curated long-tail topics used as fallback keyword source when GSC has no
 // data yet (e.g. site not indexed). These are specific enough to not collide
@@ -143,11 +145,45 @@ function isKeywordDuplicate(query, workingText, attemptedKeywords) {
   return false
 }
 
+// Persistent failed-keyword tracking: keywords that repeatedly fail the
+// post-generation duplicate check are blacklisted so they won't be retried.
+function loadFailedKeywords() {
+  try {
+    if (existsSync(FAILED_KEYWORDS_PATH)) {
+      return JSON.parse(readFileSync(FAILED_KEYWORDS_PATH, "utf8"))
+    }
+  } catch { /* corrupt file — reset */ }
+  return {}
+}
+
+function saveFailedKeyword(keywords, query) {
+  const key = query.toLowerCase().trim()
+  if (!key) return
+  if (!keywords[key]) keywords[key] = { count: 0, last_fail: null }
+  keywords[key].count++
+  keywords[key].last_fail = new Date().toISOString()
+  writeFileSync(FAILED_KEYWORDS_PATH, JSON.stringify(keywords, null, 2))
+}
+
+function isFailedKeyword(query, failedKeywords) {
+  const key = query.toLowerCase().trim()
+  const entry = failedKeywords[key]
+  return entry && entry.count >= MAX_FAILS
+}
+
 function fmtDate(d) {
   return d.toISOString().slice(0, 10)
 }
 
 async function main() {
+  // Persistent blacklist: keywords that repeatedly failed duplicate check
+  const failedKeywords = loadFailedKeywords()
+  const activeFails = Object.keys(failedKeywords).filter((k) => isFailedKeyword(k, failedKeywords))
+  const failedSet = new Set(activeFails)
+  if (activeFails.length) {
+    console.log(`⚠ ${activeFails.length} keyword(s) di-blacklist (gagal duplikat ≥${MAX_FAILS}x): ${activeFails.slice(0, 5).join(", ")}${activeFails.length > 5 ? "..." : ""}`)
+  }
+
   let rows
   let target = ""
   if (process.env.GSC_MOCK) {
@@ -237,6 +273,10 @@ async function main() {
     if (isBlocked(query, hariIni)) {
       continue
     }
+    // Skip persistently failed keywords (duplicate ≥2x)
+    if (failedSet.has(query.trim().toLowerCase())) {
+      continue
+    }
     opportunities.push({
       query,
       impressions: r.impressions,
@@ -263,6 +303,8 @@ async function main() {
       if (nearDup(s.query, working)) continue
       // Skip blocked keywords untuk hari ini
       if (isBlocked(s.query, hariIni)) continue
+      // Skip persistently failed keywords (duplicate ≥2x)
+      if (failedSet.has(q)) continue
       opportunities.push({
         query: s.query,
         impressions: s.impressions,
@@ -294,6 +336,7 @@ async function main() {
     const q = t.query.trim().toLowerCase()
     if (haveQ.has(q)) continue
     if (nearDup(t.query, working)) continue
+    if (failedSet.has(q)) continue
     opportunities.push({
       query: t.query,
       impressions: GEO_IMP,
@@ -309,6 +352,8 @@ async function main() {
   }
   // pelengkap: long-tail non-geo (resolusi rendah) sebagai cadangan
   for (const kw of FALLBACK_KEYWORDS) {
+    const q = kw.trim().toLowerCase()
+    if (failedSet.has(q)) continue
     if (!nearDup(kw, working)) {
       opportunities.push({ query: kw, impressions: 10, clicks: 0, ctr: 0, position: 0 })
     }
@@ -396,6 +441,10 @@ async function main() {
         const msg = (err.stderr || err.stdout || err.message || "").toString().trim()
         const tail = msg.split("\n").slice(-3).join("\n")
         console.error(`✗ Generate gagal untuk "${o.query}": ${tail || err.message}`)
+        // Persistent tracking: jika gagal karena duplikat, catat ke blacklist
+        if (/duplikat/i.test(msg)) {
+          saveFailedKeyword(failedKeywords, o.query)
+        }
         console.error("  Lanjut ke topik berikutnya...")
       }
     }

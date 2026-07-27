@@ -360,14 +360,17 @@ async function main() {
   }
   console.log(`Geo pool: ${geoAdded} opportunity provinsi×segmen (imp ${GEO_IMP}) disertakan.`)
 
-  // Re-rank SETELAH geo pool disertakan. Real GSC queries (dengan flag
-  // _real) mendapat multiplier 10x agar demand asli SELALU menang atas topik
-  // sintetis (geo). Google Suggest (_suggest) dapat multiplier 5x untuk
-  // prioritas di atas Geo pool.
+  // Re-rank SETELAH geo pool disertakan. Prioritas:
+  //   1. Real GSC queries (10x) — demand asli selalu menang
+  //   2. Geo pool (6x) — historis 100% sukses, prefer di atas Suggest
+  //   3. Google Suggest (5x) — sering gagal duplikat, prioritas diturunkan
+  //   4. Fallback (1x) — cadangan
   const isRealQuery = (o) => o._real === true
   const isSuggestQuery = (o) => o._suggest === true
+  const isGeoQuery = (o) => !!o._province
   const realImp = (o) => {
     if (isRealQuery(o)) return (o.impressions || 0) * 10
+    if (isGeoQuery(o)) return (o.impressions || 0) * 6
     if (isSuggestQuery(o)) return (o.impressions || 0) * 5
     return o.impressions || 0
   }

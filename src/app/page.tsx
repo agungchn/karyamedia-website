@@ -324,9 +324,7 @@ const featuredImageMap: Record<string, string> = {
   "souvenir-pernikahan-4": "/images/produk-unggulan/souvenir-pernikahan/souvenir-pernikahan-4.png",
   "souvenir-pernikahan-5": "/images/produk-unggulan/souvenir-pernikahan/souvenir-pernikahan-5.png",
   "souvenir-pernikahan-6": "/images/produk-unggulan/souvenir-pernikahan/souvenir-pernikahan-6.png",
-  "tabung-wisuda-1": "/images/produk-unggulan/map-ijazah/tabung-wisuda-1.png",
   "map-wisuda-1": "/images/produk-unggulan/map-ijazah/map-wisuda-1.png",
-  "tabung-wisuda-2": "/images/produk-unggulan/map-ijazah/tabung-wisuda-2.png",
   "map-wisuda-2": "/images/produk-unggulan/map-ijazah/map-wisuda-2.png",
   "map-wisuda-3": "/images/produk-unggulan/map-ijazah/map-wisuda-3.png",
   "map-wisuda-4": "/images/produk-unggulan/map-ijazah/map-wisuda-4.png",
@@ -782,7 +780,7 @@ const featuredImageMap: Record<string, string> = {
   "plakat-fiberglass-35": "/images/produk-unggulan/plakat-fiberglass/plakat-fiberglass-35.png",
   "plakat-fiberglass-36": "/images/produk-unggulan/plakat-fiberglass/plakat-fiberglass-36.png",
   "plakat-fiberglass-37": "/images/produk-unggulan/plakat-fiberglass/plakat-fiberglass-37.png",
-  "plakat-fiberglass-38": "/images/produk-unggulan/plakat-fiberglass/plakat-fiberglass-38.png",
+
   "plakat-fiberglass-39": "/images/produk-unggulan/plakat-fiberglass/plakat-fiberglass-39.png",
   "plakat-fiberglass-40": "/images/produk-unggulan/plakat-fiberglass/plakat-fiberglass-40.png",
   "plakat-fiberglass-41": "/images/produk-unggulan/plakat-fiberglass/plakat-fiberglass-41.png",

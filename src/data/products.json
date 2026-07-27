@@ -19030,5 +19030,74 @@
     ],
     "featured": true,
     "custom": true
+  },
+  {
+    "id": "piala-po-050",
+    "code": "KMS-PO-050",
+    "name": "Piala Bisbol",
+    "slug": "piala-bisbol",
+    "categoryId": "piala",
+    "subcategoryId": "po",
+    "description": "Piala bisbol custom akrilik premium untuk turnamen bisbol, kompetisi, dan kejuaraan. Desain eksklusif dengan finishing transparan/bening berkualitas tinggi.",
+    "shortDescription": "Piala bisbol custom akrilik premium",
+    "material": "Akrilik Premium + Stand Fiberglass",
+    "size": "Small: 13x19cm / Medium: 16x23cm / Large: 20x30cm / Custom",
+    "color": "Transparan/Bening",
+    "thickness": "8 mm / 10 mm / 15 mm / 20 mm",
+    "usage": "Turnamen Bisbol / Penghargaan / Event Olahraga",
+    "minOrder": "1 pcs",
+    "productionTime": "1-10 hari kerja",
+    "price": "Harga Mulai Rp. 150.000 - Rp. 300.000",
+    "images": [
+      "/images/produk-unggulan/piala-olahraga/piala-bisbol.png"
+    ],
+    "featured": true,
+    "custom": true
+  },
+  {
+    "id": "piala-po-051",
+    "code": "KMS-PO-051",
+    "name": "Piala Muay Thai",
+    "slug": "piala-muay-thai",
+    "categoryId": "piala",
+    "subcategoryId": "po",
+    "description": "Piala muay thai custom akrilik premium untuk turnamen muay thai, kompetisi, dan kejuaraan. Desain eksklusif dengan finishing transparan/bening berkualitas tinggi.",
+    "shortDescription": "Piala muay thai custom akrilik premium",
+    "material": "Akrilik Premium + Stand Fiberglass",
+    "size": "Small: 13x19cm / Medium: 16x23cm / Large: 20x30cm / Custom",
+    "color": "Transparan/Bening",
+    "thickness": "8 mm / 10 mm / 15 mm / 20 mm",
+    "usage": "Turnamen Muay Thai / Penghargaan / Event Olahraga",
+    "minOrder": "1 pcs",
+    "productionTime": "1-10 hari kerja",
+    "price": "Harga Mulai Rp. 150.000 - Rp. 300.000",
+    "images": [
+      "/images/produk-unggulan/piala-olahraga/piala-muay-thai.png"
+    ],
+    "featured": true,
+    "custom": true
+  },
+  {
+    "id": "piala-po-052",
+    "code": "KMS-PO-052",
+    "name": "Piala Rugby",
+    "slug": "piala-rugby",
+    "categoryId": "piala",
+    "subcategoryId": "po",
+    "description": "Piala rugby custom akrilik premium untuk turnamen rugby, kompetisi, dan kejuaraan. Desain eksklusif dengan finishing transparan/bening berkualitas tinggi.",
+    "shortDescription": "Piala rugby custom akrilik premium",
+    "material": "Akrilik Premium + Stand Fiberglass",
+    "size": "Small: 13x19cm / Medium: 16x23cm / Large: 20x30cm / Custom",
+    "color": "Transparan/Bening",
+    "thickness": "8 mm / 10 mm / 15 mm / 20 mm",
+    "usage": "Turnamen Rugby / Penghargaan / Event Olahraga",
+    "minOrder": "1 pcs",
+    "productionTime": "1-10 hari kerja",
+    "price": "Harga Mulai Rp. 150.000 - Rp. 300.000",
+    "images": [
+      "/images/produk-unggulan/piala-olahraga/piala-rugby.png"
+    ],
+    "featured": true,
+    "custom": true
   }
 ]

@@ -1,19 +1,20 @@
 // Blocked keywords per hari untuk menghindari duplikasi
-// Task 10:00 WIB = priority keywords (manual schedule)
-// Task 20:00 WIB = general keywords (GSC + Suggest) - EXCLUDE yang ada di 10:00
+// Task 10:00 WIB = priority keywords (plakat batas wilayah) — Senin, Rabu, Jumat
+// Task 20:00 WIB = general keywords (GSC + Suggest) — EXCLUDE yang ada di 10:00
 
 export const BLOCKED_PER_HARI = {
   Senin: [
-    "plakat batas wilayah",
+    "plakat batas",
     "plakat BM",
     "plakat CP",
     "plakat bench mark",
     "plakat center point",
     "plakat bancmark",
-    "plakat batas desa",
-    "plakat batas kecamatan",
-    "plakat batas kabupaten",
-    "plakat batas provinsi",
+    "plakat peresmian gedung",
+    "plakat patok",
+    "plakat batas wilayah custom",
+    "plakat batas wilayah logam",
+    "plakat batas wilayah premium",
   ],
   Selasa: [
     "nama dada",
@@ -28,34 +29,31 @@ export const BLOCKED_PER_HARI = {
     "name tag pin",
   ],
   Rabu: [
-    "pin",
-    "bross",
-    "pin custom",
-    "bross custom",
-    "pin logam",
-    "bross logam",
-    "pin enamel",
-    "bross enamel",
-    "pin badge",
-    "bross badge",
-  ],
-  Kamis: [
-    "plakat batas wilayah",
+    "plakat batas",
     "plakat BM",
     "plakat CP",
     "plakat bench mark",
     "plakat center point",
     "plakat bancmark",
+    "plakat peresmian gedung",
+    "plakat patok",
+    "plakat batas wilayah custom",
+    "plakat batas wilayah logam",
+    "plakat batas wilayah premium",
   ],
+  Kamis: [], // Tidak ada manual schedule 10:00 — kosongkan
   Jumat: [
-    "gantungan kunci",
-    "gantungan kunci custom",
-    "gantungan kunci logam",
-    "gantungan kunci kayu",
-    "gantungan kunci akrilik",
-    "gantungan kunci plastik",
-    "gantungan kunci kulit",
-    "gantungan kunci resin",
+    "plakat batas",
+    "plakat BM",
+    "plakat CP",
+    "plakat bench mark",
+    "plakat center point",
+    "plakat bancmark",
+    "plakat peresmian gedung",
+    "plakat patok",
+    "plakat batas wilayah custom",
+    "plakat batas wilayah logam",
+    "plakat batas wilayah premium",
   ],
   Sabtu: [
     "medali",

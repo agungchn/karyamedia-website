@@ -19285,5 +19285,63 @@
       "piala wisuda",
       "karyamedia"
     ]
+  },
+  {
+    "slug": "plakat-batas-wilayah-custom",
+    "title": "Plakat Batas Wilayah Berkualitas untuk Desa",
+    "article": {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Plakat Batas Wilayah Berkualitas untuk Desa",
+      "description": "Plakat batas wilayah dari Karyamedia hadir sebagai solusi penanda administrasi desa dan kecamatan berbahan kuningan, tembaga, serta stainless steel yang.",
+      "image": "https://karyamediasouvenir.com/images/produk-unggulan/plakat-batas-wilayah/center-point/center-point (1).png",
+      "datePublished": "2026-07-27",
+      "dateModified": "2026-07-27",
+      "author": {
+        "@type": "Organization",
+        "name": "Karyamedia Souvenir",
+        "url": "https://karyamediasouvenir.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Karyamedia Souvenir",
+        "url": "https://karyamediasouvenir.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://karyamediasouvenir.com/blog/plakat-batas-wilayah-custom"
+      }
+    },
+    "breadcrumb": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Beranda",
+          "item": "https://karyamediasouvenir.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Batas Wilayah",
+          "item": "https://karyamediasouvenir.com/katalog-produk/batas-wilayah"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Plakat Batas Wilayah Berkualitas untuk Desa",
+          "item": "https://karyamediasouvenir.com/blog/plakat-batas-wilayah-custom"
+        }
+      ]
+    },
+    "keywords": [
+      "plakat batas wilayah",
+      "penanda batas desa",
+      "papan batas wilayah",
+      "plakat kuningan outdoor",
+      "batas administrasi kecamatan"
+    ]
   }
 ]

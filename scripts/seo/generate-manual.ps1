@@ -45,14 +45,18 @@ Add-Content -Path $log -Value "Tanggal: $todayStr, Hari: $dayName, Keyword: $key
 & $python $notifyScript --status start --keyword $keyword --count 1 | Out-Null
 
 # Build arguments
-$genArgs = @("scripts/seo/article-generate.mjs", "`"$keyword`"", "--category", "Batas Wilayah")
-if ($angle) { $genArgs += "--angle"; $genArgs += "`"$angle`"" }
-if ($loc) { $genArgs += "--loc"; $genArgs += "`"$loc`"" }
+$nodeArgs = @(
+  "scripts/seo/article-generate.mjs"
+  $keyword
+  "--category"
+  "Batas Wilayah"
+)
+if ($angle) { $nodeArgs += "--angle"; $nodeArgs += $angle }
+if ($loc) { $nodeArgs += "--loc"; $nodeArgs += $loc }
 
 # Generate article
-$cmd = "node $($genArgs -join ' ')"
-Add-Content -Path $log -Value "Exec: $cmd"
-$out = Invoke-Expression $cmd 2>&1 | Tee-Object -FilePath $log -Append | Out-String
+Add-Content -Path $log -Value "Exec: node $keyword --category Batas Wilayah [angle: $($angle -ne $null)] [loc: $($loc -ne $null)]"
+$out = & "node" $nodeArgs 2>&1 | Tee-Object -FilePath $log -Append | Out-String
 $exitCode = $LASTEXITCODE
 
 # Extract slug

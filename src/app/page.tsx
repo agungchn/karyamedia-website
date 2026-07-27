@@ -83,7 +83,7 @@ const featuredByCategory = categories
     if (cat.id === "piala") {
       const pt = prods.filter((p) => p.subcategoryId === "pt").sort(() => Math.random() - 0.5).slice(0, 2)
       const pg = prods.filter((p) => p.subcategoryId === "pg").sort(() => Math.random() - 0.5).slice(0, 2)
-      const po = prods.filter((p) => p.subcategoryId === "po").sort(() => Math.random() - 0.5).slice(0, 2)
+      const po = prods.filter((p) => p.subcategoryId === "po").sort(() => Math.random() - 0.5).slice(0, 4)
       prods = [...pt, ...pg, ...po]
     } else if (cat.id === "wisuda") {
       const ptw = prods.filter((p) => p.subcategoryId === "ptw").sort(() => Math.random() - 0.5).slice(0, 1)
@@ -972,9 +972,9 @@ export default function HomePage() {
                     style={{ animationDelay: `${(gi * 4 + i) * 0.1}s`, animationFillMode: "forwards" }}
                   >
                     <div className="aspect-[3/4] bg-gradient-to-br from-gray-100 to-gray-200 relative overflow-hidden">
-                      {featuredImageMap[product.slug] && (
+                      {(featuredImageMap[product.slug] || product.images[0]) && (
                         <Image
-                          src={featuredImageMap[product.slug]}
+                          src={featuredImageMap[product.slug] || product.images[0]}
                           alt={`${product.name} - ${categories.find((c) => c.id === product.categoryId)?.subcategories.find((s) => s.id === product.subcategoryId)?.name || categories.find((c) => c.id === product.categoryId)?.name || "Souvenir"} Karyamedia Jogja`}
                           fill
                           sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"

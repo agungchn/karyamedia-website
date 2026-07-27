@@ -78,9 +78,6 @@ try {
 $out = & npm run seo:ideas -- --generate-top 2 --commit-push 2>&1 | Tee-Object -FilePath $log -Append | Out-String
 $ideasExit = $LASTEXITCODE
 
-$out = & npm run seo:ideas -- --generate-top 2 --commit-push 2>&1 | Tee-Object -FilePath $log -Append | Out-String
-$ideasExit = $LASTEXITCODE
-
 # Telegram notification
 $python = "python"
 $notifyScript = Join-Path $root "scripts\seo\telegram-notify.py"

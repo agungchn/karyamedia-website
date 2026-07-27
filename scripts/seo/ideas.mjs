@@ -117,6 +117,32 @@ function nearDup(query, workingText) {
   return false
 }
 
+// Jaccard similarity between two keyword queries.
+function jaccard(a, b) {
+  const A = new Set(sigTokens(a))
+  const B = new Set(sigTokens(b))
+  const both = new Set([...A].filter((x) => B.has(x)))
+  const all = new Set([...A, ...B])
+  return all.size ? both.size / all.size : 0
+}
+
+// Pre-generation duplicate check: skip if keyword is too similar (≥55% Jaccard)
+// to any keyword already attempted in this run, or has ≥50% token overlap
+// with an existing article title.
+function isKeywordDuplicate(query, workingText, attemptedKeywords) {
+  const q = sigTokens(query)
+  if (q.length === 0) return true
+  for (const ak of attemptedKeywords) {
+    if (jaccard(query, ak) >= 0.55) return true
+  }
+  const arts = extractArticles(workingText)
+  for (const a of arts) {
+    const title = titleRe.exec(a.block)?.[1] || ""
+    if (jaccard(query, title) >= 0.5) return true
+  }
+  return false
+}
+
 function fmtDate(d) {
   return d.toISOString().slice(0, 10)
 }
@@ -320,14 +346,40 @@ async function main() {
     console.log(`\n>>> Generate draft untuk top ${GEN_TOP} (LLM)...`)
     const top = opportunities.slice(0, GEN_TOP)
     const generatedSlugs = []
+    const attemptedKeywords = []
+    const maxRun = GEN_TOP * 3 // safety cap: maks 3× lipat untuk cari pengganti
+    let runCount = 0
     for (const o of top) {
-      const cat = o._category || inferCategory(o.query)
+      let cat = o._category || inferCategory(o.query)
+      let genProvince = o._province || ""
+      let genSegment = o._segment || ""
+      // Pre-generation duplicate check: skip keyword yang terlalu mirip
+      // dengan keyword yg sudah gagal atau artikel existing — hemat LLM quota.
+      if (isKeywordDuplicate(o.query, working, attemptedKeywords)) {
+        console.log(`  ⏭ Skip "${o.query}" — terlalu mirip dengan keyword/artikel yang sudah ada, cari pengganti...`)
+        if (runCount++ >= maxRun) break
+        for (let j = GEN_TOP; j < opportunities.length; j++) {
+          const alt = opportunities[j]
+          if (alt._used || isKeywordDuplicate(alt.query, working, attemptedKeywords)) continue
+          alt._used = true
+          o.query = alt.query
+          o._category = alt._category
+          o._province = alt._province || ""
+          o._segment = alt._segment || ""
+          cat = o._category || inferCategory(o.query)
+          genProvince = o._province
+          genSegment = o._segment
+          console.log(`  → Ganti dengan "${o.query}" (kategori: ${cat}${genProvince ? ", lokasi: " + genProvince : ""}${genSegment ? ", segmen: " + genSegment : ""})`)
+          break
+        }
+      }
       const genEnv = {
         ...process.env,
-        ARTICLE_PROVINCE: o._province || "",
-        ARTICLE_SEGMENT: o._segment || "",
+        ARTICLE_PROVINCE: genProvince,
+        ARTICLE_SEGMENT: genSegment,
       }
-      console.log(`\n### "${o.query}" (kategori: ${cat}${o._province ? ", lokasi: " + o._province : ""}${o._segment ? ", segmen: " + o._segment : ""})`)
+      console.log(`\n### "${o.query}" (kategori: ${cat}${genProvince ? ", lokasi: " + genProvince : ""}${genSegment ? ", segmen: " + genSegment : ""})`)
+      attemptedKeywords.push(o.query)
       // Per-topik: satu topik gagal (mis. duplikat / LLM error) tidak boleh
       // membatalkan topik lain maupun seluruh run.
       try {

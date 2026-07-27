@@ -78,6 +78,10 @@ try {
 $out = & npm run seo:ideas -- --generate-top 2 --commit-push 2>&1 | Tee-Object -FilePath $log -Append | Out-String
 $ideasExit = $LASTEXITCODE
 
+# Parse generated slugs & titles from output (untuk notifikasi, sitemap, IndexNow)
+$slugs = @($out | Select-String "GENERATED_SLUG:(\S+)" | ForEach-Object { $_.Matches[0].Groups[1].Value })
+$titles = @($out | Select-String "Artikel baru: blog/\S+ — (.+)$" | ForEach-Object { $_.Matches[0].Groups[1].Value })
+
 # Telegram notification
 $python = "python"
 $notifyScript = Join-Path $root "scripts\seo\telegram-notify.py"

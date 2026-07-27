@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `${sub.name} Custom | Karyamedia Souvenir`,
-    description: `${sub.name} custom berkualitas dari Yogyakarta untuk penghargaan, event, dan souvenir instansi.`,
+    description: sub.description || `${sub.name} custom berkualitas dari Yogyakarta untuk penghargaan, event, dan souvenir instansi.`,
     robots: { index: true, follow: true },
     alternates: {
       canonical,

@@ -438,7 +438,8 @@ function buildPrompt({ keyword, category, location = null, segment = null, segme
   const segExTxt = segment ? (SEGMENT_EXAMPLES[segment] || "") : ""
   const vBlock = variantBlock(resolveVariant(variant, keyword), keyword, loc)
   const angleBlock = angle ? `\n\nSUDUT PANDANG UNIK ARTIKEL INI (WAJIB dijadikan fondasi utama konten):\n${angle}\nIni adalah pembeda utama artikel ini dari artikel lain. Angkat konteks spesifik, segmen, dan contoh kasus yang SESUAI dengan sudut pandang ini. JANGAN menulis artikel generik yang sama dengan artikel plakat batas wilayah lainnya.` : ""
-  return `Tulis artikel SEO berbahasa Indonesia, 100% orisinal (jangan kutip/meniru teks pihak ketiga mana pun), untuk bisnis "Karyamedia" (produsen souvenir & custom manufacturing berbasis Yogyakarta yang melayani seluruh Indonesia, termasuk ${loc}: plakat, medali, piala, prasasti, gift box / box kemasan, souvenir wisuda, nama dada, dll).${angleBlock}
+  const catBlock = category === "Batas Wilayah" ? `\n\nPERHATIAN KHUSUS: keyword "${keyword}" adalah PRODUK PENANDA BATAS FISIK (boundary marker/plakat batas) yang dipasang di lokasi lapangan — BUKAN plakat penghargaan/acara biasa. JANGAN menulis tentang plakat penghargaan, plakat akrilik, plakat kayu, plakat wisuda, atau plakat seremonial. Tulis KHUSUS tentang penanda batas wilayah, fungsi administratif, pemasangan di lapangan, dan material yang tahan outdoor (kuningan, tembaga, stainless steel).` : ""
+  return `Tulis artikel SEO berbahasa Indonesia, 100% orisinal (jangan kutip/meniru teks pihak ketiga mana pun), untuk bisnis "Karyamedia" (produsen souvenir & custom manufacturing berbasis Yogyakarta yang melayani seluruh Indonesia, termasuk ${loc}: plakat, medali, piala, prasasti, gift box / box kemasan, souvenir wisuda, nama dada, dll).${angleBlock}${catBlock}
 
 Keyword utama: "${keyword}"
 Kategori: ${category}

@@ -85,6 +85,7 @@ gbp-update-ids.mjs
 
 .vercel
 article-gen-log.txt
+article-gen-manual-log.txt
 article-gen-test-run.txt
 
 # generated article/SEO logs (local only)

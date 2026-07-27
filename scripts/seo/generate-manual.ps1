@@ -1,6 +1,6 @@
 # Manual SEO article generator for priority keywords (plakat batas wilayah)
-# Scheduled via Windows Task Scheduler: Senin & Kamis jam 10:00 WIB
-# Keyword diambil dari article-schedule.json berdasarkan minggu saat ini
+# Scheduled via Windows Task Scheduler: Senin, Rabu, Jumat jam 10:00 WIB
+# Keyword diambil dari article-schedule.json berdasarkan tanggal hari ini
 
 $ErrorActionPreference = "Continue"
 $root = "H:\karyamedia-web"
@@ -13,70 +13,58 @@ $notifyScript = Join-Path $root "scripts\seo\telegram-notify.py"
 # Load schedule JSON
 $schedule = Get-Content $scheduleFile -Raw | ConvertFrom-Json
 
-# Calculate current week (from start date 2026-07-27)
-$startDate = [datetime]::Parse("2026-07-27")
 $today = Get-Date
-$weekNumber = [math]::Ceiling(($today - $startDate).TotalDays / 7) + 1
+$todayStr = $today.ToString("yyyy-MM-dd")
+$dayName = $today.DayOfWeek
+if ($dayName -eq 0) { $dayName = "Minggu" }
+elseif ($dayName -eq 1) { $dayName = "Senin" }
+elseif ($dayName -eq 2) { $dayName = "Selasa" }
+elseif ($dayName -eq 3) { $dayName = "Rabu" }
+elseif ($dayName -eq 4) { $dayName = "Kamis" }
+elseif ($dayName -eq 5) { $dayName = "Jumat" }
+elseif ($dayName -eq 6) { $dayName = "Sabtu" }
 
-if ($weekNumber -lt 1) { $weekNumber = 1 }
-if ($weekNumber -gt $schedule.schedule.Count) {
-  Add-Content -Path $log -Value "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') - Schedule selesai (week $weekNumber > $($schedule.schedule.Count))"
-  & $python $notifyScript --status start --keyword "schedule-completed" --count 0 | Out-Null
+# Cari entry untuk hari ini berdasarkan tanggal
+$entry = $schedule.schedule | Where-Object { $_.date -eq $todayStr }
+
+if (-not $entry) {
+  $msg = "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') - Tidak ada jadwal untuk hari ini ($todayStr / $dayName)"
+  Add-Content -Path $log -Value $msg
   exit 0
 }
 
-# Get keyword for current week
-$weekSchedule = $schedule.schedule | Where-Object { $_.week -eq $weekNumber }
-
-if (-not $weekSchedule) {
-  Add-Content -Path $log -Value "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') - No schedule for week $weekNumber"
-  exit 0
-}
-
-# Determine which day (Senin=1, Kamis=4)
-$dayOfWeek = [int]$today.DayOfWeek
-if ($dayOfWeek -eq 0) { $dayOfWeek = 7 } # Sunday = 7
-
-$keyword = if ($dayOfWeek -eq 1) {
-  # Senin - ambil entry pertama minggu ini
-  $weekSchedule[0].keyword
-} elseif ($dayOfWeek -eq 4) {
-  # Kamis - ambil entry kedua minggu ini (jika ada)
-  if ($weekSchedule.Count -gt 1) {
-    $weekSchedule[1].keyword
-  } else {
-    $weekSchedule[0].keyword
-  }
-} else {
-  # Bukan Senin/Kamis - skip
-  Add-Content -Path $log -Value "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') - Skip (bukan Senin/Kamis)"
-  exit 0
-}
+$keyword = $entry.keyword
+$angle = $entry.angle
+$loc = $entry.loc
 
 $ts = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
 Add-Content -Path $log -Value "`n===== $ts (Manual 10:00) ====="
-Add-Content -Path $log -Value "Week: $weekNumber, Day: $dayOfWeek, Keyword: $keyword"
+Add-Content -Path $log -Value "Tanggal: $todayStr, Hari: $dayName, Keyword: $keyword"
 
 # Send start notification
 & $python $notifyScript --status start --keyword $keyword --count 1 | Out-Null
 
+# Build arguments
+$genArgs = @("scripts/seo/article-generate.mjs", "`"$keyword`"", "--category", "Batas Wilayah")
+if ($angle) { $genArgs += "--angle"; $genArgs += "`"$angle`"" }
+if ($loc) { $genArgs += "--loc"; $genArgs += "`"$loc`"" }
+
 # Generate article
-$out = & node scripts/seo/article-generate.mjs $keyword --category "Plakat" 2>&1 | Tee-Object -FilePath $log -Append | Out-String
+$cmd = "node $($genArgs -join ' ')"
+Add-Content -Path $log -Value "Exec: $cmd"
+$out = Invoke-Expression $cmd 2>&1 | Tee-Object -FilePath $log -Append | Out-String
 $exitCode = $LASTEXITCODE
 
 # Extract slug
 $slug = if ($out -match "GENERATED_SLUG:(\S+)") { $matches[1] } else { $null }
 
 if ($exitCode -ne 0) {
-  # Extract error
   $errorMsg = if ($out -match "DUPLIKAT.*batal") { "Duplikat konten" }
               elseif ($out -match "timeout") { "LLM timeout" }
               elseif ($out -match "quota|rate.?limit|429") { "Kuota LLM habis" }
               else { "Error tidak diketahui" }
   
-  # Send failure notification
   & $python $notifyScript --status failure --keyword $keyword --error $errorMsg --count 0 | Out-Null
-  
   Add-Content -Path $log -Value "ERROR (exit $exitCode): $errorMsg"
   exit 1
 }

@@ -431,13 +431,14 @@ VARIASI GAYA PENULISAN (WAJIB agar tidak terasa template/assembly-line):
 - Variasikan ritme kalimat (pendek–panjang) dan hindari frasa klise berulang ("tentu saja", "dapat diandalkan", "terpercaya") dalam artikel yang sama.
 - Tujuannya: tiap artikel terasa ditulis oleh penulis manusia dengan sudut pandang unik, bukan konten seragam.`
 
-function buildPrompt({ keyword, category, location = null, segment = null, segmentCtx = null, variant = null, extra = "" }) {
+function buildPrompt({ keyword, category, location = null, segment = null, segmentCtx = null, variant = null, extra = "", angle = null }) {
   const loc = location || "seluruh Indonesia"
   const seg = segment || "instansi, kampus, dan event"
   const segCtxTxt = segmentCtx ? ` (mis. ${segmentCtx})` : ""
   const segExTxt = segment ? (SEGMENT_EXAMPLES[segment] || "") : ""
   const vBlock = variantBlock(resolveVariant(variant, keyword), keyword, loc)
-  return `Tulis artikel SEO berbahasa Indonesia, 100% orisinal (jangan kutip/meniru teks pihak ketiga mana pun), untuk bisnis "Karyamedia" (produsen souvenir & custom manufacturing berbasis Yogyakarta yang melayani seluruh Indonesia, termasuk ${loc}: plakat, medali, piala, prasasti, gift box / box kemasan, souvenir wisuda, nama dada, dll).
+  const angleBlock = angle ? `\n\nSUDUT PANDANG UNIK ARTIKEL INI (WAJIB dijadikan fondasi utama konten):\n${angle}\nIni adalah pembeda utama artikel ini dari artikel lain. Angkat konteks spesifik, segmen, dan contoh kasus yang SESUAI dengan sudut pandang ini. JANGAN menulis artikel generik yang sama dengan artikel plakat batas wilayah lainnya.` : ""
+  return `Tulis artikel SEO berbahasa Indonesia, 100% orisinal (jangan kutip/meniru teks pihak ketiga mana pun), untuk bisnis "Karyamedia" (produsen souvenir & custom manufacturing berbasis Yogyakarta yang melayani seluruh Indonesia, termasuk ${loc}: plakat, medali, piala, prasasti, gift box / box kemasan, souvenir wisuda, nama dada, dll).${angleBlock}
 
 Keyword utama: "${keyword}"
 Kategori: ${category}

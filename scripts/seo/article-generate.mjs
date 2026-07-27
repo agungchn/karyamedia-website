@@ -1043,22 +1043,26 @@ async function main() {
   let province = null
   let segment = null
   let dryRun = false
+  let angle = null
+  let loc = null
   
   for (let i = 0; i < args.length; i++) {
     if (args[i] === "--category") category = args[++i]
     else if (args[i] === "--commit-push") commitPush = true
     else if (args[i] === "--province") province = args[++i]
     else if (args[i] === "--segment") segment = args[++i]
+    else if (args[i] === "--angle") angle = args[++i]
+    else if (args[i] === "--loc") loc = args[++i]
     else if (args[i] === "--dry-run") dryRun = true
     else if (!keyword) keyword = args[i]
   }
   if (!keyword) {
-    console.error('Pakai: node scripts/seo/article-generate.mjs "<keyword>" [--category X] [--province "Nama Provinsi"] [--segment pemerintahan|kampus|eo|komunitas] [--commit-push] [--dry-run]')
+    console.error('Pakai: node scripts/seo/article-generate.mjs "<keyword>" [--category X] [--province "Nama Provinsi"] [--segment pemerintahan|kampus|eo|komunitas] [--angle "angle unik"] [--loc "lokasi"] [--commit-push] [--dry-run]')
     process.exit(1)
   }
   // lokasi target (provinsi) & segmen — diinject dari ideas.mjs via env saat
   // dijalankan oleh scheduler; untuk manual run bisa pakai flag di atas.
-  const location = province || process.env.ARTICLE_PROVINCE || null
+  const location = loc || province || process.env.ARTICLE_PROVINCE || null
   const seg = segment || process.env.ARTICLE_SEGMENT || null
   const segLabel = segmentLabel(seg)
   const segCtx = seg ? SEGMENTS.find((s) => s.key === seg)?.ctx || "" : ""
@@ -1155,7 +1159,7 @@ async function main() {
   const minWords = 1500
   const targetWords = 1800
   const genOpts = (extra) =>
-    ({ keyword, category, location, segment: segLabel, segmentCtx: segCtx, variant: variantIdx, extra })
+    ({ keyword, category, location, segment: segLabel, segmentCtx: segCtx, variant: variantIdx, extra, angle })
 
   console.log("Menulis prose via LLM...")
   let data = await generateArticle(genOpts())

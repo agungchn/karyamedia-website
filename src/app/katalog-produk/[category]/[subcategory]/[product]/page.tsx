@@ -252,7 +252,7 @@ export default async function ProductDetailPage({ params }: Props) {
               {relatedProducts.map((rp) => (
                 <Link
                   key={rp.id}
-                  href={`/katalog-produk/${rp.categoryId}/${getSubSlug(rp)}/${rp.slug}`}
+                  href={`/katalog-produk/${categories.find((c) => c.id === rp.categoryId)?.slug || rp.categoryId}/${getSubSlug(rp)}/${rp.slug}`}
                   className="group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
                 >
                   <div className="aspect-[3/4] bg-gradient-to-br from-gray-100 to-gray-200 relative overflow-hidden">

@@ -1,6 +1,5 @@
 import { MetadataRoute } from "next"
 import { categories } from "@/data/categories"
-import { products } from "@/data/products"
 import { articles } from "@/data/articles"
 
 const BASE_URL = "https://karyamediasouvenir.com"
@@ -39,17 +38,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
   )
 
-  const productPages: MetadataRoute.Sitemap = products.map((product) => {
-    const cat = categories.find((c) => c.id === product.categoryId)
-    const sub = cat?.subcategories.find((s) => s.id === product.subcategoryId)
-    const subSlug = sub?.slug || product.subcategoryId
-    return {
-      url: `${BASE_URL}/katalog-produk/${product.categoryId}/${subSlug}/${product.slug}`,
-      lastModified: new Date(),
-      changeFrequency: "monthly" as const,
-      priority: 0.6,
-    }
-  })
+  // Product detail pages dihapus dari sitemap untuk mengurangi bloat (773/797 produk adalah featured).
+  // Google tetap bisa menemukan produk via internal link dari halaman subcategory.
+  // Sitemap difokuskan ke artikel blog yang butuh crawl priority.
 
   // Slugs that are 301-redirected to a canonical article (consolidation).
   const REDIRECTED = new Set([
@@ -68,5 +59,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     }))
 
-  return [...staticPages, ...categoryPages, ...subcategoryPages, ...productPages, ...blogPages]
+  return [...staticPages, ...categoryPages, ...subcategoryPages, ...blogPages]
 }

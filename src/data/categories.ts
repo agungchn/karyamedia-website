@@ -52,6 +52,7 @@ export const categories: Category[] = [
     subcategories: [
       { id: "pt", name: "Piala Trophy", slug: "piala-trophy", aliases: ["piala olahraga", "piala kejuaraan", "trophy penghargaan", "piala kompetisi", "piala lomba", "piala murah"], description: "Piala dan trophy custom untuk kompetisi, kejuaraan, dan penghargaan event. Bahan plastik dan atom berkualitas dengan ukiran nama." },
       { id: "pg", name: "Piala Golf", slug: "piala-golf", aliases: ["piala turnamen golf", "trophy golf", "piala olahraga golf", "souvenir golf", "hadiah golf"], description: "Piala golf custom untuk turnamen dan event olahraga. Akrilik premium dengan stand fiberglass, desain elegan dan eksklusif." },
+      { id: "po", name: "Piala Olahraga", slug: "piala-olahraga", aliases: ["piala futsal", "piala basket", "piala sepak bola", "piala turnamen", "piala kejuaraan olahraga", "piala akrilik olahraga", "piala sport"], description: "Piala olahraga custom akrilik untuk futsal, basket, sepak bola, bulu tangkis, dan berbagai cabang olahraga. Cocok untuk turnamen, kejuaraan, dan event kompetisi." },
     ],
   },
   {

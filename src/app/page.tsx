@@ -83,7 +83,8 @@ const featuredByCategory = categories
     if (cat.id === "piala") {
       const pt = prods.filter((p) => p.subcategoryId === "pt").sort(() => Math.random() - 0.5).slice(0, 2)
       const pg = prods.filter((p) => p.subcategoryId === "pg").sort(() => Math.random() - 0.5).slice(0, 2)
-      prods = [...pt, ...pg]
+      const po = prods.filter((p) => p.subcategoryId === "po").sort(() => Math.random() - 0.5).slice(0, 2)
+      prods = [...pt, ...pg, ...po]
     } else if (cat.id === "wisuda") {
       const ptw = prods.filter((p) => p.subcategoryId === "ptw").sort(() => Math.random() - 0.5).slice(0, 1)
       const gw = prods.filter((p) => p.subcategoryId === "gw").sort(() => Math.random() - 0.5).slice(0, 1)

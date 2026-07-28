@@ -36,7 +36,7 @@ export default function KalkulatorHargaPage() {
   const [size, setSize] = useState("7.5cm")
   const [etching, setEtching] = useState("2 Muka Masir")
   const [finishType, setFinishType] = useState<"chrome" | "poles">("chrome")
-  const [finishOption, setFinishOption] = useState("Crome 8 cm")
+  const [polishOption, setPolishOption] = useState("Crome 8 cm")
   const [shape, setShape] = useState("Tebal > 2mm")
   const [layer, setLayer] = useState("Tanpa Lapisan")
   const [coloring, setColoring] = useState("2 Warna")
@@ -56,11 +56,7 @@ export default function KalkulatorHargaPage() {
     return chromeOptions[chromeOptions.length - 1]?.label || "Crome 8 cm"
   }, [size])
 
-  useEffect(() => {
-    if (finishType === "chrome") {
-      setFinishOption(chromeBySize)
-    }
-  }, [chromeBySize, finishType])
+  const finishOption = finishType === "chrome" ? chromeBySize : polishOption
 
   const result = useMemo<KalkulasiOutput | null>(() => {
     if (!quantity || quantity < 1) return null
@@ -70,7 +66,7 @@ export default function KalkulatorHargaPage() {
       shape, layer, coloring, cutting, attachment,
       quantity,
     })
-  }, [thickness, size, etching, finishType, finishOption, shape, layer, coloring, cutting, attachment, quantity])
+  }, [thickness, size, etching, finishType, polishOption, shape, layer, coloring, cutting, attachment, quantity])
 
   return (
     <>
@@ -152,7 +148,7 @@ export default function KalkulatorHargaPage() {
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Pilihan</label>
-                  <select value={finishOption} onChange={e => setFinishOption(e.target.value)}
+                  <select value={finishOption} onChange={_e => { if (finishType === "poles") setPolishOption(_e.target.value) }}}}}
                     className="w-full rounded-xl border border-gray-300 px-4 py-2.5 text-sm focus:ring-2 focus:ring-primary/50 focus:border-primary">
                     {finishType === "chrome"
                       ? chromePolesPrices.filter(c => c.label.startsWith("Crome")).map(c => (

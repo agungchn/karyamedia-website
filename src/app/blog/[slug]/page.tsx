@@ -102,12 +102,15 @@ export async function generateStaticParams() {
   return articles.map((a) => ({ slug: a.slug }))
 }
 
+const computeReadTime = (content: string) =>
+  Math.max(1, Math.round(content.replace(/<[^>]*>/g, "").split(/\s+/).length / 200))
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const article = articles.find((a) => a.slug === slug)
   if (!article) return {}
 
-  const readTime = Math.max(1, Math.round(article.content.replace(/<[^>]*>/g, "").split(/\s+/).length / 200))
+  const readTime = computeReadTime(article.content)
   const canonicalSlug = article.canonical ?? slug
   const canonicalUrl = `https://karyamediasouvenir.com/blog/${canonicalSlug}`
 
@@ -132,6 +135,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: "summary_large_image",
       title: article.title,
       description: article.description,
+      images: [article.image],
     },
   }
 }
@@ -159,7 +163,7 @@ export default async function ArticlePage({ params }: Props) {
     ? sameCategory.slice(0, 3)
     : [...sameCategory, ...articles.filter((a) => a.slug !== slug && a.category !== article.category)].slice(0, 3)
 
-  const readTime = Math.max(1, Math.round(article.content.replace(/<[^>]*>/g, "").split(/\s+/).length / 200))
+  const readTime = computeReadTime(article.content)
 
   const headingMatches = [...article.content.matchAll(/<h2>(.*?)<\/h2>/g)]
   const contentWithIds = article.content.replace(/<h2>(.*?)<\/h2>/g, (_, text) => {

@@ -148,7 +148,7 @@ export default function KalkulatorHargaPage() {
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Pilihan</label>
-                  <select value={finishOption} onChange={_e => { if (finishType === "poles") setPolishOption(_e.target.value) }}}}}
+                  <select value={finishOption} onChange={e => finishType === "poles" && setPolishOption(e.target.value)}
                     className="w-full rounded-xl border border-gray-300 px-4 py-2.5 text-sm focus:ring-2 focus:ring-primary/50 focus:border-primary">
                     {finishType === "chrome"
                       ? chromePolesPrices.filter(c => c.label.startsWith("Crome")).map(c => (

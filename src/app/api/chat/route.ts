@@ -9,7 +9,7 @@ const LLM_TIMEOUT_MS = 30000
 async function fetchWithTimeout(url: string, init: RequestInit): Promise<Response> {
   return fetch(url, {
     ...init,
-    signal: (AbortSignal as any).timeout(LLM_TIMEOUT_MS),
+    signal: AbortSignal.timeout?.(LLM_TIMEOUT_MS) ?? init.signal,
   })
 }
 
@@ -21,7 +21,7 @@ function sanitize(messages: unknown): ChatMessage[] {
     .filter(
       (m): m is ChatMessage =>
         !!m &&
-        ((m as any).role === "user" || (m as any).role === "assistant"),
+        ((m as { role?: string }).role === "user" || (m as { role?: string }).role === "assistant"),
     )
     .filter((m) => typeof m.content === "string" && m.content.trim().length > 0)
     .slice(-12)
@@ -111,14 +111,14 @@ async function callGemini(system: string, messages: ChatMessage[], userQuery: st
 }
 
 export async function POST(req: NextRequest) {
-  let body: any
+  let body: unknown
   try {
     body = await req.json()
   } catch {
     return NextResponse.json({ error: "Format permintaan tidak valid" }, { status: 400 })
   }
 
-  const messages = sanitize(body?.messages)
+  const messages = sanitize((body as { messages?: unknown })?.messages)
   if (!messages.length) {
     return NextResponse.json({ error: "Pesan kosong" }, { status: 400 })
   }
@@ -132,11 +132,9 @@ export async function POST(req: NextRequest) {
     if (provider === "gemini") reply = await callGemini(system, messages, userQuery)
     else reply = await callOpenAICompatible(system, messages, userQuery)
     return NextResponse.json({ reply })
-  } catch (e: any) {
+  } catch (e) {
+    const message = e instanceof Error ? e.message : "Gagal memproses pesan"
     console.error("chat route error:", e)
-    return NextResponse.json(
-      { error: e?.message || "Gagal memproses pesan" },
-      { status: 500 },
-    )
+    return NextResponse.json({ error: message }, { status: 500 })
   }
 }

@@ -144,6 +144,12 @@ console.log("Build...")
 try {
   require("child_process").execSync("npm run build", { cwd: __dirname, stdio: "inherit" })
   console.log("BUILD SUKSES!")
+  console.log("Submit sitemap ke Bing...")
+  require("child_process").execSync("npm run seo:submit", { cwd: __dirname, stdio: "inherit" })
+  console.log("Sitemap Bing dikirim!")
+  console.log("IndexNow (Google + Bing)...")
+  require("child_process").execSync(`node scripts/seo/indexnow.mjs ${slug}`, { cwd: __dirname, stdio: "inherit" })
+  console.log("IndexNow dikirim!")
 } catch (e) {
   console.log("Build gagal, tapi artikel sudah tersimpan.")
   console.log("Jalankan 'npm run build' manual untuk lihat error detail.")

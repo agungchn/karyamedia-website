@@ -18,11 +18,13 @@ export const metadata: Metadata = {
     siteName: "Karyamedia Souvenir",
     locale: "id_ID",
     type: "website",
+    images: [{ url: "/images/logo-karyamedia.png", width: 800, height: 800 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Blog & Artikel - Karyamedia Souvenir",
     description: "Panduan dan tips seputar souvenir custom, plakat, medali, dan perlengkapan wisuda dari Karyamedia Souvenir.",
+    images: ["/images/logo-karyamedia.png"],
   },
 }
 

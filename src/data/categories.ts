@@ -33,6 +33,21 @@ export const categories: Category[] = [
     ],
   },
   {
+    id: "plakat-instansi",
+    name: "Plakat Instansi",
+    slug: "plakat-instansi",
+    icon: "Building2",
+    description: "Plakat custom untuk instansi pemerintah, sekolah, dan organisasi — tersedia per wilayah",
+    subcategories: [
+      { id: "pi-jawa", name: "Jawa", slug: "pi-jawa", aliases: ["plakat instansi jawa", "plakat jawa", "plakat instansi jawa tengah", "plakat instansi jawa timur", "plakat instansi jawa barat"], description: "Plakat instansi custom untuk wilayah Jawa — Jawa Tengah, Jawa Timur, dan Jawa Barat." },
+      { id: "pi-sumatera", name: "Sumatera", slug: "pi-sumatera", aliases: ["plakat instansi sumatera", "plakat sumatera", "plakat instansi sumatera utara", "plakat instansi sumatera selatan"], description: "Plakat instansi custom untuk wilayah Sumatera — Sumatera Utara, Sumatera Selatan, dan sekitarnya." },
+      { id: "pi-kalimantan", name: "Kalimantan", slug: "pi-kalimantan", aliases: ["plakat instansi kalimantan", "plakat kalimantan"], description: "Plakat instansi custom untuk wilayah Kalimantan — Kaltim, Kalsel, Kalteng, dan sekitarnya." },
+      { id: "pi-sulawesi", name: "Sulawesi", slug: "pi-sulawesi", aliases: ["plakat instansi sulawesi", "plakat sulawesi"], description: "Plakat instansi custom untuk wilayah Sulawesi — Sulawesi Utara, Sulawesi Selatan, dan sekitarnya." },
+      { id: "pi-bali-ntt", name: "Bali & NTT", slug: "pi-bali-ntt", aliases: ["plakat instansi bali", "plakat instansi ntt", "plakat bali", "plakat ntt", "plakat instansi bali ntt"], description: "Plakat instansi custom untuk wilayah Bali dan Nusa Tenggara." },
+      { id: "pi-maluku-papua", name: "Maluku & Papua", slug: "pi-maluku-papua", aliases: ["plakat instansi maluku", "plakat instansi papua", "plakat maluku", "plakat papua"], description: "Plakat instansi custom untuk wilayah Maluku dan Papua." },
+    ],
+  },
+  {
     id: "medali",
     name: "Medali",
     slug: "medali",

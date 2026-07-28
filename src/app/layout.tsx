@@ -8,7 +8,7 @@ import { BackToTop } from "@/components/ui/back-to-top"
 import { GbpReviewCta } from "@/components/gbp-review-cta"
 import { GtmNoscript } from "@/components/gtm-noscript"
 import { LazyChatbot } from "@/components/ui/lazy-chatbot"
-import { OrganizationSchema, WebSiteSchema, LocalBusinessReviewsSchema } from "@/components/json-ld"
+import { OrganizationSchema, LocalBusinessSchema, WebSiteSchema, LocalBusinessReviewsSchema } from "@/components/json-ld"
 import { FaviconThemeSwitcher } from "@/components/favicon-theme-switcher"
 
 const geistSans = localFont({
@@ -129,6 +129,7 @@ export default function RootLayout({
         <GtmNoscript />
         <FaviconThemeSwitcher />
         <OrganizationSchema />
+        <LocalBusinessSchema />
         <LocalBusinessReviewsSchema />
         <WebSiteSchema />
         <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-accent focus:text-primary focus:rounded-lg focus:text-sm focus:font-medium focus:outline-none">

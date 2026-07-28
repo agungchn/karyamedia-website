@@ -7,7 +7,7 @@ import { Metadata } from "next"
 import { categories } from "@/data/categories"
 import { products } from "@/data/products"
 import { getWhatsAppLink, generateWhatsAppMessage } from "@/lib/utils"
-import { BreadcrumbSchema } from "@/components/json-ld"
+import { BreadcrumbSchema, CategorySchema } from "@/components/json-ld"
 
 // Selalu render dari data terkini (produk sering ditambah via script).
 export const dynamic = "force-dynamic"
@@ -74,6 +74,7 @@ export default async function CategoryPage({ params }: Props) {
           { name: cat.name, url: `/katalog-produk/${category}` },
         ]}
       />
+      <CategorySchema name={cat.name} description={cat.description} />
       <section className="relative overflow-hidden bg-gradient-to-b from-[#000030] to-[#002878] py-8">
         <div className="absolute inset-x-0 bottom-0 h-0.5 shimmer-line rounded-full" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

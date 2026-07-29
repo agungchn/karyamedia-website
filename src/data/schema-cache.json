@@ -19343,5 +19343,64 @@
       "plakat kuningan outdoor",
       "batas administrasi kecamatan"
     ]
+  },
+  {
+    "slug": "plakat-bm-custom",
+    "title": "Plakat BM Kuningan & Tembaga Berkualitas Lengkap",
+    "article": {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Plakat BM Kuningan & Tembaga Berkualitas Lengkap",
+      "description": "Plakat BM dari Karyamedia hadir dalam material kuningan, tembaga, dan stainless steel untuk penanda batas wilayah outdoor.",
+      "image": "https://karyamediasouvenir.com/images/produk-unggulan/plakat-batas-wilayah/center-point/center-point (1).png",
+      "datePublished": "2026-07-29",
+      "dateModified": "2026-07-29",
+      "author": {
+        "@type": "Organization",
+        "name": "Karyamedia Souvenir",
+        "url": "https://karyamediasouvenir.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Karyamedia Souvenir",
+        "url": "https://karyamediasouvenir.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://karyamediasouvenir.com/blog/plakat-bm-custom"
+      }
+    },
+    "breadcrumb": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Beranda",
+          "item": "https://karyamediasouvenir.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Batas Wilayah",
+          "item": "https://karyamediasouvenir.com/katalog-produk/batas-wilayah"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Plakat BM Kuningan & Tembaga Berkualitas Lengkap",
+          "item": "https://karyamediasouvenir.com/blog/plakat-bm-custom"
+        }
+      ]
+    },
+    "keywords": [
+      "plakat bm",
+      "plakat batas wilayah",
+      "penanda batas desa",
+      "plakat kuningan outdoor",
+      "plakat tembaga custom",
+      "plakat stainless steel"
+    ]
   }
 ]

@@ -1,13 +1,14 @@
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
-import { ChevronRight, Award, MessageCircle, Package, Ruler, Palette, Tag, Clock, Minus, Share2, Send, PenTool, Settings, Truck, ArrowRight, CheckCircle } from "lucide-react"
+import { ChevronRight, Award, MessageCircle, Send, PenTool, Settings, Truck, ArrowRight, CheckCircle } from "lucide-react"
 import { Metadata } from "next"
 import { categories } from "@/data/categories"
 import { products } from "@/data/products"
 import { companyInfo } from "@/data/company"
-import { getWhatsAppLink, generateWhatsAppMessage } from "@/lib/utils"
+
 import { BreadcrumbSchema, ProductSchema } from "@/components/json-ld"
+import ProductClient from "./ProductClient"
 
 function getSubSlug(product: { categoryId: string; subcategoryId: string }): string {
   for (const cat of categories) {
@@ -75,24 +76,6 @@ export default async function ProductDetailPage({ params }: Props) {
 
   const iconMap: Record<string, React.ElementType> = {
     MessageCircle, Send, PenTool, Settings, Truck, CheckCircle,
-  }
-
-  const waMessage = generateWhatsAppMessage(product.code, product.name)
-
-  const iconColors: Record<string, string> = {
-    Bahan: "text-blue-600",
-    Stand: "text-amber-600",
-    "Sistem Pengerjaan": "text-cyan-600",
-    "Logo & Teks": "text-cyan-600",
-    Logo: "text-purple-600",
-    Ukuran: "text-orange-500",
-    "Ketebalan Bahan": "text-slate-600",
-    "Warna/Finishing": "text-pink-500",
-    "Warna Bahan": "text-pink-500",
-    Kegunaan: "text-emerald-600",
-    "Minimal Order": "text-red-500",
-    "Biaya Molding": "text-rose-600",
-    "Estimasi Produksi": "text-amber-500",
   }
 
   const breadcrumbItems = [
@@ -170,90 +153,22 @@ export default async function ProductDetailPage({ params }: Props) {
                 ))}
               </div>
             )}
+            {product.subcategoryId === "cp" && (
+              <div className="mt-4">
+                <h3 className="heading-display text-xl text-gray-900 mb-3">Tersedia 3 Varian Ukuran As</h3>
+                <Image
+                  src="/images/produk-unggulan/plakat-batas-wilayah/ukuran-as-center-point.png"
+                  alt="Ukuran Acuan Center Point"
+                  width={1575}
+                  height={775}
+                  loading="lazy"
+                  className="w-full h-auto"
+                />
+              </div>
+            )}
           </div>
 
-          <div>
-            <p className="text-sm text-primary-light font-medium mb-2">{product.code}</p>
-            <h1 className="heading-display text-3xl md:text-4xl text-gray-900 mb-4">{product.name}</h1>
-            <p className="text-gray-600 leading-relaxed mb-8">{product.description}</p>
-
-            <div className="bg-gray-50 rounded-2xl p-6 mb-8 space-y-4">
-              <h3 className="font-semibold text-gray-900 mb-3">Spesifikasi Produk</h3>
-              {[
-                { icon: Package, label: "Bahan", value: product.material },
-                ...(product.standMaterial ? [{ icon: Package, label: "Stand", value: product.standMaterial }] : []),
-                ...(product.subcategoryId !== "gw" ? [{ icon: PenTool, label: product.subcategoryId === "md" || product.subcategoryId === "md3d" ? "Sistem Pengerjaan" : product.subcategoryId === "tr" ? "Logo & Ornament" : "Logo & Teks", value: product.subcategoryId === "pkp" ? "Kuningan / Stainless" : product.subcategoryId === "pm" ? "Stiker / Kuningan" : product.subcategoryId === "pw" ? "Kuningan / Stainless" : product.subcategoryId === "pt" ? "Stiker / Printing" : product.subcategoryId === "md3d" ? "Cor Die Casting" : product.subcategoryId === "md" ? "Etching / Etsa" : product.subcategoryId === "ptw" ? "Kuningan / Stiker Print" : product.subcategoryId === "kr" ? "Custom" : product.subcategoryId === "tr" ? "Kuningan" : product.subcategoryId === "mi" ? "Hot Print / Sablon" : product.subcategoryId === "pwa" ? "Stiker / Print UV" : product.subcategoryId === "tw" ? "Sablon" : product.subcategoryId === "prk" || product.subcategoryId === "pss" || product.subcategoryId === "brt" || product.subcategoryId === "cp" ? "Etching/Etsa" : product.subcategoryId === "pr" ? "Ukir/Pahat" : "Print UV / Kuningan" }] : []),
-                ...(product.logoType ? [{ icon: Package, label: "Logo", value: product.logoType }] : []),
-                { icon: Ruler, label: "Ukuran", value: product.size },
-                ...(product.thickness ? [{ icon: Package, label: "Ketebalan Bahan", value: product.thickness }] : []),
-                ...(product.color ? [{ icon: Palette, label: product.subcategoryId === "mi" ? "Warna Bahan" : "Warna/Finishing", value: product.color }] : []),
-                { icon: Tag, label: "Kegunaan", value: product.usage },
-                { icon: Minus, label: "Minimal Order", value: product.minOrder },
-                ...(product.moldingFee ? [{ icon: Package, label: "Biaya Molding", value: product.moldingFee }] : []),
-                { icon: Clock, label: "Estimasi Produksi", value: product.productionTime },
-              ].map((item) => (
-                <div key={item.label} className="flex items-start gap-3">
-                  <item.icon className={`w-5 h-5 ${iconColors[item.label] || "text-primary"} mt-0.5 shrink-0`} />
-                  <div className="flex-1 min-w-0">
-                    <p className="text-xs text-gray-500">{item.label}</p>
-                    {item.value.includes("/") && false ? (
-                      <div className="grid grid-cols-3 sm:grid-cols-4 gap-1 mt-1">
-                        {item.value.split(" / ").map((opt, i) => (
-                          <div
-                            key={i}
-                            className="px-1.5 py-1 bg-white border border-gray-200 rounded-lg text-[11px] font-medium text-gray-900 text-center hover:bg-[#D4AF37] hover:text-white hover:border-[#D4AF37] hover:shadow-md transition-all duration-200 cursor-default"
-                          >
-                            {opt}
-                          </div>
-                        ))}
-                      </div>
-                    ) : (
-                      <p className="text-sm font-medium text-gray-900">{item.value}</p>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="bg-primary/5 rounded-2xl p-6 mb-8">
-              <p className="text-sm text-gray-600 mb-1">Harga</p>
-              {sub?.slug === "souvenir-pernikahan" ? (
-                <p className="text-2xl font-extrabold text-primary">Harga Mulai Rp. 150.000 - Rp. 500.000</p>
-              ) : (
-                <p className="text-2xl font-extrabold text-primary">{product.price}</p>
-              )}
-              <p className="text-sm font-medium text-gray-700 mt-1">
-                Harga bervariasi tergantung spesifikasi, jumlah, kompleksitas desain dan Bahan yang digunakan. Hubungi kami untuk penawaran terbaik.
-              </p>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-3">
-              <a
-                href={getWhatsAppLink(waMessage)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 bg-[#075E54] hover:bg-[#054E43] text-white py-3.5 rounded-xl font-medium transition-all hover:shadow-lg hover:shadow-[#25D366]/25"
-              >
-                <MessageCircle className="w-5 h-5" />
-                Tanya Harga via WhatsApp
-              </a>
-              <a
-                href={getWhatsAppLink(`Halo Karyamedia Souvenir, saya ingin request quote untuk produk ${product.code} (${product.name}).`)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 bg-primary hover:bg-[#0A1A30] text-white py-3.5 rounded-xl font-medium transition-colors"
-              >
-                <Share2 className="w-5 h-5" />
-                Request Quote
-              </a>
-            </div>
-
-            <div className="mt-8 p-4 bg-yellow-50 border border-yellow-200 rounded-xl">
-              <p className="text-sm text-yellow-800">
-                <strong>Info Custom:</strong> Produk ini bisa di-custom sesuai kebutuhan Anda. Kirimkan logo, desain, atau referensi via WhatsApp untuk konsultasi gratis.
-              </p>
-            </div>
-          </div>
+          <ProductClient product={product} cat={cat} sub={sub} />
         </div>
       </section>
 

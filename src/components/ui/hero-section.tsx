@@ -1,11 +1,10 @@
 "use client"
 
-import { useState, useRef, useEffect } from "react"
+import { useState, useRef, useEffect, useCallback } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { MessageCircle, Search, X, Shield, Calendar, Users, Truck, Sparkles, Star } from "lucide-react"
 import { getWhatsAppLink } from "@/lib/utils"
-import { products } from "@/data/products"
 import { categories } from "@/data/categories"
 import { getTimeTheme, TimeTheme } from "@/lib/time-theme"
 import { LazySparklesCore } from "@/components/ui/lazy-effects"
@@ -55,6 +54,9 @@ const RetroGrid = ({
 function SearchDropdown({ query, onQueryChange, onClose }: { query: string; onQueryChange: (v: string) => void; onClose: () => void }) {
   const inputRef = useRef<HTMLInputElement>(null)
   const dropdownRef = useRef<HTMLDivElement>(null)
+  const [results, setResults] = useState<{ id: string; code: string; name: string; slug: string; categoryId: string; subcategoryId: string; image: string }[]>([])
+  const [loading, setLoading] = useState(false)
+  const debounceRef = useRef<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
     inputRef.current?.focus()
@@ -72,24 +74,34 @@ function SearchDropdown({ query, onQueryChange, onClose }: { query: string; onQu
     }
   }, [onClose])
 
+  useEffect(() => {
+    const q = query.toLowerCase().trim()
+    if (!q || q.length < 2) {
+      setResults([])
+      return
+    }
+
+    if (debounceRef.current) clearTimeout(debounceRef.current)
+    
+    setLoading(true)
+    debounceRef.current = setTimeout(async () => {
+      try {
+        const res = await fetch(`/api/search?q=${encodeURIComponent(q)}`)
+        const data = await res.json()
+        setResults(data)
+      } catch {
+        setResults([])
+      } finally {
+        setLoading(false)
+      }
+    }, 300)
+
+    return () => {
+      if (debounceRef.current) clearTimeout(debounceRef.current)
+    }
+  }, [query])
+
   const q = query.toLowerCase().trim()
-  const results = q
-    ? products
-        .filter((p) => {
-          const cat = categories.find((c) => c.id === p.categoryId)
-          const sub = cat?.subcategories.find((s) => s.id === p.subcategoryId)
-          const aliases = sub?.aliases ?? []
-          return (
-            p.name.toLowerCase().includes(q) ||
-            p.code.toLowerCase().includes(q) ||
-            p.description.toLowerCase().includes(q) ||
-            cat?.name.toLowerCase().includes(q) ||
-            sub?.name.toLowerCase().includes(q) ||
-            aliases.some((a) => a.toLowerCase().includes(q))
-          )
-        })
-        .slice(0, 8)
-    : []
 
   const getCategoryName = (categoryId: string) =>
     categories.find((c) => c.id === categoryId)?.name || categoryId
@@ -122,7 +134,7 @@ function SearchDropdown({ query, onQueryChange, onClose }: { query: string; onQu
               className="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition-colors group border-b border-gray-50 last:border-0"
             >
               <div className="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center shrink-0 overflow-hidden">
-                <Image src={p.images[0] || "/images/logo-karyamedia.png"} alt={`${p.name} - ${categories.find((c) => c.id === p.categoryId)?.subcategories.find((s) => s.id === p.subcategoryId)?.name || categories.find((c) => c.id === p.categoryId)?.name || "Souvenir"} Karyamedia Jogja`} width={40} height={40} className="object-cover w-full h-full" />
+                <Image src={p.image || "/images/logo-karyamedia.png"} alt={`${p.name} - ${categories.find((c) => c.id === p.categoryId)?.subcategories.find((s) => s.id === p.subcategoryId)?.name || categories.find((c) => c.id === p.categoryId)?.name || "Souvenir"} Karyamedia Jogja`} width={40} height={40} className="object-cover w-full h-full" />
               </div>
               <div className="min-w-0 flex-1">
                 <div className="font-medium text-sm text-gray-900 group-hover:text-accent-accessible transition-colors truncate">{p.name}</div>

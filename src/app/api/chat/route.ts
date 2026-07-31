@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import { buildSystemPrompt } from "@/lib/chat-context"
-import { articles } from "@/lib/articles"
+import { articles } from "@/data/articles"
 
 export const runtime = "edge"
 

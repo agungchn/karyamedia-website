@@ -15,11 +15,27 @@ import { SearchGlow } from "@/components/search-glow"
 // ISR: revalidate setiap 1 jam (produk tidak sering berubah).
 export const revalidate = 3600
 
+// Seeded shuffle: deterministic berdasarkan seed, tapi tetap "random" untuk user.
+// Seed berubah tiap jam → output berbeda tiap jam, tapi konsisten dalam 1 jam (cache-friendly).
+function seededShuffle<T>(arr: T[], seed: number): T[] {
+  const result = [...arr]
+  let s = seed
+  for (let i = result.length - 1; i > 0; i--) {
+    s = (s * 1664525 + 1013904223) & 0xffffffff
+    const j = Math.abs(s) % (i + 1)
+    ;[result[i], result[j]] = [result[j], result[i]]
+  }
+  return result
+}
+
+// Seed berubah tiap jam (sama dengan revalidate interval)
+const hourlySeed = Math.floor(Date.now() / 3600000)
+
 export async function generateMetadata(): Promise<Metadata> {
   const featured = products.filter((p) => p.featured)
   const allImages = featured.flatMap((p) => p.images || []).filter(Boolean)
   const ogImage = allImages.length > 0
-    ? allImages[Math.floor(Math.random() * allImages.length)]
+    ? allImages[hourlySeed % allImages.length]
     : undefined
 
   return {
@@ -43,12 +59,12 @@ export default function KatalogPage() {
   const subcategories = categories.flatMap((cat) => cat.subcategories)
 
   const popularBySub = subcategories
-    .map((sub) => ({
+    .map((sub, idx) => ({
       sub,
-      products: featured
-        .filter((p) => p.subcategoryId === sub.id)
-        .sort(() => Math.random() - 0.5)
-        .slice(0, 12),
+      products: seededShuffle(
+        featured.filter((p) => p.subcategoryId === sub.id),
+        hourlySeed + idx
+      ).slice(0, 12),
     }))
     .filter((g) => g.products.length > 0)
 

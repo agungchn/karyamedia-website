@@ -1,9 +1,9 @@
 import { readdirSync, statSync, existsSync, mkdirSync } from "fs"
 import sharp from "sharp"
 
-// Walk public/images/ recursively to find all PNG files
+// Walk public/images/ recursively to find all image files (PNG + WebP)
 const rootDir = "public/images"
-const pngFiles = []
+const imageFiles = []
 
 function walkDir(dir, basePath = "") {
   const entries = readdirSync(dir, { withFileTypes: true })
@@ -13,19 +13,22 @@ function walkDir(dir, basePath = "") {
       // Skip the opt directory (already processed images)
       if (entry.name === "opt") continue
       walkDir(fullPath, `${basePath}/${entry.name}`)
-    } else if (entry.isFile() && entry.name.toLowerCase().endsWith(".png")) {
-      pngFiles.push({ fullPath, relPath: `${basePath}/${entry.name}` })
+    } else if (entry.isFile()) {
+      const ext = entry.name.toLowerCase()
+      if (ext.endsWith(".png") || ext.endsWith(".webp")) {
+        imageFiles.push({ fullPath, relPath: `${basePath}/${entry.name}` })
+      }
     }
   }
 }
 
 walkDir(rootDir)
-console.log(`Found ${pngFiles.length} PNG files in public/images/`)
+console.log(`Found ${imageFiles.length} image files in public/images/`)
 
 let optimized = 0
 let errors = 0
 
-for (const { fullPath, relPath } of pngFiles) {
+for (const { fullPath, relPath } of imageFiles) {
   // relPath format: /hero/file.png or /produk-unggulan/x/file.png
   // Remove leading / if present
   const cleanPath = relPath.startsWith("/") ? relPath.slice(1) : relPath

@@ -11,7 +11,7 @@
 import { readFileSync, writeFileSync } from "node:fs"
 import { fileURLToPath } from "node:url"
 import { dirname, join, resolve } from "node:path"
-import { extractArticles } from "./article-lint.mjs"
+import { readAllMdxArticles } from "./mdx-helpers.mjs"
 
 const here = dirname(fileURLToPath(import.meta.url))
 const root = resolve(here, "..", "..")
@@ -45,21 +45,26 @@ function appendLink(block, targetSlug, targetTitle) {
   if (c0 === -1) return block
   const c1 = block.lastIndexOf("`")
   if (c1 <= c0) return block
-  if (block[c1 + 1] !== ",") return block // not the content closer; bail out
+  const after = block[c1 + 1]
+  if (after !== "," && after !== "\n" && after !== "}") return block // not the content closer; bail out
   const link = `<p>Artikel terkait: <a href="/blog/${targetSlug}">${escTpl(targetTitle)}</a></p>`
   return block.slice(0, c1) + link + block.slice(c1)
 }
 
 function main() {
-  const text = readFileSync(articlesPath, "utf8")
-  const arts = extractArticles(text)
-  const meta = arts.map((a) => ({
-    slug: slugRe.exec(a.block)?.[1],
-    title: titleRe.exec(a.block)?.[1] || "",
-    category: catRe.exec(a.block)?.[1] || "",
-    block: a.block,
-    linked: linkedSlugs(a.block),
-    related: relatedCount(a.block),
+  const mdxArticles = readAllMdxArticles()
+  const blocks = mdxArticles.map(a =>
+    `  {\n    slug: "${a.slug}",\n    title: "${a.title}",\n    description: "${a.description}",\n    category: "${a.category}",\n    tags: [${a.tags.map(t => `"${t}"`).join(", ")}],\n    content: \`${a.content.replace(/`/g, "\\`")}\`\n  }`
+  )
+  const text = `export const articles = [\n${blocks.join(",\n")}\n]`
+
+  const meta = mdxArticles.map((a, i) => ({
+    slug: a.slug,
+    title: a.title,
+    category: a.category,
+    block: blocks[i],
+    linked: linkedSlugs(blocks[i]),
+    related: relatedCount(blocks[i]),
   }))
 
   const byCat = {}

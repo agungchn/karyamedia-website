@@ -1,15 +1,9 @@
-import fs from "fs";
-const t = fs.readFileSync("src/data/articles.ts", "utf8");
+import { readAllMdxArticles } from "../seo/mdx-helpers.mjs";
+const articles = readAllMdxArticles();
 function get(slug) {
-  const re = new RegExp('slug:\\s*"' + slug + '"[\\s\\S]*?(?=},\\n\\s*{|\\]\\s*$)');
-  const m = t.match(re);
-  if (!m) return null;
-  const b = m[0];
-  return {
-    title: (b.match(/title:\s*"([^"]+)"/) || [])[1],
-    keyword: (b.match(/keyword:\s*"([^"]+)"/) || [])[1],
-    desc: (b.match(/description:\s*"([^"]+)"/) || [])[1],
-  };
+  const a = articles.find(x => x.slug === slug);
+  if (!a) return null;
+  return { title: a.title, keyword: a.keyword || "", desc: a.description };
 }
 for (const s of ["piala-fiberglass-custom", "panduan-lengkap-plakat-akrilik-custom"]) {
   const a = get(s);

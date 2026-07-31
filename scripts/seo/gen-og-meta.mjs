@@ -1,21 +1,14 @@
-// Generate a small og-meta.json (slug -> {title, category, image}) from articles.ts.
-// Keeps the OG image worker light (avoids parsing the 1MB articles.ts at request time).
-import { readFileSync, writeFileSync } from "fs"
-import { fileURLToPath } from "node:url"
-import { dirname, join, resolve } from "path"
+// Generate a small og-meta.json (slug -> {title, category, image}) from .mdx files.
+// Keeps the OG image worker light (avoids parsing all .mdx files at request time).
+import { writeFileSync } from "fs"
+import { readAllMdxArticles, PATHS } from "./mdx-helpers.mjs"
 
-const __dirname = dirname(fileURLToPath(import.meta.url))
-const root = resolve(__dirname, "..", "..")
-const src = join(root, "src", "data", "articles.ts")
-const out = join(root, "src", "data", "og-meta.json")
+const out = PATHS.ARTICLES_INDEX.replace("articles-index.json", "og-meta.json")
 
-const text = readFileSync(src, "utf8")
-const re = /slug:\s*"([^"]*)"[\s\S]*?title:\s*"([^"]*)"[\s\S]*?category:\s*"([^"]*)"[\s\S]*?image:\s*"([^"]*)"/g
-
+const articles = readAllMdxArticles()
 const meta = {}
-let m
-while ((m = re.exec(text)) !== null) {
-  meta[m[1]] = { title: m[2], category: m[3], image: m[4] }
+for (const a of articles) {
+  meta[a.slug] = { title: a.title, category: a.category, image: a.image }
 }
 
 writeFileSync(out, JSON.stringify(meta, null, 2))

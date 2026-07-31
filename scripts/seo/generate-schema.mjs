@@ -1,48 +1,34 @@
-// Auto Schema Markup Generator — scans articles.ts & generates Article + BreadcrumbList + Product schema
+// Auto Schema Markup Generator — scans .mdx files & generates Article + BreadcrumbList + Product schema
 // Usage: node scripts/seo/generate-schema.mjs
 // Output: prints summary + saves to src/data/schema-cache.json
-import { readFileSync, writeFileSync } from "fs"
-import { join, dirname, resolve } from "path"
-import { fileURLToPath } from "url"
+import { writeFileSync } from "fs"
+import { readAllMdxArticles, PATHS } from "./mdx-helpers.mjs"
 
-const here = dirname(fileURLToPath(import.meta.url))
-const root = resolve(here, "..", "..")
-const articlesPath = join(root, "src/data/articles.ts")
-const outputPath = join(root, "src/data/schema-cache.json")
+const outputPath = PATHS.ARTICLES_INDEX.replace("articles-index.json", "schema-cache.json")
 
 const SITE_URL = "https://karyamediasouvenir.com"
 const COMPANY_NAME = "Karyamedia Souvenir"
 
-const src = readFileSync(articlesPath, "utf8")
-const blocks = src.split(/},\s*\n\s*\{/)
+const articles = readAllMdxArticles()
 const schemas = []
 
-for (const b of blocks) {
-  const slug = b.match(/slug:\s*"([^"]+)"/)?.[1]
-  const title = b.match(/title:\s*"([^"]+)"/)?.[1]
-  const desc = b.match(/description:\s*"([^"]+)"/)?.[1]
-  const cat = b.match(/category:\s*"([^"]+)"/)?.[1]
-  const img = b.match(/image:\s*"([^"]+)"/)?.[1]
-  const dateMatch = b.match(/date:\s*"([^"]+)"/)?.[1]
-  const tags = b.match(/tags:\s*\[([^\]]+)\]/)?.[1]
+for (const a of articles) {
+  if (!a.slug || !a.title) continue
 
-  if (!slug || !title) continue
-
-  const articleUrl = `${SITE_URL}/blog/${slug}`
-  const imageUrl = img ? `${SITE_URL}${img}` : `${SITE_URL}/images/og-default.png`
-  const date = dateMatch || new Date().toISOString().split("T")[0]
-  const tagList = tags ? tags.split(",").map((t) => t.trim().replace(/"/g, "")) : []
-  const catSlug = (cat || "blog").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")
+  const articleUrl = `${SITE_URL}/blog/${a.slug}`
+  const imageUrl = a.image ? `${SITE_URL}${a.image}` : `${SITE_URL}/images/og-default.png`
+  const date = a.date || new Date().toISOString().split("T")[0]
+  const catSlug = (a.category || "blog").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")
 
   // Article schema
   schemas.push({
-    slug,
-    title,
+    slug: a.slug,
+    title: a.title,
     article: {
       "@context": "https://schema.org",
       "@type": "Article",
-      headline: title,
-      description: desc || `Artikel tentang ${title} dari ${COMPANY_NAME} Yogyakarta`,
+      headline: a.title,
+      description: a.description || `Artikel tentang ${a.title} dari ${COMPANY_NAME} Yogyakarta`,
       image: imageUrl,
       datePublished: date,
       dateModified: date,
@@ -55,11 +41,11 @@ for (const b of blocks) {
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Beranda", item: SITE_URL },
-        { "@type": "ListItem", position: 2, name: cat || "Blog", item: `${SITE_URL}/katalog-produk/${catSlug}` },
-        { "@type": "ListItem", position: 3, name: title, item: articleUrl },
+        { "@type": "ListItem", position: 2, name: a.category || "Blog", item: `${SITE_URL}/katalog-produk/${catSlug}` },
+        { "@type": "ListItem", position: 3, name: a.title, item: articleUrl },
       ],
     },
-    keywords: tagList,
+    keywords: a.tags,
   })
 }
 

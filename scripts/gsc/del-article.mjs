@@ -1,18 +1,27 @@
 import fs from "fs";
-const p = "src/data/articles.ts";
-let t = fs.readFileSync(p, "utf8");
+import { readAllMdxArticles, PATHS } from "../seo/mdx-helpers.mjs";
 const slug = "piala-fiberglass-custom";
 
-// 1. hapus blok artikel itu sendiri
-const re = new RegExp('\\s*\\{\\s*slug:\\s*"' + slug + '"[\\s\\S]*?\\},\\n');
-if (re.test(t)) { t = t.replace(re, ""); console.log("deleted article block:", slug); }
-else console.log("article block not found:", slug);
+// 1. delete the .mdx file
+const articles = readAllMdxArticles();
+const target = articles.find(a => a.slug === slug);
+if (target && fs.existsSync(target.filePath)) {
+  fs.unlinkSync(target.filePath);
+  console.log("deleted article file:", target.filePath);
+} else {
+  console.log("article file not found:", slug);
+}
 
-// 2. hapus backlink ke slug tersebut di artikel lain
+// 2. remove backlinks in other articles
 const bl = new RegExp('<p>Artikel terkait: <a href="/blog/' + slug + '">[^<]*</a></p>', "g");
-const n = (t.match(bl) || []).length;
-t = t.replace(bl, "");
-console.log("removed backlinks:", n);
-
-fs.writeFileSync(p, t);
+let removed = 0;
+for (const a of articles) {
+  if (a.slug === slug || !fs.existsSync(a.filePath)) continue;
+  const content = fs.readFileSync(a.filePath, "utf8");
+  if (bl.test(content)) {
+    fs.writeFileSync(a.filePath, content.replace(bl, ""));
+    removed++;
+  }
+}
+console.log("removed backlinks from", removed, "files");
 console.log("done");

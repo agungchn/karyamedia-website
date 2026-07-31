@@ -17,7 +17,7 @@
 import { readFileSync, writeFileSync, existsSync, readdirSync } from "node:fs"
 import { fileURLToPath } from "node:url"
 import { dirname, join, resolve } from "node:path"
-import { extractArticles } from "./article-lint.mjs"
+import { readAllMdxArticles } from "./mdx-helpers.mjs"
 
 const here = dirname(fileURLToPath(import.meta.url))
 const root = resolve(here, "../..")
@@ -60,8 +60,14 @@ function loadTopCats() {
 
 const catSlugs = loadCategorySlugs()
 const topCats = loadTopCats()
-const text0 = readFileSync(articlesPath, "utf8")
-const arts = extractArticles(text0)
+const mdxArticles = readAllMdxArticles()
+const text0 = mdxArticles.map(a => 
+  `  {\n    slug: "${a.slug}",\n    title: "${a.title}",\n    description: "${a.description}",\n    category: "${a.category}",\n    tags: [${a.tags.map(t => `"${t}"`).join(", ")}],\n    content: \`${a.content.replace(/`/g, "\\`")}\`\n  }`
+).join(",\n")
+const arts = mdxArticles.map(a => ({
+  slug: a.slug,
+  block: `  {\n    slug: "${a.slug}",\n    title: "${a.title}",\n    description: "${a.description}",\n    category: "${a.category}",\n    tags: [${a.tags.map(t => `"${t}"`).join(", ")}],\n    content: \`${a.content.replace(/`/g, "\\`")}\`\n  }`
+}))
 const allSlugs = new Set(arts.map((a) => a.slug))
 const meta = arts.map((a) => ({
   slug: getField(a.block, "slug"),

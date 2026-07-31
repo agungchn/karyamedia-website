@@ -1,7 +1,7 @@
 // Generate a standards-compliant article from a keyword using the LLM writer.
 // Pipeline: keyword -> infer category + slug -> duplicate check -> LLM prose
-// -> ensure FAQ + internal link + valid image -> insert into articles.ts
-// -> run the standard gate (article-check + article-lint) on the new slug.
+// -> ensure FAQ + internal link + valid image -> write .mdx file
+// -> regenerate articles-index.json -> run the standard gate.
 //
 //   node scripts/seo/article-generate.mjs "plakat akrilik" [--category Plakat]
 //   LLM_MOCK=1 node scripts/seo/article-generate.mjs "plakat akrilik"   # no API call
@@ -39,7 +39,8 @@ function hashStr(s) {
 
 const here = dirname(fileURLToPath(import.meta.url))
 const root = resolve(here, "..", "..")
-const articlesPath = join(root, "src/data/articles.ts")
+const CONTENT_DIR = join(root, "content", "blog")
+const ARTICLES_INDEX = join(root, "src", "data", "articles-index.json")
 
 const CAT_MAP = {
   plakat: "Plakat", medali: "Medali", piala: "Piala & Trophy", "gift box": "Gift Box",
@@ -230,6 +231,35 @@ function dupCheck(slug, title, workingText, newContent = "") {
   return null
 }
 
+// Duplicate check using .mdx files
+function dupCheckFromMdx(slug, title, newContent = "") {
+  const nc = newContent || ""
+  const nHeadings = new Set(headingsFromContent(nc))
+  const nTokens = tokensOf(nc)
+  const nTokSet = new Set(nTokens)
+  const existing = readAllMdxArticles()
+  for (const a of existing) {
+    if (a.slug === slug) return `slug "${slug}" sudah ada`
+    const tt = tk(tokensOf(a.title)), nt = tk(tokensOf(title))
+    if (tt && nt && tt === nt) return `title mirip dengan "${a.title}"`
+    if (nt && cont(tokensOf(title), tokensOf(a.title)) >= 1) return `topik mirip dengan "${a.title}"`
+    if (nTokSet.size && nc && a.content) {
+      const eHeadings = new Set(headingsFromContent(a.content))
+      if (eHeadings.size && nHeadings.size) {
+        let shared = 0
+        for (const h of nHeadings) if (eHeadings.has(h)) shared++
+        const headingSim = shared / Math.min(nHeadings.size, eHeadings.size)
+        if (headingSim >= 0.8) {
+          const eTokens = tokensOf(a.content)
+          const c = cont(nTokens, eTokens)
+          if (c >= 0.5) return `konten mirip dengan "${a.title}" (blog/${a.slug}, heading ${(headingSim * 100).toFixed(0)}%, konten ${(c * 100).toFixed(0)}%)`
+        }
+      }
+    }
+  }
+  return null
+}
+
 // ---- image picker (must exist on disk) ----
 const FOLDER = {
   "Plakat": ["plakat", "plakat-akrilik", "plakat-kayu", "plakat-marmer", "plakat-fiberglass", "plakat-wayang"],
@@ -250,12 +280,141 @@ function walk(dir) {
   }
   return null
 }
+// ---- .mdx file operations ----
+
+// Simple frontmatter parser for .mdx files
+function parseMdxFrontmatter(content) {
+  const lines = content.split('\n')
+  const data = {}
+  if (lines[0]?.trim() !== '---') return { data, body: content }
+
+  let endIndex = -1
+  for (let i = 1; i < lines.length; i++) {
+    if (lines[i]?.trim() === '---') { endIndex = i; break }
+  }
+  if (endIndex === -1) return { data, body: content }
+
+  let currentKey = '', inArray = false
+  for (let i = 1; i < endIndex; i++) {
+    const trimmed = lines[i].trim()
+    if (!trimmed) continue
+    if (trimmed.startsWith('- ') && currentKey && inArray) {
+      if (!Array.isArray(data[currentKey])) data[currentKey] = []
+      data[currentKey].push(trimmed.substring(2).trim())
+      continue
+    }
+    const colonIndex = trimmed.indexOf(':')
+    if (colonIndex !== -1) {
+      const key = trimmed.substring(0, colonIndex).trim()
+      const value = trimmed.substring(colonIndex + 1).trim()
+      currentKey = key
+      inArray = !value
+      if (value) data[key] = value.replace(/^["']|["']$/g, '')
+    }
+  }
+  return { data, body: lines.slice(endIndex + 1).join('\n').trim() }
+}
+
+// Read all .mdx files and return array of { slug, title, description, category, date, image, tags, canonical, content, filePath }
+function readAllMdxArticles() {
+  if (!existsSync(CONTENT_DIR)) return []
+  const files = readdirSync(CONTENT_DIR).filter(f => f.endsWith('.mdx'))
+  return files.map(file => {
+    const filePath = join(CONTENT_DIR, file)
+    const raw = readFileSync(filePath, 'utf-8')
+    const { data, body } = parseMdxFrontmatter(raw)
+    return {
+      slug: data.slug || file.replace('.mdx', ''),
+      title: data.title || '',
+      description: data.description || '',
+      category: data.category || '',
+      date: data.date || '',
+      image: data.image || '',
+      tags: Array.isArray(data.tags) ? data.tags : [],
+      canonical: data.canonical || undefined,
+      content: body,
+      filePath
+    }
+  })
+}
+
+// Generate .mdx file content from article data
+function generateMdxContent(article) {
+  let frontmatter = `---\n`
+  frontmatter += `slug: ${article.slug}\n`
+  frontmatter += `title: "${escStr(article.title)}"\n`
+  frontmatter += `description: "${escStr(article.description)}"\n`
+  frontmatter += `category: ${article.category}\n`
+  frontmatter += `date: ${article.date}\n`
+  frontmatter += `image: ${article.image}\n`
+  frontmatter += `tags:\n`
+  for (const tag of article.tags) frontmatter += `  - ${tag}\n`
+  if (article.canonical) frontmatter += `canonical: ${article.canonical}\n`
+  frontmatter += `---\n\n`
+  frontmatter += article.content + '\n'
+  return frontmatter
+}
+
+// Write a new article as .mdx file
+function writeMdxArticle(slug, articleData) {
+  const filePath = join(CONTENT_DIR, `${slug}.mdx`)
+  const content = generateMdxContent(articleData)
+  writeFileSync(filePath, content, 'utf-8')
+  return filePath
+}
+
+// Update an existing .mdx file (for backlinks)
+function updateMdxArticle(filePath, newContent) {
+  const raw = readFileSync(filePath, 'utf-8')
+  const { data } = parseMdxFrontmatter(raw)
+  const updated = generateMdxContent({ ...data, content: newContent })
+  writeFileSync(filePath, updated, 'utf-8')
+}
+
+// Read all used images from .mdx files
+function usedImagesFromMdx() {
+  const set = new Set()
+  if (!existsSync(CONTENT_DIR)) return set
+  const files = readdirSync(CONTENT_DIR).filter(f => f.endsWith('.mdx'))
+  const re = /\/images\/produk-unggulan\/[^\s"')>]+/g
+  for (const file of files) {
+    const content = readFileSync(join(CONTENT_DIR, file), 'utf-8')
+    let m
+    while ((m = re.exec(content))) set.add(m[0])
+  }
+  return set
+}
+
+// Find related links from .mdx files
+function findRelatedLinksFromMdx(slug, category, max = 3) {
+  const arts = readAllMdxArticles()
+  const make = (a) => `<p>Artikel terkait: <a href="/blog/${a.slug}">${a.title}</a></p>`
+  const same = arts.filter(a => a.category === category && a.slug !== slug)
+  const other = arts.filter(a => a.category !== category && a.slug !== slug)
+  return [...same, ...other].slice(0, max).map(make).join('')
+}
+
+// Inject backlink into .mdx file content
+function injectBacklinkIntoMdx(filePath, newSlug, newTitle) {
+  const raw = readFileSync(filePath, 'utf-8')
+  const { data, body } = parseMdxFrontmatter(raw)
+  if (body.includes(`/blog/${newSlug}`)) return // already linked
+  const existing = (body.match(/Artikel terkait: <a href="\/blog\//g) || []).length
+  if (existing >= 4) return // cap related links
+  const link = `<p>Artikel terkait: <a href="/blog/${newSlug}">${escTpl(newTitle)}</a></p>`
+  const newContent = body + '\n' + link
+  updateMdxArticle(filePath, newContent)
+}
+
 // ---- used images (avoid reusing images already used by other articles) ----
 function usedImages(workingText) {
+  // Merge: images from old articles.ts (if exists) + all .mdx files
   const set = new Set()
   const re = /\/images\/produk-unggulan\/[^\s"')>]+/g
   let m
   while ((m = re.exec(workingText))) set.add(m[0])
+  // Also scan .mdx files
+  for (const img of usedImagesFromMdx()) set.add(img)
   return set
 }
 
@@ -1016,19 +1175,8 @@ function injectBacklink(block, newSlug, newTitle) {
 }
 
 function findRelatedLinks(slug, category, workingText, max = 3) {
-  const arts = extractArticles(workingText)
-  const make = (a) => {
-    const s = slugRe.exec(a.block)?.[1]
-    const t = titleRe.exec(a.block)?.[1] || "artikel terkait"
-    return `<p>Artikel terkait: <a href="/blog/${s}">${t}</a></p>`
-  }
-  const same = arts.filter(
-    (a) => (catRe.exec(a.block)?.[1] || "") === category && slugRe.exec(a.block)?.[1] !== slug
-  )
-  const other = arts.filter(
-    (a) => (catRe.exec(a.block)?.[1] || "") !== category && slugRe.exec(a.block)?.[1] !== slug
-  )
-  return [...same, ...other].slice(0, max).map(make).join("")
+  // Use .mdx files instead of workingText
+  return findRelatedLinksFromMdx(slug, category, max)
 }
 
 const escStr = (s) => String(s).replace(/\\/g, "\\\\").replace(/"/g, '\\"').replace(/\n/g, " ")
@@ -1071,10 +1219,13 @@ async function main() {
   let slug = slugify(keyword)
   if (!/custom/.test(keyword.toLowerCase())) slug += "-custom"
 
-  const working = readFileSync(articlesPath, "utf8")
-  const used = usedImages(working)
+  // Read existing articles from .mdx files
+  const existingArticles = readAllMdxArticles()
+  const allSlugs = new Set(existingArticles.map(a => a.slug))
+  const used = usedImagesFromMdx()
   const catSlugs = loadCategorySlugs()
-  if (slugRe.exec(working) && extractArticles(working).some((a) => slugRe.exec(a.block)?.[1] === slug)) {
+  
+  if (allSlugs.has(slug)) {
     console.error(`DUPLIKAT: slug "${slug}" sudah ada. Gunakan keyword lain.`)
     process.exit(1)
   }
@@ -1261,7 +1412,7 @@ async function main() {
   data.title = enforceTitle(data.title || keyword, headKw)
   data.description = enforceDescription(data.description || "", location)
 
-  const dup = dupCheck(slug, data.title || keyword, working, data.content || "")
+  const dup = dupCheckFromMdx(slug, data.title || keyword, data.content || "")
   if (dup) {
     console.error(`DUPLIKAT setelah generate: ${dup}. Batal menyisipkan.`)
     process.exit(1)
@@ -1280,19 +1431,20 @@ async function main() {
   const prodCat = resolveProductCategory(category, keyword, catSlugs)
   content = injectCategoryLink(content, prodCat || category, catSlugs)
   content = injectTestimoniLink(content)
-  const rel = findRelatedLinks(slug, category, working, 3)
+  const rel = findRelatedLinksFromMdx(slug, category, 3)
   content += rel
 
   // regional article -> auto canonical + pillar link
   let canonical = null
   if (location) {
-    const allSlugs = new Set(extractArticles(working).map((a) => slugRe.exec(a.block)?.[1]).filter(Boolean))
-    const pillarSlug = resolvePillar(slug, category, allSlugs)
+    const allArticles = readAllMdxArticles()
+    const allSlugsSet = new Set(allArticles.map(a => a.slug))
+    const pillarSlug = resolvePillar(slug, category, allSlugsSet)
     if (pillarSlug) {
       canonical = `/blog/${pillarSlug}`
       if (!content.includes(`/blog/${pillarSlug}`)) {
-        const pBlock = extractArticles(working).find((a) => slugRe.exec(a.block)?.[1] === pillarSlug)?.block
-        const pTitle = pBlock ? (titleRe.exec(pBlock)?.[1] || pillarSlug) : pillarSlug
+        const pArticle = allArticles.find(a => a.slug === pillarSlug)
+        const pTitle = pArticle ? pArticle.title : pillarSlug
         const anchor = `<p>Baca juga panduan lengkap kami: <a href="/blog/${pillarSlug}">${escTpl(pTitle)}</a> sebagai referensi menyeluruh seputar ${escTpl(category)}.</p>`
         const faqIdx = content.search(/<h2[^>]*>\s*FAQ\s*<\/h2>/i)
         content = faqIdx >= 0 ? content.slice(0, faqIdx) + anchor + content.slice(faqIdx) : content + anchor
@@ -1301,39 +1453,20 @@ async function main() {
   }
 
   // backward links: older same-category articles reference the new article
-  let modified = working
-  for (const a of extractArticles(working)) {
-    const s = slugRe.exec(a.block)?.[1]
-    if (s === slug) continue
-    if ((catRe.exec(a.block)?.[1] || "") !== category) continue
-    modified = modified.replace(a.block, injectBacklink(a.block, slug, data.title || keyword))
+  const allArticlesForBacklink = readAllMdxArticles()
+  for (const a of allArticlesForBacklink) {
+    if (a.slug === slug) continue
+    if (a.category !== category) continue
+    injectBacklinkIntoMdx(a.filePath, slug, data.title || keyword)
   }
 
   let tags = Array.isArray(data.tags) ? data.tags.map(String).slice(0, 6) : []
   while (tags.length < 4) tags.push(slugify(keyword).split("-").filter((w) => w && w !== "custom")[tags.length] || `karyamedia${tags.length}`)
 
   const image = pickImage(category, used, keyword)
-  const obj =
-    `  {\n` +
-    `    slug: "${escStr(slug)}",\n` +
-    `    title: "${escStr(data.title || keyword)}",\n` +
-    `    description: "${escStr(data.description || "")}",\n` +
-    `    category: "${category}",\n` +
-    `    date: "${new Date().toISOString().slice(0, 10)}",\n` +
-    `    image: "${escStr(image)}",\n` +
-    `    tags: [${tags.map((t) => `"${escStr(t)}"`).join(", ")}],\n` +
-    (canonical ? `    canonical: "${canonical}",\n` : ``) +
-    `    content: \`${escTpl(content)}\`,\n` +
-    `  },\n`
-
-  const newText = modified.replace(/(},\s*)\](\s*)$/, `$1${obj}]`)
-  if (newText === working) {
-    console.error("Gagal menyisipkan artikel (pola array tidak ditemukan).")
-    process.exit(1)
-  }
   
   if (dryRun) {
-    console.log(`\n[DRY-RUN] Artikel akan disisipkan: blog/${slug}`)
+    console.log(`\n[DRY-RUN] Artikel akan ditulis: content/blog/${slug}.mdx`)
     console.log(`[DRY-RUN] Image: ${image}`)
     console.log(`[DRY-RUN] Category: ${category}`)
     console.log(`[DRY-RUN] Tags: ${tags.join(', ')}`)
@@ -1344,8 +1477,20 @@ async function main() {
     return
   }
   
-  writeFileSync(articlesPath, newText)
-  console.log(`✓ Artikel disisipkan: blog/${slug} (image: ${image})`)
+  // Write new article as .mdx file
+  const articleData = {
+    slug,
+    title: data.title || keyword,
+    description: data.description || "",
+    category,
+    date: new Date().toISOString().slice(0, 10),
+    image,
+    tags,
+    canonical: canonical || undefined,
+    content
+  }
+  writeMdxArticle(slug, articleData)
+  console.log(`✓ Artikel ditulis: content/blog/${slug}.mdx (image: ${image})`)
   console.log(`GENERATED_SLUG:${slug}`)
 
   console.log("\n--- regenerate og-meta.json ---")
@@ -1353,6 +1498,9 @@ async function main() {
 
   console.log("\n--- regenerate schema-cache.json ---")
   execSync(`node scripts/seo/generate-schema.mjs`, { cwd: root, stdio: "inherit" })
+
+  console.log("\n--- regenerate articles-index.json ---")
+  execSync(`node scripts/generate-articles-index.js`, { cwd: root, stdio: "inherit" })
 
   console.log("\n--- generate WebP (biar gambar artikel tidak 404, lewat custom loader) ---")
   execSync(`node scripts/optimize-images.mjs`, { cwd: root, stdio: "inherit" })
@@ -1372,7 +1520,7 @@ async function main() {
     if (gateOk) commitAndPush(`feat(seo): auto-generate article blog/${slug}`)
     else console.error("\nGagal: artikel tidak lolos standar. Tidak di-commit/push.")
   } else {
-    console.log(`\nReview artikel di src/data/articles.ts (blog/${slug}), lalu git commit (atau pakai --commit-push).`)
+    console.log(`\nReview artikel di content/blog/${slug}.mdx, lalu git commit (atau pakai --commit-push).`)
   }
 }
 

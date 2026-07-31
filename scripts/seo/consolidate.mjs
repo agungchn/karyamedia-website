@@ -18,18 +18,18 @@
 // The BASELINE map keeps the 4 originally-merged pairs stable so the live
 // 301s already deployed stay authoritative.
 
-import { readFileSync, writeFileSync, existsSync, appendFileSync } from "fs"
+import { readFileSync, writeFileSync, existsSync, appendFileSync, unlinkSync } from "fs"
 import { fileURLToPath } from "node:url"
 import { dirname, resolve } from "path"
-import { extractArticles } from "./article-lint.mjs"
+import { readAllMdxArticles, updateMdxContent, PATHS } from "./mdx-helpers.mjs"
 
 const here = dirname(fileURLToPath(import.meta.url))
 const root = resolve(here, "..", "..")
-const articlesPath = resolve(root, "src/data/articles.ts")
 const nextConfigPath = resolve(root, "next.config.ts")
 const sitemapPath = resolve(root, "src/app/sitemap.ts")
 const registryPath = resolve(here, "consolidate.merges.json")
 const pendingPath = resolve(here, "duplicates.pending.txt")
+const mdxDir = PATHS.CONTENT_DIR
 
 const DRY = process.argv.includes("--dry")
 const SIM_SOFT = 0.8
@@ -100,14 +100,21 @@ function ensureSitemapExclude(text, slug) {
 
 // -------------------------------------------------------------- main
 function main() {
-  let text = readFileSync(articlesPath, "utf8")
-  const arts = extractArticles(text)
+  // Read articles from .mdx files
+  const mdxArticles = readAllMdxArticles()
+  // Convert to block format for backward compatibility
+  const arts = mdxArticles.map(a => ({
+    slug: a.slug,
+    block: `slug: "${a.slug}",\ntitle: "${a.title}",\ndescription: "${a.description}",\ncategory: "${a.category}",\ntags: [${a.tags.map(t => `"${t}"`).join(", ")}],\ncontent: \`${a.content.replace(/`/g, "\\`")}\``,
+    filePath: a.filePath
+  }))
   const resolved = loadRegistry()
   const meta = arts.map((a) => {
     const c = contentOf(a.block)
     return {
       slug: a.slug,
       block: a.block,
+      filePath: a.filePath,
       toksSet: new Set(toks(c)),
       words: wordCount(c),
       links: internalLinks(c),
@@ -156,21 +163,28 @@ function main() {
       forceMerge = true
     }
 
-    // 1) always rewire links (safe)
-    const before = text
-    text = rewireLinks(text, weak.slug, canonical.slug)
-    if (text !== before) linkLog.push(`${weak.slug} -> ${canonical.slug} (sim ${Math.round(jac * 100)}%)`)
+    // 1) always rewire links (safe) — update .mdx files
+    for (const m of meta) {
+      if (m.slug === weak.slug) continue // skip the weak article itself
+      if (!existsSync(m.filePath)) continue
+      const content = readFileSync(m.filePath, "utf8")
+      const updated = rewireLinks(content, weak.slug, canonical.slug)
+      if (updated !== content) {
+        writeFileSync(m.filePath, updated)
+        linkLog.push(`${weak.slug} -> ${canonical.slug} in ${m.slug} (sim ${Math.round(jac * 100)}%)`)
+      }
+    }
 
     if (jac >= SIM_HARD || forceMerge) {
-      // 2a) full merge
+      // 2a) full merge — delete weak .mdx file
       let cfg = readFileSync(nextConfigPath, "utf8")
       let sm = readFileSync(sitemapPath, "utf8")
       cfg = ensureRedirect(cfg, `/blog/${weak.slug}`, `/blog/${canonical.slug}`)
       sm = ensureSitemapExclude(sm, weak.slug)
-      text = removeArticle(text, weak.slug)
       if (!DRY) {
         writeFileSync(nextConfigPath, cfg)
         writeFileSync(sitemapPath, sm)
+        if (existsSync(weak.filePath)) unlinkSync(weak.filePath)
       }
       resolved.add(weak.slug)
       mergeLog.push(`${weak.slug} -> ${canonical.slug} (sim ${Math.round(jac * 100)}%, merged)`)
@@ -182,7 +196,6 @@ function main() {
   }
 
   if (!DRY) {
-    writeFileSync(articlesPath, text)
     saveRegistry(resolved)
     if (pendingLog.length) {
       appendFileSync(pendingPath, `\n# ${new Date().toISOString()}\n` + pendingLog.join("\n") + "\n")

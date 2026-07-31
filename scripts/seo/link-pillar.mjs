@@ -5,10 +5,10 @@
 //   node scripts/seo/link-pillar.mjs          # apply
 //   node scripts/seo/link-pillar.mjs --dry    # report only
 
-import { readFileSync, writeFileSync } from "node:fs"
+import { writeFileSync } from "node:fs"
 import { fileURLToPath } from "node:url"
 import { dirname, resolve } from "node:path"
-import { extractArticles } from "./article-lint.mjs"
+import { readAllMdxArticles, writeMdxArticle } from "./mdx-helpers.mjs"
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "../..")
 const articlesPath = resolve(root, "src/data/articles.ts")
@@ -68,8 +68,14 @@ const PILLAR_TOPICS = [
   { pillar: "panduan-lengkap-prasasti-stainless-steel-custom", re: /prasasti-stainless-steel/ },
 ]
 
-const text0 = readFileSync(articlesPath, "utf8")
-const arts = extractArticles(text0)
+const mdxArticles = readAllMdxArticles()
+const text0 = mdxArticles.map(a =>
+  `  {\n    slug: "${a.slug}",\n    title: "${a.title}",\n    description: "${a.description}",\n    category: "${a.category}",\n    tags: [${a.tags.map(t => `"${t}"`).join(", ")}],\n    content: \`${a.content.replace(/`/g, "\\`")}\`\n  }`
+).join(",\n")
+const arts = mdxArticles.map(a => ({
+  slug: a.slug,
+  block: `  {\n    slug: "${a.slug}",\n    title: "${a.title}",\n    description: "${a.description}",\n    category: "${a.category}",\n    tags: [${a.tags.map(t => `"${t}"`).join(", ")}],\n    content: \`${a.content.replace(/`/g, "\\`")}\`\n  }`
+}))
 const allSlugs = new Set(arts.map((a) => a.slug))
 const meta = arts.map((a) => ({ slug: a.slug, title: field(a.block, "title"), category: field(a.block, "category") }))
 

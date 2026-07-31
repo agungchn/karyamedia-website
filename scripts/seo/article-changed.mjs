@@ -9,29 +9,67 @@
 import { execSync } from "node:child_process"
 import { fileURLToPath } from "node:url"
 import { dirname, join, resolve } from "node:path"
-import { extractArticles } from "./article-lint.mjs"
+import { readAllMdxArticles } from "./mdx-helpers.mjs"
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "../..")
-const rel = "src/data/articles.ts"
+const mdxGlob = "src/content/articles/**/*.mdx"
 
-function gitShow(refPrefix) {
+function gitLs(refPrefix) {
   try {
-    return execSync(`git show ${refPrefix}${rel}`, { cwd: root, encoding: "utf8" })
+    return execSync(`git ls-tree -r --name-only ${refPrefix} -- ${mdxGlob}`, { cwd: root, encoding: "utf8" })
+      .trim().split("\n").filter(Boolean)
+  } catch {
+    return []
+  }
+}
+
+function gitShowFile(refPrefix, filePath) {
+  try {
+    return execSync(`git show ${refPrefix}${filePath}`, { cwd: root, encoding: "utf8" })
   } catch {
     return null
   }
 }
 
-const head = gitShow("HEAD:")
-let staged = gitShow(":")
+function readMdxFromGit(refPrefix) {
+  const files = gitLs(refPrefix)
+  const articles = []
+  for (const file of files) {
+    const content = gitShowFile(refPrefix, file)
+    if (content === null) continue
+    const match = file.match(/articles\/(.+)\.mdx$/)
+    if (!match) continue
+    const slug = match[1]
+    const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---/)
+    if (!frontmatterMatch) continue
+    const fm = frontmatterMatch[1]
+    const title = (fm.match(/^title:\s*(.+)$/m) || [])[1] || ""
+    const description = (fm.match(/^description:\s*(.+)$/m) || [])[1] || ""
+    const category = (fm.match(/^category:\s*(.+)$/m) || [])[1] || ""
+    const tagsRaw = (fm.match(/^tags:\s*\[([^\]]*)\]$/m) || [])[1] || ""
+    const tags = tagsRaw ? tagsRaw.split(",").map(t => t.trim().replace(/^"|"$/g, "")) : []
+    const body = content.replace(/^---\n[\s\S]*?\n---\n?/, "")
+    articles.push({ slug, title, description, category, tags, content: body })
+  }
+  return articles
+}
+
+function toBlock(articles) {
+  return articles.map(a =>
+    `  {\n    slug: "${a.slug}",\n    title: "${a.title}",\n    description: "${a.description}",\n    category: "${a.category}",\n    tags: [${a.tags.map(t => `"${t}"`).join(", ")}],\n    content: \`${a.content.replace(/`/g, "\\`")}\`\n  }`
+  ).join(",\n")
+}
+
+const headArticles = readMdxFromGit("HEAD:")
+const stagedArticles = readMdxFromGit(":")
 
 const changed = new Set()
-if (staged !== null) {
-  const stagedArts = extractArticles(staged)
-  const headMap = head ? new Map(extractArticles(head).map((a) => [a.slug, a.block])) : new Map()
-  for (const a of stagedArts) {
+if (stagedArticles.length > 0) {
+  const headMap = new Map(headArticles.map(a => [a.slug, toBlock([a])]))
+  for (const a of stagedArticles) {
+    const block = toBlock([a])
     const h = headMap.get(a.slug)
-    if (h === undefined || h !== a.block) changed.add(a.slug)
+    if (h === undefined || h !== block) changed.add(a.slug)
   }
 }
 

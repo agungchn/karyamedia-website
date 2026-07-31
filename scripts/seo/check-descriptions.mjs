@@ -1,16 +1,12 @@
 // Meta Description Bulk Checker — scans ALL 313 articles for description quality
 // Usage: node scripts/seo/check-descriptions.mjs
 // Output: summary + problem articles
-import { readFileSync } from "fs"
-import { join, dirname, resolve } from "path"
-import { fileURLToPath } from "url"
+import { readAllMdxArticles } from "./mdx-helpers.mjs"
 
-const here = dirname(fileURLToPath(import.meta.url))
-const root = resolve(here, "..", "..")
-const articlesPath = join(root, "src/data/articles.ts")
-
-const src = readFileSync(articlesPath, "utf8")
-const blocks = src.split(/},\s*\n\s*\{/)
+const mdxArticles = readAllMdxArticles()
+const blocks = mdxArticles.map(a =>
+  `  {\n    slug: "${a.slug}",\n    title: "${a.title}",\n    description: "${a.description}",\n    category: "${a.category}",\n    tags: [${a.tags.map(t => `"${t}"`).join(", ")}],\n    content: \`${a.content.replace(/`/g, "\\`")}\`\n  }`
+)
 
 let ok = 0
 let short = 0

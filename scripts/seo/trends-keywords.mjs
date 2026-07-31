@@ -12,10 +12,10 @@ import { readFileSync, writeFileSync, existsSync } from "node:fs"
 import { resolve, join, dirname } from "node:path"
 import { fileURLToPath } from "node:url"
 import googleTrends from "google-trends-api"
+import { readAllMdxArticles } from "./mdx-helpers.mjs"
 
 const here = dirname(fileURLToPath(import.meta.url))
 const root = resolve(here, "..", "..")
-const articlesPath = join(root, "src/data/articles.ts")
 
 const SEEDS = [
   "plakat akrilik", "medali custom", "piala trophy",
@@ -29,10 +29,8 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
 
 function loadExistingSlugs() {
   try {
-    const src = readFileSync(articlesPath, "utf8")
-    const slugs = new Set()
-    for (const m of src.matchAll(/slug:\s*"([^"]+)"/g)) slugs.add(m[1])
-    return slugs
+    const articles = readAllMdxArticles()
+    return new Set(articles.map(a => a.slug))
   } catch {
     return new Set()
   }

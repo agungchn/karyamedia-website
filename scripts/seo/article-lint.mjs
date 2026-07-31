@@ -1,5 +1,5 @@
 // Article standard linter for karyamedia-web
-// Validates src/data/articles.ts against the editorial + SEO standards.
+// Validates .mdx articles against the editorial + SEO standards.
 // ALL rules are MANDATORY: any violation exits 1 and blocks the commit
 // via the git pre-commit hook.
 //
@@ -11,15 +11,16 @@
 import { readFileSync, existsSync, statSync } from "node:fs"
 import { fileURLToPath } from "node:url"
 import { dirname, join, resolve } from "node:path"
+import { readAllMdxArticles, PATHS } from "./mdx-helpers.mjs"
 
-const root = resolve(dirname(fileURLToPath(import.meta.url)), "../..")
-const articlesPath = join(root, "src/data/articles.ts")
-const categoriesPath = join(root, "src/data/categories.ts")
-const pagePath = join(root, "src/app/blog/[slug]/page.tsx")
-const publicDir = join(root, "public")
+const root = PATHS.ROOT
+const categoriesPath = PATHS.CATEGORIES
+const pagePath = PATHS.PAGE_TSX
+const publicDir = PATHS.PUBLIC
 
 // ---------------------------------------------------------------- parser
 // Split the articles source into per-article blocks keyed by slug.
+// For backward compatibility, this still works with old articles.ts text.
 export function extractArticles(text) {
   const slugRe = /slug:\s*"([^"]+)"/g
   const positions = []
@@ -32,6 +33,16 @@ export function extractArticles(text) {
     arts.push({ slug: positions[i].slug, block: text.slice(start, end) })
   }
   return arts
+}
+
+// Read articles from .mdx files and return in same format as extractArticles
+function readArticlesFromMdx() {
+  const articles = readAllMdxArticles()
+  return articles.map(a => ({
+    slug: a.slug,
+    // Create a block-like format for backward compatibility
+    block: `slug: "${a.slug}",\n    title: "${a.title}",\n    description: "${a.description}",\n    category: "${a.category}",\n    date: "${a.date}",\n    image: "${a.image}",\n    tags: [${a.tags.map(t => `"${t}"`).join(", ")}],\n    content: \`${a.content}\``
+  }))
 }
 
 // ---------------------------------------------------------------- linter
@@ -48,7 +59,8 @@ export function lintText(text, { onlySlugs = null } = {}) {
   const mapKeys = [...pageText.matchAll(/"([^"]+)":\s*"(?:plakat|medali|piala-trophy|gift-box|accessories|prasasti|souvenir-wisuda|batas-wilayah)"/g)].map((mm) => mm[1])
   const allowedCategories = new Set([...mapKeys, "Blog", "Souvenir"])
 
-  const arts = extractArticles(text)
+  // Use .mdx files instead of articles.ts
+  const arts = readArticlesFromMdx()
   const allSlugsSet = new Set(arts.map((a) => a.slug))
   const only = onlySlugs ? new Set(onlySlugs) : null
 
@@ -226,9 +238,8 @@ export function lintText(text, { onlySlugs = null } = {}) {
 // ---------------------------------------------------------------- main
 const isMain = process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]
 if (isMain) {
-  const text = readFileSync(articlesPath, "utf8")
   const only = process.env.ARTICLE_LINT_SLUGS ? process.env.ARTICLE_LINT_SLUGS.split(",") : null
-  const { errors, warnings, count } = lintText(text, { onlySlugs: only })
+  const { errors, warnings, count } = lintText("", { onlySlugs: only })
   console.log(`\nArtikel diperiksa: ${count}`)
   console.log(`ERROR  : ${errors.length}`)
   console.log(`WARNING: ${warnings.length}\n`)

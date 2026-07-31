@@ -19,10 +19,9 @@ import { readFileSync } from "node:fs"
 import { execSync } from "node:child_process"
 import { fileURLToPath } from "node:url"
 import { dirname, join, resolve } from "node:path"
-import { extractArticles } from "./article-lint.mjs"
+import { readAllMdxArticles, PATHS } from "./mdx-helpers.mjs"
 
-const root = resolve(dirname(fileURLToPath(import.meta.url)), "../..")
-const articlesPath = join(root, "src/data/articles.ts")
+const root = PATHS.ROOT
 
 // generic + site-wide category terms that are NOT distinctive
 const STOP = new Set(
@@ -69,16 +68,44 @@ function articleTokens(slug, title, tags) {
 }
 
 // ---------------------------------------------------------------- inputs
-const working = readFileSync(articlesPath, "utf8")
-const arts = extractArticles(working)
+// Read articles from .mdx files
+const mdxArticles = readAllMdxArticles()
 
-let headText = ""
+// Convert to block format for backward compatibility
+const arts = mdxArticles.map(a => ({
+  slug: a.slug,
+  block: `slug: "${a.slug}",\ntitle: "${a.title}",\ndescription: "${a.description}",\ncategory: "${a.category}",\ndate: "${a.date}",\nimage: "${a.image}",\ntags: [${a.tags.map(t => `"${t}"`).join(", ")}],\ncontent: \`${a.content}\``
+}))
+
+// For HEAD comparison, try to read from git (old articles.ts or .mdx files)
+let headArts = []
 try {
-  headText = execSync("git show HEAD:src/data/articles.ts", { cwd: root, encoding: "utf8" })
+  const headText = execSync("git show HEAD:src/data/articles.ts", { cwd: root, encoding: "utf8" })
+  if (headText) {
+    const slugRe = /slug:\s*"([^"]+)"/g
+    const positions = []
+    let m
+    while ((m = slugRe.exec(headText))) positions.push({ slug: m[1], idx: m.index })
+    for (let i = 0; i < positions.length; i++) {
+      const start = positions[i].idx
+      const end = positions[i + 1] ? positions[i + 1].idx : headText.length
+      headArts.push({ slug: positions[i].slug, block: headText.slice(start, end) })
+    }
+  }
 } catch {
-  headText = ""
+  // articles.ts doesn't exist in HEAD, try .mdx files
+  try {
+    const headFiles = execSync("git ls-tree --name-only HEAD content/blog/", { cwd: root, encoding: "utf8" }).trim().split("\n")
+    for (const f of headFiles) {
+      if (!f.endsWith(".mdx")) continue
+      const slug = f.replace("content/blog/", "").replace(".mdx", "")
+      const content = execSync(`git show HEAD:${f}`, { cwd: root, encoding: "utf8" })
+      headArts.push({ slug, block: content })
+    }
+  } catch {
+    headArts = []
+  }
 }
-const headArts = headText ? extractArticles(headText) : []
 const headSlugs = new Set(headArts.map((a) => a.slug))
 
 let candidateSlugs = []

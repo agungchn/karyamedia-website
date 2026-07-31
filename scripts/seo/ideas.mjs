@@ -22,14 +22,14 @@ import { dirname, join, resolve } from "node:path"
 import { getToken, getSite, api } from "../gsc/analyze.mjs"
 import { buildTopics } from "./geo.mjs"
 import { googleSuggest } from "../google/suggest.mjs"
-import { extractArticles } from "./article-lint.mjs"
+import { readAllMdxArticles, PATHS } from "./mdx-helpers.mjs"
 import { inferCategory } from "./article-generate.mjs"
 import { commitAndPush } from "./git.mjs"
 import { isBlocked } from "./blocked-keywords.js"
 
 const here = dirname(fileURLToPath(import.meta.url))
 const root = resolve(here, "..", "..")
-const articlesPath = join(root, "src/data/articles.ts")
+const articlesPath = PATHS.ARTICLES_INDEX // for reference, actual data comes from .mdx
 const FAILED_KEYWORDS_PATH = join(here, "failed-keywords.json")
 const MAX_FAILS = 2 // skip keyword permanently after 2nd duplicate failure
 
@@ -338,7 +338,13 @@ async function main() {
 
   console.log(`Total query (GSC): ${rows.length}\n`)
 
-  const working = readFileSync(articlesPath, "utf8")
+  // Read articles from .mdx files and convert to old format for backward compatibility
+  const mdxArticles = readAllMdxArticles()
+  // Convert to block format (matching old articles.ts format)
+  const working = mdxArticles.map(a => 
+    `  {\n    slug: "${a.slug}",\n    title: "${a.title}",\n    description: "${a.description}",\n    category: "${a.category}",\n    date: "${a.date}",\n    image: "${a.image}",\n    tags: [${a.tags.map(t => `"${t}"`).join(", ")}],\n    content: \`${a.content.replace(/`/g, "\\`")}\`\n  }`
+  ).join(",\n")
+  
   const opportunities = []
   let covered = 0
   // Dapatkan hari ini untuk blocked keywords check
@@ -586,7 +592,7 @@ async function main() {
           commitAndPush(`feat(seo): auto-generate ${generatedSlugs.length} article(s) from GSC opportunities`)
         } catch (err) {
           console.error(
-            `\nGagal: commit/push error (${err.message}). Artikel sudah tersimpan di src/data/articles.ts — lakukan git commit/push manual.`,
+            `\nGagal: commit/push error (${err.message}). Artikel sudah tersimpan di content/blog/ — lakukan git commit/push manual.`,
           )
         }
       } else {
@@ -595,7 +601,7 @@ async function main() {
         )
       }
     } else {
-      console.log("\nDraft selesai disisipkan. Review di src/data/articles.ts" + (COMMIT_PUSH ? "" : ", lalu jalankan dengan --commit-push atau git commit manual."))
+      console.log("\nDraft selesai disisipkan. Review di content/blog/" + (COMMIT_PUSH ? "" : ", lalu jalankan dengan --commit-push atau git commit manual."))
     }
   }
 }

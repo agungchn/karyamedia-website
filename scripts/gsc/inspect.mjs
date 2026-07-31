@@ -9,25 +9,18 @@
 // ordinary sites — discovery happens automatically via the sitemap. This tool
 // only *verifies* indexing state so we know what Google has picked up.
 
-import { readFileSync } from "node:fs"
 import { fileURLToPath } from "node:url"
-import { dirname, join, resolve } from "node:path"
-import { extractArticles } from "../seo/article-lint.mjs"
+import { dirname } from "node:path"
+import { readAllMdxArticles } from "../seo/mdx-helpers.mjs"
 import { getToken, getSite } from "./analyze.mjs"
 
 const here = dirname(fileURLToPath(import.meta.url))
-const root = resolve(here, "..", "..")
-const articlesPath = join(root, "src/data/articles.ts")
 
 const N = parseInt(process.argv[2] || "5", 10)
 
 function lastSlugs(n) {
-  const text = readFileSync(articlesPath, "utf8")
-  const arts = extractArticles(text)
-  return arts.slice(-n).map((a) => {
-    const s = /slug:\s*"([^"]*)"/.exec(a.block)?.[1]
-    return s
-  }).filter(Boolean)
+  const articles = readAllMdxArticles()
+  return articles.slice(-n).map((a) => a.slug)
 }
 
 async function inspect(token, site, url) {

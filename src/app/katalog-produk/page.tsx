@@ -12,8 +12,8 @@ import { TimeHeading } from "@/components/ui/time-heading"
 import { TimeText } from "@/components/ui/time-text"
 import { SearchGlow } from "@/components/search-glow"
 
-// Selalu render dari data terkini (produk sering ditambah via script).
-export const dynamic = "force-dynamic"
+// ISR: revalidate setiap 1 jam (produk tidak sering berubah).
+export const revalidate = 3600
 
 export async function generateMetadata(): Promise<Metadata> {
   const featured = products.filter((p) => p.featured)

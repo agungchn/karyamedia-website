@@ -9,8 +9,8 @@ import { products } from "@/data/products"
 import { getWhatsAppLink, generateWhatsAppMessage } from "@/lib/utils"
 import { BreadcrumbSchema, CategorySchema } from "@/components/json-ld"
 
-// Selalu render dari data terkini (produk sering ditambah via script).
-export const dynamic = "force-dynamic"
+// ISR: revalidate setiap 1 jam (produk tidak sering berubah).
+export const revalidate = 3600
 
 interface Props {
   params: Promise<{ category: string }>

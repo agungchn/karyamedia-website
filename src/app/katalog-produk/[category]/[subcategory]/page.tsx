@@ -7,13 +7,17 @@ import { categories } from "@/data/categories"
 import { products } from "@/data/products"
 import { getWhatsAppLink, generateWhatsAppMessage } from "@/lib/utils"
 import { BreadcrumbSchema } from "@/components/json-ld"
+import { Pagination } from "@/components/pagination"
 
 // Selalu render dari data terkini (hindari snapshot build statis usang
 // yang bisa menampilkan kartu produk tanpa gambar).
 export const dynamic = "force-dynamic"
 
+const ITEMS_PER_PAGE = 20
+
 interface Props {
   params: Promise<{ category: string; subcategory: string }>
+  searchParams: Promise<{ page?: string }>
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -51,8 +55,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-export default async function SubCategoryPage({ params }: Props) {
+export default async function SubCategoryPage({ params, searchParams }: Props) {
   const { category, subcategory } = await params
+  const { page } = await searchParams
   const cat = categories.find((c) => c.slug === category)
   if (!cat) notFound()
   const sub = cat.subcategories.find((s) => s.slug === subcategory)
@@ -62,9 +67,15 @@ export default async function SubCategoryPage({ params }: Props) {
     (p) => p.categoryId === cat.id && p.subcategoryId === sub.id
   )
 
+  const currentPage = Math.max(1, parseInt(page || "1", 10) || 1)
+  const totalPages = Math.ceil(subProducts.length / ITEMS_PER_PAGE)
+  const safePage = Math.min(currentPage, totalPages || 1)
+  const startIdx = (safePage - 1) * ITEMS_PER_PAGE
+  const paginatedProducts = subProducts.slice(startIdx, startIdx + ITEMS_PER_PAGE)
+
   // Satu kartu per produk, pakai gambar produk masing-masing (sumber terpercaya).
-  const cards: { product: (typeof subProducts)[number]; image: string }[] =
-    subProducts.map((product) => ({
+  const cards: { product: (typeof paginatedProducts)[number]; image: string }[] =
+    paginatedProducts.map((product) => ({
       product,
       image: product.images[0] ?? "",
     }))
@@ -100,8 +111,12 @@ export default async function SubCategoryPage({ params }: Props) {
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {cards.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {cards.map((card, idx) => (
+          <>
+            <p className="text-sm text-gray-500 mb-6">
+              Menampilkan {startIdx + 1}–{Math.min(startIdx + ITEMS_PER_PAGE, subProducts.length)} dari {subProducts.length} produk
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {cards.map((card, idx) => (
               <div
                 key={`${card.product.id}-${idx}`}
                 className="group bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
@@ -157,8 +172,14 @@ export default async function SubCategoryPage({ params }: Props) {
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
+              ))}
+            </div>
+            <Pagination
+              currentPage={safePage}
+              totalPages={totalPages}
+              baseUrl={`/katalog-produk/${category}/${subcategory}`}
+            />
+          </>
         ) : (
           <div className="text-center py-20">
             <Award className="w-16 h-16 text-gray-300 mx-auto mb-4" />

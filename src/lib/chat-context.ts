@@ -1,6 +1,6 @@
 import { companyInfo } from "@/data/company"
 import { categories } from "@/data/categories"
-import { articles } from "@/data/articles"
+import articles from "@/data/articles-index.json"
 import catalogSummary from "@/data/catalog-summary.json"
 
 function buildCatalogSummary() {

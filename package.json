@@ -28,7 +28,8 @@
     "social:generate": "node scripts/social/generate-content.mjs",
     "social:video": "node scripts/social/generate-video.mjs",
     "social:linkedin": "node scripts/social/autopost-linkedin.mjs",
-    "social:linkedin-setup": "powershell -ExecutionPolicy Bypass -File scripts/social/get-linkedin-tokens.ps1"
+    "social:linkedin-setup": "powershell -ExecutionPolicy Bypass -File scripts/social/get-linkedin-tokens.ps1",
+    "articles:index": "node scripts/generate-articles-index.js"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.3.0",

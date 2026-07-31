@@ -28,22 +28,56 @@ function sanitize(messages: unknown): ChatMessage[] {
     .map((m) => ({ role: m.role, content: m.content.trim().slice(0, 2000) }))
 }
 
+// Pre-build inverted index: map word -> Set<article indices>
+// Built once at module load, O(1) lookups afterward.
+const STOP_WORDS = new Set("dan,untuk,dengan,yang,di,dari,ke,pada,atau,the,a,an,of,to,in,ini,itu,ada,bisa,juga,akan,sebagai".split(","))
+
+const wordToArticles = new Map<string, Set<number>>()
+
+for (let i = 0; i < articles.length; i++) {
+  const a = articles[i]
+  const text = `${a.title} ${a.tags.join(" ")} ${a.description} ${a.category}`.toLowerCase()
+  const words = text.match(/[a-z0-9]+/g) || []
+  for (const w of words) {
+    if (w.length < 2 || STOP_WORDS.has(w)) continue
+    if (!wordToArticles.has(w)) wordToArticles.set(w, new Set())
+    wordToArticles.get(w)!.add(i)
+  }
+}
+
 function searchArticles(query: string): string {
   const q = query.toLowerCase()
-  const found = articles
-    .filter(
-      (a) =>
-        a.title.toLowerCase().includes(q) ||
-        a.tags.some((t) => t.toLowerCase().includes(q)) ||
-        a.description.toLowerCase().includes(q) ||
-        a.category.toLowerCase().includes(q)
-    )
+  const queryWords = q.match(/[a-z0-9]+/g) || []
+  if (queryWords.length === 0) return ""
+
+  // Score each article by matching query words
+  const scores = new Map<number, number>()
+  for (const w of queryWords) {
+    const matching = wordToArticles.get(w)
+    if (!matching) continue
+    for (const idx of matching) {
+      scores.set(idx, (scores.get(idx) || 0) + 1)
+    }
+  }
+
+  // Also check for exact phrase match in title (higher weight)
+  for (let i = 0; i < articles.length; i++) {
+    if (articles[i].title.toLowerCase().includes(q)) {
+      scores.set(i, (scores.get(i) || 0) + 10)
+    }
+  }
+
+  // Sort by score, take top 5
+  const sorted = [...scores.entries()]
+    .sort((a, b) => b[1] - a[1])
     .slice(0, 5)
-  if (found.length === 0) return ""
-  return found
+    .map(([idx]) => idx)
+
+  if (sorted.length === 0) return ""
+  return sorted
     .map(
-      (a, i) =>
-        `${i + 1}. "${a.title}" — ${a.description.slice(0, 100)}...\n   https://karyamediasouvenir.com/blog/${a.slug}`
+      (i, rank) =>
+        `${rank + 1}. "${articles[i].title}" — ${articles[i].description.slice(0, 100)}...\n   https://karyamediasouvenir.com/blog/${articles[i].slug}`
     )
     .join("\n\n")
 }

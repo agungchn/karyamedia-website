@@ -1,4 +1,4 @@
-import { articles } from "@/data/articles"
+import { articles } from "@/lib/articles"
 import { NextResponse } from "next/server"
 
 const SITE_URL = "https://karyamediasouvenir.com"

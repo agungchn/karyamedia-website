@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Metadata } from "next"
 import { ChevronRight } from "lucide-react"
-import { articles } from "@/data/articles"
+import { articles } from "@/lib/articles"
 import { BreadcrumbSchema } from "@/components/json-ld"
 import { BlogSearch } from "@/components/blog-search"
 

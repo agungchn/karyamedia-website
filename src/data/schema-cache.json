@@ -19352,7 +19352,7 @@
       "@type": "Article",
       "headline": "Plakat BM Kuningan & Tembaga Berkualitas Lengkap",
       "description": "Plakat BM dari Karyamedia hadir dalam material kuningan, tembaga, dan stainless steel untuk penanda batas wilayah outdoor.",
-      "image": "https://karyamediasouvenir.com/images/produk-unggulan/plakat-batas-wilayah/center-point/center-point (1).png",
+      "image": "https://karyamediasouvenir.com/images/produk-unggulan/plakat-batas-wilayah/plakat-brastable/plakat-brastable (9).png",
       "datePublished": "2026-07-29",
       "dateModified": "2026-07-29",
       "author": {
@@ -19401,6 +19401,64 @@
       "plakat kuningan outdoor",
       "plakat tembaga custom",
       "plakat stainless steel"
+    ]
+  },
+  {
+    "slug": "plakat-cp-custom",
+    "title": "Plakat CP Kuningan untuk Penanda Batas Kawasan",
+    "article": {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Plakat CP Kuningan untuk Penanda Batas Kawasan",
+      "description": "Plakat CP dari Karyamedia hadir sebagai penanda batas kawasan berbahan kuningan dan stainless steel yang tahan cuaca, ideal untuk masterplan pengembangan.",
+      "image": "https://karyamediasouvenir.com/images/produk-unggulan/plakat-batas-wilayah/center-point/center-point (1).png",
+      "datePublished": "2026-07-31",
+      "dateModified": "2026-07-31",
+      "author": {
+        "@type": "Organization",
+        "name": "Karyamedia Souvenir",
+        "url": "https://karyamediasouvenir.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Karyamedia Souvenir",
+        "url": "https://karyamediasouvenir.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://karyamediasouvenir.com/blog/plakat-cp-custom"
+      }
+    },
+    "breadcrumb": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Beranda",
+          "item": "https://karyamediasouvenir.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Batas Wilayah",
+          "item": "https://karyamediasouvenir.com/katalog-produk/batas-wilayah"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Plakat CP Kuningan untuk Penanda Batas Kawasan",
+          "item": "https://karyamediasouvenir.com/blog/plakat-cp-custom"
+        }
+      ]
+    },
+    "keywords": [
+      "plakat cp",
+      "penanda batas wilayah",
+      "plakat kuningan outdoor",
+      "papan batas kawasan",
+      "plakat tembaga custom"
     ]
   }
 ]

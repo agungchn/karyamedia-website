@@ -80,6 +80,7 @@ const sigTokens = (s) => tokensOf(s).filter((w) => !MOD_IGNORE.has(w))
 const slugRe = /slug:\s*"([^"]*)"/
 const titleRe = /title:\s*"([^"]*)"/
 const tagsRe = /tags:\s*\[([\s\S]*?)\]/
+const catRe = /category:\s*"([^"]*)"/
 
 function isCovered(query, workingText) {
   if (/karyamedia/i.test(query)) return true
@@ -143,6 +144,87 @@ function isKeywordDuplicate(query, workingText, attemptedKeywords) {
     if (jaccard(query, title) >= 0.5) return true
   }
   return false
+}
+
+// Enhanced pre-screening: cek keyword terhadap SELURUH konten artikel yang sudah ada
+// menggunakan duplicate detection yang sama dengan article-generate.mjs
+// Tujuannya: skip keyword sebelum LLM dipanggil, hemat quota dan waktu.
+const STOP_SCREEN = new Set(
+  "custom,kustom,souvenir,plakat,medali,piala,trophy,gift,box,accessories,prasasti,batas,wilayah,wisuda,dan,untuk,ke,di,dari,pada,atau,dengan,yang,the,a,an,of,to,in,for,cara,membuat,panduan,lengkap,guide,model,jenis,terbaik,bagi,acara,adalah,this,that,vs".split(","),
+)
+const tokensScreen = (s) => (s || "").toLowerCase().replace(/<[^>]*>/g, " ").split(/[^a-z0-9]+/i).filter((w) => w && !STOP_SCREEN.has(w) && w.length > 1)
+const contScreen = (a, b) => {
+  const A = new Set(a), B = new Set(b)
+  if (!A.size) return 0
+  let i = 0
+  for (const x of A) if (B.has(x)) i++
+  return i / Math.min(A.size, B.size)
+}
+const headingsFromContent = (text) => {
+  return [...text.matchAll(/<h2[^>]*>([\s\S]*?)<\/h2>/gi)]
+    .map((h) => h[1].replace(/<[^>]*>/g, "").trim().toLowerCase())
+    .filter(Boolean)
+}
+
+// Pre-screen: simulasi duplicate check seperti di article-generate.mjs
+// tanpa benar-benar manggil LLM. Cek heading similarity & konten similarity
+// terhadap artikel yang sudah ada. Gunakan threshold yang sama persis dengan
+// article-generate.mjs: heading ≥80% DAN konten ≥50% baru dianggap duplikat.
+// Daftar kategori yang sudah jenuh — artikel baru di kategori ini hampir pasti
+// duplikat konten karena LLM menghasilkan struktur heading yang mirip.
+const SATURATED_CATS = new Set(["Souvenir Wisuda"])
+
+function preScreenDuplicate(keyword, category, workingText) {
+  const kwTokens = tokensScreen(keyword)
+  if (kwTokens.length === 0) return null
+
+  // Kategori jenuh: langsung skip kecuali keyword spesifik yang terdaftar
+  if (SATURATED_CATS.has(category)) {
+    const ALLOWED_SPECIFIC = [
+      "kalung rektor", "tongkat rektor", "map ijazah", "tabung wisuda",
+      "toga wisuda", "patung wisuda", "plakat wisuda akrilik",
+      "samir wisuda", "gordon wisuda", "kalung wisuda",
+    ]
+    const kwLower = keyword.toLowerCase()
+    const isAllowed = ALLOWED_SPECIFIC.some((a) => kwLower.includes(a))
+    if (!isAllowed) {
+      return `kategori "${category}" sudah jenuh — hanya terima keyword spesifik (samir/gordon/patung/kalung rektor/tongkat rektor/map ijazah/tabung wisuda)`
+    }
+  }
+  
+  const arts = extractArticles(workingText)
+  for (const a of arts) {
+    const aSlug = slugRe.exec(a.block)?.[1] || ""
+    const aTitle = titleRe.exec(a.block)?.[1] || ""
+    const aCat = catRe.exec(a.block)?.[1] || ""
+    
+    // Cek token overlap dengan title artikel existing
+    const aTok = tokensScreen(aTitle)
+    const c = contScreen(kwTokens, aTok)
+    if (c >= 0.85) return `topik terlalu mirip dengan "${aTitle}" (token overlap ${(c*100).toFixed(0)}%)`
+    
+    // Cek konten content article existing untuk heading similarity
+    // Ini baru dilakukan jika kategorinya SAMA, karena artikel beda kategori
+    // biasanya punya struktur heading berbeda.
+    const contentRe_ = /content:\s*`([\s\S]*?)`,\s*\n\s*\},/
+    const cm = contentRe_.exec(a.block)
+    if (cm && aCat === category && category !== "Blog") {
+      const eContent = cm[1]
+      const eHeadings = new Set(headingsFromContent(eContent))
+      if (eHeadings.size >= 4) {
+        // Keyword dengan kategori sama: hitung overlap token dengan konten
+        const eTokens = tokensScreen(eContent)
+        if (eTokens.length > 0) {
+          const contentOverlap = contScreen(kwTokens, eTokens)
+          // Threshold ringan: jika keyword token sangat mirip dengan konten yang ada
+          if (contentOverlap >= 0.7) {
+            return `konten mirip dengan "${aTitle}" (blog/${aSlug}, token overlap ${(contentOverlap*100).toFixed(0)}%)`
+          }
+        }
+      }
+    }
+  }
+  return null
 }
 
 // Persistent failed-keyword tracking: keywords that repeatedly fail the
@@ -362,15 +444,18 @@ async function main() {
 
   // Re-rank SETELAH geo pool disertakan. Prioritas:
   //   1. Real GSC queries (10x) — demand asli selalu menang
-  //   2. Geo pool (6x) — historis 100% sukses, prefer di atas Suggest
+  //   2. Geo pool (8x +50) — historis paling jarang duplikat, diberi boost
   //   3. Google Suggest (5x) — sering gagal duplikat, prioritas diturunkan
   //   4. Fallback (1x) — cadangan
   const isRealQuery = (o) => o._real === true
   const isSuggestQuery = (o) => o._suggest === true
   const isGeoQuery = (o) => !!o._province
+  for (const o of opportunities) {
+    if (isGeoQuery(o)) o.impressions = (o.impressions || 0) + 50
+  }
   const realImp = (o) => {
     if (isRealQuery(o)) return (o.impressions || 0) * 10
-    if (isGeoQuery(o)) return (o.impressions || 0) * 6
+    if (isGeoQuery(o)) return (o.impressions || 0) * 8
     if (isSuggestQuery(o)) return (o.impressions || 0) * 5
     return o.impressions || 0
   }
@@ -401,6 +486,35 @@ async function main() {
       let cat = o._category || inferCategory(o.query)
       let genProvince = o._province || ""
       let genSegment = o._segment || ""
+      // Enhanced pre-screening: cek potensi duplikat dengan konten existing
+      const screenResult = preScreenDuplicate(o.query, cat, working)
+      if (screenResult) {
+        console.log(`  ⏭ Skip "${o.query}" — ${screenResult}, cari pengganti...`)
+        if (runCount++ >= maxRun) break
+        for (let j = GEN_TOP; j < opportunities.length; j++) {
+          const alt = opportunities[j]
+          if (alt._used) continue
+          const altScreen = preScreenDuplicate(alt.query, alt._category || inferCategory(alt.query), working)
+          if (altScreen) continue
+          if (isKeywordDuplicate(alt.query, working, attemptedKeywords)) continue
+          alt._used = true
+          o.query = alt.query
+          o._category = alt._category
+          o._province = alt._province || ""
+          o._segment = alt._segment || ""
+          cat = o._category || inferCategory(o.query)
+          genProvince = o._province
+          genSegment = o._segment
+          console.log(`  → Ganti dengan "${o.query}" (kategori: ${cat}${genProvince ? ", lokasi: " + genProvince : ""}${genSegment ? ", segmen: " + genSegment : ""})`)
+          break
+        }
+        // Jika tidak ada pengganti yang lolos screening, skip topik ini
+        if (o._used) continue
+        else {
+          console.log(`  Tidak ada pengganti yang lolos screening. Lanjut topik berikutnya...`)
+          continue
+        }
+      }
       // Pre-generation duplicate check: skip keyword yang terlalu mirip
       // dengan keyword yg sudah gagal atau artikel existing — hemat LLM quota.
       if (isKeywordDuplicate(o.query, working, attemptedKeywords)) {
@@ -408,7 +522,10 @@ async function main() {
         if (runCount++ >= maxRun) break
         for (let j = GEN_TOP; j < opportunities.length; j++) {
           const alt = opportunities[j]
-          if (alt._used || isKeywordDuplicate(alt.query, working, attemptedKeywords)) continue
+          if (alt._used) continue
+          const altScreen = preScreenDuplicate(alt.query, alt._category || inferCategory(alt.query), working)
+          if (altScreen) continue
+          if (isKeywordDuplicate(alt.query, working, attemptedKeywords)) continue
           alt._used = true
           o.query = alt.query
           o._category = alt._category

@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next"
 import { categories } from "@/data/categories"
-import { articles } from "@/data/articles"
+import { articles } from "@/lib/articles"
 
 const BASE_URL = "https://karyamediasouvenir.com"
 

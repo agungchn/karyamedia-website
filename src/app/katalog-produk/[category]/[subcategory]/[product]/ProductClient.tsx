@@ -119,6 +119,7 @@ export default function ProductClient({ product, cat, sub }: ProductClientProps)
     "Varian Ukuran As": "text-orange-500",
     "Harga Satuan": "text-emerald-600",
     "Jumlah Order": "text-red-500",
+    "Minimal Order": "text-red-500",
     "Biaya Molding": "text-rose-600",
     "Estimasi Produksi": "text-amber-500",
   }
@@ -230,7 +231,7 @@ export default function ProductClient({ product, cat, sub }: ProductClientProps)
             ? [
                 {
                   icon: Minus,
-                  label: "Jumlah Order",
+                  label: isBataswilayah ? "Jumlah Order" : (cat?.slug === "medali" ? "Minimal Order" : "Jumlah Order"),
                   value: (
                     <div className="space-y-1">
                       <input
@@ -247,7 +248,7 @@ export default function ProductClient({ product, cat, sub }: ProductClientProps)
                   ),
                 },
               ]
-            : [{ icon: Minus, label: "Jumlah Order", value: product.minOrder } as { icon: any; label: string; value: string }]
+            : [{ icon: Minus, label: cat?.slug === "medali" ? "Minimal Order" : "Jumlah Order", value: product.minOrder } as { icon: any; label: string; value: string }]
           ),
           ...(product.moldingFee ? [{ icon: Package, label: "Biaya Molding", value: product.moldingFee }] : []),
           { icon: Clock, label: "Estimasi Produksi", value: product.productionTime },

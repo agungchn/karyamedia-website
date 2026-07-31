@@ -34,6 +34,11 @@ export function SubcategoryProductGrid({
   subSlug: string
 }) {
   const [currentPage, setCurrentPage] = useState(1)
+
+  const goToPage = (page: number) => {
+    setCurrentPage(page)
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  }
   const totalPages = Math.ceil(products.length / ITEMS_PER_PAGE)
   const startIdx = (currentPage - 1) * ITEMS_PER_PAGE
   const paginatedProducts = products.slice(startIdx, startIdx + ITEMS_PER_PAGE)
@@ -122,7 +127,7 @@ export function SubcategoryProductGrid({
         <nav className="flex items-center justify-center gap-1 mt-10" aria-label="Paginasi">
           {currentPage > 1 && (
             <button
-              onClick={() => setCurrentPage(currentPage - 1)}
+              onClick={() => goToPage(currentPage - 1)}
               className="px-3 py-2 rounded-lg text-sm text-gray-600 hover:bg-gray-100 transition-colors"
             >
               Sebelumnya
@@ -131,7 +136,7 @@ export function SubcategoryProductGrid({
           {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
             <button
               key={page}
-              onClick={() => setCurrentPage(page)}
+              onClick={() => goToPage(page)}
               className={`min-w-[36px] h-9 flex items-center justify-center rounded-lg text-sm font-medium transition-colors ${
                 page === currentPage
                   ? "bg-[#002878] text-white shadow-md"
@@ -144,7 +149,7 @@ export function SubcategoryProductGrid({
           ))}
           {currentPage < totalPages && (
             <button
-              onClick={() => setCurrentPage(currentPage + 1)}
+              onClick={() => goToPage(currentPage + 1)}
               className="px-3 py-2 rounded-lg text-sm text-gray-600 hover:bg-gray-100 transition-colors"
             >
               Berikutnya

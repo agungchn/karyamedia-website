@@ -194,11 +194,14 @@ export default function ProductClient({ product, cat, sub }: ProductClientProps)
     Logo: "text-purple-600",
     Ukuran: "text-orange-500",
     "Ukuran Plakat": "text-orange-500",
+    "Pilih Ukuran Plakat": "text-orange-500",
     "Ketebalan Bahan": "text-slate-600",
+    "Pilih Ketebalan bahan": "text-slate-600",
     "Warna/Finishing": "text-pink-500",
     "Warna Bahan": "text-pink-500",
     Kegunaan: "text-emerald-600",
     Kemasan: "text-amber-600",
+    "Pilih Kemasan": "text-amber-600",
     "Varian Ukuran As": "text-orange-500",
     "Harga Satuan": "text-emerald-600",
     Harga: "text-emerald-600",
@@ -253,7 +256,7 @@ export default function ProductClient({ product, cat, sub }: ProductClientProps)
             ? [
                 {
                   icon: Ruler,
-                  label: "Ukuran Plakat",
+                  label: "Pilih Ukuran Plakat",
                   value: (
                     <select
                       value={selectedPlakatInstansiSize}
@@ -268,7 +271,7 @@ export default function ProductClient({ product, cat, sub }: ProductClientProps)
                 },
                 {
                   icon: Layers,
-                  label: "Ketebalan Bahan",
+                  label: "Pilih Ketebalan bahan",
                   value: (
                     <select
                       value={selectedPlakatInstansiThickness}
@@ -283,7 +286,7 @@ export default function ProductClient({ product, cat, sub }: ProductClientProps)
                 },
                 {
                   icon: Box,
-                  label: "Kemasan",
+                  label: "Pilih Kemasan",
                   value: (
                     <div>
                       <select

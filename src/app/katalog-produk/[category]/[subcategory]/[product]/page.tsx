@@ -166,6 +166,49 @@ export default async function ProductDetailPage({ params }: Props) {
                 />
               </div>
             )}
+            {cat.id === "plakat-instansi" && (
+              <div className="mt-6 hidden lg:block">
+                <h3 className="heading-display text-xl text-gray-900 mb-4">Pilihan Box Kemasan</h3>
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden relative group cursor-pointer">
+                      <Image src="/images/produk-unggulan/plakat-instansi/box-kemasan/box-batik.webp" alt="Box Batik" fill loading="lazy" sizes="25vw" className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                    </div>
+                    <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden relative group cursor-pointer">
+                      <Image src="/images/produk-unggulan/plakat-instansi/box-kemasan/box-bludru-biru.webp" alt="Box Bludru Biru" fill loading="lazy" sizes="25vw" className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                    </div>
+                    <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden relative group cursor-pointer">
+                      <Image src="/images/produk-unggulan/plakat-instansi/box-kemasan/box-bludru-hijau.webp" alt="Box Bludru Hijau" fill loading="lazy" sizes="25vw" className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                    </div>
+                    <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden relative group cursor-pointer">
+                      <Image src="/images/produk-unggulan/plakat-instansi/box-kemasan/box-bludru-kuning.webp" alt="Box Bludru Kuning" fill loading="lazy" sizes="25vw" className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden relative group cursor-pointer">
+                      <Image src="/images/produk-unggulan/plakat-instansi/box-kemasan/box-bludru-merah.webp" alt="Box Bludru Merah" fill loading="lazy" sizes="25vw" className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                    </div>
+                    <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden relative group cursor-pointer">
+                      <Image src="/images/produk-unggulan/plakat-instansi/box-kemasan/box-kertas-import-1.webp" alt="Box Kertas Import 1" fill loading="lazy" sizes="25vw" className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                    </div>
+                    <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden relative group cursor-pointer">
+                      <Image src="/images/produk-unggulan/plakat-instansi/box-kemasan/box-kertas-import-2.webp" alt="Box Kertas Import 2" fill loading="lazy" sizes="25vw" className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                    </div>
+                    <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden relative group cursor-pointer">
+                      <Image src="/images/produk-unggulan/plakat-instansi/box-kemasan/box-kertas-import-3.webp" alt="Box Kertas Import 3" fill loading="lazy" sizes="25vw" className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
 
           <ProductClient product={product} cat={cat} sub={sub} />

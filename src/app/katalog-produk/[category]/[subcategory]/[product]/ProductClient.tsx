@@ -70,9 +70,9 @@ export default function ProductClient({ product, cat, sub }: ProductClientProps)
   // Pricing lookup for plakat instansi
   const plakatInstansiPricing: Record<string, Record<string, number>> = {
     "Small (14x20cm)": {
-      "Akrilik 1cm": 125000,
-      "Akrilik 1,5cm": 150000,
-      "Akrilik 2cm": 175000,
+      "Akrilik 1cm": 150000,
+      "Akrilik 1,5cm": 175000,
+      "Akrilik 2cm": 200000,
     },
     "Medium (16x25cm)": {
       "Akrilik 1cm": 175000,
@@ -81,8 +81,8 @@ export default function ProductClient({ product, cat, sub }: ProductClientProps)
     },
     "Large (19x29cm)": {
       "Akrilik 1cm": 300000,
-      "Akrilik 1,5cm": 350000,
-      "Akrilik 2cm": 400000,
+      "Akrilik 1,5cm": 375000,
+      "Akrilik 2cm": 425000,
     },
   }
 

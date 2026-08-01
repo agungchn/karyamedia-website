@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://karyamediasouvenir.com"),
   title: {
     default: "Karyamedia Souvenir - Produsen Souvenir Custom Sejak 2001",
-    template: "%s | Karyamedia Souvenir",
+    template: "%s",
   },
   description:
     "Produsen souvenir custom & plakat Jogja berpengalaman sejak 2001. Plakat akrilik, medali, piala, prasasti, souvenir wisuda, dan merchandise custom. Berbadan hukum, berbasis Yogyakarta, melayani seluruh Indonesia.",

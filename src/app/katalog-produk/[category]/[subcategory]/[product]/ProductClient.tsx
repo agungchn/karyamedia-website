@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef, useCallback } from "react"
-import { MessageCircle, Package, Ruler, Palette, Tag, Clock, Minus, Share2 } from "lucide-react"
+import { MessageCircle, Package, Ruler, Palette, Tag, Clock, Minus, Share2, ShoppingCart, Box, Layers } from "lucide-react"
 import { getWhatsAppLink, generateWhatsAppMessage } from "@/lib/utils"
 import hargaBatasWilayah from "@/data/harga-bataswilayah.json"
 import hargaCP from "@/data/harga-cp.json"
@@ -52,8 +52,87 @@ interface ProductClientProps {
 
 export default function ProductClient({ product, cat, sub }: ProductClientProps) {
   const isBataswilayah = cat?.slug === "batas-wilayah"
+  const isMedaliCustom = product.subcategoryId === "md"
+  const isPlakatInstansi = cat?.id === "plakat-instansi"
 
-  const sizeOptions = isBataswilayah
+  const plakatInstansiSizeOptions = ["Small (14x20cm)", "Medium (16x25cm)", "Large (19x29cm)"]
+  const [selectedPlakatInstansiSize, setSelectedPlakatInstansiSize] = useState(plakatInstansiSizeOptions[0])
+
+  const kemasanOptions = ["Kertas Marga (Free)", "Box Kertas Import", "Box Batik", "Box Bludru", "Box Custom"]
+  const [selectedKemasan, setSelectedKemasan] = useState(kemasanOptions[0])
+
+  const plakatInstansiThicknessOptions = ["Akrilik 1cm", "Akrilik 1,5cm", "Akrilik 2cm"]
+  const [selectedPlakatInstansiThickness, setSelectedPlakatInstansiThickness] = useState(plakatInstansiThicknessOptions[0])
+
+  const plakatInstansiQtyOptions = ["1 pcs", "5 pcs", "10 pcs", "25 pcs", "50 pcs", "100 pcs"]
+  const [selectedPlakatInstansiQty, setSelectedPlakatInstansiQty] = useState("1")
+
+  // Pricing lookup for plakat instansi
+  const plakatInstansiPricing: Record<string, Record<string, number>> = {
+    "Small (14x20cm)": {
+      "Akrilik 1cm": 125000,
+      "Akrilik 1,5cm": 150000,
+      "Akrilik 2cm": 175000,
+    },
+    "Medium (16x25cm)": {
+      "Akrilik 1cm": 175000,
+      "Akrilik 1,5cm": 200000,
+      "Akrilik 2cm": 250000,
+    },
+    "Large (19x29cm)": {
+      "Akrilik 1cm": 300000,
+      "Akrilik 1,5cm": 350000,
+      "Akrilik 2cm": 400000,
+    },
+  }
+
+  const boxPricing: Record<string, number> = {
+    "Small (14x20cm)": 50000,
+    "Medium (16x25cm)": 60000,
+    "Large (19x29cm)": 75000,
+  }
+
+  // Calculate price based on selected options
+  const calculatePlakatInstansiPrice = () => {
+    const basePrice = plakatInstansiPricing[selectedPlakatInstansiSize]?.[selectedPlakatInstansiThickness] || 0
+    const boxPrice = selectedKemasan !== "Kertas Marga (Free)" ? (boxPricing[selectedPlakatInstansiSize] || 0) : 0
+    const qty = parseInt(selectedPlakatInstansiQty) || 1
+    return (basePrice + boxPrice) * qty
+  }
+
+  const plakatInstansiPrice = calculatePlakatInstansiPrice()
+  const plakatInstansiQty = parseInt(selectedPlakatInstansiQty) || 1
+  
+  // Progressive discount system
+  const getPlakatInstansiDiscount = (qty: number) => {
+    if (qty >= 100) return 0.15
+    if (qty >= 50) return 0.12
+    if (qty >= 10) return 0.10
+    return 0
+  }
+  
+  const plakatInstansiDiscount = getPlakatInstansiDiscount(plakatInstansiQty)
+  const plakatInstansiFinalPrice = plakatInstansiPrice * (1 - plakatInstansiDiscount)
+
+  const formatPlakatInstansiPrice = (price: number) => {
+    return `Rp ${price.toLocaleString("id-ID")}`
+  }
+
+  const getDiscountMessage = (qty: number) => {
+    if (qty >= 100) return { discount: 15, message: "Pesan ≥100 pcs" }
+    if (qty >= 50) return { discount: 12, message: "Pesan 50-99 pcs" }
+    if (qty >= 10) return { discount: 10, message: "Pesan 10-49 pcs" }
+    return { discount: 0, message: "" }
+  }
+
+  const getEstimasiProduksi = (qty: number) => {
+    if (qty >= 100) return "14-30 hari kerja"
+    if (qty >= 50) return "7-21 hari kerja"
+    if (qty >= 10) return "1-7 hari kerja"
+    return "2-3 hari kerja"
+  }
+
+  const sizeOptions = isBataswilayah || isMedaliCustom
     ? (product.subcategoryId === "cp"
       ? ["6cm", "8cm", "10cm", "12cm"]
       : parseDelimited(product.size).map((s) => {
@@ -72,7 +151,7 @@ export default function ProductClient({ product, cat, sub }: ProductClientProps)
   const [selectedUkuranAs, setSelectedUkuranAs] = useState(ukuranAsOptions[0])
   const minOrderQty = selectedSize === "20cm x 20cm" ? 5 : 1
 
-  const thicknessOptions = isBataswilayah ? ["1mm", "1.5mm", "2mm", "3mm"] : []
+  const thicknessOptions = isBataswilayah ? ["1mm", "1.5mm", "2mm", "3mm"] : isMedaliCustom && product.thickness ? ["0,8 mm", ...parseDelimited(product.thickness)] : []
 
   const [selectedThickness, setSelectedThickness] = useState(thicknessOptions[0] || "")
 
@@ -104,20 +183,25 @@ export default function ProductClient({ product, cat, sub }: ProductClientProps)
     ? (product.subcategoryId === "cp"
       ? `Halo Karyamedia Souvenir, saya tertarik dengan produk ${product.code} (${product.name}).\n\nDetail pemesanan:\n- Bahan: ${selectedMaterial}\n- Diameter: ${selectedSize}\n- Ukuran As: ${selectedUkuranAs}\n- Ketebalan: ${selectedThickness}\n- Jumlah: ${orderQuantity} pcs\n\nMohon informasi harga dan estimasi pengerjaannya.`
       : `Halo Karyamedia Souvenir, saya tertarik dengan produk ${product.code} (${product.name}).\n\nDetail pemesanan:\n- Bahan: ${selectedMaterial}\n- Ukuran: ${selectedSize}\n- Ketebalan: ${selectedThickness}\n- Jumlah: ${orderQuantity} pcs\n\nMohon informasi harga dan estimasi pengerjaannya.`)
+    : isPlakatInstansi
+    ? `Halo Karyamedia Souvenir, saya tertarik dengan produk ${product.code} (${product.name}).\n\nDetail pemesanan:\n- Kegunaan: ${product.usage}\n- Material Bahan: Akrilik | Stand Resin Fiberglass\n- Warna/Finishing: UV Flatbed Printing\n- Ukuran: ${selectedPlakatInstansiSize}\n- Ketebalan: ${selectedPlakatInstansiThickness}\n- Kemasan: ${selectedKemasan}\n- Jumlah: ${selectedPlakatInstansiQty} pcs\n- Total Harga: ${formatPlakatInstansiPrice(plakatInstansiFinalPrice)}\n- Estimasi Produksi: ${getEstimasiProduksi(plakatInstansiQty)}\n\nMohon informasi harga dan estimasi pengerjaannya.`
     : generateWhatsAppMessage(product.code, product.name)
 
   const iconColors: Record<string, string> = {
     Bahan: "text-blue-600",
+    "Material Bahan": "text-blue-600",
     Stand: "text-amber-600",
-
     Logo: "text-purple-600",
     Ukuran: "text-orange-500",
+    "Ukuran Plakat": "text-orange-500",
     "Ketebalan Bahan": "text-slate-600",
     "Warna/Finishing": "text-pink-500",
     "Warna Bahan": "text-pink-500",
     Kegunaan: "text-emerald-600",
+    Kemasan: "text-amber-600",
     "Varian Ukuran As": "text-orange-500",
     "Harga Satuan": "text-emerald-600",
+    Harga: "text-emerald-600",
     "Jumlah Order": "text-red-500",
     "Minimal Order": "text-red-500",
     "Biaya Molding": "text-rose-600",
@@ -134,6 +218,16 @@ export default function ProductClient({ product, cat, sub }: ProductClientProps)
         <h3 className="font-semibold text-gray-900 mb-3">Spesifikasi Produk</h3>
         {[
           { icon: Tag, label: "Kegunaan", value: product.usage },
+          ...(isPlakatInstansi
+            ? [
+                {
+                  icon: Package,
+                  label: "Material Bahan",
+                  value: "Akrilik | Stand Resin Fiberglass",
+                },
+              ]
+            : []
+          ),
           ...(isBataswilayah
             ? [
                 {
@@ -152,9 +246,65 @@ export default function ProductClient({ product, cat, sub }: ProductClientProps)
                   ),
                 },
               ]
-            : [{ icon: Package, label: "Bahan", value: product.material } as { icon: any; label: string; value: string }]
+            : []
           ),
-          ...(isBataswilayah && product.thickness
+          ...(product.color ? [{ icon: Palette, label: product.subcategoryId === "mi" ? "Warna Bahan" : "Warna/Finishing", value: product.color }] : []),
+          ...(isPlakatInstansi
+            ? [
+                {
+                  icon: Ruler,
+                  label: "Ukuran Plakat",
+                  value: (
+                    <select
+                      value={selectedPlakatInstansiSize}
+                      onChange={(e) => setSelectedPlakatInstansiSize(e.target.value)}
+                      className="w-full px-3 py-1.5 bg-white border border-gray-300 rounded-lg text-sm font-medium text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:border-[#D4AF37]"
+                    >
+                      {plakatInstansiSizeOptions.map((opt) => (
+                        <option key={opt} value={opt}>{opt}</option>
+                      ))}
+                    </select>
+                  ),
+                },
+                {
+                  icon: Layers,
+                  label: "Ketebalan Bahan",
+                  value: (
+                    <select
+                      value={selectedPlakatInstansiThickness}
+                      onChange={(e) => setSelectedPlakatInstansiThickness(e.target.value)}
+                      className="w-full px-3 py-1.5 bg-white border border-gray-300 rounded-lg text-sm font-medium text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:border-[#D4AF37]"
+                    >
+                      {plakatInstansiThicknessOptions.map((opt) => (
+                        <option key={opt} value={opt}>{opt}</option>
+                      ))}
+                    </select>
+                  ),
+                },
+                {
+                  icon: Box,
+                  label: "Kemasan",
+                  value: (
+                    <div>
+                      <select
+                        value={selectedKemasan}
+                        onChange={(e) => setSelectedKemasan(e.target.value)}
+                        className="w-full px-3 py-1.5 bg-white border border-gray-300 rounded-lg text-sm font-medium text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:border-[#D4AF37]"
+                      >
+                        {kemasanOptions.map((opt) => (
+                          <option key={opt} value={opt}>{opt}</option>
+                        ))}
+                      </select>
+                      {selectedKemasan !== "Kertas Marga (Free)" && (
+                        <p className="text-[11px] text-amber-600 font-medium mt-1">Penambahan logo & tulisan di box ada biaya extra, min.order 50pcs</p>
+                      )}
+                    </div>
+                  ),
+                },
+              ]
+            : []
+          ),
+          ...((isBataswilayah || isMedaliCustom) && product.thickness
             ? [
                 {
                   icon: Package,
@@ -178,7 +328,7 @@ export default function ProductClient({ product, cat, sub }: ProductClientProps)
           ),
           ...(product.standMaterial ? [{ icon: Package, label: "Stand", value: product.standMaterial }] : []),
           ...(product.logoType ? [{ icon: Package, label: "Logo", value: product.logoType }] : []),
-          ...(isBataswilayah
+          ...(isBataswilayah || isMedaliCustom
             ? [
                 {
                   icon: Ruler,
@@ -200,6 +350,8 @@ export default function ProductClient({ product, cat, sub }: ProductClientProps)
                   ),
                 },
               ]
+            : isPlakatInstansi
+            ? []
             : [{ icon: Ruler, label: product.subcategoryId === "cp" ? "Diameter" : "Ukuran", value: product.size } as { icon: any; label: string; value: string }]
           ),
           ...(product.subcategoryId === "cp"
@@ -226,7 +378,6 @@ export default function ProductClient({ product, cat, sub }: ProductClientProps)
             ? [{ icon: Tag, label: "Harga Satuan", value: formatPrice(pricePerUnit) }]
             : []
           ),
-          ...(product.color ? [{ icon: Palette, label: product.subcategoryId === "mi" ? "Warna Bahan" : "Warna/Finishing", value: product.color }] : []),
           ...(isBataswilayah
             ? [
                 {
@@ -248,10 +399,34 @@ export default function ProductClient({ product, cat, sub }: ProductClientProps)
                   ),
                 },
               ]
-            : [{ icon: Minus, label: cat?.slug === "medali" ? "Minimal Order" : "Jumlah Order", value: product.minOrder } as { icon: any; label: string; value: string }]
+            : isPlakatInstansi
+            ? [
+                {
+                  icon: ShoppingCart,
+                  label: "Jumlah Order",
+                  value: (
+                    <div className="space-y-1">
+                      <input
+                        type="number"
+                        min={1}
+                        value={selectedPlakatInstansiQty}
+                        onChange={(e) => setSelectedPlakatInstansiQty(Math.max(1, parseInt(e.target.value) || 1).toString())}
+                        className="w-full px-3 py-1.5 bg-white border border-gray-300 rounded-lg text-sm font-medium text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:border-[#D4AF37]"
+                      />
+                      <p className="text-[11px] text-gray-500">Masukkan jumlah yang dibutuhkan</p>
+                    </div>
+                  ),
+                },
+                {
+                  icon: Tag,
+                  label: "Harga Satuan",
+                  value: formatPlakatInstansiPrice(plakatInstansiPrice),
+                },
+              ]
+            : []
           ),
           ...(product.moldingFee ? [{ icon: Package, label: "Biaya Molding", value: product.moldingFee }] : []),
-          { icon: Clock, label: "Estimasi Produksi", value: product.productionTime },
+          { icon: Clock, label: "Estimasi Produksi", value: isPlakatInstansi ? getEstimasiProduksi(plakatInstansiQty) : product.productionTime },
         ].map((item: any) => (
           <div key={item.label} className="flex items-start gap-3">
             <item.icon className={`w-5 h-5 ${iconColors[item.label] || "text-primary"} mt-0.5 shrink-0`} />
@@ -309,6 +484,20 @@ export default function ProductClient({ product, cat, sub }: ProductClientProps)
               <p className="text-2xl font-extrabold text-primary">{formatPrice(pricePerUnit * orderQuantity)}</p>
             )}
           </div>
+        ) : isPlakatInstansi ? (
+          <div>
+            {plakatInstansiDiscount > 0 ? (
+              <>
+                <p className="text-sm line-through text-gray-400">{formatPlakatInstansiPrice(plakatInstansiPrice)}</p>
+                <p className="text-2xl font-extrabold text-accent">{formatPlakatInstansiPrice(plakatInstansiFinalPrice)}</p>
+              </>
+            ) : (
+              <p className="text-2xl font-extrabold text-primary">{formatPlakatInstansiPrice(plakatInstansiPrice)}</p>
+            )}
+            <p className="text-sm text-gray-500 mt-1">
+              {selectedPlakatInstansiSize} | {selectedPlakatInstansiThickness} | {selectedKemasan} | {selectedPlakatInstansiQty} pcs
+            </p>
+          </div>
         ) : (
           <p className="text-2xl font-extrabold text-primary">{displayPrice}</p>
         )}
@@ -325,6 +514,36 @@ export default function ProductClient({ product, cat, sub }: ProductClientProps)
         {isBataswilayah && pricePerUnit != null && (
           <p className="text-xs text-gray-500 mt-1">
             {formatPrice(pricePerUnit)} × {orderQuantity} pcs
+          </p>
+        )}
+        {isPlakatInstansi && plakatInstansiDiscount > 0 && (
+          <p className="text-sm font-medium text-green-700 mt-1">
+            Diskon <span className="text-xl font-extrabold text-accent drop-shadow-lg animate-bounce font-serif">{getDiscountMessage(plakatInstansiQty).discount}%</span> telah diterapkan! {getDiscountMessage(plakatInstansiQty).message}, hemat {formatPlakatInstansiPrice(plakatInstansiPrice * plakatInstansiDiscount)}.
+          </p>
+        )}
+        {isPlakatInstansi && plakatInstansiDiscount === 0 && (
+          <p className="text-sm font-medium text-gray-700 mt-1">
+            Pesan minimal 10 pcs untuk mendapatkan diskon <span className="text-xl font-extrabold text-accent font-serif animate-pulse">10%</span> otomatis! Semakin banyak, semakin hemat.
+          </p>
+        )}
+        {isPlakatInstansi && (
+          <div className="mt-2 p-2 bg-gray-50 rounded-lg">
+            <p className="text-xs font-medium text-gray-600 mb-1">Tabel Diskon:</p>
+            <div className="grid grid-cols-4 gap-1 text-xs">
+              <div className="text-center p-1 bg-white rounded">1-9 pcs</div>
+              <div className="text-center p-1 bg-white rounded">10-49 pcs</div>
+              <div className="text-center p-1 bg-white rounded">50-99 pcs</div>
+              <div className="text-center p-1 bg-white rounded">≥100 pcs</div>
+              <div className="text-center p-1 bg-gray-100 rounded font-medium">0%</div>
+              <div className="text-center p-1 bg-green-50 rounded font-medium text-green-600">10%</div>
+              <div className="text-center p-1 bg-green-50 rounded font-medium text-green-600">12%</div>
+              <div className="text-center p-1 bg-green-50 rounded font-medium text-green-600">15%</div>
+            </div>
+          </div>
+        )}
+        {isPlakatInstansi && (
+          <p className="text-xs text-gray-500 mt-1">
+            {formatPlakatInstansiPrice(plakatInstansiPrice / plakatInstansiQty)} × {selectedPlakatInstansiQty} pcs
           </p>
         )}
         </div>
@@ -353,7 +572,11 @@ export default function ProductClient({ product, cat, sub }: ProductClientProps)
 
       <div className="mt-8 p-4 bg-yellow-50 border border-yellow-200 rounded-xl">
         <p className="text-sm text-yellow-800">
-          <strong>Info Custom:</strong> Produk ini bisa di-custom sesuai kebutuhan Anda. Kirimkan logo, desain, atau referensi via WhatsApp untuk konsultasi gratis.
+          {cat?.slug === "medali" ? (
+            <><strong>Info Custom:</strong> Gambar yang ditampilkan adalah referensi produk. Medali ini bisa di-custom sepenuhnya sesuai keinginan Anda — dari desain, ukuran, hingga pilihan finishing. Kirimkan ide atau referensi Anda via WhatsApp dan tim kami akan membantu mewujudkannya secara gratis.</>
+          ) : (
+            <><strong>Info Custom:</strong> Produk ini bisa di-custom sesuai kebutuhan Anda. Kirimkan logo, desain, atau referensi via WhatsApp untuk konsultasi gratis.</>
+          )}
         </p>
       </div>
     </div>

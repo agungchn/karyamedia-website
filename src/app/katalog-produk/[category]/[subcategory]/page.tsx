@@ -6,6 +6,7 @@ import { categories } from "@/data/categories"
 import { products } from "@/data/products"
 import { BreadcrumbSchema } from "@/components/json-ld"
 import { SubcategoryProductGrid } from "./product-grid"
+import { PlakatInstansiSearch } from "@/components/plakat-instansi-search"
 
 // ISR: revalidate setiap 1 jam.
 export const revalidate = 3600
@@ -34,14 +35,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     : undefined
 
   return {
-    title: `${sub.name} Custom | Karyamedia Souvenir`,
+    title: `${sub.name} Custom`,
     description: sub.description || `${sub.name} custom berkualitas dari Yogyakarta untuk penghargaan, event, dan souvenir instansi.`,
     robots: { index: true, follow: true },
     alternates: {
       canonical,
     },
     openGraph: {
-      title: `${sub.name} Custom | Karyamedia Souvenir`,
+      title: `${sub.name} Custom`,
       description: `${sub.name} custom berkualitas dari Karyamedia Souvenir Yogyakarta.`,
       url: canonical,
       images: ogImage ? [{ url: ogImage, width: 800, height: 800 }] : [],
@@ -102,6 +103,13 @@ export default async function SubCategoryPage({ params }: Props) {
       <div className="w-full h-0.5 shimmer-line" />
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {cat.id === "plakat-instansi" && (
+          <PlakatInstansiSearch
+            subcategoryId={sub.id}
+            categorySlug={cat.slug}
+            subSlug={sub.slug}
+          />
+        )}
         <SubcategoryProductGrid
           products={productData}
           categoryName={cat.name}

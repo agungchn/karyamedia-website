@@ -40,7 +40,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     title: "Katalog Plakat & Souvenir Custom Jogja",
-    description: "Jelajahi katalog souvenir custom Karyamedia Jogja: plakat, medali, piala, souvenir wisuda, gift box, aksesoris, & prasasti. Custom desain, kualitas terbaik.",
+    description: "Jelajahi katalog souvenir custom Karyamedia Souvenir: plakat, medali, piala, souvenir wisuda, gift box, aksesoris, & prasasti. Custom desain, kualitas terbaik.",
     alternates: {
       canonical: "/katalog-produk",
     },
@@ -134,7 +134,7 @@ export default function KatalogPage() {
                       {product.images[0] ? (
                         <Image
                           src={product.images[0]}
-                          alt={`${product.name} - ${_sub?.name || _cat?.name || "Souvenir"} Karyamedia Jogja`}
+                          alt={`${product.name} - ${_sub?.name || _cat?.name || "Souvenir"} Karyamedia Souvenir`}
                           fill
                           sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                           className="object-cover group-hover:scale-110 transition-transform duration-700"

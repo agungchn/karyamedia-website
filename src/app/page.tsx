@@ -973,7 +973,7 @@ export default function HomePage() {
                       {(featuredImageMap[product.slug] || product.images[0]) && (
                         <Image
                           src={featuredImageMap[product.slug] || product.images[0]}
-                          alt={`${product.name} - ${categories.find((c) => c.id === product.categoryId)?.subcategories.find((s) => s.id === product.subcategoryId)?.name || categories.find((c) => c.id === product.categoryId)?.name || "Souvenir"} Karyamedia Jogja`}
+                          alt={`${product.name} - ${categories.find((c) => c.id === product.categoryId)?.subcategories.find((s) => s.id === product.subcategoryId)?.name || categories.find((c) => c.id === product.categoryId)?.name || "Souvenir"} Karyamedia Souvenir`}
                           fill
                           priority={gi === 0 && i < 4}
                           loading={gi === 0 && i < 4 ? "eager" : "lazy"}

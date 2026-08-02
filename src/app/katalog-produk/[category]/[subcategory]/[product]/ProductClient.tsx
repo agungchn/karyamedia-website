@@ -1,13 +1,25 @@
 "use client"
 
 import { useState, useEffect, useRef, useCallback } from "react"
-import { MessageCircle, Package, Ruler, Palette, Tag, Clock, Minus, Share2, ShoppingCart, Box, Layers } from "lucide-react"
+import { MessageCircle, Package, Ruler, Palette, Tag, Clock, Minus, Share2, ShoppingCart, Box, Layers, Type } from "lucide-react"
 import { getWhatsAppLink, generateWhatsAppMessage } from "@/lib/utils"
 import hargaBatasWilayah from "@/data/harga-bataswilayah.json"
 import hargaCP from "@/data/harga-cp.json"
 
 function parseDelimited(value: string): string[] {
   return value.split(" / ").map((s) => s.trim())
+}
+
+function labelUkuranWayang(size: string): string {
+  const labels: Record<string, string> = {
+    "15x20 cm": "Small 14x20 cm",
+    "20x25 cm": "Medium 16x25 cm",
+    "25x30 cm": "Large 19x29 cm",
+    "Small: 10x15 cm": "Small 10x15 cm",
+    "Medium: 14x20 cm": "Medium 14x20 cm",
+    "Large: 20x26 cm": "Large 20x26 cm",
+  }
+  return labels[size] || size
 }
 
 function formatPrice(num: number): string {
@@ -53,13 +65,23 @@ interface ProductClientProps {
 export default function ProductClient({ product, cat, sub }: ProductClientProps) {
   const isBataswilayah = cat?.slug === "batas-wilayah"
   const isMedaliCustom = product.subcategoryId === "md"
-  const isPlakatInstansi = cat?.id === "plakat-instansi"
+  const isPlakatInstansi = cat?.id === "plakat-instansi" || product.subcategoryId === "pa" || product.subcategoryId === "pf"
 
   const plakatInstansiSizeOptions = ["Small (14x20cm)", "Medium (16x25cm)", "Large (19x29cm)"]
   const [selectedPlakatInstansiSize, setSelectedPlakatInstansiSize] = useState(plakatInstansiSizeOptions[0])
 
   const kemasanOptions = ["Kertas Marga (Free)", "Box Kertas Import", "Box Batik", "Box Bludru", "Box Custom"]
   const [selectedKemasan, setSelectedKemasan] = useState(kemasanOptions[0])
+
+  const kemasanWayangOptions = ["Kertas Marga (free)", "Box Batik", "Box Bludru", "Box Custum"]
+  const [selectedKemasanWayang, setSelectedKemasanWayang] = useState(kemasanWayangOptions[0])
+
+  const ukuranWayangOptions = product.subcategoryId === "pw" || product.subcategoryId === "pkp" ? parseDelimited(product.size) : []
+  const [selectedUkuranWayang, setSelectedUkuranWayang] = useState(ukuranWayangOptions[0] || "")
+
+  const [orderQuantityWayang, setOrderQuantityWayang] = useState(1)
+  const [customUkuranWayang, setCustomUkuranWayang] = useState("")
+  const [customKemasanWayang, setCustomKemasanWayang] = useState("")
 
   const plakatInstansiThicknessOptions = ["Akrilik 1cm", "Akrilik 1,5cm", "Akrilik 2cm"]
   const [selectedPlakatInstansiThickness, setSelectedPlakatInstansiThickness] = useState(plakatInstansiThicknessOptions[0])
@@ -190,6 +212,7 @@ export default function ProductClient({ product, cat, sub }: ProductClientProps)
   const iconColors: Record<string, string> = {
     Bahan: "text-blue-600",
     "Material Bahan": "text-blue-600",
+    "Logo & Tulisan": "text-purple-600",
     Stand: "text-amber-600",
     Logo: "text-purple-600",
     Ukuran: "text-orange-500",
@@ -199,10 +222,12 @@ export default function ProductClient({ product, cat, sub }: ProductClientProps)
     "Pilih Ketebalan bahan": "text-slate-600",
     "Warna/Finishing": "text-pink-500",
     "Warna Bahan": "text-pink-500",
+    "Perpaduan Bahan": "text-amber-600",
     Kegunaan: "text-emerald-600",
     Kemasan: "text-amber-600",
     "Pilih Kemasan": "text-amber-600",
     "Varian Ukuran As": "text-orange-500",
+    "Varian Ukuran": "text-orange-500",
     "Harga Satuan": "text-emerald-600",
     Harga: "text-emerald-600",
     "Jumlah Order": "text-red-500",
@@ -221,6 +246,16 @@ export default function ProductClient({ product, cat, sub }: ProductClientProps)
         <h3 className="font-semibold text-gray-900 mb-3">Spesifikasi Produk</h3>
         {[
           { icon: Tag, label: "Kegunaan", value: product.usage },
+          ...(product.subcategoryId === "pk" || product.subcategoryId === "pm"
+            ? [
+                {
+                  icon: Type,
+                  label: "Logo & Tulisan",
+                  value: "Plat Stiker Printing",
+                },
+              ]
+            : []
+          ),
           ...(isPlakatInstansi
             ? [
                 {
@@ -251,7 +286,45 @@ export default function ProductClient({ product, cat, sub }: ProductClientProps)
               ]
             : []
           ),
-          ...(product.color ? [{ icon: Palette, label: product.subcategoryId === "mi" ? "Warna Bahan" : "Warna/Finishing", value: product.color }] : []),
+          ...(product.subcategoryId === "pa" || product.subcategoryId === "pf"
+            ? [{ icon: Type, label: "Logo & Tulisan", value: "Plat Kuningan | UV Flatbed Printing" }]
+            : product.subcategoryId === "pw" || product.subcategoryId === "pkp"
+            ? [{ icon: Layers, label: "Perpaduan Bahan", value: "Logam | Kayu | Akrilik" }]
+            : product.color
+            ? [{ icon: Palette, label: product.subcategoryId === "mi" ? "Warna Bahan" : "Warna/Finishing", value: product.color }]
+            : []
+          ),
+          ...(product.subcategoryId === "pw" || product.subcategoryId === "pkp"
+            ? [
+                {
+                  icon: Ruler,
+                  label: "Varian Ukuran",
+                  value: (
+                    <div className="space-y-1">
+                      <select
+                        value={selectedUkuranWayang}
+                        onChange={(e) => setSelectedUkuranWayang(e.target.value)}
+                        className="w-full px-3 py-1.5 bg-white border border-gray-300 rounded-lg text-sm font-medium text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:border-[#D4AF37]"
+                      >
+                        {ukuranWayangOptions.map((opt) => (
+                          <option key={opt} value={opt}>{labelUkuranWayang(opt)}</option>
+                        ))}
+                      </select>
+                      {selectedUkuranWayang === "Custom" && (
+                        <input
+                          type="text"
+                          value={customUkuranWayang}
+                          onChange={(e) => setCustomUkuranWayang(e.target.value)}
+                          placeholder="tulis ukuran custom anda, mis. 18x24 cm"
+                          className="w-full px-3 py-1.5 bg-white border border-gray-300 rounded-lg text-sm font-medium text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:border-[#D4AF37]"
+                        />
+                      )}
+                    </div>
+                  ),
+                },
+              ]
+            : []
+          ),
           ...(isPlakatInstansi
             ? [
                 {
@@ -325,12 +398,53 @@ export default function ProductClient({ product, cat, sub }: ProductClientProps)
                   ),
                 },
               ]
-              : product.thickness
+              : !isPlakatInstansi && product.thickness
               ? [{ icon: Package, label: "Ketebalan Bahan", value: product.thickness }]
               : []
           ),
-          ...(product.standMaterial ? [{ icon: Package, label: "Stand", value: product.standMaterial }] : []),
-          ...(product.logoType ? [{ icon: Package, label: "Logo", value: product.logoType }] : []),
+          ...(product.subcategoryId === "pw" || product.subcategoryId === "pkp"
+            ? [
+                {
+                  icon: Box,
+                  label: "Pilih Kemasan",
+                  value: (
+                    <div className="space-y-1">
+                      <select
+                        value={selectedKemasanWayang}
+                        onChange={(e) => setSelectedKemasanWayang(e.target.value)}
+                        className="w-full px-3 py-1.5 bg-white border border-gray-300 rounded-lg text-sm font-medium text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:border-[#D4AF37]"
+                      >
+                        {kemasanWayangOptions.map((opt) => (
+                          <option key={opt} value={opt}>{opt}</option>
+                        ))}
+                      </select>
+                      {selectedKemasanWayang !== "Kertas Marga (free)" && (
+                        <input
+                          type="text"
+                          value={customKemasanWayang}
+                          onChange={(e) => setCustomKemasanWayang(e.target.value)}
+                          placeholder={
+                            selectedKemasanWayang === "Box Batik"
+                              ? "tulis jenis batik yang anda inginkan, mis. truntum, sidomukti, kawung"
+                              : selectedKemasanWayang === "Box Custum"
+                              ? "Tulis ukuran PxLxT, warna box, tambah logo jika diperlukan"
+                              : "tulis pilihan warna box anda, mis. bludru biru satin kuning"
+                          }
+                          className="w-full px-3 py-1.5 bg-white border border-gray-300 rounded-lg text-sm font-medium text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:border-[#D4AF37]"
+                        />
+                      )}
+                      {selectedKemasanWayang === "Box Custum" && (
+                        <p className="text-[11px] text-amber-600 font-medium">tambahan logo/tulisan di box ada biaya cetak</p>
+                      )}
+                    </div>
+                  ),
+                },
+              ]
+            : product.standMaterial
+            ? [{ icon: Package, label: "Stand", value: product.standMaterial }]
+            : []
+          ),
+          ...(product.logoType ? [{ icon: Type, label: "Logo", value: product.logoType }] : []),
           ...(isBataswilayah || isMedaliCustom
             ? [
                 {
@@ -353,7 +467,7 @@ export default function ProductClient({ product, cat, sub }: ProductClientProps)
                   ),
                 },
               ]
-            : isPlakatInstansi
+            : isPlakatInstansi || product.subcategoryId === "pw" || product.subcategoryId === "pkp"
             ? []
             : [{ icon: Ruler, label: product.subcategoryId === "cp" ? "Diameter" : "Ukuran", value: product.size } as { icon: any; label: string; value: string }]
           ),
@@ -424,6 +538,27 @@ export default function ProductClient({ product, cat, sub }: ProductClientProps)
                   icon: Tag,
                   label: "Harga Satuan",
                   value: formatPlakatInstansiPrice(plakatInstansiPrice),
+                },
+              ]
+            : []
+          ),
+          ...(product.subcategoryId === "pw" || product.subcategoryId === "pkp"
+            ? [
+                {
+                  icon: ShoppingCart,
+                  label: "Jumlah Order",
+                  value: (
+                    <div className="space-y-1">
+                      <input
+                        type="number"
+                        min={1}
+                        value={orderQuantityWayang}
+                        onChange={(e) => setOrderQuantityWayang(Math.max(1, parseInt(e.target.value) || 1))}
+                        className="w-full px-3 py-1.5 bg-white border border-gray-300 rounded-lg text-sm font-medium text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:border-[#D4AF37]"
+                      />
+                      <p className="text-[11px] text-gray-500">Masukkan jumlah yang dibutuhkan</p>
+                    </div>
+                  ),
                 },
               ]
             : []

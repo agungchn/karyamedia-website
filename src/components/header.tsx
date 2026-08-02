@@ -39,13 +39,11 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false)
   const catalogRef = useRef<HTMLDivElement>(null)
   const pathname = usePathname()
-  const [prevPathname, setPrevPathname] = useState(pathname)
 
-  if (prevPathname !== pathname) {
-    setPrevPathname(pathname)
+  useEffect(() => {
     setMobileOpen(false)
     setCatalogOpen(false)
-  }
+  }, [pathname])
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)

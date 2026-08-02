@@ -166,7 +166,7 @@ export default async function ProductDetailPage({ params }: Props) {
                 />
               </div>
             )}
-            {cat.id === "plakat-instansi" && (
+            {cat?.id === "plakat-instansi" && (
               <div className="mt-6 hidden lg:block">
                 <h3 className="heading-display text-xl text-gray-900 mb-4">Pilihan Box Kemasan</h3>
                 <div className="grid grid-cols-2 gap-3">

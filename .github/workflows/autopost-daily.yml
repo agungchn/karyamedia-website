@@ -51,7 +51,8 @@ jobs:
           fi
 
       - name: Nudge Google (submit sitemap supaya artikel baru cepat ter-crawl)
+        continue-on-error: true
         env:
           GSC_CREDENTIALS: ${{ secrets.GSC_CREDENTIALS }}
           SITE_URL: ${{ secrets.SITE_URL }}
-        run: npm run seo:gsc-submit
+        run: npm run seo:gsc-submit || echo "gsc-submit gagal (cek permission service-account di GSC)"

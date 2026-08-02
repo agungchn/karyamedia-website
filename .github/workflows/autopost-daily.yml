@@ -1,0 +1,48 @@
+name: Autopost Social Harian
+
+on:
+  schedule:
+    # 07:00 WIB setiap hari (00:00 UTC)
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: autopost-daily
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  autopost:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci || npm install
+
+      - name: Jalankan autopost (1 artikel, paling lama yang belum diposting)
+        env:
+          SITE_URL: ${{ secrets.SITE_URL }}
+          AUTOPOST_SECRET: ${{ secrets.AUTOPOST_SECRET }}
+          AUTOPOST_LIMIT: "1"
+        run: npm run social:autopost
+
+      - name: Simpan state yang sudah diposting
+        run: |
+          git config user.name "autopost-bot"
+          git config user.email "bot@karyamediasouvenir.com"
+          git add data/autopost-posted.json data/autopost-linkedin-posted.json 2>/dev/null || true
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: update autopost state $(date -u +%Y-%m-%d)"
+            git push
+          else
+            echo "Tidak ada state baru; tidak ada commit."
+          fi

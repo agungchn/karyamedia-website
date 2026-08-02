@@ -10,6 +10,7 @@ const STATE_PATH = join(__dirname, "..", "data", "autopost-posted.json")
 
 const SITE_URL = process.env.SITE_URL || "https://karyamediasouvenir.com"
 const SECRET = process.env.AUTOPOST_SECRET || ""
+const LIMIT = Math.max(1, Number(process.env.AUTOPOST_LIMIT || "3"))
 
 // baca state lokal (daftar GUID artikel yg sudah pernah diposting per platform)
 let postedPlatforms = { fb: [], ig: [], li: [] }
@@ -26,7 +27,7 @@ if (existsSync(STATE_PATH)) {
 }
 const postedParam = `&posted=${encodeURIComponent(JSON.stringify(postedPlatforms))}`
 
-const url = `${SITE_URL}/api/autopost?secret=${SECRET}${postedParam}`
+const url = `${SITE_URL}/api/autopost?secret=${SECRET}&limit=${LIMIT}${postedParam}`
 
 try {
   const res = await fetch(url)

@@ -5,7 +5,6 @@ const FB_PAGE_ID = process.env.FB_PAGE_ID
 const FB_PAGE_TOKEN = process.env.FB_PAGE_ACCESS_TOKEN
 const IG_USER_ID = process.env.IG_USER_ID
 const SECRET = process.env.AUTOPOST_SECRET
-const LIMIT = Math.max(1, Number(process.env.AUTOPOST_LIMIT || "3"))
 const DRYRUN = process.env.AUTOPOST_DRYRUN === "1"
 const GRAPH = "https://graph.facebook.com/v21.0"
 
@@ -54,8 +53,10 @@ function parseFeed(xml: string): FeedItem[] {
       pubDate: get("pubDate"),
     })
   }
+  // Urutkan dari artikel tertua ke terbaru supaya share harian berurutan
+  // (artikel terlama yang belum diposting dipilih lebih dulu).
   items.sort(
-    (a, b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime()
+    (a, b) => new Date(a.pubDate).getTime() - new Date(b.pubDate).getTime()
   )
   return items
 }
@@ -188,6 +189,13 @@ export async function GET(req: NextRequest) {
     }
   }
 
+  const reqLimit = Number(req.nextUrl.searchParams.get("limit"))
+  const limit = Math.max(
+    1,
+    (Number.isFinite(reqLimit) && reqLimit) ||
+      Number(process.env.AUTOPOST_LIMIT || "3")
+  )
+
   let items: FeedItem[] = []
   try {
     const res = await fetch(`${SITE_URL}/feed.xml`, { cache: "no-store" })
@@ -207,7 +215,7 @@ export async function GET(req: NextRequest) {
     const igDone = postedPlatforms.ig?.includes(i.guid)
     const liDone = postedPlatforms.li?.includes(i.guid)
     return !(fbDone && igDone && liDone)
-  }).slice(0, LIMIT)
+  }).slice(0, limit)
 
   if (toPost.length === 0) {
     return NextResponse.json({ message: "tidak ada artikel baru", posted: [], nextPosted: postedPlatforms })

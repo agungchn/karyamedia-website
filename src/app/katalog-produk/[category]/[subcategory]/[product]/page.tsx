@@ -153,6 +153,32 @@ export default async function ProductDetailPage({ params }: Props) {
                 ))}
               </div>
             )}
+            {(product.subcategoryId === "md" || product.subcategoryId === "md3d") && (
+              <div className="mt-3">
+                <div className="group overflow-hidden rounded-xl">
+                  <Image
+                    src="/images/medali/tali-medali-katalog.webp"
+                    alt="Katalog Tali Medali - Pilihan Lanyard, Pita Sablon, dan Tali Polyester Karyamedia Souvenir"
+                    width={1200}
+                    height={406}
+                    unoptimized
+                    loading="lazy"
+                    className="w-full h-auto object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+                  />
+                </div>
+                <div className="grid grid-cols-3 gap-2 mt-2">
+                  <div className="overflow-hidden rounded-lg group">
+                    <Image src="/images/medali/tali-lanyard-printing.webp" alt="Tali Lanyard Printing" width={550} height={550} unoptimized loading="lazy" className="w-full h-auto object-cover transition-transform duration-500 ease-out group-hover:scale-110" />
+                  </div>
+                  <div className="overflow-hidden rounded-lg group">
+                    <Image src="/images/medali/tali-polyester.webp" alt="Tali Polyester" width={550} height={550} unoptimized loading="lazy" className="w-full h-auto object-cover transition-transform duration-500 ease-out group-hover:scale-110" />
+                  </div>
+                  <div className="overflow-hidden rounded-lg group">
+                    <Image src="/images/medali/tali-sablon-1-warna.webp" alt="Tali Sablon 1 Warna" width={550} height={550} unoptimized loading="lazy" className="w-full h-auto object-cover transition-transform duration-500 ease-out group-hover:scale-110" />
+                  </div>
+                </div>
+              </div>
+            )}
             {product.subcategoryId === "cp" && (
               <div className="mt-4">
                 <h3 className="heading-display text-xl text-gray-900 mb-3">Tersedia 3 Varian Ukuran As</h3>

@@ -39,7 +39,10 @@ jobs:
         run: |
           git config user.name "autopost-bot"
           git config user.email "bot@karyamediasouvenir.com"
-          git add data/autopost-posted.json data/autopost-linkedin-posted.json 2>/dev/null || true
+          # -f diperlukan: data/autopost-posted.json masuk .gitignore,
+          # jadi kita track paksa agar state anti-duplikat tersimpan antar run.
+          git add -f data/autopost-posted.json
+          git add -f data/autopost-linkedin-posted.json 2>/dev/null || true
           if ! git diff --cached --quiet; then
             git commit -m "chore: update autopost state $(date -u +%Y-%m-%d)"
             git push

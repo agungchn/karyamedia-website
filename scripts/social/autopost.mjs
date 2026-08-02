@@ -6,7 +6,8 @@ import { join, dirname } from "path"
 import { fileURLToPath } from "url"
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
-const STATE_PATH = join(__dirname, "..", "data", "autopost-posted.json")
+// state anti-duplikat disimpan di repo-ROOT data/ (bukan scripts/data/)
+const STATE_PATH = join(__dirname, "..", "..", "data", "autopost-posted.json")
 
 const SITE_URL = process.env.SITE_URL || "https://karyamediasouvenir.com"
 const SECRET = process.env.AUTOPOST_SECRET || ""

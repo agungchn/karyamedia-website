@@ -11,6 +11,12 @@ import { BreadcrumbSchema, CategorySchema } from "@/components/json-ld"
 
 // ISR: revalidate setiap 1 jam (produk tidak sering berubah).
 export const revalidate = 3600
+// Render statis di build; slug yang tidak dikenal langsung 404 tanpa render server.
+export const dynamicParams = false
+
+export async function generateStaticParams() {
+  return categories.map((cat) => ({ category: cat.slug }))
+}
 
 interface Props {
   params: Promise<{ category: string }>

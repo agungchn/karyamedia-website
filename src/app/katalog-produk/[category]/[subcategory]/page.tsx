@@ -10,6 +10,17 @@ import { PlakatInstansiSearch } from "@/components/plakat-instansi-search"
 
 // ISR: revalidate setiap 1 jam.
 export const revalidate = 3600
+// Render statis di build; kombinasi slug yang tidak dikenal langsung 404 tanpa render server.
+export const dynamicParams = false
+
+export async function generateStaticParams() {
+  return categories.flatMap((cat) =>
+    cat.subcategories.map((sub) => ({
+      category: cat.slug,
+      subcategory: sub.slug,
+    }))
+  )
+}
 
 interface Props {
   params: Promise<{ category: string; subcategory: string }>

@@ -95,3 +95,6 @@ seo-*-last*.txt
 dev-server.log
 
 # Pra-optimasi gambar WebP (dibuat saat build, di-commit agar online ready)
+
+# Aset watermark (lokal, tidak untuk di-commit)
+watrermark.png

@@ -13,8 +13,6 @@
     "seo:submit": "node scripts/bing/autosubmit.mjs",
     "article:lint": "node scripts/seo/article-lint.mjs",
     "article:check": "node scripts/seo/article-check.mjs",
-    "article:generate": "node scripts/seo/article-generate.mjs",
-    "seo:ideas": "node scripts/seo/ideas.mjs",
     "seo:inspect": "node scripts/gsc/inspect.mjs",
     "seo:traffic": "node scripts/gsc/traffic.mjs",
     "seo:bing-traffic": "node scripts/bing/traffic.mjs",

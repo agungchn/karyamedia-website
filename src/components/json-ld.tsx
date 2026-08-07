@@ -200,6 +200,7 @@ export function ProductSchema({
   image,
   category,
   price,
+  url,
 }: {
   name: string
   description: string
@@ -207,8 +208,11 @@ export function ProductSchema({
   image: string
   category: string
   price?: string
+  url: string
 }) {
-  const numericPrice = price ? parseFloat(price.match(/(\d+)/)?.[0] || "0") : undefined
+  const firstPrice = price?.match(/\d[\d.,]*/)?.[0]
+  const numericPrice = firstPrice ? parseInt(firstPrice.replace(/[.,]/g, "") || "0", 10) || undefined : undefined
+  const productUrl = `https://karyamediasouvenir.com${url}`
   const schema = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -217,6 +221,7 @@ export function ProductSchema({
     sku,
     image: `https://karyamediasouvenir.com${image}`,
     category,
+    url: productUrl,
     brand: {
       "@type": "Brand",
       name: companyInfo.name,
@@ -225,7 +230,7 @@ export function ProductSchema({
       "@type": "Offer",
       availability: "https://schema.org/InStock",
       ...(numericPrice ? { price: numericPrice, priceCurrency: "IDR" } : { price: "0", priceCurrency: "IDR" }),
-      url: `https://karyamediasouvenir.com${sku}`,
+      url: productUrl,
     },
   }
 

@@ -14,6 +14,28 @@ interface Props {
   params: Promise<{ slug: string }>
 }
 
+const sulawesiCatalogUrl = "/katalog-produk/plakat-instansi/pi-sulawesi"
+
+const sulawesiArticleMap: Record<string, string> = {
+  "piala-olahraga-untuk-kontraktor-properti-sulawesi-tengah-custom": sulawesiCatalogUrl,
+  "plakat-akrilik-untuk-kampus-sulawesi-barat-custom": sulawesiCatalogUrl,
+  "plakat-akrilik-untuk-kampus-sulawesi-selatan-custom": sulawesiCatalogUrl,
+  "plakat-akrilik-untuk-komunitas-sulawesi-tenggara-custom": sulawesiCatalogUrl,
+  "plakat-akrilik-untuk-pemerintahan-sulawesi-barat-custom": sulawesiCatalogUrl,
+  "plakat-resin-untuk-pemerintahan-sulawesi-barat-custom": sulawesiCatalogUrl,
+  "souvenir-wisuda-untuk-komunitas-sulawesi-tengah-custom": sulawesiCatalogUrl,
+  "plakat-akrilik-untuk-komunitas-sulawesi-utara-custom": sulawesiCatalogUrl,
+  "plakat-akrilik-untuk-kampus-sulawesi-tengah-custom": sulawesiCatalogUrl,
+  "plakat-akrilik-untuk-kampus-sulawesi-tenggara-custom": sulawesiCatalogUrl,
+  "plakat-akrilik-untuk-pemerintahan-sulawesi-utara-custom": sulawesiCatalogUrl,
+  "medali-custom-sulawesi-barat": sulawesiCatalogUrl,
+  "medali-custom-sulawesi-selatan": sulawesiCatalogUrl,
+  "medali-custom-sulawesi-tengah": sulawesiCatalogUrl,
+  "medali-custom-sulawesi-tenggara": sulawesiCatalogUrl,
+  "medali-custom-sulawesi-utara": sulawesiCatalogUrl,
+  "plakat-akrilik-untuk-pemerintahan-sulawesi-selatan-custom": sulawesiCatalogUrl,
+}
+
 const categorySlugMap: Record<string, string> = {
   "Plakat": "plakat",
   "Medali": "medali",
@@ -143,8 +165,10 @@ export default async function ArticlePage({ params }: Props) {
 
   const catSlug = categorySlugMap[article.category] || ""
   const subSlug = subcategoryMap[article.slug]
-  const productUrl = subSlug ? `/katalog-produk/${catSlug}/${subSlug}` : catSlug ? `/katalog-produk/${catSlug}` : ""
-  const productLabel = subSlug
+  const productUrl = sulawesiArticleMap[article.slug] || (subSlug ? `/katalog-produk/${catSlug}/${subSlug}` : catSlug ? `/katalog-produk/${catSlug}` : "")
+  const productLabel = sulawesiArticleMap[article.slug]
+    ? "Plakat Instansi Sulawesi"
+    : subSlug
     ? categories.find(c => c.slug === catSlug)?.subcategories.find(s => s.slug === subSlug)?.name || article.category
     : article.category
 

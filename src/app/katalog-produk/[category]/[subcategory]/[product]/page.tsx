@@ -96,6 +96,7 @@ export default async function ProductDetailPage({ params }: Props) {
         image={product.images[0] || "/images/logo-karyamedia.png"}
         category={sub?.name || product.categoryId}
         price={product.price}
+        url={`/katalog-produk/${category}/${getSubSlug(product)}/${product.slug}`}
       />
       <section className="bg-gradient-to-br from-[#000030] to-[#002878] py-3">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

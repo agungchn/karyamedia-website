@@ -49,6 +49,7 @@ const PILLAR_TOPICS = [
   { pillar: "panduan-lengkap-pin-bross-custom", re: /pin-bross|pin bross|bross/ },
   { pillar: "panduan-lengkap-souvenir-pernikahan-custom", re: /souvenir-pernikahan|pernikahan|nikah/ },
   { pillar: "panduan-lengkap-batas-wilayah-custom", re: /batas-wilayah|center-point|brass-table|tugu/ },
+  { pillar: "panduan-lengkap-plakat-wisuda-akrilik-custom", re: /plakat-wisuda/ },
   { pillar: "panduan-lengkap-plakat-akrilik-custom", re: /plakat-akrilik/ },
   { pillar: "panduan-lengkap-plakat-marmer-custom", re: /plakat-marmer/ },
   { pillar: "panduan-lengkap-plakat-wayang-custom", re: /plakat-wayang/ },

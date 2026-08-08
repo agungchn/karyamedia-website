@@ -98,3 +98,6 @@ dev-server.log
 
 # Aset watermark (lokal, tidak untuk di-commit)
 watrermark.png
+
+# Work notes / memory file (local only, jangan di-commit ke repo publik)
+AGENTS.md

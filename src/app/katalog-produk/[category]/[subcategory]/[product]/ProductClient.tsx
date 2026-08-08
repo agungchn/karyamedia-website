@@ -236,8 +236,8 @@ export default function ProductClient({ product, cat, sub }: ProductClientProps)
   const [orderQuantity, setOrderQuantity] = useState(1)
   const [medaliOrderQty, setMedaliOrderQty] = useState("6")
 
-  const taliMedaliOptions = ["Lanyard 2cm - 90cm", "Lanyard 2,5cm - 90cm", "Lanyard 3cm - 90cm", "Pita Sablon 1 Warna - 90cm", "Tali Polyester 3cm - 90cm"]
-  const [selectedTaliMedali, setSelectedTaliMedali] = useState("Tali Polyester 3cm - 90cm")
+  const taliMedaliOptions = ["Tanpa Tali", "Tali Polyester 3cm - 90cm", "Pita Sablon 1 Warna - 90cm", "Lanyard 2cm - 90cm", "Lanyard 2,5cm - 90cm", "Lanyard 3cm - 90cm"]
+  const [selectedTaliMedali, setSelectedTaliMedali] = useState("Tanpa Tali")
   const [customTaliMedali, setCustomTaliMedali] = useState("")
 
   const warnaMedaliOptions = ["Poles tanpa Chrome", "Chrome Emas", "Chrome Perak", "Chrome Perunggu", "1 Set Gold, Silver, Bronze"]
@@ -271,6 +271,7 @@ export default function ProductClient({ product, cat, sub }: ProductClientProps)
   }
 
   const medaliHargaTali: Record<string, number> = {
+    "Tanpa Tali": 0,
     "Tali Polyester 3cm - 90cm": 5000,
     "Pita Sablon 1 Warna - 90cm": 6000,
     "Lanyard 2cm - 90cm": 8000,
